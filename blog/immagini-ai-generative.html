@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creare Immagini Professionali con AI Generativa | AI Osha</title>
+    <meta name="description" content="Guida pratica agli strumenti di image generation: Midjourney, DALL-E, Stable Diffusion. Come creare visual per social, blog e presentazioni in pochi minuti.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #00A8E8;
+            --accent: #1E3A5F;
+            --highlight: #F5A623;
+            --dark: #0D1117;
+            --gray-800: #2d3748;
+            --gray-700: #374151;
+            --gray-600: #4b5563;
+            --gray-500: #6b7280;
+            --gray-400: #9ca3af;
+            --gray-300: #d1d5db;
+            --gray-200: #e5e7eb;
+            --gray-100: #f3f4f6;
+            --light: #E8F4FD;
+            --white: #ffffff;
+            --success: #10b981;
+            --font-display: 'Plus Jakarta Sans', sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: var(--font-display); font-size: 1.125rem; line-height: 1.7; color: var(--gray-800); }
+        .container { max-width: 800px; margin: 0 auto; padding: 0 1.5rem; }
+        .header { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: rgba(255,255,255,0.9); backdrop-filter: blur(20px); border-bottom: 1px solid var(--gray-200); }
+        .header__inner { display: flex; justify-content: space-between; align-items: center; height: 72px; max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; }
+        .header__logo { font-size: 1.5rem; font-weight: 800; color: var(--dark); text-decoration: none; }
+        .text-gradient { background: linear-gradient(135deg, var(--primary), var(--highlight)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .btn { display: inline-flex; align-items: center; gap: 0.5rem; padding: 1rem 2rem; font-weight: 600; border-radius: 0.75rem; text-decoration: none; transition: all 0.25s; }
+        .btn--primary { background: linear-gradient(135deg, var(--highlight), #d4911f); color: white; }
+        .btn--primary:hover { transform: translateY(-2px); }
+        .article-hero { padding: calc(72px + 4rem) 0 4rem; background: linear-gradient(180deg, var(--light), var(--white) 50%); }
+        .back-link { display: inline-flex; align-items: center; gap: 0.5rem; color: var(--primary); font-weight: 600; text-decoration: none; margin-bottom: 2rem; }
+        .back-link svg { width: 20px; height: 20px; }
+        .article-tag { display: inline-block; padding: 0.25rem 1rem; background: linear-gradient(135deg, rgba(245,166,35,0.2), rgba(212,145,31,0.1)); color: #d4911f; border-radius: 50px; font-size: 0.875rem; font-weight: 600; margin-bottom: 1rem; }
+        h1 { font-size: clamp(2rem, 5vw, 3rem); font-weight: 800; color: var(--dark); line-height: 1.2; margin: 1rem 0; }
+        .subtitle { font-size: 1.375rem; color: var(--gray-600); margin-bottom: 2rem; }
+        .article-content { padding: 4rem 0; }
+        h2 { font-size: 2rem; font-weight: 700; color: var(--dark); margin: 3rem 0 1.5rem; }
+        h3 { font-size: 1.5rem; font-weight: 600; color: var(--dark); margin: 2rem 0 1rem; }
+        p { margin-bottom: 1.5rem; color: var(--gray-700); }
+        ul, ol { margin: 1.5rem 0; padding-left: 2rem; }
+        li { margin-bottom: 0.5rem; color: var(--gray-700); }
+        strong { color: var(--dark); font-weight: 600; }
+        .tool-card { background: var(--white); border: 2px solid var(--gray-200); border-radius: 1rem; padding: 2rem; margin: 2rem 0; transition: all 0.25s; }
+        .tool-card:hover { border-color: var(--highlight); transform: translateY(-4px); box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+        .tool-card h3 { margin-top: 0; color: var(--highlight); }
+        .tool-card__meta { display: flex; gap: 1rem; margin: 1rem 0; font-size: 0.875rem; }
+        .tool-card__badge { padding: 0.25rem 0.75rem; background: var(--light); color: var(--primary); border-radius: 50px; }
+        .prompt-box { background: var(--dark); color: var(--gray-300); padding: 2rem; border-radius: 1rem; margin: 2rem 0; border: 1px solid var(--gray-700); }
+        .prompt-box__header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; padding-bottom: 1rem; border-bottom: 1px solid var(--gray-700); }
+        .prompt-box__title { font-family: var(--font-mono); font-size: 0.875rem; color: var(--highlight); font-weight: 600; }
+        .prompt-box__copy { padding: 0.5rem 1rem; background: var(--gray-800); color: var(--gray-300); border: 1px solid var(--gray-700); border-radius: 0.375rem; font-size: 0.875rem; cursor: pointer; transition: all 0.15s; }
+        .prompt-box__copy:hover { background: var(--gray-700); color: white; }
+        .prompt-box__content { font-family: var(--font-mono); font-size: 0.9375rem; line-height: 1.6; white-space: pre-wrap; color: var(--gray-100); }
+        .highlight-box { background: var(--light); border-left: 4px solid var(--primary); padding: 2rem; border-radius: 0 0.75rem 0.75rem 0; margin: 2rem 0; }
+        .highlight-box h4 { font-size: 1.125rem; font-weight: 700; color: var(--dark); margin-bottom: 0.5rem; }
+        .tip-box { background: linear-gradient(135deg, rgba(16,185,129,0.1), rgba(16,185,129,0.05)); border-left: 4px solid var(--success); padding: 1.5rem; border-radius: 0 0.75rem 0.75rem 0; margin: 2rem 0; }
+        .tip-box strong { color: var(--success); }
+        .comparison-table { width: 100%; border-collapse: collapse; margin: 2rem 0; }
+        .comparison-table th, .comparison-table td { padding: 1rem; text-align: left; border-bottom: 1px solid var(--gray-200); }
+        .comparison-table th { background: var(--light); color: var(--dark); font-weight: 600; }
+        .comparison-table tr:hover { background: var(--gray-100); }
+        .cta-box { background: var(--dark); color: white; padding: 3rem; border-radius: 1.5rem; text-align: center; margin: 4rem 0; }
+        .cta-box h3 { font-size: 1.75rem; margin-bottom: 1rem; color: white; }
+        .cta-box p { color: var(--gray-400); margin-bottom: 2rem; }
+        .footer { padding: 3rem 0 1rem; background: var(--gray-800); color: var(--gray-400); margin-top: 4rem; text-align: center; }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="header__inner">
+            <a href="../index.html" class="header__logo">
+                AI <span class="text-gradient">Osha</span>
+            </a>
+            <a href="../index.html#lead-magnet" class="btn btn--primary">Guida Gratuita</a>
+        </div>
+    </header>
+
+    <main>
+        <section class="article-hero">
+            <div class="container">
+                <a href="../blog.html" class="back-link">
+                    <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M10 19l-7-7m0 0l7-7m-7 7h18"/>
+                    </svg>
+                    Torna al Blog
+                </a>
+                <span class="article-tag">Image AI</span>
+                <h1>Creare Immagini Professionali con AI Generativa</h1>
+                <p class="subtitle">Guida pratica agli strumenti di image generation: Midjourney, DALL-E, Stable Diffusion. Come creare visual per social, blog e presentazioni in pochi minuti.</p>
+            </div>
+        </section>
+
+        <section class="article-content">
+            <div class="container">
+                <p><strong>Hai bisogno di un'immagine per un post social, una presentazione o il tuo sito?</strong> Fino a poco tempo fa avevi due opzioni: pagare un designer o perderti tra milioni di stock photo generiche. Oggi c'è una terza via: l'AI generativa.</p>
+
+                <p>In questa guida vedremo come usare gli strumenti di image generation per creare visual professionali in pochi minuti, senza competenze di design.</p>
+
+                <h2>1. I 3 Strumenti Principali</h2>
+
+                <div class="tool-card">
+                    <h3>Midjourney</h3>
+                    <div class="tool-card__meta">
+                        <span class="tool-card__badge">A pagamento</span>
+                        <span class="tool-card__badge">Top qualità</span>
+                        <span class="tool-card__badge">Via Discord</span>
+                    </div>
+                    <p><strong>Migliore per:</strong> Immagini artistiche, concept art, visual di alta qualità per marketing e brand.</p>
+                    <p><strong>Prezzo:</strong> Da $10/mese (piano Basic)</p>
+                    <p><strong>Pro:</strong> Qualità altissima, stile coerente, aggiornamenti frequenti</p>
+                    <p><strong>Contro:</strong> Richiede Discord, curva di apprendimento sui parametri</p>
+                </div>
+
+                <div class="tool-card">
+                    <h3>DALL-E 3 (via ChatGPT Plus)</h3>
+                    <div class="tool-card__meta">
+                        <span class="tool-card__badge">A pagamento</span>
+                        <span class="tool-card__badge">Facile da usare</span>
+                        <span class="tool-card__badge">Integrato</span>
+                    </div>
+                    <p><strong>Migliore per:</strong> Immagini rapide, illustrazioni, mockup, visual per blog e social.</p>
+                    <p><strong>Prezzo:</strong> Incluso in ChatGPT Plus ($20/mese)</p>
+                    <p><strong>Pro:</strong> Interfaccia semplice, buona comprensione del linguaggio naturale, veloce</p>
+                    <p><strong>Contro:</strong> Meno parametri di controllo rispetto a Midjourney</p>
+                </div>
+
+                <div class="tool-card">
+                    <h3>Leonardo.ai</h3>
+                    <div class="tool-card__meta">
+                        <span class="tool-card__badge">Freemium</span>
+                        <span class="tool-card__badge">Piano gratuito</span>
+                        <span class="tool-card__badge">Versatile</span>
+                    </div>
+                    <p><strong>Migliore per:</strong> Sperimentare, progetti con budget limitato, immagini per prodotti.</p>
+                    <p><strong>Prezzo:</strong> Piano gratuito con 150 crediti/giorno</p>
+                    <p><strong>Pro:</strong> Gratuito per iniziare, modelli specializzati, buon controllo</p>
+                    <p><strong>Contro:</strong> Qualità variabile, interfaccia meno intuitiva</p>
+                </div>
+
+                <h2>2. Confronto Rapido</h2>
+
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Strumento</th>
+                            <th>Qualità</th>
+                            <th>Facilità</th>
+                            <th>Prezzo</th>
+                            <th>Migliore per</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Midjourney</strong></td>
+                            <td>⭐⭐⭐⭐⭐</td>
+                            <td>⭐⭐⭐</td>
+                            <td>$10-60/mese</td>
+                            <td>Marketing, Brand</td>
+                        </tr>
+                        <tr>
+                            <td><strong>DALL-E 3</strong></td>
+                            <td>⭐⭐⭐⭐</td>
+                            <td>⭐⭐⭐⭐⭐</td>
+                            <td>$20/mese</td>
+                            <td>Rapidità, Blog</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Leonardo.ai</strong></td>
+                            <td>⭐⭐⭐⭐</td>
+                            <td>⭐⭐⭐⭐</td>
+                            <td>Gratis/Pay</td>
+                            <td>Sperimentare</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h2>3. Come Scrivere Prompt Efficaci per Immagini</h2>
+
+                <p>La qualità dell'immagine dipende al 70% dal prompt. Ecco la struttura vincente:</p>
+
+                <div class="highlight-box">
+                    <h4>Formula del Prompt Perfetto</h4>
+                    <p><strong>[SOGGETTO] + [STILE] + [MOOD/ATMOSFERA] + [DETTAGLI TECNICI] + [PARAMETRI]</strong></p>
+                </div>
+
+                <h3>Esempio Pratico</h3>
+
+                <div class="prompt-box">
+                    <div class="prompt-box__header">
+                        <span class="prompt-box__title">PROMPT BASE</span>
+                        <button class="prompt-box__copy" onclick="copyPrompt(this)">Copia</button>
+                    </div>
+                    <div class="prompt-box__content">Un professionista che lavora al laptop in un ufficio moderno</div>
+                </div>
+
+                <div class="prompt-box">
+                    <div class="prompt-box__header">
+                        <span class="prompt-box__title">PROMPT OTTIMIZZATO</span>
+                        <button class="prompt-box__copy" onclick="copyPrompt(this)">Copia</button>
+                    </div>
+                    <div class="prompt-box__content">Un giovane professionista concentrato che lavora al MacBook in un ufficio moderno e luminoso, stile fotografico professionale, luce naturale che entra da grandi finestre, palette colori blu e bianco, atmosfera produttiva e rilassata, inquadratura da dietro la spalla, depth of field, alta qualità, 4K --ar 16:9</div>
+                </div>
+
+                <h2>4. Prompt Pronti all'Uso per Business</h2>
+
+                <h3>Post Social Media</h3>
+                <div class="prompt-box">
+                    <div class="prompt-box__header">
+                        <span class="prompt-box__title">PROMPT</span>
+                        <button class="prompt-box__copy" onclick="copyPrompt(this)">Copia</button>
+                    </div>
+                    <div class="prompt-box__content">Illustrazione minimalista e moderna per post Instagram su [TEMA], colori vivaci ma professionali, stile flat design, composizione centrata, sfondo pulito, adatto per formato quadrato 1:1, design contemporaneo --ar 1:1</div>
+                </div>
+
+                <h3>Hero Image per Sito Web</h3>
+                <div class="prompt-box">
+                    <div class="prompt-box__header">
+                        <span class="prompt-box__title">PROMPT</span>
+                        <button class="prompt-box__copy" onclick="copyPrompt(this)">Copia</button>
+                    </div>
+                    <div class="prompt-box__content">Hero image professionale per homepage aziendale nel settore [SETTORE], composizione orizzontale, spazio per testo a sinistra, colori corporate [COLORI BRAND], stile fotografico pulito e moderno, alta risoluzione, illuminazione professionale --ar 16:9</div>
+                </div>
+
+                <h3>Illustrazione Blog</h3>
+                <div class="prompt-box">
+                    <div class="prompt-box__header">
+                        <span class="prompt-box__title">PROMPT</span>
+                        <button class="prompt-box__copy" onclick="copyPrompt(this)">Copia</button>
+                    </div>
+                    <div class="prompt-box__content">Illustrazione isometrica che rappresenta [CONCETTO], stile tech moderno, colori gradiente blu e viola, design pulito, adatta per articolo di blog, sfondo bianco o trasparente, dettagli minimali --ar 3:2</div>
+                </div>
+
+                <h3>Mockup Prodotto</h3>
+                <div class="prompt-box">
+                    <div class="prompt-box__header">
+                        <span class="prompt-box__title">PROMPT</span>
+                        <button class="prompt-box__copy" onclick="copyPrompt(this)">Copia</button>
+                    </div>
+                    <div class="prompt-box__content">Mockup fotografico professionale di [PRODOTTO], su sfondo neutro elegante, illuminazione da studio, ombre morbide, composizione product photography, stile e-commerce premium, alta qualità, dettagli nitidi --ar 4:5</div>
+                </div>
+
+                <h2>5. Parametri Essenziali (Midjourney)</h2>
+
+                <ul>
+                    <li><strong>--ar 16:9</strong> — Formato panoramico (siti web, presentazioni)</li>
+                    <li><strong>--ar 1:1</strong> — Formato quadrato (Instagram, profili)</li>
+                    <li><strong>--ar 9:16</strong> — Formato verticale (Stories, Reels)</li>
+                    <li><strong>--v 6</strong> — Usa versione 6 del modello (la più recente)</li>
+                    <li><strong>--style raw</strong> — Stile più fotografico, meno artistico</li>
+                    <li><strong>--q 2</strong> — Qualità massima (usa più crediti)</li>
+                </ul>
+
+                <div class="tip-box">
+                    <p><strong>Pro Tip:</strong> Inizia sempre con un prompt semplice, genera 4 varianti, poi affina quella che ti piace di più aggiungendo dettagli specifici.</p>
+                </div>
+
+                <h2>6. Workflow Pratico in 5 Step</h2>
+
+                <ol>
+                    <li><strong>Definisci l'obiettivo</strong> — Dove userai l'immagine? Social? Blog? Presentazione?</li>
+                    <li><strong>Scegli lo stile</strong> — Fotografico, illustrativo, artistico, minimalista?</li>
+                    <li><strong>Scrivi il prompt base</strong> — Soggetto + stile + atmosfera</li>
+                    <li><strong>Genera 4 varianti</strong> — Analizza e scegli la migliore</li>
+                    <li><strong>Raffina</strong> — Aggiungi dettagli o modifica specifiche con variazioni</li>
+                </ol>
+
+                <h2>7. Errori Comuni da Evitare</h2>
+
+                <ul>
+                    <li><strong>Prompt troppo vaghi</strong> — "Una persona felice" vs "Una donna d'affari sorridente in ufficio moderno"</li>
+                    <li><strong>Troppi dettagli contrastanti</strong> — Meno è meglio, focus su 3-4 elementi chiave</li>
+                    <li><strong>Ignorare l'aspect ratio</strong> — Un'immagine quadrata non funziona per un banner</li>
+                    <li><strong>Non iterare</strong> — La prima generazione raramente è perfetta</li>
+                    <li><strong>Dimenticare il brand</strong> — Specifica sempre i colori del tuo brand</li>
+                </ul>
+
+                <h2>8. Caso d'Uso: Post LinkedIn in 5 Minuti</h2>
+
+                <p>Esempio pratico per creare un'immagine per un post su "produttività con AI":</p>
+
+                <div class="prompt-box">
+                    <div class="prompt-box__header">
+                        <span class="prompt-box__title">PROMPT COMPLETO</span>
+                        <button class="prompt-box__copy" onclick="copyPrompt(this)">Copia</button>
+                    </div>
+                    <div class="prompt-box__content">Illustrazione moderna e professionale di un cervello umano connesso a circuiti digitali luminosi, rappresenta l'intelligenza artificiale e la produttività, colori blu elettrico e arancione, stile tech contemporaneo, sfondo scuro con luci al neon, composizione bilanciata per post LinkedIn, design pulito e corporate-friendly --ar 1:1 --v 6</div>
+                </div>
+
+                <p><strong>Risultato:</strong> Immagine professionale in 30 secondi, pronta per il post.</p>
+
+                <h2>9. Tool Bonus per Post-Produzione</h2>
+
+                <ul>
+                    <li><strong>Canva</strong> — Aggiungi testo, loghi, elementi grafici alle immagini AI</li>
+                    <li><strong>Remove.bg</strong> — Rimuovi sfondi automaticamente</li>
+                    <li><strong>ClipDrop</strong> — Migliora qualità, rimuovi oggetti, modifica dettagli</li>
+                </ul>
+
+                <div class="highlight-box">
+                    <h4>Licenze e Copyright</h4>
+                    <p><strong>Midjourney:</strong> Possiedi i diritti commerciali (con piano a pagamento)<br>
+                    <strong>DALL-E:</strong> Possiedi i diritti, puoi usare commercialmente<br>
+                    <strong>Leonardo.ai:</strong> Verifica ToS, generalmente OK per uso commerciale</p>
+                </div>
+
+                <div class="cta-box">
+                    <h3>Vuoi Padroneggiare Altri Strumenti AI?</h3>
+                    <p>Scopri come usare Claude per email, Gemini per documenti, Perplexity per ricerche e molto altro.</p>
+                    <a href="../index.html#lead-magnet" class="btn btn--primary">Scarica la Guida Gratuita</a>
+                </div>
+
+                <a href="../blog.html" class="back-link">
+                    <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M10 19l-7-7m0 0l7-7m-7 7h18"/>
+                    </svg>
+                    Torna al Blog
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>© 2026 AI Osha — Aliosha Battaglini</p>
+    </footer>
+
+    <script>
+        function copyPrompt(button) {
+            const promptBox = button.closest('.prompt-box');
+            const promptText = promptBox.querySelector('.prompt-box__content').textContent;
+            navigator.clipboard.writeText(promptText).then(() => {
+                button.textContent = 'Copiato!';
+                button.style.background = 'var(--success)';
+                setTimeout(() => {
+                    button.textContent = 'Copia';
+                    button.style.background = '';
+                }, 2000);
+            });
+        }
+    </script>
+</body>
+</html>

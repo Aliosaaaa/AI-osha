@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Come Generare Email Professionali con Claude AI | AI Osha</title>
+    <meta name="description" content="Guida pratica per scrivere email professionali con Claude AI: 10 prompt testati per rispondere a clienti, scrivere proposte commerciali e gestire la comunicazione aziendale.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #00A8E8;
+            --accent: #1E3A5F;
+            --highlight: #F5A623;
+            --dark: #0D1117;
+            --gray-800: #2d3748;
+            --gray-700: #374151;
+            --gray-600: #4b5563;
+            --gray-500: #6b7280;
+            --gray-400: #9ca3af;
+            --gray-300: #d1d5db;
+            --gray-200: #e5e7eb;
+            --gray-100: #f3f4f6;
+            --light: #E8F4FD;
+            --white: #ffffff;
+            --success: #10b981;
+            --font-display: 'Plus Jakarta Sans', sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: var(--font-display); font-size: 1.125rem; line-height: 1.7; color: var(--gray-800); }
+        .container { max-width: 800px; margin: 0 auto; padding: 0 1.5rem; }
+        .header { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: rgba(255,255,255,0.9); backdrop-filter: blur(20px); border-bottom: 1px solid var(--gray-200); }
+        .header__inner { display: flex; justify-content: space-between; align-items: center; height: 72px; max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; }
+        .header__logo { font-size: 1.5rem; font-weight: 800; color: var(--dark); text-decoration: none; }
+        .text-gradient { background: linear-gradient(135deg, var(--primary), var(--highlight)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .btn { display: inline-flex; align-items: center; gap: 0.5rem; padding: 1rem 2rem; font-weight: 600; border-radius: 0.75rem; text-decoration: none; transition: all 0.25s; }
+        .btn--primary { background: linear-gradient(135deg, var(--highlight), #d4911f); color: white; }
+        .btn--primary:hover { transform: translateY(-2px); }
+        .btn--secondary { border: 2px solid var(--primary); color: var(--primary); }
+        .article-hero { padding: calc(72px + 4rem) 0 4rem; background: linear-gradient(180deg, var(--light), var(--white) 50%); }
+        .back-link { display: inline-flex; align-items: center; gap: 0.5rem; color: var(--primary); font-weight: 600; text-decoration: none; margin-bottom: 2rem; }
+        .back-link svg { width: 20px; height: 20px; }
+        .article-tag { display: inline-block; padding: 0.25rem 1rem; background: var(--light); color: var(--primary); border-radius: 50px; font-size: 0.875rem; font-weight: 600; margin-bottom: 1rem; }
+        h1 { font-size: clamp(2rem, 5vw, 3rem); font-weight: 800; color: var(--dark); line-height: 1.2; margin: 1rem 0; }
+        .subtitle { font-size: 1.375rem; color: var(--gray-600); margin-bottom: 2rem; }
+        .article-content { padding: 4rem 0; }
+        h2 { font-size: 2rem; font-weight: 700; color: var(--dark); margin: 3rem 0 1.5rem; }
+        h3 { font-size: 1.5rem; font-weight: 600; color: var(--dark); margin: 2rem 0 1rem; }
+        p { margin-bottom: 1.5rem; color: var(--gray-700); }
+        ul, ol { margin: 1.5rem 0; padding-left: 2rem; }
+        li { margin-bottom: 0.5rem; color: var(--gray-700); }
+        strong { color: var(--dark); font-weight: 600; }
+        .prompt-box { background: var(--dark); color: var(--gray-300); padding: 2rem; border-radius: 1rem; margin: 2rem 0; border: 1px solid var(--gray-700); }
+        .prompt-box__header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; padding-bottom: 1rem; border-bottom: 1px solid var(--gray-700); }
+        .prompt-box__title { font-family: var(--font-mono); font-size: 0.875rem; color: var(--primary); font-weight: 600; }
+        .prompt-box__copy { padding: 0.5rem 1rem; background: var(--gray-800); color: var(--gray-300); border: 1px solid var(--gray-700); border-radius: 0.375rem; font-size: 0.875rem; cursor: pointer; transition: all 0.15s; }
+        .prompt-box__copy:hover { background: var(--gray-700); color: white; }
+        .prompt-box__content { font-family: var(--font-mono); font-size: 0.9375rem; line-height: 1.6; white-space: pre-wrap; color: var(--gray-100); }
+        .highlight-box { background: var(--light); border-left: 4px solid var(--primary); padding: 2rem; border-radius: 0 0.75rem 0.75rem 0; margin: 2rem 0; }
+        .highlight-box h4 { font-size: 1.125rem; font-weight: 700; color: var(--dark); margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem; }
+        .tip-box { background: linear-gradient(135deg, rgba(16,185,129,0.1), rgba(16,185,129,0.05)); border-left: 4px solid var(--success); padding: 1.5rem; border-radius: 0 0.75rem 0.75rem 0; margin: 2rem 0; }
+        .tip-box strong { color: var(--success); }
+        .cta-box { background: var(--dark); color: white; padding: 3rem; border-radius: 1.5rem; text-align: center; margin: 4rem 0; }
+        .cta-box h3 { font-size: 1.75rem; margin-bottom: 1rem; color: white; }
+        .cta-box p { color: var(--gray-400); margin-bottom: 2rem; }
+        .footer { padding: 3rem 0 1rem; background: var(--gray-800); color: var(--gray-400); margin-top: 4rem; text-align: center; }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="header__inner">
+            <a href="../index.html" class="header__logo">
+                AI <span class="text-gradient">Osha</span>
+            </a>
+            <a href="../index.html#lead-magnet" class="btn btn--primary">Guida Gratuita</a>
+        </div>
+    </header>
+
+    <main>
+        <section class="article-hero">
+            <div class="container">
+                <a href="../blog.html" class="back-link">
+                    <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M10 19l-7-7m0 0l7-7m-7 7h18"/>
+                    </svg>
+                    Torna al Blog
+                </a>
+                <span class="article-tag">Claude AI</span>
+                <h1>Come Generare Email Professionali con Claude AI</h1>
+                <p class="subtitle">Scopri come usare Claude per scrivere email che convertono: dalla risposta clienti alle proposte commerciali. Include 10 prompt testati pronti all'uso.</p>
+            </div>
+        </section>
+
+        <section class="article-content">
+            <div class="container">
+                <p><strong>Quante ore passi ogni settimana a scrivere email?</strong> Se sei come la maggior parte dei professionisti, probabilmente troppe. Email ai clienti, proposte commerciali, follow-up, richieste interne — la casella di posta è un buco nero di tempo.</p>
+
+                <p>Claude AI può aiutarti a scrivere email professionali in una frazione del tempo. Non email generiche che suonano robotiche, ma messaggi personalizzati, efficaci e che rispecchiano il tuo tone of voice.</p>
+
+                <div class="highlight-box">
+                    <h4>Perché Claude per le email?</h4>
+                    <p>Claude è particolarmente efficace per la scrittura professionale grazie alla sua capacità di comprendere il contesto, mantenere un tono appropriato e strutturare il contenuto in modo logico.</p>
+                </div>
+
+                <h2>1. Il Framework per Email Efficaci</h2>
+                <p>Prima di passare ai prompt, capiamo la struttura di una buona email professionale:</p>
+                <ul>
+                    <li><strong>Oggetto chiaro</strong> — deve spiegare immediatamente il valore o lo scopo</li>
+                    <li><strong>Apertura personalizzata</strong> — usa il nome, fai riferimento al contesto</li>
+                    <li><strong>Corpo conciso</strong> — massimo 3-4 paragrafi brevi</li>
+                    <li><strong>Call-to-action specifica</strong> — cosa deve fare chi legge?</li>
+                    <li><strong>Chiusura professionale</strong> — firma coerente con il tono</li>
+                </ul>
+
+                <h2>2. Prompt #1: Risposta Professionale a Cliente</h2>
+                <p>Usa questo prompt quando devi rispondere a una richiesta di un cliente mantenendo un tono professionale ma cordiale.</p>
+
+                <div class="prompt-box">
+                    <div class="prompt-box__header">
+                        <span class="prompt-box__title">PROMPT</span>
+                        <button class="prompt-box__copy" onclick="copyPrompt(this)">Copia</button>
+                    </div>
+                    <div class="prompt-box__content">Sei un assistente di business writing esperto. Devo rispondere a questa email ricevuta da un cliente:
+
+[INCOLLA EMAIL DEL CLIENTE]
+
+Scrivi una risposta professionale che:
+- Mantenga un tono cordiale ma professionale
+- Risponda a tutti i punti sollevati dal cliente
+- Proponga una soluzione concreta
+- Includa una call-to-action chiara
+- Sia lunga massimo 150 parole
+
+Contesto aziendale: [descrivi brevemente la tua azienda]
+Obiettivo della risposta: [es. chiudere la vendita, fissare un appuntamento]</div>
+                </div>
+
+                <h2>3. Prompt #2: Email di Vendita (Cold Email)</h2>
+                <div class="prompt-box">
+                    <div class="prompt-box__header">
+                        <span class="prompt-box__title">PROMPT</span>
+                        <button class="prompt-box__copy" onclick="copyPrompt(this)">Copia</button>
+                    </div>
+                    <div class="prompt-box__content">Scrivi una cold email B2B efficace per:
+
+Target: [ruolo del destinatario]
+Settore: [es. "e-commerce", "consulenza"]
+Cosa offro: [descrizione breve del prodotto/servizio]
+Beneficio principale: [cosa risolve per il cliente]
+
+La email deve:
+- Oggetto: massimo 50 caratteri
+- Personalizzazione: riferimento a problema specifico del settore
+- Lunghezza totale: massimo 100 parole
+- CTA: proponi azione semplice (es. call di 15 minuti)
+- Tono: diretto, concreto, value-first
+
+NON usare "spero che questa email ti trovi bene".</div>
+                </div>
+
+                <div class="tip-box">
+                    <p><strong>Pro Tip:</strong> Le cold email funzionano quando sono brevi e parlano di benefici concreti. Usa numeri ("risparmia 5 ore a settimana") invece di aggettivi generici.</p>
+                </div>
+
+                <h2>4. Prompt #3: Follow-up Dopo Riunione</h2>
+                <div class="prompt-box">
+                    <div class="prompt-box__header">
+                        <span class="prompt-box__title">PROMPT</span>
+                        <button class="prompt-box__copy" onclick="copyPrompt(this)">Copia</button>
+                    </div>
+                    <div class="prompt-box__content">Crea un'email di follow-up dopo una riunione:
+
+Partecipanti: [nomi e ruoli]
+Data riunione: [data]
+Argomenti discussi: [elenco bullet point]
+
+L'email deve includere:
+1. Ringraziamento breve
+2. Riassunto punti chiave (bullet point)
+3. Decisioni prese
+4. Prossimi step con responsabili e tempistiche
+5. Conferma prossima riunione o deadline
+
+Tono: professionale, orientato all'azione
+Lunghezza: 150-200 parole</div>
+                </div>
+
+                <h2>5. Altri 7 Prompt Essenziali</h2>
+                <p>Gli altri prompt includono:</p>
+                <ul>
+                    <li><strong>Richiesta di Appuntamento</strong> — per fissare meeting in modo efficace</li>
+                    <li><strong>Rifiuto Diplomatico</strong> — dire "no" mantenendo la relazione</li>
+                    <li><strong>Proposta Commerciale</strong> — strutturare offerte che convertono</li>
+                    <li><strong>Gestione Reclamo</strong> — trasformare clienti insoddisfatti in promotori</li>
+                    <li><strong>Newsletter/Email Marketing</strong> — comunicare valore alla tua lista</li>
+                    <li><strong>Richiesta Testimonianza</strong> — ottenere recensioni dai clienti</li>
+                    <li><strong>Presentazione Team</strong> — introdurre nuovi colleghi ai clienti</li>
+                </ul>
+
+                <h2>Come Personalizzare i Prompt</h2>
+                <p>Per massimizzare l'efficacia:</p>
+                <ol>
+                    <li><strong>Aggiungi esempi del tuo tone of voice</strong> — Allega 2-3 tue email precedenti come riferimento</li>
+                    <li><strong>Specifica il settore</strong> — "Scrivi per il settore immobiliare" è più efficace</li>
+                    <li><strong>Itera</strong> — Chiedi modifiche specifiche invece di rigenerare da zero</li>
+                    <li><strong>Crea varianti A/B</strong> — Genera 2-3 versioni per testare</li>
+                </ol>
+
+                <h2>Errori da Evitare</h2>
+                <ul>
+                    <li>Inviare email senza leggerle — Claude può fare errori fattuali</li>
+                    <li>Usare sempre lo stesso prompt generico</li>
+                    <li>Dimenticare di aggiungere contesto</li>
+                    <li>Copiare-incollare senza modifiche personali</li>
+                </ul>
+
+                <div class="highlight-box">
+                    <h4>Risultati Reali</h4>
+                    <p>Usando questi prompt, puoi ridurre il tempo di scrittura email del 70-80%. Una email che prima richiedeva 15-20 minuti ora ne richiede 3-5.</p>
+                </div>
+
+                <div class="cta-box">
+                    <h3>Vuoi Altri 40 Prompt Professionali?</h3>
+                    <p>Scarica la guida gratuita con 50+ prompt testati per email, contenuti, analisi e decisioni strategiche.</p>
+                    <a href="../index.html#lead-magnet" class="btn btn--primary">Scarica la Guida Gratuita</a>
+                </div>
+
+                <a href="../blog.html" class="back-link">
+                    <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M10 19l-7-7m0 0l7-7m-7 7h18"/>
+                    </svg>
+                    Torna al Blog
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>© 2026 AI Osha — Aliosha Battaglini</p>
+    </footer>
+
+    <script>
+        function copyPrompt(button) {
+            const promptBox = button.closest('.prompt-box');
+            const promptText = promptBox.querySelector('.prompt-box__content').textContent;
+            navigator.clipboard.writeText(promptText).then(() => {
+                button.textContent = 'Copiato!';
+                button.style.background = 'var(--success)';
+                setTimeout(() => {
+                    button.textContent = 'Copia';
+                    button.style.background = '';
+                }, 2000);
+            });
+        }
+    </script>
+</body>
+</html>

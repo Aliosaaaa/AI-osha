@@ -1,0 +1,2020 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <!-- SEO Primary Meta Tags -->
+    <title>AI Osha | Intelligenza Artificiale Pratica per PMI e Professionisti</title>
+    <meta name="title" content="AI Osha | Intelligenza Artificiale Pratica per PMI e Professionisti">
+    <meta name="description" content="Impara a usare l'AI nel tuo lavoro. Metodo pratico testato su 13 libri e eventi da 1000+ persone. Guida gratuita con 50 prompt pronti all'uso.">
+    <meta name="keywords" content="intelligenza artificiale PMI, AI per professionisti, corso AI Italia, ChatGPT business, automazione aziendale">
+    <meta name="author" content="Aliosha Battaglini">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://aiosha.it/">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://aiosha.it/">
+    <meta property="og:title" content="AI Osha | Intelligenza Artificiale Pratica per PMI e Professionisti">
+    <meta property="og:description" content="Impara a usare l'AI nel tuo lavoro. Metodo pratico testato su 13 libri e eventi da 1000+ persone.">
+    <meta property="og:image" content="https://aiosha.it/images/og-image.jpg">
+    <meta property="og:locale" content="it_IT">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://aiosha.it/">
+    <meta property="twitter:title" content="AI Osha | Intelligenza Artificiale Pratica per PMI">
+    <meta property="twitter:description" content="Impara a usare l'AI nel tuo lavoro. Metodo pratico testato su 13 libri e che mi ha fatto gestire eventi da 1000+ persone.">
+    <meta property="twitter:image" content="https://aiosha.it/images/og-image.jpg">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    
+    <!-- Preload Critical Resources -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    
+    <!-- Schema.org Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "AI Osha",
+        "alternateName": "Intelligenza Artificiale Pratica",
+        "url": "https://aiosha.it",
+        "description": "Metodo pratico per PMI e professionisti che vogliono integrare l'AI nel lavoro quotidiano",
+        "inLanguage": "it-IT",
+        "publisher": {
+            "@type": "Person",
+            "name": "Aliosha Battaglini",
+            "alternateName": "AI Osha"
+        }
+    }
+    </script>
+    
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "AI Osha",
+        "url": "https://aiosha.it",
+        "logo": "https://aiosha.it/images/logo.png",
+        "description": "Formazione pratica sull'intelligenza artificiale per PMI e professionisti italiani",
+        "founder": {
+            "@type": "Person",
+            "name": "Aliosha Battaglini"
+        },
+        "sameAs": [
+            "https://www.linkedin.com/in/alioshabattaglini",
+            "https://www.instagram.com/ai.osha",
+            "https://www.youtube.com/@aiosha"
+        ]
+    }
+    </script>
+    
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Course",
+        "name": "Intelligenza Artificiale Pratica per PMI e Professionisti",
+        "description": "Corso completo per imparare a usare ChatGPT, Claude, automazioni e prompt nel lavoro quotidiano",
+        "provider": {
+            "@type": "Person",
+            "name": "Aliosha Battaglini",
+            "alternateName": "AI Osha"
+        },
+        "educationalLevel": "Beginner to Intermediate",
+        "inLanguage": "it",
+        "hasCourseInstance": {
+            "@type": "CourseInstance",
+            "courseMode": "online",
+            "courseWorkload": "PT20H"
+        }
+    }
+    </script>
+
+    <style>
+        /* ========================================
+           CSS VARIABLES - Brand Colors
+           ======================================== */
+        :root {
+            /* Primary Palette (from logos) */
+            --primary: #00A8E8;
+            --primary-dark: #0088c2;
+            --primary-light: #33b9ed;
+            --accent: #1E3A5F;
+            --accent-light: #2a4d7a;
+            --highlight: #F5A623;
+            --highlight-dark: #d4911f;
+            --highlight-light: #f7b84d;
+            
+            /* Neutrals */
+            --dark: #0D1117;
+            --dark-soft: #161b22;
+            --gray-900: #1f2937;
+            --gray-800: #2d3748;
+            --gray-700: #374151;
+            --gray-600: #4b5563;
+            --gray-500: #6b7280;
+            --gray-400: #9ca3af;
+            --gray-300: #d1d5db;
+            --gray-200: #e5e7eb;
+            --gray-100: #f3f4f6;
+            --light: #E8F4FD;
+            --white: #ffffff;
+            
+            /* Semantic */
+            --success: #10b981;
+            --error: #ef4444;
+            
+            /* Typography */
+            --font-display: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+            
+            /* Spacing Scale */
+            --space-xs: 0.25rem;
+            --space-sm: 0.5rem;
+            --space-md: 1rem;
+            --space-lg: 1.5rem;
+            --space-xl: 2rem;
+            --space-2xl: 3rem;
+            --space-3xl: 4rem;
+            --space-4xl: 6rem;
+            --space-5xl: 8rem;
+            
+            /* Border Radius */
+            --radius-sm: 0.375rem;
+            --radius-md: 0.5rem;
+            --radius-lg: 0.75rem;
+            --radius-xl: 1rem;
+            --radius-2xl: 1.5rem;
+            --radius-full: 9999px;
+            
+            /* Shadows */
+            --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+            --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+            --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+            --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+            --shadow-glow: 0 0 40px rgba(0, 168, 232, 0.3);
+            --shadow-glow-amber: 0 0 40px rgba(245, 166, 35, 0.3);
+            
+            /* Transitions */
+            --transition-fast: 150ms ease;
+            --transition-base: 250ms ease;
+            --transition-slow: 350ms ease;
+            
+            /* Container */
+            --container-max: 1200px;
+            --container-narrow: 800px;
+        }
+
+        /* ========================================
+           RESET & BASE
+           ======================================== */
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        body {
+            font-family: var(--font-display);
+            font-size: 1rem;
+            line-height: 1.6;
+            color: var(--gray-800);
+            background-color: var(--white);
+            overflow-x: hidden;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        button {
+            font-family: inherit;
+            cursor: pointer;
+            border: none;
+            background: none;
+        }
+
+        ul, ol {
+            list-style: none;
+        }
+
+        /* ========================================
+           UTILITY CLASSES
+           ======================================== */
+        .container {
+            width: 100%;
+            max-width: var(--container-max);
+            margin: 0 auto;
+            padding: 0 var(--space-lg);
+        }
+
+        .container--narrow {
+            max-width: var(--container-narrow);
+        }
+
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+
+        /* ========================================
+           TYPOGRAPHY
+           ======================================== */
+        h1, h2, h3, h4, h5, h6 {
+            font-weight: 700;
+            line-height: 1.2;
+            color: var(--dark);
+        }
+
+        h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 800;
+            letter-spacing: -0.02em;
+        }
+
+        h2 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 700;
+            letter-spacing: -0.01em;
+        }
+
+        h3 {
+            font-size: clamp(1.5rem, 3vw, 2rem);
+            font-weight: 600;
+        }
+
+        p {
+            margin-bottom: var(--space-md);
+        }
+
+        .text-gradient {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--highlight) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* ========================================
+           BUTTONS
+           ======================================== */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: var(--space-sm);
+            padding: var(--space-md) var(--space-xl);
+            font-size: 1rem;
+            font-weight: 600;
+            border-radius: var(--radius-lg);
+            transition: all var(--transition-base);
+            text-align: center;
+        }
+
+        .btn--primary {
+            background: linear-gradient(135deg, var(--highlight) 0%, var(--highlight-dark) 100%);
+            color: var(--white);
+            box-shadow: var(--shadow-md), 0 0 0 0 rgba(245, 166, 35, 0.4);
+        }
+
+        .btn--primary:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg), 0 0 30px rgba(245, 166, 35, 0.4);
+        }
+
+        .btn--primary:active {
+            transform: translateY(0);
+        }
+
+        .btn--secondary {
+            background: transparent;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+        }
+
+        .btn--secondary:hover {
+            background: var(--primary);
+            color: var(--white);
+        }
+
+        .btn--ghost {
+            background: transparent;
+            color: var(--gray-600);
+        }
+
+        .btn--ghost:hover {
+            color: var(--primary);
+        }
+
+        .btn--large {
+            padding: var(--space-lg) var(--space-2xl);
+            font-size: 1.125rem;
+        }
+
+        .btn svg {
+            width: 1.25em;
+            height: 1.25em;
+            transition: transform var(--transition-fast);
+        }
+
+        .btn:hover svg {
+            transform: translateX(4px);
+        }
+
+        /* ========================================
+           HEADER / NAVIGATION
+           ======================================== */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--gray-200);
+            transition: all var(--transition-base);
+        }
+
+        .header--scrolled {
+            box-shadow: var(--shadow-md);
+        }
+
+        .header__inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 72px;
+        }
+
+        .header__logo {
+            display: flex;
+            align-items: center;
+            gap: var(--space-sm);
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--dark);
+        }
+
+        .header__logo-icon {
+            width: 40px;
+            height: 40px;
+        }
+
+        .header__nav {
+            display: none;
+        }
+
+        @media (min-width: 768px) {
+            .header__nav {
+                display: flex;
+                align-items: center;
+                gap: var(--space-xl);
+            }
+        }
+
+        .header__nav-link {
+            font-weight: 500;
+            color: var(--gray-600);
+            transition: color var(--transition-fast);
+            position: relative;
+        }
+
+        .header__nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary);
+            transition: width var(--transition-base);
+        }
+
+        .header__nav-link:hover {
+            color: var(--primary);
+        }
+
+        .header__nav-link:hover::after {
+            width: 100%;
+        }
+
+        .header__cta {
+            display: none;
+        }
+
+        @media (min-width: 768px) {
+            .header__cta {
+                display: inline-flex;
+            }
+        }
+
+        .header__mobile-toggle {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            padding: var(--space-sm);
+        }
+
+        @media (min-width: 768px) {
+            .header__mobile-toggle {
+                display: none;
+            }
+        }
+
+        .header__mobile-toggle span {
+            display: block;
+            width: 24px;
+            height: 2px;
+            background: var(--dark);
+            transition: all var(--transition-fast);
+        }
+
+        /* ========================================
+           HERO SECTION
+           ======================================== */
+        .hero {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: calc(72px + var(--space-4xl)) 0 var(--space-4xl);
+            overflow: hidden;
+        }
+
+        .hero__bg {
+            position: absolute;
+            inset: 0;
+            background: 
+                radial-gradient(ellipse 80% 50% at 50% -20%, rgba(0, 168, 232, 0.15) 0%, transparent 50%),
+                radial-gradient(ellipse 60% 40% at 100% 100%, rgba(245, 166, 35, 0.1) 0%, transparent 50%),
+                linear-gradient(180deg, var(--white) 0%, var(--light) 100%);
+            z-index: -1;
+        }
+
+        .hero__grid {
+            position: absolute;
+            inset: 0;
+            background-image: 
+                linear-gradient(rgba(0, 168, 232, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 168, 232, 0.03) 1px, transparent 1px);
+            background-size: 60px 60px;
+            z-index: -1;
+            mask-image: radial-gradient(ellipse 80% 60% at 50% 40%, black 0%, transparent 70%);
+            -webkit-mask-image: radial-gradient(ellipse 80% 60% at 50% 40%, black 0%, transparent 70%);
+        }
+
+        .hero__content {
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .hero__badge {
+            display: inline-flex;
+            align-items: center;
+            gap: var(--space-sm);
+            padding: var(--space-sm) var(--space-md);
+            background: var(--white);
+            border: 1px solid var(--gray-200);
+            border-radius: var(--radius-full);
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: var(--gray-600);
+            margin-bottom: var(--space-xl);
+            animation: fadeInUp 0.6s ease forwards;
+        }
+
+        .hero__badge-dot {
+            width: 8px;
+            height: 8px;
+            background: var(--success);
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+
+        .hero__title {
+            margin-bottom: var(--space-lg);
+            animation: fadeInUp 0.6s ease 0.1s forwards;
+            opacity: 0;
+        }
+
+        .hero__subtitle {
+            font-size: clamp(1.125rem, 2vw, 1.375rem);
+            color: var(--gray-600);
+            max-width: 700px;
+            margin: 0 auto var(--space-2xl);
+            animation: fadeInUp 0.6s ease 0.2s forwards;
+            opacity: 0;
+        }
+
+        .hero__cta {
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-md);
+            align-items: center;
+            animation: fadeInUp 0.6s ease 0.3s forwards;
+            opacity: 0;
+        }
+
+        @media (min-width: 640px) {
+            .hero__cta {
+                flex-direction: row;
+                justify-content: center;
+            }
+        }
+
+        .hero__trust {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: var(--space-lg);
+            margin-top: var(--space-3xl);
+            padding-top: var(--space-2xl);
+            border-top: 1px solid var(--gray-200);
+            animation: fadeInUp 0.6s ease 0.4s forwards;
+            opacity: 0;
+        }
+
+        .hero__trust-item {
+            display: flex;
+            align-items: center;
+            gap: var(--space-sm);
+            font-size: 0.9375rem;
+            color: var(--gray-600);
+        }
+
+        .hero__trust-icon {
+            width: 20px;
+            height: 20px;
+            color: var(--primary);
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* ========================================
+           SECTION - PROBLEM
+           ======================================== */
+        .section {
+            padding: var(--space-5xl) 0;
+        }
+
+        .section--dark {
+            background: var(--dark);
+            color: var(--white);
+        }
+
+        .section--light {
+            background: var(--light);
+        }
+
+        .section__header {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto var(--space-3xl);
+        }
+
+        .section__eyebrow {
+            display: inline-block;
+            font-size: 0.875rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--primary);
+            margin-bottom: var(--space-md);
+        }
+
+        .section--dark .section__eyebrow {
+            color: var(--highlight);
+        }
+
+        .section__title {
+            margin-bottom: var(--space-lg);
+        }
+
+        .section--dark .section__title {
+            color: var(--white);
+        }
+
+        .section__description {
+            font-size: 1.125rem;
+            color: var(--gray-600);
+        }
+
+        .section--dark .section__description {
+            color: var(--gray-400);
+        }
+
+        /* Problem Section */
+        .problem-grid {
+            display: grid;
+            gap: var(--space-lg);
+        }
+
+        @media (min-width: 768px) {
+            .problem-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        .problem-card {
+            display: flex;
+            gap: var(--space-md);
+            padding: var(--space-xl);
+            background: var(--dark-soft);
+            border-radius: var(--radius-xl);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .problem-card__icon {
+            flex-shrink: 0;
+            width: 48px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(239, 68, 68, 0.1);
+            border-radius: var(--radius-lg);
+            color: var(--error);
+        }
+
+        .problem-card__content h4 {
+            font-size: 1.125rem;
+            color: var(--white);
+            margin-bottom: var(--space-sm);
+        }
+
+        .problem-card__content p {
+            font-size: 0.9375rem;
+            color: var(--gray-400);
+            margin: 0;
+        }
+
+        .problem-cta {
+            text-align: center;
+            margin-top: var(--space-3xl);
+            padding: var(--space-2xl);
+            background: linear-gradient(135deg, rgba(0, 168, 232, 0.1) 0%, rgba(245, 166, 35, 0.1) 100%);
+            border-radius: var(--radius-2xl);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .problem-cta__text {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--white);
+            margin-bottom: var(--space-lg);
+        }
+
+        .problem-cta__highlight {
+            color: var(--highlight);
+        }
+
+        /* ========================================
+           SECTION - SOLUTION
+           ======================================== */
+        .solution-grid {
+            display: grid;
+            gap: var(--space-3xl);
+            align-items: center;
+        }
+
+        @media (min-width: 992px) {
+            .solution-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        .solution__content h3 {
+            font-size: 1.75rem;
+            margin-bottom: var(--space-lg);
+        }
+
+        .solution__list {
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-md);
+        }
+
+        .solution__item {
+            display: flex;
+            align-items: flex-start;
+            gap: var(--space-md);
+        }
+
+        .solution__item-icon {
+            flex-shrink: 0;
+            width: 24px;
+            height: 24px;
+            color: var(--primary);
+        }
+
+        .solution__item-text {
+            font-size: 1.0625rem;
+            color: var(--gray-700);
+        }
+
+        .solution__visual {
+            position: relative;
+        }
+
+        .solution__image-wrapper {
+            position: relative;
+            border-radius: var(--radius-2xl);
+            overflow: hidden;
+            box-shadow: var(--shadow-xl);
+        }
+
+        .solution__image-wrapper::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(0, 168, 232, 0.1) 0%, rgba(245, 166, 35, 0.1) 100%);
+            z-index: 1;
+        }
+
+        .solution__stats {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: var(--space-md);
+            margin-top: var(--space-xl);
+        }
+
+        .stat-card {
+            padding: var(--space-lg);
+            background: var(--white);
+            border-radius: var(--radius-xl);
+            border: 1px solid var(--gray-200);
+            text-align: center;
+        }
+
+        .stat-card__number {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--primary);
+            line-height: 1;
+        }
+
+        .stat-card__label {
+            font-size: 0.875rem;
+            color: var(--gray-600);
+            margin-top: var(--space-xs);
+        }
+
+        /* ========================================
+           SECTION - FEATURES
+           ======================================== */
+        .features-grid {
+            display: grid;
+            gap: var(--space-lg);
+        }
+
+        @media (min-width: 640px) {
+            .features-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (min-width: 992px) {
+            .features-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        .feature-card {
+            padding: var(--space-xl);
+            background: var(--white);
+            border-radius: var(--radius-xl);
+            border: 1px solid var(--gray-200);
+            transition: all var(--transition-base);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--primary);
+        }
+
+        .feature-card__icon {
+            width: 56px;
+            height: 56px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--light);
+            border-radius: var(--radius-lg);
+            margin-bottom: var(--space-lg);
+            color: var(--primary);
+        }
+
+        .feature-card__title {
+            font-size: 1.25rem;
+            margin-bottom: var(--space-sm);
+        }
+
+        .feature-card__description {
+            font-size: 0.9375rem;
+            color: var(--gray-600);
+            margin: 0;
+        }
+
+        /* ========================================
+           SECTION - ABOUT
+           ======================================== */
+        .about-grid {
+            display: grid;
+            gap: var(--space-3xl);
+            align-items: center;
+        }
+
+        @media (min-width: 992px) {
+            .about-grid {
+                grid-template-columns: 400px 1fr;
+            }
+        }
+
+        .about__image {
+            position: relative;
+        }
+
+        .about__image-frame {
+            position: relative;
+            border-radius: var(--radius-2xl);
+            overflow: hidden;
+            aspect-ratio: 1;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+        }
+
+        .about__image-frame::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+
+        .about__image-placeholder {
+            position: absolute;
+            inset: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: var(--radius-xl);
+            border: 2px dashed rgba(255, 255, 255, 0.3);
+            color: rgba(255, 255, 255, 0.8);
+            font-weight: 500;
+        }
+
+        .about__content h3 {
+            font-size: 1.75rem;
+            margin-bottom: var(--space-lg);
+        }
+
+        .about__content p {
+            font-size: 1.0625rem;
+            color: var(--gray-700);
+        }
+
+        .about__quote {
+            margin-top: var(--space-xl);
+            padding: var(--space-lg);
+            background: var(--light);
+            border-left: 4px solid var(--primary);
+            border-radius: 0 var(--radius-lg) var(--radius-lg) 0;
+        }
+
+        .about__quote p {
+            font-size: 1.125rem;
+            font-style: italic;
+            color: var(--gray-700);
+            margin: 0;
+        }
+
+        .about__credentials {
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--space-md);
+            margin-top: var(--space-xl);
+        }
+
+        .credential {
+            display: flex;
+            align-items: center;
+            gap: var(--space-sm);
+            padding: var(--space-sm) var(--space-md);
+            background: var(--white);
+            border: 1px solid var(--gray-200);
+            border-radius: var(--radius-full);
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: var(--gray-700);
+        }
+
+        .credential__icon {
+            width: 16px;
+            height: 16px;
+            color: var(--highlight);
+        }
+
+        /* ========================================
+           SECTION - CTA
+           ======================================== */
+        .cta-section {
+            position: relative;
+            padding: var(--space-5xl) 0;
+            background: var(--dark);
+            overflow: hidden;
+        }
+
+        .cta-section__bg {
+            position: absolute;
+            inset: 0;
+            background: 
+                radial-gradient(ellipse 50% 80% at 20% 50%, rgba(0, 168, 232, 0.2) 0%, transparent 50%),
+                radial-gradient(ellipse 50% 80% at 80% 50%, rgba(245, 166, 35, 0.15) 0%, transparent 50%);
+        }
+
+        .cta-section__content {
+            position: relative;
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .cta-section__title {
+            font-size: clamp(2rem, 4vw, 3rem);
+            color: var(--white);
+            margin-bottom: var(--space-lg);
+        }
+
+        .cta-section__description {
+            font-size: 1.125rem;
+            color: var(--gray-400);
+            margin-bottom: var(--space-2xl);
+        }
+
+        .cta-section__form {
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-md);
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        @media (min-width: 640px) {
+            .cta-section__form {
+                flex-direction: row;
+            }
+        }
+
+        .cta-section__input {
+            flex: 1;
+            padding: var(--space-md) var(--space-lg);
+            font-size: 1rem;
+            background: var(--white);
+            border: 2px solid transparent;
+            border-radius: var(--radius-lg);
+            transition: border-color var(--transition-fast);
+        }
+
+        .cta-section__input:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+
+        .cta-section__disclaimer {
+            font-size: 0.8125rem;
+            color: var(--gray-500);
+            margin-top: var(--space-md);
+        }
+
+        /* ========================================
+           FAQ SECTION
+           ======================================== */
+        .faq-list {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid var(--gray-200);
+        }
+
+        .faq-item__question {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: var(--space-md);
+            padding: var(--space-lg) 0;
+            text-align: left;
+            font-size: 1.125rem;
+            font-weight: 600;
+            color: var(--dark);
+            transition: color var(--transition-fast);
+        }
+
+        .faq-item__question:hover {
+            color: var(--primary);
+        }
+
+        .faq-item__icon {
+            flex-shrink: 0;
+            width: 24px;
+            height: 24px;
+            color: var(--gray-400);
+            transition: transform var(--transition-base);
+        }
+
+        .faq-item.active .faq-item__icon {
+            transform: rotate(45deg);
+            color: var(--primary);
+        }
+
+        .faq-item__answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height var(--transition-slow);
+        }
+
+        .faq-item.active .faq-item__answer {
+            max-height: 500px;
+        }
+
+        .faq-item__answer-content {
+            padding-bottom: var(--space-lg);
+            color: var(--gray-600);
+            line-height: 1.7;
+        }
+
+        /* ========================================
+           FOOTER
+           ======================================== */
+        .footer {
+            padding: var(--space-4xl) 0 var(--space-xl);
+            background: var(--gray-900);
+            color: var(--gray-400);
+        }
+
+        .footer__grid {
+            display: grid;
+            gap: var(--space-2xl);
+            margin-bottom: var(--space-3xl);
+        }
+
+        @media (min-width: 768px) {
+            .footer__grid {
+                grid-template-columns: 2fr 1fr 1fr 1fr;
+            }
+        }
+
+        .footer__brand {
+            max-width: 300px;
+        }
+
+        .footer__logo {
+            display: flex;
+            align-items: center;
+            gap: var(--space-sm);
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--white);
+            margin-bottom: var(--space-md);
+        }
+
+        .footer__tagline {
+            font-size: 0.9375rem;
+            line-height: 1.6;
+        }
+
+        .footer__heading {
+            font-size: 0.875rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--white);
+            margin-bottom: var(--space-lg);
+        }
+
+        .footer__links {
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-sm);
+        }
+
+        .footer__link {
+            font-size: 0.9375rem;
+            transition: color var(--transition-fast);
+        }
+
+        .footer__link:hover {
+            color: var(--primary);
+        }
+
+        .footer__social {
+            display: flex;
+            gap: var(--space-md);
+            margin-top: var(--space-lg);
+        }
+
+        .footer__social-link {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--gray-800);
+            border-radius: var(--radius-md);
+            color: var(--gray-400);
+            transition: all var(--transition-fast);
+        }
+
+        .footer__social-link:hover {
+            background: var(--primary);
+            color: var(--white);
+        }
+
+        .footer__bottom {
+            padding-top: var(--space-xl);
+            border-top: 1px solid var(--gray-800);
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-md);
+            text-align: center;
+        }
+
+        @media (min-width: 768px) {
+            .footer__bottom {
+                flex-direction: row;
+                justify-content: space-between;
+                text-align: left;
+            }
+        }
+
+        .footer__copyright {
+            font-size: 0.875rem;
+        }
+
+        .footer__legal {
+            display: flex;
+            gap: var(--space-lg);
+            font-size: 0.875rem;
+        }
+
+        .footer__legal a:hover {
+            color: var(--primary);
+        }
+
+        /* ========================================
+           ANIMATIONS
+           ======================================== */
+        @media (prefers-reduced-motion: no-preference) {
+            .animate-on-scroll {
+                opacity: 0;
+                transform: translateY(30px);
+                transition: opacity 0.6s ease, transform 0.6s ease;
+            }
+
+            .animate-on-scroll.visible {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* ========================================
+           COOKIE BANNER
+           ======================================== */
+        .cookie-banner {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: var(--space-lg);
+            background: var(--white);
+            border-top: 1px solid var(--gray-200);
+            box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.1);
+            z-index: 9999;
+            display: none;
+        }
+
+        .cookie-banner.show {
+            display: block;
+        }
+
+        .cookie-banner__inner {
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-md);
+            align-items: center;
+            text-align: center;
+        }
+
+        @media (min-width: 768px) {
+            .cookie-banner__inner {
+                flex-direction: row;
+                text-align: left;
+            }
+        }
+
+        .cookie-banner__text {
+            flex: 1;
+            font-size: 0.9375rem;
+            color: var(--gray-700);
+        }
+
+        .cookie-banner__buttons {
+            display: flex;
+            gap: var(--space-sm);
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header" id="header">
+        <div class="container">
+            <div class="header__inner">
+                <a href="/" class="header__logo">
+                    <svg class="header__logo-icon" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="40" height="40" rx="8" fill="#0D1117"/>
+                        <path d="M12 28L20 12L28 28H12Z" stroke="#00A8E8" stroke-width="2" fill="none"/>
+                        <rect x="17" y="18" width="6" height="6" stroke="#00A8E8" stroke-width="1.5" fill="none"/>
+                        <line x1="12" y1="30" x2="28" y2="30" stroke="url(#grad)" stroke-width="2"/>
+                        <defs>
+                            <linearGradient id="grad" x1="12" y1="30" x2="28" y2="30">
+                                <stop offset="0%" stop-color="#00A8E8"/>
+                                <stop offset="100%" stop-color="#F5A623"/>
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                    <span>AI <span class="text-gradient">Osha</span></span>
+                </a>
+                
+                <nav class="header__nav" aria-label="Menu principale">
+                    <a href="chi-sono.html" class="header__nav-link">Chi Sono</a>
+                    <a href="libro.html" class="header__nav-link">Libro</a>
+                    <a href="corso.html" class="header__nav-link">Corso</a>
+                    <a href="risorse.html" class="header__nav-link">Risorse</a>
+                    <a href="blog.html" class="header__nav-link">Blog</a>
+                </nav>
+                
+                <a href="#lead-magnet" class="btn btn--primary header__cta">
+                    Guida Gratuita
+                </a>
+                
+                <button class="header__mobile-toggle" aria-label="Apri menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero" id="hero">
+            <div class="hero__bg"></div>
+            <div class="hero__grid"></div>
+            <div class="container">
+                <div class="hero__content">
+                    <div class="hero__badge">
+                        <span class="hero__badge-dot"></span>
+                        Metodo testato su 13 libri e 1.000+ partecipanti
+                    </div>
+                    
+                    <h1 class="hero__title">
+                        Fai il <span class="text-gradient">Salto Quantico</span> con l'AI
+                    </h1>
+                    
+                    <p class="hero__subtitle">
+                        Il metodo pratico per PMI e professionisti che vogliono risparmiare tempo, 
+                        automatizzare task ripetitivi e dominare il 2026 con l'intelligenza artificiale.
+                    </p>
+                    
+                    <div class="hero__cta">
+                        <a href="#lead-magnet" class="btn btn--primary btn--large">
+                            Scarica la Guida Gratuita
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                            </svg>
+                        </a>
+                        <a href="corso.html" class="btn btn--secondary btn--large">
+                            Scopri il Corso
+                        </a>
+                    </div>
+                    
+                    <div class="hero__trust">
+                        <div class="hero__trust-item">
+                            <svg class="hero__trust-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                            </svg>
+                            13 libri pubblicati
+                        </div>
+                        <div class="hero__trust-item">
+                            <svg class="hero__trust-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/>
+                            </svg>
+                            1.000+ partecipanti
+                        </div>
+                        <div class="hero__trust-item">
+                            <svg class="hero__trust-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                            </svg>
+                            2+ anni di AI applicata
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Problem Section -->
+        <section class="section section--dark" id="problema">
+            <div class="container">
+                <div class="section__header animate-on-scroll">
+                    <span class="section__eyebrow">Il Problema</span>
+                    <h2 class="section__title">Il 2026 è l'anno della svolta. Tu da che parte stai?</h2>
+                    <p class="section__description">
+                        Mentre leggi, il 15% delle aziende italiane sta usando l'AI per rubare clienti al restante 85%.
+                    </p>
+                </div>
+                
+                <div class="problem-grid">
+                    <div class="problem-card animate-on-scroll">
+                        <div class="problem-card__icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                            </svg>
+                        </div>
+                        <div class="problem-card__content">
+                            <h4>Non sai da dove iniziare</h4>
+                            <p>Troppi strumenti, troppi tutorial, troppa confusione. Risultato: paralisi e inazione.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="problem-card animate-on-scroll">
+                        <div class="problem-card__icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                            </svg>
+                        </div>
+                        <div class="problem-card__content">
+                            <h4>Usi ChatGPT nel modo sbagliato</h4>
+                            <p>Domande generiche = risposte generiche. Senza i prompt giusti, l'AI è solo un giocattolo.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="problem-card animate-on-scroll">
+                        <div class="problem-card__icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M15 12H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                            </svg>
+                        </div>
+                        <div class="problem-card__content">
+                            <h4>Tutorial infiniti, zero applicazione</h4>
+                            <p>Ore passate a guardare video senza mai implementare nulla di concreto nel tuo lavoro.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="problem-card animate-on-scroll">
+                        <div class="problem-card__icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                            </svg>
+                        </div>
+                        <div class="problem-card__content">
+                            <h4>"È roba da programmatori"</h4>
+                            <p>Falso. Ma questa convinzione ti tiene fermo mentre i tuoi concorrenti avanzano.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="problem-cta animate-on-scroll">
+                    <p class="problem-cta__text">
+                        Risultato? <span class="problem-cta__highlight">Ore perse, opportunità sfumate, concorrenti che avanzano.</span>
+                    </p>
+                    <a href="#soluzione" class="btn btn--primary">
+                        Scopri la Soluzione
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" width="20" height="20">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M19 14l-7 7m0 0l-7-7m7 7V3"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Solution Section -->
+        <section class="section" id="soluzione">
+            <div class="container">
+                <div class="section__header animate-on-scroll">
+                    <span class="section__eyebrow">La Soluzione</span>
+                    <h2 class="section__title">Il Metodo AI Osha: Pratico. Testato. Funziona.</h2>
+                </div>
+                
+                <div class="solution-grid">
+                    <div class="solution__content animate-on-scroll">
+                        <h3>Non sono un guru. Sono un imprenditore che ha fatto.</h3>
+                        <p>
+                            Ho costruito una casa editrice indipendente, pubblicato 13 libri tra Italia e USA, 
+                            organizzato eventi con oltre 1.000 partecipanti. Tutto gestito con l'AI come motore principale.
+                        </p>
+                        <p>
+                            Ho condensato 2+ anni di sperimentazione quotidiana in un metodo che funziona 
+                            per PMI, professionisti e freelance.
+                        </p>
+                        
+                        <div class="solution__list">
+                            <div class="solution__item">
+                                <svg class="solution__item-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
+                                </svg>
+                                <span class="solution__item-text"><strong>Parte da zero</strong> — se sai usare un computer, puoi seguire</span>
+                            </div>
+                            <div class="solution__item">
+                                <svg class="solution__item-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
+                                </svg>
+                                <span class="solution__item-text"><strong>Si applica subito</strong> — ogni lezione = un risultato tangibile</span>
+                            </div>
+                            <div class="solution__item">
+                                <svg class="solution__item-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
+                                </svg>
+                                <span class="solution__item-text"><strong>Risparmia 10+ ore a settimana</strong> — tempo che puoi reinvestire</span>
+                            </div>
+                            <div class="solution__item">
+                                <svg class="solution__item-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
+                                </svg>
+                                <span class="solution__item-text"><strong>Garanzia 14 giorni</strong> — soddisfatto o rimborsato</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="solution__visual animate-on-scroll">
+                        <div class="solution__stats">
+                            <div class="stat-card">
+                                <div class="stat-card__number">13</div>
+                                <div class="stat-card__label">Libri pubblicati</div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-card__number">1K+</div>
+                                <div class="stat-card__label">Partecipanti eventi</div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-card__number">250+</div>
+                                <div class="stat-card__label">Live simultanee</div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-card__number">2+</div>
+                                <div class="stat-card__label">Anni di AI applicata</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section class="section section--light" id="cosa-impari">
+            <div class="container">
+                <div class="section__header animate-on-scroll">
+                    <span class="section__eyebrow">Cosa Imparerai</span>
+                    <h2 class="section__title">Tutto quello che ti serve per integrare l'AI nel lavoro</h2>
+                </div>
+                
+                <div class="features-grid">
+                    <div class="feature-card animate-on-scroll">
+                        <div class="feature-card__icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                            </svg>
+                        </div>
+                        <h4 class="feature-card__title">I 5 Strumenti Essenziali</h4>
+                        <p class="feature-card__description">ChatGPT, Claude, Gemini, Canva, Zapier — come usarli davvero per il tuo business.</p>
+                    </div>
+                    
+                    <div class="feature-card animate-on-scroll">
+                        <div class="feature-card__icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                            </svg>
+                        </div>
+                        <h4 class="feature-card__title">50+ Prompt Professionali</h4>
+                        <p class="feature-card__description">Prompt testati per email, analisi, contenuti, decisioni strategiche. Copia e usa.</p>
+                    </div>
+                    
+                    <div class="feature-card animate-on-scroll">
+                        <div class="feature-card__icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/>
+                            </svg>
+                        </div>
+                        <h4 class="feature-card__title">Automazioni Pratiche</h4>
+                        <p class="feature-card__description">Crea flussi automatici che lavorano mentre dormi. Zapier e n8n senza codice.</p>
+                    </div>
+                    
+                    <div class="feature-card animate-on-scroll">
+                        <div class="feature-card__icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"/>
+                            </svg>
+                        </div>
+                        <h4 class="feature-card__title">Contenuti 10x Più Veloci</h4>
+                        <p class="feature-card__description">Email, post social, articoli, presentazioni — in un decimo del tempo.</p>
+                    </div>
+                    
+                    <div class="feature-card animate-on-scroll">
+                        <div class="feature-card__icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
+                            </svg>
+                        </div>
+                        <h4 class="feature-card__title">Analisi Dati Senza Excel</h4>
+                        <p class="feature-card__description">Carica i dati, fai domande in italiano, ottieni insight azionabili.</p>
+                    </div>
+                    
+                    <div class="feature-card animate-on-scroll">
+                        <div class="feature-card__icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                            </svg>
+                        </div>
+                        <h4 class="feature-card__title">Mindset Aggiornamento</h4>
+                        <p class="feature-card__description">Come restare al passo con l'AI che evolve, senza perdere tempo.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section class="section" id="chi-sono">
+            <div class="container">
+                <div class="about-grid">
+                    <div class="about__image animate-on-scroll">
+                        <div class="about__image-frame">
+                            <div class="about__image-placeholder">
+                                [Foto Aliosha]
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="about__content animate-on-scroll">
+                        <span class="section__eyebrow">Chi Sono</span>
+                        <h3>Aliosha Battaglini — AI Osha</h3>
+                        <p>
+                            Nel 2023 ero un venditore. Oggi gestisco una casa editrice indipendente, 
+                            ho pubblicato 13 libri tra Italia e USA, e organizzo eventi con oltre 1.000 partecipanti.
+                        </p>
+                        <p>
+                            Cos'è cambiato? Ho imparato a usare l'intelligenza artificiale nel modo giusto. 
+                            Non sono "il massimo esperto di AI" — sono uno che ce l'ha fatta applicando 
+                            questi strumenti ogni giorno con mentalità pratica.
+                        </p>
+                        
+                        <div class="about__quote">
+                            <p>"L'AI non sostituisce chi lavora. Potenzia chi sa come usarla."</p>
+                        </div>
+                        
+                        <div class="about__credentials">
+                            <div class="credential">
+                                <svg class="credential__icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+                                </svg>
+                                13 libri pubblicati
+                            </div>
+                            <div class="credential">
+                                <svg class="credential__icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
+                                </svg>
+                                Casa editrice
+                            </div>
+                            <div class="credential">
+                                <svg class="credential__icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/>
+                                </svg>
+                                1.000+ eventi
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="section section--light" id="faq">
+            <div class="container">
+                <div class="section__header animate-on-scroll">
+                    <span class="section__eyebrow">FAQ</span>
+                    <h2 class="section__title">Domande Frequenti</h2>
+                </div>
+                
+                <div class="faq-list">
+                    <div class="faq-item active">
+                        <button class="faq-item__question" aria-expanded="true">
+                            <span>Serve esperienza con l'AI per iniziare?</span>
+                            <svg class="faq-item__icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/>
+                            </svg>
+                        </button>
+                        <div class="faq-item__answer">
+                            <div class="faq-item__answer-content">
+                                No. Il metodo AI Osha parte da zero. Se sai usare un computer e navigare su internet, puoi seguire. Se hai già usato ChatGPT, andrai ancora più veloce.
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <button class="faq-item__question" aria-expanded="false">
+                            <span>Quanto tempo ci vuole per vedere risultati?</span>
+                            <svg class="faq-item__icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/>
+                            </svg>
+                        </button>
+                        <div class="faq-item__answer">
+                            <div class="faq-item__answer-content">
+                                I primi risultati arrivano già dalla prima settimana. Molti studenti risparmiano 5-10 ore già nei primi 7 giorni applicando i prompt e le automazioni base.
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <button class="faq-item__question" aria-expanded="false">
+                            <span>Quali strumenti AI servono?</span>
+                            <svg class="faq-item__icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/>
+                            </svg>
+                        </button>
+                        <div class="faq-item__answer">
+                            <div class="faq-item__answer-content">
+                                I principali strumenti usati sono ChatGPT (gratuito o Plus), Claude, Gemini, Canva e Zapier. La maggior parte ha piani gratuiti sufficienti per iniziare.
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <button class="faq-item__question" aria-expanded="false">
+                            <span>L'AI sostituirà il mio lavoro?</span>
+                            <svg class="faq-item__icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/>
+                            </svg>
+                        </button>
+                        <div class="faq-item__answer">
+                            <div class="faq-item__answer-content">
+                                L'AI non sostituisce chi lavora. Potenzia chi sa come usarla. Chi integra l'AI nel proprio flusso di lavoro diventa più produttivo e competitivo, non obsoleto.
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <button class="faq-item__question" aria-expanded="false">
+                            <span>Il corso ha una garanzia?</span>
+                            <svg class="faq-item__icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/>
+                            </svg>
+                        </button>
+                        <div class="faq-item__answer">
+                            <div class="faq-item__answer-content">
+                                Sì. Garanzia soddisfatti o rimborsati a 14 giorni. Se dopo due settimane non sei soddisfatto, rimborso al 100% senza domande.
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <button class="faq-item__question" aria-expanded="false">
+                            <span>L'AI funziona per il mio settore?</span>
+                            <svg class="faq-item__icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/>
+                            </svg>
+                        </button>
+                        <div class="faq-item__answer">
+                            <div class="faq-item__answer-content">
+                                L'AI generativa funziona per qualsiasi settore che richieda scrittura, analisi, organizzazione o comunicazione — quindi praticamente tutti. Nel corso ci sono esempi per commercio, servizi, consulenza, artigianato e libere professioni.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta-section" id="lead-magnet">
+            <div class="cta-section__bg"></div>
+            <div class="container">
+                <div class="cta-section__content animate-on-scroll">
+                    <h2 class="cta-section__title">Inizia oggi. È gratis.</h2>
+                    <p class="cta-section__description">
+                        Scarica la guida con i 50 prompt che uso ogni giorno. Zero spam, zero vendite aggressive. 
+                        Solo contenuti che funzionano.
+                    </p>
+                    
+                    <form class="cta-section__form" action="#" method="POST">
+                        <input 
+                            type="email" 
+                            class="cta-section__input" 
+                            placeholder="La tua email migliore"
+                            required
+                            aria-label="Indirizzo email"
+                        >
+                        <button type="submit" class="btn btn--primary btn--large">
+                            Scarica Gratis
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" width="20" height="20">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
+                            </svg>
+                        </button>
+                    </form>
+                    
+                    <p class="cta-section__disclaimer">
+                        Zero spam. Cancellati quando vuoi. Solo contenuti utili.
+                    </p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__grid">
+                <div class="footer__brand">
+                    <div class="footer__logo">
+                        <svg width="32" height="32" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="40" height="40" rx="8" fill="#1f2937"/>
+                            <path d="M12 28L20 12L28 28H12Z" stroke="#00A8E8" stroke-width="2" fill="none"/>
+                            <rect x="17" y="18" width="6" height="6" stroke="#00A8E8" stroke-width="1.5" fill="none"/>
+                            <line x1="12" y1="30" x2="28" y2="30" stroke="url(#grad2)" stroke-width="2"/>
+                            <defs>
+                                <linearGradient id="grad2" x1="12" y1="30" x2="28" y2="30">
+                                    <stop offset="0%" stop-color="#00A8E8"/>
+                                    <stop offset="100%" stop-color="#F5A623"/>
+                                </linearGradient>
+                            </defs>
+                        </svg>
+                        AI Osha
+                    </div>
+                    <p class="footer__tagline">
+                        Intelligenza artificiale pratica per PMI e professionisti. 
+                        Metodo testato, risultati concreti.
+                    </p>
+                    <div class="footer__social">
+                        <a href="https://linkedin.com/in/alioshabattaglini" class="footer__social-link" aria-label="LinkedIn" target="_blank" rel="noopener">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                            </svg>
+                        </a>
+                        <a href="https://instagram.com/ai.osha" class="footer__social-link" aria-label="Instagram" target="_blank" rel="noopener">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                            </svg>
+                        </a>
+                        <a href="https://youtube.com/@aiosha" class="footer__social-link" aria-label="YouTube" target="_blank" rel="noopener">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer__column">
+                    <h4 class="footer__heading">Risorse</h4>
+                    <nav class="footer__links">
+                        <a href="risorse.html" class="footer__link">Guida Prompt AI</a>
+                        <a href="risorse.html" class="footer__link">Strumenti Consigliati</a>
+                        <a href="risorse.html" class="footer__link">Glossario AI</a>
+                        <a href="blog.html" class="footer__link">Blog</a>
+                    </nav>
+                </div>
+                
+                <div class="footer__column">
+                    <h4 class="footer__heading">Prodotti</h4>
+                    <nav class="footer__links">
+                        <a href="libro.html" class="footer__link">Libro</a>
+                        <a href="corso.html" class="footer__link">Corso</a>
+                        <a href="consulenza.html" class="footer__link">Consulenza</a>
+                    </nav>
+                </div>
+                
+                <div class="footer__column">
+                    <h4 class="footer__heading">Contatti</h4>
+                    <nav class="footer__links">
+                        <a href="chi-sono.html" class="footer__link">Chi Sono</a>
+                        <a href="contatti.html" class="footer__link">Contattami</a>
+                        <a href="faq.html" class="footer__link">FAQ</a>
+                    </nav>
+                </div>
+            </div>
+            
+            <div class="footer__bottom">
+                <p class="footer__copyright">
+                    © 2026 AI Osha — Aliosha Battaglini. Tutti i diritti riservati.
+                </p>
+                <nav class="footer__legal">
+                    <a href="contatti.html">Privacy Policy</a>
+                    <a href="contatti.html">Cookie Policy</a>
+                    <a href="contatti.html">Termini e Condizioni</a>
+                </nav>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Cookie Banner -->
+    <div class="cookie-banner" id="cookieBanner">
+        <div class="container">
+            <div class="cookie-banner__inner">
+                <p class="cookie-banner__text">
+                    Utilizziamo cookie per migliorare la tua esperienza. Continuando accetti la nostra
+                    <a href="contatti.html" style="color: var(--primary); text-decoration: underline;">Cookie Policy</a>.
+                </p>
+                <div class="cookie-banner__buttons">
+                    <button class="btn btn--ghost" onclick="declineCookies()">Rifiuta</button>
+                    <button class="btn btn--primary" onclick="acceptCookies()">Accetta</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+        // Header scroll effect
+        const header = document.getElementById('header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.add('header--scrolled');
+            } else {
+                header.classList.remove('header--scrolled');
+            }
+        });
+
+        // FAQ Accordion
+        document.querySelectorAll('.faq-item__question').forEach(button => {
+            button.addEventListener('click', () => {
+                const item = button.parentElement;
+                const isActive = item.classList.contains('active');
+                
+                // Close all items
+                document.querySelectorAll('.faq-item').forEach(i => {
+                    i.classList.remove('active');
+                    i.querySelector('.faq-item__question').setAttribute('aria-expanded', 'false');
+                });
+                
+                // Open clicked item if it wasn't active
+                if (!isActive) {
+                    item.classList.add('active');
+                    button.setAttribute('aria-expanded', 'true');
+                }
+            });
+        });
+
+        // Animate on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.animate-on-scroll').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Cookie Banner
+        function acceptCookies() {
+            localStorage.setItem('cookiesAccepted', 'true');
+            document.getElementById('cookieBanner').classList.remove('show');
+        }
+
+        function declineCookies() {
+            localStorage.setItem('cookiesAccepted', 'false');
+            document.getElementById('cookieBanner').classList.remove('show');
+        }
+
+        // Show cookie banner if not already set
+        if (!localStorage.getItem('cookiesAccepted')) {
+            setTimeout(() => {
+                document.getElementById('cookieBanner').classList.add('show');
+            }, 2000);
+        }
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+
+    <!-- FAQ Schema (for Google) -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "Serve esperienza con l'AI per iniziare?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "No. Il metodo AI Osha parte da zero. Se sai usare un computer e navigare su internet, puoi seguire. Se hai già usato ChatGPT, andrai ancora più veloce."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Quanto tempo ci vuole per vedere risultati?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "I primi risultati arrivano già dalla prima settimana. Molti studenti risparmiano 5-10 ore già nei primi 7 giorni applicando i prompt e le automazioni base."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Quali strumenti AI servono?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "I principali strumenti usati sono ChatGPT (gratuito o Plus), Claude, Gemini, Canva e Zapier. La maggior parte ha piani gratuiti sufficienti per iniziare."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "L'AI sostituirà il mio lavoro?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "L'AI non sostituisce chi lavora. Potenzia chi sa come usarla. Chi integra l'AI nel proprio flusso di lavoro diventa più produttivo e competitivo, non obsoleto."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Il corso ha una garanzia?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Sì. Garanzia soddisfatti o rimborsati a 14 giorni. Se dopo due settimane non sei soddisfatto, rimborso al 100% senza domande."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "L'AI funziona per il mio settore?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "L'AI generativa funziona per qualsiasi settore che richieda scrittura, analisi, organizzazione o comunicazione — quindi praticamente tutti. Nel corso ci sono esempi per commercio, servizi, consulenza, artigianato e libere professioni."
+                }
+            }
+        ]
+    }
+    </script>
+</body>
+</html>

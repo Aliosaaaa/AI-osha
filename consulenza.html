@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consulenza | AI Osha</title>
+    <meta name="description" content="Servizio di consulenza personalizzata sull'AI per il tuo business in arrivo.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #00A8E8;
+            --highlight: #F5A623;
+            --dark: #0D1117;
+            --gray-800: #2d3748;
+            --gray-600: #4b5563;
+            --gray-200: #e5e7eb;
+            --light: #E8F4FD;
+            --white: #ffffff;
+            --font-display: 'Plus Jakarta Sans', sans-serif;
+        }
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: var(--font-display); background: linear-gradient(180deg, var(--light) 0%, var(--white) 50%); min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 2rem; }
+        .container { max-width: 700px; text-align: center; }
+        .logo { font-size: 2rem; font-weight: 800; color: var(--dark); margin-bottom: 3rem; }
+        .text-gradient { background: linear-gradient(135deg, var(--primary), var(--highlight)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .icon { width: 120px; height: 120px; margin: 0 auto 2rem; background: linear-gradient(135deg, #7C3AED, #5B21B6); border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 20px 40px rgba(124, 58, 237, 0.3); }
+        .icon svg { width: 64px; height: 64px; color: white; }
+        h1 { font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 800; color: var(--dark); margin-bottom: 1.5rem; line-height: 1.2; }
+        p { font-size: 1.25rem; color: var(--gray-600); margin-bottom: 2rem; line-height: 1.6; }
+        .btn { display: inline-flex; align-items: center; gap: 0.5rem; padding: 1rem 2rem; font-size: 1.125rem; font-weight: 600; background: linear-gradient(135deg, #7C3AED, #5B21B6); color: white; border: none; border-radius: 0.75rem; text-decoration: none; transition: all 0.25s; box-shadow: 0 4px 15px rgba(124, 58, 237, 0.3); }
+        .btn:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(124, 58, 237, 0.4); }
+        .btn-secondary { background: transparent; color: #7C3AED; border: 2px solid #7C3AED; box-shadow: none; margin-top: 1rem; }
+        .btn-secondary:hover { background: #7C3AED; color: white; }
+        .features { display: grid; gap: 1rem; margin: 3rem 0; text-align: left; }
+        .feature { display: flex; align-items: center; gap: 1rem; padding: 1rem; background: white; border-radius: 0.75rem; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
+        .feature svg { flex-shrink: 0; width: 24px; height: 24px; color: #7C3AED; }
+        .highlight-box { background: linear-gradient(135deg, #7C3AED, #5B21B6); color: white; padding: 1.5rem; border-radius: 1rem; margin: 2rem 0; }
+        .highlight-box p { color: rgba(255,255,255,0.9); }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo">
+            AI <span class="text-gradient">Osha</span>
+        </div>
+
+        <div class="icon">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M20.25 8.511c.884.284 1.5 1.128 1.5 2.097v4.286c0 1.136-.847 2.1-1.98 2.193-.34.027-.68.052-1.02.072v3.091l-3-3c-1.354 0-2.694-.055-4.02-.163a2.115 2.115 0 01-.825-.242m9.345-8.334a2.126 2.126 0 00-.476-.095 48.64 48.64 0 00-8.048 0c-1.131.094-1.976 1.057-1.976 2.192v4.286c0 .837.46 1.58 1.155 1.951m9.345-8.334V6.637c0-1.621-1.152-3.026-2.76-3.235A48.455 48.455 0 0011.25 3c-2.115 0-4.198.137-6.24.402-1.608.209-2.76 1.614-2.76 3.235v6.226c0 1.621 1.152 3.026 2.76 3.235.577.075 1.157.14 1.74.194V21l4.155-4.155" />
+            </svg>
+        </div>
+
+        <h1>Consulenza in Arrivo!</h1>
+
+        <p>
+            Sto strutturando un servizio di consulenza personalizzata per aiutare aziende e professionisti a integrare l'AI nei loro processi.
+        </p>
+
+        <div class="highlight-box">
+            <h3 style="margin-bottom: 0.5rem; font-size: 1.25rem;">Nel frattempo, unisciti alla Community</h3>
+            <p style="margin-bottom: 0;">
+                Accedendo alla Community AI Osha hai già diritto a <strong>1 consulenza 1-to-1 al mese</strong> inclusa nel prezzo.
+            </p>
+        </div>
+
+        <div class="features">
+            <div class="feature">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
+                </svg>
+                <span>Analisi personalizzata del tuo business</span>
+            </div>
+            <div class="feature">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
+                </svg>
+                <span>Strategia di implementazione AI su misura</span>
+            </div>
+            <div class="feature">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
+                </svg>
+                <span>Supporto continuo e formazione del team</span>
+            </div>
+        </div>
+
+        <a href="corso.html" class="btn">
+            Scopri la Community
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" width="20" height="20">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+            </svg>
+        </a>
+
+        <a href="index.html" class="btn btn-secondary">
+            Torna alla Home
+        </a>
+    </div>
+</body>
+</html>
