@@ -30,9 +30,10 @@
     <meta property="twitter:image" content="https://aiosha.it/images/og-image.jpg">
     
     <!-- Favicon -->
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon.svg">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon.svg">
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon.svg">
     
     <!-- Preload Critical Resources -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -1025,6 +1026,54 @@
             border-color: var(--primary);
         }
 
+        /* AWeber Form Styling */
+        .AW-Form-595070283 {
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .AW-Form-595070283 input[type="email"],
+        .AW-Form-595070283 input[type="text"] {
+            width: 100%;
+            padding: var(--space-md) var(--space-lg);
+            font-size: 1rem;
+            background: var(--white);
+            border: 2px solid var(--gray-200);
+            border-radius: var(--radius-lg);
+            transition: border-color var(--transition-fast);
+            font-family: var(--font-display);
+        }
+
+        .AW-Form-595070283 input:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+
+        .AW-Form-595070283 button,
+        .AW-Form-595070283 input[type="submit"] {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: var(--space-sm);
+            padding: var(--space-lg) var(--space-2xl);
+            font-size: 1.125rem;
+            font-weight: 600;
+            background: linear-gradient(135deg, var(--highlight) 0%, var(--highlight-dark) 100%);
+            color: var(--white);
+            border: none;
+            border-radius: var(--radius-lg);
+            cursor: pointer;
+            transition: all var(--transition-base);
+            font-family: var(--font-display);
+            box-shadow: var(--shadow-md), 0 0 0 0 rgba(245, 166, 35, 0.4);
+        }
+
+        .AW-Form-595070283 button:hover,
+        .AW-Form-595070283 input[type="submit"]:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg), 0 0 30px rgba(245, 166, 35, 0.4);
+        }
+
         .cta-section__disclaimer {
             font-size: 0.8125rem;
             color: var(--gray-500);
@@ -1324,7 +1373,11 @@
                         <span class="hero__badge-dot"></span>
                         Metodo testato su 13 libri e 1.000+ partecipanti
                     </div>
-                    
+
+                    <div style="margin-bottom: var(--space-2xl);">
+                        <img src="images/logo-aiosha.png" alt="AI Osha Logo" style="max-width: 500px; width: 100%; margin: 0 auto; display: block;">
+                    </div>
+
                     <h1 class="hero__title">
                         Fai il <span class="text-gradient">Salto Quantico</span> con l'AI
                     </h1>
@@ -1750,21 +1803,15 @@
                         Solo contenuti che funzionano.
                     </p>
                     
-                    <form class="cta-section__form" action="#" method="POST">
-                        <input 
-                            type="email" 
-                            class="cta-section__input" 
-                            placeholder="La tua email migliore"
-                            required
-                            aria-label="Indirizzo email"
-                        >
-                        <button type="submit" class="btn btn--primary btn--large">
-                            Scarica Gratis
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" width="20" height="20">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
-                            </svg>
-                        </button>
-                    </form>
+                    <div class="AW-Form-595070283"></div>
+                    <script type="text/javascript">(function(d, s, id) {
+                        var js, fjs = d.getElementsByTagName(s)[0];
+                        if (d.getElementById(id)) return;
+                        js = d.createElement(s); js.id = id;
+                        js.src = "https://forms.aweber.com/form/83/595070283.js";
+                        fjs.parentNode.insertBefore(js, fjs);
+                        }(document, "script", "aweber-wjs-ydpq9vgxs"));
+                    </script>
                     
                     <p class="cta-section__disclaimer">
                         Zero spam. Cancellati quando vuoi. Solo contenuti utili.
