@@ -17,7 +17,7 @@
     <meta property="og:title" content="Blog AI Pratica | Guide e Tutorial">
     <meta property="og:description" content="Guide pratiche per usare l'AI nel lavoro quotidiano">
 
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -211,13 +211,25 @@
 
         .blog-grid {
             padding: var(--space-4xl) 0;
-            display: grid;
-            gap: var(--space-2xl);
         }
 
-        @media (min-width: 768px) {
-            .blog-grid {
+        .blog-grid__inner {
+            display: grid;
+            gap: var(--space-2xl);
+            grid-template-columns: 1fr;
+        }
+
+        @media (min-width: 640px) {
+            .blog-grid__inner {
                 grid-template-columns: repeat(2, 1fr);
+                gap: var(--space-xl);
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .blog-grid__inner {
+                grid-template-columns: repeat(3, 1fr);
+                gap: var(--space-2xl);
             }
         }
 
@@ -231,6 +243,7 @@
             color: inherit;
             display: flex;
             flex-direction: column;
+            height: 100%;
         }
 
         .article-card:hover {
@@ -389,7 +402,7 @@
 
         <section class="blog-grid">
             <div class="container">
-                <div class="blog-grid">
+                <div class="blog-grid__inner">
                     <!-- Articolo 1 -->
                     <a href="blog/email-professionali-claude.html" class="article-card">
                         <div class="article-card__image">
