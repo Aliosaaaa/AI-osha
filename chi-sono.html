@@ -135,8 +135,8 @@
             font-family: var(--font-display);
             font-size: 1rem;
             line-height: 1.7;
-            color: var(--gray-800);
-            background: var(--white);
+            color: var(--gray-300);
+            background: var(--dark);
         }
         img { max-width: 100%; height: auto; display: block; }
         a { color: inherit; text-decoration: none; }
@@ -156,9 +156,9 @@
             position: fixed;
             top: 0; left: 0; right: 0;
             z-index: 1000;
-            background: rgba(255,255,255,0.95);
+            background: rgba(13, 17, 23, 0.92);
             backdrop-filter: blur(20px);
-            border-bottom: 1px solid var(--gray-200);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
             height: 72px;
             display: flex;
             align-items: center;
@@ -177,7 +177,7 @@
             gap: 0.5rem;
             font-size: 1.5rem;
             font-weight: 800;
-            color: var(--dark);
+            color: var(--white);
         }
 
         .text-gradient {
@@ -198,7 +198,7 @@
 
         .header__nav a {
             font-weight: 500;
-            color: var(--gray-600);
+            color: var(--gray-300);
             transition: color 0.2s;
         }
 
@@ -228,7 +228,7 @@
         /* Page Hero */
         .page-hero {
             padding: calc(72px + 4rem) 0 4rem;
-            background: linear-gradient(180deg, var(--light) 0%, var(--white) 100%);
+            background: linear-gradient(180deg, var(--dark-soft) 0%, var(--dark) 100%);
         }
 
         .page-hero__breadcrumb {
@@ -245,13 +245,13 @@
         .page-hero__title {
             font-size: clamp(2rem, 4vw, 3rem);
             font-weight: 800;
-            color: var(--dark);
+            color: var(--white);
             margin-bottom: 1rem;
         }
 
         .page-hero__subtitle {
             font-size: 1.25rem;
-            color: var(--gray-600);
+            color: var(--gray-400);
             max-width: 600px;
         }
 
@@ -278,16 +278,16 @@
         }
 
         .about-card {
-            background: var(--white);
-            border: 1px solid var(--gray-200);
+            background: var(--dark-soft);
+            border: 1px solid rgba(255, 255, 255, 0.08);
             border-radius: 1rem;
             overflow: hidden;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            box-shadow: 0 4px 6px rgba(0,0,0,0.2);
         }
 
         .about-card__image {
             aspect-ratio: 1;
-            background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+            background: none;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -302,12 +302,12 @@
         .about-card__name {
             font-size: 1.25rem;
             font-weight: 700;
-            color: var(--dark);
+            color: var(--white);
         }
 
         .about-card__role {
             font-size: 0.9375rem;
-            color: var(--gray-600);
+            color: var(--gray-400);
             margin-top: 0.25rem;
         }
 
@@ -317,7 +317,7 @@
             gap: 1rem;
             margin-top: 1.5rem;
             padding-top: 1.5rem;
-            border-top: 1px solid var(--gray-200);
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
         }
 
         .about-card__stat {
@@ -350,9 +350,9 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            background: var(--gray-100);
+            background: rgba(255, 255, 255, 0.08);
             border-radius: 0.5rem;
-            color: var(--gray-600);
+            color: var(--gray-400);
             transition: all 0.2s;
         }
 
@@ -369,7 +369,7 @@
         .about-content h2 {
             font-size: 1.75rem;
             font-weight: 700;
-            color: var(--dark);
+            color: var(--white);
             margin: 2.5rem 0 1rem;
         }
 
@@ -386,11 +386,11 @@
 
         .about-content p {
             margin-bottom: 1rem;
-            color: var(--gray-800);
+            color: var(--gray-300);
         }
 
         .about-content strong {
-            color: var(--dark);
+            color: var(--white);
         }
 
         .about-content ul {
@@ -438,7 +438,7 @@
         }
 
         .highlight-box {
-            background: var(--light);
+            background: var(--dark-soft);
             border-left: 4px solid var(--primary);
             padding: 1.5rem;
             border-radius: 0 0.75rem 0.75rem 0;
@@ -449,16 +449,17 @@
             margin: 0;
             font-size: 1.125rem;
             font-style: italic;
-            color: var(--gray-800);
+            color: var(--gray-300);
         }
 
         .quote-box {
-            background: var(--dark);
+            background: var(--dark-soft);
             color: var(--white);
             padding: 2rem;
             border-radius: 1rem;
             margin: 2rem 0;
             text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.08);
         }
 
         .quote-box p {
@@ -488,8 +489,8 @@
             align-items: center;
             gap: 0.75rem;
             padding: 1rem;
-            background: var(--white);
-            border: 1px solid var(--gray-200);
+            background: var(--dark-soft);
+            border: 1px solid rgba(255, 255, 255, 0.08);
             border-radius: 0.75rem;
         }
 
@@ -509,7 +510,7 @@
         .tool-item__content h4 {
             font-size: 1rem;
             font-weight: 600;
-            color: var(--dark);
+            color: var(--white);
         }
 
         .tool-item__content p {
@@ -540,7 +541,7 @@
         /* Footer */
         .footer {
             padding: 3rem 0 1.5rem;
-            background: var(--gray-100);
+            background: var(--dark-soft);
             text-align: center;
         }
 
@@ -550,7 +551,7 @@
         }
 
         .footer a {
-            color: var(--gray-600);
+            color: var(--gray-400);
         }
 
         .footer a:hover {
@@ -603,7 +604,7 @@
                     <aside class="about-sidebar">
                         <div class="about-card">
                             <div class="about-card__image">
-                                [Foto Aliosha]
+                                <img src="images/aliosha-foto.jpg" alt="Aliosha Battaglini - AI Osha" style="width: 100%; height: 100%; object-fit: cover; border-radius: var(--radius-2xl);">
                             </div>
                             <div class="about-card__content">
                                 <h2 class="about-card__name">Aliosha Battaglini</h2>
