@@ -30,9 +30,8 @@
     <meta property="twitter:image" content="https://aiosha.it/images/og-image.jpg">
     
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="images/uccello.png">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <link rel="icon" type="image/png" sizes="32x32" href="images/uccello.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="images/uccello.png">
     <link rel="apple-touch-icon" sizes="180x180" href="images/uccello.png">
     
     <!-- Preload Critical Resources -->
@@ -384,11 +383,6 @@
             font-size: 1.5rem;
             font-weight: 800;
             color: var(--white);
-        }
-
-        .header__logo-icon {
-            width: 40px;
-            height: 40px;
         }
 
         .header__nav {
@@ -1366,7 +1360,6 @@
         <div class="container">
             <div class="header__inner">
                 <a href="/" class="header__logo">
-                    <img src="images/uccello.png" alt="AI Osha" class="header__logo-icon" style="width: 40px; height: 40px; object-fit: contain;">
                     <img src="images/aiosha.png" alt="AI Osha" style="height: 44px; object-fit: contain;">
                 </a>
                 
@@ -1404,7 +1397,7 @@
                     </div>
 
                     <div style="margin-bottom: var(--space-xl);">
-                        <img src="images/logo-aiosha.png" alt="AI Osha Logo" style="max-width: 320px; width: 100%; margin: 0 auto; display: block;">
+                        <img src="images/logo-aiosha.png" alt="AI Osha Logo" style="max-width: 320px; width: 100%; margin: 0 auto; display: block;" fetchpriority="high">
                     </div>
 
                     <h1 class="hero__title">
@@ -1671,7 +1664,7 @@
                 <div class="about-grid">
                     <div class="about__image animate-on-scroll">
                         <div class="about__image-frame" style="background: none;">
-                            <img src="images/aliosha-foto.jpg" alt="Aliosha Battaglini - AI Osha" style="width: 100%; height: 100%; object-fit: cover; border-radius: var(--radius-2xl);">
+                            <img src="images/aliosha-foto.jpg" alt="Aliosha Battaglini - AI Osha" style="width: 100%; height: 100%; object-fit: cover; border-radius: var(--radius-2xl);" loading="lazy">
                         </div>
                     </div>
                     
@@ -1834,7 +1827,6 @@
             <div class="footer__grid">
                 <div class="footer__brand">
                     <div class="footer__logo">
-                        <img src="images/uccello.png" alt="AI Osha" style="width: 32px; height: 32px; object-fit: contain;">
                         AI Osha
                     </div>
                     <p class="footer__tagline">
