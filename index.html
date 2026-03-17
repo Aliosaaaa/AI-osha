@@ -1352,6 +1352,310 @@
             display: flex;
             gap: var(--space-sm);
         }
+
+        /* ================================================
+           FUTURISTIC UPGRADE — AI Osha 2026
+           ================================================ */
+
+        /* Animated hero grid */
+        @keyframes grid-drift {
+            0% { transform: translateY(0) translateX(0); }
+            100% { transform: translateY(60px) translateX(20px); }
+        }
+        @keyframes float-particle {
+            0%, 100% { transform: translateY(0) scale(1); opacity: 0.6; }
+            50% { transform: translateY(-30px) scale(1.1); opacity: 1; }
+        }
+        @keyframes glow-pulse {
+            0%, 100% { box-shadow: 0 0 20px rgba(0,168,232,0.2); }
+            50% { box-shadow: 0 0 50px rgba(0,168,232,0.5), 0 0 80px rgba(0,168,232,0.2); }
+        }
+        @keyframes gradient-shift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        @keyframes blink-cursor {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+        @keyframes border-rotate {
+            0% { background-position: 0% 50%; }
+            100% { background-position: 200% 50%; }
+        }
+        @keyframes count-up {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Enhanced hero grid */
+        .hero__grid {
+            background-image:
+                linear-gradient(rgba(0,168,232,0.06) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0,168,232,0.06) 1px, transparent 1px);
+            background-size: 60px 60px;
+            animation: grid-drift 12s linear infinite;
+        }
+        .hero__bg {
+            background:
+                radial-gradient(ellipse 80% 60% at 50% -10%, rgba(0,168,232,0.18) 0%, transparent 60%),
+                radial-gradient(ellipse 40% 40% at 80% 80%, rgba(245,166,35,0.08) 0%, transparent 50%),
+                var(--dark);
+        }
+
+        /* Glassmorphism cards */
+        .feature-card {
+            background: rgba(22,27,34,0.65) !important;
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(0,168,232,0.1) !important;
+            transition: box-shadow 0.35s ease, transform 0.35s ease, border-color 0.35s ease !important;
+        }
+        .feature-card:hover {
+            transform: translateY(-8px) !important;
+            border-color: rgba(0,168,232,0.4) !important;
+            box-shadow: 0 0 0 1px rgba(0,168,232,0.2),
+                        0 0 40px rgba(0,168,232,0.18),
+                        0 24px 48px rgba(0,0,0,0.4) !important;
+        }
+        .stat-card {
+            background: rgba(22,27,34,0.7) !important;
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(0,168,232,0.15) !important;
+            transition: all 0.3s ease !important;
+        }
+        .stat-card:hover {
+            border-color: rgba(0,168,232,0.5) !important;
+            box-shadow: 0 0 30px rgba(0,168,232,0.2) !important;
+            animation: glow-pulse 2s ease-in-out infinite;
+        }
+
+        /* Frosted glass header on scroll */
+        .header--scrolled {
+            background: rgba(13,17,23,0.85) !important;
+            backdrop-filter: blur(24px) !important;
+            -webkit-backdrop-filter: blur(24px) !important;
+            border-bottom: 1px solid rgba(0,168,232,0.12) !important;
+        }
+
+        /* Typewriter cursor */
+        .tw-cursor {
+            display: inline-block;
+            width: 3px;
+            height: 0.85em;
+            background: var(--primary);
+            margin-left: 2px;
+            border-radius: 2px;
+            animation: blink-cursor 1s infinite;
+            vertical-align: -0.1em;
+        }
+
+        /* Gradient text animated */
+        .text-gradient {
+            background: linear-gradient(135deg, var(--primary), var(--highlight), var(--primary));
+            background-size: 200% 200%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: gradient-shift 4s ease infinite;
+        }
+
+        /* ================================================
+           CASE STUDY SECTION
+           ================================================ */
+        .case-study-section {
+            background: var(--dark);
+            position: relative;
+            overflow: hidden;
+            padding: 6rem 0;
+        }
+        .case-study-section::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background-image:
+                linear-gradient(rgba(0,168,232,0.04) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0,168,232,0.04) 1px, transparent 1px);
+            background-size: 50px 50px;
+            pointer-events: none;
+        }
+        .case-study-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        .case-study-card {
+            background: rgba(22,27,34,0.8);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(0,168,232,0.12);
+            border-radius: 1.25rem;
+            padding: 2rem;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.35s ease;
+        }
+        .case-study-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary), var(--highlight));
+        }
+        .case-study-card:hover {
+            transform: translateY(-6px);
+            border-color: rgba(0,168,232,0.35);
+            box-shadow: 0 0 40px rgba(0,168,232,0.15), 0 24px 48px rgba(0,0,0,0.4);
+        }
+        .cs-avatar {
+            width: 64px; height: 64px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary), var(--highlight));
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.5rem; font-weight: 800; color: var(--white);
+            margin-bottom: 1.25rem;
+            flex-shrink: 0;
+        }
+        .cs-header { display: flex; align-items: center; gap: 1rem; margin-bottom: 1.25rem; }
+        .cs-name { font-size: 1.1rem; font-weight: 700; color: var(--white); margin: 0; }
+        .cs-role { font-size: 0.85rem; color: var(--primary); font-weight: 500; margin: 0.1rem 0 0; }
+        .cs-company { font-size: 0.8rem; color: var(--gray-500); margin: 0; }
+        .cs-challenge {
+            background: rgba(239,68,68,0.08);
+            border: 1px solid rgba(239,68,68,0.2);
+            border-radius: 0.75rem;
+            padding: 0.875rem 1rem;
+            margin-bottom: 1rem;
+        }
+        .cs-challenge__label {
+            font-size: 0.7rem; font-weight: 700; letter-spacing: 0.1em;
+            text-transform: uppercase; color: #ef4444; margin-bottom: 0.35rem;
+        }
+        .cs-challenge p { font-size: 0.875rem; color: var(--gray-300); margin: 0; line-height: 1.5; }
+        .cs-solution {
+            background: rgba(0,168,232,0.07);
+            border: 1px solid rgba(0,168,232,0.18);
+            border-radius: 0.75rem;
+            padding: 0.875rem 1rem;
+            margin-bottom: 1.25rem;
+        }
+        .cs-solution__label {
+            font-size: 0.7rem; font-weight: 700; letter-spacing: 0.1em;
+            text-transform: uppercase; color: var(--primary); margin-bottom: 0.35rem;
+        }
+        .cs-solution p { font-size: 0.875rem; color: var(--gray-300); margin: 0; line-height: 1.5; }
+        .cs-results { display: flex; gap: 0.75rem; flex-wrap: wrap; }
+        .cs-result-badge {
+            background: rgba(16,185,129,0.1);
+            border: 1px solid rgba(16,185,129,0.25);
+            border-radius: var(--radius-full);
+            padding: 0.3rem 0.85rem;
+            font-size: 0.8rem; font-weight: 600;
+            color: #10b981;
+        }
+
+        /* ================================================
+           TESTIMONIALS SECTION
+           ================================================ */
+        .testimonials-section {
+            background: linear-gradient(180deg, var(--dark-soft) 0%, var(--dark) 100%);
+            padding: 6rem 0;
+            position: relative;
+        }
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        .video-card {
+            background: rgba(22,27,34,0.8);
+            border: 1px solid rgba(0,168,232,0.12);
+            border-radius: 1.25rem;
+            overflow: hidden;
+            transition: all 0.35s ease;
+            cursor: pointer;
+        }
+        .video-card:hover {
+            transform: translateY(-6px);
+            border-color: rgba(0,168,232,0.35);
+            box-shadow: 0 0 40px rgba(0,168,232,0.15), 0 24px 48px rgba(0,0,0,0.4);
+        }
+        .video-card:hover .play-btn {
+            transform: translate(-50%, -50%) scale(1.15);
+            box-shadow: 0 0 40px rgba(245,166,35,0.6);
+        }
+        .video-thumb {
+            position: relative;
+            width: 100%;
+            padding-top: 56.25%; /* 16:9 */
+            background: linear-gradient(135deg, #0d1117 0%, #1a2332 50%, #0d1117 100%);
+            overflow: hidden;
+        }
+        .video-thumb iframe {
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            border: none;
+        }
+        .video-thumb__placeholder {
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            display: flex; align-items: center; justify-content: center;
+            flex-direction: column;
+            gap: 0.5rem;
+            background: linear-gradient(135deg, rgba(0,168,232,0.08), rgba(245,166,35,0.05));
+        }
+        .play-btn {
+            position: absolute;
+            top: 50%; left: 50%;
+            transform: translate(-50%, -50%);
+            width: 64px; height: 64px;
+            background: linear-gradient(135deg, var(--highlight), var(--highlight-dark));
+            border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 30px rgba(245,166,35,0.4);
+            z-index: 2;
+        }
+        .play-btn svg { margin-left: 4px; }
+        .video-thumb__label {
+            position: absolute;
+            bottom: 0.75rem; left: 0.75rem;
+            background: rgba(13,17,23,0.85);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(0,168,232,0.2);
+            border-radius: 0.5rem;
+            padding: 0.3rem 0.7rem;
+            font-size: 0.75rem;
+            color: var(--gray-300);
+            font-family: var(--font-mono);
+        }
+        .video-card__info {
+            padding: 1.25rem;
+            border-top: 1px solid rgba(0,168,232,0.08);
+        }
+        .video-card__name { font-size: 1rem; font-weight: 700; color: var(--white); margin: 0 0 0.2rem; }
+        .video-card__role { font-size: 0.85rem; color: var(--primary); margin: 0 0 0.75rem; }
+        .video-card__quote {
+            font-size: 0.875rem;
+            color: var(--gray-400);
+            line-height: 1.55;
+            font-style: italic;
+            margin: 0;
+            border-left: 2px solid var(--highlight);
+            padding-left: 0.75rem;
+        }
+
+        /* ================================================
+           RESPONSIVE
+           ================================================ */
+        @media (max-width: 768px) {
+            .case-study-grid { grid-template-columns: 1fr; }
+            .testimonials-grid { grid-template-columns: 1fr; }
+        }
+
     </style>
 </head>
 <body>
@@ -1407,7 +1711,7 @@
                         Fai il <span class="text-gradient">Salto Quantico</span> con l'AI
                     </h1>
                     
-                    <p class="hero__subtitle">
+                    <p class="hero__subtitle" id="hero-subtitle">
                         Il metodo pratico per PMI e professionisti che vogliono risparmiare tempo, 
                         automatizzare task ripetitivi e dominare il 2026 con l'intelligenza artificiale.
                     </p>
@@ -1568,19 +1872,19 @@
                     <div class="solution__visual animate-on-scroll">
                         <div class="solution__stats">
                             <div class="stat-card">
-                                <div class="stat-card__number">13</div>
+                                <div class="stat-card__number" data-target="13">0</div>
                                 <div class="stat-card__label">Libri pubblicati</div>
                             </div>
                             <div class="stat-card">
-                                <div class="stat-card__number">1K+</div>
+                                <div class="stat-card__number" data-target="1000" data-suffix="+">0</div>
                                 <div class="stat-card__label">Eventi gestiti</div>
                             </div>
                             <div class="stat-card">
-                                <div class="stat-card__number">100+</div>
+                                <div class="stat-card__number" data-target="100" data-suffix="+">0</div>
                                 <div class="stat-card__label">Live effettuate</div>
                             </div>
                             <div class="stat-card">
-                                <div class="stat-card__number">3+</div>
+                                <div class="stat-card__number" data-target="3" data-suffix="+">0</div>
                                 <div class="stat-card__label">Anni di AI applicata</div>
                             </div>
                         </div>
@@ -1707,6 +2011,258 @@
                                 </svg>
                                 UA Applicato
                             </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ========================================
+             CASE STUDY SECTION
+             ======================================== -->
+        <section class="case-study-section" id="case-study">
+            <div class="container">
+                <div class="section__header animate-on-scroll">
+                    <span class="section__eyebrow">Risultati Reali</span>
+                    <h2 class="section__title">Chi Ha Già Fatto il <span class="text-gradient">Salto Quantico</span></h2>
+                    <p class="section__subtitle" style="color:var(--gray-400);max-width:600px;margin:1rem auto 0;font-size:1rem;">
+                        Imprenditori e professionisti che hanno integrato l'AI nel loro lavoro con risultati concreti e misurabili.
+                    </p>
+                </div>
+
+                <div class="case-study-grid">
+
+                    <!-- CASE STUDY 1: Federico M. -->
+                    <div class="case-study-card animate-on-scroll">
+                        <div class="cs-header">
+                            <div class="cs-avatar">FM</div>
+                            <div>
+                                <p class="cs-name">Federico M.</p>
+                                <p class="cs-role">Host Airbnb &amp; Imprenditore Immobiliare</p>
+                                <p class="cs-company">Compra · Costruisce · Vende</p>
+                            </div>
+                        </div>
+                        <div class="cs-challenge">
+                            <div class="cs-challenge__label">⚡ La Sfida</div>
+                            <p>Gestire annunci Airbnb su più proprietà, rispondere a decine di messaggi al giorno, e analizzare prezzi competitor richiedevano 15+ ore settimanali di lavoro manuale.</p>
+                        </div>
+                        <div class="cs-solution">
+                            <div class="cs-solution__label">🤖 La Soluzione AI</div>
+                            <p>Annunci ottimizzati con AI per ogni stagione, risposte automatiche ai messaggi standard, analisi prezzi competitor con Perplexity, report proprietà generati in 5 minuti.</p>
+                        </div>
+                        <div class="cs-results">
+                            <span class="cs-result-badge">+40% occupazione</span>
+                            <span class="cs-result-badge">−12h/settimana</span>
+                            <span class="cs-result-badge">+3 deal chiusi</span>
+                        </div>
+                    </div>
+
+                    <!-- CASE STUDY 2: Simone S. -->
+                    <div class="case-study-card animate-on-scroll">
+                        <div class="cs-header">
+                            <div class="cs-avatar" style="background: linear-gradient(135deg, var(--highlight), #c47d10);">SS</div>
+                            <div>
+                                <p class="cs-name">Simone S.</p>
+                                <p class="cs-role">Socio &amp; Consulente Commerciale</p>
+                                <p class="cs-company">ESTRO — Lampadari di Lusso</p>
+                            </div>
+                        </div>
+                        <div class="cs-challenge">
+                            <div class="cs-challenge__label">⚡ La Sfida</div>
+                            <p>Presentare prodotti di lusso a clienti internazionali con materiali commerciali sempre aggiornati, gestire follow-up su decine di trattative simultanee e produrre schede prodotto in più lingue.</p>
+                        </div>
+                        <div class="cs-solution">
+                            <div class="cs-solution__label">🤖 La Soluzione AI</div>
+                            <p>Schede prodotto multilingua generate con Claude, email di follow-up personalizzate su CRM, presentazioni commerciali per segmento cliente, analisi trend mercato luxury con AI.</p>
+                        </div>
+                        <div class="cs-results">
+                            <span class="cs-result-badge">+60% deal avanzati</span>
+                            <span class="cs-result-badge">3 lingue in 1 click</span>
+                            <span class="cs-result-badge">−8h/settimana</span>
+                        </div>
+                    </div>
+
+                    <!-- CASE STUDY 3: Najla C. -->
+                    <div class="case-study-card animate-on-scroll">
+                        <div class="cs-header">
+                            <div class="cs-avatar" style="background: linear-gradient(135deg, #10b981, #059669);">NC</div>
+                            <div>
+                                <p class="cs-name">Najla C.</p>
+                                <p class="cs-role">Professoressa — Scuola Superiore</p>
+                                <p class="cs-company">Istruzione · Formazione</p>
+                            </div>
+                        </div>
+                        <div class="cs-challenge">
+                            <div class="cs-challenge__label">⚡ La Sfida</div>
+                            <p>Preparare lezioni coinvolgenti, correggere elaborati, creare verifiche personalizzate e comunicare con famiglie consumava ogni pomeriggio e weekend.</p>
+                        </div>
+                        <div class="cs-solution">
+                            <div class="cs-solution__label">🤖 La Soluzione AI</div>
+                            <p>Piani lezione generati con AI, verifiche differenziate per livello, correzioni assistite, comunicazioni alle famiglie personalizzate e materiali didattici multimediali in pochi minuti.</p>
+                        </div>
+                        <div class="cs-results">
+                            <span class="cs-result-badge">−10h/settimana</span>
+                            <span class="cs-result-badge">Lezioni +coinvolgenti</span>
+                            <span class="cs-result-badge">Più tempo libero</span>
+                        </div>
+                    </div>
+
+
+                    <!-- CASE STUDY 4: Cristiano B. -->
+                    <div class="case-study-card animate-on-scroll">
+                        <div class="cs-header">
+                            <div class="cs-avatar" style="background: linear-gradient(135deg, #8b5cf6, #6d28d9);">CB</div>
+                            <div>
+                                <p class="cs-name">Cristiano B.</p>
+                                <p class="cs-role">Creativo &amp; Operaio</p>
+                                <p class="cs-company">Da zero a developer con l'AI</p>
+                            </div>
+                        </div>
+                        <div class="cs-challenge">
+                            <div class="cs-challenge__label">⚡ La Sfida</div>
+                            <p>Aveva un'idea per un'app ma zero competenze tecniche di programmazione. I preventivi degli sviluppatori erano fuori budget e i tempi lunghissimi.</p>
+                        </div>
+                        <div class="cs-solution">
+                            <div class="cs-solution__label">🤖 La Soluzione AI</div>
+                            <p>Con ChatGPT e Claude ha imparato a scrivere codice passo dopo passo, progettato l'interfaccia, risolto i bug in tempo reale e pubblicato l'app in autonomia completa.</p>
+                        </div>
+                        <div class="cs-results">
+                            <span class="cs-result-badge">App pubblicata</span>
+                            <span class="cs-result-badge">€0 di sviluppo</span>
+                            <span class="cs-result-badge">100% autonomo</span>
+                        </div>
+                    </div>
+
+                    <!-- CASE STUDY 5: Mirko F. -->
+                    <div class="case-study-card animate-on-scroll">
+                        <div class="cs-header">
+                            <div class="cs-avatar" style="background: linear-gradient(135deg, #f59e0b, #d97706);">MF</div>
+                            <div>
+                                <p class="cs-name">Mirko F.</p>
+                                <p class="cs-role">Operaio Specializzato</p>
+                                <p class="cs-company">Industria · Automazione</p>
+                            </div>
+                        </div>
+                        <div class="cs-challenge">
+                            <div class="cs-challenge__label">⚡ La Sfida</div>
+                            <p>Voleva automatizzare una procedura ripetitiva nel suo lavoro e aveva bisogno di un applicativo personalizzato. Nessuna base di coding, budget limitato.</p>
+                        </div>
+                        <div class="cs-solution">
+                            <div class="cs-solution__label">🤖 La Soluzione AI</div>
+                            <p>Usando l'AI come "co-developer" ha descritto il problema a parole, ottenuto il codice funzionante, personalizzato l'interfaccia e testato l'applicativo in fabbrica.</p>
+                        </div>
+                        <div class="cs-results">
+                            <span class="cs-result-badge">Applicativo live</span>
+                            <span class="cs-result-badge">−5h/settimana</span>
+                            <span class="cs-result-badge">Nessun tecnico</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================
+             TESTIMONIALS SECTION
+             ======================================== -->
+        <section class="testimonials-section" id="testimonianze">
+            <div class="container">
+                <div class="section__header animate-on-scroll">
+                    <span class="section__eyebrow">Testimonianze</span>
+                    <h2 class="section__title">Le Loro <span class="text-gradient">Parole</span></h2>
+                    <p class="section__subtitle" style="color:var(--gray-400);max-width:600px;margin:1rem auto 0;font-size:1rem;">
+                        Video testimonianze di chi ha applicato il metodo AI Osha nella propria realtà professionale.
+                    </p>
+                </div>
+
+                <div class="testimonials-grid">
+
+                    <!-- VIDEO 1: Federico M. -->
+                    <div class="video-card animate-on-scroll">
+                        <div class="video-thumb">
+                            <!-- Sostituisci YOUTUBE_ID_1 con l'ID del video YouTube (es. dQw4w9WgXcQ) -->
+                            <div class="video-thumb__placeholder" id="video-placeholder-1" data-youtube="YOUTUBE_ID_1">
+                                <div class="play-btn">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="white" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                                </div>
+                                <div class="video-thumb__label">▶ Video Testimonianza</div>
+                            </div>
+                        </div>
+                        <div class="video-card__info">
+                            <p class="video-card__name">Federico M.</p>
+                            <p class="video-card__role">Host Airbnb &amp; Imprenditore Immobiliare</p>
+                            <p class="video-card__quote">"Da quando uso l'AI gestisco il doppio delle proprietà con la metà del tempo. È stata una svolta."</p>
+                        </div>
+                    </div>
+
+                    <!-- VIDEO 2: Simone S. -->
+                    <div class="video-card animate-on-scroll">
+                        <div class="video-thumb">
+                            <!-- Sostituisci YOUTUBE_ID_2 con l'ID del video YouTube -->
+                            <div class="video-thumb__placeholder" id="video-placeholder-2" data-youtube="YOUTUBE_ID_2">
+                                <div class="play-btn">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="white" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                                </div>
+                                <div class="video-thumb__label">▶ Video Testimonianza</div>
+                            </div>
+                        </div>
+                        <div class="video-card__info">
+                            <p class="video-card__name">Simone S.</p>
+                            <p class="video-card__role">Consulente Commerciale — ESTRO Luxury</p>
+                            <p class="video-card__quote">"Presento i nostri lampadari in tre lingue con un click. I clienti internazionali sono rimasti stupiti."</p>
+                        </div>
+                    </div>
+
+                    <!-- VIDEO 3: Najla C. -->
+                    <div class="video-card animate-on-scroll">
+                        <div class="video-thumb">
+                            <!-- Sostituisci YOUTUBE_ID_3 con l'ID del video YouTube -->
+                            <div class="video-thumb__placeholder" id="video-placeholder-3" data-youtube="YOUTUBE_ID_3">
+                                <div class="play-btn">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="white" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                                </div>
+                                <div class="video-thumb__label">▶ Video Testimonianza</div>
+                            </div>
+                        </div>
+                        <div class="video-card__info">
+                            <p class="video-card__name">Najla C.</p>
+                            <p class="video-card__role">Professoressa — Scuola Superiore</p>
+                            <p class="video-card__quote">"Ho recuperato i miei weekend. Le lezioni sono più belle e i ragazzi sono più coinvolti. Non torno indietro."</p>
+                        </div>
+                    </div>
+
+
+                    <!-- VIDEO 4: Cristiano B. -->
+                    <div class="video-card animate-on-scroll">
+                        <div class="video-thumb">
+                            <div class="video-thumb__placeholder" id="video-placeholder-4" data-youtube="YOUTUBE_ID_4">
+                                <div class="play-btn">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="white" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                                </div>
+                                <div class="video-thumb__label">▶ Video Testimonianza</div>
+                            </div>
+                        </div>
+                        <div class="video-card__info">
+                            <p class="video-card__name">Cristiano B.</p>
+                            <p class="video-card__role">Creativo — Ha creato la sua App</p>
+                            <p class="video-card__quote">"Non sapevo niente di programmazione. Oggi ho un'app funzionante che ho costruito io, con l'AI al mio fianco."</p>
+                        </div>
+                    </div>
+
+                    <!-- VIDEO 5: Mirko F. -->
+                    <div class="video-card animate-on-scroll">
+                        <div class="video-thumb">
+                            <div class="video-thumb__placeholder" id="video-placeholder-5" data-youtube="YOUTUBE_ID_5">
+                                <div class="play-btn">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="white" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                                </div>
+                                <div class="video-thumb__label">▶ Video Testimonianza</div>
+                            </div>
+                        </div>
+                        <div class="video-card__info">
+                            <p class="video-card__name">Mirko F.</p>
+                            <p class="video-card__role">Operaio Specializzato — Applicativo Custom</p>
+                            <p class="video-card__quote">"Sembrava impossibile. Invece ho creato il mio strumento di lavoro digitale senza spendere un euro in sviluppatori."</p>
                         </div>
                     </div>
                 </div>
