@@ -19,7 +19,7 @@
 // ─────────────────────────────────────────────────────────────
 
 const SHEET_ID = '1PuqKXzU0J_zgH7q6WGVBdVsI1BWuR3g_kUWBwoWFY20';
-const SHEET_NAME = 'Iscrizioni'; // Nome del foglio (tab). Crealo se non esiste.
+const SHEET_NAME = 'ISCRITTI CALDI'; // Nome del foglio (tab). Crealo se non esiste.
 
 function doPost(e) {
   try {
@@ -28,7 +28,7 @@ function doPost(e) {
     const ss = SpreadsheetApp.openById(SHEET_ID);
     let sheet = ss.getSheetByName(SHEET_NAME);
 
-    // Crea il foglio "Iscrizioni" con intestazioni se non esiste
+    // Crea il foglio "ISCRITTI CALDI" con intestazioni se non esiste
     if (!sheet) {
       sheet = ss.insertSheet(SHEET_NAME);
       sheet.getRange(1, 1, 1, 8).setValues([[
