@@ -402,8 +402,19 @@ body {
 }
 .problem-card:hover { box-shadow: var(--ombra-hover); transform: translateY(-2px); }
 .problem-icon {
-  font-size: 28px;
-  margin-bottom: 10px;
+  width: 48px;
+  height: 48px;
+  background: var(--rosso-soft);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 14px;
+}
+.problem-svg {
+  width: 26px;
+  height: 26px;
+  stroke: var(--rosso);
 }
 .problem-card h3 {
   font-family: 'Nunito', sans-serif;
@@ -902,7 +913,12 @@ footer a { color: rgba(255,255,255,0.6); text-decoration: none; }
 <nav class="topbar">
   <div class="topbar-inner">
     <div class="logo-area">
-      <div class="logo-text">AI<span class="dot">.</span>OSHA</div>
+      <a href="https://aiosha.it" style="display:flex;align-items:center;">
+        <picture>
+          <source srcset="images/logo-aiosha.webp" type="image/webp">
+          <img src="images/logo-aiosha.png" alt="AI Osha Logo" style="height:36px;width:auto;">
+        </picture>
+      </a>
       <span class="logo-sep">×</span>
       <span class="logo-sub">Agenzie Immobiliari</span>
     </div>
@@ -915,7 +931,7 @@ footer a { color: rgba(255,255,255,0.6); text-decoration: none; }
 
 <!-- ─── URGENCY BAR ─── -->
 <div class="urgency-bar">
-  🔴 POSTI LIMITATI — <span>Workshop gratuito riservato a titolari di agenzie immobiliari</span>
+  <span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#fff;margin-right:8px;vertical-align:middle;opacity:0.9;"></span> POSTI LIMITATI — <span>Workshop gratuito riservato a titolari di agenzie immobiliari</span>
 </div>
 
 <!-- ─── COUNTDOWN ─── -->
@@ -944,7 +960,7 @@ footer a { color: rgba(255,255,255,0.6); text-decoration: none; }
       <div class="stat-card"><div class="stat-num orange">83,6%</div><div class="stat-label">PMI italiane<br>senza AI</div></div>
     </div>
     <!-- WA BUTTON #1 -->
-    <a href="https://wa.me/39XXXXXXXXXXX?text=Ciao%2C%20vorrei%20info%20sul%20workshop%20del%2012%20aprile" class="wa-inline" target="_blank" rel="noopener">
+    <a href="https://wa.me/393514595981?text=Ciao%2C%20vorrei%20info%20sul%20workshop%20del%2012%20aprile" class="wa-inline" target="_blank" rel="noopener">
       <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
       <span>Hai domande? Scrivici su WhatsApp</span>
     </a>
@@ -958,23 +974,23 @@ footer a { color: rgba(255,255,255,0.6); text-decoration: none; }
     </div>
     <div class="event-card-body">
       <div class="event-detail">
-        <div class="event-icon blu">🕘</div>
+        <div class="event-icon blu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="20" height="20"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
         <div class="event-detail-text"><strong>Ore 21:00</strong><span>Durata: 75 minuti</span></div>
       </div>
       <div class="event-detail">
-        <div class="event-icon green">💻</div>
+        <div class="event-icon green"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="20" height="20"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div>
         <div class="event-detail-text"><strong>Online su Zoom</strong><span>Ricevi il link dopo l'iscrizione</span></div>
       </div>
       <div class="event-detail">
-        <div class="event-icon orange">🎯</div>
+        <div class="event-icon orange"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="20" height="20"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg></div>
         <div class="event-detail-text"><strong>Per agenzie 1-9 persone</strong><span>Titolari e responsabili</span></div>
       </div>
       <div class="event-detail">
-        <div class="event-icon blu">💰</div>
+        <div class="event-icon blu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="20" height="20"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg></div>
         <div class="event-detail-text"><strong>100% Gratuito</strong><span>Nessuna carta richiesta</span></div>
       </div>
       <a href="#iscrizione" class="event-card-cta">Riserva il tuo posto →</a>
-      <div class="event-card-note">⚡ 127 agenzie già iscritte</div>
+
     </div>
   </div>
 </section>
@@ -1011,34 +1027,34 @@ footer a { color: rgba(255,255,255,0.6); text-decoration: none; }
     </div>
     <div class="problems-grid">
       <div class="problem-card fade-up">
-        <div class="problem-icon">💸</div>
-        <h3>Immobili "fuori prezzo" che restano invenduti</h3>
-        <p>Il proprietario vuole un prezzo irrealistico, tu accetti l'incarico per non perderlo. Risultato: mesi di visite a vuoto, costi di pubblicità bruciati e margini che si azzerano.</p>
-        <span class="problem-data">Sconto medio: -7,5% sul prezzo richiesto</span>
+        <div class="problem-icon"><svg class="problem-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a10 10 0 100 20 10 10 0 000-20z"/><path d="M12 6v6l4 2"/></svg></div>
+        <h3>Troppo lavoro, troppo poco tempo</h3>
+        <p>Annunci da scrivere, clienti da richiamare, appuntamenti da gestire, pratiche aperte. La giornata finisce e la lista è ancora piena. L'operatività ti mangia tutto il tempo.</p>
+        <span class="problem-data">Il 74% degli agenti lavora oltre 50 ore settimanali</span>
       </div>
       <div class="problem-card fade-up">
-        <div class="problem-icon">⏱️</div>
-        <h3>Lead che spariscono perché rispondi troppo tardi</h3>
-        <p>Il potenziale acquirente manda una richiesta dal portale. Se non rispondi in pochi minuti, chiama un'altra agenzia. Di sera o nel weekend? Lead perso.</p>
-        <span class="problem-data">La finestra di risposta è di pochi minuti</span>
+        <div class="problem-icon"><svg class="problem-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/><line x1="17" y1="14" x2="21" y2="14"/></svg></div>
+        <h3>Carenza di acquisizioni e nuovi mandati</h3>
+        <p>Il mercato è competitivo e le acquisizioni scarseggiano. I proprietari confrontano più agenzie e scelgono chi si presenta meglio — non sempre chi conosce il mercato di più.</p>
+        <span class="problem-data">Il 65% delle agenzie perde mandati nella prima fase</span>
       </div>
       <div class="problem-card fade-up">
-        <div class="problem-icon">📋</div>
-        <h3>Burocrazia che blocca le trattative in corsa</h3>
-        <p>Difformità catastali, documenti mancanti, accesso agli atti che richiede 30-90 giorni. Le condizioni del mutuo scadono e il compratore rinuncia.</p>
-        <span class="problem-data">30-90 giorni per accesso agli atti</span>
+        <div class="problem-icon"><svg class="problem-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg></div>
+        <h3>Gestione social caotica e inefficace</h3>
+        <p>Non sai cosa pubblicare, quando e come. Il profilo è fermo da settimane o pieno di post copiati. I potenziali clienti ti cercano online e trovano nulla — o peggio, nulla di convincente.</p>
+        <span class="problem-data">L'82% degli acquirenti inizia la ricerca online</span>
       </div>
       <div class="problem-card fade-up">
-        <div class="problem-icon">📉</div>
-        <h3>Annunci tutti uguali che non convertono</h3>
-        <p>Le stesse foto piatte, le stesse descrizioni copia-incolla. Il tuo annuncio si perde tra gli altri 200 della zona. Zero clic, zero visite, zero proposte.</p>
-        <span class="problem-data">+40% clic con virtual staging</span>
+        <div class="problem-icon"><svg class="problem-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg></div>
+        <h3>Burocrazia che blocca le trattative</h3>
+        <p>Difformità catastali, documenti mancanti, accesso agli atti che richiede 30–90 giorni. Le condizioni del mutuo scadono e il compratore rinuncia. Ogni pratica è un labirinto.</p>
+        <span class="problem-data">30–90 giorni per l'accesso agli atti in media</span>
       </div>
       <div class="problem-card fade-up" style="grid-column: 1 / -1; max-width: 540px; margin: 0 auto;">
-        <div class="problem-icon">🔄</div>
-        <h3>Follow-up inesistente: contatti caldi che diventano freddi</h3>
-        <p>Il processo di acquisto dura mesi. Senza un follow-up strutturato e costante, il cliente si dimentica di te. O peggio, compra da un altro.</p>
-        <span class="problem-data">Il ciclo medio di vendita è 5,6 mesi</span>
+        <div class="problem-icon"><svg class="problem-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg></div>
+        <h3>Annunci tutti uguali che non convertono</h3>
+        <p>Le stesse foto piatte, le stesse descrizioni copia-incolla. Il tuo annuncio si perde tra gli altri 200 della zona. Zero differenziazione, zero clic, zero proposte.</p>
+        <span class="problem-data">+40% di clic con virtual staging professionale</span>
       </div>
     </div>
   </div>
@@ -1054,31 +1070,31 @@ footer a { color: rgba(255,255,255,0.6); text-decoration: none; }
   <div class="program-grid">
     <div class="prog-card fade-up">
       <div class="prog-num">01</div>
-      <div class="prog-icon">📸</div>
+      <div class="prog-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="32" height="32"><path d="M23 19a2 2 0 01-2 2H3a2 2 0 01-2-2V8a2 2 0 012-2h4l2-3h6l2 3h4a2 2 0 012 2z"/><circle cx="12" cy="13" r="4"/></svg></div>
       <h4>Foto professionali con un click</h4>
       <p>Virtual staging AI: trasforma foto vuote in ambienti arredati. Prima/dopo in tempo reale.</p>
     </div>
     <div class="prog-card fade-up">
       <div class="prog-num">02</div>
-      <div class="prog-icon">✍️</div>
+      <div class="prog-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="32" height="32"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg></div>
       <h4>Annunci da copywriter esperto</h4>
       <p>Descrizioni persuasive, ottimizzate SEO, multilingua per clienti stranieri. In 30 secondi.</p>
     </div>
     <div class="prog-card fade-up">
       <div class="prog-num">03</div>
-      <div class="prog-icon">🤖</div>
-      <h4>Follow-up automatico intelligente</h4>
-      <p>L'AI risponde ai lead 24/7, pre-qualifica il budget e fissa appuntamenti. Tu dormi.</p>
+      <div class="prog-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="32" height="32"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><circle cx="18" cy="5" r="0"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></div>
+      <h4>Documentazione, social e contenuti</h4>
+      <p>Genera documenti, schede tecniche, post social e newsletter in pochi secondi. La tua agenzia sempre aggiornata, senza sprecare ore.</p>
     </div>
     <div class="prog-card fade-up">
       <div class="prog-num">04</div>
-      <div class="prog-icon">📊</div>
+      <div class="prog-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="32" height="32"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></div>
       <h4>Valutazioni con report dati</h4>
       <p>Comparabili reali, scenari prezzo-tempo, report PDF da presentare al proprietario.</p>
     </div>
     <div class="prog-card fade-up">
       <div class="prog-num">05</div>
-      <div class="prog-icon">🎯</div>
+      <div class="prog-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="32" height="32"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg></div>
       <h4>Presentazioni e materiali pro</h4>
       <p>Brochure, social post, email personalizzate. Salto di immagine immediato per la tua agenzia.</p>
     </div>
@@ -1087,7 +1103,7 @@ footer a { color: rgba(255,255,255,0.6); text-decoration: none; }
 
 <!-- WA BUTTON #2 — INLINE DOPO PROGRAMMA -->
 <div style="padding: 0 24px 48px; text-align: center;">
-  <a href="https://wa.me/39XXXXXXXXXXX?text=Ciao%2C%20vorrei%20info%20sul%20workshop%20del%2012%20aprile" class="wa-inline" target="_blank" rel="noopener">
+  <a href="https://wa.me/393514595981?text=Ciao%2C%20vorrei%20info%20sul%20workshop%20del%2012%20aprile" class="wa-inline" target="_blank" rel="noopener">
     <svg viewBox="0 0 24 24" fill="currentColor" width="24" height="24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
     <span>Vuoi saperne di più? Scrivici su WhatsApp</span>
   </a>
@@ -1121,7 +1137,9 @@ footer a { color: rgba(255,255,255,0.6); text-decoration: none; }
         </div>
       </div>
       <div class="chi-avatar">
-        <div class="avatar-circle">AB</div>
+        <div class="avatar-circle" style="background:none;overflow:hidden;padding:0;">
+          <img src="images/aliosha-foto.jpg" alt="Aliosha Battaglini" style="width:100%;height:100%;object-fit:cover;border-radius:50%;">
+        </div>
         <h4>Aliosha Battaglini</h4>
         <p>Fondatore AI OSHA</p>
         <span class="chi-avatar-tag">Ex settore immobiliare</span>
@@ -1138,7 +1156,7 @@ footer a { color: rgba(255,255,255,0.6); text-decoration: none; }
   </div>
   <div class="perchi-grid">
     <div class="perchi-col si">
-      <h3>✅ Sì, è per te se:</h3>
+      <h3><svg viewBox="0 0 24 24" fill="none" stroke="#1a9e5c" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="20" height="20" style="vertical-align:middle;margin-right:6px;"><polyline points="20 6 9 17 4 12"/></svg>Sì, è per te se:</h3>
       <div class="perchi-item">
         <svg viewBox="0 0 24 24" fill="none" stroke="#1a9e5c" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
         Sei titolare di un'agenzia immobiliare con 1-9 persone
@@ -1161,7 +1179,7 @@ footer a { color: rgba(255,255,255,0.6); text-decoration: none; }
       </div>
     </div>
     <div class="perchi-col no">
-      <h3>❌ Non è per te se:</h3>
+      <h3><svg viewBox="0 0 24 24" fill="none" stroke="#e63329" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="20" height="20" style="vertical-align:middle;margin-right:6px;"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>Non è per te se:</h3>
       <div class="perchi-item">
         <svg viewBox="0 0 24 24" fill="none" stroke="#e63329" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
         Cerchi la "pillola magica" — qui si parla di metodo e lavoro
@@ -1189,40 +1207,46 @@ footer a { color: rgba(255,255,255,0.6); text-decoration: none; }
     <p>Compila il form e riceverai subito il link Zoom per il workshop del 12 Aprile, ore 21:00.</p>
     <div class="form-box">
       <div class="form-row">
-        <div class="form-group">
-          <label for="nome">Nome *</label>
-          <input type="text" id="nome" placeholder="Il tuo nome" required>
-        </div>
-        <div class="form-group">
-          <label for="cognome">Cognome *</label>
-          <input type="text" id="cognome" placeholder="Il tuo cognome" required>
+        <div class="form-group full">
+          <label for="nome_agenzia">Nome dell'agenzia *</label>
+          <input type="text" id="nome_agenzia" placeholder="Es: Immobiliare Rossi" required>
         </div>
       </div>
       <div class="form-row">
         <div class="form-group">
-          <label for="telefono">Telefono *</label>
+          <label for="nome_iscritto">Nome e cognome *</label>
+          <input type="text" id="nome_iscritto" placeholder="Il tuo nome completo" required>
+        </div>
+        <div class="form-group">
+          <label for="email">Email *</label>
+          <input type="email" id="email" placeholder="nome@email.it" required>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="telefono">Numero di telefono *</label>
           <input type="tel" id="telefono" placeholder="+39 ..." required>
         </div>
         <div class="form-group">
-          <label for="citta">Città *</label>
-          <input type="text" id="citta" placeholder="Es: Roma, Milano...">
-        </div>
-      </div>
-      <div class="form-row">
-        <div class="form-group full">
-          <label for="team">Quante persone nella tua agenzia?</label>
-          <select id="team">
+          <label for="dipendenti">Numero dipendenti *</label>
+          <select id="dipendenti" required>
             <option value="">Seleziona...</option>
             <option value="1">Solo io</option>
-            <option value="2-3">2-3 persone</option>
-            <option value="4-6">4-6 persone</option>
-            <option value="7-9">7-9 persone</option>
+            <option value="2-3">2–3 persone</option>
+            <option value="4-6">4–6 persone</option>
+            <option value="7-9">7–9 persone</option>
             <option value="10+">10 o più</option>
           </select>
         </div>
       </div>
+      <div class="form-row">
+        <div class="form-group full">
+          <label for="sito_web">Sito web <span style="font-weight:400;opacity:0.6;">(facoltativo)</span></label>
+          <input type="url" id="sito_web" placeholder="https://www.tuaagenzia.it">
+        </div>
+      </div>
       <button class="form-submit" onclick="handleSubmit()">
-        🔒 RISERVA IL MIO POSTO GRATUITO
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="18" height="18" style="vertical-align:middle;margin-right:8px;"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg> RISERVA IL MIO POSTO GRATUITO
       </button>
       <div class="form-note">Nessuna carta di credito richiesta. Riceverai il link Zoom via WhatsApp e email.</div>
     </div>
@@ -1283,7 +1307,7 @@ footer a { color: rgba(255,255,255,0.6); text-decoration: none; }
 
 <!-- WA BUTTON #3 — DOPO FAQ -->
 <div style="padding: 0 24px 48px; text-align: center;">
-  <a href="https://wa.me/39XXXXXXXXXXX?text=Ciao%2C%20vorrei%20info%20sul%20workshop%20del%2012%20aprile" class="wa-inline" target="_blank" rel="noopener">
+  <a href="https://wa.me/393514595981?text=Ciao%2C%20vorrei%20info%20sul%20workshop%20del%2012%20aprile" class="wa-inline" target="_blank" rel="noopener">
     <svg viewBox="0 0 24 24" fill="currentColor" width="24" height="24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
     <span>Dubbi? Scrivici su WhatsApp — rispondiamo in 5 minuti</span>
   </a>
@@ -1304,7 +1328,7 @@ footer a { color: rgba(255,255,255,0.6); text-decoration: none; }
 </footer>
 
 <!-- ─── WHATSAPP FLOATING ─── -->
-<a href="https://wa.me/39XXXXXXXXXXX?text=Ciao%2C%20vorrei%20info%20sul%20workshop%20del%2012%20aprile" class="wa-float" target="_blank" rel="noopener">
+<a href="https://wa.me/393514595981?text=Ciao%2C%20vorrei%20info%20sul%20workshop%20del%2012%20aprile" class="wa-float" target="_blank" rel="noopener">
   <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
   <span>WhatsApp</span>
 </a>
@@ -1312,7 +1336,7 @@ footer a { color: rgba(255,255,255,0.6); text-decoration: none; }
 <script>
 // ─── COUNTDOWN ───
 function updateCountdown() {
-  const target = new Date('2025-04-12T21:00:00+02:00').getTime();
+  const target = new Date('2026-04-12T21:00:00+02:00').getTime();
   const now = Date.now();
   const diff = target - now;
   if (diff <= 0) {
@@ -1344,29 +1368,28 @@ function toggleFaq(el) {
 
 // ─── FORM SUBMIT ───
 function handleSubmit() {
-  const nome = document.getElementById('nome').value.trim();
-  const cognome = document.getElementById('cognome').value.trim();
+  const nomeAgenzia = document.getElementById('nome_agenzia').value.trim();
+  const nomeIscritto = document.getElementById('nome_iscritto').value.trim();
+  const email = document.getElementById('email').value.trim();
   const telefono = document.getElementById('telefono').value.trim();
-  const citta = document.getElementById('citta').value.trim();
+  const dipendenti = document.getElementById('dipendenti').value;
   
-  if (!nome || !cognome || !telefono) {
-    alert('Per favore compila nome, cognome e telefono.');
+  if (!nomeAgenzia || !nomeIscritto || !email || !telefono || !dipendenti) {
+    alert('Per favore compila tutti i campi obbligatori.');
     return;
   }
   
   const btn = document.querySelector('.form-submit');
-  btn.innerHTML = '✅ ISCRIZIONE COMPLETATA!';
+  btn.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="18" height="18" style="vertical-align:middle;margin-right:8px;"><polyline points="20 6 9 17 4 12"/></svg> ISCRIZIONE COMPLETATA!';
   btn.style.background = '#1a9e5c';
   btn.style.pointerEvents = 'none';
   
-  // Replace this with your actual form handling (e.g., webhook, Google Sheets, etc.)
-  console.log('Iscrizione:', { nome, cognome, telefono, citta, team: document.getElementById('team').value });
+  console.log('Iscrizione:', { nomeAgenzia, nomeIscritto, email, telefono, dipendenti, sitoWeb: document.getElementById('sito_web').value.trim() });
   
-  // Show confirmation
   const formBox = document.querySelector('.form-box');
   const conf = document.createElement('div');
   conf.style.cssText = 'background:#edfaf3; border:2px solid #1a9e5c; border-radius:10px; padding:20px; margin-top:16px; text-align:center;';
-  conf.innerHTML = '<p style="font-weight:800; color:#1a9e5c; font-size:16px; margin-bottom:6px;">🎉 Ci sei!</p><p style="color:#3d4f6b; font-size:14px;">Riceverai il link Zoom via WhatsApp e email entro poche ore.<br>Ci vediamo il <strong>12 Aprile alle 21:00</strong>!</p>';
+  conf.innerHTML = '<p style="font-weight:800; color:#1a9e5c; font-size:16px; margin-bottom:6px;">Ci sei!</p><p style="color:#3d4f6b; font-size:14px;">Riceverai il link Zoom via WhatsApp e email entro poche ore.<br>Ci vediamo il <strong>12 Aprile alle 21:00</strong>!</p>';
   formBox.appendChild(conf);
 }
 
