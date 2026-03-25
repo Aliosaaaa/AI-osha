@@ -1,0 +1,1385 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Workshop Gratuito AI per Agenzie Immobiliari – 12 Aprile | AI OSHA</title>
+<meta name="description" content="Workshop gratuito per titolari di agenzie immobiliari: scopri come integrare l'AI per risparmiare tempo, chiudere più incarichi e battere la concorrenza.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700;800;900&family=Nunito:wght@700;800;900&display=swap" rel="stylesheet">
+<style>
+:root {
+  --blu: #003876;
+  --blu-dark: #002550;
+  --blu-mid: #0059b3;
+  --blu-light: #1a7fd4;
+  --blu-bg: #f0f5fb;
+  --rosso: #e63329;
+  --rosso-hover: #cc2a22;
+  --rosso-soft: #fff0ef;
+  --verde: #1a9e5c;
+  --verde-soft: #edfaf3;
+  --verde-wa: #25D366;
+  --verde-wa-hover: #1ebe5a;
+  --arancio: #f57c00;
+  --arancio-soft: #fff8f0;
+  --bianco: #ffffff;
+  --grigio-bg: #f4f6f9;
+  --grigio-bordo: #e2e8f0;
+  --grigio-testo: #6b7a90;
+  --testo: #1a2233;
+  --testo-mid: #3d4f6b;
+  --ombra: 0 2px 12px rgba(0,56,118,0.08);
+  --ombra-card: 0 4px 20px rgba(0,56,118,0.10);
+  --ombra-hover: 0 8px 32px rgba(0,56,118,0.16);
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Nunito Sans', sans-serif;
+  background: var(--grigio-bg);
+  color: var(--testo);
+  font-size: 15px;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ─── TOPBAR ─── */
+.topbar {
+  background: var(--blu);
+  padding: 10px 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.18);
+}
+.topbar-inner {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.logo-area {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.logo-text {
+  font-family: 'Nunito', sans-serif;
+  font-size: 20px;
+  font-weight: 900;
+  color: #fff;
+  letter-spacing: -0.01em;
+}
+.logo-text .dot { color: var(--rosso); }
+.logo-sep {
+  color: rgba(255,255,255,0.3);
+  font-weight: 300;
+  font-size: 20px;
+}
+.logo-sub {
+  font-family: 'Nunito', sans-serif;
+  font-size: 14px;
+  font-weight: 800;
+  color: rgba(255,255,255,0.85);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+.topbar-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--rosso);
+  color: #fff;
+  font-size: 13px;
+  font-weight: 800;
+  padding: 9px 20px;
+  border-radius: 6px;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  transition: all 0.2s;
+}
+.topbar-cta:hover { background: var(--rosso-hover); transform: translateY(-1px); }
+
+/* ─── URGENCY BAR ─── */
+.urgency-bar {
+  background: linear-gradient(90deg, var(--rosso) 0%, #c62828 100%);
+  color: #fff;
+  text-align: center;
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+.urgency-bar span { font-weight: 400; opacity: 0.9; }
+
+/* ─── COUNTDOWN ─── */
+.countdown-strip {
+  background: var(--blu-dark);
+  padding: 16px 20px;
+  text-align: center;
+}
+.countdown-label {
+  color: rgba(255,255,255,0.7);
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  margin-bottom: 8px;
+}
+.countdown-boxes {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+}
+.cd-box {
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 8px;
+  padding: 8px 14px;
+  min-width: 64px;
+  text-align: center;
+}
+.cd-num {
+  font-family: 'Nunito', sans-serif;
+  font-size: 28px;
+  font-weight: 900;
+  color: #fff;
+  line-height: 1;
+}
+.cd-unit {
+  font-size: 10px;
+  font-weight: 700;
+  color: rgba(255,255,255,0.5);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-top: 2px;
+}
+
+/* ─── SECTIONS ─── */
+.section {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 60px 24px;
+}
+.section-alt { background: var(--bianco); }
+.section-blu { background: var(--blu); color: #fff; }
+.section-full {
+  padding: 60px 24px;
+}
+.section-full .section-inner {
+  max-width: 1080px;
+  margin: 0 auto;
+}
+
+/* ─── HERO ─── */
+.hero {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 50px 24px 60px;
+  display: grid;
+  grid-template-columns: 1fr 380px;
+  gap: 48px;
+  align-items: start;
+}
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--rosso-soft);
+  color: var(--rosso);
+  font-size: 12px;
+  font-weight: 800;
+  padding: 6px 14px;
+  border-radius: 100px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 20px;
+}
+.hero-badge svg { width: 14px; height: 14px; }
+.hero h1 {
+  font-family: 'Nunito', sans-serif;
+  font-size: 38px;
+  font-weight: 900;
+  line-height: 1.15;
+  color: var(--testo);
+  margin-bottom: 18px;
+}
+.hero h1 em {
+  font-style: normal;
+  color: var(--rosso);
+}
+.hero-sub {
+  font-size: 17px;
+  color: var(--testo-mid);
+  line-height: 1.65;
+  margin-bottom: 28px;
+}
+.hero-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-bottom: 28px;
+}
+.stat-card {
+  background: var(--bianco);
+  border: 1px solid var(--grigio-bordo);
+  border-radius: 10px;
+  padding: 16px;
+  text-align: center;
+  box-shadow: var(--ombra);
+  transition: all 0.25s;
+}
+.stat-card:hover {
+  box-shadow: var(--ombra-hover);
+  transform: translateY(-2px);
+}
+.stat-num {
+  font-family: 'Nunito', sans-serif;
+  font-size: 28px;
+  font-weight: 900;
+  line-height: 1;
+  margin-bottom: 4px;
+}
+.stat-num.red { color: var(--rosso); }
+.stat-num.blue { color: var(--blu-mid); }
+.stat-num.orange { color: var(--arancio); }
+.stat-label {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--grigio-testo);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  line-height: 1.3;
+}
+
+/* ─── EVENT CARD ─── */
+.event-card {
+  background: var(--bianco);
+  border: 2px solid var(--grigio-bordo);
+  border-radius: 14px;
+  box-shadow: var(--ombra-card);
+  overflow: hidden;
+  position: sticky;
+  top: 80px;
+}
+.event-card-header {
+  background: var(--blu);
+  padding: 18px 24px;
+  text-align: center;
+}
+.event-card-header h3 {
+  font-family: 'Nunito', sans-serif;
+  font-size: 14px;
+  font-weight: 800;
+  color: rgba(255,255,255,0.7);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 4px;
+}
+.event-card-header .date {
+  font-family: 'Nunito', sans-serif;
+  font-size: 26px;
+  font-weight: 900;
+  color: #fff;
+}
+.event-card-body { padding: 24px; }
+.event-detail {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--grigio-bordo);
+}
+.event-detail:last-of-type { border-bottom: none; }
+.event-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  flex-shrink: 0;
+}
+.event-icon.blu { background: var(--blu-bg); color: var(--blu); }
+.event-icon.green { background: var(--verde-soft); color: var(--verde); }
+.event-icon.orange { background: var(--arancio-soft); color: var(--arancio); }
+.event-detail-text strong {
+  display: block;
+  font-size: 13px;
+  font-weight: 800;
+  color: var(--testo);
+}
+.event-detail-text span {
+  font-size: 12px;
+  color: var(--grigio-testo);
+}
+.event-card-cta {
+  display: block;
+  background: var(--rosso);
+  color: #fff;
+  text-align: center;
+  padding: 15px;
+  font-size: 15px;
+  font-weight: 800;
+  text-decoration: none;
+  border-radius: 8px;
+  margin-top: 18px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  transition: all 0.2s;
+}
+.event-card-cta:hover { background: var(--rosso-hover); transform: translateY(-1px); }
+.event-card-note {
+  text-align: center;
+  font-size: 11px;
+  color: var(--grigio-testo);
+  margin-top: 10px;
+}
+
+/* ─── WHATSAPP FLOAT + INLINE ─── */
+.wa-float {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--verde-wa);
+  color: #fff;
+  padding: 14px 22px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 800;
+  box-shadow: 0 4px 20px rgba(37,211,102,0.4);
+  transition: all 0.25s;
+}
+.wa-float:hover { background: var(--verde-wa-hover); transform: translateY(-2px); box-shadow: 0 6px 28px rgba(37,211,102,0.5); }
+.wa-float svg { width: 22px; height: 22px; }
+
+.wa-inline {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  background: var(--verde-wa);
+  color: #fff;
+  padding: 16px 32px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 800;
+  transition: all 0.25s;
+  max-width: 480px;
+  margin: 0 auto;
+}
+.wa-inline:hover { background: var(--verde-wa-hover); transform: translateY(-2px); }
+.wa-inline svg { width: 24px; height: 24px; flex-shrink: 0; }
+
+/* ─── PROBLEM SECTION ─── */
+.problems-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  margin-top: 36px;
+}
+.problem-card {
+  background: var(--bianco);
+  border: 1px solid var(--grigio-bordo);
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: var(--ombra);
+  transition: all 0.25s;
+  border-left: 4px solid var(--rosso);
+}
+.problem-card:hover { box-shadow: var(--ombra-hover); transform: translateY(-2px); }
+.problem-icon {
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+.problem-card h3 {
+  font-family: 'Nunito', sans-serif;
+  font-size: 16px;
+  font-weight: 800;
+  margin-bottom: 6px;
+  color: var(--testo);
+}
+.problem-card p {
+  font-size: 13.5px;
+  color: var(--testo-mid);
+  line-height: 1.6;
+}
+.problem-data {
+  display: inline-block;
+  background: var(--rosso-soft);
+  color: var(--rosso);
+  font-size: 12px;
+  font-weight: 800;
+  padding: 3px 10px;
+  border-radius: 100px;
+  margin-top: 8px;
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 12px;
+}
+.section-title h2 {
+  font-family: 'Nunito', sans-serif;
+  font-size: 30px;
+  font-weight: 900;
+  line-height: 1.2;
+}
+.section-title h2 em { font-style: normal; color: var(--rosso); }
+.section-title p {
+  font-size: 16px;
+  color: var(--testo-mid);
+  max-width: 680px;
+  margin: 12px auto 0;
+}
+.badge-tag {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 4px 12px;
+  border-radius: 100px;
+  margin-bottom: 16px;
+}
+.badge-tag.red { background: var(--rosso-soft); color: var(--rosso); }
+.badge-tag.blue { background: var(--blu-bg); color: var(--blu); }
+.badge-tag.green { background: var(--verde-soft); color: var(--verde); }
+.badge-tag.orange { background: var(--arancio-soft); color: var(--arancio); }
+
+/* ─── PROGRAMMA ─── */
+.program-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 14px;
+  margin-top: 36px;
+}
+.prog-card {
+  background: var(--bianco);
+  border: 1px solid var(--grigio-bordo);
+  border-radius: 12px;
+  padding: 22px 18px;
+  text-align: center;
+  box-shadow: var(--ombra);
+  transition: all 0.3s;
+  position: relative;
+  overflow: hidden;
+}
+.prog-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+}
+.prog-card:nth-child(1)::before { background: var(--rosso); }
+.prog-card:nth-child(2)::before { background: var(--blu-mid); }
+.prog-card:nth-child(3)::before { background: var(--verde); }
+.prog-card:nth-child(4)::before { background: var(--arancio); }
+.prog-card:nth-child(5)::before { background: var(--blu-light); }
+.prog-card:hover { box-shadow: var(--ombra-hover); transform: translateY(-3px); }
+.prog-num {
+  font-family: 'Nunito', sans-serif;
+  font-size: 32px;
+  font-weight: 900;
+  color: var(--grigio-bordo);
+  line-height: 1;
+  margin-bottom: 8px;
+}
+.prog-icon { font-size: 28px; margin-bottom: 10px; }
+.prog-card h4 {
+  font-family: 'Nunito', sans-serif;
+  font-size: 14px;
+  font-weight: 800;
+  color: var(--testo);
+  margin-bottom: 6px;
+  line-height: 1.3;
+}
+.prog-card p {
+  font-size: 12.5px;
+  color: var(--grigio-testo);
+  line-height: 1.5;
+}
+
+/* ─── CHI SONO ─── */
+.chi-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: center;
+  margin-top: 30px;
+}
+.chi-text h3 {
+  font-family: 'Nunito', sans-serif;
+  font-size: 22px;
+  font-weight: 900;
+  margin-bottom: 16px;
+}
+.chi-text p {
+  font-size: 15px;
+  color: var(--testo-mid);
+  margin-bottom: 14px;
+  line-height: 1.7;
+}
+.chi-checks {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 16px;
+}
+.chi-check {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--testo);
+}
+.chi-check svg {
+  width: 20px;
+  height: 20px;
+  color: var(--verde);
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+.chi-avatar {
+  background: var(--blu-bg);
+  border-radius: 16px;
+  padding: 40px;
+  text-align: center;
+  border: 1px solid var(--grigio-bordo);
+}
+.avatar-circle {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--blu) 0%, var(--blu-mid) 100%);
+  margin: 0 auto 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Nunito', sans-serif;
+  font-size: 48px;
+  font-weight: 900;
+  color: #fff;
+}
+.chi-avatar h4 {
+  font-family: 'Nunito', sans-serif;
+  font-size: 18px;
+  font-weight: 900;
+  color: var(--testo);
+  margin-bottom: 4px;
+}
+.chi-avatar p {
+  font-size: 13px;
+  color: var(--grigio-testo);
+}
+.chi-avatar-tag {
+  display: inline-block;
+  background: var(--rosso-soft);
+  color: var(--rosso);
+  font-size: 11px;
+  font-weight: 800;
+  padding: 4px 12px;
+  border-radius: 100px;
+  margin-top: 10px;
+}
+
+/* ─── PER CHI ─── */
+.perchi-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-top: 30px;
+}
+.perchi-col {
+  border-radius: 12px;
+  padding: 28px;
+  border: 1px solid var(--grigio-bordo);
+}
+.perchi-col.si {
+  background: var(--verde-soft);
+  border-color: rgba(26,158,92,0.2);
+}
+.perchi-col.no {
+  background: var(--rosso-soft);
+  border-color: rgba(230,51,41,0.15);
+}
+.perchi-col h3 {
+  font-family: 'Nunito', sans-serif;
+  font-size: 18px;
+  font-weight: 900;
+  margin-bottom: 16px;
+}
+.perchi-col.si h3 { color: var(--verde); }
+.perchi-col.no h3 { color: var(--rosso); }
+.perchi-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 10px;
+  font-size: 14px;
+  color: var(--testo);
+  line-height: 1.5;
+}
+.perchi-item svg { width: 18px; height: 18px; flex-shrink: 0; margin-top: 2px; }
+
+/* ─── FORM ─── */
+.form-section {
+  background: var(--blu);
+  padding: 60px 24px;
+}
+.form-inner {
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
+}
+.form-inner h2 {
+  font-family: 'Nunito', sans-serif;
+  font-size: 28px;
+  font-weight: 900;
+  color: #fff;
+  margin-bottom: 8px;
+}
+.form-inner p {
+  color: rgba(255,255,255,0.7);
+  font-size: 15px;
+  margin-bottom: 28px;
+}
+.form-box {
+  background: var(--bianco);
+  border-radius: 14px;
+  padding: 32px;
+  box-shadow: 0 8px 40px rgba(0,0,0,0.2);
+}
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+.form-group { text-align: left; }
+.form-group.full { grid-column: 1 / -1; }
+.form-group label {
+  display: block;
+  font-size: 12px;
+  font-weight: 800;
+  color: var(--testo);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 6px;
+}
+.form-group input,
+.form-group select {
+  width: 100%;
+  padding: 12px 14px;
+  border: 2px solid var(--grigio-bordo);
+  border-radius: 8px;
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: 14px;
+  color: var(--testo);
+  transition: border-color 0.2s;
+  background: #fff;
+  -webkit-appearance: none;
+}
+.form-group input:focus,
+.form-group select:focus {
+  outline: none;
+  border-color: var(--blu-mid);
+}
+.form-submit {
+  width: 100%;
+  padding: 16px;
+  background: var(--rosso);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-family: 'Nunito', sans-serif;
+  font-size: 16px;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  transition: all 0.2s;
+  margin-top: 8px;
+}
+.form-submit:hover { background: var(--rosso-hover); transform: translateY(-1px); }
+.form-note {
+  font-size: 11px;
+  color: var(--grigio-testo);
+  margin-top: 12px;
+}
+
+/* ─── SOCIAL PROOF STRIP ─── */
+.proof-strip {
+  background: var(--bianco);
+  border-top: 1px solid var(--grigio-bordo);
+  border-bottom: 1px solid var(--grigio-bordo);
+  padding: 28px 24px;
+}
+.proof-inner {
+  max-width: 1080px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  gap: 48px;
+  flex-wrap: wrap;
+}
+.proof-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.proof-num {
+  font-family: 'Nunito', sans-serif;
+  font-size: 26px;
+  font-weight: 900;
+  color: var(--blu);
+}
+.proof-label {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--grigio-testo);
+  line-height: 1.3;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+/* ─── FAQ ─── */
+.faq-list {
+  max-width: 700px;
+  margin: 30px auto 0;
+}
+.faq-item {
+  background: var(--bianco);
+  border: 1px solid var(--grigio-bordo);
+  border-radius: 10px;
+  margin-bottom: 10px;
+  overflow: hidden;
+  transition: box-shadow 0.2s;
+}
+.faq-item:hover { box-shadow: var(--ombra); }
+.faq-q {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 22px;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--testo);
+  user-select: none;
+}
+.faq-q svg {
+  width: 20px;
+  height: 20px;
+  color: var(--grigio-testo);
+  transition: transform 0.3s;
+  flex-shrink: 0;
+}
+.faq-a {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s ease, padding 0.35s;
+  padding: 0 22px;
+}
+.faq-a p {
+  font-size: 14px;
+  color: var(--testo-mid);
+  line-height: 1.65;
+  padding-bottom: 18px;
+}
+.faq-item.open .faq-q svg { transform: rotate(180deg); }
+.faq-item.open .faq-a { max-height: 300px; padding-top: 0; }
+
+/* ─── FINAL CTA ─── */
+.final-cta {
+  background: linear-gradient(135deg, var(--blu-dark) 0%, var(--blu) 50%, var(--blu-mid) 100%);
+  padding: 60px 24px;
+  text-align: center;
+}
+.final-cta h2 {
+  font-family: 'Nunito', sans-serif;
+  font-size: 30px;
+  font-weight: 900;
+  color: #fff;
+  margin-bottom: 12px;
+  line-height: 1.2;
+}
+.final-cta p {
+  color: rgba(255,255,255,0.7);
+  font-size: 16px;
+  max-width: 560px;
+  margin: 0 auto 28px;
+}
+.final-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--rosso);
+  color: #fff;
+  padding: 18px 36px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-family: 'Nunito', sans-serif;
+  font-size: 17px;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  transition: all 0.25s;
+}
+.final-cta-btn:hover { background: var(--rosso-hover); transform: translateY(-2px); }
+
+/* ─── FOOTER ─── */
+footer {
+  background: var(--testo);
+  padding: 24px;
+  text-align: center;
+  font-size: 12px;
+  color: rgba(255,255,255,0.4);
+}
+footer a { color: rgba(255,255,255,0.6); text-decoration: none; }
+
+/* ─── RESPONSIVE ─── */
+@media (max-width: 860px) {
+  .hero { grid-template-columns: 1fr; gap: 28px; padding-top: 32px; }
+  .event-card { position: static; }
+  .hero h1 { font-size: 28px; }
+  .hero-stats { grid-template-columns: repeat(3, 1fr); }
+  .problems-grid { grid-template-columns: 1fr; }
+  .program-grid { grid-template-columns: repeat(2, 1fr); }
+  .program-grid .prog-card:last-child { grid-column: 1 / -1; max-width: 340px; margin: 0 auto; }
+  .chi-grid { grid-template-columns: 1fr; }
+  .perchi-grid { grid-template-columns: 1fr; }
+  .form-row { grid-template-columns: 1fr; }
+  .proof-inner { gap: 24px; }
+  .section-title h2 { font-size: 24px; }
+  .final-cta h2 { font-size: 24px; }
+}
+@media (max-width: 480px) {
+  .hero-stats { grid-template-columns: 1fr; }
+  .topbar-inner { justify-content: center; flex-direction: column; gap: 8px; }
+  .logo-area { flex-wrap: wrap; justify-content: center; }
+  .wa-float span { display: none; }
+  .wa-float { padding: 14px; border-radius: 50%; }
+  .countdown-boxes { gap: 8px; }
+  .cd-box { min-width: 54px; padding: 6px 10px; }
+  .cd-num { font-size: 22px; }
+}
+
+/* ─── ANIMATIONS ─── */
+.fade-up {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.fade-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ─── WA SVG REUSE ─── */
+.wa-svg { fill: currentColor; }
+</style>
+</head>
+<body>
+
+<!-- ─── TOPBAR ─── -->
+<nav class="topbar">
+  <div class="topbar-inner">
+    <div class="logo-area">
+      <div class="logo-text">AI<span class="dot">.</span>OSHA</div>
+      <span class="logo-sep">×</span>
+      <span class="logo-sub">Agenzie Immobiliari</span>
+    </div>
+    <a href="#iscrizione" class="topbar-cta">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h4a2 2 0 012 2v14a2 2 0 01-2 2h-4"/><polyline points="10 17 15 12 10 7"/><line x1="15" y1="12" x2="3" y2="12"/></svg>
+      Iscriviti Gratis
+    </a>
+  </div>
+</nav>
+
+<!-- ─── URGENCY BAR ─── -->
+<div class="urgency-bar">
+  🔴 POSTI LIMITATI — <span>Workshop gratuito riservato a titolari di agenzie immobiliari</span>
+</div>
+
+<!-- ─── COUNTDOWN ─── -->
+<div class="countdown-strip">
+  <div class="countdown-label">Il workshop inizia tra</div>
+  <div class="countdown-boxes">
+    <div class="cd-box"><div class="cd-num" id="cd-days">--</div><div class="cd-unit">Giorni</div></div>
+    <div class="cd-box"><div class="cd-num" id="cd-hours">--</div><div class="cd-unit">Ore</div></div>
+    <div class="cd-box"><div class="cd-num" id="cd-mins">--</div><div class="cd-unit">Min</div></div>
+    <div class="cd-box"><div class="cd-num" id="cd-secs">--</div><div class="cd-unit">Sec</div></div>
+  </div>
+</div>
+
+<!-- ─── HERO ─── -->
+<section class="hero">
+  <div class="hero-left">
+    <div class="hero-badge">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+      Sabato 12 Aprile — ore 21:00
+    </div>
+    <h1>Stai perdendo incarichi, lead e tempo.<br><em>L'AI può cambiare tutto.</em></h1>
+    <p class="hero-sub">Un workshop <strong>gratuito di 75 minuti</strong> per titolari di agenzie immobiliari che vogliono scoprire come le agenzie più competitive stanno usando l'Intelligenza Artificiale per chiudere di più, rispondere prima e lavorare meglio — senza assumere nessuno.</p>
+    <div class="hero-stats">
+      <div class="stat-card"><div class="stat-num red">5,6</div><div class="stat-label">Mesi medi<br>per vendere</div></div>
+      <div class="stat-card"><div class="stat-num blue">28%</div><div class="stat-label">Agenti non vende<br>metà portafoglio</div></div>
+      <div class="stat-card"><div class="stat-num orange">83,6%</div><div class="stat-label">PMI italiane<br>senza AI</div></div>
+    </div>
+    <!-- WA BUTTON #1 -->
+    <a href="https://wa.me/39XXXXXXXXXXX?text=Ciao%2C%20vorrei%20info%20sul%20workshop%20del%2012%20aprile" class="wa-inline" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      <span>Hai domande? Scrivici su WhatsApp</span>
+    </a>
+  </div>
+
+  <!-- EVENT CARD -->
+  <div class="event-card">
+    <div class="event-card-header">
+      <h3>Workshop Gratuito</h3>
+      <div class="date">12 Aprile 2025</div>
+    </div>
+    <div class="event-card-body">
+      <div class="event-detail">
+        <div class="event-icon blu">🕘</div>
+        <div class="event-detail-text"><strong>Ore 21:00</strong><span>Durata: 75 minuti</span></div>
+      </div>
+      <div class="event-detail">
+        <div class="event-icon green">💻</div>
+        <div class="event-detail-text"><strong>Online su Zoom</strong><span>Ricevi il link dopo l'iscrizione</span></div>
+      </div>
+      <div class="event-detail">
+        <div class="event-icon orange">🎯</div>
+        <div class="event-detail-text"><strong>Per agenzie 1-9 persone</strong><span>Titolari e responsabili</span></div>
+      </div>
+      <div class="event-detail">
+        <div class="event-icon blu">💰</div>
+        <div class="event-detail-text"><strong>100% Gratuito</strong><span>Nessuna carta richiesta</span></div>
+      </div>
+      <a href="#iscrizione" class="event-card-cta">Riserva il tuo posto →</a>
+      <div class="event-card-note">⚡ 127 agenzie già iscritte</div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── SOCIAL PROOF ─── -->
+<div class="proof-strip">
+  <div class="proof-inner">
+    <div class="proof-item">
+      <div class="proof-num">63%</div>
+      <div class="proof-label">Delle agenzie con AI<br>ha aumentato i ricavi</div>
+    </div>
+    <div class="proof-item">
+      <div class="proof-num">40%</div>
+      <div class="proof-label">Engagement in più<br>con virtual staging</div>
+    </div>
+    <div class="proof-item">
+      <div class="proof-num">30%</div>
+      <div class="proof-label">Errori in meno<br>con valutazioni AI</div>
+    </div>
+    <div class="proof-item">
+      <div class="proof-num">24/7</div>
+      <div class="proof-label">Risposta automatica<br>ai lead in arrivo</div>
+    </div>
+  </div>
+</div>
+
+<!-- ─── PROBLEMI ─── -->
+<section class="section-full section-alt">
+  <div class="section-inner">
+    <div class="section-title fade-up">
+      <span class="badge-tag red">Il problema</span>
+      <h2>Li riconosci? Sono i <em>5 problemi</em> che stai affrontando ogni giorno.</h2>
+      <p>Non è colpa tua. È il mercato che è cambiato. Ma chi non si adatta, perde.</p>
+    </div>
+    <div class="problems-grid">
+      <div class="problem-card fade-up">
+        <div class="problem-icon">💸</div>
+        <h3>Immobili "fuori prezzo" che restano invenduti</h3>
+        <p>Il proprietario vuole un prezzo irrealistico, tu accetti l'incarico per non perderlo. Risultato: mesi di visite a vuoto, costi di pubblicità bruciati e margini che si azzerano.</p>
+        <span class="problem-data">Sconto medio: -7,5% sul prezzo richiesto</span>
+      </div>
+      <div class="problem-card fade-up">
+        <div class="problem-icon">⏱️</div>
+        <h3>Lead che spariscono perché rispondi troppo tardi</h3>
+        <p>Il potenziale acquirente manda una richiesta dal portale. Se non rispondi in pochi minuti, chiama un'altra agenzia. Di sera o nel weekend? Lead perso.</p>
+        <span class="problem-data">La finestra di risposta è di pochi minuti</span>
+      </div>
+      <div class="problem-card fade-up">
+        <div class="problem-icon">📋</div>
+        <h3>Burocrazia che blocca le trattative in corsa</h3>
+        <p>Difformità catastali, documenti mancanti, accesso agli atti che richiede 30-90 giorni. Le condizioni del mutuo scadono e il compratore rinuncia.</p>
+        <span class="problem-data">30-90 giorni per accesso agli atti</span>
+      </div>
+      <div class="problem-card fade-up">
+        <div class="problem-icon">📉</div>
+        <h3>Annunci tutti uguali che non convertono</h3>
+        <p>Le stesse foto piatte, le stesse descrizioni copia-incolla. Il tuo annuncio si perde tra gli altri 200 della zona. Zero clic, zero visite, zero proposte.</p>
+        <span class="problem-data">+40% clic con virtual staging</span>
+      </div>
+      <div class="problem-card fade-up" style="grid-column: 1 / -1; max-width: 540px; margin: 0 auto;">
+        <div class="problem-icon">🔄</div>
+        <h3>Follow-up inesistente: contatti caldi che diventano freddi</h3>
+        <p>Il processo di acquisto dura mesi. Senza un follow-up strutturato e costante, il cliente si dimentica di te. O peggio, compra da un altro.</p>
+        <span class="problem-data">Il ciclo medio di vendita è 5,6 mesi</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── PROGRAMMA ─── -->
+<section class="section fade-up">
+  <div class="section-title">
+    <span class="badge-tag blue">Il programma</span>
+    <h2>Cosa vedrai nei <em>75 minuti</em> di workshop</h2>
+    <p>5 applicazioni AI concrete con demo live. Zero teoria, solo strumenti che puoi usare da lunedì mattina.</p>
+  </div>
+  <div class="program-grid">
+    <div class="prog-card fade-up">
+      <div class="prog-num">01</div>
+      <div class="prog-icon">📸</div>
+      <h4>Foto professionali con un click</h4>
+      <p>Virtual staging AI: trasforma foto vuote in ambienti arredati. Prima/dopo in tempo reale.</p>
+    </div>
+    <div class="prog-card fade-up">
+      <div class="prog-num">02</div>
+      <div class="prog-icon">✍️</div>
+      <h4>Annunci da copywriter esperto</h4>
+      <p>Descrizioni persuasive, ottimizzate SEO, multilingua per clienti stranieri. In 30 secondi.</p>
+    </div>
+    <div class="prog-card fade-up">
+      <div class="prog-num">03</div>
+      <div class="prog-icon">🤖</div>
+      <h4>Follow-up automatico intelligente</h4>
+      <p>L'AI risponde ai lead 24/7, pre-qualifica il budget e fissa appuntamenti. Tu dormi.</p>
+    </div>
+    <div class="prog-card fade-up">
+      <div class="prog-num">04</div>
+      <div class="prog-icon">📊</div>
+      <h4>Valutazioni con report dati</h4>
+      <p>Comparabili reali, scenari prezzo-tempo, report PDF da presentare al proprietario.</p>
+    </div>
+    <div class="prog-card fade-up">
+      <div class="prog-num">05</div>
+      <div class="prog-icon">🎯</div>
+      <h4>Presentazioni e materiali pro</h4>
+      <p>Brochure, social post, email personalizzate. Salto di immagine immediato per la tua agenzia.</p>
+    </div>
+  </div>
+</section>
+
+<!-- WA BUTTON #2 — INLINE DOPO PROGRAMMA -->
+<div style="padding: 0 24px 48px; text-align: center;">
+  <a href="https://wa.me/39XXXXXXXXXXX?text=Ciao%2C%20vorrei%20info%20sul%20workshop%20del%2012%20aprile" class="wa-inline" target="_blank" rel="noopener">
+    <svg viewBox="0 0 24 24" fill="currentColor" width="24" height="24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    <span>Vuoi saperne di più? Scrivici su WhatsApp</span>
+  </a>
+</div>
+
+<!-- ─── CHI SONO ─── -->
+<section class="section-full section-alt">
+  <div class="section-inner">
+    <div class="section-title fade-up">
+      <span class="badge-tag green">Chi sono</span>
+      <h2>Non sono un tecnico. <em>Vengo dal tuo settore.</em></h2>
+    </div>
+    <div class="chi-grid fade-up">
+      <div class="chi-text">
+        <p>Mi chiamo <strong>Aliosha Battaglini</strong> e fino a fine 2022 lavoravo nel settore immobiliare come te. Stesse frustrazioni: annunci da scrivere, lead da rincorrere, burocrazia da gestire, proprietari da convincere.</p>
+        <p>Poi è uscito ChatGPT. E ho cambiato completamente il modo di lavorare. Ho iniziato a integrare strumenti di AI nei processi quotidiani: annunci, follow-up, valutazioni, presentazioni. Il risultato? Più tempo, più qualità, più incarichi.</p>
+        <p>Oggi con <strong>AI OSHA</strong> aiuto le micro-PMI italiane — a partire dalle agenzie immobiliari — a fare la stessa cosa. Non insegno teoria. <strong>Implemento sistemi che funzionano.</strong></p>
+        <div class="chi-checks">
+          <div class="chi-check">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            Background diretto nel settore immobiliare
+          </div>
+          <div class="chi-check">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            Approccio 100% operativo — zero fuffa
+          </div>
+          <div class="chi-check">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            Implementazione reale, non corsi generici
+          </div>
+        </div>
+      </div>
+      <div class="chi-avatar">
+        <div class="avatar-circle">AB</div>
+        <h4>Aliosha Battaglini</h4>
+        <p>Fondatore AI OSHA</p>
+        <span class="chi-avatar-tag">Ex settore immobiliare</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── PER CHI È ─── -->
+<section class="section fade-up">
+  <div class="section-title">
+    <span class="badge-tag orange">Per chi è</span>
+    <h2>Questo workshop <em>fa per te?</em></h2>
+  </div>
+  <div class="perchi-grid">
+    <div class="perchi-col si">
+      <h3>✅ Sì, è per te se:</h3>
+      <div class="perchi-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#1a9e5c" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+        Sei titolare di un'agenzia immobiliare con 1-9 persone
+      </div>
+      <div class="perchi-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#1a9e5c" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+        Perdi ore ogni settimana su annunci, follow-up e pratiche
+      </div>
+      <div class="perchi-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#1a9e5c" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+        Vuoi capire come l'AI può darti un vantaggio concreto
+      </div>
+      <div class="perchi-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#1a9e5c" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+        Non sei tecnico e vuoi soluzioni pronte all'uso
+      </div>
+      <div class="perchi-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#1a9e5c" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+        Senti che la concorrenza si sta muovendo e tu sei fermo
+      </div>
+    </div>
+    <div class="perchi-col no">
+      <h3>❌ Non è per te se:</h3>
+      <div class="perchi-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#e63329" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        Cerchi la "pillola magica" — qui si parla di metodo e lavoro
+      </div>
+      <div class="perchi-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#e63329" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        Hai già un team tech interno dedicato all'innovazione
+      </div>
+      <div class="perchi-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#e63329" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        Non sei disposto a cambiare nulla nel tuo modo di lavorare
+      </div>
+      <div class="perchi-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#e63329" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        Vuoi teoria accademica sull'intelligenza artificiale
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── FORM ISCRIZIONE ─── -->
+<section class="form-section" id="iscrizione">
+  <div class="form-inner">
+    <h2>Riserva il tuo posto — è gratuito.</h2>
+    <p>Compila il form e riceverai subito il link Zoom per il workshop del 12 Aprile, ore 21:00.</p>
+    <div class="form-box">
+      <div class="form-row">
+        <div class="form-group">
+          <label for="nome">Nome *</label>
+          <input type="text" id="nome" placeholder="Il tuo nome" required>
+        </div>
+        <div class="form-group">
+          <label for="cognome">Cognome *</label>
+          <input type="text" id="cognome" placeholder="Il tuo cognome" required>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="telefono">Telefono *</label>
+          <input type="tel" id="telefono" placeholder="+39 ..." required>
+        </div>
+        <div class="form-group">
+          <label for="citta">Città *</label>
+          <input type="text" id="citta" placeholder="Es: Roma, Milano...">
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group full">
+          <label for="team">Quante persone nella tua agenzia?</label>
+          <select id="team">
+            <option value="">Seleziona...</option>
+            <option value="1">Solo io</option>
+            <option value="2-3">2-3 persone</option>
+            <option value="4-6">4-6 persone</option>
+            <option value="7-9">7-9 persone</option>
+            <option value="10+">10 o più</option>
+          </select>
+        </div>
+      </div>
+      <button class="form-submit" onclick="handleSubmit()">
+        🔒 RISERVA IL MIO POSTO GRATUITO
+      </button>
+      <div class="form-note">Nessuna carta di credito richiesta. Riceverai il link Zoom via WhatsApp e email.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── FAQ ─── -->
+<section class="section">
+  <div class="section-title fade-up">
+    <span class="badge-tag blue">Domande frequenti</span>
+    <h2>Tutto quello che vuoi sapere</h2>
+  </div>
+  <div class="faq-list">
+    <div class="faq-item fade-up">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        È davvero gratuito? Qual è il trucco?
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+      </div>
+      <div class="faq-a"><p>Sì, il workshop è 100% gratuito. Non ti chiederemo la carta di credito. Durante la live ti mostreremo anche come possiamo aiutarti in modo più approfondito — ma la partecipazione non comporta nessun obbligo.</p></div>
+    </div>
+    <div class="faq-item fade-up">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        Non sono un tipo "tecnologico". Fa per me?
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+      </div>
+      <div class="faq-a"><p>Assolutamente sì. Il fondatore viene dal settore immobiliare, non dal tech. Ogni strumento che mostriamo è pensato per chi non ha competenze tecniche. Se sai usare WhatsApp, puoi usare questi strumenti.</p></div>
+    </div>
+    <div class="faq-item fade-up">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        Quanto dura e a che ora è?
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+      </div>
+      <div class="faq-a"><p>Il workshop dura 75 minuti, sabato 12 Aprile alle ore 21:00. Si svolge online su Zoom. Riceverai il link dopo l'iscrizione.</p></div>
+    </div>
+    <div class="faq-item fade-up">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        Ci sarà il replay se non riesco a partecipare?
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+      </div>
+      <div class="faq-a"><p>Sì, invieremo il replay a tutti gli iscritti. Ma ti consigliamo di partecipare live: potrai fare domande in diretta e interagire con casi reali della tua zona.</p></div>
+    </div>
+    <div class="faq-item fade-up">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        L'AI non sostituirà il mio lavoro?
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+      </div>
+      <div class="faq-a"><p>No. L'AI è il tuo nuovo "assistente digitale". Si occupa delle attività ripetitive — scrivere annunci, rispondere ai lead di notte, generare report — così tu puoi dedicarti a quello che sai fare meglio: la relazione con il cliente, la negoziazione, la chiusura.</p></div>
+    </div>
+    <div class="faq-item fade-up">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        Mi venderete qualcosa durante il workshop?
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+      </div>
+      <div class="faq-a"><p>Alla fine del workshop presenteremo un percorso per chi vuole andare più a fondo. Ma il valore della live è reale e indipendente: uscirai con almeno 2-3 strumenti che puoi applicare da solo già il lunedì dopo.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- WA BUTTON #3 — DOPO FAQ -->
+<div style="padding: 0 24px 48px; text-align: center;">
+  <a href="https://wa.me/39XXXXXXXXXXX?text=Ciao%2C%20vorrei%20info%20sul%20workshop%20del%2012%20aprile" class="wa-inline" target="_blank" rel="noopener">
+    <svg viewBox="0 0 24 24" fill="currentColor" width="24" height="24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    <span>Dubbi? Scrivici su WhatsApp — rispondiamo in 5 minuti</span>
+  </a>
+</div>
+
+<!-- ─── FINAL CTA ─── -->
+<section class="final-cta">
+  <h2>Tra 12 mesi ci saranno due tipi di agenzie.<br>Quelle che usano l'AI. <span style="opacity: 0.5;">E le altre.</span></h2>
+  <p>Il workshop è gratuito. Il posto è limitato. La decisione è tua.</p>
+  <a href="#iscrizione" class="final-cta-btn">
+    Iscriviti ora — è gratis →
+  </a>
+</section>
+
+<!-- ─── FOOTER ─── -->
+<footer>
+  © 2025 AI OSHA — Aliosha Battaglini. Tutti i diritti riservati. | <a href="#">Privacy Policy</a> | <a href="#">Termini e Condizioni</a>
+</footer>
+
+<!-- ─── WHATSAPP FLOATING ─── -->
+<a href="https://wa.me/39XXXXXXXXXXX?text=Ciao%2C%20vorrei%20info%20sul%20workshop%20del%2012%20aprile" class="wa-float" target="_blank" rel="noopener">
+  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  <span>WhatsApp</span>
+</a>
+
+<script>
+// ─── COUNTDOWN ───
+function updateCountdown() {
+  const target = new Date('2025-04-12T21:00:00+02:00').getTime();
+  const now = Date.now();
+  const diff = target - now;
+  if (diff <= 0) {
+    document.getElementById('cd-days').textContent = '00';
+    document.getElementById('cd-hours').textContent = '00';
+    document.getElementById('cd-mins').textContent = '00';
+    document.getElementById('cd-secs').textContent = '00';
+    return;
+  }
+  const d = Math.floor(diff / 86400000);
+  const h = Math.floor((diff % 86400000) / 3600000);
+  const m = Math.floor((diff % 3600000) / 60000);
+  const s = Math.floor((diff % 60000) / 1000);
+  document.getElementById('cd-days').textContent = String(d).padStart(2, '0');
+  document.getElementById('cd-hours').textContent = String(h).padStart(2, '0');
+  document.getElementById('cd-mins').textContent = String(m).padStart(2, '0');
+  document.getElementById('cd-secs').textContent = String(s).padStart(2, '0');
+}
+updateCountdown();
+setInterval(updateCountdown, 1000);
+
+// ─── FAQ TOGGLE ───
+function toggleFaq(el) {
+  const item = el.closest('.faq-item');
+  const isOpen = item.classList.contains('open');
+  document.querySelectorAll('.faq-item.open').forEach(i => i.classList.remove('open'));
+  if (!isOpen) item.classList.add('open');
+}
+
+// ─── FORM SUBMIT ───
+function handleSubmit() {
+  const nome = document.getElementById('nome').value.trim();
+  const cognome = document.getElementById('cognome').value.trim();
+  const telefono = document.getElementById('telefono').value.trim();
+  const citta = document.getElementById('citta').value.trim();
+  
+  if (!nome || !cognome || !telefono) {
+    alert('Per favore compila nome, cognome e telefono.');
+    return;
+  }
+  
+  const btn = document.querySelector('.form-submit');
+  btn.innerHTML = '✅ ISCRIZIONE COMPLETATA!';
+  btn.style.background = '#1a9e5c';
+  btn.style.pointerEvents = 'none';
+  
+  // Replace this with your actual form handling (e.g., webhook, Google Sheets, etc.)
+  console.log('Iscrizione:', { nome, cognome, telefono, citta, team: document.getElementById('team').value });
+  
+  // Show confirmation
+  const formBox = document.querySelector('.form-box');
+  const conf = document.createElement('div');
+  conf.style.cssText = 'background:#edfaf3; border:2px solid #1a9e5c; border-radius:10px; padding:20px; margin-top:16px; text-align:center;';
+  conf.innerHTML = '<p style="font-weight:800; color:#1a9e5c; font-size:16px; margin-bottom:6px;">🎉 Ci sei!</p><p style="color:#3d4f6b; font-size:14px;">Riceverai il link Zoom via WhatsApp e email entro poche ore.<br>Ci vediamo il <strong>12 Aprile alle 21:00</strong>!</p>';
+  formBox.appendChild(conf);
+}
+
+// ─── SCROLL ANIMATIONS ───
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
