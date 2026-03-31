@@ -172,6 +172,99 @@
 
         /* Footer */
         .footer { padding: var(--space-3xl) 0 var(--space-xl); background: var(--gray-900); color: var(--gray-400); margin-top: var(--space-5xl); text-align: center; }
+
+        /* === CORSO ONLINE PLATFORM === */
+
+        /* Course Intro Section */
+        .course-intro { text-align: center; padding: var(--space-3xl) 0; }
+        .course-intro__features { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: var(--space-lg); margin-top: var(--space-2xl); }
+        .course-intro__feat { background: var(--gray-900); border: 1px solid rgba(255,255,255,0.08); border-radius: var(--radius-xl); padding: var(--space-xl); text-align: center; }
+        .course-intro__feat-icon { font-size: 2rem; margin-bottom: var(--space-sm); }
+        .course-intro__feat h4 { font-size: 1rem; margin-bottom: var(--space-xs); }
+        .course-intro__feat p { font-size: 0.875rem; color: var(--gray-400); margin: 0; }
+
+        /* Login Section */
+        .course-login { max-width: 440px; margin: 0 auto; padding: var(--space-3xl) 0; }
+        .course-login__card { background: var(--gray-900); border: 2px solid rgba(255,255,255,0.08); border-radius: var(--radius-2xl); padding: var(--space-3xl); text-align: center; }
+        .course-login__card h3 { margin-bottom: var(--space-sm); }
+        .course-login__card p { color: var(--gray-400); font-size: 0.95rem; margin-bottom: var(--space-xl); }
+        .course-login__form { display: flex; flex-direction: column; gap: var(--space-md); }
+        .course-login__input { width: 100%; padding: var(--space-md) var(--space-lg); background: var(--dark); border: 1px solid var(--gray-700); border-radius: var(--radius-lg); color: var(--white); font-size: 1rem; font-family: var(--font-display); transition: border-color var(--transition-fast); }
+        .course-login__input:focus { outline: none; border-color: var(--primary); }
+        .course-login__input::placeholder { color: var(--gray-500); }
+        .course-login__btn { width: 100%; padding: var(--space-md) var(--space-lg); background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%); color: var(--white); font-size: 1rem; font-weight: 600; border-radius: var(--radius-lg); border: none; cursor: pointer; transition: all var(--transition-base); }
+        .course-login__btn:hover { transform: translateY(-2px); box-shadow: 0 0 30px rgba(0,168,232,0.4); }
+        .course-login__error { color: #ef4444; font-size: 0.875rem; display: none; margin-top: var(--space-sm); }
+
+        /* Dashboard */
+        .course-dashboard { display: none; padding: var(--space-3xl) 0; }
+        .course-dashboard.active { display: block; }
+        .dashboard-header { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: var(--space-md); margin-bottom: var(--space-2xl); }
+        .dashboard-header__user { display: flex; align-items: center; gap: var(--space-md); }
+        .dashboard-header__avatar { width: 44px; height: 44px; background: linear-gradient(135deg, var(--primary), var(--highlight)); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1.1rem; color: var(--white); }
+        .dashboard-header__name { font-weight: 600; color: var(--white); }
+        .dashboard-header__logout { padding: var(--space-sm) var(--space-lg); background: var(--gray-800); border: 1px solid var(--gray-700); border-radius: var(--radius-lg); color: var(--gray-300); font-size: 0.875rem; cursor: pointer; transition: all var(--transition-fast); }
+        .dashboard-header__logout:hover { background: var(--gray-700); color: var(--white); }
+
+        /* Overall Progress */
+        .overall-progress { background: var(--gray-900); border: 1px solid rgba(255,255,255,0.08); border-radius: var(--radius-xl); padding: var(--space-xl); margin-bottom: var(--space-2xl); }
+        .overall-progress__header { display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--space-md); }
+        .overall-progress__header h3 { font-size: 1.125rem; }
+        .overall-progress__pct { font-size: 1.125rem; font-weight: 700; color: var(--primary); }
+        .progress-bar { width: 100%; height: 10px; background: var(--dark); border-radius: var(--radius-full); overflow: hidden; }
+        .progress-bar__fill { height: 100%; background: linear-gradient(90deg, var(--primary), var(--highlight)); border-radius: var(--radius-full); transition: width 0.5s ease; width: 0%; }
+
+        /* Module Accordion */
+        .module-list { display: flex; flex-direction: column; gap: var(--space-md); }
+        .module { background: var(--gray-900); border: 1px solid rgba(255,255,255,0.08); border-radius: var(--radius-xl); overflow: hidden; transition: border-color var(--transition-base); }
+        .module:hover { border-color: rgba(255,255,255,0.15); }
+        .module__header { display: flex; align-items: center; gap: var(--space-md); padding: var(--space-lg) var(--space-xl); cursor: pointer; user-select: none; }
+        .module__number { width: 40px; height: 40px; flex-shrink: 0; display: flex; align-items: center; justify-content: center; background: var(--dark); border-radius: var(--radius-lg); font-weight: 700; font-size: 0.95rem; color: var(--primary); }
+        .module__number.completed { background: var(--success); color: var(--white); }
+        .module__info { flex: 1; min-width: 0; }
+        .module__title { font-size: 1.05rem; font-weight: 600; color: var(--white); margin: 0; }
+        .module__meta { font-size: 0.8rem; color: var(--gray-500); margin-top: 2px; }
+        .module__progress-mini { width: 60px; height: 6px; background: var(--dark); border-radius: var(--radius-full); overflow: hidden; flex-shrink: 0; }
+        .module__progress-fill { height: 100%; background: linear-gradient(90deg, var(--primary), var(--highlight)); border-radius: var(--radius-full); transition: width 0.4s ease; }
+        .module__toggle { flex-shrink: 0; width: 24px; height: 24px; color: var(--gray-400); transition: transform var(--transition-base); }
+        .module.open .module__toggle { transform: rotate(180deg); }
+        .module__body { max-height: 0; overflow: hidden; transition: max-height 0.4s ease; }
+        .module.open .module__body { max-height: 2000px; }
+
+        /* Video List */
+        .video-list { padding: 0 var(--space-xl) var(--space-lg); }
+        .video-item { display: flex; align-items: center; gap: var(--space-md); padding: var(--space-md); border-radius: var(--radius-lg); cursor: pointer; transition: background var(--transition-fast); }
+        .video-item:hover { background: rgba(255,255,255,0.04); }
+        .video-item__check { width: 28px; height: 28px; flex-shrink: 0; display: flex; align-items: center; justify-content: center; border: 2px solid var(--gray-600); border-radius: 50%; transition: all var(--transition-fast); }
+        .video-item__check.watched { background: var(--success); border-color: var(--success); }
+        .video-item__check svg { width: 14px; height: 14px; color: var(--white); opacity: 0; }
+        .video-item__check.watched svg { opacity: 1; }
+        .video-item__info { flex: 1; min-width: 0; }
+        .video-item__title { font-size: 0.95rem; font-weight: 500; color: var(--gray-200); }
+        .video-item__dur { font-size: 0.8rem; color: var(--gray-500); }
+        .video-item__play { width: 32px; height: 32px; flex-shrink: 0; display: flex; align-items: center; justify-content: center; color: var(--primary); opacity: 0.6; transition: opacity var(--transition-fast); }
+        .video-item:hover .video-item__play { opacity: 1; }
+
+        /* Video Player Modal */
+        .video-modal { display: none; position: fixed; inset: 0; z-index: 2000; background: rgba(0,0,0,0.92); backdrop-filter: blur(8px); align-items: center; justify-content: center; padding: var(--space-lg); }
+        .video-modal.active { display: flex; }
+        .video-modal__inner { width: 100%; max-width: 960px; }
+        .video-modal__header { display: flex; align-items: center; justify-content: space-between; margin-bottom: var(--space-md); }
+        .video-modal__title { font-size: 1.125rem; font-weight: 600; color: var(--white); }
+        .video-modal__close { width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; background: var(--gray-800); border-radius: 50%; color: var(--white); cursor: pointer; transition: background var(--transition-fast); border: none; }
+        .video-modal__close:hover { background: var(--gray-700); }
+        .video-modal__player { position: relative; width: 100%; padding-bottom: 56.25%; background: var(--dark); border-radius: var(--radius-xl); overflow: hidden; }
+        .video-modal__player iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: none; }
+        .video-modal__placeholder { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; color: var(--gray-400); gap: var(--space-md); }
+        .video-modal__placeholder svg { width: 64px; height: 64px; opacity: 0.4; }
+        .video-modal__actions { display: flex; align-items: center; justify-content: space-between; margin-top: var(--space-lg); }
+        .video-modal__mark { padding: var(--space-sm) var(--space-xl); background: var(--success); color: var(--white); font-weight: 600; font-size: 0.95rem; border-radius: var(--radius-lg); cursor: pointer; border: none; transition: all var(--transition-fast); }
+        .video-modal__mark:hover { transform: translateY(-2px); box-shadow: 0 0 20px rgba(16,185,129,0.4); }
+        .video-modal__mark.watched { background: var(--gray-700); }
+        .video-modal__nav { display: flex; gap: var(--space-sm); }
+        .video-modal__nav-btn { padding: var(--space-sm) var(--space-lg); background: var(--gray-800); border: 1px solid var(--gray-700); color: var(--gray-300); font-size: 0.875rem; border-radius: var(--radius-lg); cursor: pointer; transition: all var(--transition-fast); }
+        .video-modal__nav-btn:hover { background: var(--gray-700); color: var(--white); }
+        .video-modal__nav-btn:disabled { opacity: 0.3; cursor: default; }
     </style>
 </head>
 <body>
@@ -306,6 +399,113 @@
                 </div>
             </div>
         </section>
+
+        <!-- ========== CORSO ONLINE: AI IN PRATICA PER PMI ========== -->
+        <section class="section section--dark" id="corso-online">
+            <div class="container">
+                <!-- Presentazione Corso -->
+                <div class="section__header">
+                    <span class="section__eyebrow">Corso Online</span>
+                    <h2 class="section__title">AI in Pratica <span class="text-gradient">per PMI</span></h2>
+                    <p class="section__description">
+                        10 moduli completi per imparare ad utilizzare l'Intelligenza Artificiale nella tua azienda.
+                        Video pratici, casi studio reali e strategie immediatamente applicabili.
+                    </p>
+                </div>
+
+                <div class="course-intro__features">
+                    <div class="course-intro__feat">
+                        <div class="course-intro__feat-icon">🎬</div>
+                        <h4>50 Video Lezioni</h4>
+                        <p>Contenuti pratici e aggiornati</p>
+                    </div>
+                    <div class="course-intro__feat">
+                        <div class="course-intro__feat-icon">📊</div>
+                        <h4>10 Moduli</h4>
+                        <p>Percorso strutturato e completo</p>
+                    </div>
+                    <div class="course-intro__feat">
+                        <div class="course-intro__feat-icon">🏢</div>
+                        <h4>Focus PMI</h4>
+                        <p>Pensato per piccole e medie imprese</p>
+                    </div>
+                    <div class="course-intro__feat">
+                        <div class="course-intro__feat-icon">📈</div>
+                        <h4>Traccia Progressi</h4>
+                        <p>Monitora il tuo avanzamento</p>
+                    </div>
+                </div>
+
+                <!-- Login Area -->
+                <div id="courseLogin" class="course-login">
+                    <div class="course-login__card">
+                        <h3>Accedi al Corso</h3>
+                        <p>Inserisci le credenziali fornite con l'acquisto per accedere ai contenuti.</p>
+                        <form id="loginForm" class="course-login__form" onsubmit="return false;">
+                            <input type="email" id="loginEmail" class="course-login__input" placeholder="La tua email" required>
+                            <input type="password" id="loginPassword" class="course-login__input" placeholder="Password" required>
+                            <button type="submit" class="course-login__btn" id="loginBtn">Accedi ai Corsi</button>
+                            <div id="loginError" class="course-login__error">Password non valida. Controlla le credenziali fornite.</div>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Dashboard (hidden until login) -->
+                <div id="courseDashboard" class="course-dashboard">
+                    <div class="dashboard-header">
+                        <div class="dashboard-header__user">
+                            <div class="dashboard-header__avatar" id="userAvatar"></div>
+                            <div>
+                                <div class="dashboard-header__name" id="userName"></div>
+                                <div style="font-size:0.8rem;color:var(--gray-500);">Corso AI in Pratica per PMI</div>
+                            </div>
+                        </div>
+                        <button class="dashboard-header__logout" id="logoutBtn">Esci</button>
+                    </div>
+
+                    <div class="overall-progress">
+                        <div class="overall-progress__header">
+                            <h3>Progresso Totale</h3>
+                            <span class="overall-progress__pct" id="overallPct">0%</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-bar__fill" id="overallBar"></div>
+                        </div>
+                    </div>
+
+                    <div class="module-list" id="moduleList">
+                        <!-- Modules rendered by JS -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Video Player Modal -->
+        <div class="video-modal" id="videoModal">
+            <div class="video-modal__inner">
+                <div class="video-modal__header">
+                    <div class="video-modal__title" id="modalTitle">Video</div>
+                    <button class="video-modal__close" id="modalClose">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" width="20" height="20"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+                    </button>
+                </div>
+                <div class="video-modal__player" id="modalPlayer">
+                    <div class="video-modal__placeholder" id="modalPlaceholder">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15.91 11.672a.375.375 0 010 .656l-5.603 3.113a.375.375 0 01-.557-.328V8.887c0-.286.307-.466.557-.327l5.603 3.112z"/></svg>
+                        <span>Video in arrivo — link YouTube da inserire</span>
+                    </div>
+                </div>
+                <div class="video-modal__actions">
+                    <button class="video-modal__mark" id="modalMark">
+                        ✓ Segna come visto
+                    </button>
+                    <div class="video-modal__nav">
+                        <button class="video-modal__nav-btn" id="modalPrev">← Precedente</button>
+                        <button class="video-modal__nav-btn" id="modalNext">Successivo →</button>
+                    </div>
+                </div>
+            </div>
+        </div>
 
         <!-- SEZIONE SKOOL TEMPORANEAMENTE NASCOSTA
 
@@ -719,6 +919,312 @@
                 }
             });
         });
+
+        // ====== CORSO ONLINE PLATFORM ======
+        const COURSE_PASSWORD = 'zaqw';
+
+        const MODULES = [
+            { title: 'Introduzione all\'Intelligenza Artificiale', videos: [
+                { title: 'Cos\'è l\'AI e perché è importante per le PMI', url: '', duration: '' },
+                { title: 'Breve storia dell\'AI: dal machine learning all\'AI generativa', url: '', duration: '' },
+                { title: 'I principali strumenti AI disponibili oggi', url: '', duration: '' },
+                { title: 'Come l\'AI sta trasformando il mondo del lavoro', url: '', duration: '' },
+                { title: 'Primi passi: creare il tuo account su ChatGPT e Claude', url: '', duration: '' }
+            ]},
+            { title: 'ChatGPT e AI Generativa per il Business', videos: [
+                { title: 'Interfaccia e funzionalità di ChatGPT', url: '', duration: '' },
+                { title: 'Scrivere prompt efficaci: tecniche base', url: '', duration: '' },
+                { title: 'Prompt avanzati: catene di pensiero e role-playing', url: '', duration: '' },
+                { title: 'Confronto tra ChatGPT, Claude, Gemini e Copilot', url: '', duration: '' },
+                { title: 'Caso studio: risparmiare 10 ore a settimana con l\'AI', url: '', duration: '' }
+            ]},
+            { title: 'Automazione dei Processi Aziendali', videos: [
+                { title: 'Identificare i processi automatizzabili nella tua azienda', url: '', duration: '' },
+                { title: 'Introduzione a Make (ex Integromat) per automazioni no-code', url: '', duration: '' },
+                { title: 'Automatizzare email, report e documenti ricorrenti', url: '', duration: '' },
+                { title: 'Collegare AI e strumenti aziendali (CRM, fogli, email)', url: '', duration: '' },
+                { title: 'Caso studio: automazione completa di un processo vendita', url: '', duration: '' }
+            ]},
+            { title: 'AI per il Marketing e la Comunicazione', videos: [
+                { title: 'Creare contenuti per social media con l\'AI', url: '', duration: '' },
+                { title: 'Copywriting persuasivo con AI: email, landing page, ads', url: '', duration: '' },
+                { title: 'AI per la SEO: ricerca keyword e ottimizzazione contenuti', url: '', duration: '' },
+                { title: 'Generazione immagini e visual con AI (Midjourney, DALL-E)', url: '', duration: '' },
+                { title: 'Piano editoriale completo generato con AI', url: '', duration: '' }
+            ]},
+            { title: 'AI per la Gestione Clienti e CRM', videos: [
+                { title: 'Chatbot AI per il servizio clienti: setup e configurazione', url: '', duration: '' },
+                { title: 'Personalizzazione delle comunicazioni con AI', url: '', duration: '' },
+                { title: 'Analisi sentiment e feedback clienti automatizzata', url: '', duration: '' },
+                { title: 'Segmentazione clienti intelligente con AI', url: '', duration: '' },
+                { title: 'Caso studio: migliorare la customer experience con AI', url: '', duration: '' }
+            ]},
+            { title: 'Analisi Dati e Business Intelligence con AI', videos: [
+                { title: 'Analizzare dati aziendali con ChatGPT e Code Interpreter', url: '', duration: '' },
+                { title: 'Creare dashboard e report automatici', url: '', duration: '' },
+                { title: 'Previsioni di vendita e trend con AI', url: '', duration: '' },
+                { title: 'Excel e Google Sheets potenziati con AI', url: '', duration: '' },
+                { title: 'Prendere decisioni data-driven con l\'AI', url: '', duration: '' }
+            ]},
+            { title: 'AI per la Produttività Personale', videos: [
+                { title: 'Organizzare il lavoro quotidiano con AI assistant', url: '', duration: '' },
+                { title: 'Riunioni intelligenti: trascrizione, riassunti e action items', url: '', duration: '' },
+                { title: 'Gestione email e comunicazioni con AI', url: '', duration: '' },
+                { title: 'AI per la ricerca e il knowledge management', url: '', duration: '' },
+                { title: 'Costruire il tuo workflow personale AI-powered', url: '', duration: '' }
+            ]},
+            { title: 'Strumenti AI per la Creazione di Contenuti', videos: [
+                { title: 'Video e presentazioni con AI (Synthesia, Gamma, Canva AI)', url: '', duration: '' },
+                { title: 'Generazione audio e podcast con AI', url: '', duration: '' },
+                { title: 'Documenti, proposte e contratti con AI', url: '', duration: '' },
+                { title: 'Traduzione e localizzazione automatica', url: '', duration: '' },
+                { title: 'Workflow completo: dall\'idea al contenuto finito', url: '', duration: '' }
+            ]},
+            { title: 'Sicurezza, Privacy e Aspetti Legali dell\'AI', videos: [
+                { title: 'GDPR e AI: cosa devi sapere', url: '', duration: '' },
+                { title: 'Proteggere i dati aziendali quando usi l\'AI', url: '', duration: '' },
+                { title: 'AI Act europeo: implicazioni per le PMI', url: '', duration: '' },
+                { title: 'Best practice per un uso responsabile dell\'AI', url: '', duration: '' },
+                { title: 'Checklist sicurezza AI per la tua azienda', url: '', duration: '' }
+            ]},
+            { title: 'Strategia AI: Implementazione nella tua PMI', videos: [
+                { title: 'Creare la tua roadmap AI aziendale', url: '', duration: '' },
+                { title: 'Budget e ROI: quanto investire in AI', url: '', duration: '' },
+                { title: 'Formare il team: cultura AI in azienda', url: '', duration: '' },
+                { title: 'Errori comuni da evitare nell\'adozione dell\'AI', url: '', duration: '' },
+                { title: 'Piano d\'azione: i prossimi 90 giorni con l\'AI', url: '', duration: '' }
+            ]}
+        ];
+
+        // DOM refs
+        const loginSection = document.getElementById('courseLogin');
+        const dashboard = document.getElementById('courseDashboard');
+        const loginForm = document.getElementById('loginForm');
+        const loginError = document.getElementById('loginError');
+        const loginEmail = document.getElementById('loginEmail');
+        const loginPassword = document.getElementById('loginPassword');
+        const loginBtn = document.getElementById('loginBtn');
+        const logoutBtn = document.getElementById('logoutBtn');
+        const moduleList = document.getElementById('moduleList');
+        const videoModal = document.getElementById('videoModal');
+
+        let currentUser = null;
+        let currentVideoKey = null;
+
+        // Progress helpers
+        function getProgressKey(email) { return 'corso_pmi_' + email.toLowerCase().trim(); }
+        function getProgress(email) {
+            try { return JSON.parse(localStorage.getItem(getProgressKey(email))) || {}; }
+            catch(e) { return {}; }
+        }
+        function saveProgress(email, progress) {
+            localStorage.setItem(getProgressKey(email), JSON.stringify(progress));
+        }
+        function videoKey(mi, vi) { return mi + '_' + vi; }
+        function isWatched(email, mi, vi) { return !!getProgress(email)[videoKey(mi, vi)]; }
+        function toggleWatched(email, mi, vi) {
+            const p = getProgress(email);
+            const k = videoKey(mi, vi);
+            p[k] = !p[k];
+            if (!p[k]) delete p[k];
+            saveProgress(email, p);
+        }
+
+        // Calculate stats
+        function calcStats(email) {
+            const p = getProgress(email);
+            const total = MODULES.reduce((s, m) => s + m.videos.length, 0);
+            const watched = Object.keys(p).length;
+            return { total, watched, pct: total ? Math.round((watched / total) * 100) : 0 };
+        }
+        function calcModuleStats(email, mi) {
+            const mod = MODULES[mi];
+            const watched = mod.videos.filter((_, vi) => isWatched(email, mi, vi)).length;
+            return { total: mod.videos.length, watched, pct: mod.videos.length ? Math.round((watched / mod.videos.length) * 100) : 0 };
+        }
+
+        // Render modules
+        function renderModules() {
+            moduleList.innerHTML = '';
+            MODULES.forEach((mod, mi) => {
+                const ms = calcModuleStats(currentUser, mi);
+                const div = document.createElement('div');
+                div.className = 'module';
+                div.innerHTML = `
+                    <div class="module__header" data-mi="${mi}">
+                        <div class="module__number ${ms.pct === 100 ? 'completed' : ''}">${ms.pct === 100 ? '✓' : (mi + 1)}</div>
+                        <div class="module__info">
+                            <div class="module__title">${mod.title}</div>
+                            <div class="module__meta">${ms.watched}/${ms.total} lezioni completate</div>
+                        </div>
+                        <div class="module__progress-mini"><div class="module__progress-fill" style="width:${ms.pct}%"></div></div>
+                        <svg class="module__toggle" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+                    </div>
+                    <div class="module__body">
+                        <div class="video-list">
+                            ${mod.videos.map((v, vi) => {
+                                const w = isWatched(currentUser, mi, vi);
+                                return `<div class="video-item" data-mi="${mi}" data-vi="${vi}">
+                                    <div class="video-item__check ${w ? 'watched' : ''}">
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                                    </div>
+                                    <div class="video-item__info">
+                                        <div class="video-item__title">${v.title}</div>
+                                        ${v.duration ? `<div class="video-item__dur">${v.duration}</div>` : ''}
+                                    </div>
+                                    <div class="video-item__play">
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" width="20" height="20"><path stroke-linecap="round" stroke-linejoin="round" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"/><path stroke-linecap="round" stroke-linejoin="round" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                                    </div>
+                                </div>`;
+                            }).join('')}
+                        </div>
+                    </div>
+                `;
+                moduleList.appendChild(div);
+            });
+            updateOverallProgress();
+            attachModuleEvents();
+        }
+
+        function updateOverallProgress() {
+            const s = calcStats(currentUser);
+            document.getElementById('overallPct').textContent = s.pct + '%';
+            document.getElementById('overallBar').style.width = s.pct + '%';
+        }
+
+        function attachModuleEvents() {
+            // Toggle modules
+            document.querySelectorAll('.module__header').forEach(h => {
+                h.addEventListener('click', () => {
+                    const mod = h.parentElement;
+                    const wasOpen = mod.classList.contains('open');
+                    document.querySelectorAll('.module').forEach(m => m.classList.remove('open'));
+                    if (!wasOpen) mod.classList.add('open');
+                });
+            });
+            // Click video
+            document.querySelectorAll('.video-item').forEach(item => {
+                item.addEventListener('click', () => {
+                    const mi = parseInt(item.dataset.mi);
+                    const vi = parseInt(item.dataset.vi);
+                    openVideoModal(mi, vi);
+                });
+            });
+        }
+
+        // Video Modal
+        function openVideoModal(mi, vi) {
+            currentVideoKey = { mi, vi };
+            const v = MODULES[mi].videos[vi];
+            document.getElementById('modalTitle').textContent = `Modulo ${mi + 1} — ${v.title}`;
+
+            const player = document.getElementById('modalPlayer');
+            const placeholder = document.getElementById('modalPlaceholder');
+
+            if (v.url) {
+                let embedUrl = v.url;
+                if (v.url.includes('youtube.com/watch')) {
+                    const vid = new URL(v.url).searchParams.get('v');
+                    embedUrl = 'https://www.youtube-nocookie.com/embed/' + vid + '?rel=0&modestbranding=1';
+                } else if (v.url.includes('youtu.be/')) {
+                    const vid = v.url.split('youtu.be/')[1].split('?')[0];
+                    embedUrl = 'https://www.youtube-nocookie.com/embed/' + vid + '?rel=0&modestbranding=1';
+                }
+                player.innerHTML = `<iframe src="${embedUrl}" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
+            } else {
+                player.innerHTML = `<div class="video-modal__placeholder"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15.91 11.672a.375.375 0 010 .656l-5.603 3.113a.375.375 0 01-.557-.328V8.887c0-.286.307-.466.557-.327l5.603 3.112z"/></svg><span>Video in arrivo — link YouTube da inserire</span></div>`;
+            }
+
+            updateMarkBtn();
+            updateNavBtns();
+            videoModal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeVideoModal() {
+            videoModal.classList.remove('active');
+            document.body.style.overflow = '';
+            const player = document.getElementById('modalPlayer');
+            player.innerHTML = '';
+        }
+
+        function updateMarkBtn() {
+            const btn = document.getElementById('modalMark');
+            const w = isWatched(currentUser, currentVideoKey.mi, currentVideoKey.vi);
+            btn.textContent = w ? '✓ Già visto' : '✓ Segna come visto';
+            btn.className = 'video-modal__mark' + (w ? ' watched' : '');
+        }
+
+        function updateNavBtns() {
+            const prev = document.getElementById('modalPrev');
+            const next = document.getElementById('modalNext');
+            const { mi, vi } = currentVideoKey;
+            prev.disabled = (mi === 0 && vi === 0);
+            next.disabled = (mi === MODULES.length - 1 && vi === MODULES[mi].videos.length - 1);
+        }
+
+        function navVideo(dir) {
+            let { mi, vi } = currentVideoKey;
+            if (dir === 1) {
+                vi++;
+                if (vi >= MODULES[mi].videos.length) { mi++; vi = 0; }
+            } else {
+                vi--;
+                if (vi < 0) { mi--; vi = MODULES[mi].videos.length - 1; }
+            }
+            openVideoModal(mi, vi);
+        }
+
+        // Event listeners
+        document.getElementById('modalClose').addEventListener('click', closeVideoModal);
+        videoModal.addEventListener('click', (e) => { if (e.target === videoModal) closeVideoModal(); });
+        document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && videoModal.classList.contains('active')) closeVideoModal(); });
+        document.getElementById('modalMark').addEventListener('click', () => {
+            toggleWatched(currentUser, currentVideoKey.mi, currentVideoKey.vi);
+            updateMarkBtn();
+            renderModules();
+        });
+        document.getElementById('modalPrev').addEventListener('click', () => navVideo(-1));
+        document.getElementById('modalNext').addEventListener('click', () => navVideo(1));
+
+        // Login
+        loginBtn.addEventListener('click', () => {
+            const email = loginEmail.value.trim();
+            const pass = loginPassword.value;
+            if (!email) { loginEmail.focus(); return; }
+            if (pass !== COURSE_PASSWORD) {
+                loginError.style.display = 'block';
+                return;
+            }
+            loginError.style.display = 'none';
+            currentUser = email;
+            localStorage.setItem('corso_pmi_user', email);
+            showDashboard();
+        });
+
+        logoutBtn.addEventListener('click', () => {
+            currentUser = null;
+            localStorage.removeItem('corso_pmi_user');
+            dashboard.classList.remove('active');
+            loginSection.style.display = '';
+        });
+
+        function showDashboard() {
+            loginSection.style.display = 'none';
+            dashboard.classList.add('active');
+            document.getElementById('userAvatar').textContent = currentUser.charAt(0).toUpperCase();
+            document.getElementById('userName').textContent = currentUser;
+            renderModules();
+        }
+
+        // Auto-login if saved
+        (function() {
+            const saved = localStorage.getItem('corso_pmi_user');
+            if (saved) {
+                currentUser = saved;
+                showDashboard();
+            }
+        })();
     </script>
 </body>
 </html>
