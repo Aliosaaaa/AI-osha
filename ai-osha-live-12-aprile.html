@@ -1391,7 +1391,7 @@ function handleSubmit() {
   const urlParams = new URLSearchParams(window.location.search);
   const utmSource = urlParams.get('utm_source') || 'diretto';
 
-  const payload = { nomeAgenzia, nomeIscritto, email, telefono, dipendenti, sitoWeb, utm_source: utmSource };
+  const payload = { nome_agenzia: nomeAgenzia, nome_iscritto: nomeIscritto, email, telefono, dipendenti, sito_web: sitoWeb, utm_source: utmSource, source: utmSource };
 
   fetch(APPS_SCRIPT_URL, {
     method: 'POST',
