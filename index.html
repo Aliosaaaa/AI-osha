@@ -142,6 +142,103 @@
         /* ========================================
            CSS VARIABLES - Brand Colors
            ======================================== */
+
+        /* ── MOBILE HERO OPTIMIZATION ────────────────── */
+        .gradient-blue {
+            background: linear-gradient(135deg, #00A8E8, #0066cc);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .gradient-gold {
+            background: linear-gradient(135deg, #F5A623, #e07b00);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .mobile-br { display: none; }
+        @media (max-width: 640px) {
+            .mobile-br { display: block; }
+            .hero {
+                padding: calc(64px + 1.5rem) 0 2.5rem;
+                min-height: 100svh;
+                justify-content: flex-start;
+            }
+            .hero__badge { font-size: 0.75rem; padding: 0.35rem 0.75rem; margin-bottom: 1rem; }
+            .hero__logo-wrap { margin-bottom: 1.5rem !important; }
+            .hero__logo-wrap img { max-width: 260px !important; }
+            .hero__title { font-size: clamp(2.1rem, 8vw, 3rem); margin-bottom: 1rem; line-height: 1.15; }
+            .hero__subtitle { font-size: 1rem; margin-bottom: 1.5rem; padding: 0 0.5rem; }
+            .hero__cta { gap: 0.75rem; }
+            .hero__cta .btn--large { padding: 0.875rem 1.5rem; font-size: 0.95rem; width: 100%; justify-content: center; }
+            .hero__trust { display: none; }
+            /* Tools bar mobile */
+            .tools-bar { padding: 1rem 0; }
+            .tool-pill { padding: 0.35rem 0.75rem; font-size: 0.8rem; }
+            /* Steps mobile */
+            .steps-grid::before { display: none; }
+            /* Results grid */
+            .results-grid { grid-template-columns: repeat(2, 1fr); gap: 1rem; }
+            .result-card { padding: 1.25rem 1rem; }
+            .result-card__after { font-size: 1.6rem; }
+            /* Testimonials */
+            .testimonials-grid { grid-template-columns: 1fr; }
+            /* How section */
+            .steps-grid { gap: 1.25rem; }
+            .step-card { padding: 1.5rem 1.25rem; }
+        }
+
+        /* ── ANIMATED ICONS (no emoji) ────────────────── */
+        .icon-animated {
+            width: 2.5rem; height: 2.5rem;
+            border-radius: 0.75rem;
+            display: flex; align-items: center; justify-content: center;
+            margin: 0 auto 1rem;
+            position: relative;
+        }
+        .icon-animated svg { width: 1.25rem; height: 1.25rem; }
+        .icon-book { background: rgba(0,168,232,0.15); color: #00A8E8; }
+        .icon-bolt { background: rgba(245,166,35,0.15); color: #F5A623; }
+        .icon-rocket { background: rgba(16,185,129,0.15); color: #10b981; }
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-4px); }
+        }
+        @keyframes spin-slow {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        .step-card:hover .icon-animated svg { animation: float 1.5s ease-in-out infinite; }
+
+        /* ── TOOL PILL without emoji ──────────────────── */
+        .tool-dot {
+            width: 8px; height: 8px;
+            border-radius: 50%;
+            background: var(--primary);
+            flex-shrink: 0;
+            animation: pulse 2s infinite;
+        }
+        .tool-pill:nth-child(3n+1) .tool-dot { background: #00A8E8; }
+        .tool-pill:nth-child(3n+2) .tool-dot { background: #F5A623; }
+        .tool-pill:nth-child(3n+3) .tool-dot { background: #10b981; }
+
+        /* ── RESULT CARD arrow animation ──────────────── */
+        @keyframes bounce-down {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(4px); }
+        }
+        @keyframes bounce-up {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-4px); }
+        }
+        .result-card__arrow-down { animation: bounce-down 1.5s ease-in-out infinite; display: block; font-style: normal; }
+        .result-card__arrow-up   { animation: bounce-up  1.5s ease-in-out infinite; display: block; font-style: normal; }
+
+        /* ── GENERAL mobile tweaks ────────────────────── */
+        @media (max-width: 640px) {
+            .section { padding: 3.5rem 0; }
+            .section__title { font-size: clamp(1.75rem, 7vw, 2.5rem); }
+            .footer-trust { padding: 1.5rem 0; }
+            .footer-trust__grid { gap: 1rem; flex-direction: column; align-items: center; }
+        }
         /* ── TOOLS BAR ──────────────────────────────── */
         .tools-bar {
             background: var(--dark-soft);
@@ -1903,7 +2000,7 @@
                         Metodo testato su 13 libri e gestiti eventi con 1000+ partecipanti
                     </div>
 
-                    <div style="margin-bottom: var(--space-xl);">
+                    <div class="hero__logo-wrap" style="margin-bottom: var(--space-xl);">
                         <picture>
                             <source srcset="images/logo-aiosha.webp" type="image/webp">
                             <img src="images/logo-aiosha.png" alt="AI Osha Logo" style="max-width: 320px; width: 100%; margin: 0 auto; display: block;" fetchpriority="high">
@@ -1911,7 +2008,7 @@
                     </div>
 
                     <h1 class="hero__title">
-                        Fai il <span class="text-gradient">Salto Quantico</span> con l'AI
+                        Fai il <span class="gradient-blue">Salto</span><br class="mobile-br"> <span class="gradient-gold">Quantico</span> con l'AI
                     </h1>
                     
                     <p class="hero__subtitle" id="hero-subtitle">
@@ -1963,28 +2060,28 @@
         <div class="tools-bar" aria-label="Strumenti AI che padroneggerai">
             <div class="tools-bar__inner">
                 <span class="tools-bar__label">Padroneggi →</span>
-                <div class="tool-pill"><span>🤖</span> ChatGPT</div>
-                <div class="tool-pill"><span>🧠</span> Claude</div>
-                <div class="tool-pill"><span>✨</span> Gemini</div>
-                <div class="tool-pill"><span>🔍</span> Perplexity</div>
-                <div class="tool-pill"><span>⚡</span> Zapier</div>
-                <div class="tool-pill"><span>🎨</span> Canva AI</div>
-                <div class="tool-pill"><span>📝</span> Notion AI</div>
-                <div class="tool-pill"><span>🎵</span> Suno</div>
-                <div class="tool-pill"><span>🖼️</span> Midjourney</div>
-                <div class="tool-pill"><span>📊</span> Make.com</div>
+                <div class="tool-pill"><span class="tool-dot"></span> ChatGPT</div>
+                <div class="tool-pill"><span class="tool-dot"></span> Claude</div>
+                <div class="tool-pill"><span class="tool-dot"></span> Gemini</div>
+                <div class="tool-pill"><span class="tool-dot"></span> Perplexity</div>
+                <div class="tool-pill"><span class="tool-dot"></span> Zapier</div>
+                <div class="tool-pill"><span class="tool-dot"></span> Canva AI</div>
+                <div class="tool-pill"><span class="tool-dot"></span> Notion AI</div>
+                <div class="tool-pill"><span class="tool-dot"></span> Suno</div>
+                <div class="tool-pill"><span class="tool-dot"></span> Midjourney</div>
+                <div class="tool-pill"><span class="tool-dot"></span> Make.com</div>
                 <!-- duplicate for seamless loop -->
                 <span class="tools-bar__label">Padroneggi →</span>
-                <div class="tool-pill"><span>🤖</span> ChatGPT</div>
-                <div class="tool-pill"><span>🧠</span> Claude</div>
-                <div class="tool-pill"><span>✨</span> Gemini</div>
-                <div class="tool-pill"><span>🔍</span> Perplexity</div>
-                <div class="tool-pill"><span>⚡</span> Zapier</div>
-                <div class="tool-pill"><span>🎨</span> Canva AI</div>
-                <div class="tool-pill"><span>📝</span> Notion AI</div>
-                <div class="tool-pill"><span>🎵</span> Suno</div>
-                <div class="tool-pill"><span>🖼️</span> Midjourney</div>
-                <div class="tool-pill"><span>📊</span> Make.com</div>
+                <div class="tool-pill"><span class="tool-dot"></span> ChatGPT</div>
+                <div class="tool-pill"><span class="tool-dot"></span> Claude</div>
+                <div class="tool-pill"><span class="tool-dot"></span> Gemini</div>
+                <div class="tool-pill"><span class="tool-dot"></span> Perplexity</div>
+                <div class="tool-pill"><span class="tool-dot"></span> Zapier</div>
+                <div class="tool-pill"><span class="tool-dot"></span> Canva AI</div>
+                <div class="tool-pill"><span class="tool-dot"></span> Notion AI</div>
+                <div class="tool-pill"><span class="tool-dot"></span> Suno</div>
+                <div class="tool-pill"><span class="tool-dot"></span> Midjourney</div>
+                <div class="tool-pill"><span class="tool-dot"></span> Make.com</div>
             </div>
         </div>
 
@@ -2079,19 +2176,31 @@
                 <div class="steps-grid">
                     <div class="step-card animate-on-scroll">
                         <div class="step-number">1</div>
-                        <span class="step-icon">📚</span>
+                        <div class="icon-animated icon-book">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+                        </svg>
+                    </div>
                         <p class="step-title">Acquisisci il Metodo</p>
                         <p class="step-desc">Libro + corso video: impari la struttura esatta dei prompt, gli strumenti giusti per il tuo settore e come combinarli.</p>
                     </div>
                     <div class="step-card animate-on-scroll">
                         <div class="step-number">2</div>
-                        <span class="step-icon">⚡</span>
+                        <div class="icon-animated icon-bolt">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                        </svg>
+                    </div>
                         <p class="step-title">Applica Subito</p>
                         <p class="step-desc">Ogni lezione = un risultato tangibile. Template pronti, sessioni pratiche guidate e live settimanali per non restare bloccato.</p>
                     </div>
                     <div class="step-card animate-on-scroll">
                         <div class="step-number">3</div>
-                        <span class="step-icon">🚀</span>
+                        <div class="icon-animated icon-rocket">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M5 3l14 9-14 9V3z"/>
+                        </svg>
+                    </div>
                         <p class="step-title">Scala i Risultati</p>
                         <p class="step-desc">Automazioni, agenti AI e workflow personalizzati: il tuo lavoro gira da solo mentre tu ti concentri sulla crescita.</p>
                     </div>
@@ -2447,25 +2556,25 @@
                 <div class="results-grid">
                     <div class="result-card animate-on-scroll">
                         <p class="result-card__before">15h/settimana di lavoro manuale</p>
-                        <span class="result-card__arrow">↓</span>
+                        <i class="result-card__arrow-down">↓</i>
                         <p class="result-card__after">−73%</p>
                         <p class="result-card__label">Tempo operativo risparmiato</p>
                     </div>
                     <div class="result-card animate-on-scroll">
                         <p class="result-card__before">0 clienti da canali digitali</p>
-                        <span class="result-card__arrow">↑</span>
+                        <i class="result-card__arrow-up">↑</i>
                         <p class="result-card__after">+40%</p>
                         <p class="result-card__label">Nuovi clienti in media</p>
                     </div>
                     <div class="result-card animate-on-scroll">
                         <p class="result-card__before">2 ore per creare un contenuto</p>
-                        <span class="result-card__arrow">↓</span>
+                        <i class="result-card__arrow-down">↓</i>
                         <p class="result-card__after">20 min</p>
                         <p class="result-card__label">Tempo medio per contenuto</p>
                     </div>
                     <div class="result-card animate-on-scroll">
                         <p class="result-card__before">Nessun tool AI padroneggiato</p>
-                        <span class="result-card__arrow">↑</span>
+                        <i class="result-card__arrow-up">↑</i>
                         <p class="result-card__after">10+</p>
                         <p class="result-card__label">Strumenti AI operativi</p>
                     </div>
