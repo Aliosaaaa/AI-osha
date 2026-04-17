@@ -2446,6 +2446,33 @@
             observer.observe(el);
         });
 
+        // Counter animation
+        const counterObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const el = entry.target;
+                    const target = parseInt(el.getAttribute('data-target'));
+                    const suffix = el.getAttribute('data-suffix') || '';
+                    const duration = 1500;
+                    const step = target / (duration / 16);
+                    let current = 0;
+                    const timer = setInterval(() => {
+                        current += step;
+                        if (current >= target) {
+                            current = target;
+                            clearInterval(timer);
+                        }
+                        el.textContent = Math.floor(current) + suffix;
+                    }, 16);
+                    counterObserver.unobserve(el);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        document.querySelectorAll('.stat-card__number[data-target]').forEach(el => {
+            counterObserver.observe(el);
+        });
+
         // Cookie Banner
         function acceptCookies() {
             localStorage.setItem('cookiesAccepted', 'true');
