@@ -1606,6 +1606,19 @@
             flex-direction: column;
             gap: 0.5rem;
             background: linear-gradient(135deg, rgba(0,168,232,0.08), rgba(245,166,35,0.05));
+            background-size: cover;
+            background-position: center;
+        }
+        .video-thumb__placeholder[style*="background-image"]::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: rgba(0,0,0,0.45);
+        }
+        .video-thumb__placeholder[style*="background-image"] .play-btn,
+        .video-thumb__placeholder[style*="background-image"] .video-thumb__label {
+            position: relative;
+            z-index: 1;
         }
         .play-btn {
             position: absolute;
@@ -2037,7 +2050,7 @@
                     <div class="video-card animate-on-scroll">
                         <div class="video-thumb">
                             <!-- Sostituisci YOUTUBE_ID_1 con l'ID del video YouTube (es. dQw4w9WgXcQ) -->
-                            <div class="video-thumb__placeholder" id="video-placeholder-1" data-youtube="9tNR8iPdao8">
+                            <div class="video-thumb__placeholder" id="video-placeholder-1" data-youtube="9tNR8iPdao8" data-thumb="images/thumbnails/federico.jpg">
                                 <div class="play-btn">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="white" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
                                 </div>
@@ -2055,7 +2068,7 @@
                     <div class="video-card animate-on-scroll">
                         <div class="video-thumb">
                             <!-- Sostituisci YOUTUBE_ID_2 con l'ID del video YouTube -->
-                            <div class="video-thumb__placeholder" id="video-placeholder-2" data-youtube="0hvZFh3lFYc">
+                            <div class="video-thumb__placeholder" id="video-placeholder-2" data-youtube="0hvZFh3lFYc" data-thumb="images/thumbnails/simone.jpg">
                                 <div class="play-btn">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="white" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
                                 </div>
@@ -2073,7 +2086,7 @@
                     <div class="video-card animate-on-scroll">
                         <div class="video-thumb">
                             <!-- Sostituisci YOUTUBE_ID_3 con l'ID del video YouTube -->
-                            <div class="video-thumb__placeholder" id="video-placeholder-3" data-youtube="XODn3jdlrPw">
+                            <div class="video-thumb__placeholder" id="video-placeholder-3" data-youtube="XODn3jdlrPw" data-thumb="images/thumbnails/naji.jpg">
                                 <div class="play-btn">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="white" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
                                 </div>
@@ -2091,7 +2104,7 @@
                     <!-- VIDEO 4: Cristiano B. -->
                     <div class="video-card animate-on-scroll">
                         <div class="video-thumb">
-                            <div class="video-thumb__placeholder" id="video-placeholder-4" data-youtube="fTbtEEMeEBk">
+                            <div class="video-thumb__placeholder" id="video-placeholder-4" data-youtube="fTbtEEMeEBk" data-thumb="images/thumbnails/cristiano.jpg">
                                 <div class="play-btn">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="white" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
                                 </div>
@@ -2125,7 +2138,7 @@
                     <!-- VIDEO 6: Aldo S. -->
                     <div class="video-card animate-on-scroll">
                         <div class="video-thumb">
-                            <div class="video-thumb__placeholder" id="video-placeholder-6" data-youtube="HXBiUeGfajw">
+                            <div class="video-thumb__placeholder" id="video-placeholder-6" data-youtube="HXBiUeGfajw" data-thumb="images/thumbnails/aldo.jpg">
                                 <div class="play-btn">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="white" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
                                 </div>
@@ -2142,7 +2155,7 @@
                     <!-- VIDEO 7: Andrea S. -->
                     <div class="video-card animate-on-scroll">
                         <div class="video-thumb">
-                            <div class="video-thumb__placeholder" id="video-placeholder-7" data-youtube="3PZnttE_1Gg">
+                            <div class="video-thumb__placeholder" id="video-placeholder-7" data-youtube="3PZnttE_1Gg" data-thumb="images/thumbnails/andrea.jpg">
                                 <div class="play-btn">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="white" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
                                 </div>
@@ -2493,6 +2506,12 @@
 
         // Smooth scroll for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            // Applica thumbnail ai video placeholder
+            document.querySelectorAll('.video-thumb__placeholder[data-thumb]').forEach(function(el) {
+                var thumb = el.getAttribute('data-thumb');
+                if (thumb) el.style.backgroundImage = 'url(' + thumb + ')';
+            });
+
             // Video placeholder click → apri YouTube
             document.querySelectorAll('.video-thumb__placeholder').forEach(function(el) {
                 el.style.cursor = 'pointer';
