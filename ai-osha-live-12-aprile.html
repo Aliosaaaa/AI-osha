@@ -129,6 +129,22 @@ body {
   transition: all 0.2s;
 }
 .topbar-cta:hover { background: var(--rosso-hover); transform: translateY(-1px); }
+.topbar-video-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  background: transparent;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 700;
+  padding: 9px 18px;
+  border-radius: 6px;
+  text-decoration: none;
+  border: 1.5px solid rgba(255,255,255,0.35);
+  letter-spacing: 0.02em;
+  transition: all 0.2s;
+}
+.topbar-video-btn:hover { background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.7); }
 
 /* ─── URGENCY BAR ─── */
 .urgency-bar {
@@ -974,10 +990,16 @@ footer a { color: rgba(255,255,255,0.6); text-decoration: none; }
       <span class="logo-sep">×</span>
       <span class="logo-sub">Agenzie Immobiliari</span>
     </div>
-    <a href="#iscrizione" class="topbar-cta">
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h4a2 2 0 012 2v14a2 2 0 01-2 2h-4"/><polyline points="10 17 15 12 10 7"/><line x1="15" y1="12" x2="3" y2="12"/></svg>
-      Iscriviti Gratis
-    </a>
+    <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap;">
+      <a href="#video-demo" class="topbar-video-btn">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+        Guarda la demo
+      </a>
+      <a href="#iscrizione" class="topbar-cta">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h4a2 2 0 012 2v14a2 2 0 01-2 2h-4"/><polyline points="10 17 15 12 10 7"/><line x1="15" y1="12" x2="3" y2="12"/></svg>
+        Iscriviti Gratis
+      </a>
+    </div>
   </div>
 </nav>
 
@@ -1113,7 +1135,7 @@ footer a { color: rgba(255,255,255,0.6); text-decoration: none; }
 </section>
 
 <!-- ─── VIDEO PROMO ─── -->
-<section class="section-full" style="background: var(--bianco); padding: 60px 24px;">
+<section id="video-demo" class="section-full" style="background: var(--bianco); padding: 60px 24px;">
   <div class="section-inner">
     <div class="section-title fade-up" style="margin-bottom: 28px;">
       <span class="badge-tag green">Vedi con i tuoi occhi</span>
@@ -1127,7 +1149,7 @@ footer a { color: rgba(255,255,255,0.6); text-decoration: none; }
           preload="none"
           poster="/video/spot-agenzie-thumb.jpg"
           style="position:absolute;top:0;left:0;width:100%;height:100%;background:#000;border-radius:14px;">
-          <source src="https://github.com/Aliosaaaa/AI-osha/releases/download/v1.0-spot/SPOT_v5_FINALE.mp4" type="video/mp4">
+          <source src="https://github.com/Aliosaaaa/AI-osha/releases/download/v1.1-spot/SPOT_v6_FINALE.mp4" type="video/mp4">
         </video>
       </div>
       <p class="video-caption">Demo reale — immobile vero — nessun effetto speciale</p>
