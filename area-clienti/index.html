@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Area Studenti | AI Osha</title>
+    <meta name="robots" content="noindex, nofollow">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary: #00A8E8;
+            --primary-dark: #0088c2;
+            --highlight: #F5A623;
+            --dark: #0D1117;
+            --dark-soft: #161b22;
+            --gray-900: #1f2937;
+            --gray-800: #2d3748;
+            --gray-700: #374151;
+            --gray-600: #4b5563;
+            --gray-500: #6b7280;
+            --gray-400: #9ca3af;
+            --light: #E8F4FD;
+            --white: #ffffff;
+            --success: #10b981;
+            --error: #ef4444;
+            --warning: #f59e0b;
+            --purple: #a855f7;
+            --border: rgba(255,255,255,0.08);
+            --font-display: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+            --radius-sm: 0.375rem;
+            --radius-md: 0.5rem;
+            --radius-lg: 0.75rem;
+            --radius-xl: 1rem;
+            --radius-2xl: 1.5rem;
+            --radius-full: 9999px;
+            --transition-base: 250ms ease;
+        }
+
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        html { -webkit-font-smoothing: antialiased; }
+
+        body {
+            font-family: var(--font-display);
+            background-color: var(--dark);
+            color: var(--light);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        a { color: inherit; text-decoration: none; }
+
+        /* ── LOADING ── */
+        #loading-screen {
+            position: fixed; inset: 0;
+            background: var(--dark);
+            display: flex; flex-direction: column;
+            align-items: center; justify-content: center;
+            gap: 1.25rem;
+            z-index: 9999;
+            transition: opacity 0.4s ease;
+        }
+        #loading-screen.hidden { opacity: 0; pointer-events: none; }
+        #loading-screen .brand { font-size: 1.5rem; font-weight: 800; }
+        .loading-dots { display: flex; gap: 0.5rem; }
+        .loading-dot {
+            width: 8px; height: 8px;
+            background: var(--primary); border-radius: 50%;
+            animation: pulse 1.2s ease-in-out infinite;
+        }
+        .loading-dot:nth-child(2) { animation-delay: 0.2s; }
+        .loading-dot:nth-child(3) { animation-delay: 0.4s; }
+        @keyframes pulse { 0%,80%,100%{opacity:.2;transform:scale(.8)} 40%{opacity:1;transform:scale(1)} }
+
+        /* ── HEADER ── */
+        .header {
+            position: sticky; top: 0; z-index: 100;
+            background: rgba(13,17,23,0.95);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border);
+            padding: 0 1.5rem;
+        }
+        .header__inner {
+            max-width: 1100px; margin: 0 auto;
+            display: flex; align-items: center;
+            justify-content: space-between;
+            height: 64px; gap: 1rem;
+        }
+        .header__left { display: flex; align-items: center; gap: 1rem; }
+        .header__logo { font-size: 1.2rem; font-weight: 800; }
+        .header__badge {
+            font-size: 0.7rem; font-weight: 700;
+            padding: 0.2rem 0.65rem;
+            background: rgba(0,168,232,0.1);
+            border: 1px solid rgba(0,168,232,0.25);
+            border-radius: var(--radius-full);
+            color: var(--primary);
+            text-transform: uppercase; letter-spacing: 0.06em;
+        }
+        .text-gradient {
+            background: linear-gradient(135deg, var(--primary) 0%, #7dd3fc 100%);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+        }
+        .header__right { display: flex; align-items: center; gap: 1rem; }
+        .header__email { font-size: 0.85rem; color: var(--gray-400); display: none; }
+        @media (min-width: 600px) { .header__email { display: block; } }
+
+        .btn-logout {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid var(--border);
+            color: var(--gray-400);
+            font-family: var(--font-display); font-size: 0.85rem; font-weight: 600;
+            padding: 0.5rem 1rem; border-radius: var(--radius-full);
+            cursor: pointer; transition: all var(--transition-base);
+            display: flex; align-items: center; gap: 0.4rem;
+        }
+        .btn-logout:hover {
+            background: rgba(239,68,68,0.1);
+            border-color: rgba(239,68,68,0.3);
+            color: #fca5a5;
+        }
+
+        /* ── MAIN ── */
+        main {
+            flex: 1;
+            max-width: 1100px; margin: 0 auto; width: 100%;
+            padding: 2rem 1.5rem 5rem;
+        }
+
+        /* ── WELCOME BANNER ── */
+        .welcome {
+            background: linear-gradient(135deg, rgba(0,168,232,0.08) 0%, rgba(0,136,194,0.03) 100%);
+            border: 1px solid rgba(0,168,232,0.18);
+            border-radius: var(--radius-2xl);
+            padding: 1.75rem 2rem;
+            margin-bottom: 2.5rem;
+            display: flex; align-items: center; gap: 1.25rem;
+        }
+        .welcome__emoji { font-size: 2rem; flex-shrink: 0; }
+        .welcome__name { font-size: 1.35rem; font-weight: 700; margin-bottom: 0.2rem; }
+        .welcome__sub { font-size: 0.9rem; color: var(--gray-400); }
+
+        /* ── CORSO ATTIVO ── */
+        .corso-attivo {
+            background: var(--dark-soft);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-xl);
+            padding: 1.25rem 1.5rem;
+            margin-bottom: 2.5rem;
+            display: flex; align-items: center;
+            justify-content: space-between; gap: 1rem; flex-wrap: wrap;
+        }
+        .corso-attivo__label {
+            font-size: 0.75rem; font-weight: 700;
+            color: var(--gray-500); text-transform: uppercase; letter-spacing: 0.08em;
+            margin-bottom: 0.3rem;
+        }
+        .corso-attivo__name { font-size: 1rem; font-weight: 700; }
+        .corso-badge {
+            font-size: 0.75rem; font-weight: 700;
+            padding: 0.35rem 0.85rem; border-radius: var(--radius-full);
+            text-transform: uppercase; letter-spacing: 0.05em;
+        }
+        .corso-badge--base     { background: rgba(16,185,129,0.12); border: 1px solid rgba(16,185,129,0.3); color: #6ee7b7; }
+        .corso-badge--avanzato { background: rgba(0,168,232,0.12); border: 1px solid rgba(0,168,232,0.3); color: #7dd3fc; }
+        .corso-badge--pro      { background: rgba(245,166,35,0.12); border: 1px solid rgba(245,166,35,0.3); color: #fcd34d; }
+        .corso-badge--vip      { background: rgba(168,85,247,0.12); border: 1px solid rgba(168,85,247,0.3); color: #d8b4fe; }
+
+        /* ── SECTION TITLE ── */
+        .section-title {
+            font-size: 0.8rem; font-weight: 700;
+            color: var(--gray-500); text-transform: uppercase;
+            letter-spacing: 0.09em; margin-bottom: 1rem;
+        }
+
+        /* ── GRID MODULI ── */
+        .moduli-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+            gap: 1rem; margin-bottom: 3rem;
+        }
+
+        /* ── CARD MODULO ── */
+        .card {
+            background: var(--dark-soft);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-xl);
+            padding: 1.5rem;
+            display: flex; flex-direction: column; gap: 1rem;
+            transition: border-color var(--transition-base), transform var(--transition-base), box-shadow var(--transition-base);
+            position: relative; overflow: hidden;
+        }
+        .card.unlocked { cursor: pointer; }
+        .card.unlocked:hover {
+            border-color: rgba(0,168,232,0.35);
+            transform: translateY(-2px);
+            box-shadow: 0 16px 40px rgba(0,0,0,0.35);
+        }
+        .card.locked { opacity: 0.5; }
+
+        .card__top { display: flex; align-items: flex-start; justify-content: space-between; gap: 0.75rem; }
+        .card__icon {
+            width: 46px; height: 46px; border-radius: var(--radius-lg);
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.25rem; flex-shrink: 0;
+        }
+        .card__icon--blue   { background: rgba(0,168,232,0.12); border: 1px solid rgba(0,168,232,0.22); }
+        .card__icon--amber  { background: rgba(245,166,35,0.12); border: 1px solid rgba(245,166,35,0.22); }
+        .card__icon--green  { background: rgba(16,185,129,0.12); border: 1px solid rgba(16,185,129,0.22); }
+        .card__icon--purple { background: rgba(168,85,247,0.12); border: 1px solid rgba(168,85,247,0.22); }
+        .card__icon--red    { background: rgba(239,68,68,0.12); border: 1px solid rgba(239,68,68,0.22); }
+
+        .card__status {
+            font-size: 0.68rem; font-weight: 700;
+            padding: 0.2rem 0.55rem; border-radius: var(--radius-full);
+            text-transform: uppercase; letter-spacing: 0.05em; flex-shrink: 0;
+        }
+        .card__status--free    { background: rgba(16,185,129,0.1); border: 1px solid rgba(16,185,129,0.3); color: #6ee7b7; }
+        .card__status--base    { background: rgba(16,185,129,0.1); border: 1px solid rgba(16,185,129,0.3); color: #6ee7b7; }
+        .card__status--avanzato{ background: rgba(0,168,232,0.1); border: 1px solid rgba(0,168,232,0.3); color: #7dd3fc; }
+        .card__status--pro     { background: rgba(245,166,35,0.1); border: 1px solid rgba(245,166,35,0.3); color: #fcd34d; }
+        .card__status--vip     { background: rgba(168,85,247,0.1); border: 1px solid rgba(168,85,247,0.3); color: #d8b4fe; }
+        .card__status--locked  { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); color: var(--gray-500); }
+
+        .card__title { font-size: 1rem; font-weight: 700; margin-bottom: 0.3rem; }
+        .card__desc  { font-size: 0.875rem; color: var(--gray-400); line-height: 1.5; }
+
+        .card__footer { display: flex; align-items: center; justify-content: space-between; margin-top: auto; }
+        .card__cta {
+            font-size: 0.875rem; font-weight: 600; color: var(--primary);
+            display: flex; align-items: center; gap: 0.3rem;
+        }
+        .card.locked .card__cta { display: none; }
+        .card__lock {
+            font-size: 0.8rem; color: var(--gray-500);
+            display: none; align-items: center; gap: 0.35rem;
+        }
+        .card.locked .card__lock { display: flex; }
+
+        /* lock label: nome del piano richiesto */
+        .card__lock-plan {
+            font-size: 0.72rem; font-weight: 700;
+            padding: 0.18rem 0.5rem; border-radius: var(--radius-full);
+        }
+
+        /* ── SUPPORT BOX ── */
+        .support-box {
+            background: var(--dark-soft);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-xl);
+            padding: 1.5rem 2rem;
+            display: flex; align-items: center;
+            justify-content: space-between; gap: 1rem; flex-wrap: wrap;
+        }
+        .support-box h3 { font-size: 1rem; font-weight: 700; margin-bottom: 0.25rem; }
+        .support-box p  { font-size: 0.875rem; color: var(--gray-400); }
+        .btn-support {
+            display: inline-flex; align-items: center; gap: 0.5rem;
+            padding: 0.65rem 1.25rem;
+            background: rgba(0,168,232,0.08);
+            border: 1px solid rgba(0,168,232,0.25);
+            border-radius: var(--radius-full);
+            color: var(--primary); font-family: var(--font-display);
+            font-size: 0.875rem; font-weight: 700;
+            cursor: pointer; transition: all var(--transition-base); white-space: nowrap;
+        }
+        .btn-support:hover { background: rgba(0,168,232,0.18); box-shadow: 0 0 20px rgba(0,168,232,0.2); }
+
+        /* ── UPGRADE NOTICE ── */
+        .upgrade-notice {
+            background: rgba(245,166,35,0.06);
+            border: 1px solid rgba(245,166,35,0.2);
+            border-radius: var(--radius-xl);
+            padding: 1.25rem 1.5rem;
+            margin-bottom: 2rem;
+            display: flex; align-items: flex-start; gap: 0.75rem;
+        }
+        .upgrade-notice__icon { font-size: 1.1rem; flex-shrink: 0; margin-top: 0.1rem; }
+        .upgrade-notice__text { font-size: 0.875rem; color: #fcd34d; line-height: 1.5; }
+        .upgrade-notice__text strong { font-weight: 700; }
+    </style>
+</head>
+<body>
+
+<!-- LOADING -->
+<div id="loading-screen">
+    <div class="brand">AI <span class="text-gradient">Osha</span></div>
+    <div class="loading-dots">
+        <div class="loading-dot"></div>
+        <div class="loading-dot"></div>
+        <div class="loading-dot"></div>
+    </div>
+</div>
+
+<!-- HEADER -->
+<header class="header">
+    <div class="header__inner">
+        <div class="header__left">
+            <a href="/" class="header__logo">AI <span class="text-gradient">Osha</span></a>
+            <span class="header__badge">Area Studenti</span>
+        </div>
+        <div class="header__right">
+            <span class="header__email" id="user-email"></span>
+            <button class="btn-logout" id="logout-btn">
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/>
+                    <polyline points="16 17 21 12 16 7"/>
+                    <line x1="21" y1="12" x2="9" y2="12"/>
+                </svg>
+                Esci
+            </button>
+        </div>
+    </div>
+</header>
+
+<main>
+
+    <!-- WELCOME -->
+    <div class="welcome">
+        <div class="welcome__emoji">👋</div>
+        <div>
+            <div class="welcome__name" id="welcome-name">Bentornato!</div>
+            <div class="welcome__sub">Questa è la tua area personale. Trovi qui tutto ciò che hai sbloccato con il tuo corso.</div>
+        </div>
+    </div>
+
+    <!-- CORSO ATTIVO -->
+    <div class="corso-attivo">
+        <div>
+            <div class="corso-attivo__label">Il tuo piano attivo</div>
+            <div class="corso-attivo__name" id="piano-name">—</div>
+        </div>
+        <span class="corso-badge" id="piano-badge">—</span>
+    </div>
+
+    <!-- UPGRADE NOTICE (visibile solo se non è VIP) -->
+    <div class="upgrade-notice" id="upgrade-notice" style="display:none">
+        <span class="upgrade-notice__icon">✨</span>
+        <div class="upgrade-notice__text">
+            Vuoi sbloccare altri contenuti? <strong>Scrivi ad Aliosha</strong> per scoprire come fare upgrade del tuo piano.
+            <a href="mailto:info@aiosha.it" style="color:#fcd34d;font-weight:700;margin-left:0.3rem;">Contattami →</a>
+        </div>
+    </div>
+
+    <!-- MODULI -->
+    <p class="section-title">I tuoi contenuti</p>
+    <div class="moduli-grid" id="moduli-grid">
+        <!-- Generato via JS -->
+    </div>
+
+    <!-- SUPPORTO -->
+    <div class="support-box">
+        <div>
+            <h3>Hai bisogno di aiuto?</h3>
+            <p>Rispondo entro 24 ore nei giorni lavorativi.</p>
+        </div>
+        <a href="mailto:info@aiosha.it" class="btn-support">
+            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                <polyline points="22,6 12,13 2,6"/>
+            </svg>
+            Contattami
+        </a>
+    </div>
+
+</main>
+
+<script type="module">
+import { requireAuth, logout } from "../js/auth.js";
+import { db } from "../js/firebase-config.js";
+import { doc, getDoc } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
+
+// ─────────────────────────────────────────────
+// CATALOGO MODULI
+// Ogni modulo ha: id, icona, titolo, descrizione, link, minPiano
+// minPiano: il piano MINIMO necessario per accedere
+//   "free" → tutti, "base" → base+, "avanzato" → avanzato+, "pro" → pro+, "vip" → solo vip
+// ─────────────────────────────────────────────
+const PIANI_ORDER = ["free", "base", "avanzato", "pro", "vip"];
+
+const PIANI_LABELS = {
+    free:     "Gratuito",
+    base:     "Base",
+    avanzato: "Avanzato",
+    pro:      "Pro",
+    vip:      "VIP"
+};
+
+const MODULI = [
+    {
+        id: "guida-50-prompt",
+        icon: "🤖", iconClass: "card__icon--blue",
+        title: "50 Prompt Pronti all'Uso",
+        desc: "La libreria di prompt testati per ChatGPT e Claude. Usali subito nel tuo lavoro.",
+        cta: "Apri la libreria",
+        link: "#",  // ← sostituisci con link reale
+        minPiano: "free"
+    },
+    {
+        id: "videolezioni-base",
+        icon: "🎥", iconClass: "card__icon--green",
+        title: "Videolezioni — Modulo Base",
+        desc: "Le registrazioni delle prime 4 sessioni del corso. Guarda quando vuoi.",
+        cta: "Guarda i video",
+        link: "#",
+        minPiano: "base"
+    },
+    {
+        id: "slide-corso",
+        icon: "📊", iconClass: "card__icon--blue",
+        title: "Slide del Corso",
+        desc: "Tutte le slide in PDF del corso base. Scarica e tieni come riferimento.",
+        cta: "Scarica le slide",
+        link: "#",
+        minPiano: "base"
+    },
+    {
+        id: "videolezioni-avanzato",
+        icon: "🚀", iconClass: "card__icon--amber",
+        title: "Videolezioni — Modulo Avanzato",
+        desc: "Automazioni, agenti AI, workflow avanzati. Le sessioni del corso avanzato.",
+        cta: "Guarda i video",
+        link: "#",
+        minPiano: "avanzato"
+    },
+    {
+        id: "template-automazioni",
+        icon: "⚙️", iconClass: "card__icon--amber",
+        title: "Template Automazioni",
+        desc: "Workflow pronti per Make, Zapier e N8N. Importa e adatta al tuo business.",
+        cta: "Scarica i template",
+        link: "#",
+        minPiano: "avanzato"
+    },
+    {
+        id: "sessione-1to1",
+        icon: "🎯", iconClass: "card__icon--purple",
+        title: "Sessione 1:1 con Aliosha",
+        desc: "La tua sessione di consulenza privata inclusa nel piano Pro. Prenota qui.",
+        cta: "Prenota la sessione",
+        link: "#",
+        minPiano: "pro"
+    },
+    {
+        id: "prompt-pro",
+        icon: "💡", iconClass: "card__icon--purple",
+        title: "Prompt Avanzati — Serie Pro",
+        desc: "50 prompt aggiuntivi per use case avanzati: vendita, HR, finanza, marketing.",
+        cta: "Apri la serie Pro",
+        link: "#",
+        minPiano: "pro"
+    },
+    {
+        id: "accesso-vip",
+        icon: "👑", iconClass: "card__icon--red",
+        title: "Gruppo Privato VIP",
+        desc: "Accesso diretto al gruppo Telegram riservato ai VIP. Aggiornamenti in tempo reale.",
+        cta: "Entra nel gruppo",
+        link: "#",
+        minPiano: "vip"
+    }
+];
+
+// ─────────────────────────────────────────────
+// PIANO → livello numerico
+// ─────────────────────────────────────────────
+function pianoLevel(piano) {
+    return PIANI_ORDER.indexOf(piano ?? "free");
+}
+
+function canAccess(userPiano, minPiano) {
+    return pianoLevel(userPiano) >= pianoLevel(minPiano);
+}
+
+// ─────────────────────────────────────────────
+// RENDER MODULI
+// ─────────────────────────────────────────────
+function renderModuli(userPiano) {
+    const grid = document.getElementById("moduli-grid");
+    grid.innerHTML = "";
+
+    MODULI.forEach(m => {
+        const ok = canAccess(userPiano, m.minPiano);
+        const statusLabel = ok
+            ? (m.minPiano === "free" ? "Incluso" : PIANI_LABELS[m.minPiano])
+            : PIANI_LABELS[m.minPiano];
+
+        const card = document.createElement("div");
+        card.className = `card ${ok ? "unlocked" : "locked"}`;
+        if (ok && m.link && m.link !== "#") {
+            card.addEventListener("click", () => window.open(m.link, "_blank"));
+        }
+
+        card.innerHTML = `
+            <div class="card__top">
+                <div class="card__icon ${m.iconClass}">${m.icon}</div>
+                <span class="card__status card__status--${ok ? m.minPiano : "locked"}">
+                    ${ok ? statusLabel : "🔒 " + statusLabel}
+                </span>
+            </div>
+            <div>
+                <div class="card__title">${m.title}</div>
+                <div class="card__desc">${m.desc}</div>
+            </div>
+            <div class="card__footer">
+                <span class="card__cta">${m.cta} →</span>
+                <span class="card__lock">Richiede piano <strong>${PIANI_LABELS[m.minPiano]}</strong></span>
+            </div>
+        `;
+
+        grid.appendChild(card);
+    });
+}
+
+// ─────────────────────────────────────────────
+// AGGIORNA UI PIANO
+// ─────────────────────────────────────────────
+function aggiornaPiano(piano) {
+    const badgeClasses = {
+        free:     "corso-badge--base",
+        base:     "corso-badge--base",
+        avanzato: "corso-badge--avanzato",
+        pro:      "corso-badge--pro",
+        vip:      "corso-badge--vip"
+    };
+    document.getElementById("piano-name").textContent = PIANI_LABELS[piano] ?? piano;
+    const badge = document.getElementById("piano-badge");
+    badge.textContent = PIANI_LABELS[piano] ?? piano;
+    badge.className = `corso-badge ${badgeClasses[piano] ?? "corso-badge--base"}`;
+
+    // Mostra upgrade notice solo se non VIP
+    if (piano !== "vip") {
+        document.getElementById("upgrade-notice").style.display = "flex";
+    }
+}
+
+// ─────────────────────────────────────────────
+// INIT
+// ─────────────────────────────────────────────
+requireAuth("/login.html").then(async (user) => {
+    // Email nella nav
+    document.getElementById("user-email").textContent = user.email;
+    document.getElementById("welcome-name").textContent =
+        `Bentornato${user.displayName ? ", " + user.displayName.split(" ")[0] : ""}!`;
+
+    // Leggi dati studente da Firestore
+    let piano = "free";
+    try {
+        const snap = await getDoc(doc(db, "studenti", user.uid));
+        if (snap.exists()) {
+            const data = snap.data();
+            piano = data.piano ?? "free";
+            // Se ha un nome salvato, usalo
+            if (data.nome) {
+                document.getElementById("welcome-name").textContent =
+                    `Bentornato, ${data.nome.split(" ")[0]}!`;
+            }
+        }
+    } catch (e) {
+        console.warn("Firestore non raggiungibile, mostro piano free.");
+    }
+
+    aggiornaPiano(piano);
+    renderModuli(piano);
+
+    // Nascondi loading
+    document.getElementById("loading-screen").classList.add("hidden");
+});
+
+// Logout
+document.getElementById("logout-btn").addEventListener("click", async () => {
+    await logout();
+    window.location.href = "/login.html";
+});
+</script>
+
+</body>
+</html>
