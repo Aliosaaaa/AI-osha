@@ -194,6 +194,7 @@
             <div class="stat"><div class="stat__num" id="stat-premium">—</div><div class="stat__label">Account Premium</div></div>
             <div class="stat"><div class="stat__num" id="stat-pmi">—</div><div class="stat__label">Corso PMI</div></div>
             <div class="stat"><div class="stat__num" id="stat-immo">—</div><div class="stat__label">Corso Immobiliare</div></div>
+            <div class="stat"><div class="stat__num" id="stat-piattaforma">—</div><div class="stat__label">Corso Piattaforma</div></div>
         </div>
 
         <!-- TABELLA -->
@@ -292,6 +293,7 @@ const ADMIN_UID = "4sMlpAAAaTYgbLclvgzDdeQ8FK73";
 const CORSI_DISPONIBILI = [
     { id: "pmi",          label: "AI in Pratica per PMI",          sub: "PMI" },
     { id: "immobiliare",  label: "AI per Agenzie Immobiliari",      sub: "Immobiliare" },
+    { id: "piattaforma",  label: "Crea la Tua Piattaforma Privata", sub: "Piattaforma" },
     // Aggiungi qui altri corsi futuri:
     // { id: "ecommerce", label: "AI per E-commerce", sub: "E-commerce" },
 ];
@@ -368,8 +370,9 @@ async function loadStudents() {
 function updateStats() {
     document.getElementById("stat-totale").textContent   = studenti.length;
     document.getElementById("stat-premium").textContent  = studenti.filter(s => s.premium).length;
-    document.getElementById("stat-pmi").textContent      = studenti.filter(s => (s.corsi||[]).includes("pmi")).length;
-    document.getElementById("stat-immo").textContent     = studenti.filter(s => (s.corsi||[]).includes("immobiliare")).length;
+    document.getElementById("stat-pmi").textContent          = studenti.filter(s => (s.corsi||[]).includes("pmi")).length;
+    document.getElementById("stat-immo").textContent         = studenti.filter(s => (s.corsi||[]).includes("immobiliare")).length;
+    document.getElementById("stat-piattaforma").textContent  = studenti.filter(s => (s.corsi||[]).includes("piattaforma")).length;
 }
 
 function renderTable() {
