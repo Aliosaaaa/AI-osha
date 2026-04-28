@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin | AI Osha</title>
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #00A8E8;
+            --highlight: #F5A623;
+            --dark: #0D1117;
+            --dark-soft: #161b22;
+            --gray-800: #2d3748;
+            --gray-700: #374151;
+            --gray-500: #6b7280;
+            --gray-400: #9ca3af;
+            --light: #E8F4FD;
+            --success: #10b981;
+            --error: #ef4444;
+            --border: rgba(255,255,255,0.08);
+            --font: 'Plus Jakarta Sans', sans-serif;
+            --mono: 'JetBrains Mono', monospace;
+            --radius: 0.75rem;
+            --radius-full: 9999px;
+        }
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        html { -webkit-font-smoothing: antialiased; }
+        body { font-family: var(--font); background: var(--dark); color: var(--light); min-height: 100vh; }
+        a { color: inherit; text-decoration: none; }
+
+        /* ── LOADING ── */
+        #loading { position: fixed; inset: 0; background: var(--dark); display: flex; align-items: center; justify-content: center; z-index: 999; }
+        #loading.hidden { display: none; }
+        .dots { display: flex; gap: .5rem; }
+        .dot { width: 8px; height: 8px; background: var(--primary); border-radius: 50%; animation: p 1.2s ease infinite; }
+        .dot:nth-child(2){animation-delay:.2s} .dot:nth-child(3){animation-delay:.4s}
+        @keyframes p{0%,80%,100%{opacity:.2;transform:scale(.8)}40%{opacity:1;transform:scale(1)}}
+
+        /* ── LOGIN ── */
+        #login-screen { display: none; min-height: 100vh; align-items: center; justify-content: center; }
+        #login-screen.visible { display: flex; }
+        .login-box { background: var(--dark-soft); border: 1px solid var(--border); border-radius: 1.25rem; padding: 2.5rem; width: 100%; max-width: 420px; margin: 1rem; }
+        .login-logo { font-size: 1.5rem; font-weight: 800; margin-bottom: 0.5rem; }
+        .login-sub { font-size: 0.875rem; color: var(--gray-400); margin-bottom: 2rem; }
+        .text-gradient { background: linear-gradient(135deg,var(--primary),#7dd3fc); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
+        .form-label { display: block; font-size: 0.8rem; font-weight: 600; color: var(--gray-400); margin-bottom: 0.4rem; text-transform: uppercase; letter-spacing: .05em; }
+        .form-input { width: 100%; background: var(--dark); border: 1px solid var(--border); border-radius: var(--radius); padding: .75rem 1rem; color: var(--light); font-family: var(--font); font-size: .9rem; outline: none; margin-bottom: 1rem; transition: border-color .2s; }
+        .form-input:focus { border-color: var(--primary); }
+        .btn-primary { width: 100%; padding: .8rem; background: var(--primary); border: none; border-radius: var(--radius-full); color: #fff; font-family: var(--font); font-size: .9rem; font-weight: 700; cursor: pointer; transition: opacity .2s; }
+        .btn-primary:hover { opacity: .85; }
+        .alert { font-size: .85rem; color: #fca5a5; margin-top: .75rem; display: none; }
+        .alert.visible { display: block; }
+
+        /* ── MAIN APP ── */
+        #app { display: none; }
+        #app.visible { display: block; }
+
+        /* header */
+        .header { background: rgba(13,17,23,.95); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); padding: 0 1.5rem; position: sticky; top: 0; z-index: 100; }
+        .header__inner { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; height: 60px; gap: 1rem; }
+        .header__logo { font-size: 1.1rem; font-weight: 800; }
+        .header__badge { font-size: .7rem; font-weight: 700; padding: .2rem .6rem; background: rgba(239,68,68,.1); border: 1px solid rgba(239,68,68,.3); border-radius: var(--radius-full); color: #fca5a5; text-transform: uppercase; letter-spacing: .06em; }
+        .header__right { display: flex; align-items: center; gap: 1rem; }
+        .header__email { font-size: .8rem; color: var(--gray-400); }
+        .btn-logout { background: none; border: 1px solid var(--border); color: var(--gray-400); font-family: var(--font); font-size: .8rem; font-weight: 600; padding: .4rem .9rem; border-radius: var(--radius-full); cursor: pointer; transition: all .2s; }
+        .btn-logout:hover { border-color: rgba(239,68,68,.4); color: #fca5a5; }
+
+        /* main */
+        main { max-width: 1200px; margin: 0 auto; padding: 2rem 1.5rem 4rem; }
+
+        /* stats bar */
+        .stats { display: flex; gap: 1rem; margin-bottom: 2rem; flex-wrap: wrap; }
+        .stat { background: var(--dark-soft); border: 1px solid var(--border); border-radius: var(--radius); padding: 1rem 1.5rem; flex: 1; min-width: 140px; }
+        .stat__num { font-size: 1.75rem; font-weight: 800; }
+        .stat__label { font-size: .75rem; color: var(--gray-400); margin-top: .2rem; }
+
+        /* toolbar */
+        .toolbar { display: flex; align-items: center; justify-content: space-between; gap: 1rem; margin-bottom: 1.25rem; flex-wrap: wrap; }
+        .toolbar__title { font-size: 1rem; font-weight: 700; }
+        .btn-add { display: inline-flex; align-items: center; gap: .5rem; padding: .6rem 1.25rem; background: var(--primary); border: none; border-radius: var(--radius-full); color: #fff; font-family: var(--font); font-size: .875rem; font-weight: 700; cursor: pointer; transition: opacity .2s; }
+        .btn-add:hover { opacity: .85; }
+
+        /* table */
+        .table-wrap { background: var(--dark-soft); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; overflow-x: auto; }
+        table { width: 100%; border-collapse: collapse; min-width: 640px; }
+        thead { background: rgba(255,255,255,.03); }
+        th { padding: .85rem 1.25rem; text-align: left; font-size: .72rem; font-weight: 700; color: var(--gray-400); text-transform: uppercase; letter-spacing: .06em; border-bottom: 1px solid var(--border); white-space: nowrap; }
+        td { padding: .9rem 1.25rem; border-bottom: 1px solid var(--border); font-size: .875rem; vertical-align: middle; }
+        tr:last-child td { border-bottom: none; }
+        tr:hover td { background: rgba(255,255,255,.02); }
+
+        /* badges */
+        .badge { display: inline-flex; align-items: center; gap: .3rem; font-size: .7rem; font-weight: 700; padding: .2rem .55rem; border-radius: var(--radius-full); text-transform: uppercase; letter-spacing: .04em; margin: .15rem .15rem 0 0; }
+        .badge--corso { background: rgba(0,168,232,.1); border: 1px solid rgba(0,168,232,.25); color: #7dd3fc; }
+        .badge--premium { background: rgba(168,85,247,.1); border: 1px solid rgba(168,85,247,.3); color: #d8b4fe; }
+        .badge--none { background: rgba(255,255,255,.04); border: 1px solid var(--border); color: var(--gray-500); }
+
+        /* actions */
+        .actions { display: flex; gap: .5rem; }
+        .btn-edit { background: rgba(0,168,232,.08); border: 1px solid rgba(0,168,232,.2); color: var(--primary); font-family: var(--font); font-size: .78rem; font-weight: 600; padding: .35rem .75rem; border-radius: var(--radius-full); cursor: pointer; transition: all .2s; }
+        .btn-edit:hover { background: rgba(0,168,232,.18); }
+        .btn-delete { background: rgba(239,68,68,.08); border: 1px solid rgba(239,68,68,.2); color: #fca5a5; font-family: var(--font); font-size: .78rem; font-weight: 600; padding: .35rem .75rem; border-radius: var(--radius-full); cursor: pointer; transition: all .2s; }
+        .btn-delete:hover { background: rgba(239,68,68,.2); }
+
+        /* empty */
+        .empty { text-align: center; padding: 3rem; color: var(--gray-500); font-size: .9rem; }
+
+        /* ── MODAL ── */
+        .modal-overlay { position: fixed; inset: 0; background: rgba(0,0,0,.7); backdrop-filter: blur(4px); z-index: 200; display: none; align-items: center; justify-content: center; padding: 1rem; }
+        .modal-overlay.open { display: flex; }
+        .modal { background: var(--dark-soft); border: 1px solid var(--border); border-radius: 1.25rem; padding: 2rem; width: 100%; max-width: 520px; max-height: 90vh; overflow-y: auto; }
+        .modal__title { font-size: 1.1rem; font-weight: 700; margin-bottom: 1.5rem; }
+        .modal__footer { display: flex; gap: .75rem; margin-top: 1.5rem; justify-content: flex-end; }
+        .btn-secondary { padding: .65rem 1.25rem; background: none; border: 1px solid var(--border); border-radius: var(--radius-full); color: var(--gray-400); font-family: var(--font); font-size: .875rem; font-weight: 600; cursor: pointer; transition: all .2s; }
+        .btn-secondary:hover { border-color: rgba(255,255,255,.2); color: var(--light); }
+        .btn-save { padding: .65rem 1.5rem; background: var(--primary); border: none; border-radius: var(--radius-full); color: #fff; font-family: var(--font); font-size: .875rem; font-weight: 700; cursor: pointer; transition: opacity .2s; }
+        .btn-save:hover { opacity: .85; }
+        .btn-save:disabled { opacity: .5; cursor: not-allowed; }
+
+        /* corsi checkboxes */
+        .corsi-grid { display: grid; grid-template-columns: 1fr 1fr; gap: .6rem; margin-top: .5rem; }
+        .corso-check { display: flex; align-items: center; gap: .6rem; background: var(--dark); border: 1px solid var(--border); border-radius: var(--radius); padding: .65rem .85rem; cursor: pointer; transition: border-color .2s; }
+        .corso-check:hover { border-color: rgba(0,168,232,.3); }
+        .corso-check input { accent-color: var(--primary); width: 16px; height: 16px; flex-shrink: 0; cursor: pointer; }
+        .corso-check label { font-size: .85rem; font-weight: 600; cursor: pointer; }
+        .corso-check small { font-size: .72rem; color: var(--gray-400); display: block; }
+
+        /* premium toggle */
+        .toggle-row { display: flex; align-items: center; justify-content: space-between; background: var(--dark); border: 1px solid var(--border); border-radius: var(--radius); padding: .85rem 1rem; margin-top: .5rem; }
+        .toggle-row label { font-size: .875rem; font-weight: 600; }
+        .toggle-row small { font-size: .75rem; color: var(--gray-400); display: block; }
+        .toggle { position: relative; width: 44px; height: 24px; flex-shrink: 0; }
+        .toggle input { opacity: 0; width: 0; height: 0; }
+        .toggle-slider { position: absolute; inset: 0; background: var(--gray-700); border-radius: 24px; cursor: pointer; transition: .3s; }
+        .toggle-slider::before { content:''; position:absolute; width:18px; height:18px; left:3px; top:3px; background:#fff; border-radius:50%; transition:.3s; }
+        .toggle input:checked + .toggle-slider { background: var(--primary); }
+        .toggle input:checked + .toggle-slider::before { transform: translateX(20px); }
+
+        /* tip box */
+        .tip { background: rgba(245,166,35,.05); border: 1px solid rgba(245,166,35,.2); border-radius: var(--radius); padding: .85rem 1rem; margin-bottom: 1.5rem; font-size: .82rem; color: #fcd34d; line-height: 1.5; }
+        .tip strong { font-weight: 700; }
+        .tip a { color: #fcd34d; text-decoration: underline; }
+
+        /* uid input with mono font */
+        .uid-input { font-family: var(--mono); font-size: .8rem; }
+
+        /* toast */
+        .toast { position: fixed; bottom: 2rem; right: 2rem; background: var(--dark-soft); border: 1px solid var(--border); border-radius: var(--radius); padding: .9rem 1.25rem; font-size: .875rem; font-weight: 600; z-index: 999; opacity: 0; transform: translateY(8px); transition: all .3s; pointer-events: none; }
+        .toast.show { opacity: 1; transform: translateY(0); }
+        .toast.success { border-color: rgba(16,185,129,.4); color: #6ee7b7; }
+        .toast.error { border-color: rgba(239,68,68,.4); color: #fca5a5; }
+    </style>
+</head>
+<body>
+
+<div id="loading"><div class="dots"><div class="dot"></div><div class="dot"></div><div class="dot"></div></div></div>
+
+<!-- LOGIN -->
+<div id="login-screen">
+    <div class="login-box">
+        <div class="login-logo">AI <span class="text-gradient">Osha</span></div>
+        <div class="login-sub">Pannello di amministrazione — accesso riservato</div>
+        <label class="form-label">Email admin</label>
+        <input class="form-input" type="email" id="admin-email" placeholder="battaglini@hotmail.it" autocomplete="email">
+        <label class="form-label">Password</label>
+        <input class="form-input" type="password" id="admin-password" placeholder="••••••••" autocomplete="current-password">
+        <button class="btn-primary" id="login-btn">Accedi al pannello</button>
+        <div class="alert" id="login-error">Email o password errati.</div>
+    </div>
+</div>
+
+<!-- APP -->
+<div id="app">
+    <header class="header">
+        <div class="header__inner">
+            <div style="display:flex;align-items:center;gap:.75rem">
+                <div class="header__logo">AI <span class="text-gradient">Osha</span></div>
+                <span class="header__badge">Admin</span>
+            </div>
+            <div class="header__right">
+                <span class="header__email" id="admin-user-email"></span>
+                <button class="btn-logout" id="logout-btn">Esci</button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- STATS -->
+        <div class="stats">
+            <div class="stat"><div class="stat__num" id="stat-totale">—</div><div class="stat__label">Studenti totali</div></div>
+            <div class="stat"><div class="stat__num" id="stat-premium">—</div><div class="stat__label">Account Premium</div></div>
+            <div class="stat"><div class="stat__num" id="stat-pmi">—</div><div class="stat__label">Corso PMI</div></div>
+            <div class="stat"><div class="stat__num" id="stat-immo">—</div><div class="stat__label">Corso Immobiliare</div></div>
+        </div>
+
+        <!-- TABELLA -->
+        <div class="toolbar">
+            <span class="toolbar__title">Studenti</span>
+            <button class="btn-add" id="open-add-modal">+ Aggiungi studente</button>
+        </div>
+
+        <div class="table-wrap">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Email</th>
+                        <th>Corsi attivi</th>
+                        <th>Data iscrizione</th>
+                        <th>Azioni</th>
+                    </tr>
+                </thead>
+                <tbody id="students-tbody">
+                    <tr><td colspan="5" class="empty">Caricamento...</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </main>
+</div>
+
+<!-- MODAL AGGIUNGI / MODIFICA -->
+<div class="modal-overlay" id="modal">
+    <div class="modal">
+        <div class="modal__title" id="modal-title">Aggiungi studente</div>
+
+        <div class="tip" id="uid-tip">
+            <strong>Come trovare l'UID:</strong> vai su <strong>Firebase Console → Authentication → Utenti</strong>, clicca sull'utente e copia l'UID mostrato.
+            Se l'utente non esiste ancora, <a href="https://console.firebase.google.com/project/ai-osha/authentication/users" target="_blank">crealo prima qui →</a>
+        </div>
+
+        <label class="form-label">UID Firebase</label>
+        <input class="form-input uid-input" type="text" id="modal-uid" placeholder="es. ZVP1VwL7jtVWvRP6Y4lUiX6oT...">
+
+        <label class="form-label">Nome studente</label>
+        <input class="form-input" type="text" id="modal-nome" placeholder="es. Mario Rossi">
+
+        <label class="form-label">Email</label>
+        <input class="form-input" type="email" id="modal-email-field" placeholder="es. mario@esempio.it">
+
+        <label class="form-label" style="margin-top:.5rem">Data iscrizione</label>
+        <input class="form-input" type="date" id="modal-data">
+
+        <label class="form-label" style="margin-top:.5rem">Corsi acquistati</label>
+        <div class="corsi-grid" id="corsi-checks">
+            <!-- generato via JS -->
+        </div>
+
+        <label class="form-label" style="margin-top:1.25rem">Accesso Premium</label>
+        <div class="toggle-row">
+            <div>
+                <label for="modal-premium">Attiva Premium</label>
+                <small>Sblocca tutti i corsi presenti e futuri</small>
+            </div>
+            <label class="toggle">
+                <input type="checkbox" id="modal-premium">
+                <span class="toggle-slider"></span>
+            </label>
+        </div>
+
+        <div class="modal__footer">
+            <button class="btn-secondary" id="modal-cancel">Annulla</button>
+            <button class="btn-save" id="modal-save">Salva</button>
+        </div>
+    </div>
+</div>
+
+<!-- TOAST -->
+<div class="toast" id="toast"></div>
+
+<script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
+import { getAuth, signInWithEmailAndPassword, signOut, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
+import { getFirestore, collection, getDocs, doc, setDoc, updateDoc, deleteDoc, Timestamp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
+
+// ── CONFIG ──────────────────────────────────────────────
+const firebaseConfig = {
+    apiKey: "AIzaSyDnKTDMJYJ5RqSjspon-AYkGB_xzgrPd98",
+    authDomain: "ai-osha.firebaseapp.com",
+    projectId: "ai-osha",
+    storageBucket: "ai-osha.firebasestorage.app",
+    messagingSenderId: "1015761750441",
+    appId: "1:1015761750441:web:fc3f54a6d46298569e5cb8"
+};
+
+// UID dell'account admin (battaglini@hotmail.it)
+const ADMIN_UID = "4sMlpAAAaTYgbLclvgzDdeQ8FK73";
+
+// Corsi disponibili — aggiorna qui se aggiungi nuovi corsi
+const CORSI_DISPONIBILI = [
+    { id: "pmi",          label: "AI in Pratica per PMI",          sub: "PMI" },
+    { id: "immobiliare",  label: "AI per Agenzie Immobiliari",      sub: "Immobiliare" },
+    // Aggiungi qui altri corsi futuri:
+    // { id: "ecommerce", label: "AI per E-commerce", sub: "E-commerce" },
+];
+
+// ── INIT ────────────────────────────────────────────────
+const app  = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+const db   = getFirestore(app);
+
+let studenti = []; // cache locale
+
+// ── AUTH STATE ─────────────────────────────────────────
+onAuthStateChanged(auth, (user) => {
+    document.getElementById("loading").classList.add("hidden");
+    if (user && user.uid === ADMIN_UID) {
+        showApp(user);
+    } else if (user) {
+        // Utente loggato ma non admin → logout
+        signOut(auth);
+        showLogin("Non hai i permessi di accesso.");
+    } else {
+        showLogin();
+    }
+});
+
+function showLogin(errMsg = "") {
+    document.getElementById("login-screen").classList.add("visible");
+    document.getElementById("app").classList.remove("visible");
+    if (errMsg) {
+        const el = document.getElementById("login-error");
+        el.textContent = errMsg;
+        el.classList.add("visible");
+    }
+}
+
+function showApp(user) {
+    document.getElementById("login-screen").classList.remove("visible");
+    document.getElementById("app").classList.add("visible");
+    document.getElementById("admin-user-email").textContent = user.email;
+    loadStudents();
+}
+
+// ── LOGIN ───────────────────────────────────────────────
+document.getElementById("login-btn").addEventListener("click", async () => {
+    const email = document.getElementById("admin-email").value.trim();
+    const pass  = document.getElementById("admin-password").value;
+    const err   = document.getElementById("login-error");
+    err.classList.remove("visible");
+    try {
+        await signInWithEmailAndPassword(auth, email, pass);
+    } catch {
+        err.textContent = "Email o password errati.";
+        err.classList.add("visible");
+    }
+});
+document.getElementById("admin-password").addEventListener("keydown", e => {
+    if (e.key === "Enter") document.getElementById("login-btn").click();
+});
+
+document.getElementById("logout-btn").addEventListener("click", () => signOut(auth));
+
+// ── CARICA STUDENTI ────────────────────────────────────
+async function loadStudents() {
+    try {
+        const snap = await getDocs(collection(db, "studenti"));
+        studenti = snap.docs.map(d => ({ uid: d.id, ...d.data() }));
+        renderTable();
+        updateStats();
+    } catch(e) {
+        showToast("Errore caricamento dati. Controlla le Firestore Rules.", "error");
+    }
+}
+
+function updateStats() {
+    document.getElementById("stat-totale").textContent   = studenti.length;
+    document.getElementById("stat-premium").textContent  = studenti.filter(s => s.premium).length;
+    document.getElementById("stat-pmi").textContent      = studenti.filter(s => (s.corsi||[]).includes("pmi")).length;
+    document.getElementById("stat-immo").textContent     = studenti.filter(s => (s.corsi||[]).includes("immobiliare")).length;
+}
+
+function renderTable() {
+    const tbody = document.getElementById("students-tbody");
+    if (studenti.length === 0) {
+        tbody.innerHTML = `<tr><td colspan="5" class="empty">Nessuno studente ancora. Aggiungine uno!</td></tr>`;
+        return;
+    }
+    tbody.innerHTML = studenti.map(s => {
+        const corsi = (s.corsi || []);
+        const badgesHTML = s.premium
+            ? `<span class="badge badge--premium">👑 Premium</span>`
+            : corsi.length > 0
+                ? corsi.map(c => {
+                    const info = CORSI_DISPONIBILI.find(x => x.id === c);
+                    return `<span class="badge badge--corso">${info ? info.sub : c}</span>`;
+                }).join("")
+                : `<span class="badge badge--none">Nessuno</span>`;
+
+        const data = s.dataIscrizione || "—";
+
+        return `<tr>
+            <td style="font-weight:600">${esc(s.nome || "—")}</td>
+            <td style="color:var(--gray-400);font-size:.8rem">${esc(s.email || "—")}</td>
+            <td>${badgesHTML}</td>
+            <td style="color:var(--gray-400);font-size:.8rem">${esc(data)}</td>
+            <td>
+                <div class="actions">
+                    <button class="btn-edit" onclick="openEdit('${s.uid}')">Modifica</button>
+                    <button class="btn-delete" onclick="confirmDelete('${s.uid}','${esc(s.nome||s.email||s.uid)}')">Elimina</button>
+                </div>
+            </td>
+        </tr>`;
+    }).join("");
+}
+
+function esc(s) {
+    return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");
+}
+
+// ── MODAL ───────────────────────────────────────────────
+let editingUid = null;
+
+function buildCorsiChecks(selected = []) {
+    document.getElementById("corsi-checks").innerHTML = CORSI_DISPONIBILI.map(c => `
+        <label class="corso-check">
+            <input type="checkbox" value="${c.id}" ${selected.includes(c.id) ? "checked" : ""}>
+            <div><label>${c.label}</label><small>${c.sub}</small></div>
+        </label>
+    `).join("");
+}
+
+function openModal(title, data = {}) {
+    document.getElementById("modal-title").textContent = title;
+    document.getElementById("modal-uid").value          = data.uid  || "";
+    document.getElementById("modal-nome").value         = data.nome || "";
+    document.getElementById("modal-email-field").value  = data.email || "";
+    document.getElementById("modal-data").value         = data.dataIscrizione || new Date().toISOString().slice(0,10);
+    document.getElementById("modal-premium").checked    = data.premium || false;
+    document.getElementById("uid-tip").style.display    = data.uid ? "none" : "";
+    document.getElementById("modal-uid").readOnly       = !!data.uid;
+    buildCorsiChecks(data.corsi || []);
+    document.getElementById("modal").classList.add("open");
+}
+
+document.getElementById("open-add-modal").addEventListener("click", () => {
+    editingUid = null;
+    openModal("Aggiungi studente");
+});
+
+window.openEdit = (uid) => {
+    editingUid = uid;
+    const s = studenti.find(x => x.uid === uid);
+    if (!s) return;
+    openModal("Modifica studente", { uid, ...s });
+};
+
+document.getElementById("modal-cancel").addEventListener("click", closeModal);
+document.getElementById("modal-overlay")?.addEventListener("click", closeModal);
+document.getElementById("modal").addEventListener("click", e => e.stopPropagation());
+
+function closeModal() {
+    document.getElementById("modal").classList.remove("open");
+    editingUid = null;
+}
+
+document.getElementById("modal-save").addEventListener("click", async () => {
+    const uid     = editingUid || document.getElementById("modal-uid").value.trim();
+    const nome    = document.getElementById("modal-nome").value.trim();
+    const email   = document.getElementById("modal-email-field").value.trim();
+    const data    = document.getElementById("modal-data").value;
+    const premium = document.getElementById("modal-premium").checked;
+    const corsi   = [...document.querySelectorAll("#corsi-checks input:checked")].map(i => i.value);
+
+    if (!uid) { showToast("Inserisci l'UID dello studente.", "error"); return; }
+    if (!nome) { showToast("Inserisci il nome.", "error"); return; }
+
+    const btn = document.getElementById("modal-save");
+    btn.disabled = true;
+    btn.textContent = "Salvataggio...";
+
+    try {
+        const payload = { nome, email, corsi, premium, dataIscrizione: data };
+        if (editingUid) {
+            await updateDoc(doc(db, "studenti", uid), payload);
+            showToast("Studente aggiornato.", "success");
+        } else {
+            await setDoc(doc(db, "studenti", uid), payload);
+            showToast("Studente aggiunto.", "success");
+        }
+        closeModal();
+        await loadStudents();
+    } catch(e) {
+        showToast("Errore: " + e.message, "error");
+    } finally {
+        btn.disabled = false;
+        btn.textContent = "Salva";
+    }
+});
+
+// ── DELETE ──────────────────────────────────────────────
+window.confirmDelete = async (uid, nome) => {
+    if (!confirm(`Eliminare lo studente "${nome}"?\nVerrà rimosso solo da Firestore, non dall'autenticazione.`)) return;
+    try {
+        await deleteDoc(doc(db, "studenti", uid));
+        showToast("Studente eliminato.", "success");
+        await loadStudents();
+    } catch(e) {
+        showToast("Errore eliminazione.", "error");
+    }
+};
+
+// ── TOAST ───────────────────────────────────────────────
+function showToast(msg, type = "success") {
+    const t = document.getElementById("toast");
+    t.textContent = msg;
+    t.className = `toast ${type} show`;
+    setTimeout(() => t.classList.remove("show"), 3000);
+}
+</script>
+</body>
+</html>
