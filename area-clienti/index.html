@@ -144,44 +144,81 @@
         .welcome__name { font-size: 1.35rem; font-weight: 700; margin-bottom: 0.2rem; }
         .welcome__sub { font-size: 0.9rem; color: var(--gray-400); }
 
-        /* ── CORSO ATTIVO ── */
-        .corso-attivo {
-            background: var(--dark-soft);
-            border: 1px solid var(--border);
+        /* ── BADGE PREMIUM ── */
+        .premium-banner {
+            background: linear-gradient(135deg, rgba(168,85,247,0.12) 0%, rgba(245,166,35,0.08) 100%);
+            border: 1px solid rgba(168,85,247,0.3);
             border-radius: var(--radius-xl);
-            padding: 1.25rem 1.5rem;
-            margin-bottom: 2.5rem;
-            display: flex; align-items: center;
-            justify-content: space-between; gap: 1rem; flex-wrap: wrap;
+            padding: 1rem 1.5rem;
+            margin-bottom: 2rem;
+            display: flex; align-items: center; gap: 0.75rem;
+            display: none;
         }
-        .corso-attivo__label {
-            font-size: 0.75rem; font-weight: 700;
-            color: var(--gray-500); text-transform: uppercase; letter-spacing: 0.08em;
-            margin-bottom: 0.3rem;
-        }
-        .corso-attivo__name { font-size: 1rem; font-weight: 700; }
-        .corso-badge {
-            font-size: 0.75rem; font-weight: 700;
-            padding: 0.35rem 0.85rem; border-radius: var(--radius-full);
-            text-transform: uppercase; letter-spacing: 0.05em;
-        }
-        .corso-badge--base     { background: rgba(16,185,129,0.12); border: 1px solid rgba(16,185,129,0.3); color: #6ee7b7; }
-        .corso-badge--avanzato { background: rgba(0,168,232,0.12); border: 1px solid rgba(0,168,232,0.3); color: #7dd3fc; }
-        .corso-badge--pro      { background: rgba(245,166,35,0.12); border: 1px solid rgba(245,166,35,0.3); color: #fcd34d; }
-        .corso-badge--vip      { background: rgba(168,85,247,0.12); border: 1px solid rgba(168,85,247,0.3); color: #d8b4fe; }
+        .premium-banner.visible { display: flex; }
+        .premium-banner__icon { font-size: 1.3rem; }
+        .premium-banner__text { font-size: 0.9rem; font-weight: 600; color: #d8b4fe; }
 
-        /* ── SECTION TITLE ── */
-        .section-title {
-            font-size: 0.8rem; font-weight: 700;
-            color: var(--gray-500); text-transform: uppercase;
-            letter-spacing: 0.09em; margin-bottom: 1rem;
+        /* ── SEZIONE CORSO ── */
+        .corso-section { margin-bottom: 3rem; }
+
+        .corso-header {
+            display: flex; align-items: center;
+            justify-content: space-between;
+            gap: 1rem; margin-bottom: 1.25rem;
+            flex-wrap: wrap;
         }
+        .corso-header__left { display: flex; align-items: center; gap: 0.85rem; }
+        .corso-icon {
+            width: 42px; height: 42px; border-radius: var(--radius-lg);
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.2rem; flex-shrink: 0;
+        }
+        .corso-icon--blue   { background: rgba(0,168,232,0.12); border: 1px solid rgba(0,168,232,0.22); }
+        .corso-icon--amber  { background: rgba(245,166,35,0.12); border: 1px solid rgba(245,166,35,0.22); }
+        .corso-icon--green  { background: rgba(16,185,129,0.12); border: 1px solid rgba(16,185,129,0.22); }
+        .corso-icon--purple { background: rgba(168,85,247,0.12); border: 1px solid rgba(168,85,247,0.22); }
+
+        .corso-nome { font-size: 1.05rem; font-weight: 700; }
+        .corso-sub  { font-size: 0.8rem; color: var(--gray-500); margin-top: 0.1rem; }
+
+        .badge-accesso {
+            font-size: 0.72rem; font-weight: 700;
+            padding: 0.25rem 0.7rem; border-radius: var(--radius-full);
+            text-transform: uppercase; letter-spacing: 0.05em;
+            white-space: nowrap;
+        }
+        .badge-accesso--attivo   { background: rgba(16,185,129,0.1); border: 1px solid rgba(16,185,129,0.3); color: #6ee7b7; }
+        .badge-accesso--bloccato { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); color: var(--gray-500); }
+
+        /* ── CORSO BLOCCATO ── */
+        .corso-locked-box {
+            background: var(--dark-soft);
+            border: 1px dashed rgba(255,255,255,0.1);
+            border-radius: var(--radius-xl);
+            padding: 1.75rem 2rem;
+            text-align: center;
+            color: var(--gray-500);
+        }
+        .corso-locked-box__icon { font-size: 2rem; margin-bottom: 0.75rem; }
+        .corso-locked-box__title { font-size: 0.95rem; font-weight: 600; color: var(--gray-400); margin-bottom: 0.4rem; }
+        .corso-locked-box__desc  { font-size: 0.85rem; margin-bottom: 1.25rem; line-height: 1.5; }
+        .btn-acquista {
+            display: inline-flex; align-items: center; gap: 0.5rem;
+            padding: 0.6rem 1.4rem;
+            background: rgba(245,166,35,0.1);
+            border: 1px solid rgba(245,166,35,0.3);
+            border-radius: var(--radius-full);
+            color: #fcd34d; font-family: var(--font-display);
+            font-size: 0.875rem; font-weight: 700;
+            cursor: pointer; transition: all var(--transition-base);
+        }
+        .btn-acquista:hover { background: rgba(245,166,35,0.2); }
 
         /* ── GRID MODULI ── */
         .moduli-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
-            gap: 1rem; margin-bottom: 3rem;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1rem;
         }
 
         /* ── CARD MODULO ── */
@@ -193,14 +230,13 @@
             display: flex; flex-direction: column; gap: 1rem;
             transition: border-color var(--transition-base), transform var(--transition-base), box-shadow var(--transition-base);
             position: relative; overflow: hidden;
+            cursor: pointer;
         }
-        .card.unlocked { cursor: pointer; }
-        .card.unlocked:hover {
+        .card:hover {
             border-color: rgba(0,168,232,0.35);
             transform: translateY(-2px);
             box-shadow: 0 16px 40px rgba(0,0,0,0.35);
         }
-        .card.locked { opacity: 0.5; }
 
         .card__top { display: flex; align-items: flex-start; justify-content: space-between; gap: 0.75rem; }
         .card__icon {
@@ -214,37 +250,27 @@
         .card__icon--purple { background: rgba(168,85,247,0.12); border: 1px solid rgba(168,85,247,0.22); }
         .card__icon--red    { background: rgba(239,68,68,0.12); border: 1px solid rgba(239,68,68,0.22); }
 
-        .card__status {
+        .card__tag {
             font-size: 0.68rem; font-weight: 700;
             padding: 0.2rem 0.55rem; border-radius: var(--radius-full);
             text-transform: uppercase; letter-spacing: 0.05em; flex-shrink: 0;
+            background: rgba(16,185,129,0.1); border: 1px solid rgba(16,185,129,0.3); color: #6ee7b7;
         }
-        .card__status--free    { background: rgba(16,185,129,0.1); border: 1px solid rgba(16,185,129,0.3); color: #6ee7b7; }
-        .card__status--base    { background: rgba(16,185,129,0.1); border: 1px solid rgba(16,185,129,0.3); color: #6ee7b7; }
-        .card__status--avanzato{ background: rgba(0,168,232,0.1); border: 1px solid rgba(0,168,232,0.3); color: #7dd3fc; }
-        .card__status--pro     { background: rgba(245,166,35,0.1); border: 1px solid rgba(245,166,35,0.3); color: #fcd34d; }
-        .card__status--vip     { background: rgba(168,85,247,0.1); border: 1px solid rgba(168,85,247,0.3); color: #d8b4fe; }
-        .card__status--locked  { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); color: var(--gray-500); }
 
         .card__title { font-size: 1rem; font-weight: 700; margin-bottom: 0.3rem; }
         .card__desc  { font-size: 0.875rem; color: var(--gray-400); line-height: 1.5; }
 
-        .card__footer { display: flex; align-items: center; justify-content: space-between; margin-top: auto; }
+        .card__footer { display: flex; align-items: center; margin-top: auto; }
         .card__cta {
             font-size: 0.875rem; font-weight: 600; color: var(--primary);
             display: flex; align-items: center; gap: 0.3rem;
         }
-        .card.locked .card__cta { display: none; }
-        .card__lock {
-            font-size: 0.8rem; color: var(--gray-500);
-            display: none; align-items: center; gap: 0.35rem;
-        }
-        .card.locked .card__lock { display: flex; }
 
-        /* lock label: nome del piano richiesto */
-        .card__lock-plan {
-            font-size: 0.72rem; font-weight: 700;
-            padding: 0.18rem 0.5rem; border-radius: var(--radius-full);
+        /* ── DIVIDER ── */
+        .section-divider {
+            border: none;
+            border-top: 1px solid var(--border);
+            margin: 2.5rem 0;
         }
 
         /* ── SUPPORT BOX ── */
@@ -270,18 +296,46 @@
         }
         .btn-support:hover { background: rgba(0,168,232,0.18); box-shadow: 0 0 20px rgba(0,168,232,0.2); }
 
-        /* ── UPGRADE NOTICE ── */
-        .upgrade-notice {
+        /* ── CARD BLOCCATA ── */
+        .card.locked {
+            opacity: 0.55;
+            cursor: default;
+            pointer-events: none;
+        }
+        .card.locked:hover { transform: none; box-shadow: none; border-color: var(--border); }
+        .card__lock-label {
+            font-size: 0.75rem; color: var(--gray-500);
+            display: flex; align-items: center; gap: 0.35rem;
+        }
+        .card__tag--locked {
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(255,255,255,0.08);
+            color: var(--gray-500);
+        }
+
+        /* ── BANNER SBLOCCO CORSO ── */
+        .corso-unlock-bar {
+            margin-top: 1rem;
+            padding: 0.85rem 1.25rem;
             background: rgba(245,166,35,0.06);
             border: 1px solid rgba(245,166,35,0.2);
-            border-radius: var(--radius-xl);
-            padding: 1.25rem 1.5rem;
-            margin-bottom: 2rem;
-            display: flex; align-items: flex-start; gap: 0.75rem;
+            border-radius: var(--radius-lg);
+            display: flex; align-items: center; justify-content: space-between;
+            gap: 1rem; flex-wrap: wrap;
         }
-        .upgrade-notice__icon { font-size: 1.1rem; flex-shrink: 0; margin-top: 0.1rem; }
-        .upgrade-notice__text { font-size: 0.875rem; color: #fcd34d; line-height: 1.5; }
-        .upgrade-notice__text strong { font-weight: 700; }
+        .corso-unlock-bar__text { font-size: 0.85rem; color: #fcd34d; }
+        .btn-sblocca {
+            display: inline-flex; align-items: center; gap: 0.4rem;
+            padding: 0.5rem 1.1rem;
+            background: rgba(245,166,35,0.12);
+            border: 1px solid rgba(245,166,35,0.35);
+            border-radius: var(--radius-full);
+            color: #fcd34d; font-family: var(--font-display);
+            font-size: 0.8rem; font-weight: 700;
+            white-space: nowrap; pointer-events: all; cursor: pointer;
+            transition: background var(--transition-base);
+        }
+        .btn-sblocca:hover { background: rgba(245,166,35,0.22); }
     </style>
 </head>
 <body>
@@ -324,33 +378,18 @@
         <div class="welcome__emoji">👋</div>
         <div>
             <div class="welcome__name" id="welcome-name">Bentornato!</div>
-            <div class="welcome__sub">Questa è la tua area personale. Trovi qui tutto ciò che hai sbloccato con il tuo corso.</div>
+            <div class="welcome__sub">Questa è la tua area personale con tutti i contenuti che hai sbloccato.</div>
         </div>
     </div>
 
-    <!-- CORSO ATTIVO -->
-    <div class="corso-attivo">
-        <div>
-            <div class="corso-attivo__label">Il tuo piano attivo</div>
-            <div class="corso-attivo__name" id="piano-name">—</div>
-        </div>
-        <span class="corso-badge" id="piano-badge">—</span>
+    <!-- BANNER PREMIUM -->
+    <div class="premium-banner" id="premium-banner">
+        <span class="premium-banner__icon">👑</span>
+        <span class="premium-banner__text">Hai accesso <strong>Premium</strong> — tutti i corsi e i contenuti sono sbloccati per te.</span>
     </div>
 
-    <!-- UPGRADE NOTICE (visibile solo se non è VIP) -->
-    <div class="upgrade-notice" id="upgrade-notice" style="display:none">
-        <span class="upgrade-notice__icon">✨</span>
-        <div class="upgrade-notice__text">
-            Vuoi sbloccare altri contenuti? <strong>Scrivi ad Aliosha</strong> per scoprire come fare upgrade del tuo piano.
-            <a href="mailto:info@aiosha.it" style="color:#fcd34d;font-weight:700;margin-left:0.3rem;">Contattami →</a>
-        </div>
-    </div>
-
-    <!-- MODULI -->
-    <p class="section-title">I tuoi contenuti</p>
-    <div class="moduli-grid" id="moduli-grid">
-        <!-- Generato via JS -->
-    </div>
+    <!-- CORSI (generato via JS) -->
+    <div id="corsi-container"></div>
 
     <!-- SUPPORTO -->
     <div class="support-box">
@@ -374,209 +413,199 @@ import { requireAuth, logout } from "../js/auth.js";
 import { db } from "../js/firebase-config.js";
 import { doc, getDoc } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
 
-// ─────────────────────────────────────────────
-// CATALOGO MODULI
-// Ogni modulo ha: id, icona, titolo, descrizione, link, minPiano
-// minPiano: il piano MINIMO necessario per accedere
-//   "free" → tutti, "base" → base+, "avanzato" → avanzato+, "pro" → pro+, "vip" → solo vip
-// ─────────────────────────────────────────────
-const PIANI_ORDER = ["free", "base", "avanzato", "pro", "vip"];
-
-const PIANI_LABELS = {
-    free:     "Gratuito",
-    base:     "Base",
-    avanzato: "Avanzato",
-    pro:      "Pro",
-    vip:      "VIP"
-};
-
-const MODULI = [
+// ═══════════════════════════════════════════════════════
+// CATALOGO CORSI
+// Per aggiungere un corso: aggiungi un oggetto in CORSI
+// Per aggiungere un modulo: aggiungi un oggetto in moduli[]
+// Per modificare chi vede cosa: cambia l'array "corsi" dello studente in Firestore
+// ═══════════════════════════════════════════════════════
+const CORSI = [
     {
-        id: "guida-50-prompt",
-        icon: "🤖", iconClass: "card__icon--blue",
-        title: "50 Prompt Pronti all'Uso",
-        desc: "La libreria di prompt testati per ChatGPT e Claude. Usali subito nel tuo lavoro.",
-        cta: "Apri la libreria",
-        link: "#",  // ← sostituisci con link reale
-        minPiano: "free"
+        id: "pmi",
+        nome: "AI in Pratica per PMI",
+        sub: "Il metodo completo per applicare l'AI al tuo business",
+        icon: "🏢",
+        iconClass: "corso-icon--blue",
+        moduli: [
+            {
+                id: "pmi-video",
+                icon: "🎥", iconClass: "card__icon--blue",
+                title: "Videolezioni — Corso Completo",
+                desc: "Tutte le sessioni registrate del corso AI in Pratica per PMI. Guarda quando vuoi, quante volte vuoi.",
+                cta: "Guarda i video",
+                link: "#"  // ← sostituire con link reale (YouTube non listato / Vimeo / Google Drive)
+            },
+            {
+                id: "pmi-slide",
+                icon: "📊", iconClass: "card__icon--blue",
+                title: "Slide del Corso PDF",
+                desc: "Tutte le slide in PDF. Scaricale e tienile come riferimento rapido.",
+                cta: "Scarica le slide",
+                link: "#"
+            },
+            {
+                id: "pmi-prompt",
+                icon: "🤖", iconClass: "card__icon--green",
+                title: "50 Prompt Pronti per PMI",
+                desc: "La libreria di prompt testati per ChatGPT e Claude, pensati per piccole e medie imprese.",
+                cta: "Apri la libreria",
+                link: "#"
+            },
+            {
+                id: "pmi-template",
+                icon: "⚙️", iconClass: "card__icon--amber",
+                title: "Template e Automazioni",
+                desc: "Workflow pronti per Make e Zapier. Importa e adatta al tuo business in pochi minuti.",
+                cta: "Scarica i template",
+                link: "#"
+            }
+        ]
     },
     {
-        id: "videolezioni-base",
-        icon: "🎥", iconClass: "card__icon--green",
-        title: "Videolezioni — Modulo Base",
-        desc: "Le registrazioni delle prime 4 sessioni del corso. Guarda quando vuoi.",
-        cta: "Guarda i video",
-        link: "#",
-        minPiano: "base"
-    },
-    {
-        id: "slide-corso",
-        icon: "📊", iconClass: "card__icon--blue",
-        title: "Slide del Corso",
-        desc: "Tutte le slide in PDF del corso base. Scarica e tieni come riferimento.",
-        cta: "Scarica le slide",
-        link: "#",
-        minPiano: "base"
-    },
-    {
-        id: "videolezioni-avanzato",
-        icon: "🚀", iconClass: "card__icon--amber",
-        title: "Videolezioni — Modulo Avanzato",
-        desc: "Automazioni, agenti AI, workflow avanzati. Le sessioni del corso avanzato.",
-        cta: "Guarda i video",
-        link: "#",
-        minPiano: "avanzato"
-    },
-    {
-        id: "template-automazioni",
-        icon: "⚙️", iconClass: "card__icon--amber",
-        title: "Template Automazioni",
-        desc: "Workflow pronti per Make, Zapier e N8N. Importa e adatta al tuo business.",
-        cta: "Scarica i template",
-        link: "#",
-        minPiano: "avanzato"
-    },
-    {
-        id: "sessione-1to1",
-        icon: "🎯", iconClass: "card__icon--purple",
-        title: "Sessione 1:1 con Aliosha",
-        desc: "La tua sessione di consulenza privata inclusa nel piano Pro. Prenota qui.",
-        cta: "Prenota la sessione",
-        link: "#",
-        minPiano: "pro"
-    },
-    {
-        id: "prompt-pro",
-        icon: "💡", iconClass: "card__icon--purple",
-        title: "Prompt Avanzati — Serie Pro",
-        desc: "50 prompt aggiuntivi per use case avanzati: vendita, HR, finanza, marketing.",
-        cta: "Apri la serie Pro",
-        link: "#",
-        minPiano: "pro"
-    },
-    {
-        id: "accesso-vip",
-        icon: "👑", iconClass: "card__icon--red",
-        title: "Gruppo Privato VIP",
-        desc: "Accesso diretto al gruppo Telegram riservato ai VIP. Aggiornamenti in tempo reale.",
-        cta: "Entra nel gruppo",
-        link: "#",
-        minPiano: "vip"
+        id: "immobiliare",
+        nome: "AI in Pratica per Agenzie Immobiliari",
+        sub: "Strumenti AI specifici per il settore immobiliare",
+        icon: "🏠",
+        iconClass: "corso-icon--amber",
+        moduli: [
+            {
+                id: "immo-video",
+                icon: "🎥", iconClass: "card__icon--amber",
+                title: "Videolezioni — Corso Immobiliare",
+                desc: "Tutte le sessioni registrate del corso AI per agenzie immobiliari.",
+                cta: "Guarda i video",
+                link: "#"
+            },
+            {
+                id: "immo-prompt",
+                icon: "🤖", iconClass: "card__icon--green",
+                title: "Prompt per Immobiliare",
+                desc: "Annunci, email ai clienti, valutazioni, contratti: prompt pronti all'uso per ogni momento del tuo lavoro.",
+                cta: "Apri la libreria",
+                link: "#"
+            },
+            {
+                id: "immo-slide",
+                icon: "📊", iconClass: "card__icon--amber",
+                title: "Slide del Corso PDF",
+                desc: "Le slide complete del corso immobiliare in PDF.",
+                cta: "Scarica le slide",
+                link: "#"
+            }
+        ]
     }
+    // ← AGGIUNGI QUI ALTRI CORSI FUTURI con la stessa struttura
 ];
 
-// ─────────────────────────────────────────────
-// PIANO → livello numerico
-// ─────────────────────────────────────────────
-function pianoLevel(piano) {
-    return PIANI_ORDER.indexOf(piano ?? "free");
-}
+// ═══════════════════════════════════════════════════════
+// AVVIO — Auth + caricamento dati studente
+// ═══════════════════════════════════════════════════════
+const user = await requireAuth("/login.html");
 
-function canAccess(userPiano, minPiano) {
-    return pianoLevel(userPiano) >= pianoLevel(minPiano);
-}
+document.getElementById("user-email").textContent = user.email;
 
-// ─────────────────────────────────────────────
-// RENDER MODULI
-// ─────────────────────────────────────────────
-function renderModuli(userPiano) {
-    const grid = document.getElementById("moduli-grid");
-    grid.innerHTML = "";
-
-    MODULI.forEach(m => {
-        const ok = canAccess(userPiano, m.minPiano);
-        const statusLabel = ok
-            ? (m.minPiano === "free" ? "Incluso" : PIANI_LABELS[m.minPiano])
-            : PIANI_LABELS[m.minPiano];
-
-        const card = document.createElement("div");
-        card.className = `card ${ok ? "unlocked" : "locked"}`;
-        if (ok && m.link && m.link !== "#") {
-            card.addEventListener("click", () => window.open(m.link, "_blank"));
-        }
-
-        card.innerHTML = `
-            <div class="card__top">
-                <div class="card__icon ${m.iconClass}">${m.icon}</div>
-                <span class="card__status card__status--${ok ? m.minPiano : "locked"}">
-                    ${ok ? statusLabel : "🔒 " + statusLabel}
-                </span>
-            </div>
-            <div>
-                <div class="card__title">${m.title}</div>
-                <div class="card__desc">${m.desc}</div>
-            </div>
-            <div class="card__footer">
-                <span class="card__cta">${m.cta} →</span>
-                <span class="card__lock">Richiede piano <strong>${PIANI_LABELS[m.minPiano]}</strong></span>
-            </div>
-        `;
-
-        grid.appendChild(card);
-    });
-}
-
-// ─────────────────────────────────────────────
-// AGGIORNA UI PIANO
-// ─────────────────────────────────────────────
-function aggiornaPiano(piano) {
-    const badgeClasses = {
-        free:     "corso-badge--base",
-        base:     "corso-badge--base",
-        avanzato: "corso-badge--avanzato",
-        pro:      "corso-badge--pro",
-        vip:      "corso-badge--vip"
-    };
-    document.getElementById("piano-name").textContent = PIANI_LABELS[piano] ?? piano;
-    const badge = document.getElementById("piano-badge");
-    badge.textContent = PIANI_LABELS[piano] ?? piano;
-    badge.className = `corso-badge ${badgeClasses[piano] ?? "corso-badge--base"}`;
-
-    // Mostra upgrade notice solo se non VIP
-    if (piano !== "vip") {
-        document.getElementById("upgrade-notice").style.display = "flex";
-    }
-}
-
-// ─────────────────────────────────────────────
-// INIT
-// ─────────────────────────────────────────────
-requireAuth("/login.html").then(async (user) => {
-    // Email nella nav
-    document.getElementById("user-email").textContent = user.email;
-    document.getElementById("welcome-name").textContent =
-        `Bentornato${user.displayName ? ", " + user.displayName.split(" ")[0] : ""}!`;
-
-    // Leggi dati studente da Firestore
-    let piano = "free";
-    try {
-        const snap = await getDoc(doc(db, "studenti", user.uid));
-        if (snap.exists()) {
-            const data = snap.data();
-            piano = data.piano ?? "free";
-            // Se ha un nome salvato, usalo
-            if (data.nome) {
-                document.getElementById("welcome-name").textContent =
-                    `Bentornato, ${data.nome.split(" ")[0]}!`;
-            }
-        }
-    } catch (e) {
-        console.warn("Firestore non raggiungibile, mostro piano free.");
-    }
-
-    aggiornaPiano(piano);
-    renderModuli(piano);
-
-    // Nascondi loading
-    document.getElementById("loading-screen").classList.add("hidden");
-});
-
-// Logout
 document.getElementById("logout-btn").addEventListener("click", async () => {
     await logout();
     window.location.href = "/login.html";
 });
-</script>
 
+// Carica documento studente da Firestore
+const snap = await getDoc(doc(db, "studenti", user.uid));
+const studente = snap.exists() ? snap.data() : {};
+
+// Dati studente
+const nome     = studente.nome ?? user.email.split("@")[0];
+const premium  = studente.premium === true;
+const corsiUtente = premium ? CORSI.map(c => c.id) : (studente.corsi ?? []);
+
+// Aggiorna welcome
+document.getElementById("welcome-name").textContent = `Bentornato, ${nome}!`;
+
+// Mostra banner premium
+if (premium) {
+    document.getElementById("premium-banner").classList.add("visible");
+}
+
+// ═══════════════════════════════════════════════════════
+// RENDERING
+// ═══════════════════════════════════════════════════════
+const container = document.getElementById("corsi-container");
+
+CORSI.forEach((corso, idx) => {
+    const hasAccess = corsiUtente.includes(corso.id);
+
+    const section = document.createElement("div");
+    section.className = "corso-section";
+
+    const badgeHTML = hasAccess
+        ? `<span class="badge-accesso badge-accesso--attivo">✓ Attivo</span>`
+        : `<span class="badge-accesso badge-accesso--bloccato">🔒 Bloccato</span>`;
+
+    // Mostra tutti i moduli — sbloccati o bloccati
+    const cardsHTML = corso.moduli.map(m => {
+        if (hasAccess) {
+            return `
+                <div class="card" onclick="${m.link !== '#' ? `window.open('${m.link}','_blank')` : ''}">
+                    <div class="card__top">
+                        <div class="card__icon ${m.iconClass}">${m.icon}</div>
+                        <span class="card__tag">Incluso</span>
+                    </div>
+                    <div>
+                        <div class="card__title">${m.title}</div>
+                        <div class="card__desc">${m.desc}</div>
+                    </div>
+                    <div class="card__footer">
+                        <span class="card__cta">${m.cta} →</span>
+                    </div>
+                </div>`;
+        } else {
+            return `
+                <div class="card locked">
+                    <div class="card__top">
+                        <div class="card__icon ${m.iconClass}" style="filter:grayscale(1)">${m.icon}</div>
+                        <span class="card__tag card__tag--locked">🔒 Bloccato</span>
+                    </div>
+                    <div>
+                        <div class="card__title">${m.title}</div>
+                        <div class="card__desc">${m.desc}</div>
+                    </div>
+                </div>`;
+        }
+    }).join("");
+
+    // Banner sblocco (solo se non ha accesso)
+    const unlockBar = hasAccess ? "" : `
+        <div class="corso-unlock-bar">
+            <span class="corso-unlock-bar__text">Acquista il corso per sbloccare tutti i ${corso.moduli.length} contenuti.</span>
+            <a href="mailto:info@aiosha.it?subject=Voglio%20acquistare%3A%20${encodeURIComponent(corso.nome)}" class="btn-sblocca">Sblocca questo corso →</a>
+        </div>`;
+
+    section.innerHTML = `
+        <div class="corso-header">
+            <div class="corso-header__left">
+                <div class="corso-icon ${corso.iconClass}">${corso.icon}</div>
+                <div>
+                    <div class="corso-nome">${corso.nome}</div>
+                    <div class="corso-sub">${corso.sub}</div>
+                </div>
+            </div>
+            ${badgeHTML}
+        </div>
+        <div class="moduli-grid">${cardsHTML}</div>
+        ${unlockBar}
+    `;
+
+    container.appendChild(section);
+
+    if (idx < CORSI.length - 1) {
+        const hr = document.createElement("hr");
+        hr.className = "section-divider";
+        container.appendChild(hr);
+    }
+});
+
+// Nascondi loading
+document.getElementById("loading-screen").classList.add("hidden");
+</script>
 </body>
 </html>
