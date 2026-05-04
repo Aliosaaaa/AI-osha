@@ -797,10 +797,10 @@
            ======================================== */
         .hero {
             position: relative;
-            min-height: 100vh;
+            min-height: auto;
             display: flex;
-            align-items: center;
-            padding: calc(72px + var(--space-lg)) 0 var(--space-2xl);
+            align-items: flex-start;
+            padding: calc(72px + var(--space-sm)) 0 var(--space-2xl);
             overflow: hidden;
         }
 
@@ -2025,7 +2025,7 @@
                     <div class="hero__logo-wrap">
                         <video autoplay muted playsinline loop
                             width="640" height="360"
-                            style="max-width: 460px; width: 100%; margin: 0 auto; display: block;"
+                            style="max-width: 620px; width: 100%; margin: 0 auto; display: block;"
                             poster="images/logo-aiosha.webp"
                             aria-label="AI Osha Logo animato">
                             <source src="images/logo-animated.webm?v=2" type="video/webm">
