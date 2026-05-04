@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <title>Corso AI in Pratica - Formazione Fisica e Community | AI Osha</title>
-    <meta name="description" content="Corso di Intelligenza Artificiale in Pratica a Poma. Formazione dal vivo, community online e supporto continuo per padroneggiare l'AI applicata al business.">
-    <meta name="keywords" content="corso AI Italia, corso intelligenza artificiale Poma, formazione AI, consulenza AI, community Skool">
+    <title>Corso AI in Pratica - Formazione Fisica e Online | AI Osha</title>
+    <meta name="description" content="Corso di Intelligenza Artificiale in Pratica. Disponibile dal vivo a Pescia presso la Fondazione Poma oppure come corso registrato online. Impara ad usare l'AI nel tuo business.">
+    <meta name="keywords" content="corso AI Italia, corso intelligenza artificiale Poma, formazione AI PMI, corso AI online">
     <link rel="canonical" href="https://aiosha.it/corso">
 
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
@@ -26,6 +26,8 @@
             --highlight: #F5A623;
             --highlight-dark: #d4911f;
             --highlight-light: #f7b84d;
+            --poma-gold: #C9A85C;
+            --poma-dark: #1a1508;
             --dark: #0D1117;
             --dark-soft: #161b22;
             --gray-900: #1f2937;
@@ -42,25 +44,16 @@
             --success: #10b981;
             --font-display: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
             --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
-            --space-xs: 0.25rem;
-            --space-sm: 0.5rem;
-            --space-md: 1rem;
-            --space-lg: 1.5rem;
-            --space-xl: 2rem;
-            --space-2xl: 3rem;
-            --space-3xl: 4rem;
-            --space-4xl: 6rem;
-            --space-5xl: 8rem;
             --radius-sm: 0.375rem;
             --radius-md: 0.5rem;
             --radius-lg: 0.75rem;
             --radius-xl: 1rem;
             --radius-2xl: 1.5rem;
+            --radius-full: 9999px;
             --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
-            --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
-            --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
-            --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
-            --shadow-glow: 0 0 40px rgba(0, 168, 232, 0.3);
+            --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+            --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+            --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1);
             --transition-fast: 150ms ease;
             --transition-base: 250ms ease;
             --transition-slow: 350ms ease;
@@ -75,108 +68,197 @@
         button { font-family: inherit; cursor: pointer; border: none; background: none; }
         ul, ol { list-style: none; }
 
-        .container { width: 100%; max-width: var(--container-max); margin: 0 auto; padding: 0 var(--space-lg); }
+        .container { width: 100%; max-width: var(--container-max); margin: 0 auto; padding: 0 1.5rem; }
 
         /* Header */
         .header { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: rgba(13, 17, 23, 0.92); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(255, 255, 255, 0.08); transition: all var(--transition-base); }
         .header__inner { display: flex; align-items: center; justify-content: space-between; height: 72px; }
-        .header__logo { display: flex; align-items: center; gap: var(--space-sm); font-size: 1.5rem; font-weight: 800; color: var(--white); }
-        .header__logo-icon { width: 40px; height: 40px; }
+        .header__logo { display: flex; align-items: center; gap: 0.5rem; font-size: 1.5rem; font-weight: 800; color: var(--white); }
         .text-gradient { background: linear-gradient(135deg, var(--primary) 0%, var(--highlight) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
         .header__nav { display: none; }
-        @media (min-width: 768px) { .header__nav { display: flex; align-items: center; gap: var(--space-xl); } }
-        .header__nav-link { font-weight: 500; color: var(--gray-300); transition: color var(--transition-fast); position: relative; }
+        @media (min-width: 768px) { .header__nav { display: flex; align-items: center; gap: 2rem; } }
+        .header__nav-link { font-weight: 500; color: var(--gray-300); transition: color var(--transition-fast); }
         .header__nav-link:hover { color: var(--primary); }
-
-        /* Typography */
-        h1, h2, h3, h4, h5, h6 { font-weight: 700; line-height: 1.2; color: var(--white); }
-        h1 { font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 800; letter-spacing: -0.02em; }
-        h2 { font-size: clamp(2rem, 4vw, 3rem); font-weight: 700; letter-spacing: -0.01em; }
-        h3 { font-size: clamp(1.5rem, 3vw, 2rem); font-weight: 600; }
-        p { margin-bottom: var(--space-md); }
-
-        /* Buttons */
-        .btn { display: inline-flex; align-items: center; justify-content: center; gap: var(--space-sm); padding: var(--space-md) var(--space-xl); font-size: 1rem; font-weight: 600; border-radius: var(--radius-lg); transition: all var(--transition-base); text-align: center; }
-        .btn--primary { background: linear-gradient(135deg, var(--highlight) 0%, var(--highlight-dark) 100%); color: var(--white); box-shadow: var(--shadow-md), 0 0 0 0 rgba(245, 166, 35, 0.4); }
+        .btn { display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; padding: 1rem 2rem; font-size: 1rem; font-weight: 600; border-radius: var(--radius-lg); transition: all var(--transition-base); text-align: center; }
+        .btn--primary { background: linear-gradient(135deg, var(--highlight) 0%, var(--highlight-dark) 100%); color: var(--white); box-shadow: var(--shadow-md); }
         .btn--primary:hover { transform: translateY(-2px); box-shadow: var(--shadow-lg), 0 0 30px rgba(245, 166, 35, 0.4); }
-        .btn--large { padding: var(--space-lg) var(--space-2xl); font-size: 1.125rem; }
+        .btn--large { padding: 1.25rem 2.5rem; font-size: 1.125rem; }
 
         /* Hero */
-        .hero { position: relative; min-height: 100vh; display: flex; align-items: center; padding: calc(72px + var(--space-4xl)) 0 var(--space-4xl); overflow: hidden; }
+        .hero { position: relative; min-height: 80vh; display: flex; align-items: center; padding: calc(72px + 5rem) 0 5rem; overflow: hidden; }
         .hero__bg { position: absolute; inset: 0; background: radial-gradient(ellipse 80% 50% at 50% -20%, rgba(0, 168, 232, 0.15) 0%, transparent 50%), radial-gradient(ellipse 60% 40% at 100% 100%, rgba(245, 166, 35, 0.1) 0%, transparent 50%), linear-gradient(180deg, var(--dark) 0%, var(--dark-soft) 100%); z-index: -1; }
-        .hero__content { text-align: center; max-width: 900px; margin: 0 auto; }
-        .hero__badge { display: inline-flex; align-items: center; gap: var(--space-sm); padding: var(--space-sm) var(--space-md); background: var(--gray-900); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: var(--radius-full); font-size: 0.875rem; font-weight: 500; color: var(--gray-400); margin-bottom: var(--space-xl); }
-        .hero__title { margin-bottom: var(--space-lg); }
-        .hero__subtitle { font-size: clamp(1.125rem, 2vw, 1.375rem); color: var(--gray-400); max-width: 700px; margin: 0 auto var(--space-2xl); }
+        .hero__content { text-align: center; max-width: 860px; margin: 0 auto; }
+        .hero__badge { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.5rem 1rem; background: var(--gray-900); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: var(--radius-full); font-size: 0.875rem; font-weight: 500; color: var(--gray-400); margin-bottom: 2rem; }
+        .hero__title { font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 800; letter-spacing: -0.02em; color: var(--white); margin-bottom: 1.5rem; }
+        .hero__subtitle { font-size: clamp(1.125rem, 2vw, 1.375rem); color: var(--gray-400); max-width: 680px; margin: 0 auto 2.5rem; }
 
         /* Section */
-        .section { padding: var(--space-5xl) 0; }
-        .section--dark { background: var(--dark); color: var(--white); }
-        .section--light { background: var(--dark-soft); }
-        .section__header { text-align: center; max-width: 700px; margin: 0 auto var(--space-3xl); }
-        .section__eyebrow { display: inline-block; font-size: 0.875rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; color: var(--primary); margin-bottom: var(--space-md); }
-        .section--dark .section__eyebrow { color: var(--highlight); }
-        .section__title { margin-bottom: var(--space-lg); }
-        .section--dark .section__title { color: var(--white); }
-        .section__description { font-size: 1.125rem; color: var(--gray-400); }
-        .section--dark .section__description { color: var(--gray-400); }
+        .section { padding: 5rem 0; }
+        .section--alt { background: var(--dark-soft); }
+        .section__eyebrow { display: inline-block; font-size: 0.875rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; color: var(--primary); margin-bottom: 1rem; }
+        .section__title { font-size: clamp(2rem, 4vw, 2.75rem); font-weight: 700; letter-spacing: -0.01em; color: var(--white); margin-bottom: 1rem; }
+        .section__desc { font-size: 1.125rem; color: var(--gray-400); }
+        .section__header { text-align: center; max-width: 700px; margin: 0 auto 3.5rem; }
 
-        /* Skool Platform Box */
-        .skool-box { background: linear-gradient(135deg, #FF6B35 0%, #FF8C42 100%); color: white; padding: var(--space-3xl); border-radius: var(--radius-2xl); margin: var(--space-4xl) 0; position: relative; overflow: hidden; }
-        .skool-box::before { content: ''; position: absolute; top: -50%; right: -10%; width: 300px; height: 300px; background: rgba(255,255,255,0.1); border-radius: 50%; }
-        .skool-box h3 { color: white; margin-bottom: var(--space-lg); font-size: 2rem; }
-        .skool-box p { margin-bottom: var(--space-md); font-size: 1.125rem; line-height: 1.7; }
-        .skool-features { display: grid; gap: var(--space-md); margin: var(--space-xl) 0; }
-        .skool-feature { display: flex; align-items: flex-start; gap: var(--space-md); }
-        .skool-feature svg { flex-shrink: 0; width: 24px; height: 24px; }
+        /* ── PATH CARDS ── */
+        .path-grid {
+            display: grid;
+            gap: 1.5rem;
+            margin-top: 3.5rem;
+        }
+        @media (min-width: 768px) { .path-grid { grid-template-columns: 1fr 1fr; } }
 
-        /* Benefits Grid */
-        .benefits-grid { display: grid; gap: var(--space-lg); margin: var(--space-3xl) 0; }
-        @media (min-width: 768px) { .benefits-grid { grid-template-columns: repeat(2, 1fr); } }
-        .benefit-card { background: var(--gray-900); padding: var(--space-xl); border-radius: var(--radius-xl); border: 2px solid rgba(255, 255, 255, 0.08); transition: all var(--transition-base); }
-        .benefit-card:hover { border-color: var(--primary); transform: translateY(-4px); box-shadow: var(--shadow-lg); }
-        .benefit-card__icon { width: 56px; height: 56px; display: flex; align-items: center; justify-content: center; background: var(--dark-soft); border-radius: var(--radius-lg); margin-bottom: var(--space-lg); color: var(--primary); }
-        .benefit-card h4 { font-size: 1.25rem; margin-bottom: var(--space-sm); }
-        .benefit-card p { margin: 0; color: var(--gray-400); }
+        .path-card {
+            border-radius: var(--radius-2xl);
+            padding: 2.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            transition: transform var(--transition-base), box-shadow var(--transition-base);
+            position: relative;
+            overflow: hidden;
+        }
+        .path-card:hover { transform: translateY(-4px); }
 
-        /* Pricing Card */
-        .pricing-card { background: var(--gray-900); border: 3px solid var(--highlight); border-radius: var(--radius-2xl); padding: var(--space-3xl); max-width: 600px; margin: var(--space-4xl) auto; position: relative; }
-        .pricing-card__badge { position: absolute; top: -1rem; left: 50%; transform: translateX(-50%); background: linear-gradient(135deg, var(--highlight), var(--highlight-dark)); color: white; padding: var(--space-sm) var(--space-xl); border-radius: var(--radius-full); font-size: 0.875rem; font-weight: 700; text-transform: uppercase; }
-        .pricing-card__price { text-align: center; margin-bottom: var(--space-2xl); }
-        .pricing-card__amount { font-size: 4rem; font-weight: 800; color: var(--white); line-height: 1; }
-        .pricing-card__period { font-size: 1.125rem; color: var(--gray-400); }
-        .pricing-card__features { list-style: none; margin: var(--space-2xl) 0; }
-        .pricing-card__feature { display: flex; align-items: flex-start; gap: var(--space-md); padding: var(--space-md) 0; border-bottom: 1px solid rgba(255, 255, 255, 0.08); }
-        .pricing-card__feature:last-child { border-bottom: none; }
-        .pricing-card__feature svg { flex-shrink: 0; width: 24px; height: 24px; color: var(--success); }
-        .pricing-card__cta { text-align: center; }
+        /* Card Poma */
+        .path-card--poma {
+            background: linear-gradient(145deg, #1c1506 0%, #2a1f07 100%);
+            border: 1px solid rgba(201, 168, 92, 0.35);
+            box-shadow: 0 0 60px rgba(201, 168, 92, 0.08);
+        }
+        .path-card--poma:hover { box-shadow: 0 20px 60px rgba(201, 168, 92, 0.2); border-color: rgba(201, 168, 92, 0.6); }
 
-        /* Consultation Box */
-        .consultation-box { background: linear-gradient(135deg, var(--accent) 0%, var(--accent-light) 100%); color: white; padding: var(--space-3xl); border-radius: var(--radius-2xl); margin: var(--space-4xl) 0; text-align: center; }
-        .consultation-box h3 { color: white; font-size: 2rem; margin-bottom: var(--space-lg); }
-        .consultation-box__value { font-size: 1.25rem; margin-bottom: var(--space-xl); line-height: 1.7; }
-        .consultation-box__points { display: grid; gap: var(--space-md); max-width: 600px; margin: 0 auto var(--space-xl); text-align: left; }
-        .consultation-box__point { display: flex; align-items: center; gap: var(--space-md); }
-        .consultation-box__point svg { flex-shrink: 0; width: 20px; height: 20px; }
+        /* Card Online */
+        .path-card--online {
+            background: linear-gradient(145deg, #061420 0%, #0a1f33 100%);
+            border: 1px solid rgba(0, 168, 232, 0.25);
+            box-shadow: 0 0 60px rgba(0, 168, 232, 0.06);
+        }
+        .path-card--online:hover { box-shadow: 0 20px 60px rgba(0, 168, 232, 0.18); border-color: rgba(0, 168, 232, 0.5); }
 
-        /* FAQ */
-        .faq-list { max-width: 800px; margin: 0 auto; }
-        .faq-item { border-bottom: 1px solid rgba(255, 255, 255, 0.08); }
-        .faq-item__question { width: 100%; display: flex; align-items: center; justify-content: space-between; gap: var(--space-md); padding: var(--space-lg) 0; text-align: left; font-size: 1.125rem; font-weight: 600; color: var(--white); transition: color var(--transition-fast); }
-        .faq-item__question:hover { color: var(--primary); }
-        .faq-item__icon { flex-shrink: 0; width: 24px; height: 24px; color: var(--gray-400); transition: transform var(--transition-base); }
-        .faq-item.active .faq-item__icon { transform: rotate(45deg); color: var(--primary); }
-        .faq-item__answer { max-height: 0; overflow: hidden; transition: max-height var(--transition-slow); }
-        .faq-item.active .faq-item__answer { max-height: 500px; }
-        .faq-item__answer-content { padding-bottom: var(--space-lg); color: var(--gray-400); line-height: 1.7; }
+        .path-card__badge {
+            display: inline-flex; align-items: center; gap: 0.4rem;
+            padding: 0.3rem 0.85rem;
+            border-radius: var(--radius-full);
+            font-size: 0.72rem; font-weight: 700;
+            text-transform: uppercase; letter-spacing: 0.06em;
+            width: fit-content;
+        }
+        .path-card__badge--poma { background: rgba(201,168,92,0.12); border: 1px solid rgba(201,168,92,0.3); color: var(--poma-gold); }
+        .path-card__badge--online { background: rgba(0,168,232,0.1); border: 1px solid rgba(0,168,232,0.25); color: var(--primary); }
 
-        @keyframes pulse {
-            0%, 100% { opacity: 1; transform: scale(1); }
-            50% { opacity: 0.5; transform: scale(1.4); }
+        .path-card__logo { height: 64px; width: auto; object-fit: contain; }
+        .path-card__logo-wrap {
+            height: 72px; display: flex; align-items: center;
         }
 
+        .path-card__title { font-size: 1.5rem; font-weight: 800; color: var(--white); }
+        .path-card__sub { font-size: 0.95rem; color: var(--gray-400); line-height: 1.6; margin-top: 0.25rem; }
+
+        .path-card__features { list-style: none; display: flex; flex-direction: column; gap: 0.65rem; }
+        .path-card__feature { display: flex; align-items: flex-start; gap: 0.6rem; font-size: 0.9rem; color: var(--gray-300); }
+        .path-card__feature-dot {
+            width: 18px; height: 18px; flex-shrink: 0; margin-top: 2px;
+            border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+        }
+        .path-card__feature-dot--poma { background: rgba(201,168,92,0.15); color: var(--poma-gold); }
+        .path-card__feature-dot--online { background: rgba(0,168,232,0.12); color: var(--primary); }
+
+        .path-card__cta {
+            display: inline-flex; align-items: center; gap: 0.5rem;
+            padding: 0.9rem 1.75rem;
+            border-radius: var(--radius-lg);
+            font-size: 1rem; font-weight: 700;
+            transition: all var(--transition-base);
+            width: 100%; justify-content: center;
+            margin-top: auto;
+        }
+        .path-card__cta--poma {
+            background: linear-gradient(135deg, var(--poma-gold) 0%, #a88540 100%);
+            color: #1a1508;
+        }
+        .path-card__cta--poma:hover { box-shadow: 0 8px 32px rgba(201,168,92,0.4); transform: translateY(-1px); }
+        .path-card__cta--online {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: var(--white);
+        }
+        .path-card__cta--online:hover { box-shadow: 0 8px 32px rgba(0,168,232,0.4); transform: translateY(-1px); }
+
+        /* ── CURRICULUM ── */
+        .curriculum-grid {
+            display: grid;
+            gap: 0.75rem;
+            margin-top: 1rem;
+        }
+        @media (min-width: 768px) { .curriculum-grid { grid-template-columns: 1fr 1fr; } }
+
+        .lesson-card {
+            background: var(--gray-900);
+            border: 1px solid rgba(255,255,255,0.07);
+            border-radius: var(--radius-xl);
+            padding: 1.25rem 1.5rem;
+            display: flex; align-items: flex-start; gap: 1rem;
+            transition: border-color var(--transition-base);
+        }
+        .lesson-card:hover { border-color: rgba(0,168,232,0.3); }
+        .lesson-number {
+            font-family: var(--font-mono);
+            font-size: 0.75rem; font-weight: 600;
+            color: var(--primary);
+            background: rgba(0,168,232,0.08);
+            border: 1px solid rgba(0,168,232,0.15);
+            border-radius: var(--radius-md);
+            padding: 0.2rem 0.55rem;
+            flex-shrink: 0; margin-top: 2px;
+        }
+        .lesson-body {}
+        .lesson-title { font-size: 0.975rem; font-weight: 700; color: var(--white); margin-bottom: 0.25rem; }
+        .lesson-desc { font-size: 0.82rem; color: var(--gray-500); line-height: 1.5; }
+
+        /* ── TESTIMONIALS ── */
+        .testimonials-grid {
+            display: grid;
+            gap: 1.25rem;
+        }
+        @media (min-width: 640px) { .testimonials-grid { grid-template-columns: repeat(2, 1fr); } }
+        @media (min-width: 1024px) { .testimonials-grid { grid-template-columns: repeat(3, 1fr); } }
+
+        .testimonial-card {
+            background: var(--gray-900);
+            border: 1px solid rgba(255,255,255,0.07);
+            border-radius: var(--radius-xl);
+            padding: 1.5rem;
+            display: flex; flex-direction: column; gap: 1rem;
+            transition: border-color var(--transition-base), transform var(--transition-base);
+        }
+        .testimonial-card:hover { border-color: rgba(245,166,35,0.25); transform: translateY(-2px); }
+
+        .testimonial-stars { display: flex; gap: 2px; }
+        .testimonial-star { color: var(--highlight); font-size: 0.9rem; }
+        .testimonial-text { font-size: 0.9rem; color: var(--gray-400); line-height: 1.65; font-style: italic; flex: 1; }
+        .testimonial-author { display: flex; align-items: center; gap: 0.75rem; }
+        .testimonial-avatar {
+            width: 40px; height: 40px; border-radius: 50%;
+            object-fit: cover; flex-shrink: 0;
+            border: 2px solid rgba(255,255,255,0.08);
+        }
+        .testimonial-name { font-size: 0.875rem; font-weight: 700; color: var(--white); }
+        .testimonial-role { font-size: 0.775rem; color: var(--gray-500); }
+
+        /* ── FAQ ── */
+        .faq-list { max-width: 800px; margin: 0 auto; }
+        .faq-item { border-bottom: 1px solid rgba(255,255,255,0.08); }
+        .faq-item__question { width: 100%; display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: 1.25rem 0; text-align: left; font-size: 1.05rem; font-weight: 600; color: var(--white); transition: color var(--transition-fast); cursor: pointer; }
+        .faq-item__question:hover { color: var(--primary); }
+        .faq-item__icon { flex-shrink: 0; width: 22px; height: 22px; color: var(--gray-500); transition: transform var(--transition-base); }
+        .faq-item.active .faq-item__icon { transform: rotate(45deg); color: var(--primary); }
+        .faq-item__answer { max-height: 0; overflow: hidden; transition: max-height var(--transition-slow); }
+        .faq-item.active .faq-item__answer { max-height: 400px; }
+        .faq-item__answer-content { padding-bottom: 1.25rem; color: var(--gray-400); line-height: 1.7; font-size: 0.95rem; }
+
         /* Footer */
-        .footer { padding: var(--space-3xl) 0 var(--space-xl); background: var(--gray-900); color: var(--gray-400); margin-top: var(--space-5xl); text-align: center; }
+        .footer { padding: 3rem 0 1.5rem; background: var(--gray-900); color: var(--gray-400); margin-top: 5rem; text-align: center; font-size: 0.875rem; }
     </style>
 </head>
 <body>
@@ -184,18 +266,17 @@
         <div class="container">
             <div class="header__inner">
                 <a href="index.html" class="header__logo">
-                    <img src="images/uccello.png" alt="AI Osha" style="height:32px;width:auto;"><span style="font-size:1.3rem;font-weight:800;color:#fff;letter-spacing:-0.02em;">AI <span style="color:#00A8E8;">Osha</span></span>
+                    <img src="images/uccello.png" alt="AI Osha" style="height:32px;width:auto;">
+                    <span style="font-size:1.3rem;font-weight:800;color:#fff;letter-spacing:-0.02em;">AI <span style="color:#00A8E8;">Osha</span></span>
                 </a>
-
                 <nav class="header__nav">
                     <a href="chi-sono.html" class="header__nav-link">Chi Sono</a>
                     <a href="libro.html" class="header__nav-link">Libro</a>
                     <a href="corso.html" class="header__nav-link">Corso</a>
                     <a href="risorse.html" class="header__nav-link">Risorse</a>
                     <a href="blog.html" class="header__nav-link">Blog</a>
-                    <a href="login.html" class="header__nav-link header__nav-link--accedi" id="nav-auth-link">Accedi</a>
+                    <a href="login.html" class="header__nav-link" id="nav-auth-link">Accedi</a>
                 </nav>
-
                 <a href="index.html#lead-magnet" class="btn btn--primary">
                     Guida Gratuita
                 </a>
@@ -204,403 +285,355 @@
     </header>
 
     <main>
-        <!-- Hero -->
+
+        <!-- HERO -->
         <section class="hero">
             <div class="hero__bg"></div>
             <div class="container">
                 <div class="hero__content">
                     <div class="hero__badge">
-                        Corso dal Vivo
+                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>
+                        Formazione AI Pratica per PMI
                     </div>
 
-                    <div style="margin-bottom: var(--space-2xl);">
-                        <img src="images/logo-corso.png" alt="Intelligenza Artificiale in Pratica" style="max-width: 600px; width: 100%; margin: 0 auto; display: block;">
+                    <div style="margin-bottom: 2rem;">
+                        <img src="images/logo-corso.png" alt="Intelligenza Artificiale in Pratica" style="max-width: 560px; width: 100%; margin: 0 auto; display: block;">
                     </div>
 
                     <h1 class="hero__title">
                         Intelligenza Artificiale <span class="text-gradient">in Pratica</span>
                     </h1>
 
-                    <a href="ai-osha-live-12-aprile.html" style="display:inline-flex;align-items:center;gap:0.75rem;background:linear-gradient(135deg,#e63329 0%,#cc2a22 100%);color:#fff;font-weight:700;font-size:1rem;padding:1rem 1.75rem;border-radius:0.75rem;margin-bottom:2rem;box-shadow:0 4px 20px rgba(230,51,41,0.35);text-decoration:none;transition:transform 0.2s,box-shadow 0.2s;" onmouseover="this.style.transform='translateY(-2px)';this.style.boxShadow='0 8px 32px rgba(230,51,41,0.45)'" onmouseout="this.style.transform='';this.style.boxShadow='0 4px 20px rgba(230,51,41,0.35)'">
-                        <span style="width:10px;height:10px;background:#fff;border-radius:50%;animation:pulse 1.2s infinite;flex-shrink:0;"></span>
-                        <span>LIVE DOMANI — Workshop Gratuito AI per Agenzie Immobiliari · 26 Aprile ore 21:00</span>
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" width="18" height="18"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
-                    </a>
-
                     <p class="hero__subtitle">
-                        Corso fisico di formazione sull'AI pratica. Impara ad utilizzare l'intelligenza artificiale in modo concreto
-                        per il tuo business attraverso workshop interattivi, esercitazioni pratiche e casi studio reali.
+                        10 lezioni per smettere di sentir parlare di AI e iniziare davvero ad usarla nel tuo business.
+                        Scegli come farlo: dal vivo o comodamente da casa.
                     </p>
 
-                    <a href="https://www.pomaliberatutti.it/intelligenza-artificiale-in-pratica/" target="_blank" rel="noopener" class="btn btn--primary btn--large">
-                        Ottieni Info sul Corso
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" width="20" height="20">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
-                        </svg>
+                    <a href="#percorsi" class="btn btn--primary btn--large">
+                        Scegli il tuo percorso
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" width="20" height="20"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
                     </a>
                 </div>
             </div>
         </section>
 
-        <!-- Course Details Section -->
-        <section class="section">
+        <!-- SCEGLI IL TUO PERCORSO -->
+        <section class="section" id="percorsi">
             <div class="container">
                 <div class="section__header">
-                    <span class="section__eyebrow">Formazione Dal Vivo</span>
-                    <h2 class="section__title">Un Corso Pratico, Non Solo Teoria</h2>
-                    <p class="section__description">
-                        Il corso "Intelligenza Artificiale in Pratica" è pensato per professionisti e imprenditori che vogliono
-                        implementare l'AI nel loro business in modo concreto ed efficace.
-                    </p>
+                    <span class="section__eyebrow">Due Percorsi</span>
+                    <h2 class="section__title">Come vuoi imparare?</h2>
+                    <p class="section__desc">Lo stesso metodo, lo stesso contenuto. Scegli il formato che si adatta alla tua vita.</p>
                 </div>
 
-                <div class="benefits-grid">
-                    <div class="benefit-card">
-                        <div class="benefit-card__icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/>
-                            </svg>
+                <div class="path-grid">
+
+                    <!-- CARD POMA -->
+                    <div class="path-card path-card--poma">
+                        <span class="path-card__badge path-card__badge--poma">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/></svg>
+                            Dal Vivo
+                        </span>
+
+                        <div class="path-card__logo-wrap">
+                            <img src="images/logo-poma.png" alt="Fondazione Poma Liberatutti" class="path-card__logo">
                         </div>
-                        <h4>Lezioni in Presenza</h4>
-                        <p>
-                            Workshop dal vivo con interazione diretta. Impara facendo, con esercitazioni pratiche
-                            e feedback immediato durante la formazione.
-                        </p>
-                    </div>
 
-                    <div class="benefit-card">
-                        <div class="benefit-card__icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
-                            </svg>
+                        <div>
+                            <div class="path-card__title">Corso dal Vivo</div>
+                            <div class="path-card__sub">In presenza a Pescia (PT) presso la Fondazione Poma Liberatutti. Workshop interattivi con feedback immediato e networking.</div>
                         </div>
-                        <h4>Casi Studio Reali</h4>
-                        <p>
-                            Applica subito quello che impari su casi concreti del tuo settore.
-                            Esempi pratici di automazione, prompt avanzati e integrazioni AI.
-                        </p>
-                    </div>
 
-                    <div class="benefit-card">
-                        <div class="benefit-card__icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
-                            </svg>
-                        </div>
-                        <h4>Materiali e Risorse</h4>
-                        <p>
-                            Ricevi template, prompt library e guide pratiche da utilizzare immediatamente
-                            nel tuo lavoro quotidiano. Tutto pronto all'uso.
-                        </p>
-                    </div>
+                        <ul class="path-card__features">
+                            <li class="path-card__feature">
+                                <span class="path-card__feature-dot path-card__feature-dot--poma">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                                </span>
+                                Lezioni in presenza con Aliosha
+                            </li>
+                            <li class="path-card__feature">
+                                <span class="path-card__feature-dot path-card__feature-dot--poma">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                                </span>
+                                Esercitazioni pratiche guidate
+                            </li>
+                            <li class="path-card__feature">
+                                <span class="path-card__feature-dot path-card__feature-dot--poma">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                                </span>
+                                Networking con altri imprenditori
+                            </li>
+                            <li class="path-card__feature">
+                                <span class="path-card__feature-dot path-card__feature-dot--poma">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                                </span>
+                                Domande e risposte in tempo reale
+                            </li>
+                            <li class="path-card__feature">
+                                <span class="path-card__feature-dot path-card__feature-dot--poma">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                                </span>
+                                Materiali e slide inclusi
+                            </li>
+                        </ul>
 
-                    <div class="benefit-card">
-                        <div class="benefit-card__icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/>
-                            </svg>
-                        </div>
-                        <h4>Networking di Valore</h4>
-                        <p>
-                            Connettiti con altri professionisti e imprenditori che, come te, vogliono sfruttare
-                            l'AI per innovare e far crescere il proprio business.
-                        </p>
-                    </div>
-                </div>
-
-                <div style="text-align: center; margin-top: var(--space-3xl);">
-                    <a href="https://www.pomaliberatutti.it/intelligenza-artificiale-in-pratica/" target="_blank" rel="noopener" class="btn btn--primary btn--large">
-                        Scopri Tutte le Info e le Date
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" width="20" height="20">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
-                        </svg>
-                    </a>
-                </div>
-            </div>
-        </section>
-
-        <!-- SEZIONE SKOOL TEMPORANEAMENTE NASCOSTA
-
-        Skool Platform Section
-        <section class="section">
-            <div class="container">
-                <div class="skool-box">
-                    <h3>Perché Usiamo Skool?</h3>
-                    <p>
-                        <strong>Skool</strong> è la piattaforma numero 1 al mondo per community di apprendimento e corsi online.
-                        A differenza di forum tradizionali o gruppi Facebook dispersivi, Skool è stato progettato specificamente
-                        per l'educazione e il networking professionale.
-                    </p>
-
-                    <div class="skool-features">
-                        <div class="skool-feature">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
-                            </svg>
-                            <span><strong>Interfaccia Pulita</strong> — Niente distrazioni, solo contenuto di valore organizzato in modo intuitivo</span>
-                        </div>
-                        <div class="skool-feature">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
-                            </svg>
-                            <span><strong>Gamification</strong> — Sistema di livelli e achievement che premia la partecipazione attiva</span>
-                        </div>
-                        <div class="skool-feature">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
-                            </svg>
-                            <span><strong>Video Hosting Integrato</strong> — Tutti i contenuti in un unico posto, senza bisogno di piattaforme esterne</span>
-                        </div>
-                        <div class="skool-feature">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
-                            </svg>
-                            <span><strong>Calendario Eventi</strong> — Consulenze, Q&A live e workshop organizzati e sincronizzati</span>
-                        </div>
-                        <div class="skool-feature">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
-                            </svg>
-                            <span><strong>Mobile App</strong> — Accedi da smartphone e continua l'apprendimento ovunque</span>
-                        </div>
-                    </div>
-
-                    <p style="margin-top: 2rem; font-size: 1rem; opacity: 0.9;">
-                        Migliaia di creator professionisti scelgono Skool per gestire community premium.
-                        Noi lo usiamo perché crediamo nell'eccellenza dell'esperienza di apprendimento.
-                    </p>
-                </div>
-
-                <div class="section__header">
-                    <span class="section__eyebrow">Cosa Ottieni</span>
-                    <h2 class="section__title">Community Avanzata + Supporto Personalizzato</h2>
-                    <p class="section__description">
-                        Non è solo un corso. È un percorso completo con contenuti premium e accesso diretto a me.
-                    </p>
-                </div>
-
-                <div class="benefits-grid">
-                    <div class="benefit-card">
-                        <div class="benefit-card__icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"/>
-                            </svg>
-                        </div>
-                        <h4>Libreria Video Avanzati</h4>
-                        <p>
-                            Oltre 50 video pratici e in continuo aggiornamento su automazioni, prompt avanzati,
-                            casi d'uso reali, integrazioni AI-business. Contenuti che non trovi da nessun'altra parte.
-                        </p>
-                    </div>
-
-                    <div class="benefit-card">
-                        <div class="benefit-card__icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/>
-                            </svg>
-                        </div>
-                        <h4>Community Attiva</h4>
-                        <p>
-                            Confrontati con altri professionisti, condividi risultati, fai domande e ricevi feedback.
-                            Networking di valore con imprenditori e professionisti che la pensano come te.
-                        </p>
-                    </div>
-
-                    <div class="benefit-card">
-                        <div class="benefit-card__icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
-                            </svg>
-                        </div>
-                        <h4>Template & Risorse</h4>
-                        <p>
-                            Prompt library completa, workflow automation, template pronti all'uso,
-                            guide PDF scaricabili. Risparmia centinaia di ore di test e sperimentazione.
-                        </p>
-                    </div>
-
-                    <div class="benefit-card">
-                        <div class="benefit-card__icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/>
-                            </svg>
-                        </div>
-                        <h4>Aggiornamenti Continui</h4>
-                        <p>
-                            L'AI evolve velocemente. Noi anche. Nuovi video, tutorial e best practices aggiunti
-                            ogni settimana per restare sempre al passo con gli ultimi strumenti e tecniche.
-                        </p>
-                    </div>
-
-                    <div class="benefit-card">
-                        <div class="benefit-card__icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/>
-                            </svg>
-                        </div>
-                        <h4>Q&A Live Mensili</h4>
-                        <p>
-                            Sessioni live di domande e risposte dove rispondo ai dubbi della community,
-                            analizzo casi reali e condivido strategie avanzate non disponibili nei video.
-                        </p>
-                    </div>
-
-                    <div class="benefit-card">
-                        <div class="benefit-card__icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/>
-                            </svg>
-                        </div>
-                        <h4>Certificato di Completamento</h4>
-                        <p>
-                            Ottieni un certificato digitale da mostrare su LinkedIn e CV dopo aver completato
-                            i moduli principali e dimostrato padronanza pratica degli strumenti AI.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        Consultation Highlight
-        <section class="section section--dark">
-            <div class="container">
-                <div class="consultation-box">
-                    <h3>1 Consulenza Privata 1-to-1 al Mese</h3>
-                    <p class="consultation-box__value">
-                        <strong>Il vero valore della membership:</strong> Ogni mese prenoti una call di 60 minuti con me
-                        per analizzare il tuo business, risolvere problemi specifici e costruire la tua strategia AI personalizzata.
-                    </p>
-
-                    <div class="consultation-box__points">
-                        <div class="consultation-box__point">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
-                            </svg>
-                            <span>Analisi personalizzata del tuo caso d'uso specifico</span>
-                        </div>
-                        <div class="consultation-box__point">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
-                            </svg>
-                            <span>Revisione workflow e suggerimenti di ottimizzazione</span>
-                        </div>
-                        <div class="consultation-box__point">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
-                            </svg>
-                            <span>Prompt personalizzati creati su misura per te</span>
-                        </div>
-                        <div class="consultation-box__point">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
-                            </svg>
-                            <span>Strategia AI su misura per il tuo settore</span>
-                        </div>
-                        <div class="consultation-box__point">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
-                            </svg>
-                            <span>Q&A approfondite sui tuoi blocchi e sfide</span>
-                        </div>
-                    </div>
-
-                    <p style="font-size: 1rem; opacity: 0.9; margin-top: 2rem;">
-                        Valore consulenza singola: €300. Tu la ottieni inclusa ogni mese con la membership.
-                    </p>
-                </div>
-            </div>
-        </section>
-
-        Pricing
-        <section class="section section--light" id="pricing">
-            <div class="container">
-                <div class="section__header">
-                    <span class="section__eyebrow">Investimento</span>
-                    <h2 class="section__title">Un Solo Prezzo. Tutto Incluso.</h2>
-                </div>
-
-                <div class="pricing-card">
-                    <div class="pricing-card__badge">Più Richiesto</div>
-
-                    <div class="pricing-card__price">
-                        <div class="pricing-card__amount">€97</div>
-                        <div class="pricing-card__period">/mese</div>
-                    </div>
-
-                    <ul class="pricing-card__features">
-                        <li class="pricing-card__feature">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
-                            </svg>
-                            <span><strong>Accesso completo</strong> a tutti i video e contenuti avanzati</span>
-                        </li>
-                        <li class="pricing-card__feature">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
-                            </svg>
-                            <span><strong>1 consulenza privata 1-to-1</strong> di 60 minuti al mese (valore €300)</span>
-                        </li>
-                        <li class="pricing-card__feature">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
-                            </svg>
-                            <span><strong>Community Skool</strong> con professionisti e imprenditori attivi</span>
-                        </li>
-                        <li class="pricing-card__feature">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
-                            </svg>
-                            <span><strong>Q&A Live mensili</strong> con analisi casi reali</span>
-                        </li>
-                        <li class="pricing-card__feature">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
-                            </svg>
-                            <span><strong>Template, prompt e risorse</strong> scaricabili e pronti all'uso</span>
-                        </li>
-                        <li class="pricing-card__feature">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
-                            </svg>
-                            <span><strong>Aggiornamenti settimanali</strong> con nuovi contenuti e best practices</span>
-                        </li>
-                        <li class="pricing-card__feature">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
-                            </svg>
-                            <span><strong>Supporto prioritario</strong> via community per domande rapide</span>
-                        </li>
-                        <li class="pricing-card__feature">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
-                            </svg>
-                            <span><strong>Certificato di completamento</strong> per LinkedIn e CV</span>
-                        </li>
-                        <li class="pricing-card__feature">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
-                            </svg>
-                            <span><strong>Cancellazione flessibile</strong> — Puoi cancellarti quando vuoi</span>
-                        </li>
-                    </ul>
-
-                    <div class="pricing-card__cta">
-                        <a href="https://www.skool.com/ai-osha" target="_blank" rel="noopener" class="btn btn--primary btn--large">
-                            Unisciti su Skool
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" width="20" height="20">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
-                            </svg>
+                        <a href="https://www.pomaliberatutti.it/intelligenza-artificiale-in-pratica/" target="_blank" rel="noopener" class="path-card__cta path-card__cta--poma">
+                            Scopri date e iscrizioni
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" width="18" height="18"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
                         </a>
-                        <p style="margin-top: 1rem; font-size: 0.875rem; color: var(--gray-400);">
-                            Accesso immediato. Nessun impegno a lungo termine.
-                        </p>
                     </div>
+
+                    <!-- CARD ONLINE -->
+                    <div class="path-card path-card--online">
+                        <span class="path-card__badge path-card__badge--online">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="3"/><path d="M12 2v3m0 14v3M2 12h3m14 0h3"/></svg>
+                            Online · Registrato
+                        </span>
+
+                        <div class="path-card__logo-wrap" style="align-items:center;">
+                            <span style="font-size:3rem;">🎬</span>
+                        </div>
+
+                        <div>
+                            <div class="path-card__title">Corso Registrato Online</div>
+                            <div class="path-card__sub">Tutte e 10 le lezioni registrate. Accesso immediato, studia al tuo ritmo, da qualsiasi dispositivo, quando vuoi.</div>
+                        </div>
+
+                        <ul class="path-card__features">
+                            <li class="path-card__feature">
+                                <span class="path-card__feature-dot path-card__feature-dot--online">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                                </span>
+                                10 lezioni video complete e strutturate
+                            </li>
+                            <li class="path-card__feature">
+                                <span class="path-card__feature-dot path-card__feature-dot--online">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                                </span>
+                                Accesso permanente ai contenuti
+                            </li>
+                            <li class="path-card__feature">
+                                <span class="path-card__feature-dot path-card__feature-dot--online">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                                </span>
+                                Slide PDF di ogni lezione scaricabili
+                            </li>
+                            <li class="path-card__feature">
+                                <span class="path-card__feature-dot path-card__feature-dot--online">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                                </span>
+                                Prompt library + template pronti all'uso
+                            </li>
+                            <li class="path-card__feature">
+                                <span class="path-card__feature-dot path-card__feature-dot--online">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                                </span>
+                                Supporto via email incluso
+                            </li>
+                        </ul>
+
+                        <a href="corso-online.html" class="path-card__cta path-card__cta--online">
+                            Scopri il corso online
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" width="18" height="18"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+                        </a>
+                    </div>
+
                 </div>
             </div>
         </section>
 
-        FAQ
-        <section class="section">
+        <!-- PROGRAMMA 10 LEZIONI -->
+        <section class="section section--alt" id="programma">
+            <div class="container">
+                <div class="section__header">
+                    <span class="section__eyebrow">Il Programma</span>
+                    <h2 class="section__title">10 Lezioni. Risultati Concreti.</h2>
+                    <p class="section__desc">Dal prompt engineering agli agenti AI. Un percorso progressivo pensato per chi lavora e non ha tempo da sprecare.</p>
+                </div>
+
+                <div class="curriculum-grid">
+                    <div class="lesson-card">
+                        <span class="lesson-number">01</span>
+                        <div class="lesson-body">
+                            <div class="lesson-title">Fondamenta AI & LLM</div>
+                            <div class="lesson-desc">Cos'è davvero l'AI, come funzionano i modelli e come usarli nel tuo business da subito.</div>
+                        </div>
+                    </div>
+                    <div class="lesson-card">
+                        <span class="lesson-number">02</span>
+                        <div class="lesson-body">
+                            <div class="lesson-title">Prompt Engineering</div>
+                            <div class="lesson-desc">Il metodo per ottenere risultati precisi e professionali da ChatGPT e Claude. Zero approssimazione.</div>
+                        </div>
+                    </div>
+                    <div class="lesson-card">
+                        <span class="lesson-number">03</span>
+                        <div class="lesson-body">
+                            <div class="lesson-title">Ricerca Avanzata & Analisi PDF</div>
+                            <div class="lesson-desc">Ricerche professionali con Perplexity e analisi di documenti, contratti e report in secondi.</div>
+                        </div>
+                    </div>
+                    <div class="lesson-card">
+                        <span class="lesson-number">04</span>
+                        <div class="lesson-body">
+                            <div class="lesson-title">Testi, Copy & Persuasione</div>
+                            <div class="lesson-desc">Email di vendita, schede prodotto, copy per social: tutto in minuti con l'AI al tuo fianco.</div>
+                        </div>
+                    </div>
+                    <div class="lesson-card">
+                        <span class="lesson-number">05</span>
+                        <div class="lesson-body">
+                            <div class="lesson-title">Creare Visual senza Limiti</div>
+                            <div class="lesson-desc">Immagini, grafiche e contenuti visivi professionali con Midjourney, Leonardo e Ideogram.</div>
+                        </div>
+                    </div>
+                    <div class="lesson-card">
+                        <span class="lesson-number">06</span>
+                        <div class="lesson-body">
+                            <div class="lesson-title">Audio, Video & Accessibilità</div>
+                            <div class="lesson-desc">Video, trascrizioni, sottotitoli e contenuti audio con ElevenLabs e altri strumenti AI.</div>
+                        </div>
+                    </div>
+                    <div class="lesson-card">
+                        <span class="lesson-number">07</span>
+                        <div class="lesson-body">
+                            <div class="lesson-title">Presenza Digitale Strategica</div>
+                            <div class="lesson-desc">Social, SEO, Google Business: costruisci e ottimizza la tua presenza online con l'AI.</div>
+                        </div>
+                    </div>
+                    <div class="lesson-card">
+                        <span class="lesson-number">08</span>
+                        <div class="lesson-body">
+                            <div class="lesson-title">Il Tuo Sito Web con AI</div>
+                            <div class="lesson-desc">Crea o migliora il tuo sito: struttura, testi, SEO e ottimizzazione senza saper programmare.</div>
+                        </div>
+                    </div>
+                    <div class="lesson-card">
+                        <span class="lesson-number">09</span>
+                        <div class="lesson-body">
+                            <div class="lesson-title">Automatismi & Workflow</div>
+                            <div class="lesson-desc">Automatizza i processi ripetitivi con Make e Zapier. Risparmia ore ogni settimana.</div>
+                        </div>
+                    </div>
+                    <div class="lesson-card">
+                        <span class="lesson-number">10</span>
+                        <div class="lesson-body">
+                            <div class="lesson-title">Agenti & Automazioni Avanzate</div>
+                            <div class="lesson-desc">Agenti AI autonomi e flussi che lavorano mentre tu fai altro. Il livello successivo.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="text-align:center; margin-top:3rem;">
+                    <a href="corso-online.html" class="btn btn--primary btn--large">
+                        Accedi al Corso Registrato
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" width="20" height="20"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- TESTIMONIALS -->
+        <section class="section" id="testimonianze">
+            <div class="container">
+                <div class="section__header">
+                    <span class="section__eyebrow">Chi l'ha già fatto</span>
+                    <h2 class="section__title">Risultati reali, da persone reali</h2>
+                    <p class="section__desc">Non slide californiane. Imprenditori e professionisti italiani che hanno applicato il metodo.</p>
+                </div>
+
+                <div class="testimonials-grid">
+
+                    <div class="testimonial-card">
+                        <div class="testimonial-stars">
+                            <span class="testimonial-star">★</span><span class="testimonial-star">★</span><span class="testimonial-star">★</span><span class="testimonial-star">★</span><span class="testimonial-star">★</span>
+                        </div>
+                        <p class="testimonial-text">"Sono passato da 2 ore al giorno di email a 25 minuti. Non ci credevo finché non l'ho visto con i miei occhi. Il metodo funziona davvero."</p>
+                        <div class="testimonial-author">
+                            <img src="images/thumbnails/simone.jpg" alt="Simone" class="testimonial-avatar">
+                            <div>
+                                <div class="testimonial-name">Simone</div>
+                                <div class="testimonial-role">Professionista in proprio</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-card">
+                        <div class="testimonial-stars">
+                            <span class="testimonial-star">★</span><span class="testimonial-star">★</span><span class="testimonial-star">★</span><span class="testimonial-star">★</span><span class="testimonial-star">★</span>
+                        </div>
+                        <p class="testimonial-text">"Le schede tecniche che mi ci volevano ore a scrivere ora le genero in minuti. Ho guadagnato tempo che non sapevo di avere."</p>
+                        <div class="testimonial-author">
+                            <img src="images/thumbnails/federico.jpg" alt="Federico" class="testimonial-avatar">
+                            <div>
+                                <div class="testimonial-name">Federico</div>
+                                <div class="testimonial-role">Imprenditore</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-card">
+                        <div class="testimonial-stars">
+                            <span class="testimonial-star">★</span><span class="testimonial-star">★</span><span class="testimonial-star">★</span><span class="testimonial-star">★</span><span class="testimonial-star">★</span>
+                        </div>
+                        <p class="testimonial-text">"Finalmente qualcuno che ti insegna l'AI senza farti sentire stupido. Pratico, diretto, applicabile dal primo giorno."</p>
+                        <div class="testimonial-author">
+                            <img src="images/thumbnails/andrea.jpg" alt="Andrea" class="testimonial-avatar">
+                            <div>
+                                <div class="testimonial-name">Andrea</div>
+                                <div class="testimonial-role">Titolare PMI</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-card">
+                        <div class="testimonial-stars">
+                            <span class="testimonial-star">★</span><span class="testimonial-star">★</span><span class="testimonial-star">★</span><span class="testimonial-star">★</span><span class="testimonial-star">★</span>
+                        </div>
+                        <p class="testimonial-text">"Ho automatizzato il 60% dei task ripetitivi del mio studio. Non è magia, è metodo. Aliosha te lo fa capire in modo semplice."</p>
+                        <div class="testimonial-author">
+                            <img src="images/thumbnails/cristiano.jpg" alt="Cristiano" class="testimonial-avatar">
+                            <div>
+                                <div class="testimonial-name">Cristiano</div>
+                                <div class="testimonial-role">Consulente</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-card">
+                        <div class="testimonial-stars">
+                            <span class="testimonial-star">★</span><span class="testimonial-star">★</span><span class="testimonial-star">★</span><span class="testimonial-star">★</span><span class="testimonial-star">★</span>
+                        </div>
+                        <p class="testimonial-text">"30 giorni di contenuti social in 2 ore. Non ci credevo. Adesso è la mia routine del lunedì mattina."</p>
+                        <div class="testimonial-author">
+                            <img src="images/thumbnails/aldo.jpg" alt="Aldo" class="testimonial-avatar">
+                            <div>
+                                <div class="testimonial-name">Aldo</div>
+                                <div class="testimonial-role">Libero Professionista</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-card">
+                        <div class="testimonial-stars">
+                            <span class="testimonial-star">★</span><span class="testimonial-star">★</span><span class="testimonial-star">★</span><span class="testimonial-star">★</span><span class="testimonial-star">★</span>
+                        </div>
+                        <p class="testimonial-text">"Pensavo fosse roba solo per i tecnici. Invece l'ho capito, applicato e ora faccio cose che prima delegavo a pagamento."</p>
+                        <div class="testimonial-author">
+                            <img src="images/thumbnails/naji.jpg" alt="Naji" class="testimonial-avatar">
+                            <div>
+                                <div class="testimonial-name">Naji</div>
+                                <div class="testimonial-role">Agente Immobiliare</div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section class="section section--alt">
             <div class="container">
                 <div class="section__header">
                     <span class="section__eyebrow">FAQ</span>
@@ -610,125 +643,68 @@
                 <div class="faq-list">
                     <div class="faq-item active">
                         <button class="faq-item__question">
-                            <span>Cos'è Skool e perché lo usate?</span>
-                            <svg class="faq-item__icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/>
-                            </svg>
-                        </button>
-                        <div class="faq-item__answer">
-                            <div class="faq-item__answer-content">
-                                Skool è la piattaforma leader mondiale per community di apprendimento. La usiamo perché offre la migliore esperienza per studenti: interfaccia pulita, video hosting integrato, calendario eventi, gamification e mobile app. È dove le migliori community professionali si incontrano.
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="faq-item">
-                        <button class="faq-item__question">
-                            <span>Come funziona la consulenza 1-to-1?</span>
-                            <svg class="faq-item__icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/>
-                            </svg>
-                        </button>
-                        <div class="faq-item__answer">
-                            <div class="faq-item__answer-content">
-                                Ogni mese puoi prenotare una call di 60 minuti con me tramite il calendario integrato su Skool. Analizziamo insieme il tuo business, i tuoi workflow attuali e costruiamo una strategia AI su misura. Puoi portare domande specifiche, problemi da risolvere o chiedere revisione di prompt e automazioni.
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="faq-item">
-                        <button class="faq-item__question">
-                            <span>Posso cancellarmi in qualsiasi momento?</span>
-                            <svg class="faq-item__icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/>
-                            </svg>
-                        </button>
-                        <div class="faq-item__answer">
-                            <div class="faq-item__answer-content">
-                                Sì, assolutamente. Non ci sono vincoli a lungo termine. Puoi cancellarti quando vuoi direttamente dalla piattaforma Skool. Nessuna penale, nessuna domanda. Crediamo nel valore che offriamo, non nei lock-in contrattuali.
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="faq-item">
-                        <button class="faq-item__question">
                             <span>Serve esperienza tecnica o con l'AI?</span>
-                            <svg class="faq-item__icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/>
-                            </svg>
+                            <svg class="faq-item__icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/></svg>
                         </button>
                         <div class="faq-item__answer">
-                            <div class="faq-item__answer-content">
-                                No. I contenuti partono dalle basi e si approfondiscono progressivamente. Se sai usare un computer e navigare online, puoi seguire. La community è pensata per professionisti e imprenditori, non per sviluppatori. Focus su applicazioni pratiche, zero codice.
-                            </div>
+                            <div class="faq-item__answer-content">No. Il corso parte dalle basi e si approfondisce progressivamente. Se sai usare un computer e navigare online, puoi seguire senza problemi. Zero codice, zero tecnicismi inutili. Focus su applicazioni pratiche per il business.</div>
                         </div>
                     </div>
-
                     <div class="faq-item">
                         <button class="faq-item__question">
-                            <span>Quanto tempo devo dedicarci a settimana?</span>
-                            <svg class="faq-item__icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/>
-                            </svg>
+                            <span>Qual è la differenza tra corso dal vivo e corso registrato?</span>
+                            <svg class="faq-item__icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/></svg>
                         </button>
                         <div class="faq-item__answer">
-                            <div class="faq-item__answer-content">
-                                Dipende da te. Alcuni guardano 1-2 video a settimana (30-60 minuti), altri fanno binge-watching del weekend. I video sono modulari: puoi seguire al tuo ritmo. L'importante è implementare subito quello che impari. Meglio 1 video + azione che 10 video senza applicazione.
-                            </div>
+                            <div class="faq-item__answer-content">Il contenuto è lo stesso. La differenza è nel formato: dal vivo hai l'interazione diretta, le esercitazioni guidate e il networking con gli altri partecipanti. Il registrato ti dà flessibilità totale: accesso immediato, ritmo tuo, nessun vincolo geografico.</div>
                         </div>
                     </div>
-
                     <div class="faq-item">
                         <button class="faq-item__question">
-                            <span>I contenuti vengono aggiornati?</span>
-                            <svg class="faq-item__icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/>
-                            </svg>
+                            <span>Quanto tempo serve a settimana per il corso online?</span>
+                            <svg class="faq-item__icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/></svg>
                         </button>
                         <div class="faq-item__answer">
-                            <div class="faq-item__answer-content">
-                                Sì, continuamente. L'AI evolve rapidamente e noi con essa. Ogni settimana aggiungiamo nuovi video, tutorial, template e best practices. Quando esce un nuovo tool importante o una tecnica avanzata, lo copriamo immediatamente. Il tuo abbonamento include tutti gli aggiornamenti futuri.
-                            </div>
+                            <div class="faq-item__answer-content">Dipende dal tuo ritmo. Le lezioni sono modulari e puoi seguirle quando vuoi. La filosofia è "1 video + 1 azione subito": meglio applicare una cosa che guardare dieci senza fare niente. Anche 2-3 ore a settimana sono sufficienti.</div>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-item__question">
+                            <span>Questo corso fa per me se ho già usato ChatGPT?</span>
+                            <svg class="faq-item__icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/></svg>
+                        </button>
+                        <div class="faq-item__answer">
+                            <div class="faq-item__answer-content">Sì. Usare ChatGPT non è lo stesso che sapere come usarlo bene per il business. Il corso ti insegna il metodo: come strutturare i prompt, come integrare l'AI nei tuoi processi, come automatizzare e costruire workflow che funzionano davvero.</div>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-item__question">
+                            <span>Come posso iscrivermi al corso dal vivo a Poma?</span>
+                            <svg class="faq-item__icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/></svg>
+                        </button>
+                        <div class="faq-item__answer">
+                            <div class="faq-item__answer-content">Le iscrizioni al corso in presenza si gestiscono direttamente tramite la Fondazione Poma Liberatutti a Pescia. Clicca sul bottone "Scopri date e iscrizioni" qui sopra per trovare le date disponibili e le istruzioni per iscriverti.</div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        END SEZIONE SKOOL TEMPORANEAMENTE NASCOSTA -->
     </main>
 
     <footer class="footer">
-        <p>© 2026 AI Osha — Aliosha Battaglini. Tutti i diritti riservati.</p>
+        <div class="container">
+            <p>© 2026 AI Osha — Aliosha Battaglini · <a href="mailto:info@aiosha.it" style="color:var(--primary);">info@aiosha.it</a> · <a href="index.html" style="color:var(--gray-500);">aiosha.it</a></p>
+        </div>
     </footer>
 
     <script>
-        // FAQ Accordion
         document.querySelectorAll('.faq-item__question').forEach(button => {
             button.addEventListener('click', () => {
                 const item = button.parentElement;
                 const isActive = item.classList.contains('active');
-
-                document.querySelectorAll('.faq-item').forEach(i => {
-                    i.classList.remove('active');
-                    i.querySelector('.faq-item__question').setAttribute('aria-expanded', 'false');
-                });
-
-                if (!isActive) {
-                    item.classList.add('active');
-                    button.setAttribute('aria-expanded', 'true');
-                }
-            });
-        });
-
-        // Smooth scroll
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                }
+                document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
+                if (!isActive) item.classList.add('active');
             });
         });
     </script>
