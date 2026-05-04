@@ -89,8 +89,50 @@
         .hero__bg { position: absolute; inset: 0; background: radial-gradient(ellipse 80% 50% at 50% -20%, rgba(0, 168, 232, 0.15) 0%, transparent 50%), radial-gradient(ellipse 60% 40% at 100% 100%, rgba(245, 166, 35, 0.1) 0%, transparent 50%), linear-gradient(180deg, var(--dark) 0%, var(--dark-soft) 100%); z-index: -1; }
         .hero__content { text-align: center; max-width: 860px; margin: 0 auto; }
         .hero__badge { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.5rem 1rem; background: var(--gray-900); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: var(--radius-full); font-size: 0.875rem; font-weight: 500; color: var(--gray-400); margin-bottom: 2rem; }
-        .hero__title { font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 800; letter-spacing: -0.02em; color: var(--white); margin-bottom: 1.5rem; }
         .hero__subtitle { font-size: clamp(1.125rem, 2vw, 1.375rem); color: var(--gray-400); max-width: 680px; margin: 0 auto 2.5rem; }
+
+        /* ── ANIMATED TITLE ── */
+        .hero__display {
+            font-size: clamp(3rem, 7vw, 5.5rem);
+            font-weight: 800;
+            letter-spacing: -0.03em;
+            line-height: 1.05;
+            margin-bottom: 1.75rem;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: baseline;
+            gap: 0 0.35em;
+        }
+        .hw {
+            display: inline-block;
+            opacity: 0;
+            transform: translateY(48px);
+            filter: blur(12px);
+            animation: hwReveal 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+            color: var(--white);
+        }
+        .hw--1 { animation-delay: 0.05s; }
+        .hw--2 { animation-delay: 0.22s; }
+        .hw--3 { animation-delay: 0.39s; }
+        .hw--4 {
+            animation-delay: 0.56s;
+            background: linear-gradient(100deg, var(--primary) 0%, #7dd3fc 30%, var(--highlight) 60%, var(--primary) 100%);
+            background-size: 300% auto;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: hwReveal 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.56s forwards, shimmer 4s linear 1.5s infinite;
+        }
+        @keyframes hwReveal {
+            0%   { opacity: 0; transform: translateY(48px); filter: blur(12px); }
+            60%  { filter: blur(0); }
+            100% { opacity: 1; transform: translateY(0); filter: blur(0); }
+        }
+        @keyframes shimmer {
+            0%   { background-position: 0% 50%; }
+            100% { background-position: 300% 50%; }
+        }
 
         /* Section */
         .section { padding: 5rem 0; }
@@ -296,13 +338,12 @@
                         Formazione AI Pratica per PMI
                     </div>
 
-                    <div style="margin-bottom: 2rem;">
-                        <img src="images/logo-corso.png" alt="Intelligenza Artificiale in Pratica" style="max-width: 560px; width: 100%; margin: 0 auto; display: block;">
+                    <div class="hero__display" aria-label="Intelligenza Artificiale in Pratica">
+                        <span class="hw hw--1">Intelligenza</span>
+                        <span class="hw hw--2">Artificiale</span>
+                        <span class="hw hw--3">in</span>
+                        <span class="hw hw--4">Pratica</span>
                     </div>
-
-                    <h1 class="hero__title">
-                        Intelligenza Artificiale <span class="text-gradient">in Pratica</span>
-                    </h1>
 
                     <p class="hero__subtitle">
                         10 lezioni per smettere di sentir parlare di AI e iniziare davvero ad usarla nel tuo business.
