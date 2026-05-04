@@ -187,6 +187,29 @@
         .path-card__logo-wrap {
             height: 72px; display: flex; align-items: center;
         }
+        .path-card__cover {
+            margin: -2.5rem -2.5rem 0 -2.5rem;
+            aspect-ratio: 16 / 9;
+            overflow: hidden;
+            position: relative;
+            background: var(--dark-soft);
+        }
+        .path-card__cover img {
+            width: 100%; height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+        .path-card:hover .path-card__cover img { transform: scale(1.04); }
+        .path-card__cover::after {
+            content: '';
+            position: absolute; inset: 0;
+            background: linear-gradient(180deg, transparent 55%, rgba(0,0,0,0.45) 100%);
+            pointer-events: none;
+        }
+        @media (max-width: 640px) {
+            .path-card__cover { margin: -2rem -2rem 0 -2rem; }
+        }
 
         .path-card__title { font-size: 1.5rem; font-weight: 800; color: var(--white); }
         .path-card__sub { font-size: 0.95rem; color: var(--gray-400); line-height: 1.6; margin-top: 0.25rem; }
@@ -365,14 +388,14 @@
 
                     <!-- CARD POMA -->
                     <div class="path-card path-card--poma">
+                        <div class="path-card__cover">
+                            <img src="images/corso/cover-poma.jpg" alt="AI in Pratica per Tutti — Fondazione Poma Liberatutti, Pescia" loading="lazy">
+                        </div>
+
                         <span class="path-card__badge path-card__badge--poma">
                             <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/></svg>
                             Dal Vivo · Pescia
                         </span>
-
-                        <div class="path-card__logo-wrap">
-                            <img src="images/logo-poma.png" alt="Fondazione Poma Liberatutti" class="path-card__logo">
-                        </div>
 
                         <div>
                             <div class="path-card__title">AI in Pratica per Tutti</div>
@@ -420,6 +443,10 @@
 
                     <!-- CARD ONLINE -->
                     <div class="path-card path-card--online">
+                        <div class="path-card__cover">
+                            <img src="images/corso/cover-pmi.jpg" alt="AI in Pratica per PMI — Corso online con live settimanale su Zoom" loading="lazy">
+                        </div>
+
                         <div style="display:flex;align-items:center;gap:0.6rem;flex-wrap:wrap;">
                             <span class="path-card__badge path-card__badge--online">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="3"/><path d="M12 2v3m0 14v3M2 12h3m14 0h3"/></svg>
@@ -429,10 +456,6 @@
                                 <svg xmlns="http://www.w3.org/2000/svg" width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>
                                 Live su Zoom
                             </span>
-                        </div>
-
-                        <div class="path-card__logo-wrap" style="align-items:center;">
-                            <span style="font-size:3rem;">🏢</span>
                         </div>
 
                         <div>

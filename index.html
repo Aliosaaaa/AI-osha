@@ -157,17 +157,19 @@
         @media (max-width: 640px) {
             .mobile-br { display: block; }
             .hero {
-                padding: calc(64px + 0.5rem) 0 2rem;
+                padding: calc(60px + 0.25rem) 0 1.25rem;
                 min-height: 100svh;
                 justify-content: flex-start;
+                align-items: stretch;
             }
-            .hero__badge { font-size: 0.75rem; padding: 0.35rem 0.75rem; margin-bottom: 1rem; }
-            .hero__logo-wrap { margin-bottom: 1.5rem !important; }
-            .hero__logo-wrap img { max-width: 260px !important; }
-            .hero__title { font-size: clamp(2.1rem, 8vw, 3rem); margin-bottom: 1rem; line-height: 1.15; }
-            .hero__subtitle { font-size: 1rem; margin-bottom: 1.5rem; padding: 0 0.5rem; }
-            .hero__cta { gap: 0.75rem; }
-            .hero__cta .btn--large { padding: 0.875rem 1.5rem; font-size: 0.95rem; width: 100%; justify-content: center; }
+            .hero__badge { font-size: 0.72rem; padding: 0.3rem 0.7rem; margin-bottom: 0.5rem; }
+            .hero__logo-wrap { margin-bottom: 0.4rem !important; }
+            .hero__logo-wrap video,
+            .hero__logo-wrap img { max-width: 320px !important; }
+            .hero__title { font-size: clamp(1.95rem, 7.6vw, 2.7rem); margin-bottom: 0.65rem; line-height: 1.12; }
+            .hero__subtitle { font-size: 0.95rem; margin-bottom: 1rem; padding: 0 0.5rem; }
+            .hero__cta { gap: 0.6rem; margin-bottom: 0; }
+            .hero__cta .btn--large { padding: 0.8rem 1.25rem; font-size: 0.95rem; width: 100%; justify-content: center; }
             .hero__trust { display: none; }
             /* Tools bar mobile */
             .tools-bar { padding: 1rem 0; }
@@ -798,7 +800,7 @@
             min-height: 100vh;
             display: flex;
             align-items: center;
-            padding: calc(72px + var(--space-4xl)) 0 var(--space-4xl);
+            padding: calc(72px + var(--space-lg)) 0 var(--space-2xl);
             overflow: hidden;
         }
 
@@ -841,8 +843,17 @@
             font-size: 0.875rem;
             font-weight: 500;
             color: var(--gray-300);
-            margin-bottom: var(--space-xl);
+            margin-bottom: var(--space-sm);
             animation: fadeInUp 0.6s ease forwards;
+        }
+
+        .hero__logo-wrap {
+            margin-bottom: var(--space-sm);
+        }
+        .hero__logo-wrap video,
+        .hero__logo-wrap img {
+            mix-blend-mode: screen;
+            filter: drop-shadow(0 0 18px rgba(0, 168, 232, 0.25));
         }
 
         .hero__badge-dot {
@@ -2011,10 +2022,10 @@
                         Metodo testato su 13 libri e oltre 1000 persone formate
                     </div>
 
-                    <div class="hero__logo-wrap" style="margin-bottom: var(--space-xl);">
+                    <div class="hero__logo-wrap">
                         <video autoplay muted playsinline loop
                             width="640" height="360"
-                            style="max-width: 320px; width: 100%; margin: 0 auto; display: block;"
+                            style="max-width: 460px; width: 100%; margin: 0 auto; display: block;"
                             poster="images/logo-aiosha.webp"
                             aria-label="AI Osha Logo animato">
                             <source src="images/logo-animated.webm?v=2" type="video/webm">
