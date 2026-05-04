@@ -1,0 +1,37 @@
+# AI Osha — Aliosha Battaglini
+
+> AI Osha è il progetto di Aliosha Battaglini per portare l'intelligenza artificiale pratica nelle piccole e medie imprese (PMI) e ai professionisti italiani. Metodo "Pigia lì, fai lì": niente teoria, solo strumenti che si possono usare lunedì mattina. Testato su 13 libri pubblicati e oltre 1000 persone formate dal vivo.
+
+Aliosha Battaglini è formatore al Centro Culturale Fondazione Poma di Pescia (PT), autore del libro "Intelligenza Artificiale in Pratica per PMI" (in uscita 2026) e consulente AI per piccole e medie imprese italiane. Sito: https://aiosha.it · Email: info@aiosha.it
+
+## Chi siamo
+
+- [Chi è Aliosha Battaglini](https://aiosha.it/chi-sono.html): formatore AI per piccole e medie imprese (PMI), autore di 13 libri pubblicati, oltre 1000 persone formate, 100+ live effettuate
+
+## Formazione
+
+- [Corso AI in Pratica](https://aiosha.it/corso.html): due percorsi disponibili — dal vivo a Pescia presso Fondazione Poma Liberatutti, oppure online (lezioni registrate + live settimanale su Zoom)
+- [Corso online "AI in Pratica per PMI"](https://aiosha.it/corso-online.html): 10 moduli video completi, accesso permanente, slide PDF + prompt library, supporto via email
+- [FAQ](https://aiosha.it/faq.html): domande frequenti su corsi, costi, strumenti, tempo necessario, risultati attesi
+
+## Libro
+
+- [AI in Pratica per PMI (libro)](https://aiosha.it/libro.html): manuale operativo per piccole e medie imprese italiane — basi AI, applicazioni concrete, agenti e automazioni, roadmap 24 mesi
+
+## Risorse
+
+- [Risorse](https://aiosha.it/risorse.html): prompt pronti, guide, template, strumenti AI consigliati
+- [Blog](https://aiosha.it/blog.html): guide pratiche su Claude, ChatGPT, Gemini, Perplexity, Midjourney
+
+## Articoli blog
+
+- [Guida completa al prompting](https://aiosha.it/blog/guida-completa-prompting.html): framework, tecniche avanzate, esempi pratici
+- [Email professionali con Claude](https://aiosha.it/blog/email-professionali-claude.html): 10 prompt testati per scrivere email business
+- [Immagini AI generative](https://aiosha.it/blog/immagini-ai-generative.html): guida a Midjourney, DALL-E, Stable Diffusion
+- [Google Docs + Gemini](https://aiosha.it/blog/ottimizzare-google-docs-gemini.html): come usare Gemini in Google Workspace per scrivere meglio
+- [Ricerche avanzate con Perplexity](https://aiosha.it/blog/ricerche-avanzate-perplexity.html): fact-checking e ricerca per business
+
+## Optional
+
+- [Contatti](https://aiosha.it/contatti.html): info@aiosha.it
+- [Consulenza personalizzata](https://aiosha.it/consulenza.html): percorsi su misura per piccole e medie imprese

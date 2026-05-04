@@ -1,5 +1,51 @@
 User-agent: *
 Allow: /
 Disallow: /downloads/
+Disallow: /area-clienti/
+Disallow: /admin/
+Disallow: /login.html
+Disallow: /live-email.html
+Disallow: /live-instagram.html
+Disallow: /live-whatsapp.html
+Disallow: /live.html
+Disallow: /ai-osha-live-12-aprile.html
+
+# AI Crawlers — explicit allow (training & answer engines)
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: cohere-ai
+Allow: /
+
+User-agent: Bytespider
+Allow: /
 
 Sitemap: https://aiosha.it/sitemap.xml
+Sitemap: https://aiosha.it/llms.txt
