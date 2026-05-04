@@ -161,6 +161,42 @@
         /* ── SEZIONE CORSO ── */
         .corso-section { margin-bottom: 3rem; }
 
+        .corso-cover {
+            width: 100%;
+            aspect-ratio: 16 / 5;
+            background-size: cover;
+            background-position: center;
+            border-radius: var(--radius-2xl);
+            margin-bottom: 1.5rem;
+            border: 1px solid rgba(255,255,255,0.06);
+            position: relative;
+            overflow: hidden;
+            background-color: var(--dark-soft);
+        }
+        .corso-cover::after {
+            content: "";
+            position: absolute; inset: 0;
+            background: linear-gradient(180deg, transparent 60%, rgba(0,0,0,0.55) 100%);
+            pointer-events: none;
+        }
+
+        .card__thumb {
+            margin: -1.5rem -1.5rem 0 -1.5rem;
+            aspect-ratio: 16 / 9;
+            background-size: cover;
+            background-position: center;
+            background-color: var(--dark);
+            position: relative;
+            overflow: hidden;
+        }
+        .card__thumb::after {
+            content: "";
+            position: absolute; inset: 0;
+            background: linear-gradient(180deg, transparent 65%, rgba(0,0,0,0.45) 100%);
+            pointer-events: none;
+        }
+        .card.locked .card__thumb { filter: grayscale(0.7) brightness(0.55); }
+
         .corso-header {
             display: flex; align-items: center;
             justify-content: space-between;
@@ -426,6 +462,7 @@ const CORSI = [
         sub: "Il metodo completo per applicare l'AI al tuo business",
         icon: "🏢",
         iconClass: "corso-icon--blue",
+        coverImage: "images/cover-pmi.jpg",
         moduli: [
             {
                 id: "pmi-l1",
@@ -433,7 +470,8 @@ const CORSI = [
                 title: "Lezione 1 — Fondamenta AI & LLM",
                 desc: "Cos'è davvero l'intelligenza artificiale, come funzionano i modelli linguistici e come usarli nel tuo business da subito.",
                 cta: "Guarda la lezione",
-                link: "https://drive.google.com/drive/folders/1p-qu19gyJ8IV08Pct6jCHaT-iYQE_zOt"
+                link: "https://drive.google.com/drive/folders/1p-qu19gyJ8IV08Pct6jCHaT-iYQE_zOt",
+                image: "images/thumb-01-fondamenta.jpg"
             },
             {
                 id: "pmi-l2",
@@ -664,9 +702,11 @@ CORSI.forEach((corso, idx) => {
 
     // Mostra tutti i moduli — sbloccati o bloccati
     const cardsHTML = corso.moduli.map(m => {
+        const thumbHTML = m.image ? `<div class="card__thumb" style="background-image:url('${m.image}')"></div>` : '';
         if (hasAccess) {
             return `
                 <div class="card" onclick="${m.link !== '#' ? `window.open('${m.link}','_blank')` : ''}">
+                    ${thumbHTML}
                     <div class="card__top">
                         <div class="card__icon ${m.iconClass}">${m.icon}</div>
                         <span class="card__tag">Incluso</span>
@@ -682,6 +722,7 @@ CORSI.forEach((corso, idx) => {
         } else {
             return `
                 <div class="card locked">
+                    ${thumbHTML}
                     <div class="card__top">
                         <div class="card__icon ${m.iconClass}" style="filter:grayscale(1)">${m.icon}</div>
                         <span class="card__tag card__tag--locked">🔒 Bloccato</span>
@@ -701,7 +742,12 @@ CORSI.forEach((corso, idx) => {
             <a href="mailto:info@aiosha.it?subject=Voglio%20acquistare%3A%20${encodeURIComponent(corso.nome)}" class="btn-sblocca">Sblocca questo corso →</a>
         </div>`;
 
+    const coverHTML = corso.coverImage
+        ? `<div class="corso-cover" style="background-image:url('${corso.coverImage}')"></div>`
+        : '';
+
     section.innerHTML = `
+        ${coverHTML}
         <div class="corso-header">
             <div class="corso-header__left">
                 <div class="corso-icon ${corso.iconClass}">${corso.icon}</div>
