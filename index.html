@@ -162,10 +162,12 @@
                 justify-content: flex-start;
                 align-items: stretch;
             }
-            .hero__badge { font-size: 0.72rem; padding: 0.3rem 0.7rem; margin-bottom: 0.5rem; }
-            .hero__logo-wrap { margin-bottom: 0.4rem !important; }
-            .hero__logo-wrap video,
-            .hero__logo-wrap img { max-width: 320px !important; }
+            .hero__badge { font-size: 0.72rem; padding: 0.3rem 0.7rem; margin-bottom: 0.35rem; }
+            .hero__logo-wrap {
+                max-width: 340px !important;
+                aspect-ratio: 16 / 5 !important;
+                margin-bottom: 0.25rem !important;
+            }
             .hero__title { font-size: clamp(1.95rem, 7.6vw, 2.7rem); margin-bottom: 0.65rem; line-height: 1.12; }
             .hero__subtitle { font-size: 0.95rem; margin-bottom: 1rem; padding: 0 0.5rem; }
             .hero__cta { gap: 0.6rem; margin-bottom: 0; }
@@ -848,10 +850,20 @@
         }
 
         .hero__logo-wrap {
-            margin-bottom: var(--space-sm);
+            position: relative;
+            width: 100%;
+            max-width: 620px;
+            aspect-ratio: 16 / 5.5;
+            margin: 0 auto var(--space-xs);
+            overflow: hidden;
         }
         .hero__logo-wrap video,
         .hero__logo-wrap img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            display: block;
             mix-blend-mode: screen;
             filter: drop-shadow(0 0 18px rgba(0, 168, 232, 0.25));
         }
@@ -2025,7 +2037,6 @@
                     <div class="hero__logo-wrap">
                         <video autoplay muted playsinline loop
                             width="640" height="360"
-                            style="max-width: 620px; width: 100%; margin: 0 auto; display: block;"
                             poster="images/logo-aiosha.webp"
                             aria-label="AI Osha Logo animato">
                             <source src="images/logo-animated.webm?v=2" type="video/webm">
