@@ -204,11 +204,31 @@
         .path-card__cover::after {
             content: '';
             position: absolute; inset: 0;
-            background: linear-gradient(180deg, transparent 55%, rgba(0,0,0,0.45) 100%);
+            background: linear-gradient(180deg, transparent 55%, rgba(0,0,0,0.55) 100%);
             pointer-events: none;
         }
+        .path-card__cover-logo {
+            position: absolute;
+            bottom: 0.85rem; left: 0.85rem;
+            background: rgba(0, 0, 0, 0.78);
+            backdrop-filter: blur(6px);
+            -webkit-backdrop-filter: blur(6px);
+            padding: 0.55rem 0.9rem;
+            border-radius: 0.5rem;
+            border: 1px solid rgba(201, 168, 92, 0.4);
+            z-index: 2;
+        }
+        .path-card__cover-logo img {
+            height: 32px;
+            width: auto;
+            display: block;
+            transition: none;
+        }
+        .path-card:hover .path-card__cover-logo img { transform: none; }
         @media (max-width: 640px) {
             .path-card__cover { margin: -2rem -2rem 0 -2rem; }
+            .path-card__cover-logo { bottom: 0.6rem; left: 0.6rem; padding: 0.4rem 0.65rem; }
+            .path-card__cover-logo img { height: 26px; }
         }
 
         .path-card__title { font-size: 1.5rem; font-weight: 800; color: var(--white); }
@@ -400,6 +420,9 @@
                     <div class="path-card path-card--poma">
                         <div class="path-card__cover">
                             <img src="images/corso/cover-poma.jpg" alt="AI in Pratica per Tutti — Fondazione Poma Liberatutti, Pescia" loading="lazy">
+                            <div class="path-card__cover-logo">
+                                <img src="images/logo-poma.png" alt="Fondazione Poma Liberatutti">
+                            </div>
                         </div>
 
                         <span class="path-card__badge path-card__badge--poma">
