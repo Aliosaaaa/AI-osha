@@ -165,7 +165,6 @@
             .hero__badge { font-size: 0.72rem; padding: 0.3rem 0.7rem; margin-bottom: 0.35rem; }
             .hero__logo-wrap {
                 max-width: 340px !important;
-                aspect-ratio: 16 / 5 !important;
                 margin-bottom: 0.25rem !important;
             }
             .hero__title { font-size: clamp(1.95rem, 7.6vw, 2.7rem); margin-bottom: 0.65rem; line-height: 1.12; }
@@ -853,16 +852,12 @@
             position: relative;
             width: 100%;
             max-width: 620px;
-            aspect-ratio: 16 / 5.5;
             margin: 0 auto var(--space-xs);
-            overflow: hidden;
         }
         .hero__logo-wrap video,
         .hero__logo-wrap img {
             width: 100%;
-            height: 100%;
-            object-fit: cover;
-            object-position: center;
+            height: auto;
             display: block;
             mix-blend-mode: screen;
             filter: drop-shadow(0 0 18px rgba(0, 168, 232, 0.25));
@@ -2036,11 +2031,11 @@
 
                     <div class="hero__logo-wrap">
                         <video autoplay muted playsinline loop
-                            width="640" height="360"
-                            poster="images/logo-aiosha.webp"
+                            width="640" height="270"
+                            poster="images/logo-aiosha.webp?v=3"
                             aria-label="AI Osha Logo animato">
-                            <source src="images/logo-animated.webm?v=2" type="video/webm">
-                            <source src="images/logo-animated.mp4?v=2" type="video/mp4">
+                            <source src="images/logo-animated.webm?v=3" type="video/webm">
+                            <source src="images/logo-animated.mp4?v=3" type="video/mp4">
                             <img src="images/logo-aiosha.webp" alt="AI Osha Logo" fetchpriority="high">
                         </video>
                     </div>
