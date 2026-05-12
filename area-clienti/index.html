@@ -380,11 +380,16 @@
 <!-- LOADING -->
 <div id="loading-screen">
     <div class="brand">AI <span class="text-gradient">Osha</span></div>
-    <div class="loading-dots">
+    <div class="loading-dots" id="loading-dots">
         <div class="loading-dot"></div>
         <div class="loading-dot"></div>
         <div class="loading-dot"></div>
     </div>
+    <p id="loading-error" style="display:none;color:#ef4444;font-size:0.9rem;margin-top:0.75rem;text-align:center;max-width:300px;line-height:1.5;">
+        Errore di connessione.<br>
+        <a href="javascript:location.reload()" style="color:#00A8E8;text-decoration:underline;">Riprova</a> &nbsp;|&nbsp;
+        <a href="/login.html" style="color:#00A8E8;text-decoration:underline;">Torna al login</a>
+    </p>
 </div>
 
 <!-- HEADER -->
@@ -449,6 +454,12 @@
 import { requireAuth, logout } from "../js/auth.js";
 import { db } from "../js/firebase-config.js";
 import { doc, getDoc } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
+
+function showLoadingError() {
+    document.getElementById("loading-dots").style.display = "none";
+    document.getElementById("loading-error").style.display = "block";
+}
+const loadingTimeout = setTimeout(showLoadingError, 8000);
 
 // ═══════════════════════════════════════════════════════
 // CATALOGO CORSI
@@ -670,6 +681,7 @@ const CORSI = [
 // ═══════════════════════════════════════════════════════
 // AVVIO — Auth + caricamento dati studente
 // ═══════════════════════════════════════════════════════
+try {
 const user = await requireAuth("/login.html");
 
 document.getElementById("user-email").textContent = user.email;
@@ -783,7 +795,14 @@ CORSI.forEach((corso, idx) => {
 });
 
 // Nascondi loading
+clearTimeout(loadingTimeout);
 document.getElementById("loading-screen").classList.add("hidden");
+
+} catch (err) {
+    clearTimeout(loadingTimeout);
+    showLoadingError();
+    console.error("Errore caricamento area studenti:", err);
+}
 </script>
 </body>
 </html>

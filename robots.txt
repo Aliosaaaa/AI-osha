@@ -4,10 +4,16 @@ Disallow: /downloads/
 Disallow: /area-clienti/
 Disallow: /admin/
 Disallow: /login.html
-Disallow: /live-email.html
-Disallow: /live-instagram.html
-Disallow: /live-whatsapp.html
 Disallow: /live.html
+Disallow: /live-email.html
+Disallow: /live-email/
+Disallow: /live-instagram.html
+Disallow: /live-instagram/
+Disallow: /live-whatsapp.html
+Disallow: /live-whatsapp/
+Disallow: /live-telefono/
+Disallow: /live-extra1/
+Disallow: /live-sito-agenzia/
 Disallow: /ai-osha-live-12-aprile.html
 
 # AI Crawlers — explicit allow (training & answer engines)
