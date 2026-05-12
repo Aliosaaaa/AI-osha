@@ -207,8 +207,9 @@
         .corso-icon {
             width: 42px; height: 42px; border-radius: var(--radius-lg);
             display: flex; align-items: center; justify-content: center;
-            font-size: 1.2rem; flex-shrink: 0;
+            font-size: 1.2rem; flex-shrink: 0; overflow: hidden;
         }
+        .corso-icon img { width: 100%; height: 100%; object-fit: contain; padding: 6px; }
         .corso-icon--blue   { background: rgba(0,168,232,0.12); border: 1px solid rgba(0,168,232,0.22); }
         .corso-icon--amber  { background: rgba(245,166,35,0.12); border: 1px solid rgba(245,166,35,0.22); }
         .corso-icon--green  { background: rgba(16,185,129,0.12); border: 1px solid rgba(16,185,129,0.22); }
@@ -460,99 +461,99 @@ const CORSI = [
         id: "pmi",
         nome: "AI in Pratica per PMI",
         sub: "Il metodo completo per applicare l'AI al tuo business",
-        icon: "🏢",
+        icon: `<img src="../images/logo-aiosha.png" alt="AI Osha">`,
         iconClass: "corso-icon--blue",
         coverImage: "images/cover-pmi.jpg",
         moduli: [
             {
                 id: "pmi-l1",
                 icon: "🧠", iconClass: "card__icon--blue",
-                title: "Lezione 1 — Fondamenta AI & LLM",
+                title: "Modulo 1 — Fondamenta AI & LLM",
                 desc: "Cos'è davvero l'intelligenza artificiale, come funzionano i modelli linguistici e come usarli nel tuo business da subito.",
-                cta: "Guarda la lezione",
+                cta: "Guarda il modulo",
                 link: "https://drive.google.com/drive/folders/1p-qu19gyJ8IV08Pct6jCHaT-iYQE_zOt",
-                image: "images/thumb-01-fondamenta.jpg"
+                image: "../images/modulo-pmi-1.png"
             },
             {
                 id: "pmi-l2",
                 icon: "✍️", iconClass: "card__icon--blue",
-                title: "Lezione 2 — Prompt Engineering",
+                title: "Modulo 2 — Prompt Engineering",
                 desc: "Il metodo per ottenere risultati precisi e professionali da ChatGPT e Claude. Tecniche avanzate di prompting.",
-                cta: "Guarda la lezione",
+                cta: "Guarda il modulo",
                 link: "https://drive.google.com/drive/folders/1armXgAR-E7ioR9scpNKmuvjREB0A-oPE",
-                image: "images/thumb-02-prompt.jpg"
+                image: "../images/modulo-pmi-2.png"
             },
             {
                 id: "pmi-l3",
                 icon: "🔍", iconClass: "card__icon--blue",
-                title: "Lezione 3 — Ricerca Avanzata & Analisi PDF",
+                title: "Modulo 3 — Ricerca Avanzata & Analisi PDF",
                 desc: "Come fare ricerche professionali con l'AI e analizzare documenti, contratti e report in pochi secondi.",
-                cta: "Guarda la lezione",
+                cta: "Guarda il modulo",
                 link: "https://drive.google.com/drive/folders/1armXgAR-E7ioR9scpNKmuvjREB0A-oPE",
-                image: "images/thumb-03-ricerca.jpg"
+                image: "../images/modulo-pmi-3.png"
             },
             {
                 id: "pmi-l4",
                 icon: "📝", iconClass: "card__icon--green",
-                title: "Lezione 4 — Testi, Copy & Persuasione",
+                title: "Modulo 4 — Testi, Copy & Persuasione",
                 desc: "Scrivi contenuti persuasivi, email di vendita e copy professionale in minuti con l'AI al tuo fianco.",
-                cta: "Guarda la lezione",
+                cta: "Guarda il modulo",
                 link: "https://drive.google.com/drive/folders/1armXgAR-E7ioR9scpNKmuvjREB0A-oPE",
-                image: "images/thumb-04-copy.jpg"
+                image: "../images/modulo-pmi-4.png"
             },
             {
                 id: "pmi-l5",
                 icon: "🎨", iconClass: "card__icon--green",
-                title: "Lezione 5 — Creare Visual senza Limiti",
+                title: "Modulo 5 — Creare Visual senza Limiti",
                 desc: "Genera immagini professionali, grafiche e contenuti visivi per il tuo brand usando strumenti AI.",
-                cta: "Guarda la lezione",
+                cta: "Guarda il modulo",
                 link: "https://drive.google.com/drive/folders/1armXgAR-E7ioR9scpNKmuvjREB0A-oPE",
-                image: "images/thumb-05-visual.jpg"
+                image: "../images/modulo-pmi-5.png"
             },
             {
                 id: "pmi-l6",
                 icon: "🎬", iconClass: "card__icon--amber",
-                title: "Lezione 6 — Audio, Video & Accessibilità",
+                title: "Modulo 6 — Audio, Video & Accessibilità",
                 desc: "Crea video, trascrizioni, sottotitoli e contenuti audio professionali con strumenti AI gratuiti e a pagamento.",
-                cta: "Guarda la lezione",
+                cta: "Guarda il modulo",
                 link: "https://drive.google.com/drive/folders/1uWpbRuCZYQ_Zrt49h0Wbf9zkYDZuBopQ",
-                image: "images/thumb-06-video.jpg"
+                image: "../images/modulo-pmi-6.png"
             },
             {
                 id: "pmi-l7",
                 icon: "📱", iconClass: "card__icon--amber",
-                title: "Lezione 7 — Presenza Digitale Strategica",
+                title: "Modulo 7 — Presenza Digitale Strategica",
                 desc: "Costruisci e ottimizza la tua presenza online con l'AI: social, SEO, Google Business e molto altro.",
-                cta: "Guarda la lezione",
+                cta: "Guarda il modulo",
                 link: "https://drive.google.com/drive/folders/1armXgAR-E7ioR9scpNKmuvjREB0A-oPE",
-                image: "images/thumb-07-digital.jpg"
+                image: "../images/modulo-pmi-7.png"
             },
             {
                 id: "pmi-l8",
                 icon: "🌐", iconClass: "card__icon--purple",
-                title: "Lezione 8 — Il Tuo Sito Web con AI",
+                title: "Modulo 8 — Il Tuo Sito Web con AI",
                 desc: "Crea o migliora il tuo sito web usando l'AI: struttura, testi, SEO e ottimizzazione senza saper programmare.",
-                cta: "Guarda la lezione",
+                cta: "Guarda il modulo",
                 link: "https://drive.google.com/drive/folders/1armXgAR-E7ioR9scpNKmuvjREB0A-oPE",
-                image: "images/thumb-08-web.jpg"
+                image: "../images/modulo-pmi-8.png"
             },
             {
                 id: "pmi-l9",
                 icon: "⚙️", iconClass: "card__icon--purple",
-                title: "Lezione 9 — Automatismi & Workflow",
+                title: "Modulo 9 — Automatismi & Workflow",
                 desc: "Automatizza i processi ripetitivi del tuo business con Make, Zapier e agenti AI. Risparmia ore ogni settimana.",
-                cta: "Guarda la lezione",
+                cta: "Guarda il modulo",
                 link: "https://drive.google.com/drive/folders/1armXgAR-E7ioR9scpNKmuvjREB0A-oPE",
-                image: "images/thumb-09-workflow.jpg"
+                image: "../images/modulo-pmi-9.png"
             },
             {
                 id: "pmi-l10",
                 icon: "🚀", iconClass: "card__icon--purple",
-                title: "Lezione 10 — Recap & Prossimi Passi",
+                title: "Modulo 10 — Recap & Prossimi Passi",
                 desc: "Consolidamento del metodo, roadmap personalizzata e come continuare a crescere con l'AI nel tuo business.",
-                cta: "Guarda la lezione",
+                cta: "Guarda il modulo",
                 link: "https://drive.google.com/drive/folders/1CyBX10swIRa14AyRuhuDJ1Tonjbjvgw8",
-                image: "images/thumb-10-roadmap.jpg"
+                image: "../images/modulo-pmi-10.png"
             },
             {
                 id: "pmi-slide",
@@ -561,7 +562,7 @@ const CORSI = [
                 desc: "Tutte le slide delle lezioni in formato PDF. Scaricale, stampale e usale come riferimento rapido mentre applichi i concetti nel tuo lavoro.",
                 cta: "Scarica le slide",
                 link: "https://drive.google.com/drive/folders/1GR09jOcyQXYZLHx1G07aGgbjc5ilazUg",
-                image: "images/thumb-slide.jpg"
+                image: "../images/modulo-pmi-slide.png"
             }
         ]
     },
