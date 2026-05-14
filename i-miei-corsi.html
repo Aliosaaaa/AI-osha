@@ -209,18 +209,6 @@
             border-radius: 0.6rem;
             opacity: 0.85;
         }
-        .modulo__thumb {
-            flex-shrink: 0;
-            width: 56px; height: 56px;
-            border-radius: 0.5rem;
-            background-size: cover;
-            background-position: center;
-            background-color: var(--dark);
-            border: 1px solid rgba(255,255,255,0.06);
-        }
-        @media (max-width: 540px) {
-            .modulo__thumb { display: none; }
-        }
         .modulo__num {
             flex-shrink: 0;
             width: 32px; height: 32px;
@@ -233,6 +221,54 @@
         .modulo__title small { display: block; font-weight: 400; color: var(--gray-400); font-size: 0.82rem; margin-top: 0.15rem; }
         .modulo__lock { flex-shrink: 0; width: 28px; height: 28px; border-radius: 50%; background: rgba(245,166,35,0.12); border: 1px solid rgba(245,166,35,0.3); display: flex; align-items: center; justify-content: center; }
         .modulo__lock svg { width: 13px; height: 13px; color: var(--highlight); }
+
+        /* Variante CARD con thumb grande (corso CourseKit/piattaforma) */
+        .moduli--cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+            gap: 1rem;
+        }
+        .moduli--cards .modulo {
+            flex-direction: column;
+            align-items: stretch;
+            padding: 0;
+            gap: 0;
+            overflow: hidden;
+            position: relative;
+        }
+        .modulo__thumb {
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            background-size: cover;
+            background-position: center;
+            background-color: var(--dark);
+            filter: brightness(0.85);
+            position: relative;
+        }
+        .modulo__thumb::after {
+            content: "";
+            position: absolute; inset: 0;
+            background: linear-gradient(180deg, transparent 50%, rgba(0,0,0,0.55) 100%);
+        }
+        .moduli--cards .modulo__num {
+            position: absolute;
+            top: 0.6rem; left: 0.6rem;
+            background: rgba(0,0,0,0.7);
+            color: #fff;
+            backdrop-filter: blur(8px);
+            z-index: 2;
+            border: 1px solid rgba(255,255,255,0.15);
+        }
+        .moduli--cards .modulo__title {
+            padding: 0.85rem 1rem 1rem;
+            font-size: 0.95rem;
+        }
+        .moduli--cards .modulo__lock {
+            position: absolute;
+            top: 0.6rem; right: 0.6rem;
+            z-index: 2;
+            backdrop-filter: blur(8px);
+        }
 
         /* CTA inline corso */
         .corso-card__cta {
@@ -449,7 +485,7 @@
                         Stack open, dominio tuo, zero abbonamenti. Perfetto per chi vuole vendere corsi o gestire studenti senza
                         finire in gabbia su Kajabi o Teachable.
                     </p>
-                    <div class="moduli">
+                    <div class="moduli moduli--cards">
                         <div class="modulo"><div class="modulo__thumb" style="background-image:url('images/modulo-piattaforma-1.webp')"></div><div class="modulo__num">1</div><div class="modulo__title">Panoramica e Stack Tecnologico<small>HTML, Firebase, GitHub Pages — cosa serve davvero</small></div><div class="modulo__lock"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zM9 6c0-1.66 1.34-3 3-3s3 1.34 3 3v2H9V6z"/></svg></div></div>
                         <div class="modulo"><div class="modulo__thumb" style="background-image:url('images/modulo-piattaforma-2.webp')"></div><div class="modulo__num">2</div><div class="modulo__title">Creare il Sito con l'AI<small>Claude Code costruisce il sito mentre tu guardi</small></div><div class="modulo__lock"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zM9 6c0-1.66 1.34-3 3-3s3 1.34 3 3v2H9V6z"/></svg></div></div>
                         <div class="modulo"><div class="modulo__thumb" style="background-image:url('images/modulo-piattaforma-3.webp')"></div><div class="modulo__num">3</div><div class="modulo__title">Firebase: Login e Database<small>Autenticazione studenti e database in 30 minuti</small></div><div class="modulo__lock"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zM9 6c0-1.66 1.34-3 3-3s3 1.34 3 3v2H9V6z"/></svg></div></div>
