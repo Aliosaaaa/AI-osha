@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>I Miei Corsi di Intelligenza Artificiale | AI Osha — Aliosha Battaglini</title>
+    <meta name="description" content="Tutti i corsi di intelligenza artificiale (AI / IA) di AI Osha: AI in Pratica per PMI, AI per Agenzie Immobiliari e CourseKit (crea la tua piattaforma corsi). Vedi i moduli, prenota una call gratuita su WhatsApp per sbloccarli.">
+    <meta name="keywords" content="corsi intelligenza artificiale, corsi AI Italia, corsi IA per chi lavora, corso AI PMI, corso AI agenzie immobiliari, corso piattaforma corsi online, formazione AI online">
+    <link rel="canonical" href="https://aiosha.it/i-miei-corsi.html">
+    <link rel="icon" type="image/png" href="images/uccello.png">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://aiosha.it/i-miei-corsi.html">
+    <meta property="og:title" content="I Miei Corsi di Intelligenza Artificiale — AI Osha">
+    <meta property="og:description" content="Tutti i corsi di AI/IA per chi lavora: PMI, agenzie immobiliari e piattaforma corsi. Prenota una call gratuita per sbloccarli.">
+    <meta property="og:image" content="https://aiosha.it/images/og-image.jpg">
+    <meta property="og:locale" content="it_IT">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Schema BreadcrumbList -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {"@type":"ListItem","position":1,"name":"Home","item":"https://aiosha.it/"},
+            {"@type":"ListItem","position":2,"name":"I Miei Corsi","item":"https://aiosha.it/i-miei-corsi.html"}
+        ]
+    }
+    </script>
+
+    <!-- Schema Course (uno per corso) -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "ItemList",
+        "itemListElement": [
+            {
+                "@type": "Course",
+                "position": 1,
+                "name": "AI in Pratica per PMI",
+                "description": "Corso completo di intelligenza artificiale pratica per piccole e medie imprese, professionisti e partite IVA. 10 moduli + slide + live settimanale su Zoom.",
+                "provider": { "@type": "Person", "name": "Aliosha Battaglini" },
+                "inLanguage": "it",
+                "url": "https://aiosha.it/corso-online.html"
+            },
+            {
+                "@type": "Course",
+                "position": 2,
+                "name": "AI per Agenzie Immobiliari",
+                "description": "Corso di intelligenza artificiale dedicato agli agenti immobiliari: annunci, valutazioni, gestione clienti, automazioni.",
+                "provider": { "@type": "Person", "name": "Aliosha Battaglini" },
+                "inLanguage": "it",
+                "url": "https://aiosha.it/i-miei-corsi.html#immobiliare"
+            },
+            {
+                "@type": "Course",
+                "position": 3,
+                "name": "CourseKit — Crea la Tua Piattaforma Corsi",
+                "description": "Costruisci la tua piattaforma corsi privata con HTML, Firebase, GitHub Pages e AI. Sito, login studenti, area riservata e admin panel.",
+                "provider": { "@type": "Person", "name": "Aliosha Battaglini" },
+                "inLanguage": "it",
+                "url": "https://aiosha.it/i-miei-corsi.html#piattaforma"
+            }
+        ]
+    }
+    </script>
+
+    <style>
+        :root {
+            --primary: #00A8E8;
+            --primary-dark: #0088c2;
+            --highlight: #F5A623;
+            --dark: #0D1117;
+            --dark-soft: #161b22;
+            --dark-elev: #1c2129;
+            --gray-700: #374151;
+            --gray-400: #9ca3af;
+            --gray-200: #e5e7eb;
+            --border: rgba(255,255,255,0.08);
+            --success: #10b981;
+            --whatsapp: #25D366;
+            --font-display: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+        }
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        html { -webkit-font-smoothing: antialiased; scroll-behavior: smooth; }
+        body { font-family: var(--font-display); background: var(--dark); color: #d1d5db; min-height: 100vh; }
+
+        /* HEADER */
+        .header { position: sticky; top: 0; background: rgba(13,17,23,0.92); backdrop-filter: blur(10px); border-bottom: 1px solid var(--border); z-index: 100; }
+        .header__inner { max-width: 1200px; margin: 0 auto; padding: 1rem 1.5rem; display: flex; align-items: center; justify-content: space-between; }
+        .header__logo { display: flex; align-items: center; gap: 0.5rem; text-decoration: none; }
+        .header__logo img { height: 28px; width: auto; }
+        .header__logo span { font-size: 1.1rem; font-weight: 800; color: #fff; }
+        .header__logo .text-gradient { background: linear-gradient(135deg, var(--primary), var(--highlight)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .header__cta { display: inline-flex; align-items: center; gap: 0.4rem; padding: 0.55rem 1rem; background: var(--whatsapp); color: #fff; font-weight: 700; font-size: 0.875rem; border-radius: 0.5rem; text-decoration: none; transition: all 0.2s; }
+        .header__cta:hover { transform: translateY(-1px); box-shadow: 0 4px 12px rgba(37,211,102,0.3); }
+
+        main { max-width: 1100px; margin: 0 auto; padding: 3rem 1.5rem 5rem; }
+
+        /* BREADCRUMB */
+        .breadcrumb { font-size: 0.85rem; color: var(--gray-400); margin-bottom: 1.5rem; }
+        .breadcrumb a { color: var(--gray-400); text-decoration: none; }
+        .breadcrumb a:hover { color: var(--primary); }
+
+        /* HERO */
+        .hero { text-align: center; margin-bottom: 3.5rem; }
+        .hero__badge { display: inline-block; padding: 0.35rem 0.9rem; background: rgba(0,168,232,0.1); border: 1px solid rgba(0,168,232,0.3); border-radius: 999px; font-size: 0.78rem; font-weight: 600; color: var(--primary); margin-bottom: 1.25rem; letter-spacing: 0.04em; text-transform: uppercase; }
+        .hero h1 { font-size: clamp(2rem, 5vw, 3rem); font-weight: 800; color: #fff; line-height: 1.15; margin-bottom: 1rem; }
+        .hero h1 .grad-blue { background: linear-gradient(135deg, var(--primary), #0066cc); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .hero h1 .grad-gold { background: linear-gradient(135deg, var(--highlight), #e07b00); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .hero p { font-size: 1.1rem; color: var(--gray-400); max-width: 720px; margin: 0 auto; line-height: 1.6; }
+
+        /* VIDEO BENVENUTO */
+        .welcome-video { background: var(--dark-soft); border: 1px solid var(--border); border-radius: 1rem; overflow: hidden; margin-bottom: 4rem; box-shadow: 0 20px 60px rgba(0,0,0,0.4); }
+        .welcome-video__player {
+            position: relative;
+            aspect-ratio: 16/9;
+            background: linear-gradient(135deg, #1a2030, #0a0e15);
+            display: flex; flex-direction: column; align-items: center; justify-content: center;
+            color: #fff;
+        }
+        .welcome-video__placeholder-icon { font-size: 4rem; margin-bottom: 1rem; opacity: 0.6; }
+        .welcome-video__placeholder-text { font-size: 1rem; font-weight: 600; color: var(--gray-400); }
+        .welcome-video__placeholder-sub { font-size: 0.85rem; color: var(--gray-400); margin-top: 0.4rem; opacity: 0.7; }
+        .welcome-video__info { padding: 1.25rem 1.5rem; border-top: 1px solid var(--border); display: flex; align-items: center; gap: 0.75rem; }
+        .welcome-video__info-icon { width: 36px; height: 36px; border-radius: 50%; background: rgba(0,168,232,0.15); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+        .welcome-video__info h3 { color: #fff; font-size: 0.95rem; font-weight: 700; }
+        .welcome-video__info p { font-size: 0.85rem; color: var(--gray-400); margin: 0; }
+
+        /* SEZIONE CORSI */
+        .corsi { display: flex; flex-direction: column; gap: 1.25rem; }
+
+        .corso-card {
+            background: var(--dark-soft);
+            border: 1px solid var(--border);
+            border-radius: 1rem;
+            overflow: hidden;
+            transition: border-color 0.25s;
+        }
+        .corso-card:hover { border-color: rgba(0,168,232,0.3); }
+        .corso-card__header {
+            display: flex; align-items: center; gap: 1.25rem;
+            padding: 1.5rem;
+            cursor: pointer;
+            user-select: none;
+            position: relative;
+        }
+        .corso-card__icon {
+            flex-shrink: 0;
+            width: 64px; height: 64px;
+            border-radius: 0.75rem;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 2rem;
+        }
+        .corso-card__icon--pmi { background: linear-gradient(135deg, #00A8E8, #0066cc); }
+        .corso-card__icon--immo { background: linear-gradient(135deg, #F5A623, #e07b00); }
+        .corso-card__icon--piattaforma { background: linear-gradient(135deg, #a855f7, #7C3AED); }
+
+        .corso-card__title-wrap { flex: 1; min-width: 0; }
+        .corso-card__title { font-size: 1.25rem; font-weight: 700; color: #fff; margin-bottom: 0.25rem; line-height: 1.3; }
+        .corso-card__sub { font-size: 0.9rem; color: var(--gray-400); line-height: 1.5; }
+        .corso-card__meta {
+            display: flex; gap: 0.75rem; margin-top: 0.6rem; flex-wrap: wrap;
+        }
+        .corso-card__tag {
+            display: inline-flex; align-items: center; gap: 0.3rem;
+            padding: 0.2rem 0.65rem;
+            background: rgba(255,255,255,0.04);
+            border: 1px solid var(--border);
+            border-radius: 999px;
+            font-size: 0.72rem;
+            color: var(--gray-200);
+            font-weight: 500;
+        }
+        .corso-card__toggle {
+            width: 36px; height: 36px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.04);
+            border: 1px solid var(--border);
+            display: flex; align-items: center; justify-content: center;
+            flex-shrink: 0;
+            transition: transform 0.3s ease, background 0.2s;
+        }
+        .corso-card__toggle svg { width: 16px; height: 16px; color: var(--gray-200); }
+        .corso-card.expanded .corso-card__toggle { transform: rotate(180deg); background: rgba(0,168,232,0.2); }
+
+        .corso-card__body {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease;
+        }
+        .corso-card.expanded .corso-card__body { max-height: 4000px; }
+        .corso-card__body-inner { padding: 0 1.5rem 1.5rem 1.5rem; border-top: 1px solid var(--border); }
+
+        .corso-card__intro { padding: 1.25rem 0; color: #d1d5db; line-height: 1.65; font-size: 0.95rem; }
+
+        .moduli { display: grid; gap: 0.7rem; }
+        .modulo {
+            display: flex; align-items: center; gap: 1rem;
+            padding: 0.85rem 1rem;
+            background: var(--dark-elev);
+            border: 1px solid var(--border);
+            border-radius: 0.6rem;
+            opacity: 0.85;
+        }
+        .modulo__num {
+            flex-shrink: 0;
+            width: 32px; height: 32px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.05);
+            display: flex; align-items: center; justify-content: center;
+            font-weight: 700; font-size: 0.85rem; color: var(--gray-400);
+        }
+        .modulo__title { flex: 1; min-width: 0; font-size: 0.92rem; font-weight: 600; color: #e5e7eb; }
+        .modulo__title small { display: block; font-weight: 400; color: var(--gray-400); font-size: 0.82rem; margin-top: 0.15rem; }
+        .modulo__lock { flex-shrink: 0; width: 28px; height: 28px; border-radius: 50%; background: rgba(245,166,35,0.12); border: 1px solid rgba(245,166,35,0.3); display: flex; align-items: center; justify-content: center; }
+        .modulo__lock svg { width: 13px; height: 13px; color: var(--highlight); }
+
+        /* CTA inline corso */
+        .corso-card__cta {
+            display: block;
+            text-align: center;
+            margin-top: 1.25rem;
+            padding: 0.85rem 1.25rem;
+            background: linear-gradient(135deg, var(--whatsapp), #128C7E);
+            color: #fff !important;
+            font-weight: 700;
+            text-decoration: none;
+            border-radius: 0.6rem;
+            transition: all 0.25s;
+        }
+        .corso-card__cta:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(37,211,102,0.3); }
+
+        /* CTA FINALE */
+        .cta-final {
+            margin-top: 4rem;
+            padding: 3rem 2rem;
+            background: linear-gradient(135deg, rgba(0,168,232,0.08), rgba(245,166,35,0.05));
+            border: 1px solid var(--border);
+            border-radius: 1.25rem;
+            text-align: center;
+        }
+        .cta-final h2 { font-size: clamp(1.5rem, 4vw, 2rem); font-weight: 800; color: #fff; margin-bottom: 0.75rem; line-height: 1.2; }
+        .cta-final p { font-size: 1.05rem; color: var(--gray-400); margin-bottom: 1.5rem; max-width: 580px; margin-left: auto; margin-right: auto; line-height: 1.6; }
+        .cta-final__btn {
+            display: inline-flex; align-items: center; gap: 0.6rem;
+            padding: 1rem 2rem;
+            background: var(--whatsapp);
+            color: #fff;
+            font-size: 1.05rem;
+            font-weight: 700;
+            text-decoration: none;
+            border-radius: 0.75rem;
+            transition: all 0.25s;
+            box-shadow: 0 8px 25px rgba(37,211,102,0.25);
+        }
+        .cta-final__btn:hover { transform: translateY(-2px); box-shadow: 0 12px 35px rgba(37,211,102,0.4); }
+        .cta-final__btn svg { width: 22px; height: 22px; }
+        .cta-final__note { margin-top: 1.25rem; font-size: 0.85rem; color: var(--gray-400); font-style: italic; }
+
+        /* FOOTER */
+        footer { background: #0a0e15; border-top: 1px solid var(--border); padding: 2.5rem 1.5rem; margin-top: 4rem; text-align: center; color: var(--gray-400); font-size: 0.85rem; }
+        footer a { color: var(--gray-200); text-decoration: none; margin: 0 0.5rem; }
+        footer a:hover { color: var(--primary); }
+
+        @media (max-width: 640px) {
+            .header__cta span.long { display: none; }
+            .corso-card__header { padding: 1.1rem; gap: 0.9rem; }
+            .corso-card__icon { width: 52px; height: 52px; font-size: 1.6rem; }
+            .corso-card__title { font-size: 1.05rem; }
+            .corso-card__sub { font-size: 0.85rem; }
+            main { padding: 2rem 1rem 3rem; }
+        }
+    </style>
+</head>
+<body>
+
+<header class="header">
+    <div class="header__inner">
+        <a href="/" class="header__logo">
+            <img src="images/uccello.png" alt="AI Osha">
+            <span>AI <span class="text-gradient">Osha</span></span>
+        </a>
+        <a href="https://wa.me/393313883929?text=Ciao%20Aliosha%2C%20vorrei%20prenotare%20la%20call%20gratuita%20per%20parlare%20dei%20tuoi%20corsi%20di%20intelligenza%20artificiale" class="header__cta" target="_blank" rel="noopener">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413"/></svg>
+            <span class="long">Prenota call gratuita</span><span style="display:none;">Call gratis</span>
+        </a>
+    </div>
+</header>
+
+<main>
+
+    <nav class="breadcrumb"><a href="/">Home</a> &nbsp;›&nbsp; I Miei Corsi</nav>
+
+    <!-- HERO -->
+    <div class="hero">
+        <span class="hero__badge">3 corsi · Online + dal vivo</span>
+        <h1>I miei <span class="grad-blue">corsi</span> di <span class="grad-gold">intelligenza artificiale</span></h1>
+        <p>
+            Tutti i percorsi di AI / IA per chi lavora — PMI, professionisti, partite IVA, agenti immobiliari e chi vuole costruirsi una piattaforma corsi tutta sua.
+            Guarda il video di benvenuto, esplora i moduli e prenota una call gratuita per sbloccare quello che ti serve.
+        </p>
+    </div>
+
+    <!-- VIDEO BENVENUTO -->
+    <div class="welcome-video">
+        <div class="welcome-video__player">
+            <div class="welcome-video__placeholder-icon">🎬</div>
+            <div class="welcome-video__placeholder-text">Video di benvenuto in arrivo</div>
+            <div class="welcome-video__placeholder-sub">Aliosha ti racconta i 3 corsi in 2 minuti</div>
+        </div>
+        <div class="welcome-video__info">
+            <div class="welcome-video__info-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#00A8E8" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+            </div>
+            <div>
+                <h3>Benvenuto da Aliosha</h3>
+                <p>Una panoramica veloce di tutti i corsi — durata stimata 2 minuti.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- 3 CORSI ESPANDIBILI -->
+    <section class="corsi">
+
+        <!-- CORSO 1 — PMI -->
+        <article class="corso-card" id="pmi" data-corso="pmi">
+            <div class="corso-card__header" onclick="toggleCorso(this)" role="button" aria-expanded="false" tabindex="0">
+                <div class="corso-card__icon corso-card__icon--pmi">🏢</div>
+                <div class="corso-card__title-wrap">
+                    <h2 class="corso-card__title">AI in Pratica per PMI, professionisti e partite IVA</h2>
+                    <div class="corso-card__sub">Il corso flagship — 10 moduli + slide PDF + live settimanale su Zoom</div>
+                    <div class="corso-card__meta">
+                        <span class="corso-card__tag">📚 10 moduli</span>
+                        <span class="corso-card__tag">🎥 Video registrati</span>
+                        <span class="corso-card__tag">💬 Live su Zoom</span>
+                        <span class="corso-card__tag">♾️ Accesso permanente</span>
+                    </div>
+                </div>
+                <div class="corso-card__toggle">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                </div>
+            </div>
+            <div class="corso-card__body">
+                <div class="corso-card__body-inner">
+                    <p class="corso-card__intro">
+                        Il percorso completo per applicare l'intelligenza artificiale al lavoro quotidiano.
+                        Pensato per imprenditori, professionisti e dipendenti che vogliono risparmiare ore ogni settimana
+                        usando ChatGPT, Claude, Gemini, Perplexity e gli strumenti di automazione.
+                    </p>
+                    <div class="moduli">
+                        <div class="modulo"><div class="modulo__num">1</div><div class="modulo__title">Fondamenta AI &amp; LLM<small>Cos'è davvero l'IA, come funzionano i modelli, da dove partire</small></div><div class="modulo__lock"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zM9 6c0-1.66 1.34-3 3-3s3 1.34 3 3v2H9V6z"/></svg></div></div>
+                        <div class="modulo"><div class="modulo__num">2</div><div class="modulo__title">Prompt Engineering<small>Il metodo per ottenere risposte precise da ChatGPT e Claude</small></div><div class="modulo__lock"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zM9 6c0-1.66 1.34-3 3-3s3 1.34 3 3v2H9V6z"/></svg></div></div>
+                        <div class="modulo"><div class="modulo__num">3</div><div class="modulo__title">Ricerca Avanzata &amp; Analisi PDF<small>Ricerche professionali e analisi documenti in secondi</small></div><div class="modulo__lock"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zM9 6c0-1.66 1.34-3 3-3s3 1.34 3 3v2H9V6z"/></svg></div></div>
+                        <div class="modulo"><div class="modulo__num">4</div><div class="modulo__title">Testi, Copy &amp; Persuasione<small>Email di vendita, copy professionale, scrittura strategica</small></div><div class="modulo__lock"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zM9 6c0-1.66 1.34-3 3-3s3 1.34 3 3v2H9V6z"/></svg></div></div>
+                        <div class="modulo"><div class="modulo__num">5</div><div class="modulo__title">Creare Visual senza Limiti<small>Immagini, grafiche e visual per il tuo brand</small></div><div class="modulo__lock"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zM9 6c0-1.66 1.34-3 3-3s3 1.34 3 3v2H9V6z"/></svg></div></div>
+                        <div class="modulo"><div class="modulo__num">6</div><div class="modulo__title">Audio, Video &amp; Accessibilità<small>Trascrizioni, sottotitoli, contenuti video con AI</small></div><div class="modulo__lock"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zM9 6c0-1.66 1.34-3 3-3s3 1.34 3 3v2H9V6z"/></svg></div></div>
+                        <div class="modulo"><div class="modulo__num">7</div><div class="modulo__title">Presenza Digitale Strategica<small>Social, SEO, Google Business con il supporto dell'IA</small></div><div class="modulo__lock"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zM9 6c0-1.66 1.34-3 3-3s3 1.34 3 3v2H9V6z"/></svg></div></div>
+                        <div class="modulo"><div class="modulo__num">8</div><div class="modulo__title">Il Tuo Sito Web con AI<small>Struttura, testi, SEO senza saper programmare</small></div><div class="modulo__lock"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zM9 6c0-1.66 1.34-3 3-3s3 1.34 3 3v2H9V6z"/></svg></div></div>
+                        <div class="modulo"><div class="modulo__num">9</div><div class="modulo__title">Automatismi &amp; Workflow<small>Make, Zapier e agenti AI per risparmiare ore</small></div><div class="modulo__lock"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zM9 6c0-1.66 1.34-3 3-3s3 1.34 3 3v2H9V6z"/></svg></div></div>
+                        <div class="modulo"><div class="modulo__num">10</div><div class="modulo__title">Recap &amp; Prossimi Passi<small>Consolidamento del metodo e roadmap personalizzata</small></div><div class="modulo__lock"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zM9 6c0-1.66 1.34-3 3-3s3 1.34 3 3v2H9V6z"/></svg></div></div>
+                        <div class="modulo"><div class="modulo__num">+</div><div class="modulo__title">Slide PDF + Prompt Library<small>Tutte le slide del corso + libreria di prompt pronti</small></div><div class="modulo__lock"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zM9 6c0-1.66 1.34-3 3-3s3 1.34 3 3v2H9V6z"/></svg></div></div>
+                    </div>
+                    <a href="https://wa.me/393313883929?text=Ciao%20Aliosha%2C%20vorrei%20prenotare%20la%20call%20gratuita%20per%20il%20corso%20AI%20in%20Pratica%20per%20PMI" class="corso-card__cta" target="_blank" rel="noopener">
+                        💬 Prenota una call gratuita per sbloccare questo corso
+                    </a>
+                </div>
+            </div>
+        </article>
+
+        <!-- CORSO 2 — IMMOBILIARE -->
+        <article class="corso-card" id="immobiliare" data-corso="immobiliare">
+            <div class="corso-card__header" onclick="toggleCorso(this)" role="button" aria-expanded="false" tabindex="0">
+                <div class="corso-card__icon corso-card__icon--immo">🏠</div>
+                <div class="corso-card__title-wrap">
+                    <h2 class="corso-card__title">AI per Agenzie Immobiliari</h2>
+                    <div class="corso-card__sub">L'IA applicata al lavoro di agente immobiliare: annunci, valutazioni, automazioni</div>
+                    <div class="corso-card__meta">
+                        <span class="corso-card__tag">🎯 Settore-specifico</span>
+                        <span class="corso-card__tag">📝 Prompt pronti</span>
+                        <span class="corso-card__tag">⚡ Workflow immobiliare</span>
+                    </div>
+                </div>
+                <div class="corso-card__toggle">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                </div>
+            </div>
+            <div class="corso-card__body">
+                <div class="corso-card__body-inner">
+                    <p class="corso-card__intro">
+                        Un corso pensato apposta per chi lavora nel settore immobiliare. Strumenti AI specifici per gestire annunci,
+                        valutazioni di immobili, comunicazioni con i clienti, schede tecniche, traduzioni multilingua e automazioni
+                        ripetitive che fanno perdere tempo prezioso.
+                    </p>
+                    <div class="moduli">
+                        <div class="modulo"><div class="modulo__num">1</div><div class="modulo__title">Annunci immobiliari con l'AI<small>Titoli che convertono, descrizioni persuasive, schede tecniche</small></div><div class="modulo__lock"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zM9 6c0-1.66 1.34-3 3-3s3 1.34 3 3v2H9V6z"/></svg></div></div>
+                        <div class="modulo"><div class="modulo__num">2</div><div class="modulo__title">Valutazioni immobiliari assistite<small>Comparativi di mercato, stime, perizie semplificate</small></div><div class="modulo__lock"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zM9 6c0-1.66 1.34-3 3-3s3 1.34 3 3v2H9V6z"/></svg></div></div>
+                        <div class="modulo"><div class="modulo__num">3</div><div class="modulo__title">Email e comunicazioni clienti<small>Modelli pronti per ogni fase della trattativa</small></div><div class="modulo__lock"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zM9 6c0-1.66 1.34-3 3-3s3 1.34 3 3v2H9V6z"/></svg></div></div>
+                        <div class="modulo"><div class="modulo__num">4</div><div class="modulo__title">Foto e visual con AI<small>Migliorare foto immobili, generare planimetrie, virtual staging</small></div><div class="modulo__lock"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zM9 6c0-1.66 1.34-3 3-3s3 1.34 3 3v2H9V6z"/></svg></div></div>
+                        <div class="modulo"><div class="modulo__num">5</div><div class="modulo__title">Automazioni e CRM<small>Risposte automatiche, follow-up, gestione lead</small></div><div class="modulo__lock"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zM9 6c0-1.66 1.34-3 3-3s3 1.34 3 3v2H9V6z"/></svg></div></div>
+                        <div class="modulo"><div class="modulo__num">+</div><div class="modulo__title">Libreria prompt + Slide PDF<small>Prompt immobiliari pronti all'uso + slide complete</small></div><div class="modulo__lock"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zM9 6c0-1.66 1.34-3 3-3s3 1.34 3 3v2H9V6z"/></svg></div></div>
+                    </div>
+                    <a href="https://wa.me/393313883929?text=Ciao%20Aliosha%2C%20vorrei%20prenotare%20la%20call%20gratuita%20per%20il%20corso%20AI%20per%20agenzie%20immobiliari" class="corso-card__cta" target="_blank" rel="noopener">
+                        💬 Prenota una call gratuita per sbloccare questo corso
+                    </a>
+                </div>
+            </div>
+        </article>
+
+        <!-- CORSO 3 — COURSEKIT -->
+        <article class="corso-card" id="piattaforma" data-corso="piattaforma">
+            <div class="corso-card__header" onclick="toggleCorso(this)" role="button" aria-expanded="false" tabindex="0">
+                <div class="corso-card__icon corso-card__icon--piattaforma">⚙️</div>
+                <div class="corso-card__title-wrap">
+                    <h2 class="corso-card__title">CourseKit — Crea la Tua Piattaforma Corsi Privata</h2>
+                    <div class="corso-card__sub">Costruisci da zero la piattaforma che usi adesso — senza Kajabi, Teachable o Skool</div>
+                    <div class="corso-card__meta">
+                        <span class="corso-card__tag">🛠️ Hands-on</span>
+                        <span class="corso-card__tag">💸 €0/mese di abbonamenti</span>
+                        <span class="corso-card__tag">🔓 100% tuo</span>
+                    </div>
+                </div>
+                <div class="corso-card__toggle">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                </div>
+            </div>
+            <div class="corso-card__body">
+                <div class="corso-card__body-inner">
+                    <p class="corso-card__intro">
+                        Il corso più tecnico ma più libero: ti porto a costruire una piattaforma come questa che stai guardando ora.
+                        Stack open, dominio tuo, zero abbonamenti. Perfetto per chi vuole vendere corsi o gestire studenti senza
+                        finire in gabbia su Kajabi o Teachable.
+                    </p>
+                    <div class="moduli">
+                        <div class="modulo"><div class="modulo__num">1</div><div class="modulo__title">Panoramica e Stack Tecnologico<small>HTML, Firebase, GitHub Pages — cosa serve davvero</small></div><div class="modulo__lock"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zM9 6c0-1.66 1.34-3 3-3s3 1.34 3 3v2H9V6z"/></svg></div></div>
+                        <div class="modulo"><div class="modulo__num">2</div><div class="modulo__title">Creare il Sito con l'AI<small>Claude Code costruisce il sito mentre tu guardi</small></div><div class="modulo__lock"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zM9 6c0-1.66 1.34-3 3-3s3 1.34 3 3v2H9V6z"/></svg></div></div>
+                        <div class="modulo"><div class="modulo__num">3</div><div class="modulo__title">Firebase: Login e Database<small>Autenticazione studenti e database in 30 minuti</small></div><div class="modulo__lock"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zM9 6c0-1.66 1.34-3 3-3s3 1.34 3 3v2H9V6z"/></svg></div></div>
+                        <div class="modulo"><div class="modulo__num">4</div><div class="modulo__title">Area Studenti e Corsi<small>Dashboard, card lezioni, contenuti bloccati e sbloccati</small></div><div class="modulo__lock"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zM9 6c0-1.66 1.34-3 3-3s3 1.34 3 3v2H9V6z"/></svg></div></div>
+                        <div class="modulo"><div class="modulo__num">5</div><div class="modulo__title">Pannello Admin<small>Aggiungere studenti, assegnare corsi, gestire piani</small></div><div class="modulo__lock"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zM9 6c0-1.66 1.34-3 3-3s3 1.34 3 3v2H9V6z"/></svg></div></div>
+                        <div class="modulo"><div class="modulo__num">6</div><div class="modulo__title">Video Hosting e Protezione<small>YouTube unlisted, Vimeo, Drive — pro e contro</small></div><div class="modulo__lock"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zM9 6c0-1.66 1.34-3 3-3s3 1.34 3 3v2H9V6z"/></svg></div></div>
+                        <div class="modulo"><div class="modulo__num">7</div><div class="modulo__title">Pubblicazione e Dominio<small>GitHub Pages, dominio personalizzato, deploy</small></div><div class="modulo__lock"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zM9 6c0-1.66 1.34-3 3-3s3 1.34 3 3v2H9V6z"/></svg></div></div>
+                    </div>
+                    <a href="https://wa.me/393313883929?text=Ciao%20Aliosha%2C%20vorrei%20prenotare%20la%20call%20gratuita%20per%20CourseKit%20-%20crea%20la%20tua%20piattaforma%20corsi" class="corso-card__cta" target="_blank" rel="noopener">
+                        💬 Prenota una call gratuita per sbloccare questo corso
+                    </a>
+                </div>
+            </div>
+        </article>
+
+    </section>
+
+    <!-- CTA FINALE -->
+    <div class="cta-final">
+        <h2>Non sai quale corso fa per te?</h2>
+        <p>
+            Prenota una <strong>call gratuita su WhatsApp</strong> con me o con il mio team.
+            Ti rispondo io personalmente — niente bot, niente AI — perché vogliamo capire come aiutarti davvero
+            e suggerirti il percorso più adatto al tuo lavoro.
+        </p>
+        <a href="https://wa.me/393313883929?text=Ciao%20Aliosha%2C%20vorrei%20prenotare%20la%20call%20gratuita%20per%20capire%20quale%20corso%20fa%20per%20me" class="cta-final__btn" target="_blank" rel="noopener">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413"/></svg>
+            Contattami ora — call gratuita su WhatsApp
+        </a>
+        <div class="cta-final__note">
+            Rispondo io e il mio team personalmente, non un'AI — perché vogliamo capire come aiutarti davvero.
+        </div>
+    </div>
+
+</main>
+
+<footer>
+    <p>
+        <a href="/">Home</a> ·
+        <a href="chi-sono.html">Chi sono</a> ·
+        <a href="blog.html">Blog</a> ·
+        <a href="contatti.html">Contatti</a> ·
+        <a href="privacy-policy.html">Privacy</a>
+    </p>
+    <p style="margin-top:1rem;font-size:0.8rem;">© AI Osha — Aliosha Battaglini · info@aiosha.it · WhatsApp 331 388 3929</p>
+</footer>
+
+<script>
+function toggleCorso(headerEl) {
+    const card = headerEl.closest('.corso-card');
+    const expanded = card.classList.toggle('expanded');
+    headerEl.setAttribute('aria-expanded', expanded ? 'true' : 'false');
+}
+
+// Auto-espandi se URL ha anchor (#pmi, #immobiliare, #piattaforma)
+if (window.location.hash) {
+    const target = document.querySelector(window.location.hash);
+    if (target && target.classList.contains('corso-card')) {
+        target.classList.add('expanded');
+        target.querySelector('.corso-card__header').setAttribute('aria-expanded', 'true');
+        setTimeout(() => target.scrollIntoView({behavior: 'smooth', block: 'start'}), 200);
+    }
+}
+
+// Keyboard accessibility
+document.querySelectorAll('.corso-card__header').forEach(el => {
+    el.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            toggleCorso(el);
+        }
+    });
+});
+</script>
+
+</body>
+</html>

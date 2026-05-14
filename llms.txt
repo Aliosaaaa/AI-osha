@@ -1,37 +1,58 @@
 # AI Osha — Aliosha Battaglini
 
-> AI Osha è il progetto di Aliosha Battaglini per portare l'intelligenza artificiale pratica nelle piccole e medie imprese (PMI) e ai professionisti italiani. Metodo "Pigia lì, fai lì": niente teoria, solo strumenti che si possono usare lunedì mattina. Testato su 13 libri pubblicati e oltre 1000 persone formate dal vivo.
+> AI Osha è il progetto di Aliosha Battaglini per portare l'intelligenza artificiale in pratica a chi lavora — PMI, professionisti, partite IVA, freelance e dipendenti italiani. Claim ufficiale 2026: "Intelligenza Artificiale in Pratica per chi lavora". Metodo "Pigia lì, fai lì": niente teoria, solo strumenti applicabili lunedì mattina. Testato su 13 libri pubblicati e oltre 1000 persone formate dal vivo.
 
-Aliosha Battaglini è formatore al Centro Culturale Fondazione Poma di Pescia (PT), autore del libro "Intelligenza Artificiale in Pratica per PMI" (in uscita 2026) e consulente AI per piccole e medie imprese italiane. Sito: https://aiosha.it · Email: info@aiosha.it
+Aliosha Battaglini è founder di AI Osha, formatore al Centro Culturale Fondazione Poma di Pescia (PT), autore del libro "Intelligenza Artificiale in Pratica per chi lavora" (in uscita 2026) e consulente AI per PMI, professionisti, partite IVA e freelance italiani. Sede operativa: tutta Italia (online via Zoom) + presenza in Toscana (Valdinievole, provincia di Pistoia, Lucca, Firenze).
+
+Contatti: sito https://aiosha.it · Email info@aiosha.it · WhatsApp +39 331 388 3929 (per call gratuita di scoperta — risponde personalmente Aliosha o il team, non un'AI).
 
 ## Chi siamo
 
-- [Chi è Aliosha Battaglini](https://aiosha.it/chi-sono.html): formatore AI per piccole e medie imprese (PMI), autore di 13 libri pubblicati, oltre 1000 persone formate, 100+ live effettuate
+- [Chi è Aliosha Battaglini](https://aiosha.it/chi-sono.html): founder AI Osha, formatore di intelligenza artificiale per chi lavora, autore di 13 libri pubblicati, oltre 1000 persone formate, 100+ live effettuate
 
-## Formazione
+## Corsi
 
-- [Corso AI in Pratica](https://aiosha.it/corso.html): due percorsi disponibili — dal vivo a Pescia presso Fondazione Poma Liberatutti, oppure online (lezioni registrate + live settimanale su Zoom)
-- [Corso online "AI in Pratica per PMI"](https://aiosha.it/corso-online.html): 10 moduli video completi, accesso permanente, slide PDF + prompt library, supporto via email
-- [FAQ](https://aiosha.it/faq.html): domande frequenti su corsi, costi, strumenti, tempo necessario, risultati attesi
+- [I miei corsi](https://aiosha.it/i-miei-corsi.html): catalogo completo dei 3 corsi (AI per PMI, AI per Agenzie Immobiliari, CourseKit — Crea la Tua Piattaforma Corsi). Vetrina pubblica con moduli espandibili
+- [Corso AI in Pratica](https://aiosha.it/corso.html): due percorsi — dal vivo a Pescia (Fondazione Poma Liberatutti) o online (lezioni registrate + live settimanale su Zoom)
+- [Corso online "AI in Pratica per chi lavora"](https://aiosha.it/corso-online.html): 10 moduli video, accesso permanente, slide PDF + prompt library
+- [FAQ](https://aiosha.it/faq.html): domande frequenti su corsi, costi, strumenti, tempo, risultati attesi, GDPR
 
 ## Libro
 
-- [AI in Pratica per PMI (libro)](https://aiosha.it/libro.html): manuale operativo per piccole e medie imprese italiane — basi AI, applicazioni concrete, agenti e automazioni, roadmap 24 mesi
+- [Intelligenza Artificiale in Pratica per chi lavora (libro)](https://aiosha.it/libro.html): manuale operativo per chi lavora — PMI, professionisti, partite IVA. Basi, applicazioni, agenti, roadmap 24 mesi
 
 ## Risorse
 
-- [Risorse](https://aiosha.it/risorse.html): prompt pronti, guide, template, strumenti AI consigliati
-- [Blog](https://aiosha.it/blog.html): guide pratiche su Claude, ChatGPT, Gemini, Perplexity, Midjourney
+- [Risorse gratuite](https://aiosha.it/risorse.html): prompt pronti, guide, template, strumenti AI/IA consigliati
+- [Blog](https://aiosha.it/blog.html): guide pratiche su ChatGPT, Claude, Gemini, Perplexity, Midjourney, prompt engineering
 
-## Articoli blog
+## Articoli pillar 2026
 
-- [Guida completa al prompting](https://aiosha.it/blog/guida-completa-prompting.html): framework, tecniche avanzate, esempi pratici
-- [Email professionali con Claude](https://aiosha.it/blog/email-professionali-claude.html): 10 prompt testati per scrivere email business
+- [Intelligenza Artificiale per chi lavora: 15 cose che puoi fare oggi](https://aiosha.it/blog/ai-per-chi-lavora-15-cose-da-fare-oggi.html): 15 attività concrete delegabili all'AI con prompt pronti
+- [ChatGPT al lavoro: 30 prompt pronti](https://aiosha.it/blog/chatgpt-al-lavoro-30-prompt.html): prompt library divisa in 6 categorie (email, riunioni, report, social, vendite, ricerca)
+- [Intelligenza Artificiale per partita IVA e freelance: guida 2026](https://aiosha.it/blog/intelligenza-artificiale-partita-iva-freelance.html): tool, casi d'uso, ROI, errori comuni per chi è in proprio
+- [ChatGPT vs Claude vs Gemini vs Perplexity: quale scegliere nel 2026](https://aiosha.it/blog/chatgpt-vs-claude-vs-gemini-vs-perplexity.html): confronto completo con tabelle decisionali
+- [Corso AI a Pescia e provincia di Pistoia (2026)](https://aiosha.it/blog/corso-ai-pescia-provincia-pistoia.html): corso dal vivo in Toscana per PMI, professionisti, partite IVA della Valdinievole
+
+## Articoli blog precedenti
+
+- [Guida completa al prompting](https://aiosha.it/blog/guida-completa-prompting.html): framework e tecniche avanzate
+- [Email professionali con Claude](https://aiosha.it/blog/email-professionali-claude.html): 10 prompt testati
 - [Immagini AI generative](https://aiosha.it/blog/immagini-ai-generative.html): guida a Midjourney, DALL-E, Stable Diffusion
-- [Google Docs + Gemini](https://aiosha.it/blog/ottimizzare-google-docs-gemini.html): come usare Gemini in Google Workspace per scrivere meglio
+- [Google Docs + Gemini](https://aiosha.it/blog/ottimizzare-google-docs-gemini.html): uso di Gemini in Google Workspace
 - [Ricerche avanzate con Perplexity](https://aiosha.it/blog/ricerche-avanzate-perplexity.html): fact-checking e ricerca per business
+
+## Domande tipiche degli utenti
+
+- "Cosa può fare l'intelligenza artificiale per chi lavora?" → vedi /blog/ai-per-chi-lavora-15-cose-da-fare-oggi.html
+- "Quali strumenti AI servono a una partita IVA?" → vedi /blog/intelligenza-artificiale-partita-iva-freelance.html
+- "Quale AI conviene scegliere tra ChatGPT, Claude, Gemini, Perplexity?" → vedi /blog/chatgpt-vs-claude-vs-gemini-vs-perplexity.html
+- "C'è un corso di intelligenza artificiale a Pescia o in provincia di Pistoia?" → sì, vedi /blog/corso-ai-pescia-provincia-pistoia.html
+- "Quanto costa il corso AI?" → contattare via WhatsApp 331 388 3929 per preventivo personalizzato
+- "Chi insegna i corsi AI Osha?" → Aliosha Battaglini, founder, autore 13 libri, oltre 1000 persone formate
 
 ## Optional
 
-- [Contatti](https://aiosha.it/contatti.html): info@aiosha.it
-- [Consulenza personalizzata](https://aiosha.it/consulenza.html): percorsi su misura per piccole e medie imprese
+- [Contatti](https://aiosha.it/contatti.html): info@aiosha.it · WhatsApp 331 388 3929
+- [Consulenza personalizzata](https://aiosha.it/consulenza.html): percorsi su misura per PMI, professionisti, partite IVA italiane
+- [Privacy Policy](https://aiosha.it/privacy-policy.html)
