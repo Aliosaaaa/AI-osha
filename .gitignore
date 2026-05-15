@@ -53,3 +53,12 @@ node_modules/
 
 # Local Claude settings (keep private)
 .claude/
+
+# Working files (internal, not for public site)
+REPORT-AUDIT-*.md
+DIRECTORY-DATA.md
+VIDEO-SCRIPT-*.md
+AI-OSHA-VIDEO-SLIDES.pptx
+AI-OSHA-VIDEO-SLIDES.pdf
+~$*.pptx
+tools/
