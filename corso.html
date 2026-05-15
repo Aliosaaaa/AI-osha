@@ -161,16 +161,52 @@
             background: linear-gradient(145deg, #1c1506 0%, #2a1f07 100%);
             border: 1px solid rgba(201, 168, 92, 0.35);
             box-shadow: 0 0 60px rgba(201, 168, 92, 0.08);
+            order: 2;
         }
         .path-card--poma:hover { box-shadow: 0 20px 60px rgba(201, 168, 92, 0.2); border-color: rgba(201, 168, 92, 0.6); }
 
-        /* Card Online */
+        /* Card Online — enfatizzata (priorità di lettura + visiva) */
         .path-card--online {
-            background: linear-gradient(145deg, #061420 0%, #0a1f33 100%);
-            border: 1px solid rgba(0, 168, 232, 0.25);
-            box-shadow: 0 0 60px rgba(0, 168, 232, 0.06);
+            background: linear-gradient(145deg, #061a2e 0%, #0d2745 100%);
+            border: 2px solid rgba(0, 168, 232, 0.55);
+            box-shadow: 0 0 100px rgba(0, 168, 232, 0.22), 0 8px 32px rgba(0, 168, 232, 0.15);
+            order: 1;
+            position: relative;
         }
-        .path-card--online:hover { box-shadow: 0 20px 60px rgba(0, 168, 232, 0.18); border-color: rgba(0, 168, 232, 0.5); }
+        .path-card--online:hover {
+            box-shadow: 0 24px 80px rgba(0, 168, 232, 0.35), 0 0 120px rgba(0, 168, 232, 0.28);
+            border-color: rgba(0, 168, 232, 0.85);
+            transform: translateY(-6px);
+        }
+        @media (min-width: 768px) {
+            .path-card--online { transform: scale(1.02); }
+            .path-card--online:hover { transform: scale(1.02) translateY(-6px); }
+        }
+
+        /* Tag "Più scelto" sull'online */
+        .path-card__featured-tag {
+            position: absolute;
+            top: 18px;
+            right: 18px;
+            z-index: 4;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0.5rem 1rem;
+            border-radius: 9999px;
+            font-size: 0.72rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.09em;
+            background: linear-gradient(135deg, #00a8e8 0%, #0080d0 100%);
+            color: #fff;
+            box-shadow: 0 6px 20px rgba(0,168,232,0.55), 0 0 0 1px rgba(255,255,255,0.15) inset;
+            animation: featuredPulse 2.4s ease-in-out infinite;
+        }
+        @keyframes featuredPulse {
+            0%, 100% { box-shadow: 0 6px 20px rgba(0,168,232,0.55), 0 0 0 1px rgba(255,255,255,0.15) inset; }
+            50% { box-shadow: 0 6px 28px rgba(0,168,232,0.85), 0 0 0 1px rgba(255,255,255,0.25) inset; }
+        }
 
         .path-card__badge {
             display: inline-flex; align-items: center; gap: 0.4rem;
@@ -433,8 +469,8 @@
                         </span>
 
                         <div>
-                            <div class="path-card__title">AI in Pratica per Tutti</div>
-                            <div class="path-card__sub">In presenza a Pescia (PT) presso la Fondazione Poma Liberatutti. Workshop interattivi, esercitazioni guidate, networking reale.</div>
+                            <div class="path-card__title">In presenza a Pescia</div>
+                            <div class="path-card__sub">Presso la Fondazione Poma Liberatutti (PT). Workshop interattivi, esercitazioni guidate, networking reale con altri imprenditori del territorio.</div>
                         </div>
 
                         <ul class="path-card__features">
@@ -478,8 +514,12 @@
 
                     <!-- CARD ONLINE -->
                     <div class="path-card path-card--online">
+                        <span class="path-card__featured-tag">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.39 7.36H22l-6.18 4.49L18.21 22 12 17.5 5.79 22l2.39-8.15L2 9.36h7.61L12 2z"/></svg>
+                            Più scelto
+                        </span>
                         <div class="path-card__cover">
-                            <img src="images/corso/cover-pmi.jpg" alt="AI in Pratica per PMI — Corso online con live settimanale su Zoom" loading="lazy">
+                            <img src="images/corso/cover-pmi.jpg" alt="Online quando vuoi — Corso AI con live settimanale su Zoom e consulenze 1-to-1" loading="lazy">
                         </div>
 
                         <div style="display:flex;align-items:center;gap:0.6rem;flex-wrap:wrap;">
@@ -491,11 +531,15 @@
                                 <svg xmlns="http://www.w3.org/2000/svg" width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>
                                 Live su Zoom
                             </span>
+                            <span style="display:inline-flex;align-items:center;gap:0.35rem;padding:0.3rem 0.85rem;border-radius:9999px;font-size:0.72rem;font-weight:700;text-transform:uppercase;letter-spacing:0.05em;background:rgba(0,168,232,0.12);border:1px solid rgba(0,168,232,0.3);color:#67d4ff;">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
+                                Consulenze 1-to-1
+                            </span>
                         </div>
 
                         <div>
-                            <div class="path-card__title">AI in Pratica per PMI</div>
-                            <div class="path-card__sub">Lezioni registrate + sessione live settimanale su Zoom. Per piccole e medie imprese che vogliono applicare l'AI al business da subito.</div>
+                            <div class="path-card__title">Online quando vuoi</div>
+                            <div class="path-card__sub">Lezioni registrate + live settimanale su Zoom + consulenze 1-to-1 personalizzate. Per PMI, professionisti, freelance e agenzie immobiliari. Studi quando vuoi, ovunque tu sia.</div>
                         </div>
 
                         <ul class="path-card__features">
@@ -515,6 +559,12 @@
                                 <span class="path-card__feature-dot path-card__feature-dot--online">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
                                 </span>
+                                <strong style="color:var(--white);">Consulenze 1-to-1</strong> personalizzate con Aliosha
+                            </li>
+                            <li class="path-card__feature">
+                                <span class="path-card__feature-dot path-card__feature-dot--online">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                                </span>
                                 Accesso permanente ai contenuti registrati
                             </li>
                             <li class="path-card__feature">
@@ -527,12 +577,12 @@
                                 <span class="path-card__feature-dot path-card__feature-dot--online">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
                                 </span>
-                                Supporto diretto via email
+                                Supporto diretto via email + WhatsApp
                             </li>
                         </ul>
 
                         <a href="i-miei-corsi.html" class="path-card__cta path-card__cta--online">
-                            Scopri il corso per PMI
+                            Scopri tutti i corsi online
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" width="18" height="18"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
                         </a>
                     </div>
