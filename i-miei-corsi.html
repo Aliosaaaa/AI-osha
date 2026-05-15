@@ -134,69 +134,109 @@
         .welcome-video__info p { font-size: 0.85rem; color: var(--gray-400); margin: 0; }
 
         /* SEZIONE CORSI */
-        .corsi { display: flex; flex-direction: column; gap: 1.25rem; }
+        .corsi { display: flex; flex-direction: column; gap: 1.6rem; }
 
         .corso-card {
-            background: var(--dark-soft);
-            border: 1px solid var(--border);
-            border-radius: 1rem;
+            --glow: 0,168,232;
+            position: relative;
+            background: linear-gradient(135deg, rgba(0,0,0,0.55), rgba(10,14,21,0.85));
+            border: 2px solid rgba(var(--glow), 0.45);
+            border-radius: 1.1rem;
             overflow: hidden;
-            transition: border-color 0.25s;
+            transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+            box-shadow:
+                0 0 0 1px rgba(var(--glow), 0.08) inset,
+                0 0 35px -6px rgba(var(--glow), 0.45),
+                0 0 80px -20px rgba(var(--glow), 0.55);
         }
-        .corso-card:hover { border-color: rgba(0,168,232,0.3); }
+        .corso-card::before {
+            content: "";
+            position: absolute; inset: 0;
+            background:
+                radial-gradient(circle at 0% 50%, rgba(var(--glow), 0.18), transparent 55%),
+                radial-gradient(circle at 100% 50%, rgba(var(--glow), 0.10), transparent 60%);
+            pointer-events: none;
+            z-index: 0;
+        }
+        .corso-card[data-corso="pmi"] { --glow: 0, 168, 232; }
+        .corso-card[data-corso="immobiliare"] { --glow: 245, 166, 35; }
+        .corso-card[data-corso="piattaforma"] { --glow: 168, 85, 247; }
+
+        .corso-card:hover {
+            transform: translateY(-3px);
+            border-color: rgba(var(--glow), 0.75);
+            box-shadow:
+                0 0 0 1px rgba(var(--glow), 0.12) inset,
+                0 0 45px -4px rgba(var(--glow), 0.65),
+                0 0 100px -15px rgba(var(--glow), 0.7);
+        }
         .corso-card__header {
             display: flex; align-items: center; gap: 1.25rem;
             padding: 1.5rem;
             cursor: pointer;
             user-select: none;
             position: relative;
+            z-index: 1;
         }
         .corso-card__icon {
             flex-shrink: 0;
-            width: 64px; height: 64px;
-            border-radius: 0.75rem;
+            width: 76px; height: 76px;
+            border-radius: 0.9rem;
             display: flex; align-items: center; justify-content: center;
-            font-size: 2rem;
+            font-size: 2.2rem;
+            position: relative;
+            border: 1.5px solid rgba(var(--glow), 0.6);
+            background: linear-gradient(135deg, rgba(var(--glow), 0.18), rgba(var(--glow), 0.04));
+            box-shadow:
+                0 0 25px -2px rgba(var(--glow), 0.55),
+                0 0 0 4px rgba(var(--glow), 0.08),
+                inset 0 0 18px rgba(var(--glow), 0.15);
+            filter: drop-shadow(0 0 12px rgba(var(--glow), 0.45));
         }
-        .corso-card__icon--pmi { background: linear-gradient(135deg, #00A8E8, #0066cc); }
-        .corso-card__icon--immo { background: linear-gradient(135deg, #F5A623, #e07b00); }
-        .corso-card__icon--piattaforma { background: linear-gradient(135deg, #a855f7, #7C3AED); }
+        .corso-card__icon--pmi,
+        .corso-card__icon--immo,
+        .corso-card__icon--piattaforma { background: linear-gradient(135deg, rgba(var(--glow), 0.18), rgba(var(--glow), 0.04)); }
 
         .corso-card__title-wrap { flex: 1; min-width: 0; }
-        .corso-card__title { font-size: 1.25rem; font-weight: 700; color: #fff; margin-bottom: 0.25rem; line-height: 1.3; }
-        .corso-card__sub { font-size: 0.9rem; color: var(--gray-400); line-height: 1.5; }
+        .corso-card__title { font-size: 1.3rem; font-weight: 800; color: #fff; margin-bottom: 0.3rem; line-height: 1.25; letter-spacing: -0.01em; }
+        .corso-card__sub { font-size: 0.92rem; color: #cbd5e1; line-height: 1.5; }
         .corso-card__meta {
-            display: flex; gap: 0.75rem; margin-top: 0.6rem; flex-wrap: wrap;
+            display: flex; gap: 0.6rem; margin-top: 0.8rem; flex-wrap: wrap;
         }
         .corso-card__tag {
             display: inline-flex; align-items: center; gap: 0.3rem;
-            padding: 0.2rem 0.65rem;
-            background: rgba(255,255,255,0.04);
-            border: 1px solid var(--border);
+            padding: 0.3rem 0.75rem;
+            background: rgba(0,0,0,0.45);
+            border: 1px solid rgba(var(--glow), 0.3);
             border-radius: 999px;
-            font-size: 0.72rem;
-            color: var(--gray-200);
+            font-size: 0.74rem;
+            color: #e5e7eb;
             font-weight: 500;
+            backdrop-filter: blur(4px);
         }
         .corso-card__toggle {
-            width: 36px; height: 36px;
+            width: 44px; height: 44px;
             border-radius: 50%;
-            background: rgba(255,255,255,0.04);
-            border: 1px solid var(--border);
+            background: rgba(0,0,0,0.5);
+            border: 1.5px solid rgba(var(--glow), 0.55);
             display: flex; align-items: center; justify-content: center;
             flex-shrink: 0;
-            transition: transform 0.3s ease, background 0.2s;
+            transition: transform 0.3s ease, background 0.2s, box-shadow 0.2s;
+            box-shadow: 0 0 18px -2px rgba(var(--glow), 0.5);
         }
-        .corso-card__toggle svg { width: 16px; height: 16px; color: var(--gray-200); }
-        .corso-card.expanded .corso-card__toggle { transform: rotate(180deg); background: rgba(0,168,232,0.2); }
+        .corso-card__toggle svg { width: 18px; height: 18px; color: #fff; transform: rotate(-90deg); transition: transform 0.3s ease; }
+        .corso-card.expanded .corso-card__toggle { background: rgba(var(--glow), 0.25); }
+        .corso-card.expanded .corso-card__toggle svg { transform: rotate(0deg); }
 
         .corso-card__body {
             max-height: 0;
             overflow: hidden;
             transition: max-height 0.4s ease;
+            position: relative;
+            z-index: 1;
         }
         .corso-card.expanded .corso-card__body { max-height: 4000px; }
-        .corso-card__body-inner { padding: 0 1.5rem 1.5rem 1.5rem; border-top: 1px solid var(--border); }
+        .corso-card__body-inner { padding: 0 1.5rem 1.5rem 1.5rem; border-top: 1px solid rgba(var(--glow), 0.18); }
 
         .corso-card__intro { padding: 1.25rem 0; color: #d1d5db; line-height: 1.65; font-size: 0.95rem; }
 
@@ -320,9 +360,10 @@
         @media (max-width: 640px) {
             .header__cta span.long { display: none; }
             .corso-card__header { padding: 1.1rem; gap: 0.9rem; }
-            .corso-card__icon { width: 52px; height: 52px; font-size: 1.6rem; }
+            .corso-card__icon { width: 60px; height: 60px; font-size: 1.75rem; border-radius: 0.7rem; }
             .corso-card__title { font-size: 1.05rem; }
             .corso-card__sub { font-size: 0.85rem; }
+            .corso-card__toggle { width: 38px; height: 38px; }
             main { padding: 2rem 1rem 3rem; }
         }
     </style>
