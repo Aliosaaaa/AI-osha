@@ -16,6 +16,15 @@ Disallow: /live-extra1/
 Disallow: /live-sito-agenzia/
 Disallow: /ai-osha-live-12-aprile.html
 
+# Short link di tracking (redirect, non contenuto reale)
+Disallow: /meta/
+Disallow: /tiktok/
+Disallow: /whatsapp/
+Disallow: /ads/
+Disallow: /ads1/
+Disallow: /extra1/
+Disallow: /extra2/
+
 # AI Crawlers — explicit allow (training & answer engines)
 User-agent: GPTBot
 Allow: /
