@@ -166,11 +166,13 @@
             content: ''; position: absolute; inset: 0; opacity: 0;
             background: radial-gradient(ellipse 60% 40% at 50% 0%, rgba(0,168,232,0.08), transparent);
             transition: opacity var(--transition-base);
+            pointer-events: none;
         }
+        .risorsa-card > * { position: relative; z-index: 1; }
         .risorsa-card:hover { transform: translateY(-4px); border-color: rgba(0,168,232,0.3); box-shadow: 0 12px 32px rgba(0,0,0,0.3); }
         .risorsa-card:hover::before { opacity: 1; }
         .risorsa-card--featured { border-color: rgba(245,166,35,0.4); background: linear-gradient(135deg, rgba(245,166,35,0.05), var(--dark-soft)); }
-        .risorsa-card--featured::after { content: 'TOP'; position: absolute; top: 1rem; right: 1rem; background: linear-gradient(135deg,var(--highlight),var(--highlight-dark)); color: var(--white); font-size: 0.7rem; font-weight: 700; padding: 0.2rem 0.6rem; border-radius: var(--radius-full); letter-spacing: 0.05em; }
+        .risorsa-card--featured::after { content: 'TOP'; position: absolute; top: 1rem; right: 1rem; background: linear-gradient(135deg,var(--highlight),var(--highlight-dark)); color: var(--white); font-size: 0.7rem; font-weight: 700; padding: 0.2rem 0.6rem; border-radius: var(--radius-full); letter-spacing: 0.05em; pointer-events: none; z-index: 2; }
 
         .risorsa-card__icon {
             width: 48px; height: 48px; border-radius: var(--radius-lg);
