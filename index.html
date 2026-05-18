@@ -2739,6 +2739,160 @@
             </div>
         </section>
 
+        <!-- ========================================
+             WHATSAPP TESTIMONIANZE
+             ======================================== -->
+        <style>
+            .wa-section { background: var(--dark); padding: 5rem 0; }
+            .wa-grid { display: grid; grid-template-columns: 1fr; gap: 2rem; max-width: 900px; margin: 3rem auto 0; }
+            @media (min-width: 768px) { .wa-grid { grid-template-columns: repeat(2, 1fr); gap: 2.5rem; } }
+            .wa-chat {
+                background: #efeae2;
+                border-radius: 18px;
+                padding: 1rem;
+                box-shadow: 0 14px 40px rgba(0,0,0,0.55);
+                position: relative;
+                overflow: hidden;
+            }
+            .wa-chat__header {
+                background: #008069;
+                margin: -1rem -1rem 1rem -1rem;
+                padding: 0.85rem 1rem;
+                color: #fff;
+                font-weight: 600;
+                font-size: 0.95rem;
+                display: flex;
+                align-items: center;
+                gap: 0.75rem;
+                border-radius: 18px 18px 0 0;
+            }
+            .wa-chat__avatar {
+                width: 36px; height: 36px; border-radius: 50%;
+                background: #25D366; color: #fff;
+                display: flex; align-items: center; justify-content: center;
+                font-weight: 700; font-size: 0.95rem;
+                flex-shrink: 0;
+            }
+            .wa-chat__name { font-size: 1rem; line-height: 1.1; }
+            .wa-chat__subtitle { font-size: 0.72rem; opacity: 0.85; font-weight: 400; }
+            .wa-body { display: flex; flex-direction: column; gap: 0.45rem; padding: 0.25rem 0.25rem; }
+            .wa-msg {
+                max-width: 88%;
+                padding: 0.5rem 0.7rem 0.55rem;
+                border-radius: 8px;
+                font-size: 0.92rem;
+                line-height: 1.35;
+                color: #111;
+                position: relative;
+                box-shadow: 0 1px 0.5px rgba(0,0,0,0.13);
+            }
+            .wa-msg--in  { background: #fff; align-self: flex-start; border-top-left-radius: 0; }
+            .wa-msg--out { background: #d9fdd3; align-self: flex-end; border-top-right-radius: 0; }
+            .wa-msg__time { font-size: 0.65rem; color: #667781; margin-left: 0.5rem; float: right; line-height: 1.7; }
+            .wa-msg--out .wa-msg__time::after { content: " ✓✓"; color: #53bdeb; }
+            .wa-msg--audio {
+                display: flex; align-items: center; gap: 0.6rem;
+                min-width: 200px;
+            }
+            .wa-msg--audio .wa-play {
+                width: 28px; height: 28px; border-radius: 50%;
+                background: #54656f; color: #fff;
+                display: flex; align-items: center; justify-content: center;
+                flex-shrink: 0; font-size: 0.7rem;
+            }
+            .wa-msg--audio .wa-wave {
+                flex: 1; height: 14px;
+                background: repeating-linear-gradient(90deg,
+                    #b1b1b1 0 2px, transparent 2px 4px,
+                    #b1b1b1 4px 5px, transparent 5px 7px,
+                    #b1b1b1 7px 9px, transparent 9px 11px);
+                border-radius: 4px;
+                position: relative;
+            }
+            .wa-msg--audio .wa-wave::before {
+                content: ""; position: absolute; left: 0; top: -2px;
+                width: 10px; height: 18px; background: radial-gradient(circle, #009de2 50%, transparent 51%);
+            }
+            .wa-msg--audio .wa-dur { font-size: 0.72rem; color: #667781; }
+            .wa-cta { text-align: center; margin-top: 3rem; }
+            .wa-cta-text { color: var(--gray-400); font-size: 0.95rem; max-width: 540px; margin: 0 auto; }
+        </style>
+        <section class="wa-section" id="whatsapp-testimonianze">
+            <div class="container">
+                <div class="section__header animate-on-scroll">
+                    <span class="section__eyebrow">Conversazioni Reali</span>
+                    <h2 class="section__title">Cosa mi scrivono <span class="text-gradient">su WhatsApp</span></h2>
+                    <p class="section__subtitle" style="color:var(--gray-400);max-width:600px;margin:1rem auto 0;font-size:1rem;">
+                        Messaggi non filtrati di clienti che hanno toccato con mano il metodo. Conversazioni vere, parole loro.
+                    </p>
+                </div>
+
+                <div class="wa-grid">
+
+                    <!-- Gianluca -->
+                    <div class="wa-chat animate-on-scroll">
+                        <div class="wa-chat__header">
+                            <div class="wa-chat__avatar">G</div>
+                            <div>
+                                <div class="wa-chat__name">Gianluca C.</div>
+                                <div class="wa-chat__subtitle">Cliente — Consulenza AI Osha</div>
+                            </div>
+                        </div>
+                        <div class="wa-body">
+                            <div class="wa-msg wa-msg--in">sono fortissimo <span class="wa-msg__time">18:50</span></div>
+                            <div class="wa-msg wa-msg--in wa-msg--audio">
+                                <div class="wa-play">▶</div>
+                                <div class="wa-wave"></div>
+                                <div class="wa-dur">0:35</div>
+                                <span class="wa-msg__time">18:58</span>
+                            </div>
+                            <div class="wa-msg wa-msg--in wa-msg--audio">
+                                <div class="wa-play">▶</div>
+                                <div class="wa-wave"></div>
+                                <div class="wa-dur">0:50</div>
+                                <span class="wa-msg__time">19:39</span>
+                            </div>
+                            <div class="wa-msg wa-msg--in"><strong>l'ho fatto!! sono scioccato</strong> <span class="wa-msg__time">19:45</span></div>
+                            <div class="wa-msg wa-msg--in"><strong>è uno strumento impressionante</strong> <span class="wa-msg__time">19:45</span></div>
+                            <div class="wa-msg wa-msg--in">20 secondi <span class="wa-msg__time">19:45</span></div>
+                            <div class="wa-msg wa-msg--in">grazie Aliosha <span class="wa-msg__time">19:48</span></div>
+                            <div class="wa-msg wa-msg--in"><strong>non vedo l'ora di imparare tutto</strong> <span class="wa-msg__time">19:49</span></div>
+                        </div>
+                    </div>
+
+                    <!-- Monica -->
+                    <div class="wa-chat animate-on-scroll">
+                        <div class="wa-chat__header">
+                            <div class="wa-chat__avatar" style="background:#ff6b6b;">M</div>
+                            <div>
+                                <div class="wa-chat__name">Monica G.</div>
+                                <div class="wa-chat__subtitle">Cliente — Percorso per il figlio Samuele</div>
+                            </div>
+                        </div>
+                        <div class="wa-body">
+                            <div class="wa-msg wa-msg--out">Ciao Monica, come va?<br><br>Mi sono sentito con Samuele, mi ha detto che sta procedendo tutto bene.<br>Se hai bisogno io ci sono! <span class="wa-msg__time">09:41</span></div>
+                            <div class="wa-msg wa-msg--in">
+                                <strong>Buongiorno Aliosha, Samuele è molto entusiasta!</strong><br>
+                                Mi ha detto che i tuoi corsi sono <strong>molto formativi</strong> e li sta già applicando nel tempo rimanente, vista la prossimità della fiera.<br>
+                                <strong>Ti ringrazio tanto</strong>
+                                <span class="wa-msg__time">10:27</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="wa-cta">
+                    <p class="wa-cta-text">
+                        Vuoi ricevere anche tu un percorso AI fatto su misura?
+                        <br>
+                        <a href="https://wa.me/393313883929" style="color:var(--primary);font-weight:600;">Scrivimi su WhatsApp</a>
+                        — rispondo personalmente.
+                    </p>
+                </div>
+            </div>
+        </section>
+
         <!-- FAQ Section -->
 
         <!-- ========================================
