@@ -205,6 +205,29 @@
 
         .risorsa-card[data-cat].hidden { display: none; }
 
+        /* COVER IMG ON CARD */
+        .risorsa-card__cover {
+            margin: -1.75rem -1.75rem 0 -1.75rem;
+            aspect-ratio: 2 / 1;
+            overflow: hidden;
+            position: relative;
+            background: var(--dark);
+            border-bottom: 1px solid rgba(255,255,255,0.06);
+        }
+        .risorsa-card__cover img {
+            width: 100%; height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+            display: block;
+        }
+        .risorsa-card:hover .risorsa-card__cover img { transform: scale(1.04); }
+        .risorsa-card__cover::after {
+            content: '';
+            position: absolute; inset: 0;
+            background: linear-gradient(180deg, transparent 50%, rgba(13,17,23,0.6) 100%);
+            pointer-events: none;
+        }
+
         /* PROMPT PREVIEW SECTION */
         .prompt-section { padding: 5rem 0; background: var(--dark-soft); }
         .section-header { text-align: center; margin-bottom: 3rem; }
@@ -403,6 +426,12 @@
 
                     <!-- RISORSA 1 — FEATURED -->
                     <div class="risorsa-card risorsa-card--featured animate-on-scroll" data-cat="prompt">
+                        <div class="risorsa-card__cover">
+                            <picture>
+                                <source srcset="images/risorse/cover-50-prompt.webp" type="image/webp">
+                                <img src="images/risorse/cover-50-prompt.jpg" alt="50 prompt essenziali per il lavoro" loading="lazy" width="900" height="450">
+                            </picture>
+                        </div>
                         <div class="risorsa-card__icon icon--amber">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z"/></svg>
                         </div>
@@ -429,6 +458,12 @@
 
                     <!-- RISORSA 2 -->
                     <div class="risorsa-card animate-on-scroll" data-cat="guida">
+                        <div class="risorsa-card__cover">
+                            <picture>
+                                <source srcset="images/risorse/cover-confronto-modelli.webp" type="image/webp">
+                                <img src="images/risorse/cover-confronto-modelli.jpg" alt="ChatGPT vs Claude vs Gemini" loading="lazy" width="900" height="450">
+                            </picture>
+                        </div>
                         <div class="risorsa-card__icon icon--blue">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>
                         </div>
@@ -451,6 +486,12 @@
 
                     <!-- RISORSA 3 -->
                     <div class="risorsa-card animate-on-scroll" data-cat="prompt">
+                        <div class="risorsa-card__cover">
+                            <picture>
+                                <source srcset="images/risorse/cover-email-prompt.webp" type="image/webp">
+                                <img src="images/risorse/cover-email-prompt.jpg" alt="Email professionali con AI" loading="lazy" width="900" height="450">
+                            </picture>
+                        </div>
                         <div class="risorsa-card__icon icon--purple">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
                         </div>
@@ -473,6 +514,12 @@
 
                     <!-- RISORSA 4 -->
                     <div class="risorsa-card animate-on-scroll" data-cat="template">
+                        <div class="risorsa-card__cover">
+                            <picture>
+                                <source srcset="images/risorse/cover-report-template.webp" type="image/webp">
+                                <img src="images/risorse/cover-report-template.jpg" alt="Template report settimanale" loading="lazy" width="900" height="450">
+                            </picture>
+                        </div>
                         <div class="risorsa-card__icon icon--teal">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
                         </div>
@@ -495,6 +542,12 @@
 
                     <!-- RISORSA 5 -->
                     <div class="risorsa-card animate-on-scroll" data-cat="guida">
+                        <div class="risorsa-card__cover">
+                            <picture>
+                                <source srcset="images/risorse/cover-prompting-avanzato.webp" type="image/webp">
+                                <img src="images/risorse/cover-prompting-avanzato.jpg" alt="Guida al prompting avanzato" loading="lazy" width="900" height="450">
+                            </picture>
+                        </div>
                         <div class="risorsa-card__icon icon--amber">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
                         </div>
@@ -517,6 +570,12 @@
 
                     <!-- RISORSA 6 -->
                     <div class="risorsa-card animate-on-scroll" data-cat="prompt">
+                        <div class="risorsa-card__cover">
+                            <picture>
+                                <source srcset="images/risorse/cover-analisi-dati.webp" type="image/webp">
+                                <img src="images/risorse/cover-analisi-dati.jpg" alt="Prompt per analisi dati" loading="lazy" width="900" height="450">
+                            </picture>
+                        </div>
                         <div class="risorsa-card__icon icon--green">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M16 8v8m-4-5v5m-4-2v2m-2 4h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
                         </div>
@@ -539,6 +598,12 @@
 
                     <!-- RISORSA 7 -->
                     <div class="risorsa-card animate-on-scroll" data-cat="template">
+                        <div class="risorsa-card__cover">
+                            <picture>
+                                <source srcset="images/risorse/cover-checklist.webp" type="image/webp">
+                                <img src="images/risorse/cover-checklist.jpg" alt="Checklist automazione PMI" loading="lazy" width="900" height="450">
+                            </picture>
+                        </div>
                         <div class="risorsa-card__icon icon--pink">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"/></svg>
                         </div>
@@ -561,6 +626,12 @@
 
                     <!-- RISORSA 8 -->
                     <div class="risorsa-card animate-on-scroll" data-cat="guida">
+                        <div class="risorsa-card__cover">
+                            <picture>
+                                <source srcset="images/risorse/cover-immagini-ai.webp" type="image/webp">
+                                <img src="images/risorse/cover-immagini-ai.jpg" alt="Creare immagini con AI" loading="lazy" width="900" height="450">
+                            </picture>
+                        </div>
                         <div class="risorsa-card__icon icon--blue">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
                         </div>
@@ -583,6 +654,12 @@
 
                     <!-- RISORSA 9 -->
                     <div class="risorsa-card animate-on-scroll" data-cat="strumento">
+                        <div class="risorsa-card__cover">
+                            <picture>
+                                <source srcset="images/risorse/cover-stack-ai.webp" type="image/webp">
+                                <img src="images/risorse/cover-stack-ai.jpg" alt="Stack AI 2026" loading="lazy" width="900" height="450">
+                            </picture>
+                        </div>
                         <div class="risorsa-card__icon icon--green">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"/></svg>
                         </div>
