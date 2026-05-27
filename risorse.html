@@ -949,10 +949,8 @@
                                 body: JSON.stringify({ nome: nome, email: email, telefono: telefono, utm_source: 'sito-aiosha-risorse' })
                             })
                             .then(function () {
-                                setLoading(false);
-                                setMsg('Iscrizione confermata. Controlla la tua email tra pochi minuti.', 'success');
                                 form.reset();
-                                window.open('https://aiosha.it/downloads/guida-50-prompt-essenziali-ai-osha.pdf', '_blank', 'noopener');
+                                window.location.href = '/ty.html';
                             })
                             .catch(function () {
                                 setLoading(false);
