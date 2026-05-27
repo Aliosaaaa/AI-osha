@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+
+    <title>Grazie per l'iscrizione | AI Osha</title>
+    <meta name="description" content="Iscrizione confermata. Controlla la tua email: hai ricevuto il primo materiale gratuito.">
+
+    <link rel="canonical" href="https://aiosha.it/ty.html">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/uccello.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/uccello.png">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary: #00A8E8;
+            --primary-dark: #0090c8;
+            --orange: #F5A623;
+            --dark: #0D1117;
+            --grey: #5b6470;
+            --light: #f4f6f8;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        html, body { height: 100%; }
+        body {
+            font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
+            color: var(--dark);
+            background: linear-gradient(180deg, #ffffff 0%, #f4f9fc 100%);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            line-height: 1.5;
+        }
+
+        /* Brand bar */
+        .topbar {
+            background: var(--dark);
+            color: #fff;
+            padding: 18px 24px;
+            display: flex; align-items: center; justify-content: space-between;
+        }
+        .topbar__brand { font-weight: 700; font-size: 18px; letter-spacing: .3px; }
+        .topbar__brand span { color: #9aa1aa; font-weight: 400; margin-left: 8px; font-size: 13px; }
+        .topbar__home { color: #9aa1aa; text-decoration: none; font-size: 14px; }
+        .topbar__home:hover { color: #fff; }
+
+        /* Accent line */
+        .accent { height: 4px; background: linear-gradient(90deg, var(--primary) 0%, var(--orange) 100%); }
+
+        /* Container */
+        .wrap { max-width: 720px; margin: 0 auto; padding: 56px 24px 80px; }
+
+        /* Success card */
+        .card {
+            background: #fff;
+            border-radius: 20px;
+            padding: 48px 40px;
+            box-shadow: 0 8px 40px rgba(13, 17, 23, 0.06);
+            border: 1px solid #eef0f3;
+            text-align: center;
+        }
+
+        /* Check icon */
+        .check {
+            width: 88px; height: 88px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #d8f5e0 0%, #b6ecc4 100%);
+            display: inline-flex; align-items: center; justify-content: center;
+            margin: 0 auto 24px;
+            animation: pop .5s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+        .check svg { width: 44px; height: 44px; stroke: #1f8a4c; stroke-width: 3; fill: none; }
+        @keyframes pop { 0% { transform: scale(0); opacity: 0; } 100% { transform: scale(1); opacity: 1; } }
+
+        .eyebrow {
+            font-size: 12px; font-weight: 700; letter-spacing: 1.4px; text-transform: uppercase;
+            color: var(--primary); margin-bottom: 12px;
+        }
+        h1 {
+            font-size: 36px; line-height: 1.15; font-weight: 800;
+            color: var(--dark); margin-bottom: 18px; letter-spacing: -0.5px;
+        }
+        .lead {
+            font-size: 17px; line-height: 1.55; color: var(--grey);
+            max-width: 540px; margin: 0 auto 28px;
+        }
+
+        /* Inbox box */
+        .inbox {
+            background: #fff8e7;
+            border: 1px solid #f5e6b6;
+            border-left: 4px solid var(--orange);
+            border-radius: 12px;
+            padding: 22px 26px;
+            margin: 24px auto 36px;
+            max-width: 520px;
+            text-align: left;
+            display: flex; gap: 16px; align-items: flex-start;
+        }
+        .inbox__icon {
+            flex: 0 0 40px; width: 40px; height: 40px;
+            background: var(--orange); border-radius: 10px;
+            display: flex; align-items: center; justify-content: center;
+            color: #fff; font-size: 20px;
+        }
+        .inbox__body { flex: 1; }
+        .inbox__title { font-weight: 700; font-size: 15px; color: var(--dark); margin-bottom: 4px; }
+        .inbox__text { font-size: 14px; color: var(--grey); line-height: 1.5; }
+        .inbox__text strong { color: var(--dark); }
+
+        /* Buttons */
+        .actions {
+            display: flex; gap: 14px; justify-content: center; flex-wrap: wrap;
+            margin-top: 8px;
+        }
+        .btn {
+            display: inline-flex; align-items: center; gap: 8px;
+            padding: 15px 26px; border-radius: 12px;
+            font-family: inherit; font-size: 15px; font-weight: 700; text-decoration: none;
+            border: 0; cursor: pointer; transition: transform .1s, box-shadow .15s, background .15s;
+            white-space: nowrap;
+        }
+        .btn--primary {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: #fff;
+            box-shadow: 0 6px 18px rgba(0,168,232,0.32);
+        }
+        .btn--primary:hover { transform: translateY(-1px); box-shadow: 0 10px 22px rgba(0,168,232,0.40); }
+        .btn--ghost {
+            background: #fff; color: var(--dark);
+            border: 1.5px solid #d0d6dd;
+        }
+        .btn--ghost:hover { border-color: var(--dark); background: #fafbfc; }
+        .btn svg { width: 18px; height: 18px; }
+
+        /* Footer */
+        .footer {
+            text-align: center; padding: 32px 24px;
+            font-size: 12px; color: #9aa1aa;
+        }
+        .footer a { color: #9aa1aa; }
+
+        /* Mobile */
+        @media (max-width: 600px) {
+            .wrap { padding: 32px 16px 48px; }
+            .card { padding: 36px 22px; border-radius: 16px; }
+            h1 { font-size: 26px; }
+            .lead { font-size: 15px; }
+            .inbox { flex-direction: column; gap: 10px; padding: 18px; }
+            .inbox__icon { width: 36px; height: 36px; }
+            .actions { flex-direction: column; }
+            .btn { width: 100%; justify-content: center; }
+        }
+    </style>
+</head>
+<body>
+
+<header class="topbar">
+    <a href="/" class="topbar__brand" style="text-decoration:none;color:#fff;">AI Osha <span>| aiosha.it</span></a>
+    <a href="/" class="topbar__home">← Torna alla home</a>
+</header>
+<div class="accent"></div>
+
+<main class="wrap">
+    <div class="card">
+        <div class="check" aria-hidden="true">
+            <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M5 13l4 4L19 7"/>
+            </svg>
+        </div>
+
+        <div class="eyebrow">Iscrizione confermata</div>
+        <h1>Benvenuto nell'ecosistema AI Osha</h1>
+        <p class="lead">
+            Grazie per esserti iscritto. Ti ho appena inviato la prima risorsa: la guida con
+            i <strong>50 prompt essenziali</strong> che uso ogni giorno nel mio lavoro con l'intelligenza artificiale.
+        </p>
+
+        <div class="inbox" role="status">
+            <div class="inbox__icon" aria-hidden="true">✉</div>
+            <div class="inbox__body">
+                <div class="inbox__title">Controlla subito la tua email</div>
+                <div class="inbox__text">
+                    Cerca un messaggio da <strong>Aliosha Battaglini — AI Osha</strong> (potrebbe
+                    finire in <em>Promozioni</em> o <em>Spam</em>: spostalo in <strong>Posta in arrivo</strong>
+                    per non perderti le prossime).
+                </div>
+            </div>
+        </div>
+
+        <div class="actions">
+            <a href="/corso.html" class="btn btn--primary">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M22 10v6M2 10l10-5 10 5-10 5z"/>
+                    <path d="M6 12v5c3 3 9 3 12 0v-5"/>
+                </svg>
+                Scopri il corso
+            </a>
+            <a href="/" class="btn btn--ghost">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M3 12l9-9 9 9"/>
+                    <path d="M5 10v10h14V10"/>
+                </svg>
+                Torna alla home
+            </a>
+        </div>
+    </div>
+
+    <p class="footer">
+        Hai un dubbio? Scrivimi su WhatsApp <a href="https://wa.me/393313883929?text=Ciao%20Aliosha%2C%20mi%20sono%20appena%20iscritto%20dal%20sito" target="_blank" rel="noopener"><strong>331 388 3929</strong></a>
+        — rispondo io, non un'AI.
+    </p>
+</main>
+
+</body>
+</html>
