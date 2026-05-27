@@ -2947,14 +2947,126 @@
                         Solo contenuti che funzionano.
                     </p>
                     
-                    <div class="AW-Form-595070283"></div>
-                    <script type="text/javascript">(function(d, s, id) {
-                        var js, fjs = d.getElementsByTagName(s)[0];
-                        if (d.getElementById(id)) return;
-                        js = d.createElement(s); js.id = id;
-                        js.src = "https://forms.aweber.com/form/83/595070283.js";
-                        fjs.parentNode.insertBefore(js, fjs);
-                        }(document, "script", "aweber-wjs-ydpq9vgxs"));
+                    <!-- ──────────────────────────────────────────────────────
+                         Lead form Brevo (lista #26 AI-OSHA SITO)
+                         Sostituisce embed AWeber. POSTa a Google Apps Script che
+                         crea il contatto su Brevo. La mail welcome viene
+                         inviata dall'Automation Brevo nativa.
+                         ────────────────────────────────────────────────────── -->
+                    <form class="lead-form" id="leadForm" novalidate>
+                        <div class="lead-form__row">
+                            <input type="text" name="nome" id="lf-nome" required autocomplete="given-name"
+                                   placeholder="Il tuo nome" class="lead-form__input"/>
+                        </div>
+                        <div class="lead-form__row">
+                            <input type="email" name="email" id="lf-email" required autocomplete="email"
+                                   placeholder="La tua email" class="lead-form__input"/>
+                        </div>
+                        <div class="lead-form__row">
+                            <input type="tel" name="telefono" id="lf-tel" autocomplete="tel"
+                                   placeholder="Numero di telefono (facoltativo)" class="lead-form__input"/>
+                        </div>
+                        <button type="submit" class="lead-form__btn" id="lf-btn">
+                            <span class="lead-form__btn-label">Scarica la guida gratis</span>
+                            <span class="lead-form__btn-spinner" aria-hidden="true"></span>
+                        </button>
+                        <p class="lead-form__msg" id="lf-msg" role="status" aria-live="polite"></p>
+                    </form>
+                    <style>
+                        .lead-form { max-width: 460px; margin: 0 auto; display: flex; flex-direction: column; gap: 12px; text-align: left; }
+                        .lead-form__row { width: 100%; }
+                        .lead-form__input {
+                            width: 100%; box-sizing: border-box;
+                            padding: 14px 18px;
+                            font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
+                            font-size: 15px; line-height: 1.4; color: #0D1117;
+                            background: #ffffff;
+                            border: 1.5px solid #d0d6dd; border-radius: 12px;
+                            outline: none; transition: border-color .15s ease, box-shadow .15s ease;
+                        }
+                        .lead-form__input::placeholder { color: #9aa1aa; }
+                        .lead-form__input:focus { border-color: #00A8E8; box-shadow: 0 0 0 4px rgba(0,168,232,0.15); }
+                        .lead-form__input.is-invalid { border-color: #e25c5c; box-shadow: 0 0 0 4px rgba(226,92,92,0.12); }
+                        .lead-form__btn {
+                            position: relative;
+                            padding: 16px 20px;
+                            font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
+                            font-size: 16px; font-weight: 700; color: #ffffff;
+                            background: linear-gradient(135deg, #00A8E8 0%, #0090c8 100%);
+                            border: 0; border-radius: 12px; cursor: pointer;
+                            transition: transform .1s ease, box-shadow .15s ease, opacity .15s ease;
+                            box-shadow: 0 6px 18px rgba(0,168,232,0.32);
+                        }
+                        .lead-form__btn:hover { transform: translateY(-1px); box-shadow: 0 10px 22px rgba(0,168,232,0.38); }
+                        .lead-form__btn:active { transform: translateY(0); }
+                        .lead-form__btn:disabled { opacity: .7; cursor: progress; }
+                        .lead-form__btn-spinner {
+                            display: none; width: 16px; height: 16px;
+                            border: 2px solid rgba(255,255,255,.45); border-top-color: #fff;
+                            border-radius: 50%; margin-left: 10px; vertical-align: -3px;
+                            animation: lfspin .7s linear infinite;
+                        }
+                        .lead-form.is-loading .lead-form__btn-spinner { display: inline-block; }
+                        @keyframes lfspin { to { transform: rotate(360deg); } }
+                        .lead-form__msg { min-height: 20px; margin: 4px 0 0; font-size: 14px; line-height: 1.4; color: #5b6470; }
+                        .lead-form__msg.is-success { color: #1f8a4c; font-weight: 600; }
+                        .lead-form__msg.is-error { color: #c62828; font-weight: 600; }
+                    </style>
+                    <script>
+                    (function () {
+                        // 👇 INCOLLA QUI L'URL DEL TUO GOOGLE APPS SCRIPT (termina con /exec)
+                        var BREVO_FORM_ENDPOINT = 'INCOLLA_QUI_URL_GAS';
+
+                        var form = document.getElementById('leadForm');
+                        if (!form) return;
+                        var btn = document.getElementById('lf-btn');
+                        var msg = document.getElementById('lf-msg');
+                        var fNome = document.getElementById('lf-nome');
+                        var fEmail = document.getElementById('lf-email');
+                        var fTel = document.getElementById('lf-tel');
+
+                        function setMsg(text, type) {
+                            msg.textContent = text || '';
+                            msg.classList.remove('is-success', 'is-error');
+                            if (type) msg.classList.add('is-' + type);
+                        }
+                        function setLoading(on) {
+                            form.classList.toggle('is-loading', !!on);
+                            btn.disabled = !!on;
+                        }
+                        function isEmail(s) { return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(s); }
+
+                        form.addEventListener('submit', function (ev) {
+                            ev.preventDefault();
+                            [fNome, fEmail].forEach(function (i) { i.classList.remove('is-invalid'); });
+                            var nome = fNome.value.trim();
+                            var email = fEmail.value.trim();
+                            var telefono = fTel.value.trim();
+
+                            if (!nome) { fNome.classList.add('is-invalid'); fNome.focus(); return setMsg('Inserisci il tuo nome.', 'error'); }
+                            if (!isEmail(email)) { fEmail.classList.add('is-invalid'); fEmail.focus(); return setMsg('Inserisci un’email valida.', 'error'); }
+
+                            setLoading(true);
+                            setMsg('Invio in corso…');
+
+                            fetch(BREVO_FORM_ENDPOINT, {
+                                method: 'POST',
+                                mode: 'no-cors',
+                                headers: { 'Content-Type': 'text/plain;charset=UTF-8' },
+                                body: JSON.stringify({ nome: nome, email: email, telefono: telefono, utm_source: 'sito-aiosha-home' })
+                            })
+                            .then(function () {
+                                setLoading(false);
+                                setMsg('Iscrizione confermata. Controlla la tua email tra pochi minuti.', 'success');
+                                form.reset();
+                                window.open('https://aiosha.it/downloads/guida-50-prompt-essenziali-ai-osha.pdf', '_blank', 'noopener');
+                            })
+                            .catch(function () {
+                                setLoading(false);
+                                setMsg('Si è verificato un errore. Riprova o scrivimi su WhatsApp 331 388 3929.', 'error');
+                            });
+                        });
+                    })();
                     </script>
                     
                     <p class="cta-section__disclaimer">
@@ -3426,3 +3538,4 @@
     </script>
 </body>
 </html>
+
