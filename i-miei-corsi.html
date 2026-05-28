@@ -128,6 +128,13 @@
         .welcome-video__placeholder-icon { font-size: 4rem; margin-bottom: 1rem; opacity: 0.6; }
         .welcome-video__placeholder-text { font-size: 1rem; font-weight: 600; color: var(--gray-400); }
         .welcome-video__placeholder-sub { font-size: 0.85rem; color: var(--gray-400); margin-top: 0.4rem; opacity: 0.7; }
+        .welcome-video__poster { position: absolute; inset: 0; background-size: cover; background-position: center; cursor: pointer; }
+        .welcome-video__poster::after { content: ""; position: absolute; inset: 0; background: rgba(5,8,14,0.35); transition: background 0.2s; }
+        .welcome-video__poster:hover::after { background: rgba(5,8,14,0.15); }
+        .welcome-video__play-btn { position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); z-index: 2; width: 78px; height: 78px; border-radius: 50%; border: none; background: rgba(0,168,232,0.92); display: flex; align-items: center; justify-content: center; cursor: pointer; box-shadow: 0 10px 30px rgba(0,0,0,0.5); transition: transform 0.2s, background 0.2s; }
+        .welcome-video__poster:hover .welcome-video__play-btn { transform: translate(-50%,-50%) scale(1.08); background: rgba(0,168,232,1); }
+        .welcome-video__play-btn svg { width: 30px; height: 30px; margin-left: 4px; }
+        .welcome-video__player iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
         .welcome-video__info { padding: 1.25rem 1.5rem; border-top: 1px solid var(--border); display: flex; align-items: center; gap: 0.75rem; }
         .welcome-video__info-icon { width: 36px; height: 36px; border-radius: 50%; background: rgba(0,168,232,0.15); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
         .welcome-video__info h3 { color: #fff; font-size: 0.95rem; font-weight: 700; }
@@ -407,10 +414,12 @@
 
     <!-- VIDEO BENVENUTO -->
     <div class="welcome-video">
-        <div class="welcome-video__player">
-            <div class="welcome-video__placeholder-icon">🎬</div>
-            <div class="welcome-video__placeholder-text">Video di benvenuto in arrivo</div>
-            <div class="welcome-video__placeholder-sub">Aliosha ti racconta i 3 corsi in 2 minuti</div>
+        <div class="welcome-video__player" id="welcome-video-player" data-youtube="D4xBW2ipYhA">
+            <div class="welcome-video__poster" style="background-image:url('https://i.ytimg.com/vi/D4xBW2ipYhA/maxresdefault.jpg');" role="button" tabindex="0" aria-label="Riproduci il video di benvenuto">
+                <button class="welcome-video__play-btn" aria-label="Riproduci video">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#fff"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+                </button>
+            </div>
         </div>
         <div class="welcome-video__info">
             <div class="welcome-video__info-icon">
@@ -608,6 +617,28 @@ document.querySelectorAll('.corso-card__header').forEach(el => {
         }
     });
 });
+
+// Video di benvenuto: poster → embed YouTube inline (resta nel sito, niente redirect)
+(function() {
+    const player = document.getElementById('welcome-video-player');
+    if (!player) return;
+    const poster = player.querySelector('.welcome-video__poster');
+    function playWelcomeVideo() {
+        const id = player.getAttribute('data-youtube');
+        if (!id) return;
+        const iframe = document.createElement('iframe');
+        iframe.src = 'https://www.youtube.com/embed/' + id + '?autoplay=1&rel=0&modestbranding=1';
+        iframe.title = 'Video di benvenuto — Aliosha';
+        iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
+        iframe.allowFullscreen = true;
+        player.innerHTML = '';
+        player.appendChild(iframe);
+    }
+    poster.addEventListener('click', playWelcomeVideo);
+    poster.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); playWelcomeVideo(); }
+    });
+})();
 </script>
 
 </body>
