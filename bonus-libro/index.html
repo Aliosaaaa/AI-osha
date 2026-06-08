@@ -165,7 +165,9 @@
     background: var(--white); border: 1px solid var(--gray-200);
     border-radius: var(--radius-lg); padding: 18px 22px; margin-bottom: 10px;
     transition: border-color .15s, box-shadow .15s, transform .15s;
+    cursor: pointer;
   }
+  .resource-card:focus-visible { outline: 2px solid var(--primary); outline-offset: 2px; }
   .resource-card:hover { border-color: var(--primary-light); box-shadow: 0 4px 16px rgba(0,168,232,0.10); transform: translateY(-1px); }
   .resource-id { font-family: var(--font-mono); font-size: 0.72rem; font-weight: 500; color: var(--highlight-dark); text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 4px; }
   .resource-title { font-size: 1rem; font-weight: 700; color: var(--gray-900); margin-bottom: 3px; }
@@ -478,6 +480,21 @@
       msg.className = 'form-msg error';
       msg.textContent = 'Qualcosa è andato storto. Riprova o scrivici su WhatsApp.';
     }
+  });
+
+  // Ogni card risorsa porta al form di iscrizione (le risorse si ricevono via email)
+  function vaiAlForm() {
+    document.getElementById('optinForm').scrollIntoView({ behavior: 'smooth', block: 'center' });
+    setTimeout(function () { document.getElementById('nome').focus(); }, 450);
+  }
+  document.querySelectorAll('.resource-card').forEach(function (card) {
+    card.setAttribute('role', 'button');
+    card.setAttribute('tabindex', '0');
+    card.setAttribute('aria-label', 'Iscriviti per ricevere questa risorsa via email');
+    card.addEventListener('click', vaiAlForm);
+    card.addEventListener('keydown', function (e) {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); vaiAlForm(); }
+    });
   });
 </script>
 
