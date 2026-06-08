@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Grazie! Controlla la tua email — AI Osha</title>
+<meta name="description" content="Iscrizione completata. Controlla subito la tua email (anche nello spam) per ricevere i 20 bonus.">
+<link rel="icon" href="https://aiosha.it/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --primary: #00A8E8; --primary-dark: #0088c2; --primary-light: #33b9ed;
+    --accent: #1E3A5F; --highlight: #F5A623; --highlight-dark: #d4911f;
+    --dark: #0D1117; --dark-soft: #161b22;
+    --gray-900: #1f2937; --gray-600: #4b5563; --gray-500: #6b7280; --gray-300: #d1d5db; --gray-200: #e5e7eb;
+    --light: #E8F4FD; --white: #ffffff; --success: #10b981;
+    --font-display: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+    --radius-lg: 0.75rem; --radius-2xl: 1.5rem;
+    --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { font-family: var(--font-display); background: var(--white); color: var(--gray-900); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+  .container { max-width: 760px; margin: 0 auto; padding: 0 24px; }
+  .gradient-gold { background: linear-gradient(135deg, #F5A623, #e07b00); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+
+  /* HEADER */
+  .topbar { background: var(--dark); display:flex; align-items:center; justify-content:space-between; padding: 14px 24px; }
+  .topbar img { height: 30px; width: auto; }
+  .topbar a.site-btn { font-size: 0.85rem; font-weight: 700; color:#fff; text-decoration:none; border:1px solid rgba(255,255,255,0.25); padding:8px 16px; border-radius: var(--radius-lg); transition: background .15s; }
+  .topbar a.site-btn:hover { background: rgba(255,255,255,0.10); }
+
+  /* HERO */
+  .hero { position: relative; overflow: hidden; background: var(--dark); text-align:center; padding: 64px 0 56px; }
+  .hero__bg { position:absolute; inset:0; z-index:0;
+    background:
+      radial-gradient(ellipse 80% 50% at 50% -10%, rgba(0,168,232,0.22) 0%, transparent 55%),
+      radial-gradient(ellipse 60% 40% at 100% 100%, rgba(245,166,35,0.10) 0%, transparent 50%),
+      linear-gradient(180deg, var(--dark) 0%, var(--dark-soft) 100%);
+  }
+  .hero .container { position: relative; z-index: 1; }
+  .check { width: 76px; height: 76px; margin: 0 auto 22px; background: var(--success); border-radius: 50%; display:flex; align-items:center; justify-content:center; box-shadow: 0 0 40px rgba(16,185,129,0.4); }
+  .check svg { width: 42px; height: 42px; fill: #fff; }
+  .hero h1 { font-size: clamp(1.9rem, 5vw, 2.8rem); font-weight: 800; color:#fff; letter-spacing:-0.02em; margin-bottom: 14px; }
+  .hero p.lead { font-size: clamp(1rem, 2.2vw, 1.15rem); color: var(--gray-300); max-width: 520px; margin: 0 auto; }
+
+  /* ALERT MAIL */
+  .alert {
+    max-width: 560px; margin: -28px auto 0; position: relative; z-index: 2;
+    background: var(--white); border: 1px solid var(--gray-200); border-left: 5px solid var(--highlight);
+    border-radius: var(--radius-2xl); box-shadow: var(--shadow-xl); padding: 26px 28px;
+  }
+  .alert h2 { font-size: 1.15rem; font-weight: 800; color: var(--accent); margin-bottom: 8px; display:flex; align-items:center; gap:8px; }
+  .alert p { font-size: 0.95rem; color: var(--gray-600); }
+  .alert .mailtag { display:inline-block; font-family: var(--font-mono); font-size: 0.85rem; background: var(--light); color: var(--primary-dark); padding: 3px 9px; border-radius: 6px; font-weight: 500; }
+
+  /* SECTION */
+  section.block { padding: 56px 0; }
+  .review-card {
+    background: linear-gradient(135deg, var(--accent) 0%, #15293f 100%); color:#fff;
+    border-radius: var(--radius-2xl); padding: 38px 34px; text-align: center; position: relative; overflow: hidden;
+  }
+  .review-card .gift { font-size: 2.4rem; margin-bottom: 10px; }
+  .review-card h2 { font-size: clamp(1.5rem, 3.5vw, 2rem); font-weight: 800; letter-spacing:-0.02em; margin-bottom: 12px; }
+  .review-card > p { font-size: 1.02rem; color: var(--gray-300); max-width: 480px; margin: 0 auto 26px; }
+  .steps { text-align: left; max-width: 480px; margin: 0 auto 28px; }
+  .step { display:flex; gap: 14px; align-items:flex-start; margin-bottom: 14px; }
+  .step .num { flex-shrink:0; width: 28px; height: 28px; border-radius: 50%; background: var(--highlight); color:#0D1117; font-weight: 800; font-size: 0.85rem; display:flex; align-items:center; justify-content:center; }
+  .step .txt { font-size: 0.95rem; color: #e5e7eb; line-height: 1.5; }
+  .step .txt strong { color: #fff; }
+  .btn-gold {
+    display:inline-block; background: linear-gradient(135deg, var(--highlight) 0%, var(--highlight-dark) 100%);
+    color:#fff; text-decoration:none; font-weight:800; font-size: 1.05rem; padding: 15px 34px; border-radius: var(--radius-lg);
+    box-shadow: 0 4px 14px rgba(245,166,35,0.4); transition: transform .15s, box-shadow .15s;
+  }
+  .btn-gold:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(245,166,35,0.5); }
+  .btn-ghost { display:inline-block; margin-top: 14px; color:#fff; text-decoration:none; font-weight:600; font-size:0.92rem; opacity:.85; }
+  .btn-ghost:hover { opacity: 1; text-decoration: underline; }
+  .mail-prefill { font-family: var(--font-mono); }
+
+  /* CTA SITO */
+  .cta-site { text-align:center; padding: 8px 0 64px; }
+  .cta-site h3 { font-size: 1.3rem; font-weight: 800; color: var(--accent); margin-bottom: 8px; }
+  .cta-site p { color: var(--gray-600); margin-bottom: 20px; }
+  .btn-blue {
+    display:inline-block; background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+    color:#fff; text-decoration:none; font-weight:700; font-size:1.02rem; padding: 14px 32px; border-radius: var(--radius-lg);
+    box-shadow: 0 4px 14px rgba(0,168,232,0.35); transition: transform .15s, box-shadow .15s;
+  }
+  .btn-blue:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,168,232,0.45); }
+
+  footer { background: var(--dark-soft); text-align:center; padding: 28px 24px; font-size: 0.8rem; color: var(--gray-500); }
+  footer a { color: var(--primary); text-decoration: none; }
+</style>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="topbar">
+  <img src="https://aiosha.it/images/logo-aiosha.png" alt="AI Osha">
+  <a class="site-btn" href="https://aiosha.it" target="_blank" rel="noopener">Vai al sito aiosha.it →</a>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero__bg"></div>
+  <div class="container">
+    <div class="check"><svg viewBox="0 0 24 24"><path d="M9 16.17 4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg></div>
+    <h1>Grazie! Sei <span class="gradient-gold">dentro</span> 🎉</h1>
+    <p class="lead">Ti ho appena inviato una mail con tutti i 20 bonus del libro. Ora il passo più importante 👇</p>
+  </div>
+</section>
+
+<!-- ALERT MAIL -->
+<div class="alert">
+  <h2>📬 Controlla SUBITO la tua email</h2>
+  <p>
+    Guarda anche in <strong>Spam / Promozioni</strong>: a volte la prima mail finisce lì.
+    Il mittente è <span class="mailtag">corsi@aiosha.it</span> — aggiungilo ai contatti così le prossime arrivano dritte in posta.
+  </p>
+</div>
+
+<!-- RECENSIONE -->
+<section class="block">
+  <div class="container">
+    <div class="review-card">
+      <div class="gift">🎁</div>
+      <h2>Vuoi un <span class="gradient-gold">bonus extra</span>?</h2>
+      <p>Lascia una recensione al libro e ti regalo una risorsa in più: <strong>il prompt esatto che mi ha permesso di generare slide, siti, video e app con l'AI</strong>.</p>
+
+      <div class="steps">
+        <div class="step"><div class="num">1</div><div class="txt">Lascia una <strong>recensione al libro</strong> (bastano 2 righe sincere).</div></div>
+        <div class="step"><div class="num">2</div><div class="txt">Fai uno <strong>screenshot</strong> della recensione.</div></div>
+        <div class="step"><div class="num">3</div><div class="txt">Inviala a <strong>info@aiosha.it</strong>.</div></div>
+        <div class="step"><div class="num">4</div><div class="txt">Ricevi il <strong>prompt magico</strong> (slide / sito / video / app) entro 24h.</div></div>
+      </div>
+
+      <!-- ⚠️ Inserire il vero link recensione Amazon del libro -->
+      <a class="btn-gold" id="reviewBtn" href="#INSERIRE-LINK-RECENSIONE-AMAZON" target="_blank" rel="noopener">★ Lascia la recensione</a>
+      <br>
+      <a class="btn-ghost mail-prefill" href="mailto:info@aiosha.it?subject=Recensione%20libro%20AI%20in%20Pratica%20-%20bonus%20extra&body=Ciao%20Aliosha%2C%0Aho%20lasciato%20la%20recensione%20al%20libro%20(screenshot%20in%20allegato).%0AInviami%20il%20prompt%20bonus!%0A%0AGrazie">✉️ Ho già recensito → invia lo screenshot a info@aiosha.it</a>
+    </div>
+  </div>
+</section>
+
+<!-- CTA SITO -->
+<section class="cta-site">
+  <div class="container">
+    <h3>Mentre aspetti la mail…</h3>
+    <p>Dai un'occhiata a corsi, articoli e strumenti su AI Osha.</p>
+    <a class="btn-blue" href="https://aiosha.it" target="_blank" rel="noopener">Scopri AI Osha →</a>
+  </div>
+</section>
+
+<footer>
+  <p>Libro di <a href="https://aiosha.it" target="_blank">Aliosha Battaglini</a> — AI in Pratica per chi lavora · <a href="https://aiosha.it" target="_blank">aiosha.it</a></p>
+</footer>
+
+</body>
+</html>
