@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La tua opinione sul libro | AI Osha</title>
+    <meta name="description" content="Raccontami com'è andata col libro Intelligenza Artificiale in Pratica per chi lavora. La tua opinione conta.">
+    <meta name="robots" content="noindex">
+    <link rel="icon" type="image/png" href="images/uccello.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root{--primary:#00A8E8;--primary-dark:#0088c2;--highlight:#F5A623;--highlight-dark:#d4911f;--dark:#0D1117;--dark-soft:#161b22;--gray-300:#d1d5db;--gray-400:#9ca3af;--white:#fff;--success:#10b981;--font:'Plus Jakarta Sans',sans-serif;}
+        *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+        body{font-family:var(--font);background:radial-gradient(ellipse 80% 50% at 50% -10%,rgba(0,168,232,.12),transparent 60%),var(--dark);color:var(--gray-300);min-height:100vh;display:flex;flex-direction:column;}
+        .topbar{display:flex;align-items:center;justify-content:center;padding:1.2rem;}
+        .logo{display:flex;align-items:center;gap:.5rem;text-decoration:none;}
+        .logo img{height:30px;} .logo span{font-size:1.2rem;font-weight:800;color:#fff;}
+        main{flex:1;display:flex;align-items:center;justify-content:center;padding:1.25rem;}
+        .card{background:var(--dark-soft);border:1px solid rgba(255,255,255,.08);border-radius:1.3rem;max-width:520px;width:100%;padding:2.4rem 2rem;text-align:center;box-shadow:0 30px 60px rgba(0,0,0,.5);}
+        .step{display:none;} .step.active{display:block;animation:fade .35s;}
+        @keyframes fade{from{opacity:0;transform:translateY(8px);}to{opacity:1;transform:none;}}
+        h1{font-size:1.6rem;font-weight:800;color:#fff;margin-bottom:.6rem;letter-spacing:-.02em;}
+        .sub{color:var(--gray-400);font-size:1rem;margin-bottom:1.8rem;}
+        /* step 1 buttons */
+        .choices{display:grid;gap:.8rem;}
+        .choice{display:flex;align-items:center;gap:1rem;padding:1.1rem 1.3rem;background:#0d1117;border:1.5px solid rgba(255,255,255,.1);border-radius:.9rem;cursor:pointer;font-family:inherit;font-size:1.05rem;font-weight:700;color:#fff;text-align:left;transition:border-color .15s,transform .15s,background .15s;}
+        .choice:hover{transform:translateY(-2px);}
+        .choice .emoji{font-size:1.7rem;}
+        .choice small{display:block;font-weight:500;font-size:.82rem;color:var(--gray-400);}
+        .choice.ottima:hover{border-color:var(--success);background:rgba(16,185,129,.08);}
+        .choice.media:hover{border-color:var(--highlight);background:rgba(245,166,35,.08);}
+        .choice.bassa:hover{border-color:#ef4444;background:rgba(239,68,68,.08);}
+        /* step 2 form */
+        .stars{display:flex;justify-content:center;gap:.4rem;margin:.4rem 0 1.4rem;font-size:2.3rem;}
+        .stars span{cursor:pointer;color:#374151;transition:color .12s,transform .12s;}
+        .stars span:hover{transform:scale(1.15);}
+        .stars span.on{color:var(--highlight);}
+        label{display:block;text-align:left;font-size:.8rem;font-weight:700;color:var(--gray-400);text-transform:uppercase;letter-spacing:.04em;margin-bottom:.45rem;}
+        textarea,input{width:100%;font-family:inherit;font-size:1rem;color:#fff;background:#0d1117;border:1.5px solid rgba(255,255,255,.12);border-radius:.7rem;padding:.85rem 1rem;margin-bottom:1.1rem;}
+        textarea{min-height:120px;resize:vertical;} textarea:focus,input:focus{outline:none;border-color:var(--primary);}
+        .btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;width:100%;padding:1rem;font-size:1.05rem;font-weight:700;font-family:inherit;border:none;border-radius:.75rem;cursor:pointer;text-decoration:none;transition:transform .15s,box-shadow .15s;}
+        .btn-primary{background:linear-gradient(135deg,var(--highlight),var(--highlight-dark));color:#1a1205;box-shadow:0 6px 18px rgba(245,166,35,.35);}
+        .btn-primary:hover{transform:translateY(-2px);}
+        .btn-primary:disabled{opacity:.6;cursor:default;transform:none;}
+        .btn-ghost{background:transparent;color:var(--primary);border:2px solid var(--primary);margin-top:.8rem;}
+        .back{background:none;border:none;color:var(--gray-400);font-size:.85rem;cursor:pointer;margin-top:1rem;font-family:inherit;text-decoration:underline;}
+        .msg{font-size:.85rem;color:#ef4444;min-height:1.1rem;margin-bottom:.6rem;}
+        .check{width:64px;height:64px;margin:0 auto 1.2rem;background:var(--success);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:2rem;}
+        .soft-amz{font-size:.85rem;color:var(--gray-400);margin-top:1.5rem;}
+        .soft-amz a{color:var(--primary);}
+        footer{text-align:center;padding:1.2rem;color:var(--gray-400);font-size:.75rem;}
+        footer a{color:var(--gray-400);}
+    </style>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-6GNKJZJY1V"></script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-6GNKJZJY1V');</script>
+</head>
+<body>
+    <header class="topbar">
+        <a href="libro.html" class="logo"><img src="images/uccello.png" alt="AI Osha"><span>AI <span style="color:#00A8E8;">Osha</span></span></a>
+    </header>
+
+    <main>
+        <div class="card">
+            <!-- STEP 1: esperienza -->
+            <div class="step active" id="step1">
+                <h1>Com'è andata col libro?</h1>
+                <p class="sub">Mi interessa davvero la tua opinione: ci metto un attimo a leggerla.</p>
+                <div class="choices">
+                    <button class="choice ottima" id="cOttima"><span class="emoji">😍</span><span>Ottima<small>Mi è stato utile, lo consiglierei</small></span></button>
+                    <button class="choice media" id="cMedia"><span class="emoji">🙂</span><span>Nella media<small>Qualcosa di buono, ma migliorabile</small></span></button>
+                    <button class="choice bassa" id="cBassa"><span class="emoji">😕</span><span>Sotto le aspettative<small>Mi aspettavo di più</small></span></button>
+                </div>
+            </div>
+
+            <!-- STEP 2: feedback privato -->
+            <div class="step" id="step2">
+                <h1>Raccontami com'è andata</h1>
+                <p class="sub">Va dritto a me (Aliosha), in privato. Mi aiuta a migliorare il libro e i prossimi contenuti.</p>
+                <label>Che voto daresti?</label>
+                <div class="stars" id="stars">
+                    <span data-v="1">★</span><span data-v="2">★</span><span data-v="3">★</span><span data-v="4">★</span><span data-v="5">★</span>
+                </div>
+                <label for="testo">Cosa miglioreresti? Cosa ti aspettavi?</label>
+                <textarea id="testo" placeholder="Scrivi liberamente — anche due righe mi sono utilissime."></textarea>
+                <label for="email">La tua email <span style="text-transform:none;font-weight:500;">(facoltativa, se vuoi una risposta)</span></label>
+                <input type="email" id="email" placeholder="latua@email.it">
+                <p class="msg" id="msg"></p>
+                <button class="btn btn-primary" id="invia">Invia il feedback</button>
+                <button class="back" id="back1">← Torna indietro</button>
+            </div>
+
+            <!-- STEP 3: grazie -->
+            <div class="step" id="step3">
+                <div class="check">✓</div>
+                <h1>Grazie di cuore.</h1>
+                <p class="sub">Ho ricevuto la tua opinione e la leggo personalmente. Per me vale tantissimo.</p>
+                <p class="soft-amz">Se ti va, puoi anche lasciare una recensione pubblica su Amazon — aiuta altri come te a trovare il libro.<br>
+                <a id="amzSoft" href="https://www.amazon.it/review/create-review?&asin=B0H4RNXR8C" target="_blank" rel="noopener" onclick="gtag('event','recensione_amazon',{via:'post_feedback'});">Lascia una recensione su Amazon →</a></p>
+            </div>
+        </div>
+    </main>
+
+    <footer>© 2026 AI Osha — Aliosha Battaglini · <a href="libro.html">Pagina libro</a></footer>
+
+    <script>
+      // ⚠️ INCOLLA QUI l'URL della web app Apps Script (finisce con /exec)
+      const FEEDBACK_ENDPOINT = "INCOLLA_QUI_URL_APPS_SCRIPT_EXEC";
+      const AMAZON_REVIEW = "https://www.amazon.it/review/create-review?&asin=B0H4RNXR8C";
+
+      function show(id){ document.querySelectorAll('.step').forEach(s=>s.classList.remove('active')); document.getElementById(id).classList.add('active'); }
+
+      let sentiment='', rating=0;
+      document.getElementById('cOttima').addEventListener('click',()=>{ gtag('event','recensione_filtro',{esperienza:'ottima'}); window.location.href = AMAZON_REVIEW; });
+      document.getElementById('cMedia').addEventListener('click',()=>{ sentiment='media'; gtag('event','recensione_filtro',{esperienza:'media'}); show('step2'); });
+      document.getElementById('cBassa').addEventListener('click',()=>{ sentiment='bassa'; gtag('event','recensione_filtro',{esperienza:'bassa'}); show('step2'); });
+      document.getElementById('back1').addEventListener('click',()=>show('step1'));
+
+      // stelle
+      const stars=document.querySelectorAll('#stars span');
+      stars.forEach(s=>s.addEventListener('click',()=>{ rating=+s.dataset.v; stars.forEach(x=>x.classList.toggle('on', +x.dataset.v<=rating)); }));
+
+      // invio
+      const btn=document.getElementById('invia'), msg=document.getElementById('msg');
+      btn.addEventListener('click', async ()=>{
+        const testo=document.getElementById('testo').value.trim();
+        const email=document.getElementById('email').value.trim();
+        if(!rating && !testo){ msg.textContent='Dai un voto o scrivi due righe, così ho qualcosa di utile :)'; return; }
+        msg.textContent=''; btn.disabled=true; btn.textContent='Invio…';
+        const payload={ esperienza:sentiment, voto:rating, testo:testo, email:email, libro:'AI in Pratica per chi lavora', data:new Date().toISOString() };
+        try{
+          if(FEEDBACK_ENDPOINT.indexOf('http')===0){
+            await fetch(FEEDBACK_ENDPOINT,{method:'POST',mode:'no-cors',body:JSON.stringify(payload)});
+          }
+          gtag('event','feedback_inviato',{esperienza:sentiment,voto:rating});
+          show('step3');
+        }catch(e){ btn.disabled=false; btn.textContent='Invia il feedback'; msg.textContent='Qualcosa è andato storto. Riprova tra un attimo.'; }
+      });
+    </script>
+</body>
+</html>
