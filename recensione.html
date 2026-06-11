@@ -68,9 +68,8 @@
                 <h1>Com'è andata col libro?</h1>
                 <p class="sub">Mi interessa davvero la tua opinione: ci metto un attimo a leggerla.</p>
                 <div class="choices">
-                    <button class="choice ottima" id="cOttima"><span class="emoji">😍</span><span>Ottima<small>Mi è stato utile, lo consiglierei</small></span></button>
-                    <button class="choice media" id="cMedia"><span class="emoji">🙂</span><span>Nella media<small>Qualcosa di buono, ma migliorabile</small></span></button>
-                    <button class="choice bassa" id="cBassa"><span class="emoji">😕</span><span>Sotto le aspettative<small>Mi aspettavo di più</small></span></button>
+                    <button class="choice ottima" id="cBene"><span class="emoji">😍</span><span>Bene, mi è stato utile<small>Lo consiglierei a chi lavora come me</small></span></button>
+                    <button class="choice media" id="cMigliorare"><span class="emoji">🤔</span><span>Si può migliorare<small>Ho un dubbio o un suggerimento per te</small></span></button>
                 </div>
             </div>
 
@@ -112,9 +111,8 @@
       function show(id){ document.querySelectorAll('.step').forEach(s=>s.classList.remove('active')); document.getElementById(id).classList.add('active'); }
 
       let sentiment='', rating=0;
-      document.getElementById('cOttima').addEventListener('click',()=>{ gtag('event','recensione_filtro',{esperienza:'ottima'}); window.location.href = AMAZON_REVIEW; });
-      document.getElementById('cMedia').addEventListener('click',()=>{ sentiment='media'; gtag('event','recensione_filtro',{esperienza:'media'}); show('step2'); });
-      document.getElementById('cBassa').addEventListener('click',()=>{ sentiment='bassa'; gtag('event','recensione_filtro',{esperienza:'bassa'}); show('step2'); });
+      document.getElementById('cBene').addEventListener('click',()=>{ gtag('event','recensione_filtro',{esperienza:'bene'}); window.location.href = AMAZON_REVIEW; });
+      document.getElementById('cMigliorare').addEventListener('click',()=>{ sentiment='migliorabile'; gtag('event','recensione_filtro',{esperienza:'migliorabile'}); show('step2'); });
       document.getElementById('back1').addEventListener('click',()=>show('step1'));
 
       // stelle
