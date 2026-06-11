@@ -3,17 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Libro "Intelligenza Artificiale in Pratica per chi lavora" — In arrivo | AI Osha</title>
-    <meta name="description" content="Il libro di Aliosha Battaglini su intelligenza artificiale in pratica per chi lavora — PMI, professionisti, partite IVA, freelance — è in uscita nel 2026. Manuale operativo per applicare AI e IA al proprio lavoro da subito. Iscriviti per essere avvisato.">
-    <meta name="keywords" content="libro intelligenza artificiale, libro AI per chi lavora, libro IA professionisti, libro AI PMI, manuale AI imprenditori, libro Aliosha Battaglini, AI in pratica libro">
+    <title>Intelligenza Artificiale in Pratica per chi lavora — il libro di Aliosha Battaglini | AI Osha</title>
+    <meta name="description" content="Disponibile ora su Amazon. Il manuale pratico di Aliosha Battaglini per usare ChatGPT, Gemini e Claude al lavoro: scrivi, vendi e automatizza in meno tempo, anche se parti da zero. Con 19 strumenti pronti da scaricare.">
+    <meta name="keywords" content="libro intelligenza artificiale, libro AI per chi lavora, manuale ChatGPT, libro IA professionisti PMI, prompt template AI, libro Aliosha Battaglini, AI in pratica libro, comprare libro AI Amazon">
     <link rel="canonical" href="https://aiosha.it/libro.html">
 
     <!-- Open Graph -->
     <meta property="og:type" content="book">
     <meta property="og:url" content="https://aiosha.it/libro.html">
-    <meta property="og:title" content="Libro &quot;Intelligenza Artificiale in Pratica per chi lavora&quot; — in arrivo | AI Osha">
-    <meta property="og:description" content="Manuale operativo di Aliosha Battaglini per applicare AI e IA al proprio lavoro. In uscita nel 2026. Iscriviti per essere avvisato.">
-    <meta property="og:image" content="https://aiosha.it/images/og-image.jpg">
+    <meta property="og:title" content="Intelligenza Artificiale in Pratica per chi lavora — il libro | AI Osha">
+    <meta property="og:description" content="Disponibile ora su Amazon. Usa ChatGPT, Gemini e Claude al lavoro: scrivi, vendi e automatizza in meno tempo, anche se parti da zero. Con 19 strumenti pronti.">
+    <meta property="og:image" content="https://aiosha.it/images/libro-cover.jpg">
     <meta property="og:locale" content="it_IT">
     <meta name="twitter:card" content="summary_large_image">
 
@@ -23,41 +23,99 @@
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary: #00A8E8;
-            --highlight: #F5A623;
-            --dark: #0D1117;
-            --gray-800: #2d3748;
-            --gray-600: #4b5563;
-            --gray-200: #e5e7eb;
-            --light: #E8F4FD;
+            --primary: #00A8E8; --primary-dark: #0088c2;
+            --highlight: #F5A623; --highlight-dark: #d4911f;
+            --dark: #0D1117; --dark-soft: #161b22;
+            --gray-300: #d1d5db; --gray-400: #9ca3af; --gray-600: #4b5563;
             --white: #ffffff;
             --font-display: 'Plus Jakarta Sans', sans-serif;
         }
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-        body { font-family: var(--font-display); background: #0D1117; color: #d1d5db; min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 2rem; }
-        .container { max-width: 700px; text-align: center; }
-        .logo { font-size: 2rem; font-weight: 800; color: #ffffff; margin-bottom: 3rem; }
+        body { font-family: var(--font-display); background: var(--dark); color: var(--gray-300); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+        a { color: inherit; }
+        .wrap { max-width: 1040px; margin: 0 auto; padding: 0 1.25rem; }
         .text-gradient { background: linear-gradient(135deg, var(--primary), var(--highlight)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        .icon { width: 120px; height: 120px; margin: 0 auto 2rem; background: linear-gradient(135deg, var(--highlight), #d4911f); border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 20px 40px rgba(245, 166, 35, 0.3); }
-        .icon svg { width: 64px; height: 64px; color: white; }
-        h1 { font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 800; color: #ffffff; margin-bottom: 1.5rem; line-height: 1.2; }
-        p { font-size: 1.25rem; color: #9ca3af; margin-bottom: 2rem; line-height: 1.6; }
-        .btn { display: inline-flex; align-items: center; gap: 0.5rem; padding: 1rem 2rem; font-size: 1.125rem; font-weight: 600; background: linear-gradient(135deg, var(--highlight), #d4911f); color: white; border: none; border-radius: 0.75rem; text-decoration: none; transition: all 0.25s; box-shadow: 0 4px 15px rgba(245, 166, 35, 0.3); }
-        .btn:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(245, 166, 35, 0.4); }
-        .btn-secondary { background: transparent; color: var(--primary); border: 2px solid var(--primary); box-shadow: none; margin-top: 1rem; }
-        .btn-secondary:hover { background: var(--primary); color: white; }
-        .features { display: grid; gap: 1rem; margin: 3rem 0; text-align: left; }
-        .feature { display: flex; align-items: center; gap: 1rem; padding: 1rem; background: #161b22; border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 0.75rem; box-shadow: 0 2px 10px rgba(0,0,0,0.2); }
-        .feature svg { flex-shrink: 0; width: 24px; height: 24px; color: var(--primary); }
+        .gold { color: var(--highlight); }
+
+        /* topbar */
+        .topbar { display:flex; align-items:center; justify-content:space-between; padding: 1rem 1.25rem; max-width:1040px; margin:0 auto; }
+        .logo { display:flex; align-items:center; gap:.5rem; text-decoration:none; }
+        .logo img { height:30px; width:auto; }
+        .logo span { font-size:1.2rem; font-weight:800; color:#fff; letter-spacing:-0.02em; }
+        .topbar a.home { font-size:.9rem; font-weight:600; color:var(--gray-400); text-decoration:none; }
+
+        /* hero */
+        .hero { padding: 2.5rem 0 3rem; }
+        .hero-grid { display:grid; grid-template-columns: 360px 1fr; gap: 3rem; align-items:center; }
+        .cover-wrap { perspective: 1200px; }
+        .cover { width:100%; border-radius:.5rem; box-shadow: 0 30px 60px rgba(0,0,0,.55), 0 0 0 1px rgba(255,255,255,.05); transform: rotateY(-8deg); transition: transform .4s; }
+        .cover:hover { transform: rotateY(0deg); }
+        .badge-live { display:inline-flex; align-items:center; gap:.5rem; background:rgba(16,185,129,.12); border:1px solid rgba(16,185,129,.35); color:#34d399; font-size:.8rem; font-weight:700; padding:.4rem .85rem; border-radius:999px; margin-bottom:1.1rem; }
+        .dot { width:8px;height:8px;background:#34d399;border-radius:50%; animation:pulse 2s infinite; }
+        @keyframes pulse {0%,100%{opacity:1}50%{opacity:.4}}
+        h1 { font-size: clamp(1.9rem, 4.5vw, 3rem); font-weight:800; color:#fff; line-height:1.12; letter-spacing:-0.02em; margin-bottom:.9rem; }
+        .subtitle { font-size:1.05rem; color:var(--gray-400); margin-bottom:1.3rem; }
+        .hook { font-size:1.05rem; color:var(--gray-300); margin-bottom:1.6rem; border-left:3px solid var(--highlight); padding-left:1rem; }
+        .hook strong { color:#fff; }
+
+        /* buttons */
+        .buy-row { display:flex; flex-wrap:wrap; gap:.9rem; }
+        .btn { display:inline-flex; align-items:center; justify-content:center; gap:.6rem; padding:1rem 1.6rem; font-size:1.05rem; font-weight:700; font-family:inherit; border-radius:.75rem; text-decoration:none; transition:transform .15s, box-shadow .15s; border:none; cursor:pointer; }
+        .btn small { display:block; font-weight:500; font-size:.72rem; opacity:.85; }
+        .btn-amazon { background: linear-gradient(135deg, var(--highlight), var(--highlight-dark)); color:#1a1205; box-shadow:0 6px 20px rgba(245,166,35,.35); }
+        .btn-amazon:hover { transform:translateY(-2px); box-shadow:0 10px 28px rgba(245,166,35,.5); }
+        .btn-kindle { background:transparent; color:var(--primary); border:2px solid var(--primary); }
+        .btn-kindle:hover { background:var(--primary); color:#04222e; transform:translateY(-2px); }
+        .reassure { font-size:.85rem; color:var(--gray-400); margin-top:.9rem; }
+
+        /* sections */
+        section.block { padding: 2.5rem 0; border-top:1px solid rgba(255,255,255,.07); }
+        .block h2 { font-size: clamp(1.4rem,3vw,2rem); font-weight:800; color:#fff; margin-bottom:1.3rem; letter-spacing:-0.01em; }
+        .lead { font-size:1.05rem; color:var(--gray-400); max-width:680px; margin-bottom:1.5rem; }
+        .features { display:grid; gap:.85rem; }
+        .feature { display:flex; gap:.9rem; padding:1.05rem 1.15rem; background:var(--dark-soft); border:1px solid rgba(255,255,255,.07); border-radius:.7rem; }
+        .feature svg { flex-shrink:0; width:22px; height:22px; color:var(--primary); margin-top:2px; }
+        .feature span { color:var(--gray-300); }
+        .feature b { color:#fff; }
+        .pillbox { background:var(--dark-soft); border:1px solid rgba(245,166,35,.25); border-radius:1rem; padding:1.6rem 1.5rem; }
+        .pillbox p { color:var(--gray-300); }
+        .pillbox strong { color:#fff; }
+        .tags { display:flex; flex-wrap:wrap; gap:.5rem; margin-top:1rem; }
+        .tag { font-size:.8rem; font-weight:600; color:var(--primary); background:rgba(0,168,232,.1); border:1px solid rgba(0,168,232,.25); padding:.35rem .7rem; border-radius:999px; }
+
+        .author { display:flex; gap:1.3rem; align-items:flex-start; background:var(--dark-soft); border:1px solid rgba(255,255,255,.07); border-radius:1rem; padding:1.5rem; }
+        .author .role { font-size:.78rem; font-weight:700; text-transform:uppercase; letter-spacing:.05em; color:var(--highlight); }
+        .author h3 { color:#fff; font-size:1.25rem; margin:.2rem 0 .5rem; }
+        .author p { color:var(--gray-400); font-size:.97rem; }
+
+        .final { text-align:center; padding: 3rem 0 3.5rem; }
+        .final h2 { margin-bottom:.6rem; }
+        .final p { color:var(--gray-400); margin-bottom:1.6rem; }
+        .final .buy-row { justify-content:center; }
+
+        footer { text-align:center; padding:2rem 1rem; color:var(--gray-400); font-size:.8rem; border-top:1px solid rgba(255,255,255,.08); }
+        footer a { color:var(--gray-400); }
+
+        @media (max-width: 760px) {
+            .hero-grid { grid-template-columns:1fr; gap:1.8rem; text-align:center; }
+            .cover-wrap { max-width:260px; margin:0 auto; }
+            .cover { transform:none; }
+            .hook { text-align:left; }
+            .buy-row { justify-content:center; }
+            .author { flex-direction:column; align-items:center; text-align:center; }
+        }
     </style>
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-            {"@type":"ListItem","position":1,"name":"Home","item":"https://aiosha.it/"},
-            {"@type":"ListItem","position":2,"name":"Libro","item":"https://aiosha.it/libro.html"}
-        ]
+        "@type": "Book",
+        "name": "Intelligenza Artificiale in Pratica per chi lavora",
+        "author": { "@type": "Person", "name": "Aliosha Battaglini" },
+        "inLanguage": "it",
+        "bookFormat": "https://schema.org/Paperback",
+        "image": "https://aiosha.it/images/libro-cover.jpg",
+        "url": "https://aiosha.it/libro.html",
+        "offers": { "@type": "Offer", "availability": "https://schema.org/InStock", "url": "https://www.amazon.it/dp/B0H4RNXR8C" }
     }
     </script>
     <!-- Google Analytics (GA4) -->
@@ -70,58 +128,109 @@
     </script>
 </head>
 <body>
-    <div class="container">
-        <div class="logo" style="display: flex; align-items: center; justify-content: center; gap: 0.5rem;">
-            <img src="images/uccello.png" alt="AI Osha" style="height:32px;width:auto;"><span style="font-size:1.3rem;font-weight:800;color:#fff;letter-spacing:-0.02em;">AI <span style="color:#00A8E8;">Osha</span></span>
-        </div>
 
-        <div class="icon">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25" />
-            </svg>
-        </div>
-
-        <h1>Il Libro Sta Arrivando!</h1>
-
-        <p>
-            Sto lavorando al libro definitivo sull'AI applicata al business.
-            Un metodo pratico, testato su 13 libri pubblicati e 1.000+ professionisti formati.
-        </p>
-
-        <div class="features">
-            <div class="feature">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
-                </svg>
-                <span>Strategie pratiche per integrare l'AI nel tuo lavoro</span>
-            </div>
-            <div class="feature">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
-                </svg>
-                <span>Casi studio reali e risultati concreti</span>
-            </div>
-            <div class="feature">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
-                </svg>
-                <span>Template, prompt e automazioni pronti all'uso</span>
-            </div>
-        </div>
-
-        <a href="index.html#lead-magnet" class="btn">
-            Iscriviti per Essere Avvisato
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" width="20" height="20">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
-            </svg>
+    <header class="topbar">
+        <a href="index.html" class="logo">
+            <img src="images/uccello.png" alt="AI Osha"><span>AI <span style="color:#00A8E8;">Osha</span></span>
         </a>
+        <a href="index.html" class="home">← Home</a>
+    </header>
 
-        <a href="index.html" class="btn btn-secondary">
-            Torna alla Home
-        </a>
-    </div>
-    <footer style="text-align:center; padding:2rem 1rem; color:#9ca3af; font-size:0.8rem; border-top:1px solid rgba(255,255,255,0.08); margin-top:2rem;">
-        © 2026 AI Osha — Aliosha Battaglini · P.IVA IT02097940478 · Pescia (PT) · <a href="privacy-policy.html" style="color:#9ca3af;">Privacy</a> · <a href="contatti.html" style="color:#9ca3af;">Contatti</a>
+    <!-- ===== HERO ===== -->
+    <section class="hero">
+        <div class="wrap">
+            <div class="hero-grid">
+                <div class="cover-wrap">
+                    <img class="cover" src="images/libro-cover.jpg" alt="Copertina del libro Intelligenza Artificiale in Pratica per chi lavora di Aliosha Battaglini">
+                </div>
+                <div>
+                    <span class="badge-live"><span class="dot"></span> Disponibile ora su Amazon</span>
+                    <h1>Intelligenza Artificiale in Pratica <span class="gold">per chi lavora</span></h1>
+                    <p class="subtitle">La guida passo-passo all'AI: usa <strong style="color:#fff;">ChatGPT, Gemini e Claude</strong> al lavoro — scrivi, vendi e automatizza in meno tempo, anche se parti da zero.</p>
+                    <p class="hook">Hai sentito mille volte: <em>"devi usare l'intelligenza artificiale."</em> Ma nessuno ti ha mai detto, in concreto, <strong>cosa fare lunedì mattina.</strong> Questo libro sì.</p>
+
+                    <div class="buy-row">
+                        <a class="btn btn-amazon" href="https://www.amazon.it/dp/B0H4RNXR8C" target="_blank" rel="noopener" onclick="gtag('event','acquista_amazon',{formato:'paperback'});">
+                            📕 Acquista il cartaceo
+                            <span><small>su Amazon →</small></span>
+                        </a>
+                        <a class="btn btn-kindle" href="https://www.amazon.it/dp/B0H4RH9FRQ" target="_blank" rel="noopener" onclick="gtag('event','acquista_amazon',{formato:'kindle'});">
+                            📲 Versione Kindle
+                        </a>
+                    </div>
+                    <p class="reassure">Consegna rapida con Amazon · Leggi un'anteprima gratuita dalla pagina del libro.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== COSA IMPARI ===== -->
+    <section class="block">
+        <div class="wrap">
+            <h2>Cosa imparerai a fare (per davvero)</h2>
+            <p class="lead">Niente teoria né gergo. Un metodo operativo per mettere l'AI a lavorare nella tua attività — da subito, anche se non sei "uno di computer".</p>
+            <div class="features">
+                <div class="feature"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg><span><b>Scrivere in metà tempo</b> mail, preventivi, offerte e contenuti, con prompt già pronti.</span></div>
+                <div class="feature"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg><span><b>Far girare marketing, vendite e amministrazione</b> con l'AI: calendario, offerte, follow-up, customer care.</span></div>
+                <div class="feature"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg><span><b>Costruire le tue prime automazioni</b>, spiegate in modo semplice e senza codice.</span></div>
+                <div class="feature"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg><span><b>Scegliere gli strumenti giusti</b> — ChatGPT, Gemini, Claude e gli altri — con usi reali, senza perderti.</span></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== DIFFERENZIATORE ===== -->
+    <section class="block">
+        <div class="wrap">
+            <div class="pillbox">
+                <p style="font-size:1.15rem;"><strong>Non è una raccolta di prompt. È un metodo, con gli strumenti già pronti.</strong></p>
+                <p style="margin-top:.7rem;">Dentro al libro trovi <strong>19 risorse scaricabili</strong> (inquadri il QR, scarichi, usi): librerie di prompt, template in Excel, checklist, una policy AI pronta e una roadmap a 12 mesi. Non centinaia di prompt da spulciare — i pochi giusti, più gli strumenti che fanno il lavoro al posto tuo.</p>
+                <div class="tags">
+                    <span class="tag">Template Excel</span><span class="tag">Prompt pronti</span><span class="tag">Checklist</span><span class="tag">Policy AI</span><span class="tag">Roadmap 12 mesi</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== PER CHI È ===== -->
+    <section class="block">
+        <div class="wrap">
+            <h2>Per chi è questo libro</h2>
+            <p class="lead">Titolari di piccole imprese, artigiani, commercianti, liberi professionisti e freelance stanchi delle promesse sull'AI e pronti a vederla finalmente lavorare nella loro attività — per recuperare tempo ed energie. Anche, e soprattutto, se non hai competenze tecniche.</p>
+        </div>
+    </section>
+
+    <!-- ===== AUTORE ===== -->
+    <section class="block">
+        <div class="wrap">
+            <div class="author">
+                <div>
+                    <div class="role">L'autore</div>
+                    <h3>Aliosha Battaglini</h3>
+                    <p>Dalla cartiera all'intelligenza artificiale. Oggi affianca ogni giorno piccole imprese e professionisti italiani a usare l'AI davvero, senza tecnicismi — con il metodo "pigia lì, fai così".</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CTA FINALE ===== -->
+    <section class="final">
+        <div class="wrap">
+            <h2>Pronto a mettere l'AI a lavorare per te?</h2>
+            <p>La prima cosa che ti riprendi è il tuo tempo. Si comincia.</p>
+            <div class="buy-row">
+                <a class="btn btn-amazon" href="https://www.amazon.it/dp/B0H4RNXR8C" target="_blank" rel="noopener" onclick="gtag('event','acquista_amazon',{formato:'paperback',posizione:'finale'});">
+                    📕 Acquista il cartaceo
+                    <span><small>su Amazon →</small></span>
+                </a>
+                <a class="btn btn-kindle" href="https://www.amazon.it/dp/B0H4RH9FRQ" target="_blank" rel="noopener" onclick="gtag('event','acquista_amazon',{formato:'kindle',posizione:'finale'});">
+                    📲 Versione Kindle
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        © 2026 AI Osha — Aliosha Battaglini · P.IVA IT02097940478 · Pescia (PT) · <a href="privacy-policy.html">Privacy</a> · <a href="contatti.html">Contatti</a>
     </footer>
 </body>
 </html>
