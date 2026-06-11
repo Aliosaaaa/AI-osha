@@ -30,7 +30,8 @@
 
         #stage{display:flex;flex-direction:column;align-items:center;padding:1rem 1rem 1.5rem;}
         #book{ touch-action:pan-y; cursor:grab; }
-        #book img{ width:100%; height:100%; }
+        #book .page{ background:#fff; }
+        #book img{ width:100%; height:100%; display:block; }
         .loading{color:var(--gray-400);font-size:.95rem;padding:3rem;text-align:center;}
         .controls{display:flex;align-items:center;gap:1rem;margin-top:1.3rem;flex-wrap:wrap;justify-content:center;}
         .nav{background:var(--dark-soft);border:1px solid rgba(255,255,255,.12);color:#fff;width:46px;height:46px;border-radius:50%;font-size:1.3rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .15s;}
@@ -186,25 +187,32 @@
 
     <script src="https://cdn.jsdelivr.net/npm/page-flip@2.0.7/dist/js/page-flip.browser.min.js"></script>
     <script>
-      // due set: leggero per lo sfogliamento (veloce) + HD per lo zoom (caricato su richiesta)
+      // flipbook: pagine a risoluzione media con LAZY LOAD (caricano solo quelle vicine => veloce + nitido)
+      // zoom: HD su richiesta
       const N=46, pad=i=>String(i).padStart(2,'0');
-      const smallPages=['images/libro-cover.jpg'], hdPages=['images/libro-cover.jpg'];
-      for(let i=1;i<=N;i++){ smallPages.push('images/sfoglia/sm/p'+pad(i)+'.jpg'); hdPages.push('images/sfoglia/p'+pad(i)+'.jpg'); }
-      const TOTAL = smallPages.length;
+      const hdPages=['images/libro-cover.jpg'];
+      for(let i=1;i<=N;i++) hdPages.push('images/sfoglia/p'+pad(i)+'.jpg');
+      const TOTAL = N+1;
+      const mdSrc = i => 'images/sfoglia/md/p'+pad(i)+'.jpg';
+      function preloadFlip(i){ for(let k=i-1;k<=i+2;k++){ if(k>=1&&k<=N){ const im=new Image(); im.src=mdSrc(k); } } }
       gtag('event','apri_anteprima');
 
       const bookEl = document.getElementById('book');
+      document.getElementById('loading').style.display='none';
+      bookEl.style.display='block';
+      let phtml = '<div class="page" data-density="hard"><img src="images/libro-cover.jpg" alt="Copertina"></div>';
+      for(let i=1;i<=N;i++) phtml += '<div class="page"><img loading="lazy" src="'+mdSrc(i)+'" alt="Pagina '+i+'"></div>';
+      bookEl.innerHTML = phtml;
       const pageFlip = new St.PageFlip(bookEl, {
         width: 470, height: 676,
         size: 'stretch',
-        minWidth: 300, maxWidth: 700,
-        minHeight: 430, maxHeight: 1010,
-        drawShadow: true, flippingTime: 600, maxShadowOpacity: 0.5,
+        minWidth: 300, maxWidth: 720,
+        minHeight: 430, maxHeight: 1040,
+        drawShadow: true, flippingTime: 650, maxShadowOpacity: 0.5,
         showCover: true, usePortrait: true, mobileScrollSupport: false, clickEventForward: true,
       });
-      pageFlip.loadFromImages(smallPages);
-      document.getElementById('loading').style.display='none';
-      bookEl.style.display='block';
+      pageFlip.loadFromHTML(bookEl.querySelectorAll('.page'));
+      preloadFlip(1);
 
       const info = document.getElementById('pageinfo');
       function curIdx(){ try { return pageFlip.getCurrentPageIndex(); } catch(e){ return 0; } }
@@ -213,7 +221,7 @@
 
       let popupShown=false;
       pageFlip.on('flip', (e)=>{
-        const idx=e.data; updateInfo(idx);
+        const idx=e.data; updateInfo(idx); preloadFlip(idx);
         if(!popupShown && idx>=TOTAL-2){ popupShown=true; gtag('event','fine_anteprima'); setTimeout(()=>document.getElementById('overlay').classList.add('show'),800); }
       });
 
