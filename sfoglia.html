@@ -110,7 +110,7 @@
             <button class="nav" id="next" aria-label="Pagina successiva">›</button>
             <button class="zoom-btn" id="zoomBtn">🔍 Ingrandisci per leggere</button>
         </div>
-        <p class="hint">Trascina l'angolo o usa le frecce. Per leggere il testo, premi <strong style="color:#d1d5db;">🔍 Ingrandisci</strong>.</p>
+        <p class="hint">Trascina l'angolo o usa le frecce. Per leggere il testo, premi <strong style="color:#d1d5db;">🔍 Ingrandisci</strong> — da ingrandito scorri con uno <strong style="color:#d1d5db;">swipe</strong> (o ‹ ›) per cambiare pagina.</p>
     </div>
 
     <!-- INDICE del libro (sempre visibile) -->
@@ -186,10 +186,11 @@
 
     <script src="https://cdn.jsdelivr.net/npm/page-flip@2.0.7/dist/js/page-flip.browser.min.js"></script>
     <script>
-      // elenco pagine: cover + Indice(3) + Introduzione/Parte1(43) = 47 immagini
-      const pages = ['images/libro-cover.jpg'];
-      for (let i=1;i<=46;i++) pages.push('images/sfoglia/p'+String(i).padStart(2,'0')+'.jpg');
-      const TOTAL = pages.length;
+      // due set: leggero per lo sfogliamento (veloce) + HD per lo zoom (caricato su richiesta)
+      const N=46, pad=i=>String(i).padStart(2,'0');
+      const smallPages=['images/libro-cover.jpg'], hdPages=['images/libro-cover.jpg'];
+      for(let i=1;i<=N;i++){ smallPages.push('images/sfoglia/sm/p'+pad(i)+'.jpg'); hdPages.push('images/sfoglia/p'+pad(i)+'.jpg'); }
+      const TOTAL = smallPages.length;
       gtag('event','apri_anteprima');
 
       const bookEl = document.getElementById('book');
@@ -198,10 +199,10 @@
         size: 'stretch',
         minWidth: 300, maxWidth: 700,
         minHeight: 430, maxHeight: 1010,
-        drawShadow: true, flippingTime: 750, maxShadowOpacity: 0.5,
+        drawShadow: true, flippingTime: 600, maxShadowOpacity: 0.5,
         showCover: true, usePortrait: true, mobileScrollSupport: false, clickEventForward: true,
       });
-      pageFlip.loadFromImages(pages);
+      pageFlip.loadFromImages(smallPages);
       document.getElementById('loading').style.display='none';
       bookEl.style.display='block';
 
@@ -222,13 +223,25 @@
       // —— Zoom lightbox ——
       const zoom=document.getElementById('zoom'), zimg=document.getElementById('zimg'), zinfo=document.getElementById('zinfo');
       let zi=0;
-      function openZoom(i){ zi=Math.max(0,Math.min(TOTAL-1,i)); zimg.src=pages[zi]; zinfo.textContent=(zi===0?'Copertina':('Pagina '+zi+' / '+(TOTAL-1))); zoom.classList.add('show'); gtag('event','ingrandisci_pagina'); }
+      function preload(i){ if(i>=0&&i<TOTAL){ const im=new Image(); im.src=hdPages[i]; } }
+      function openZoom(i){
+        zi=Math.max(0,Math.min(TOTAL-1,i));
+        zinfo.textContent='Carico la pagina…';
+        zimg.onload=()=>{ zinfo.textContent=(zi===0?'Copertina':('Pagina '+zi+' / '+(TOTAL-1))); };
+        zimg.src=hdPages[zi];
+        zoom.classList.add('show'); preload(zi+1); preload(zi-1);
+        gtag('event','ingrandisci_pagina');
+      }
       document.getElementById('zoomBtn').addEventListener('click',()=>openZoom(curIdx()));
       document.getElementById('zclose').addEventListener('click',()=>zoom.classList.remove('show'));
       document.getElementById('zprev').addEventListener('click',()=>openZoom(zi-1));
       document.getElementById('znext').addEventListener('click',()=>openZoom(zi+1));
       zoom.addEventListener('click',(e)=>{ if(e.target.id==='zoom') zoom.classList.remove('show'); });
       document.addEventListener('keydown',(e)=>{ if(!zoom.classList.contains('show'))return; if(e.key==='Escape')zoom.classList.remove('show'); if(e.key==='ArrowRight')openZoom(zi+1); if(e.key==='ArrowLeft')openZoom(zi-1); });
+      // swipe nel lightbox (mobile): scorri le pagine anche da ingrandito
+      let tsx=0,tsy=0,tmulti=false;
+      zoom.addEventListener('touchstart',e=>{ tmulti=e.touches.length>1; tsx=e.changedTouches[0].clientX; tsy=e.changedTouches[0].clientY; },{passive:true});
+      zoom.addEventListener('touchend',e=>{ if(tmulti)return; const dx=e.changedTouches[0].clientX-tsx, dy=e.changedTouches[0].clientY-tsy; if(Math.abs(dx)>45 && Math.abs(dx)>Math.abs(dy)){ openZoom(dx<0?zi+1:zi-1); } },{passive:true});
 
       // popup controls
       document.getElementById('dismiss').addEventListener('click',()=>document.getElementById('overlay').classList.remove('show'));
