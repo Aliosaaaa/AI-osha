@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sfoglia un'anteprima — Intelligenza Artificiale in Pratica per chi lavora | AI Osha</title>
-    <meta name="description" content="Leggi gratis l'introduzione e tutta la Parte 1 del libro di Aliosha Battaglini: sfoglia le pagine vere e scopri il metodo per usare l'AI al lavoro.">
+    <meta name="description" content="Leggi gratis l'indice, l'introduzione e tutta la Parte 1 del libro di Aliosha Battaglini: sfoglia le pagine vere, ingrandisci e leggi, poi lascia una recensione su Amazon.">
     <link rel="canonical" href="https://aiosha.it/sfoglia.html">
     <meta property="og:type" content="book">
     <meta property="og:title" content="Sfoglia un'anteprima del libro — AI Osha">
-    <meta property="og:description" content="Leggi gratis l'introduzione e tutta la Parte 1. Poi lascia una recensione su Amazon.">
+    <meta property="og:description" content="Leggi gratis l'indice, l'introduzione e tutta la Parte 1. Poi lascia una recensione su Amazon.">
     <meta property="og:image" content="https://aiosha.it/images/libro-cover.jpg">
     <link rel="icon" type="image/png" href="images/uccello.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -18,6 +18,7 @@
         :root { --primary:#00A8E8; --highlight:#F5A623; --highlight-dark:#d4911f; --dark:#0D1117; --dark-soft:#161b22; --gray-300:#d1d5db; --gray-400:#9ca3af; --white:#fff; --font:'Plus Jakarta Sans',sans-serif; }
         *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
         body{font-family:var(--font);background:radial-gradient(ellipse 80% 50% at 50% -10%,rgba(0,168,232,.12),transparent 60%),var(--dark);color:var(--gray-300);min-height:100vh;}
+        .wrap{max-width:1040px;margin:0 auto;padding:0 1.25rem;}
         .topbar{display:flex;align-items:center;justify-content:space-between;padding:.9rem 1.25rem;max-width:1100px;margin:0 auto;}
         .logo{display:flex;align-items:center;gap:.5rem;text-decoration:none;}
         .logo img{height:28px;} .logo span{font-size:1.1rem;font-weight:800;color:#fff;}
@@ -27,23 +28,42 @@
         .intro p{color:var(--gray-400);font-size:.95rem;margin-top:.4rem;}
         .intro .free{display:inline-block;font-size:.78rem;font-weight:700;color:#34d399;background:rgba(16,185,129,.12);border:1px solid rgba(16,185,129,.3);padding:.3rem .7rem;border-radius:999px;margin-bottom:.6rem;}
 
-        #stage{display:flex;flex-direction:column;align-items:center;padding:1rem 1rem 2rem;}
-        #book{ touch-action:pan-y; }
+        #stage{display:flex;flex-direction:column;align-items:center;padding:1rem 1rem 1.5rem;}
+        #book{ touch-action:pan-y; cursor:grab; }
         #book img{ width:100%; height:100%; }
-        .loading{color:var(--gray-400);font-size:.95rem;padding:3rem;}
-        .controls{display:flex;align-items:center;gap:1rem;margin-top:1.4rem;}
+        .loading{color:var(--gray-400);font-size:.95rem;padding:3rem;text-align:center;}
+        .controls{display:flex;align-items:center;gap:1rem;margin-top:1.3rem;flex-wrap:wrap;justify-content:center;}
         .nav{background:var(--dark-soft);border:1px solid rgba(255,255,255,.12);color:#fff;width:46px;height:46px;border-radius:50%;font-size:1.3rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .15s;}
         .nav:hover{background:rgba(0,168,232,.2);border-color:var(--primary);}
-        .pageinfo{font-size:.85rem;color:var(--gray-400);min-width:120px;text-align:center;}
+        .pageinfo{font-size:.85rem;color:var(--gray-400);min-width:110px;text-align:center;}
+        .zoom-btn{display:inline-flex;align-items:center;gap:.5rem;background:rgba(0,168,232,.12);border:1px solid var(--primary);color:var(--primary);font-weight:700;font-size:.9rem;padding:.6rem 1.1rem;border-radius:.6rem;cursor:pointer;font-family:inherit;transition:background .15s;}
+        .zoom-btn:hover{background:var(--primary);color:#04222e;}
         .hint{font-size:.8rem;color:var(--gray-400);margin-top:.8rem;text-align:center;}
+
+        /* INDICE */
+        .toc{margin:1rem auto 3rem;}
+        .toc h2{font-size:clamp(1.3rem,3vw,1.8rem);font-weight:800;color:#fff;text-align:center;margin-bottom:.4rem;}
+        .toc .sub{text-align:center;color:var(--gray-400);font-size:.92rem;margin-bottom:1.6rem;}
+        .toc-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:1rem;}
+        .part{background:var(--dark-soft);border:1px solid rgba(255,255,255,.08);border-radius:.9rem;padding:1.2rem 1.3rem;}
+        .part-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:.7rem;}
+        .part-head h3{color:#fff;font-size:1rem;font-weight:800;}
+        .pill{font-size:.7rem;font-weight:700;padding:.25rem .6rem;border-radius:999px;white-space:nowrap;}
+        .pill.free{color:#34d399;background:rgba(16,185,129,.12);border:1px solid rgba(16,185,129,.3);}
+        .pill.lock{color:var(--highlight);background:rgba(245,166,35,.1);border:1px solid rgba(245,166,35,.3);}
+        .part ul{list-style:none;}
+        .part li{font-size:.9rem;color:var(--gray-300);padding:.32rem 0;display:flex;gap:.55rem;align-items:flex-start;border-top:1px solid rgba(255,255,255,.05);}
+        .part li:first-child{border-top:none;}
+        .part li .num{color:var(--primary);font-weight:700;flex-shrink:0;min-width:1.4rem;}
 
         /* bottone recensione SEMPRE visibile */
         .review-fab{position:fixed;right:1.1rem;bottom:1.1rem;z-index:50;display:inline-flex;align-items:center;gap:.5rem;background:linear-gradient(135deg,var(--highlight),var(--highlight-dark));color:#1a1205;font-weight:800;font-size:.95rem;padding:.85rem 1.2rem;border-radius:999px;text-decoration:none;box-shadow:0 8px 24px rgba(245,166,35,.45);transition:transform .15s;}
         .review-fab:hover{transform:translateY(-2px) scale(1.03);}
 
-        /* popup recensione */
-        .overlay{position:fixed;inset:0;background:rgba(5,8,12,.8);backdrop-filter:blur(4px);z-index:100;display:none;align-items:center;justify-content:center;padding:1.25rem;}
+        /* overlay generico */
+        .overlay{position:fixed;inset:0;background:rgba(5,8,12,.85);backdrop-filter:blur(4px);z-index:100;display:none;align-items:center;justify-content:center;padding:1rem;}
         .overlay.show{display:flex;}
+        /* popup recensione */
         .modal{background:var(--dark-soft);border:1px solid rgba(245,166,35,.3);border-radius:1.2rem;max-width:440px;width:100%;padding:2rem 1.8rem;text-align:center;box-shadow:0 30px 60px rgba(0,0,0,.6);}
         .modal .stars{font-size:1.8rem;color:var(--highlight);letter-spacing:.2rem;margin-bottom:.6rem;}
         .modal h2{color:#fff;font-size:1.4rem;font-weight:800;margin-bottom:.6rem;}
@@ -52,6 +72,14 @@
         .modal .btn-amazon{background:linear-gradient(135deg,var(--highlight),var(--highlight-dark));color:#1a1205;}
         .modal .btn-buy{background:transparent;color:var(--primary);border:2px solid var(--primary);}
         .modal .dismiss{background:none;border:none;color:var(--gray-400);font-size:.85rem;cursor:pointer;margin-top:.3rem;font-family:inherit;text-decoration:underline;}
+        /* lightbox zoom */
+        #zoom.overlay{background:rgba(5,8,12,.94);}
+        #zoom .zoom-inner{position:relative;width:100%;height:100%;display:flex;align-items:center;justify-content:center;}
+        #zoom img{max-width:100%;max-height:94vh;border-radius:.3rem;box-shadow:0 10px 40px rgba(0,0,0,.6);}
+        #zoom .zclose{position:fixed;top:1rem;right:1rem;background:rgba(255,255,255,.12);border:none;color:#fff;width:44px;height:44px;border-radius:50%;font-size:1.4rem;cursor:pointer;z-index:2;}
+        #zoom .znav{position:fixed;top:50%;transform:translateY(-50%);background:rgba(255,255,255,.12);border:none;color:#fff;width:50px;height:50px;border-radius:50%;font-size:1.6rem;cursor:pointer;z-index:2;}
+        #zoom .znav.zprev{left:1rem;} #zoom .znav.znext{right:1rem;}
+        #zoom .zinfo{position:fixed;bottom:1rem;left:50%;transform:translateX(-50%);color:var(--gray-400);font-size:.85rem;background:rgba(0,0,0,.4);padding:.3rem .8rem;border-radius:999px;}
 
         footer{text-align:center;padding:1.5rem 1rem;color:var(--gray-400);font-size:.78rem;border-top:1px solid rgba(255,255,255,.08);}
         footer a{color:var(--gray-400);}
@@ -68,7 +96,7 @@
     <div class="intro">
         <span class="free">Anteprima gratuita</span>
         <h1>Sfoglia l'inizio del libro</h1>
-        <p>Introduzione + tutta la <strong style="color:#fff;">Parte 1</strong>. Trascina l'angolo della pagina per sfogliare, come un libro vero.</p>
+        <p>Indice + introduzione + tutta la <strong style="color:#fff;">Parte 1</strong>. Sfoglia trascinando l'angolo e usa <strong style="color:#fff;">🔍 Ingrandisci</strong> per leggere comodamente.</p>
     </div>
 
     <div id="stage">
@@ -80,9 +108,55 @@
             <button class="nav" id="prev" aria-label="Pagina precedente">‹</button>
             <span class="pageinfo" id="pageinfo">—</span>
             <button class="nav" id="next" aria-label="Pagina successiva">›</button>
+            <button class="zoom-btn" id="zoomBtn">🔍 Ingrandisci per leggere</button>
         </div>
-        <p class="hint">Trascina l'angolo o usa le frecce. Su telefono, tocca il bordo della pagina.</p>
+        <p class="hint">Trascina l'angolo o usa le frecce. Per leggere il testo, premi <strong style="color:#d1d5db;">🔍 Ingrandisci</strong>.</p>
     </div>
+
+    <!-- INDICE del libro (sempre visibile) -->
+    <section class="wrap toc">
+        <h2>Indice del libro</h2>
+        <p class="sub">12 capitoli in 3 parti + appendici. <span style="color:#34d399;">In anteprima leggi gratis l'Introduzione e tutta la Parte 1.</span></p>
+        <div class="toc-grid">
+            <div class="part">
+                <div class="part-head"><h3>Introduzione + Parte I — Le basi</h3><span class="pill free">✓ in anteprima</span></div>
+                <ul>
+                    <li><span class="num">·</span> Introduzione — Chi sono e perché questo libro</li>
+                    <li><span class="num">1</span> La Nuova Era dell'AI</li>
+                    <li><span class="num">2</span> Come funziona davvero l'AI</li>
+                    <li><span class="num">3</span> I 7+1 strumenti che cambiano il tuo lavoro</li>
+                    <li><span class="num">4</span> L'arte del prompt</li>
+                </ul>
+            </div>
+            <div class="part">
+                <div class="part-head"><h3>Parte II — Il lavoro fatto meglio</h3><span class="pill lock">nel libro</span></div>
+                <ul>
+                    <li><span class="num">5</span> Marketing che si fa da solo (quasi)</li>
+                    <li><span class="num">6</span> Vendite più veloci, offerte che convincono</li>
+                    <li><span class="num">7</span> Amministrazione: meno carta, più tempo</li>
+                    <li><span class="num">8</span> Customer care veloce, intelligente, umano</li>
+                    <li><span class="num">9</span> Formazione interna 10x</li>
+                </ul>
+            </div>
+            <div class="part">
+                <div class="part-head"><h3>Parte III — Il business amplificato</h3><span class="pill lock">nel libro</span></div>
+                <ul>
+                    <li><span class="num">10</span> Agenti e automazioni</li>
+                    <li><span class="num">11</span> Governance AI in azienda</li>
+                    <li><span class="num">12</span> La tua roadmap dei prossimi mesi</li>
+                </ul>
+            </div>
+            <div class="part">
+                <div class="part-head"><h3>Appendici</h3><span class="pill lock">nel libro</span></div>
+                <ul>
+                    <li><span class="num">A</span> Glossario AI essenziale</li>
+                    <li><span class="num">B</span> Checklist 30 giorni per partire</li>
+                    <li><span class="num">C</span> I 20 errori più comuni</li>
+                    <li><span class="num">D</span> Risorse, link e contatti + 19 strumenti da scaricare</li>
+                </ul>
+            </div>
+        </div>
+    </section>
 
     <!-- Bottone recensione SEMPRE visibile -->
     <a class="review-fab" id="reviewFab" href="https://www.amazon.it/review/create-review?&asin=B0H4RNXR8C" target="_blank" rel="noopener" onclick="gtag('event','click_recensione',{posizione:'fab'});">★ Recensisci su Amazon</a>
@@ -99,58 +173,65 @@
         </div>
     </div>
 
+    <!-- Lightbox zoom (leggere comodi) -->
+    <div class="overlay" id="zoom">
+        <button class="zclose" id="zclose" aria-label="Chiudi">✕</button>
+        <button class="znav zprev" id="zprev" aria-label="Pagina precedente">‹</button>
+        <button class="znav znext" id="znext" aria-label="Pagina successiva">›</button>
+        <div class="zoom-inner"><img id="zimg" src="" alt="Pagina del libro ingrandita"></div>
+        <span class="zinfo" id="zinfo"></span>
+    </div>
+
     <footer>© 2026 AI Osha — Aliosha Battaglini · <a href="libro.html">Pagina libro</a> · <a href="privacy-policy.html">Privacy</a></footer>
 
     <script src="https://cdn.jsdelivr.net/npm/page-flip@2.0.7/dist/js/page-flip.browser.min.js"></script>
     <script>
-      // costruisci l'elenco pagine: cover + p01..p43
+      // elenco pagine: cover + Indice(3) + Introduzione/Parte1(43) = 47 immagini
       const pages = ['images/libro-cover.jpg'];
-      for (let i=1;i<=43;i++) pages.push('images/sfoglia/p'+String(i).padStart(2,'0')+'.jpg');
+      for (let i=1;i<=46;i++) pages.push('images/sfoglia/p'+String(i).padStart(2,'0')+'.jpg');
       const TOTAL = pages.length;
-
       gtag('event','apri_anteprima');
 
       const bookEl = document.getElementById('book');
       const pageFlip = new St.PageFlip(bookEl, {
-        width: 430, height: 618,            // rapporto ~7:10
+        width: 470, height: 676,
         size: 'stretch',
-        minWidth: 280, maxWidth: 560,
-        minHeight: 400, maxHeight: 800,
-        drawShadow: true,
-        flippingTime: 750,
-        maxShadowOpacity: 0.5,
-        showCover: true,
-        usePortrait: true,
-        mobileScrollSupport: false,
-        clickEventForward: true,
+        minWidth: 300, maxWidth: 700,
+        minHeight: 430, maxHeight: 1010,
+        drawShadow: true, flippingTime: 750, maxShadowOpacity: 0.5,
+        showCover: true, usePortrait: true, mobileScrollSupport: false, clickEventForward: true,
       });
       pageFlip.loadFromImages(pages);
-
       document.getElementById('loading').style.display='none';
       bookEl.style.display='block';
 
       const info = document.getElementById('pageinfo');
-      function updateInfo(idx){
-        if (idx===0) info.textContent='Copertina';
-        else info.textContent = 'Pagina '+idx+' / '+(TOTAL-1);
-      }
+      function curIdx(){ try { return pageFlip.getCurrentPageIndex(); } catch(e){ return 0; } }
+      function updateInfo(idx){ info.textContent = (idx===0) ? 'Copertina' : ('Pagina '+idx+' / '+(TOTAL-1)); }
       updateInfo(0);
 
-      let popupShown = false;
+      let popupShown=false;
       pageFlip.on('flip', (e)=>{
-        const idx = e.data;          // indice pagina corrente
-        updateInfo(idx);
-        // fine anteprima: raggiunta (quasi) l'ultima pagina
-        if (!popupShown && idx >= TOTAL-2){
-          popupShown = true;
-          gtag('event','fine_anteprima');
-          setTimeout(()=>document.getElementById('overlay').classList.add('show'), 800);
-        }
+        const idx=e.data; updateInfo(idx);
+        if(!popupShown && idx>=TOTAL-2){ popupShown=true; gtag('event','fine_anteprima'); setTimeout(()=>document.getElementById('overlay').classList.add('show'),800); }
       });
 
-      document.getElementById('prev').addEventListener('click', ()=>pageFlip.flipPrev());
-      document.getElementById('next').addEventListener('click', ()=>pageFlip.flipNext());
-      document.getElementById('dismiss').addEventListener('click', ()=>document.getElementById('overlay').classList.remove('show'));
+      document.getElementById('prev').addEventListener('click',()=>pageFlip.flipPrev());
+      document.getElementById('next').addEventListener('click',()=>pageFlip.flipNext());
+
+      // —— Zoom lightbox ——
+      const zoom=document.getElementById('zoom'), zimg=document.getElementById('zimg'), zinfo=document.getElementById('zinfo');
+      let zi=0;
+      function openZoom(i){ zi=Math.max(0,Math.min(TOTAL-1,i)); zimg.src=pages[zi]; zinfo.textContent=(zi===0?'Copertina':('Pagina '+zi+' / '+(TOTAL-1))); zoom.classList.add('show'); gtag('event','ingrandisci_pagina'); }
+      document.getElementById('zoomBtn').addEventListener('click',()=>openZoom(curIdx()));
+      document.getElementById('zclose').addEventListener('click',()=>zoom.classList.remove('show'));
+      document.getElementById('zprev').addEventListener('click',()=>openZoom(zi-1));
+      document.getElementById('znext').addEventListener('click',()=>openZoom(zi+1));
+      zoom.addEventListener('click',(e)=>{ if(e.target.id==='zoom') zoom.classList.remove('show'); });
+      document.addEventListener('keydown',(e)=>{ if(!zoom.classList.contains('show'))return; if(e.key==='Escape')zoom.classList.remove('show'); if(e.key==='ArrowRight')openZoom(zi+1); if(e.key==='ArrowLeft')openZoom(zi-1); });
+
+      // popup controls
+      document.getElementById('dismiss').addEventListener('click',()=>document.getElementById('overlay').classList.remove('show'));
       document.getElementById('overlay').addEventListener('click',(e)=>{ if(e.target.id==='overlay') e.currentTarget.classList.remove('show'); });
     </script>
 </body>
