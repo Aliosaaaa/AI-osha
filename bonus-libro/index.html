@@ -152,6 +152,20 @@
   .optin-success p { font-size: 0.95rem; color: var(--gray-600); }
   .optin-success .hint { font-size: 0.82rem; margin-top: 14px; color: var(--gray-500); }
 
+  /* ─────── VIDEO BENVENUTO (nell'hero) ─────── */
+  .hero__video-label {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-family: var(--font-mono); font-size: 0.78rem; font-weight: 500;
+    color: var(--primary-light); letter-spacing: 0.05em; text-transform: uppercase;
+    margin-bottom: 14px;
+  }
+  .video-frame {
+    position: relative; width: 100%; max-width: 600px; margin: 0 auto 34px;
+    aspect-ratio: 16 / 9; border-radius: var(--radius-xl); overflow: hidden;
+    box-shadow: var(--shadow-xl); border: 1px solid rgba(255,255,255,0.12); background: #000;
+  }
+  .video-frame iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+
   /* ─────── SEZIONE BONUS ─────── */
   .bonus-section { padding: 72px 0 56px; background: var(--white); }
   .section-head { text-align: center; max-width: 640px; margin: 0 auto 48px; }
@@ -214,6 +228,12 @@
       Diagnosi, prompt, template, roadmap e checklist del libro <strong>AI in Pratica per chi lavora</strong>.
       Lascia nome ed email: ti mando <strong>subito tutto</strong> in un'unica mail.
     </p>
+
+    <!-- VIDEO DI BENVENUTO -->
+    <div class="hero__video-label">// un saluto da Aliosha</div>
+    <div class="video-frame">
+      <iframe src="https://www.youtube.com/embed/z1mJ0hhkzvw" title="Video di benvenuto — AI in Pratica per chi lavora" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy"></iframe>
+    </div>
 
     <!-- FORM -->
     <div id="optinForm" class="optin-card">
