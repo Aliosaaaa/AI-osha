@@ -8,7 +8,7 @@
     <!-- SEO Primary Meta Tags -->
     <title>AI Osha | Intelligenza Artificiale in Pratica per chi lavora — PMI, professionisti, partite IVA</title>
     <meta name="title" content="AI Osha | Intelligenza Artificiale in Pratica per chi lavora — PMI, professionisti, partite IVA">
-    <meta name="description" content="Intelligenza Artificiale in pratica per chi lavora: PMI, professionisti, partite IVA, freelance e dipendenti. Corsi, consulenza e guide concrete. Metodo testato su 13 libri pubblicati e oltre 1000 persone formate. Guida gratuita con 50 prompt pronti.">
+    <meta name="description" content="Intelligenza Artificiale in pratica per chi lavora: PMI, professionisti, partite IVA, freelance e dipendenti. Corsi, consulenza e guide concrete. Metodo testato su 13 libri pubblicati e oltre 1000 persone formate. Scarica gratis Il Prompt Madre: il sistema per partire su qualsiasi progetto con l'AI.">
     <meta name="keywords" content="intelligenza artificiale per chi lavora, IA per il lavoro, AI per PMI, AI per professionisti, AI per partita IVA, AI per freelance, intelligenza artificiale pratica, corso AI Italia, corso IA Pescia, ChatGPT lavoro, Claude lavoro">
     <meta name="author" content="Aliosha Battaglini">
     <meta name="robots" content="index, follow">
@@ -194,7 +194,7 @@
             {"@type":"Question","name":"Serve esperienza con l'AI per iniziare?","acceptedAnswer":{"@type":"Answer","text":"No. Il metodo AI Osha parte da zero. Se sai usare un computer e navigare su internet, puoi seguire i corsi e applicare l'AI nel tuo lavoro fin dalla prima lezione."}},
             {"@type":"Question","name":"Quanto tempo ci vuole per vedere risultati?","acceptedAnswer":{"@type":"Answer","text":"La maggior parte dei partecipanti inizia a vedere risultati concreti già dalla prima settimana di applicazione: email gestite più velocemente, contenuti social pianificati, schede tecniche generate in minuti."}},
             {"@type":"Question","name":"I dati aziendali sono al sicuro?","acceptedAnswer":{"@type":"Answer","text":"Sì. AI Osha insegna a usare API e strumenti che non condividono i dati con terze parti, e a impostare workflow conformi al GDPR per proteggere informazioni di clienti e fornitori."}},
-            {"@type":"Question","name":"Quanto costa il corso AI Osha?","acceptedAnswer":{"@type":"Answer","text":"Puoi iniziare gratis con la guida da 50 prompt scaricabile dal sito. Il corso completo per piccole e medie imprese include 10 moduli video, live settimanale su Zoom, slide e prompt library. Per il prezzo aggiornato contatta info@aiosha.it."}}
+            {"@type":"Question","name":"Quanto costa il corso AI Osha?","acceptedAnswer":{"@type":"Answer","text":"Puoi iniziare gratis scaricando dal sito Il Prompt Madre, il sistema che uso per partire su qualsiasi progetto con l'AI. Il corso completo include 10 moduli video, live settimanale su Zoom, slide e prompt library. Per il prezzo aggiornato contatta info@aiosha.it."}}
         ]
     }
     </script>
@@ -2093,6 +2093,23 @@
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
       gtag('config', 'G-6GNKJZJY1V');
+
+      // ── Tracking eventi AI Osha (per misurare le conversioni) ──
+      window.aioEvent = function (name, params) { try { gtag('event', name, params || {}); } catch (e) {} };
+      document.addEventListener('DOMContentLoaded', function () {
+        document.addEventListener('click', function (ev) {
+          var a = ev.target.closest && ev.target.closest('a');
+          if (!a) return;
+          var href = a.getAttribute('href') || '';
+          if (/wa\.me|api\.whatsapp|whatsapp/i.test(href)) {
+            window.aioEvent('whatsapp_click', { link_url: href, link_text: (a.textContent || '').trim().slice(0, 60) });
+          } else if (/corso/i.test(href)) {
+            window.aioEvent('corso_click', { link_url: href });
+          } else if (/libro|amazon|sfoglia/i.test(href)) {
+            window.aioEvent('libro_click', { link_url: href });
+          }
+        }, true);
+      });
     </script>
 </head>
 <body>
@@ -2158,7 +2175,7 @@
                     
                     <div class="hero__cta">
                         <a href="#lead-magnet" class="btn btn--primary btn--large">
-                            Scarica la Guida Gratuita
+                            Scarica Il Prompt Madre
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
                             </svg>
@@ -2290,7 +2307,7 @@
                         Risultato? <span class="problem-cta__highlight">Ore perse, opportunità sfumate, concorrenti che avanzano.</span>
                     </p>
                     <a href="#lead-magnet" class="btn btn--primary">
-                        Scarica la Guida Gratuita
+                        Scarica Il Prompt Madre
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" width="20" height="20">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
                         </svg>
@@ -2348,12 +2365,12 @@
 
                 <div class="how-cta animate-on-scroll" style="text-align:center; margin-top: 3rem;">
                     <a href="#lead-magnet" class="btn btn--primary btn--large">
-                        Scarica la Guida Gratuita
+                        Scarica Il Prompt Madre
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" width="20" height="20">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
                         </svg>
                     </a>
-                    <p style="font-size: 0.85rem; color: var(--gray-500); margin-top: 0.75rem;">50 prompt pronti all'uso · Zero spam</p>
+                    <p style="font-size: 0.85rem; color: var(--gray-500); margin-top: 0.75rem;">Un sistema, non 50 prompt · Zero spam</p>
                 </div>
             </div>
         </section>
@@ -2941,10 +2958,10 @@
             <div class="cta-section__bg"></div>
             <div class="container">
                 <div class="cta-section__content animate-on-scroll">
-                    <h2 class="cta-section__title">Inizia oggi. È gratis.</h2>
+                    <h2 class="cta-section__title">Scarica «Il Prompt Madre». È gratis.</h2>
                     <p class="cta-section__description">
-                        Scarica la guida con i 50 prompt che uso ogni giorno. Zero spam, zero vendite aggressive. 
-                        Solo contenuti che funzionano.
+                        Non una lista di 100 prompt: <strong>un solo sistema</strong> — quello da cui parto io ogni volta
+                        che apro un progetto con l'AI. Lascia la tua email e te lo mando subito.
                     </p>
                     
                     <!-- ──────────────────────────────────────────────────────
@@ -2955,19 +2972,15 @@
                          ────────────────────────────────────────────────────── -->
                     <form class="lead-form" id="leadForm" novalidate>
                         <div class="lead-form__row">
-                            <input type="text" name="nome" id="lf-nome" required autocomplete="given-name"
-                                   placeholder="Il tuo nome" class="lead-form__input"/>
-                        </div>
-                        <div class="lead-form__row">
                             <input type="email" name="email" id="lf-email" required autocomplete="email"
                                    placeholder="La tua email" class="lead-form__input"/>
                         </div>
                         <div class="lead-form__row">
-                            <input type="tel" name="telefono" id="lf-tel" autocomplete="tel"
-                                   placeholder="Numero di telefono (facoltativo)" class="lead-form__input"/>
+                            <input type="text" name="nome" id="lf-nome" autocomplete="given-name"
+                                   placeholder="Il tuo nome (facoltativo)" class="lead-form__input"/>
                         </div>
                         <button type="submit" class="lead-form__btn" id="lf-btn">
-                            <span class="lead-form__btn-label">Scarica la guida gratis</span>
+                            <span class="lead-form__btn-label">Inviami Il Prompt Madre</span>
                             <span class="lead-form__btn-spinner" aria-hidden="true"></span>
                         </button>
                         <p class="lead-form__msg" id="lf-msg" role="status" aria-live="polite"></p>
@@ -3041,9 +3054,8 @@
                             [fNome, fEmail].forEach(function (i) { i.classList.remove('is-invalid'); });
                             var nome = fNome.value.trim();
                             var email = fEmail.value.trim();
-                            var telefono = fTel.value.trim();
+                            var telefono = (fTel ? fTel.value.trim() : '');
 
-                            if (!nome) { fNome.classList.add('is-invalid'); fNome.focus(); return setMsg('Inserisci il tuo nome.', 'error'); }
                             if (!isEmail(email)) { fEmail.classList.add('is-invalid'); fEmail.focus(); return setMsg('Inserisci un’email valida.', 'error'); }
 
                             setLoading(true);
@@ -3056,6 +3068,8 @@
                                 body: JSON.stringify({ nome: nome, email: email, telefono: telefono, utm_source: 'sito-aiosha-home' })
                             })
                             .then(function () {
+                                // Conversione: lead acquisito (mode no-cors => misura l'intento di iscrizione)
+                                if (window.aioEvent) window.aioEvent('generate_lead', { method: 'sito-home', form_id: 'leadForm', value: 1, currency: 'EUR' });
                                 form.reset();
                                 window.location.href = '/ty.html';
                             })

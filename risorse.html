@@ -345,6 +345,16 @@
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
       gtag('config', 'G-6GNKJZJY1V');
+      window.aioEvent = function (name, params) { try { gtag('event', name, params || {}); } catch (e) {} };
+      document.addEventListener('DOMContentLoaded', function () {
+        document.addEventListener('click', function (ev) {
+          var a = ev.target.closest && ev.target.closest('a'); if (!a) return;
+          var href = a.getAttribute('href') || '';
+          if (/wa\.me|api\.whatsapp|whatsapp/i.test(href)) window.aioEvent('whatsapp_click', { link_url: href });
+          else if (/corso/i.test(href)) window.aioEvent('corso_click', { link_url: href });
+          else if (/libro|amazon|sfoglia/i.test(href)) window.aioEvent('libro_click', { link_url: href });
+        }, true);
+      });
     </script>
 </head>
 <body>
@@ -390,7 +400,7 @@
                         Esplora le Risorse
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
                     </a>
-                    <a href="index.html#lead-magnet" class="btn btn--secondary">Guida Gratuita 50 Prompt</a>
+                    <a href="index.html#lead-magnet" class="btn btn--secondary">Scarica Il Prompt Madre</a>
                 </div>
                 <div class="page-hero__stats">
                     <div class="page-hero__stat">
@@ -428,16 +438,15 @@
                     <div class="risorsa-card risorsa-card--featured animate-on-scroll" data-cat="prompt">
                         <div class="risorsa-card__cover">
                             <picture>
-                                <source srcset="images/risorse/cover-50-prompt.webp" type="image/webp">
-                                <img src="images/risorse/cover-50-prompt.jpg" alt="50 prompt essenziali per il lavoro" loading="lazy" width="900" height="450">
+                                <img src="images/risorse/cover-prompt-madre.png" alt="Il Prompt Madre — il sistema per partire su qualsiasi progetto con l'AI" loading="lazy" width="900" height="450">
                             </picture>
                         </div>
                         <div class="risorsa-card__icon icon--amber">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z"/></svg>
                         </div>
-                        <span class="risorsa-card__tag tag--prompt">Prompt</span>
-                        <h3 class="risorsa-card__title">Guida: 50 Prompt Essenziali per il Lavoro</h3>
-                        <p class="risorsa-card__desc">I 50 prompt che uso ogni giorno per email, report, presentazioni, analisi e automazioni. Testati su ChatGPT, Claude e Gemini.</p>
+                        <span class="risorsa-card__tag tag--prompt">Sistema</span>
+                        <h3 class="risorsa-card__title">Il Prompt Madre</h3>
+                        <p class="risorsa-card__desc">Non una lista di 100 prompt: un solo sistema, quello da cui parto io ogni volta che apro un progetto con l'AI. È l'AI che intervista te. Funziona con ChatGPT, Gemini e Claude.</p>
                         <div class="risorsa-card__meta">
                             <span class="risorsa-card__meta-item">
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
@@ -449,7 +458,7 @@
                             </span>
                         </div>
                         <div class="risorsa-card__cta">
-                            <a href="/downloads/guida-50-prompt-essenziali-ai-osha.pdf" download class="btn btn--primary btn--small">
+                            <a href="index.html#lead-magnet" class="btn btn--primary btn--small">
                                 Scarica Gratis
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
                             </a>
@@ -715,8 +724,8 @@
                     </div>
                 </div>
                 <div style="text-align:center; margin-top:2.5rem;" class="animate-on-scroll">
-                    <a href="/downloads/guida-50-prompt-essenziali-ai-osha.pdf" download class="btn btn--primary">
-                        Scarica tutti i 50 Prompt Gratis
+                    <a href="#newsletter" class="btn btn--primary">
+                        Scarica Il Prompt Madre
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
                     </a>
                 </div>
@@ -839,7 +848,7 @@
                 <div class="cta-section__inner animate-on-scroll">
                     <span class="section-eyebrow">Resta Aggiornato</span>
                     <h2>Nuove Risorse <span class="text-gradient">Ogni Settimana</span></h2>
-                    <p>Iscriviti e ricevi i 50 prompt essenziali, nuove guide e aggiornamenti sugli strumenti AI direttamente nella tua inbox.</p>
+                    <p>Iscriviti e ricevi «Il Prompt Madre», nuove guide e aggiornamenti sugli strumenti AI direttamente nella tua inbox.</p>
                     <!-- ──────────────────────────────────────────────────────
                          Lead form Brevo (lista #26 AI-OSHA SITO)
                          Sostituisce embed AWeber. POSTa a Google Apps Script che
@@ -848,19 +857,15 @@
                          ────────────────────────────────────────────────────── -->
                     <form class="lead-form" id="leadFormRisorse" novalidate>
                         <div class="lead-form__row">
-                            <input type="text" name="nome" id="lf-r-nome" required autocomplete="given-name"
-                                   placeholder="Il tuo nome" class="lead-form__input"/>
-                        </div>
-                        <div class="lead-form__row">
                             <input type="email" name="email" id="lf-r-email" required autocomplete="email"
                                    placeholder="La tua email" class="lead-form__input"/>
                         </div>
                         <div class="lead-form__row">
-                            <input type="tel" name="telefono" id="lf-r-tel" autocomplete="tel"
-                                   placeholder="Numero di telefono (facoltativo)" class="lead-form__input"/>
+                            <input type="text" name="nome" id="lf-r-nome" autocomplete="given-name"
+                                   placeholder="Il tuo nome (facoltativo)" class="lead-form__input"/>
                         </div>
                         <button type="submit" class="lead-form__btn" id="lf-r-btn">
-                            <span class="lead-form__btn-label">Iscriviti gratis</span>
+                            <span class="lead-form__btn-label">Inviami Il Prompt Madre</span>
                             <span class="lead-form__btn-spinner" aria-hidden="true"></span>
                         </button>
                         <p class="lead-form__msg" id="lf-r-msg" role="status" aria-live="polite"></p>
@@ -934,9 +939,8 @@
                             [fNome, fEmail].forEach(function (i) { i.classList.remove('is-invalid'); });
                             var nome = fNome.value.trim();
                             var email = fEmail.value.trim();
-                            var telefono = fTel.value.trim();
+                            var telefono = (fTel ? fTel.value.trim() : '');
 
-                            if (!nome) { fNome.classList.add('is-invalid'); fNome.focus(); return setMsg('Inserisci il tuo nome.', 'error'); }
                             if (!isEmail(email)) { fEmail.classList.add('is-invalid'); fEmail.focus(); return setMsg('Inserisci un’email valida.', 'error'); }
 
                             setLoading(true);
@@ -949,6 +953,7 @@
                                 body: JSON.stringify({ nome: nome, email: email, telefono: telefono, utm_source: 'sito-aiosha-risorse' })
                             })
                             .then(function () {
+                                if (window.aioEvent) window.aioEvent('generate_lead', { method: 'sito-risorse', form_id: 'leadFormRisorse', value: 1, currency: 'EUR' });
                                 form.reset();
                                 window.location.href = '/ty.html';
                             })
