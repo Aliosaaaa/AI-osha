@@ -3068,10 +3068,14 @@
                                 body: JSON.stringify({ nome: nome, email: email, telefono: telefono, utm_source: 'sito-aiosha-home' })
                             })
                             .then(function () {
-                                // Conversione: lead acquisito (mode no-cors => misura l'intento di iscrizione)
-                                if (window.aioEvent) window.aioEvent('generate_lead', { method: 'sito-home', form_id: 'leadForm', value: 1, currency: 'EUR' });
+                                // Conversione: lead acquisito. event_callback => attende l'invio dell'evento prima del redirect
                                 form.reset();
-                                window.location.href = '/ty.html';
+                                var go = function () { window.location.href = '/ty.html'; };
+                                if (typeof gtag === 'function') {
+                                    var redirected = false, redirect = function () { if (!redirected) { redirected = true; go(); } };
+                                    gtag('event', 'generate_lead', { method: 'sito-home', form_id: 'leadForm', value: 1, currency: 'EUR', event_callback: redirect });
+                                    setTimeout(redirect, 1200);
+                                } else { go(); }
                             })
                             .catch(function () {
                                 setLoading(false);

@@ -953,9 +953,13 @@
                                 body: JSON.stringify({ nome: nome, email: email, telefono: telefono, utm_source: 'sito-aiosha-risorse' })
                             })
                             .then(function () {
-                                if (window.aioEvent) window.aioEvent('generate_lead', { method: 'sito-risorse', form_id: 'leadFormRisorse', value: 1, currency: 'EUR' });
                                 form.reset();
-                                window.location.href = '/ty.html';
+                                var go = function () { window.location.href = '/ty.html'; };
+                                if (typeof gtag === 'function') {
+                                    var redirected = false, redirect = function () { if (!redirected) { redirected = true; go(); } };
+                                    gtag('event', 'generate_lead', { method: 'sito-risorse', form_id: 'leadFormRisorse', value: 1, currency: 'EUR', event_callback: redirect });
+                                    setTimeout(redirect, 1200);
+                                } else { go(); }
                             })
                             .catch(function () {
                                 setLoading(false);
