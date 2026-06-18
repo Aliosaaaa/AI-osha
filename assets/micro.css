@@ -1,0 +1,18 @@
+/* AI Osha — transizioni tra pagine + base micro-interazioni. Inclusa ovunque. */
+
+/* ---- Transizioni tra pagine (View Transitions API, MPA) ---- */
+@view-transition { navigation: auto; }
+@media (prefers-reduced-motion: no-preference) {
+  ::view-transition-old(root) { animation: aio-vt-out .28s ease both; }
+  ::view-transition-new(root) { animation: aio-vt-in .36s ease both; }
+}
+@keyframes aio-vt-out { to   { opacity: 0; transform: translateY(-8px); } }
+@keyframes aio-vt-in  { from { opacity: 0; transform: translateY(10px); } }
+
+/* ---- Tilt: prospettiva morbida (il transform vero lo mette il JS) ---- */
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+  .problem-card, .result-card, .path-card, .lesson-card, .risorsa-card,
+  .about-card, .feature-card, .step, .tool-card, .pt-card, .stat-card {
+    transform-style: preserve-3d;
+  }
+}

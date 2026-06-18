@@ -38,7 +38,7 @@
         .gold { color: var(--highlight); }
 
         /* topbar */
-        .topbar { display:flex; align-items:center; justify-content:space-between; padding: 1rem 1.25rem; max-width:1040px; margin:0 auto; }
+        .topbar { position:sticky; top:0; z-index:1000; display:flex; align-items:center; justify-content:space-between; gap:1rem; padding: .85rem max(1.25rem, calc((100% - 1040px) / 2)); background:rgba(13,17,23,.9); -webkit-backdrop-filter:blur(10px); backdrop-filter:blur(10px); border-bottom:1px solid rgba(255,255,255,.07); }
         .logo { display:flex; align-items:center; gap:.5rem; text-decoration:none; }
         .logo img { height:30px; width:auto; }
         .logo span { font-size:1.2rem; font-weight:800; color:#fff; letter-spacing:-0.02em; }
@@ -126,6 +126,8 @@
       gtag('js', new Date());
       gtag('config', 'G-6GNKJZJY1V');
     </script>
+    <link rel="stylesheet" href="assets/reveal.css">
+    <link rel="stylesheet" href="assets/micro.css">
 </head>
 <body>
 
@@ -232,5 +234,8 @@
     <footer>
         © 2026 AI Osha — Aliosha Battaglini · P.IVA IT02097940478 · Pescia (PT) · <a href="privacy-policy.html">Privacy</a> · <a href="contatti.html">Contatti</a>
     </footer>
+    <script src="assets/partners.js" defer></script>
+    <script src="assets/reveal.js" defer></script>
+    <script src="assets/micro.js" defer></script>
 </body>
 </html>
