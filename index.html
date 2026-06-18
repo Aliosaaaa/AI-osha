@@ -1713,13 +1713,17 @@
         @media (prefers-reduced-motion: no-preference) {
             .animate-on-scroll {
                 opacity: 0;
-                transform: translateY(30px);
-                transition: opacity 0.6s ease, transform 0.6s ease;
+                transform: translate(var(--rx, 0px), var(--ry, 56px)) scale(var(--rs, 0.92));
+                transition: opacity 0.65s ease-out,
+                            transform 0.85s cubic-bezier(0.34, 1.32, 0.5, 1);
+                transition-delay: var(--reveal-delay, 0ms);
+                will-change: opacity, transform;
             }
 
             .animate-on-scroll.visible {
                 opacity: 1;
-                transform: translateY(0);
+                transform: translate(0, 0) scale(1);
+                will-change: auto;
             }
         }
 
@@ -3172,6 +3176,50 @@
                 </div>
             </div>
         </section>
+
+        <!-- ========================================
+             PARTNER & COLLABORAZIONI
+             ======================================== -->
+        <section class="section section--light pt-partners">
+            <div class="container">
+                <div class="section__header animate-on-scroll" style="text-align:center;">
+                    <span class="section__eyebrow">Collaborazioni</span>
+                    <h2 class="section__title">Partner &amp; <span class="text-gradient">Collaborazioni</span></h2>
+                    <p class="section__description">Progetti e realtà con cui collaboro.</p>
+                </div>
+                <div class="pt-grid">
+                    <div class="pt-item animate-on-scroll">
+                        <a class="pt-card" href="https://agroio.it" target="_blank" rel="noopener" aria-label="AgroIO">
+                            <img src="images/partner/agroio.png" alt="AgroIO" loading="lazy">
+                        </a>
+                    </div>
+                    <div class="pt-item animate-on-scroll">
+                        <a class="pt-card" href="https://www.pomaliberatutti.it" target="_blank" rel="noopener" aria-label="Fondazione Poma Liberatutti">
+                            <img src="images/partner/fondazione-poma.png" alt="Fondazione Poma Liberatutti" loading="lazy">
+                        </a>
+                    </div>
+                    <div class="pt-item animate-on-scroll">
+                        <a class="pt-card" href="https://salviamoicastagni.it" target="_blank" rel="noopener" aria-label="Fratelli Maltagliati">
+                            <img src="images/partner/fratelli-maltagliati.png" alt="Fratelli Maltagliati - Le Ravi" loading="lazy">
+                        </a>
+                    </div>
+                    <div class="pt-item animate-on-scroll">
+                        <a class="pt-card" href="https://lullabyforkids.com" target="_blank" rel="noopener" aria-label="Relax In No Time">
+                            <img src="images/partner/relax-in-no-time.png" alt="Relax In No Time" loading="lazy">
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <style>
+                .pt-grid { display:flex; flex-wrap:wrap; justify-content:center; align-items:stretch; gap:24px; margin-top:36px; }
+                .pt-item { display:flex; }
+                .pt-card { display:flex; align-items:center; justify-content:center; width:210px; height:122px; padding:22px 26px; background:#ffffff; border:1px solid #e9edf2; border-radius:16px; box-shadow:0 6px 20px rgba(13,17,23,0.06); text-decoration:none; transition:transform .25s ease, box-shadow .25s ease, border-color .25s ease; }
+                .pt-card img { max-width:100%; max-height:78px; width:auto; height:auto; object-fit:contain; filter:none; opacity:1; transition:filter .25s ease, opacity .25s ease; }
+                .pt-card:hover { transform:translateY(-6px); box-shadow:0 16px 34px rgba(13,17,23,0.13); border-color:#d7dee7; }
+                .pt-card:active img { filter:grayscale(100%); opacity:.85; }
+                @media (max-width:560px){ .pt-card{ width:44%; min-width:140px; height:100px; padding:16px 18px; } .pt-card img{ max-height:58px; } }
+            </style>
+        </section>
     </main>
 
     <!-- Footer -->
@@ -3358,24 +3406,63 @@
             });
         });
 
-        // Animate on scroll
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
+        // Animate on scroll — reveal premium (one-shot, stagger, copertura totale)
+        (function () {
+            // Rispetta chi ha disattivato le animazioni (accessibilita)
+            if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
 
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                    observer.unobserve(entry.target);
+            // 1) Copertura: aggiungi la classe a TUTTI i box che ancora non ce l'hanno
+            var revealSelectors = [
+                '.problem-card', '.result-card', '.step', '.step-card', '.risorsa-card',
+                '.testimonial', '.testimonial-card', '.wa-card', '.faq-item', '.prompt-card',
+                '.tool-card', '.section__header', '.cta-section__content', '.how-cta',
+                '.ba-card', '.feature-card', '.path-card', '.stat-card', '.section__description'
+            ];
+            document.querySelectorAll(revealSelectors.join(',')).forEach(function (el) {
+                el.classList.add('animate-on-scroll');
+            });
+
+            // 2) "Montaggio": conta i fratelli per contenitore, poi assegna direzione + cascata
+            var totals = new Map();
+            document.querySelectorAll('.animate-on-scroll').forEach(function (el) {
+                var p = el.parentElement;
+                totals.set(p, (totals.get(p) || 0) + 1);
+            });
+            var seen = new Map();
+            document.querySelectorAll('.animate-on-scroll').forEach(function (el) {
+                var p = el.parentElement;
+                var i = seen.get(p) || 0; seen.set(p, i + 1);
+                var total = totals.get(p);
+                // cascata marcata
+                if (i > 0) el.style.setProperty('--reveal-delay', Math.min(i * 110, 660) + 'ms');
+                // intestazioni e testi: entrano dal basso, decisi
+                var fromBelow = el.matches('.section__header, .section__description, .cta-section__content, .how-cta');
+                if (!fromBelow && total >= 2) {
+                    // box in griglia/riga: si assemblano dai lati, alternati
+                    el.style.setProperty('--rx', (i % 2 === 0 ? -64 : 64) + 'px');
+                    el.style.setProperty('--ry', '24px');
+                    el.style.setProperty('--rs', '0.9');
+                } else {
+                    el.style.setProperty('--ry', '60px');
+                    el.style.setProperty('--rs', '0.94');
                 }
             });
-        }, observerOptions);
 
-        document.querySelectorAll('.animate-on-scroll').forEach(el => {
-            observer.observe(el);
-        });
+            // 3) Observer bidirezionale: si compone entrando E si ri-compone tornandoci (su o giu)
+            var observer = new IntersectionObserver(function (entries) {
+                entries.forEach(function (entry) {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    } else {
+                        entry.target.classList.remove('visible');
+                    }
+                });
+            }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+
+            document.querySelectorAll('.animate-on-scroll').forEach(function (el) {
+                observer.observe(el);
+            });
+        })();
 
         // Counter animation
         const counterObserver = new IntersectionObserver((entries) => {
