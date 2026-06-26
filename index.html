@@ -884,13 +884,46 @@
         .hero__grid {
             position: absolute;
             inset: 0;
-            background-image: 
+            background-image:
                 linear-gradient(rgba(0, 168, 232, 0.03) 1px, transparent 1px),
                 linear-gradient(90deg, rgba(0, 168, 232, 0.03) 1px, transparent 1px);
             background-size: 60px 60px;
             z-index: -1;
             mask-image: radial-gradient(ellipse 80% 60% at 50% 40%, black 0%, transparent 70%);
             -webkit-mask-image: radial-gradient(ellipse 80% 60% at 50% 40%, black 0%, transparent 70%);
+        }
+
+        /* ── AURORA HERO (Salto Quantico style) — ottimizzato GPU ─ */
+        .hero__aurora {
+            position: absolute; inset: 0; z-index: -1;
+            background: url('images/aurora-hero.jpg') center/cover no-repeat;
+            opacity: 0.32;
+            -webkit-mask-image: linear-gradient(180deg, #000 0%, #000 55%, transparent 92%);
+            mask-image: linear-gradient(180deg, #000 0%, #000 55%, transparent 92%);
+        }
+        /* area scura dietro al logo: nasconde il riquadro del video (mix-blend) */
+        .hero__center-dark {
+            position: absolute; inset: 0; z-index: -1; pointer-events: none;
+            background: radial-gradient(circle at 50% 34%, var(--dark) 0%, rgba(13,17,23,.55) 20%, transparent 44%);
+        }
+        /* bagliori: solo radial-gradient (già soft) animati via transform → GPU, nessun blur/blend/JS */
+        .hero .aurora-blob {
+            position: absolute; border-radius: 50%; opacity: 0.5;
+            z-index: -1; pointer-events: none; will-change: transform;
+            transform: translateZ(0); backface-visibility: hidden;
+            animation: aiDrift 34s ease-in-out infinite;
+        }
+        .hero .ab1 { width: 460px; height: 460px; top: -150px; right: -90px;
+            background: radial-gradient(circle, rgba(0,168,232,.40), transparent 66%); }
+        .hero .ab2 { width: 380px; height: 380px; bottom: -130px; left: -90px;
+            background: radial-gradient(circle, rgba(123,97,255,.32), transparent 66%); animation-delay: -13s; }
+        @keyframes aiDrift {
+            0%,100% { transform: translate3d(0,0,0) scale(1); }
+            33% { transform: translate3d(40px,-26px,0) scale(1.08); }
+            66% { transform: translate3d(-26px,18px,0) scale(.95); }
+        }
+        @media (prefers-reduced-motion: reduce) {
+            .hero .aurora-blob { animation: none; }
         }
 
         .hero__content {
@@ -2153,6 +2186,10 @@
         <!-- Hero Section -->
         <section class="hero" id="hero">
             <div class="hero__bg"></div>
+            <div class="hero__aurora"></div>
+            <div class="hero__center-dark"></div>
+            <span class="aurora-blob ab1"></span>
+            <span class="aurora-blob ab2"></span>
             <div class="hero__grid"></div>
             <div class="container">
                 <div class="hero__content">
