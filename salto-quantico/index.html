@@ -4,7 +4,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>SALTO QUANTICO — 3 sere live gratis con l'AI | AI Osha</title>
-<meta name="description" content="Da 'so che dovrei usarla' a 'la sto già usando'. 3 sere live gratis su YouTube, 8-9-10 luglio. Per chi lavora. Con Aliosha Battaglini." />
+<meta name="description" content="Da 'so che dovrei usarla' a 'la sto già usando'. 3 sere live gratis su Zoom, 8-9-10 luglio. Per chi lavora. Con Aliosha Battaglini." />
 <link rel="icon" type="image/png" href="images/uccello.png" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -341,19 +341,20 @@ footer .meta{color:var(--g500);font-size:.82rem}
       <div>
         <span class="eyebrow"><span class="dot"></span> Gratis · 3 sere live · 8–9–10 luglio</span>
         <h1>Il tuo <span class="shimmer">salto quantico</span> con l'intelligenza artificiale</h1>
-        <p class="lead">Tre sere dal vivo su YouTube. Niente paroloni, niente "diventa un tecnico". Solo cose che da domani usi davvero sul tuo lavoro.</p>
+        <p class="lead">Tre sere dal vivo su Zoom. Niente paroloni, niente "diventa un tecnico". Solo cose che da domani usi davvero sul tuo lavoro.</p>
         <p class="promise">Da <b>«so che dovrei usarla»</b> a <b>«la sto già usando»</b>. In tre sere.</p>
         <div class="form-card" id="iscriviti">
-          <form id="signup" onsubmit="return fakeSubmit(event)">
+          <form id="signup" onsubmit="return sqSubmit(event)">
             <input type="text" name="nome" placeholder="Il tuo nome" required />
             <input type="email" name="email" placeholder="La tua email" required />
+            <input type="tel" name="telefono" placeholder="Telefono (facoltativo)" />
             <button class="btn pulse" type="submit" data-magnetic>🎟️ Voglio il mio posto gratis</button>
           </form>
           <p class="form-micro">🎁 Iscrivendoti ricevi subito <b>la Parte 1 del libro «AI in Pratica per chi lavora»</b>. Niente spam — ti scrivo solo per le live.</p>
         </div>
         <div class="hero-meta">
           <span><span class="ic">📅</span> 8-9-10 luglio</span>
-          <span><span class="ic">🔴</span> Live su YouTube</span>
+          <span><span class="ic">🔴</span> Live su Zoom</span>
           <span><span class="ic">⏱️</span> ~1h a sera</span>
         </div>
       </div>
@@ -465,7 +466,7 @@ footer .meta{color:var(--g500);font-size:.82rem}
   <div class="wrap">
     <span class="eyebrow-c reveal">Il programma</span>
     <h2 class="reveal">Tre sere, un salto</h2>
-    <p class="sec-sub reveal">Live su YouTube, circa un'ora ciascuna. Ti basta esserci — e ti resta il replay.</p>
+    <p class="sec-sub reveal">Live su Zoom, circa un'ora ciascuna. Ti mando io il link — e ti resta il replay.</p>
     <div class="nights">
       <div class="night spot reveal d1">
         <div class="n-num">// SERA 1</div>
@@ -632,7 +633,7 @@ footer .meta{color:var(--g500);font-size:.82rem}
   <div class="narrow">
     <span class="eyebrow-c reveal" style="color:var(--highlight-light)">Ci sei?</span>
     <h2 class="reveal">Il salto dura tre sere.<br>L'iscrizione dura <span class="hl">un click.</span></h2>
-    <p class="sec-sub reveal" style="margin-bottom:1rem">8, 9 e 10 luglio · Live su YouTube · Gratis · con la Parte 1 del libro in regalo.</p>
+    <p class="sec-sub reveal" style="margin-bottom:1rem">8, 9 e 10 luglio · Live su Zoom · Gratis · con la Parte 1 del libro in regalo.</p>
     <div class="countdown reveal" id="countdown">
       <div class="cd-box"><div class="cd-n" id="cdD">--</div><div class="cd-l">giorni</div></div>
       <div class="cd-box"><div class="cd-n" id="cdH">--</div><div class="cd-l">ore</div></div>
@@ -763,7 +764,21 @@ vm.addEventListener('click',function(e){if(e.target===vm)vm.classList.remove('op
   if('IntersectionObserver' in window&&heroEl){new IntersectionObserver(function(es){visible=es[0].isIntersecting;if(visible)startP();},{threshold:0}).observe(heroEl);}else{startP();}
 })();
 
-function fakeSubmit(e){e.preventDefault();alert('✅ Form di prova. Da collegare a Brevo: lista + tag salto-quantico + invio Parte 1 del libro.');return false;}
+/* Collega il form alla lista Brevo #37 tramite proxy Google Apps Script */
+var SQ_ENDPOINT = ""; /* <-- INCOLLA QUI l'URL /exec del Google Apps Script */
+function sqSubmit(e){
+  e.preventDefault();
+  var f=e.target, btn=f.querySelector('button');
+  var data={ nome:f.nome.value.trim(), email:f.email.value.trim(), telefono:(f.telefono?f.telefono.value.trim():''), fonte:'landing-salto-quantico' };
+  if(!SQ_ENDPOINT){ alert('Iscrizione quasi pronta — sto collegando il modulo. Riprova tra poco!'); return false; }
+  btn.disabled=true; var old=btn.textContent; btn.textContent='Invio…';
+  fetch(SQ_ENDPOINT,{method:'POST',mode:'no-cors',body:JSON.stringify(data)})
+    .then(function(){
+      f.innerHTML='<div style="text-align:center;padding:14px 6px"><div style="font-size:2.4rem">✅</div><p style="color:#fff;font-weight:800;margin:.5rem 0;font-size:1.15rem">Ci sei dentro!</p><p style="color:var(--g400);font-size:.92rem">Controlla la mail: ti ho mandato la <b style="color:var(--highlight-light)">Parte 1 del libro</b> e ti scrivo io prima di ogni sera.</p></div>';
+    })
+    .catch(function(){ btn.disabled=false; btn.textContent=old; alert('Ops, qualcosa è andato storto. Riprova tra un attimo.'); });
+  return false;
+}
 </script>
 </body>
 </html>
