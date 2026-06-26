@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>SALTO QUANTICO — 3 sere live gratis con l'AI | AI Osha</title>
+<meta name="description" content="Da 'so che dovrei usarla' a 'la sto già usando'. 3 sere live gratis su YouTube, 8-9-10 luglio. Per chi lavora. Con Aliosha Battaglini." />
+<link rel="icon" type="image/png" href="images/uccello.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet" />
+<style>
+:root{
+  --primary:#00A8E8;--primary-light:#46c6f5;--primary-dark:#0088c2;
+  --indigo:#7B61FF;--indigo-light:#9d86ff;
+  --accent:#1E3A5F;--highlight:#F5A623;--highlight-light:#ffc861;--highlight-dark:#d4911f;
+  --bg:#070A10;--bg-2:#0B0F17;--card:#10151f;--card-2:#141a26;
+  --line:rgba(255,255,255,.08);--line-2:rgba(255,255,255,.14);
+  --white:#fff;--g200:#e5e9f0;--g300:#c2cad6;--g400:#8b95a7;--g500:#5e6776;
+  --font:'Plus Jakarta Sans',system-ui,sans-serif;--mono:'JetBrains Mono',monospace;
+  --radius:1.25rem;--shadow:0 30px 70px -22px rgba(0,0,0,.8);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--font);background:var(--bg);color:var(--g300);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden;position:relative}
+body::after{content:"";position:fixed;inset:0;z-index:1;pointer-events:none;opacity:.04;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+.wrap{max-width:1160px;margin:0 auto;padding:0 22px;position:relative;z-index:3}
+.narrow{max-width:800px;margin:0 auto;padding:0 22px;position:relative;z-index:3}
+a{color:inherit;text-decoration:none}
+
+/* scroll progress */
+.progress{position:fixed;top:0;left:0;height:3px;width:0;z-index:100;background:linear-gradient(90deg,var(--primary),var(--indigo),var(--highlight));box-shadow:0 0 12px rgba(0,168,232,.6)}
+
+/* aurora blobs */
+.aurora{position:absolute;border-radius:50%;filter:blur(80px);opacity:.55;z-index:0;pointer-events:none;mix-blend-mode:screen;animation:drift 22s ease-in-out infinite}
+.aurora.c{background:radial-gradient(circle,rgba(0,168,232,.7),transparent 70%)}
+.aurora.i{background:radial-gradient(circle,rgba(123,97,255,.6),transparent 70%)}
+.aurora.g{background:radial-gradient(circle,rgba(245,166,35,.45),transparent 70%)}
+@keyframes drift{0%,100%{transform:translate(0,0) scale(1)}25%{transform:translate(60px,-40px) scale(1.15)}50%{transform:translate(-40px,30px) scale(.9)}75%{transform:translate(30px,50px) scale(1.05)}}
+
+/* NAV */
+.nav{position:fixed;top:0;left:0;right:0;z-index:80;transition:all .35s;padding:16px 0}
+.nav.scrolled{background:rgba(7,10,16,.8);backdrop-filter:blur(16px);border-bottom:1px solid var(--line);padding:9px 0}
+.nav-in{display:flex;align-items:center;justify-content:space-between;max-width:1160px;margin:0 auto;padding:0 22px}
+.logo{display:flex;align-items:center;gap:.5rem;font-weight:800;font-size:1.25rem;color:#fff}
+.logo img{height:30px}.logo .o{color:var(--primary)}
+.nav-r{display:flex;align-items:center;gap:18px}
+.nav-cd{display:flex;align-items:center;gap:8px;font-family:var(--mono);color:var(--highlight-light);font-size:.85rem;font-weight:600}
+@media(max-width:600px){.nav-cd .lab{display:none}}
+
+/* BUTTONS */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;background:linear-gradient(135deg,var(--highlight),var(--highlight-dark));color:#1a1205;font-weight:800;font-size:1.05rem;padding:1.05rem 2rem;border:none;border-radius:.85rem;cursor:pointer;box-shadow:0 14px 34px -8px rgba(245,166,35,.5);transition:transform .12s,box-shadow .2s;position:relative;overflow:hidden;will-change:transform}
+.btn::before{content:"";position:absolute;top:0;left:-120%;width:60%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.45),transparent);transform:skewX(-20deg);animation:shine 4.5s infinite}
+@keyframes shine{0%,60%{left:-120%}80%,100%{left:140%}}
+.btn:hover{box-shadow:0 22px 50px -10px rgba(245,166,35,.7)}
+.btn.sm{padding:.7rem 1.3rem;font-size:.95rem}
+.btn.pulse{animation:pulse 2.8s infinite}
+@keyframes pulse{0%{box-shadow:0 14px 34px -8px rgba(245,166,35,.5),0 0 0 0 rgba(245,166,35,.45)}70%{box-shadow:0 14px 34px -8px rgba(245,166,35,.5),0 0 0 22px rgba(245,166,35,0)}100%{box-shadow:0 14px 34px -8px rgba(245,166,35,.5),0 0 0 0 rgba(245,166,35,0)}}
+
+/* HERO */
+.hero{position:relative;padding:130px 0 80px;overflow:hidden;isolation:isolate}
+.hero-bg{position:absolute;inset:0;z-index:0;background:url('images/aurora/a4.jpg') center/cover no-repeat;opacity:.55}
+.hero-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(100deg,var(--bg) 18%,rgba(7,10,16,.5) 55%,rgba(7,10,16,.2)),linear-gradient(0deg,var(--bg),transparent 35%)}
+#particles{position:absolute;inset:0;z-index:1;pointer-events:none}
+.hero-grid{display:grid;grid-template-columns:1.04fr .96fr;gap:46px;align-items:center;position:relative;z-index:3}
+@media(max-width:920px){.hero-grid{grid-template-columns:1fr;gap:38px}}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;background:rgba(0,168,232,.1);border:1px solid rgba(0,168,232,.32);color:var(--primary-light);font-weight:700;font-size:.76rem;letter-spacing:1.4px;padding:.5rem 1rem;border-radius:100px;text-transform:uppercase;margin-bottom:1.5rem}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--primary);animation:live 1.8s infinite}
+@keyframes live{0%{box-shadow:0 0 0 0 rgba(0,168,232,.7)}70%{box-shadow:0 0 0 9px rgba(0,168,232,0)}100%{box-shadow:0 0 0 0 rgba(0,168,232,0)}}
+h1{font-size:clamp(36px,5.8vw,62px);line-height:1.04;font-weight:800;letter-spacing:-1.8px;color:#fff;margin-bottom:1.2rem}
+.shimmer{background:linear-gradient(100deg,var(--primary-light) 10%,var(--indigo-light) 40%,var(--highlight-light) 70%,var(--primary-light) 95%);background-size:200% auto;-webkit-background-clip:text;background-clip:text;color:transparent;animation:shimmer 6s linear infinite}
+@keyframes shimmer{to{background-position:200% center}}
+.lead{font-size:clamp(16px,2.2vw,20px);color:var(--g300);margin-bottom:1rem;max-width:520px}
+.promise{font-size:clamp(17px,2.4vw,22px);font-weight:700;color:#fff;margin-bottom:1.7rem}
+.promise b{color:var(--highlight-light)}
+.hero-meta{display:flex;gap:20px;flex-wrap:wrap;margin-top:1.4rem;color:var(--g400);font-size:.88rem;font-weight:600}
+.hero-meta span{display:flex;align-items:center;gap:7px}
+.hero-meta .ic{color:var(--primary)}
+
+/* FORM */
+.form-card{background:rgba(16,21,31,.75);border:1px solid var(--line-2);border-radius:var(--radius);padding:1.5rem;max-width:470px;backdrop-filter:blur(10px);box-shadow:var(--shadow)}
+.form-card form{display:flex;flex-direction:column;gap:.7rem}
+.form-card input{width:100%;padding:.95rem 1.1rem;border-radius:.7rem;border:1.5px solid var(--line-2);background:rgba(7,10,16,.7);color:#fff;font-size:1rem;font-family:inherit;font-weight:500}
+.form-card input::placeholder{color:#5b6678}
+.form-card input:focus{outline:none;border-color:var(--primary);box-shadow:0 0 0 3px rgba(0,168,232,.15)}
+.form-micro{font-size:.8rem;color:var(--g400);margin-top:.9rem;line-height:1.5}
+.form-micro b{color:var(--highlight-light)}
+
+/* HERO VIDEO */
+.video-frame{position:relative;border-radius:1.4rem;overflow:hidden;border:1px solid var(--line-2);box-shadow:var(--shadow);aspect-ratio:16/9;background:url('images/aurora/a1.jpg') center/cover;cursor:pointer;transform-style:preserve-3d;will-change:transform}
+.video-frame::after{content:"";position:absolute;inset:0;background:radial-gradient(circle at 50% 45%,transparent,rgba(7,10,16,.45))}
+.vplay{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);z-index:2;width:84px;height:84px;border-radius:50%;background:rgba(255,255,255,.95);display:flex;align-items:center;justify-content:center;box-shadow:0 12px 40px rgba(0,0,0,.5);transition:transform .2s}
+.vplay::before{content:"";border-left:24px solid var(--bg);border-top:15px solid transparent;border-bottom:15px solid transparent;margin-left:6px}
+.video-frame:hover .vplay{transform:translate(-50%,-50%) scale(1.1)}
+.vplay::after{content:"";position:absolute;inset:-10px;border-radius:50%;border:2px solid rgba(255,255,255,.5);animation:ring 2s infinite}
+@keyframes ring{0%{transform:scale(1);opacity:.8}100%{transform:scale(1.5);opacity:0}}
+.vlabel{position:absolute;bottom:14px;left:16px;z-index:2;color:#fff;font-weight:700;font-size:.9rem;display:flex;align-items:center;gap:8px}
+.vlabel .live{background:#ef4444;color:#fff;font-size:.68rem;padding:.15rem .5rem;border-radius:.35rem;font-weight:800;letter-spacing:.5px}
+.vbadge{position:absolute;top:-14px;right:-14px;z-index:4;background:rgba(16,21,31,.95);border:1px solid var(--line-2);border-radius:.9rem;padding:.6rem .9rem;box-shadow:var(--shadow);text-align:center;animation:bob 4s ease-in-out infinite}
+.vbadge .st{color:var(--highlight);font-size:.95rem;letter-spacing:1px}
+.vbadge .tx{color:#fff;font-size:.72rem;font-weight:700;margin-top:2px}
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+
+/* MARQUEE */
+.marquee{border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:18px 0;overflow:hidden;background:var(--bg-2);position:relative;z-index:3}
+.marquee-track{display:flex;gap:48px;white-space:nowrap;width:max-content;animation:scroll 28s linear infinite}
+.marquee:hover .marquee-track{animation-play-state:paused}
+@keyframes scroll{to{transform:translateX(-50%)}}
+.marquee-item{display:inline-flex;align-items:center;gap:10px;color:var(--g400);font-weight:700;font-size:.95rem}
+.marquee-item .s{color:var(--highlight)}
+
+/* SECTIONS */
+section{position:relative;padding:90px 0;overflow:hidden}
+.eyebrow-c{display:block;text-align:center;color:var(--primary);font-family:var(--mono);font-weight:600;letter-spacing:2px;font-size:.8rem;text-transform:uppercase;margin-bottom:1rem}
+h2{font-size:clamp(28px,4.5vw,46px);line-height:1.1;font-weight:800;letter-spacing:-1.2px;text-align:center;color:#fff;margin-bottom:1rem}
+h2 .hl{color:var(--highlight)}
+.sec-sub{text-align:center;color:var(--g400);font-size:1.1rem;max-width:660px;margin:0 auto 3rem;font-weight:500}
+
+/* STATS */
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+@media(max-width:760px){.stats{grid-template-columns:1fr}}
+.stat{position:relative;background:linear-gradient(180deg,var(--card-2),var(--card));border:1px solid var(--line);border-radius:var(--radius);padding:2.4rem 1.6rem;text-align:center;box-shadow:0 20px 50px -26px rgba(0,0,0,.9);overflow:hidden}
+.stat::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--primary),var(--indigo),var(--highlight))}
+.stat .num{font-size:clamp(40px,6vw,56px);font-weight:800;color:#fff;letter-spacing:-2px;line-height:1;font-variant-numeric:tabular-nums}
+.stat .num.gold{color:var(--highlight)}.stat .num.cyan{color:var(--primary)}
+.stat .lbl{margin-top:.9rem;color:var(--g400);font-weight:600;font-size:.95rem;line-height:1.45}
+.stat .lbl b{color:var(--g200)}
+.punch{text-align:center;font-size:clamp(22px,3.4vw,32px);font-weight:800;color:#fff;margin-top:3rem;letter-spacing:-.5px;line-height:1.3}
+.punch .hl{color:var(--highlight)}
+.src{display:block;text-align:center;color:var(--g500);font-size:.78rem;margin-top:1.2rem;font-family:var(--mono)}
+
+/* SALTO */
+.salto-grid{display:grid;grid-template-columns:1fr 1fr;gap:34px;align-items:center}
+@media(max-width:820px){.salto-grid{grid-template-columns:1fr}}
+.salto-text p{color:var(--g300);font-size:1.08rem;margin-bottom:1.1rem}
+.salto-text b{color:var(--highlight-light)}
+.curve{background:linear-gradient(180deg,var(--card-2),var(--card));border:1px solid var(--line);border-radius:var(--radius);padding:2rem;box-shadow:var(--shadow)}
+.curve h4{color:var(--primary);font-family:var(--mono);font-size:.8rem;letter-spacing:1px;text-transform:uppercase;margin-bottom:1.4rem}
+.bar{display:flex;align-items:flex-end;gap:14px;height:170px;margin-bottom:.9rem}
+.bar div{flex:1;border-radius:10px 10px 0 0;display:flex;align-items:flex-start;justify-content:center;color:#06121f;font-weight:800;font-size:.8rem;padding-top:8px}
+.b1{height:88%;background:linear-gradient(180deg,#ff7a7a,#e74c4c)}
+.b2{height:30%;background:linear-gradient(180deg,var(--highlight-light),var(--highlight))}
+.b3{height:96%;background:linear-gradient(180deg,#ff7a7a,#e74c4c)}
+.bar-lbls{display:flex;gap:14px;color:var(--g400);font-size:.78rem;font-weight:600;text-align:center}
+.bar-lbls div{flex:1}.bar-lbls .hot{color:var(--highlight-light)}
+
+/* NIGHTS */
+.nights{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+@media(max-width:820px){.nights{grid-template-columns:1fr}}
+.night{position:relative;background:linear-gradient(180deg,var(--card-2),var(--card));border:1px solid var(--line);border-radius:var(--radius);padding:2rem 1.7rem;box-shadow:0 20px 50px -28px rgba(0,0,0,.9);transition:transform .25s,border-color .25s;overflow:hidden}
+.night:hover{transform:translateY(-8px);border-color:rgba(0,168,232,.45)}
+.night::before{content:"";position:absolute;top:0;left:1.7rem;right:1.7rem;height:3px;background:linear-gradient(90deg,var(--primary),var(--highlight))}
+.night .n-num{font-family:var(--mono);font-size:.8rem;font-weight:600;color:var(--primary);letter-spacing:1px}
+.night .n-date{margin:.4rem 0 1rem;font-weight:800;font-size:1.22rem;color:#fff}
+.night .n-date span{display:block;font-size:.9rem;color:var(--highlight);font-weight:700;margin-top:2px}
+.night h3{font-size:1.2rem;font-weight:800;color:#fff;margin-bottom:.6rem}
+.night p{color:var(--g400);font-size:.95rem;margin-bottom:1rem}
+.night ul{list-style:none}
+.night li{padding:.35rem 0 .35rem 1.5rem;position:relative;color:var(--g300);font-size:.9rem;font-weight:500}
+.night li::before{content:"→";position:absolute;left:0;color:var(--primary)}
+.tag{display:inline-block;margin-top:1rem;background:rgba(245,166,35,.12);color:var(--highlight-light);font-size:.72rem;font-weight:800;padding:.35rem .8rem;border-radius:.5rem;letter-spacing:.5px}
+
+/* TESTIMONIALS */
+.tcred{display:flex;align-items:center;justify-content:center;gap:.6rem;margin-bottom:2.4rem;flex-wrap:wrap}
+.tcred .stars{color:var(--highlight);font-size:1.2rem;letter-spacing:2px}
+.tcred .txt{color:var(--g400);font-weight:600}
+.tgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+@media(max-width:880px){.tgrid{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){.tgrid{grid-template-columns:1fr}}
+.tcard{position:relative;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;box-shadow:0 20px 50px -30px rgba(0,0,0,.9);transition:transform .25s,border-color .25s;display:block}
+.tcard:hover{transform:translateY(-7px);border-color:rgba(0,168,232,.45)}
+.tthumb{position:relative;aspect-ratio:16/10;background-size:cover;background-position:center}
+.tthumb::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(7,10,16,.1),rgba(7,10,16,.7))}
+.tplay{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:52px;height:52px;border-radius:50%;background:rgba(0,168,232,.92);display:flex;align-items:center;justify-content:center;z-index:2;box-shadow:0 8px 24px rgba(0,168,232,.5);transition:transform .2s;color:#fff;font-size:.9rem}
+.tcard:hover .tplay{transform:translate(-50%,-50%) scale(1.14)}
+.tbadge{position:absolute;bottom:10px;left:12px;z-index:2;color:#fff;font-size:.72rem;font-weight:700;background:rgba(0,0,0,.5);padding:.25rem .6rem;border-radius:.4rem;backdrop-filter:blur(4px)}
+.tinfo{padding:1.3rem 1.4rem}
+.tinfo .tq{color:#fff;font-weight:600;font-size:1rem;line-height:1.45;margin-bottom:1rem}
+.tinfo .tn{color:var(--primary-light);font-weight:800;font-size:.95rem}
+.tinfo .tr{color:var(--g500);font-size:.82rem;font-weight:600}
+
+/* BONUS */
+.bonus-wrap{position:relative;background:linear-gradient(135deg,rgba(0,168,232,.08),rgba(123,97,255,.06),rgba(245,166,35,.05));border:1px solid rgba(0,168,232,.22);border-radius:1.8rem;padding:48px;display:grid;grid-template-columns:auto 1fr;gap:44px;align-items:center;box-shadow:var(--shadow);overflow:hidden}
+@media(max-width:760px){.bonus-wrap{grid-template-columns:1fr;padding:30px;text-align:center;gap:30px}}
+.bonus-book{position:relative}
+.bonus-book img{width:220px;border-radius:8px;box-shadow:0 30px 60px -16px rgba(0,0,0,.85);display:block;margin:0 auto}
+.bonus-book .ribbon{position:absolute;top:-12px;right:-12px;background:linear-gradient(135deg,var(--highlight),var(--highlight-dark));color:#1a1205;font-weight:800;font-size:.75rem;padding:.5rem .9rem;border-radius:.6rem;box-shadow:0 8px 20px rgba(245,166,35,.45);transform:rotate(6deg)}
+@media(max-width:760px){.bonus-book .ribbon{right:20%}}
+.bonus-txt h3{font-size:1.65rem;font-weight:800;color:#fff;margin-bottom:.7rem;letter-spacing:-.5px}
+.bonus-txt p{color:var(--g300);font-size:1.05rem;margin-bottom:1rem}
+.bonus-txt .gift{color:var(--highlight-light);font-weight:800}
+.pages{display:flex;gap:8px;margin-top:1.2rem;flex-wrap:wrap}
+@media(max-width:760px){.pages{justify-content:center}}
+.pages img{height:80px;border-radius:5px;border:1px solid var(--line-2);box-shadow:0 8px 20px rgba(0,0,0,.6);transition:transform .2s}
+.pages img:hover{transform:translateY(-5px) scale(1.06)}
+
+/* AUTHOR */
+.author{display:grid;grid-template-columns:280px 1fr;gap:40px;align-items:center;background:var(--card);border:1px solid var(--line);border-radius:1.8rem;padding:40px;box-shadow:var(--shadow)}
+@media(max-width:720px){.author{grid-template-columns:1fr;text-align:center;justify-items:center}}
+.author-photo{width:100%;max-width:280px;border-radius:1.4rem;box-shadow:var(--shadow);border:1px solid var(--line)}
+.author h3{font-size:1.6rem;font-weight:800;color:#fff;margin-bottom:.3rem}
+.author .role{color:var(--primary);font-weight:700;margin-bottom:1rem;font-size:.95rem}
+.author p{color:var(--g300);font-size:1.02rem;margin-bottom:1rem}
+.author .badges{display:flex;gap:10px;flex-wrap:wrap}
+@media(max-width:720px){.author .badges{justify-content:center}}
+.author .pill{display:inline-flex;align-items:center;gap:6px;background:rgba(0,168,232,.1);color:var(--primary-light);font-weight:700;font-size:.82rem;padding:.45rem .9rem;border-radius:.6rem;border:1px solid rgba(0,168,232,.25)}
+
+/* FIT */
+.fit{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+@media(max-width:680px){.fit{grid-template-columns:1fr}}
+.fit-col{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:2rem}
+.fit-col.yes{border-color:rgba(16,185,129,.3)}.fit-col.no{border-color:rgba(239,68,68,.25)}
+.fit-col h4{font-size:1.1rem;font-weight:800;color:#fff;margin-bottom:1.2rem}
+.fit-col ul{list-style:none}
+.fit-col li{padding:.55rem 0 .55rem 2rem;position:relative;color:var(--g300);font-weight:500}
+.fit-col.yes li::before{content:"✓";position:absolute;left:0;color:#10b981;font-weight:800}
+.fit-col.no li::before{content:"✕";position:absolute;left:0;color:#ef4444;font-weight:800}
+
+/* FAQ */
+.faq-item{background:var(--card);border:1px solid var(--line);border-radius:1rem;margin-bottom:12px;overflow:hidden}
+.faq-q{padding:1.3rem 1.5rem;font-weight:700;font-size:1.05rem;color:#fff;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px}
+.faq-q span{color:var(--primary);font-size:1.6rem;transition:transform .25s;flex-shrink:0;line-height:1}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .3s ease;color:var(--g400)}
+.faq-a p{padding:0 1.5rem 1.3rem}
+.faq-item.open .faq-q span{transform:rotate(45deg)}
+
+/* FINAL */
+.final{text-align:center}
+.countdown{display:flex;justify-content:center;gap:14px;margin:2.2rem 0}
+.cd-box{background:var(--card);border:1px solid var(--line);border-radius:1rem;padding:1rem .7rem;min-width:84px}
+.cd-box .cd-n{font-size:2.2rem;font-weight:800;color:var(--highlight-light);font-variant-numeric:tabular-nums;line-height:1;font-family:var(--mono)}
+.cd-box .cd-l{font-size:.68rem;letter-spacing:1px;color:var(--g500);text-transform:uppercase;margin-top:.6rem}
+@media(max-width:480px){.cd-box{min-width:68px;padding:.8rem .4rem}.cd-box .cd-n{font-size:1.7rem}}
+
+/* card spotlight */
+.spot{position:relative}
+.spot::after{content:"";position:absolute;inset:0;border-radius:inherit;background:radial-gradient(420px circle at var(--mx,-100px) var(--my,-100px),rgba(0,168,232,.14),transparent 42%);opacity:0;transition:opacity .3s;pointer-events:none;z-index:1}
+.spot:hover::after{opacity:1}
+
+/* FOOTER */
+footer{background:#05070b;padding:48px 0;text-align:center;border-top:1px solid var(--line)}
+footer .logo{justify-content:center;margin-bottom:1rem}
+footer .wa{display:inline-flex;align-items:center;gap:8px;color:#fff;font-weight:700;margin-bottom:.8rem}
+footer .meta{color:var(--g500);font-size:.82rem}
+
+/* REVEAL */
+.reveal{opacity:0;transform:translateY(34px);filter:blur(6px);transition:opacity .8s cubic-bezier(.16,1,.3,1),transform .8s cubic-bezier(.16,1,.3,1),filter .8s}
+.reveal.in{opacity:1;transform:none;filter:none}
+.reveal.d1{transition-delay:.08s}.reveal.d2{transition-delay:.16s}.reveal.d3{transition-delay:.24s}.reveal.d4{transition-delay:.32s}
+
+/* MODAL */
+.modal{position:fixed;inset:0;z-index:200;background:rgba(5,7,11,.85);backdrop-filter:blur(8px);display:none;align-items:center;justify-content:center;padding:22px}
+.modal.open{display:flex}
+.modal-in{width:min(900px,100%);aspect-ratio:16/9;background:var(--card);border:1px solid var(--line-2);border-radius:1rem;display:flex;align-items:center;justify-content:center;color:var(--g400);text-align:center;padding:24px;position:relative}
+.modal-close{position:absolute;top:-14px;right:-14px;width:40px;height:40px;border-radius:50%;background:#fff;color:var(--bg);border:none;font-size:1.3rem;cursor:pointer;font-weight:700}
+@media(prefers-reduced-motion:reduce){*{animation:none!important}}
+</style>
+</head>
+<body>
+<div class="progress" id="progress"></div>
+
+<!-- NAV -->
+<nav class="nav" id="nav">
+  <div class="nav-in">
+    <a href="#" class="logo"><img src="images/uccello.png" alt="AI Osha" /> AI <span class="o">Osha</span></a>
+    <div class="nav-r">
+      <div class="nav-cd"><span class="dot"></span><span class="lab">Inizia tra</span> <span id="navCd">--</span></div>
+      <a href="#iscriviti" class="btn sm" data-magnetic>Iscriviti gratis</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="hero-bg" data-parallax="0.15"></div>
+  <canvas id="particles"></canvas>
+  <span class="aurora c" style="width:520px;height:520px;top:-120px;right:-80px"></span>
+  <span class="aurora i" style="width:420px;height:420px;bottom:-120px;left:-100px;animation-delay:-7s"></span>
+  <span class="aurora g" style="width:300px;height:300px;top:30%;left:40%;animation-delay:-12s"></span>
+  <div class="wrap">
+    <div class="hero-grid">
+      <div>
+        <span class="eyebrow"><span class="dot"></span> Gratis · 3 sere live · 8–9–10 luglio</span>
+        <h1>Il tuo <span class="shimmer">salto quantico</span> con l'intelligenza artificiale</h1>
+        <p class="lead">Tre sere dal vivo su YouTube. Niente paroloni, niente "diventa un tecnico". Solo cose che da domani usi davvero sul tuo lavoro.</p>
+        <p class="promise">Da <b>«so che dovrei usarla»</b> a <b>«la sto già usando»</b>. In tre sere.</p>
+        <div class="form-card" id="iscriviti">
+          <form id="signup" onsubmit="return fakeSubmit(event)">
+            <input type="text" name="nome" placeholder="Il tuo nome" required />
+            <input type="email" name="email" placeholder="La tua email" required />
+            <button class="btn pulse" type="submit" data-magnetic>🎟️ Voglio il mio posto gratis</button>
+          </form>
+          <p class="form-micro">🎁 Iscrivendoti ricevi subito <b>la Parte 1 del libro «AI in Pratica per chi lavora»</b>. Niente spam — ti scrivo solo per le live.</p>
+        </div>
+        <div class="hero-meta">
+          <span><span class="ic">📅</span> 8-9-10 luglio</span>
+          <span><span class="ic">🔴</span> Live su YouTube</span>
+          <span><span class="ic">⏱️</span> ~1h a sera</span>
+        </div>
+      </div>
+      <div>
+        <div class="video-frame" data-tilt id="heroVideo">
+          <div class="vbadge"><div class="st">★★★★★</div><div class="tx">6 testimonianze</div></div>
+          <div class="vplay"></div>
+          <div class="vlabel"><span class="live">▶ INVITO</span> Guarda in 55 secondi</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- MARQUEE -->
+<div class="marquee">
+  <div class="marquee-track" id="marquee">
+    <span class="marquee-item"><span class="s">★★★★★</span> Infermieri</span>
+    <span class="marquee-item"><span class="s">★★★★★</span> Imprenditori immobiliari</span>
+    <span class="marquee-item"><span class="s">★★★★★</span> Professori</span>
+    <span class="marquee-item"><span class="s">★★★★★</span> Musicisti</span>
+    <span class="marquee-item"><span class="s">★★★★★</span> Commercialisti</span>
+    <span class="marquee-item"><span class="s">★★★★★</span> Agenti di commercio</span>
+    <span class="marquee-item"><span class="s">★★★★★</span> Creativi</span>
+    <span class="marquee-item"><span class="s">★★★★★</span> Negozianti</span>
+  </div>
+</div>
+
+<!-- VERITÀ -->
+<section>
+  <span class="aurora c" style="width:400px;height:400px;top:-140px;left:50%;transform:translateX(-50%);opacity:.3"></span>
+  <div class="wrap">
+    <span class="eyebrow-c reveal">La verità scomoda</span>
+    <h2 class="reveal">Tanta paura. <span class="hl">Pochissimo uso.</span></h2>
+    <p class="sec-sub reveal">Tre numeri che quasi nessuno ha il coraggio di metterti davanti.</p>
+    <div class="stats">
+      <div class="stat spot reveal d1"><div class="num gold" data-count="42" data-suffix=" su 100">0</div><div class="lbl">italiani si sentono <b>sostituibili</b> dall'intelligenza artificiale</div></div>
+      <div class="stat spot reveal d2"><div class="num cyan" data-count="1" data-suffix=" su 8">0</div><div class="lbl">aziende italiane la usa davvero<br><b>(in Germania 1 su 2)</b></div></div>
+      <div class="stat spot reveal d3"><div class="num" data-count="10" data-suffix=" min">0</div><div class="lbl">è tutto ciò che serve<br><b>per smettere di averne paura</b></div></div>
+    </div>
+    <p class="punch reveal">Il problema non è l'intelligenza artificiale.<br><span class="hl">È restare fermi a guardarla.</span></p>
+    <span class="src reveal">Fonti: Banca d'Italia/CEPR 2025 · FragilItalia 2026 · ricerca MDPI Systems 2025</span>
+  </div>
+</section>
+
+<!-- SALTO -->
+<section>
+  <div class="wrap">
+    <span class="eyebrow-c reveal">Il salto</span>
+    <h2 class="reveal">La paura si cura <span class="hl">usandola</span></h2>
+    <p class="sec-sub reveal">Non studiando per mesi. Toccandola dieci minuti, dalla parte giusta.</p>
+    <div class="salto-grid">
+      <div class="salto-text reveal d1">
+        <p>La ricerca lo dimostra nero su bianco: chi <b>non la usa per niente</b> e chi la usa <b>in modo ossessivo</b> sono i più ansiosi.</p>
+        <p>Chi la usa <b>un po', con metodo</b>, è il più sereno — e il più veloce al lavoro. È la "curva a U" dell'ansia da AI.</p>
+        <p>In tre sere ti porto da fermo a operativo. Non diventi un esperto di tecnologia: <b>smetti semplicemente di essere quello che non la usa.</b></p>
+      </div>
+      <div class="curve spot reveal d2">
+        <h4>// ansia da AI · curva a U</h4>
+        <div class="bar"><div class="b1">alta</div><div class="b2">bassa</div><div class="b3">alta</div></div>
+        <div class="bar-lbls"><div>Non la usi</div><div class="hot">↑ qui ti porto io</div><div>La usi troppo</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 3 SERE -->
+<section>
+  <span class="aurora i" style="width:380px;height:380px;bottom:-80px;right:-100px;opacity:.3"></span>
+  <div class="wrap">
+    <span class="eyebrow-c reveal">Il programma</span>
+    <h2 class="reveal">Tre sere, un salto</h2>
+    <p class="sec-sub reveal">Live su YouTube, circa un'ora ciascuna. Ti basta esserci — e ti resta il replay.</p>
+    <div class="nights">
+      <div class="night spot reveal d1">
+        <div class="n-num">// SERA 1</div>
+        <div class="n-date">Mercoledì 8 luglio<span>ore 18:00</span></div>
+        <h3>Smetti di farlo a mano</h3>
+        <p>Le 3 cose che da domani puoi smettere di fare a mano.</p>
+        <ul><li>Mail, riassunti e ricerche in pochi secondi</li><li>Demo dal vivo, risultati subito</li><li>I 3 errori che fanno tutti all'inizio</li></ul>
+      </div>
+      <div class="night spot reveal d2">
+        <div class="n-num">// SERA 2</div>
+        <div class="n-date">Giovedì 9 luglio<span>ore 21:00</span></div>
+        <h3>AI Weekly Call aperta</h3>
+        <p>Porta il tuo problema di lavoro: lo risolviamo in diretta.</p>
+        <ul><li>Domande libere, casi reali</li><li>Niente teoria, solo pratica</li><li>Tu porti il caso, io l'AI</li></ul>
+        <span class="tag">⭐ EDIZIONE SPECIALE</span>
+      </div>
+      <div class="night spot reveal d3">
+        <div class="n-num">// SERA 3</div>
+        <div class="n-date">Venerdì 10 luglio<span>ore 18:00</span></div>
+        <h3>Il tuo assistente AI</h3>
+        <p>Costruisci il tuo assistente e impara a non fermarti più.</p>
+        <ul><li>Un assistente cucito sul tuo lavoro</li><li>Il metodo per continuare da solo</li><li>Da qui in poi: il passo successivo</li></ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIANZE -->
+<section>
+  <div class="wrap">
+    <span class="eyebrow-c reveal">Non solo parole mie</span>
+    <h2 class="reveal">Chi ha fatto il salto <span class="hl">prima di te</span></h2>
+    <div class="tcred reveal"><span class="stars">★★★★★</span><span class="txt">Infermieri, imprenditori, professori, musicisti, agenti. Gente che lavora. Come te.</span></div>
+    <div class="tgrid">
+      <a class="tcard reveal d1" href="https://www.youtube.com/watch?v=KPf4SXwY7t4" target="_blank" rel="noopener">
+        <div class="tthumb" style="background-image:url('images/thumbnails/anna.jpg')"><div class="tplay">▶</div><div class="tbadge">▶ Video testimonianza</div></div>
+        <div class="tinfo"><p class="tq">"All'inizio ero scettica. Oggi uso l'AI ogni giorno al lavoro — e lo rifarei domani."</p><p class="tn">Anna B.</p><p class="tr">Infermiera</p></div>
+      </a>
+      <a class="tcard reveal d2" href="https://www.youtube.com/watch?v=PpilEOymo-M" target="_blank" rel="noopener">
+        <div class="tthumb" style="background-image:url('images/thumbnails/federico.jpg')"><div class="tplay">▶</div><div class="tbadge">▶ Video testimonianza</div></div>
+        <div class="tinfo"><p class="tq">"Da quando uso l'AI gestisco il doppio delle proprietà con la metà del tempo. È stata una svolta."</p><p class="tn">Federico M.</p><p class="tr">Imprenditore immobiliare</p></div>
+      </a>
+      <a class="tcard reveal d3" href="https://www.youtube.com/watch?v=XODn3jdlrPw" target="_blank" rel="noopener">
+        <div class="tthumb" style="background-image:url('images/thumbnails/naji.jpg')"><div class="tplay">▶</div><div class="tbadge">▶ Video testimonianza</div></div>
+        <div class="tinfo"><p class="tq">"Ho recuperato i miei weekend. Le lezioni sono più belle e i ragazzi più coinvolti. Non torno indietro."</p><p class="tn">Najla C.</p><p class="tr">Professoressa</p></div>
+      </a>
+      <a class="tcard reveal d1" href="https://www.youtube.com/watch?v=ilIPjTYg_dY" target="_blank" rel="noopener">
+        <div class="tthumb" style="background-image:url('images/thumbnails/simone-del-freo.jpg')"><div class="tplay">▶</div><div class="tbadge">▶ Video testimonianza</div></div>
+        <div class="tinfo"><p class="tq">"Mi sta sbloccando una parte del cervello. Tantissime idee e opportunità nuove."</p><p class="tn">Simone Del Freo</p><p class="tr">Musicista</p></div>
+      </a>
+      <a class="tcard reveal d2" href="https://www.youtube.com/watch?v=fTbtEEMeEBk" target="_blank" rel="noopener">
+        <div class="tthumb" style="background-image:url('images/thumbnails/cristiano.jpg')"><div class="tplay">▶</div><div class="tbadge">▶ Video testimonianza</div></div>
+        <div class="tinfo"><p class="tq">"Non sapevo niente di programmazione. Oggi ho un'app funzionante, costruita da me con l'AI al fianco."</p><p class="tn">Cristiano B.</p><p class="tr">Creativo</p></div>
+      </a>
+      <a class="tcard reveal d3" href="https://www.youtube.com/watch?v=AgqXkSArU0w" target="_blank" rel="noopener">
+        <div class="tthumb" style="background-image:url('images/thumbnails/simone-estro.jpg')"><div class="tplay">▶</div><div class="tbadge">▶ Video testimonianza</div></div>
+        <div class="tinfo"><p class="tq">"L'AI mi ha cambiato il modo di lavorare. È nel mio flusso quotidiano in azienda."</p><p class="tn">Simone Silvesti</p><p class="tr">Socio Estro</p></div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- BONUS -->
+<section>
+  <div class="wrap">
+    <span class="eyebrow-c reveal">Il regalo</span>
+    <h2 class="reveal">Ti porti a casa la <span class="hl">mappa</span>, non solo le sere</h2>
+    <p class="sec-sub reveal">La gente resta ferma perché non ha una mappa. Questa è la tua.</p>
+    <div class="bonus-wrap reveal">
+      <span class="aurora g" style="width:300px;height:300px;top:-60px;left:-40px;opacity:.4"></span>
+      <div class="bonus-book" data-tilt><img src="images/libro-cover.jpg" alt="Copertina libro" /><span class="ribbon">Parte 1 GRATIS</span></div>
+      <div class="bonus-txt">
+        <h3>«Intelligenza Artificiale in Pratica per chi lavora»</h3>
+        <p>Iscrivendoti ricevi <span class="gift">gratis la Parte 1 del mio libro</span>: la guida passo-passo per usare ChatGPT, Claude e Gemini e automatizzare il tuo lavoro in meno tempo — anche se parti da zero.</p>
+        <p>Le tre live prendono questa mappa e la fanno diventare viva, sul tuo lavoro vero.</p>
+        <div class="pages">
+          <img src="images/sfoglia/p01.jpg" alt="pagina" /><img src="images/sfoglia/p02.jpg" alt="pagina" /><img src="images/sfoglia/p03.jpg" alt="pagina" /><img src="images/sfoglia/p04.jpg" alt="pagina" /><img src="images/sfoglia/p05.jpg" alt="pagina" />
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CHI SONO -->
+<section>
+  <div class="wrap">
+    <span class="eyebrow-c reveal">Chi te lo dice</span>
+    <div class="author reveal spot">
+      <img class="author-photo" src="images/aliosha-foto.jpg" alt="Aliosha Battaglini" />
+      <div>
+        <h3>Aliosha Battaglini</h3>
+        <p class="role">AI Osha · autore e formatore</p>
+        <p>Non sono un guru. Sono uno che lavora e ci ha scritto un libro. Da fotografo e agente di commercio sono diventato, da autodidatta, uno che usa l'intelligenza artificiale ogni giorno per davvero — e ho deciso di insegnarlo a chi lavora come me.</p>
+        <p>Oggi aiuto PMI e professionisti del territorio a portare l'AI dentro la loro giornata, senza fuffa e senza paroloni.</p>
+        <div class="badges"><span class="pill">📘 Autore del libro su Amazon</span><span class="pill">🎓 Centinaia di studenti</span><span class="pill">📍 Pescia · Valdinievole</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- A CHI SERVE -->
+<section>
+  <div class="wrap">
+    <span class="eyebrow-c reveal">Onestà</span>
+    <h2 class="reveal">È per te? <span class="hl">Dipende.</span></h2>
+    <p class="sec-sub reveal">Preferisco dirtelo prima, così non perdi tre sere.</p>
+    <div class="fit">
+      <div class="fit-col yes reveal d1"><h4>✅ Fa per te se…</h4><ul><li>Lavori e perdi ore in cose ripetitive</li><li>Hai aperto ChatGPT una volta e l'hai richiuso deluso</li><li>Senti che stai restando indietro</li><li>Vuoi cose pratiche, da applicare subito</li><li>Parti da zero e va benissimo così</li></ul></div>
+      <div class="fit-col no reveal d2"><h4>❌ Non fa per te se…</h4><ul><li>Cerchi nozioni tecniche da programmatore</li><li>Vuoi la formula magica senza muovere un dito</li><li>Pensi che l'AI sia una moda passeggera</li><li>Non hai voglia di provare nemmeno una cosa</li></ul></div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section>
+  <div class="narrow">
+    <span class="eyebrow-c reveal">Domande veloci</span>
+    <h2 class="reveal" style="margin-bottom:2.4rem">Tolgo i dubbi</h2>
+    <div class="faq-item reveal"><div class="faq-q">È davvero gratis? <span>+</span></div><div class="faq-a"><p>Sì, completamente. Le tre live sono gratuite e in più ricevi la Parte 1 del libro in regalo. Nessuna carta richiesta.</p></div></div>
+    <div class="faq-item reveal"><div class="faq-q">Devo essere bravo col computer? <span>+</span></div><div class="faq-a"><p>No. Se sai scrivere un messaggio su WhatsApp, hai già tutto quello che ti serve. Si parte da zero e si va piano.</p></div></div>
+    <div class="faq-item reveal"><div class="faq-q">E se mi perdo una sera? <span>+</span></div><div class="faq-a"><p>Iscriviti e ti mando link e replay di ogni sera. Recuperi quando vuoi.</p></div></div>
+    <div class="faq-item reveal"><div class="faq-q">Mi venderai qualcosa? <span>+</span></div><div class="faq-a"><p>Le tre sere sono vere, gratuite e piene di cose pratiche. Alla fine ti racconto come si lavora insieme, ma sei liberissimo di prendere solo il valore gratuito.</p></div></div>
+    <div class="faq-item reveal"><div class="faq-q">Quale strumento serve? Costa? <span>+</span></div><div class="faq-a"><p>Useremo strumenti con versione gratuita (ChatGPT, Claude, Gemini). Per seguire le live non serve nessun abbonamento.</p></div></div>
+  </div>
+</section>
+
+<!-- FINAL -->
+<section class="final">
+  <span class="aurora c" style="width:500px;height:500px;top:-160px;left:50%;transform:translateX(-50%)"></span>
+  <div class="narrow">
+    <span class="eyebrow-c reveal" style="color:var(--highlight-light)">Ci sei?</span>
+    <h2 class="reveal">Il salto dura tre sere.<br>L'iscrizione dura <span class="hl">un click.</span></h2>
+    <p class="sec-sub reveal" style="margin-bottom:1rem">8, 9 e 10 luglio · Live su YouTube · Gratis · con la Parte 1 del libro in regalo.</p>
+    <div class="countdown reveal" id="countdown">
+      <div class="cd-box"><div class="cd-n" id="cdD">--</div><div class="cd-l">giorni</div></div>
+      <div class="cd-box"><div class="cd-n" id="cdH">--</div><div class="cd-l">ore</div></div>
+      <div class="cd-box"><div class="cd-n" id="cdM">--</div><div class="cd-l">minuti</div></div>
+      <div class="cd-box"><div class="cd-n" id="cdS">--</div><div class="cd-l">secondi</div></div>
+    </div>
+    <a href="#iscriviti" class="btn pulse reveal" data-magnetic>🎟️ Attiva il promemoria gratuito</a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <a href="#" class="logo"><img src="images/uccello.png" alt="AI Osha" /> AI <span class="o">Osha</span></a>
+    <a class="wa" href="https://wa.me/393313883929" target="_blank">💬 Scrivimi su WhatsApp · 331 388 3929</a>
+    <p class="meta">© 2026 AI Osha · Aliosha Battaglini · P.IVA 02097940478 · Pescia (PT)</p>
+  </div>
+</footer>
+
+<!-- VIDEO MODAL -->
+<div class="modal" id="vmodal">
+  <div class="modal-in">
+    <button class="modal-close" id="vclose">×</button>
+    <div>🎬 Il video-invito (~55s) andrà qui.<br><small style="color:var(--g500)">Da girare e montare — poi lo incolliamo come &lt;video&gt; o embed YouTube.</small></div>
+  </div>
+</div>
+
+<script>
+var TARGET=new Date(2026,6,8,18,0,0).getTime();
+function pad(v){return (v<10?'0':'')+v;}
+function tick(){var d=TARGET-Date.now();if(d<0)d=0;
+  var D=Math.floor(d/864e5),H=Math.floor(d%864e5/36e5),M=Math.floor(d%36e5/6e4),S=Math.floor(d%6e4/1e3);
+  var s=function(id,v){var e=document.getElementById(id);if(e)e.textContent=pad(v);};
+  s('cdD',D);s('cdH',H);s('cdM',M);s('cdS',S);
+  var n=document.getElementById('navCd');if(n)n.textContent=D+'g '+pad(H)+'h '+pad(M)+'m';}
+setInterval(tick,1000);tick();
+
+// nav + progress
+window.addEventListener('scroll',function(){
+  var y=window.scrollY,h=document.body.scrollHeight-window.innerHeight;
+  document.getElementById('progress').style.width=(h>0?y/h*100:0)+'%';
+  document.getElementById('nav').classList.toggle('scrolled',y>40);
+  document.querySelectorAll('[data-parallax]').forEach(function(el){el.style.transform='translateY('+(y*parseFloat(el.dataset.parallax))+'px)';});
+},{passive:true});
+
+// reveal + counters
+function inView(el,f){var r=el.getBoundingClientRect();return r.top<innerHeight*(1-(f||0.06))&&r.bottom>0;}
+function countUp(el){var end=parseFloat(el.dataset.count),suf=el.dataset.suffix||'',t0=null;
+  function step(ts){if(!t0)t0=ts;var p=Math.min((ts-t0)/1400,1);el.textContent=Math.floor((0.5-Math.cos(p*Math.PI)/2)*end)+suf;if(p<1)requestAnimationFrame(step);}requestAnimationFrame(step);}
+function rc(){document.querySelectorAll('.reveal:not(.in)').forEach(function(el){if(inView(el,0.05))el.classList.add('in');});
+  document.querySelectorAll('.num[data-count]:not(.counted)').forEach(function(el){if(inView(el,0.15)){el.classList.add('counted');countUp(el);}});}
+addEventListener('scroll',rc,{passive:true});addEventListener('resize',rc);addEventListener('load',rc);rc();setTimeout(rc,150);setTimeout(rc,600);
+setTimeout(function(){document.querySelectorAll('.reveal:not(.in)').forEach(function(el){el.classList.add('in');});},3500);
+
+// FAQ
+document.querySelectorAll('.faq-q').forEach(function(q){q.addEventListener('click',function(){
+  var it=q.parentElement,a=it.querySelector('.faq-a'),op=it.classList.contains('open');
+  document.querySelectorAll('.faq-item').forEach(function(i){i.classList.remove('open');i.querySelector('.faq-a').style.maxHeight=null;});
+  if(!op){it.classList.add('open');a.style.maxHeight=a.scrollHeight+'px';}});});
+
+// spotlight on cards
+document.querySelectorAll('.spot').forEach(function(c){c.addEventListener('mousemove',function(e){
+  var r=c.getBoundingClientRect();c.style.setProperty('--mx',(e.clientX-r.left)+'px');c.style.setProperty('--my',(e.clientY-r.top)+'px');});});
+
+// 3D tilt
+document.querySelectorAll('[data-tilt]').forEach(function(el){
+  el.addEventListener('mousemove',function(e){var r=el.getBoundingClientRect();var px=(e.clientX-r.left)/r.width-.5,py=(e.clientY-r.top)/r.height-.5;
+    el.style.transform='perspective(900px) rotateY('+(px*12)+'deg) rotateX('+(-py*12)+'deg)';});
+  el.addEventListener('mouseleave',function(){el.style.transform='perspective(900px) rotateY(0) rotateX(0)';});});
+
+// magnetic buttons
+document.querySelectorAll('[data-magnetic]').forEach(function(b){
+  b.addEventListener('mousemove',function(e){var r=b.getBoundingClientRect();b.style.transform='translate('+((e.clientX-r.left-r.width/2)*.25)+'px,'+((e.clientY-r.top-r.height/2)*.35)+'px)';});
+  b.addEventListener('mouseleave',function(){b.style.transform='';});});
+
+// duplicate marquee for seamless loop
+(function(){var m=document.getElementById('marquee');m.innerHTML+=m.innerHTML;})();
+
+// video modal
+var vm=document.getElementById('vmodal');
+document.getElementById('heroVideo').addEventListener('click',function(){vm.classList.add('open');});
+document.getElementById('vclose').addEventListener('click',function(){vm.classList.remove('open');});
+vm.addEventListener('click',function(e){if(e.target===vm)vm.classList.remove('open');});
+
+// particles
+(function(){
+  var c=document.getElementById('particles');if(!c)return;var ctx=c.getContext('2d');var P=[],mouse={x:-999,y:-999};
+  function size(){c.width=c.offsetWidth;c.height=c.offsetHeight;}size();addEventListener('resize',size);
+  for(var i=0;i<54;i++)P.push({x:Math.random()*c.width,y:Math.random()*c.height,vx:(Math.random()-.5)*.3,vy:(Math.random()-.5)*.3,r:Math.random()*1.6+.4});
+  c.parentElement.addEventListener('mousemove',function(e){var r=c.getBoundingClientRect();mouse.x=e.clientX-r.left;mouse.y=e.clientY-r.top;});
+  c.parentElement.addEventListener('mouseleave',function(){mouse.x=-999;mouse.y=-999;});
+  function loop(){ctx.clearRect(0,0,c.width,c.height);
+    for(var i=0;i<P.length;i++){var p=P[i];p.x+=p.vx;p.y+=p.vy;
+      if(p.x<0||p.x>c.width)p.vx*=-1;if(p.y<0||p.y>c.height)p.vy*=-1;
+      ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,7);ctx.fillStyle='rgba(120,180,255,.5)';ctx.fill();
+      for(var j=i+1;j<P.length;j++){var q=P[j],dx=p.x-q.x,dy=p.y-q.y,d=Math.sqrt(dx*dx+dy*dy);
+        if(d<120){ctx.beginPath();ctx.moveTo(p.x,p.y);ctx.lineTo(q.x,q.y);ctx.strokeStyle='rgba(0,168,232,'+(.12*(1-d/120))+')';ctx.stroke();}}
+      var mdx=p.x-mouse.x,mdy=p.y-mouse.y,md=Math.sqrt(mdx*mdx+mdy*mdy);
+      if(md<160){ctx.beginPath();ctx.moveTo(p.x,p.y);ctx.lineTo(mouse.x,mouse.y);ctx.strokeStyle='rgba(245,166,35,'+(.25*(1-md/160))+')';ctx.stroke();}}
+    requestAnimationFrame(loop);}loop();
+})();
+
+function fakeSubmit(e){e.preventDefault();alert('✅ Form di prova. Da collegare a Brevo: lista + tag salto-quantico + invio Parte 1 del libro.');return false;}
+</script>
+</body>
+</html>
