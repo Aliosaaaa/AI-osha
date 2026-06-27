@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pulire un Excel con l'AI: la guida pratica (Claude e Gemini) | AI Osha</title>
+    <meta name="description" content="Togli doppioni, ordina date, crea formule e sistema i fogli parlando con l'AI. Guida pratica con Claude (anche dentro Excel) e Gemini nei Google Fogli + 10 comandi pronti da copiare. Scarica il PDF gratis.">
+    <link rel="canonical" href="https://aiosha.it/blog/pulire-excel-con-ai.html">
+    <meta property="og:title" content="Pulire un Excel con l'AI: la guida pratica (Claude e Gemini)">
+    <meta property="og:description" content="Sistema i fogli parlando con l'AI: 10 comandi pronti + come usare Claude dentro Excel e Gemini nei Fogli. PDF gratis.">
+    <meta property="og:image" content="https://aiosha.it/images/blog/cover-excel-ai.jpg">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://aiosha.it/blog/pulire-excel-con-ai.html">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="../images/uccello.png">
+    <style>
+        :root {
+            --primary: #00A8E8;
+            --secondary: #34A853;
+            --accent: #F5A623;
+            --dark: #0D1117;
+            --gray-800: #2d3748;
+            --gray-700: #374151;
+            --gray-600: #4b5563;
+            --gray-400: #9ca3af;
+            --gray-200: #e5e7eb;
+            --gray-100: #f3f4f6;
+            --light: #E8F4FD;
+            --dark-soft: #161B22;
+            --gray-900: #1a1f2e;
+            --gray-300: #d1d5db;
+            --white: #ffffff;
+            --success: #10b981;
+            --font-display: 'Plus Jakarta Sans', sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: var(--font-display); font-size: 1.125rem; line-height: 1.7; color: var(--gray-300); background: var(--dark); }
+        .container { max-width: 800px; margin: 0 auto; padding: 0 1.5rem; }
+        .header { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: rgba(13,17,23,0.92); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(255,255,255,0.08); }
+        .header__inner { display: flex; justify-content: space-between; align-items: center; height: 72px; max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; }
+        .header__logo { font-size: 1.5rem; font-weight: 800; color: var(--white); text-decoration: none; }
+        .text-gradient { background: linear-gradient(135deg, #00A8E8, #F5A623); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .btn { display: inline-flex; align-items: center; gap: 0.5rem; padding: 1rem 2rem; font-weight: 600; border-radius: 0.75rem; text-decoration: none; transition: all 0.25s; background: linear-gradient(135deg, #F5A623, #d4911f); color: white; }
+        .btn:hover { transform: translateY(-2px); }
+        .article-hero { padding: calc(72px + 4rem) 0 4rem; background: linear-gradient(180deg, var(--dark-soft), var(--dark) 50%); }
+        .cover-img { width: 100%; max-width: 800px; border-radius: 1rem; margin: 0 auto 2.5rem; display: block; border: 1px solid rgba(255,255,255,0.08); }
+        .back-link { display: inline-flex; align-items: center; gap: 0.5rem; color: var(--primary); font-weight: 600; text-decoration: none; margin-bottom: 2rem; }
+        .back-link svg { width: 20px; height: 20px; }
+        .article-tag { display: inline-block; padding: 0.25rem 1rem; background: linear-gradient(135deg, rgba(0,168,232,0.2), rgba(245,166,35,0.2)); color: var(--primary); border-radius: 50px; font-size: 0.875rem; font-weight: 600; margin-bottom: 1rem; }
+        h1 { font-size: clamp(2rem, 5vw, 3rem); font-weight: 800; color: var(--white); line-height: 1.2; margin: 1rem 0; }
+        .subtitle { font-size: 1.375rem; color: var(--gray-400); margin-bottom: 2rem; }
+        .article-content { padding: 4rem 0; }
+        h2 { font-size: 2rem; font-weight: 700; color: var(--white); margin: 3rem 0 1.5rem; }
+        h3 { font-size: 1.5rem; font-weight: 600; color: var(--white); margin: 2rem 0 1rem; }
+        p { margin-bottom: 1.5rem; color: var(--gray-300); }
+        ul, ol { margin: 1.5rem 0; padding-left: 2rem; }
+        li { margin-bottom: 0.5rem; color: var(--gray-300); }
+        strong { color: var(--white); font-weight: 600; }
+        .feature-card { background: var(--gray-900); border: 2px solid rgba(255,255,255,0.08); border-radius: 1rem; padding: 2rem; margin: 2rem 0; }
+        .feature-card h3 { color: var(--primary); margin-top: 0; }
+        .prompt-box { background: var(--dark); color: #d1d5db; padding: 2rem; border-radius: 1rem; margin: 2rem 0; border: 1px solid rgba(255,255,255,0.06); }
+        .prompt-box__header { display: flex; justify-content: space-between; margin-bottom: 1rem; padding-bottom: 1rem; border-bottom: 1px solid #374151; }
+        .prompt-box__title { font-family: var(--font-mono); font-size: 0.875rem; color: var(--primary); font-weight: 600; }
+        .prompt-box__copy { padding: 0.5rem 1rem; background: #374151; color: #d1d5db; border-radius: 0.375rem; font-size: 0.875rem; cursor: pointer; border: none; }
+        .prompt-box__content { font-family: var(--font-mono); font-size: 0.9375rem; line-height: 1.6; white-space: pre-wrap; color: #f3f4f6; }
+        .highlight-box { background: var(--dark-soft); border-left: 4px solid var(--primary); padding: 2rem; border-radius: 0 0.75rem 0.75rem 0; margin: 2rem 0; }
+        .tip-box { background: linear-gradient(135deg, rgba(16,185,129,0.1), rgba(16,185,129,0.05)); border-left: 4px solid var(--success); padding: 1.5rem; border-radius: 0 0.75rem 0.75rem 0; margin: 2rem 0; }
+        .download-box { background: linear-gradient(135deg, rgba(0,168,232,0.12), rgba(245,166,35,0.10)); border: 2px solid rgba(0,168,232,0.35); padding: 2.5rem; border-radius: 1.25rem; text-align: center; margin: 3rem 0; }
+        .download-box h3 { color: var(--white); font-size: 1.6rem; margin: 0 0 0.75rem; }
+        .download-box p { color: var(--gray-400); margin-bottom: 1.75rem; }
+        .cta-box { background: var(--dark); color: white; padding: 3rem; border-radius: 1.5rem; text-align: center; margin: 4rem 0; border: 1px solid rgba(255,255,255,0.06); }
+        .cta-box h3 { font-size: 1.75rem; margin-bottom: 1rem; color: white; }
+        .cta-box p { color: var(--gray-400); margin-bottom: 2rem; }
+        .footer { padding: 3rem 0 1rem; background: #2d3748; color: var(--gray-400); margin-top: 4rem; text-align: center; }
+        .step-number { display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; background: var(--primary); color: white; border-radius: 50%; font-weight: 700; margin-right: 1rem; }
+    </style>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "Pulire un Excel con l'AI: la guida pratica (Claude e Gemini)",
+        "description": "Togli doppioni, ordina date, crea formule e sistema i fogli parlando con l'AI. Guida pratica con Claude (anche dentro Excel) e Gemini nei Google Fogli, con 10 comandi pronti da copiare.",
+        "image": "https://aiosha.it/images/blog/cover-excel-ai.jpg",
+        "datePublished": "2026-06-27",
+        "dateModified": "2026-06-27",
+        "inLanguage": "it-IT",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://aiosha.it/blog/pulire-excel-con-ai.html"
+        },
+        "author": {
+            "@type": "Person",
+            "name": "Aliosha Battaglini",
+            "url": "https://aiosha.it/chi-sono.html",
+            "jobTitle": "Formatore AI per Piccole e Medie Imprese (PMI)",
+            "sameAs": [
+                "https://www.linkedin.com/in/aliosha-battaglini-a84595a8",
+                "https://www.instagram.com/aliosha.battaglini"
+            ]
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "AI Osha",
+            "logo": { "@type": "ImageObject", "url": "https://aiosha.it/images/logo.png" }
+        },
+        "about": { "@type": "Thing", "name": "Excel e intelligenza artificiale per il lavoro" }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {"@type":"ListItem","position":1,"name":"Home","item":"https://aiosha.it/"},
+            {"@type":"ListItem","position":2,"name":"Blog","item":"https://aiosha.it/blog.html"},
+            {"@type":"ListItem","position":3,"name":"Pulire un Excel con l'AI","item":"https://aiosha.it/blog/pulire-excel-con-ai.html"}
+        ]
+    }
+    </script>
+    <!-- Google Analytics (GA4) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-6GNKJZJY1V"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-6GNKJZJY1V');
+    </script>
+</head>
+<body>
+    <header class="header">
+        <div class="header__inner">
+            <a href="../index.html" class="header__logo" style="display: flex; align-items: center; gap: 0.5rem;"><img src="../images/uccello.png" alt="AI Osha" style="height:32px;width:auto;"><span style="font-size:1.3rem;font-weight:800;color:#fff;letter-spacing:-0.02em;">AI <span style="color:#00A8E8;">Osha</span></span></a>
+            <a href="#download" class="btn">Scarica la lista (PDF)</a>
+        </div>
+    </header>
+
+    <main>
+        <section class="article-hero">
+            <div class="container">
+                <a href="../blog.html" class="back-link">
+                    <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M10 19l-7-7m0 0l7-7m-7 7h18"/>
+                    </svg>
+                    Torna al Blog
+                </a>
+                <span class="article-tag">Excel + AI</span>
+                <h1>Pulire un Excel con l'AI: la guida pratica</h1>
+                <p class="subtitle">Togli doppioni, ordina le date, crea formule e sistema i fogli <strong>parlando con l'AI</strong> — con Claude (anche dentro Excel) e Gemini nei Google Fogli. 10 comandi pronti da copiare.</p>
+            </div>
+        </section>
+
+        <section class="article-content">
+            <div class="container">
+                <picture><source srcset="../images/blog/cover-excel-ai.webp" type="image/webp"><img src="../images/blog/cover-excel-ai.jpg" alt="Pulire un Excel con l'AI — Claude e Gemini" class="cover-img" width="1600" height="900" loading="eager"></picture>
+
+                <p><strong>Quante ore hai buttato a sistemare un foglio a mano?</strong> Togliere doppioni, uniformare le date, ricordare quella formula che non ti viene mai. La verità è che oggi puoi farlo <strong>parlando</strong>: spieghi all'AI cosa hai e cosa vuoi, e lei ti ridà i dati puliti o la formula pronta da incollare.</p>
+
+                <p>Una premessa onesta: <strong>per i numeri io non uso ChatGPT</strong> — lo trovo meno affidabile sui calcoli. Uso <strong>Claude</strong> (in chat, da Claude Code, o direttamente <strong>dentro Excel</strong>) e, come alternativa, <strong>Gemini dentro i Google Fogli</strong>. Vediamo i 3 modi e poi i 10 comandi pronti.</p>
+
+                <h2>I 3 modi per farlo (scegline uno)</h2>
+
+                <div class="feature-card">
+                    <h3><span class="step-number">1</span> Claude in chat (o da Claude Code)</h3>
+                    <p>Il più semplice: apri Claude, <strong>incolla la tua tabella</strong> (o un pezzo) e dai il comando. Ti ridà i dati sistemati, oppure la <strong>formula pronta</strong> da incollare in Excel/Fogli. Zero installazioni, parti subito.</p>
+                </div>
+
+                <div class="feature-card">
+                    <h3><span class="step-number">2</span> Claude DENTRO Excel</h3>
+                    <p>È un componente aggiuntivo ufficiale di Anthropic che mette Claude <strong>dentro il foglio</strong>. Legge anche file con più schede e <strong>mantiene intatte formule e collegamenti</strong>, ti <strong>spiega i calcoli citando le celle</strong> esatte, crea tabelle pivot e grafici e corregge gli errori — senza uscire da Excel.</p>
+                    <p><strong>Come si attiva:</strong> in Excel vai su <strong>Home (o Inserisci) → Componenti aggiuntivi</strong>, cerca <strong>"Claude by Anthropic"</strong>, installalo e accedi col tuo account Claude. Scorciatoia per aprirlo: <strong>Ctrl+Alt+C</strong> (Windows) o <strong>Ctrl+Option+C</strong> (Mac). <em>Richiede un piano Claude Pro (~20€/mese).</em></p>
+                </div>
+
+                <div class="feature-card">
+                    <h3><span class="step-number">3</span> Gemini dentro i Google Fogli</h3>
+                    <p>Se usi <strong>Google Fogli</strong>: clicca <strong>"Chiedi a Gemini"</strong>, descrivi cosa ti serve e lui <strong>scrive la formula</strong> indicando le celle giuste; corregge anche gli <strong>errori di formula con un clic</strong>. C'è perfino la funzione <strong>=AI("…")</strong> da scrivere in una cella per categorizzare o estrarre dati. Sui numeri lo trovo molto valido. <em>Richiede un piano Google Workspace / Google AI idoneo.</em></p>
+                </div>
+
+                <div class="tip-box">
+                    <p><strong>Regola unica per tutti e tre:</strong> descrivi <strong>cosa hai</strong> (le colonne) e <strong>cosa vuoi ottenere</strong>. E controlla sempre i numeri prima di salvare — l'AI propone, tu decidi.</p>
+                </div>
+
+                <h2>10 comandi pronti (valgono in chat, in Excel e nei Fogli)</h2>
+                <p>Copiali, incollali e riempi le parti tra <strong>[ ]</strong> coi tuoi dati.</p>
+
+                <h3>1. Togli i doppioni</h3>
+                <div class="prompt-box"><div class="prompt-box__header"><span class="prompt-box__title">COMANDO</span><button class="prompt-box__copy" onclick="copyPrompt(this)">Copia</button></div><div class="prompt-box__content">Ti incollo una tabella. Trova ed elimina le righe doppie (stesso [nome/email/codice]).
+Tienine una sola per ciascuna e ridammi la tabella pulita. Dimmi quante ne hai tolte.</div></div>
+
+                <h3>2. Ordina per data (o per qualsiasi colonna)</h3>
+                <div class="prompt-box"><div class="prompt-box__header"><span class="prompt-box__title">COMANDO</span><button class="prompt-box__copy" onclick="copyPrompt(this)">Copia</button></div><div class="prompt-box__content">Ordina questa tabella per [colonna data] dalla più recente alla più vecchia.
+Se trovi date scritte in modi diversi, uniformale al formato gg/mm/aaaa.</div></div>
+
+                <h3>3. Somma e totali per categoria</h3>
+                <div class="prompt-box"><div class="prompt-box__header"><span class="prompt-box__title">COMANDO</span><button class="prompt-box__copy" onclick="copyPrompt(this)">Copia</button></div><div class="prompt-box__content">Da questa tabella dammi il totale di [colonna importi], e anche i totali raggruppati
+per [categoria/cliente/mese]. Mettilo in una piccola tabella riassuntiva.</div></div>
+
+                <h3>4. Fatti dare la formula pronta</h3>
+                <div class="prompt-box"><div class="prompt-box__header"><span class="prompt-box__title">COMANDO</span><button class="prompt-box__copy" onclick="copyPrompt(this)">Copia</button></div><div class="prompt-box__content">Ho i dati in [es. colonna A nomi, colonna B importi].
+Voglio [es. sommare gli importi solo del cliente "Rossi"]. Dammi la formula esatta
+da incollare in una cella e spiegami in 1 riga dove va.</div></div>
+                <p><em>Funziona per SOMMA.SE, CERCA.X/CERCA.VERT, CONTA.SE, SE… non devi saperne i nomi: descrivi cosa vuoi.</em></p>
+
+                <h3>5. Trova errori e buchi</h3>
+                <div class="prompt-box"><div class="prompt-box__header"><span class="prompt-box__title">COMANDO</span><button class="prompt-box__copy" onclick="copyPrompt(this)">Copia</button></div><div class="prompt-box__content">Controlla questa tabella e segnalami: celle vuote, valori strani o incoerenti,
+date impossibili, importi negativi dove non dovrebbero. Elencameli riga per riga.</div></div>
+
+                <h3>6. Uniforma il formato</h3>
+                <div class="prompt-box"><div class="prompt-box__header"><span class="prompt-box__title">COMANDO</span><button class="prompt-box__copy" onclick="copyPrompt(this)">Copia</button></div><div class="prompt-box__content">Uniforma questa colonna: [es. nomi in Maiuscolo Iniziale / telefoni con prefisso +39 /
+date in gg/mm/aaaa]. Ridammi la colonna sistemata.</div></div>
+
+                <h3>7. Separa o unisci le celle</h3>
+                <div class="prompt-box"><div class="prompt-box__header"><span class="prompt-box__title">COMANDO</span><button class="prompt-box__copy" onclick="copyPrompt(this)">Copia</button></div><div class="prompt-box__content">Nella colonna [A] ho "Nome Cognome" insieme: separali in due colonne.
+(oppure) Ho nome in [A] e cognome in [B]: unisci in un'unica colonna "Nome Cognome".</div></div>
+
+                <h3>8. Tabella riassuntiva (pivot a parole)</h3>
+                <div class="prompt-box"><div class="prompt-box__header"><span class="prompt-box__title">COMANDO</span><button class="prompt-box__copy" onclick="copyPrompt(this)">Copia</button></div><div class="prompt-box__content">Da questa tabella fammi un riepilogo: per ogni [cliente/prodotto/mese] dammi
+quante righe e il totale di [importo]. Ordina dal più grande al più piccolo.</div></div>
+
+                <h3>9. Estrai solo le righe che ti servono</h3>
+                <div class="prompt-box"><div class="prompt-box__header"><span class="prompt-box__title">COMANDO</span><button class="prompt-box__copy" onclick="copyPrompt(this)">Copia</button></div><div class="prompt-box__content">Da questa tabella tieni solo le righe dove [es. importo > 100 e mese = giugno].
+Ridammi solo quelle, stesse colonne.</div></div>
+
+                <h3>10. Spiegami una formula che non capisco</h3>
+                <div class="prompt-box"><div class="prompt-box__header"><span class="prompt-box__title">COMANDO</span><button class="prompt-box__copy" onclick="copyPrompt(this)">Copia</button></div><div class="prompt-box__content">Ti incollo una formula: spiegami in parole semplici cosa fa e su cosa lavora.
+Formula: [incolla]</div></div>
+
+                <div class="highlight-box">
+                    <h4>Il trucco che fa la differenza</h4>
+                    <p>Non chiedere "sistemami il file". Di' sempre <strong>cosa hai</strong> (le colonne) e <strong>cosa vuoi ottenere</strong>. Più sei specifico, meno correzioni dopo.</p>
+                </div>
+
+                <div class="download-box" id="download">
+                    <h3>📊 Scarica la lista completa in PDF</h3>
+                    <p>I 10 comandi + i 3 strumenti, pronti da tenere a portata di mano. Gratis.</p>
+                    <a href="../downloads/pulire-excel-con-ai-aiosha.pdf" class="btn" download>Scarica il PDF gratuito</a>
+                </div>
+
+                <div class="cta-box">
+                    <h3>Vuoi togliere il lavoro ripetitivo dalla tua attività?</h3>
+                    <p>Ti mostro come usare l'AI sui tuoi fogli e nei tuoi processi reali. La prima call è gratis e risponde una persona — io o il team, mai un bot.</p>
+                    <a href="../consulenza.html" class="btn">Prenota una call gratuita</a>
+                </div>
+
+                <a href="../blog.html" class="back-link">
+                    <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M10 19l-7-7m0 0l7-7m-7 7h18"/>
+                    </svg>
+                    Torna al Blog
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>© 2026 AI Osha — Aliosha Battaglini</p>
+    </footer>
+
+    <script>
+        function copyPrompt(button) {
+            const promptBox = button.closest('.prompt-box');
+            const promptText = promptBox.querySelector('.prompt-box__content').textContent;
+            navigator.clipboard.writeText(promptText).then(() => {
+                button.textContent = 'Copiato!';
+                button.style.background = '#10b981';
+                setTimeout(() => { button.textContent = 'Copia'; button.style.background = ''; }, 2000);
+            });
+        }
+    </script>
+</body>
+</html>
