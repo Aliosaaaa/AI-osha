@@ -25,6 +25,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 
     <style>
+        html, body { overflow-x: clip; }
+
         :root {
             --primary: #00A8E8;
             --primary-dark: #0088c2;
@@ -396,6 +398,60 @@
         ]
     }
     </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Course",
+        "@id": "https://aiosha.it/corso.html#course",
+        "name": "Intelligenza Artificiale in Pratica per chi lavora",
+        "description": "Corso di intelligenza artificiale (AI/IA) in pratica per PMI, professionisti, partite IVA, freelance e dipendenti: 10 moduli per usare davvero ChatGPT, Claude, Gemini e le automazioni nel lavoro quotidiano. Disponibile dal vivo a Pescia (Fondazione Poma Liberatutti) oppure online con lezioni registrate e live settimanale su Zoom.",
+        "url": "https://aiosha.it/corso.html",
+        "inLanguage": "it",
+        "image": "https://aiosha.it/images/og-image.jpg",
+        "provider": {
+            "@type": "Organization",
+            "@id": "https://aiosha.it/#organization",
+            "name": "AI Osha",
+            "url": "https://aiosha.it"
+        },
+        "educationalLevel": "Beginner",
+        "coursePrerequisites": "Nessuna esperienza pregressa con l'AI richiesta",
+        "hasCourseInstance": [
+            {
+                "@type": "CourseInstance",
+                "courseMode": "onsite",
+                "name": "Intelligenza Artificiale in Pratica — Dal vivo a Pescia",
+                "location": {
+                    "@type": "Place",
+                    "name": "Centro Culturale Fondazione Poma Liberatutti",
+                    "address": {
+                        "@type": "PostalAddress",
+                        "addressLocality": "Pescia",
+                        "addressRegion": "PT",
+                        "addressCountry": "IT"
+                    }
+                },
+                "instructor": {
+                    "@type": "Person",
+                    "@id": "https://aiosha.it/chi-sono#person",
+                    "name": "Aliosha Battaglini"
+                }
+            },
+            {
+                "@type": "CourseInstance",
+                "courseMode": "online",
+                "name": "Intelligenza Artificiale in Pratica — Corso Online",
+                "courseWorkload": "PT20H",
+                "url": "https://aiosha.it/corso-online.html",
+                "instructor": {
+                    "@type": "Person",
+                    "@id": "https://aiosha.it/chi-sono#person",
+                    "name": "Aliosha Battaglini"
+                }
+            }
+        ]
+    }
+    </script>
     <!-- Google Analytics (GA4) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-6GNKJZJY1V"></script>
     <script>
@@ -420,6 +476,7 @@
                     <a href="chi-sono.html" class="header__nav-link">Chi Sono</a>
                     <a href="libro.html" class="header__nav-link">Libro</a>
                     <a href="corso.html" class="header__nav-link">Corso</a>
+                    <a href="consulenza.html" class="header__nav-link">Servizi</a>
                     <a href="risorse.html" class="header__nav-link">Risorse</a>
                     <a href="blog.html" class="header__nav-link">Blog</a>
                     <a href="login.html" class="header__nav-link" id="nav-auth-link">Accedi</a>

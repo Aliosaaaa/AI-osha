@@ -22,6 +22,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
+        html, body { overflow-x: clip; }
+
         :root {
             --primary: #00A8E8; --primary-dark: #0088c2;
             --highlight: #F5A623; --highlight-dark: #d4911f;
@@ -113,13 +115,25 @@
     {
         "@context": "https://schema.org",
         "@type": "Book",
+        "@id": "https://aiosha.it/libro.html#book",
         "name": "Intelligenza Artificiale in Pratica per chi lavora",
-        "author": { "@type": "Person", "name": "Aliosha Battaglini" },
+        "author": { "@type": "Person", "@id": "https://aiosha.it/chi-sono#person", "name": "Aliosha Battaglini" },
+        "publisher": { "@type": "Organization", "name": "Battaglini Edizioni" },
         "inLanguage": "it",
-        "bookFormat": "https://schema.org/Paperback",
         "image": "https://aiosha.it/images/libro-cover.jpg",
         "url": "https://aiosha.it/libro.html",
-        "offers": { "@type": "Offer", "availability": "https://schema.org/InStock", "url": "https://www.amazon.it/dp/B0H4RNXR8C" }
+        "workExample": [
+            {
+                "@type": "Book",
+                "bookFormat": "https://schema.org/Paperback",
+                "offers": { "@type": "Offer", "availability": "https://schema.org/InStock", "url": "https://www.amazon.it/dp/B0H4RNXR8C" }
+            },
+            {
+                "@type": "Book",
+                "bookFormat": "https://schema.org/EBook",
+                "offers": { "@type": "Offer", "availability": "https://schema.org/InStock", "url": "https://www.amazon.it/dp/B0H4RH9FRQ" }
+            }
+        ]
     }
     </script>
     <!-- Google Analytics (GA4) -->
@@ -142,6 +156,7 @@
         <nav class="topnav">
             <a href="chi-sono.html">Chi Sono</a>
             <a href="corso.html">Corso</a>
+            <a href="consulenza.html">Servizi</a>
             <a href="risorse.html">Risorse</a>
             <a href="blog.html">Blog</a>
         </nav>
