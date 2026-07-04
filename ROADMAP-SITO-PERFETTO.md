@@ -49,22 +49,31 @@
 
 ---
 
-## 🔴 DA FARE — servono decisioni/accessi di Aliosha
+## 🔴 DA FARE — priorità (aggiornato 5 lug 2026 con le decisioni di Aliosha)
 
-1. **Cloudflare davanti a GitHub Pages** (DNS su Aruba, vedi CONFIGURAZIONE-ARUBA.md).
-   Un solo intervento sblocca: security headers (HSTS/CSP/nosniff), Brotli, cache lunga sugli asset,
-   301 dei duplicati senza estensione (/blog → /blog.html). Vale ~5-8 punti dello score tecnico.
-2. **Google Search Console + API key Google** (`/seo google setup`): senza GSC non possiamo misurare
-   indicizzazione, CTR e Core Web Vitals reali. Necessario per certificare il 95/100.
-3. **Prezzo del corso online visibile** su corso-online.html + checkout (Stripe payment link?).
-   La SERP è dominata da corsi con prezzo in chiaro; il mailto è il freno n.1 alla conversione.
-4. **Canale YouTube "AI Osha"**: è il segnale con la correlazione più alta con le citazioni AI (~0.74).
-   Anche solo clip dei corsi/testimonianze. Poi aggiungerlo ai sameAs dello schema.
-5. **Link del secondo libro Battaglini Edizioni** (ora è linkato solo "AI in Pratica" nei 2 formati).
-6. **Case study partner**: 1-2 pagine con risultati reali di AgroIO / Fondazione Poma / Fratelli
-   Maltagliati / RelaxInNoTime (serve ok dei clienti). È il fix principale per l'Autorevolezza (40/100).
-7. **Numero "100+ studenti formati"**: confermare che sia difendibile o dare il numero reale.
-8. **Prenotazione sessioni**: ora la CTA è WhatsApp. Valutare Calendly/Stripe per prenotare+pagare online.
+1. **Cloudflare davanti a GitHub Pages** — IN CORSO, guida passo-passo fornita (stesso pattern già
+   usato per salviamoicastagni.it il 3 lug). Sblocca: security headers, Brotli, cache asset,
+   301 dei duplicati /blog → /blog.html. DNS su Aruba (vedi CONFIGURAZIONE-ARUBA.md).
+2. **Google Search Console** — GA4 c'è già (property www.aiosha.it) ma NON basta: GA4 misura il
+   traffico, GSC misura Google (indicizzazione, query, CTR, CWV). Setup 10 min: verifica dominio
+   (può usare il tag GA4 già installato), poi inviare sitemap.xml. Opzionale: API key per audit automatici.
+3. **Prezzo corso online**: decisione presa di mostrarlo (consiglio: prezzo pieno ancorato + garanzia,
+   vedi note in fondo). Da definire la cifra → poi aggiorniamo pagina + Offer schema + Stripe link.
+4. ~~Canale YouTube~~ ✅ ESISTE: https://www.youtube.com/@AlioshaBattaglini (aperto da poco, 22 iscritti,
+   29 video). Aggiunto ai sameAs di tutto il sito e a llms.txt il 5 lug. Prossimo passo: link visibile
+   nel footer del sito + 2 video/mese con titoli SEO ("come usare X per Y").
+5. **Secondo libro Battaglini Edizioni**: esce tra ~1 mese, "AI in Pratica" per una NICCHIA specifica
+   da identificare (analisi in corso — candidate: agenti immobiliari, commercialisti/studi professionali,
+   ristorazione/turismo). Quando esce: pagina dedicata + Book schema + link incrociati.
+6. **Case study partner**: inviare richiesta di ok a AgroIO / Fondazione Poma / Fratelli Maltagliati /
+   RelaxInNoTime (template messaggio WhatsApp preparato). Poi 1 pagina caso-studio ciascuno
+   (problema → soluzione con AI → risultato con numero).
+7. ~~Claim~~ ✅ RISOLTO 5 lug: il claim "1.000+ persone gestite a un evento con l'AI e un team di 2"
+   è VERO e autorizzato (senza altri dettagli) → ripristinato su tutto il sito. Persone formate:
+   30 col metodo AI Osha + 60-80 in Karma → si usa "circa un centinaio di professionisti formati"
+   e "4.9/5 dai partecipanti ai corsi" (non più "100+ studenti").
+8. ~~Prenotazione sessioni~~ ✅ DECISO: CTA WhatsApp, poi Aliosha invia Calendly manualmente ai lead
+   qualificati. Nessuna modifica al sito necessaria.
 
 ## 🟠 DA FARE — contenuti (prossime 2-4 settimane)
 
