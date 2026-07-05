@@ -327,6 +327,14 @@ footer .meta{color:var(--g500);font-size:.82rem}
 .modal-close{position:absolute;top:-14px;right:-14px;width:40px;height:40px;border-radius:50%;background:#fff;color:var(--bg);border:none;font-size:1.3rem;cursor:pointer;font-weight:700}
 @media(prefers-reduced-motion:reduce){*{animation:none!important}}
 </style>
+<!-- Google Analytics (GA4) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-6GNKJZJY1V"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-6GNKJZJY1V');
+</script>
 </head>
 <body>
 <div class="progress" id="progress"></div>
@@ -788,6 +796,7 @@ function sqSubmit(e){
   btn.disabled=true; var old=btn.textContent; btn.textContent='Invio…';
   fetch(SQ_ENDPOINT,{method:'POST',mode:'no-cors',body:JSON.stringify(data)})
     .then(function(){
+      if(typeof gtag==='function'){gtag('event','generate_lead',{event_category:'salto-quantico',event_label:data.fonte});}
       f.innerHTML='<div style="text-align:center;padding:14px 6px"><div style="font-size:2.4rem">✅</div><p style="color:#fff;font-weight:800;margin:.5rem 0;font-size:1.15rem">Ci sei dentro!</p><p style="color:var(--g400);font-size:.92rem">Controlla la mail: ti ho mandato la <b style="color:var(--highlight-light)">Parte 1 del libro</b> e ti scrivo io prima di ogni sera.</p></div>';
     })
     .catch(function(){ btn.disabled=false; btn.textContent=old; alert('Ops, qualcosa è andato storto. Riprova tra un attimo.'); });
