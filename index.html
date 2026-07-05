@@ -838,6 +838,20 @@
             transform: rotate(-45deg) translate(7px, -6px);
         }
 
+
+        /* Mesh gradient hero (whatamesh) */
+        #gradient-canvas {
+            position: absolute; inset: 0; width: 100%; height: 100%;
+            z-index: -1; opacity: 0; transition: opacity 1.2s ease;
+            --gradient-color-1: #0d1117; --gradient-color-2: #0e1a30;
+            --gradient-color-3: #00476b; --gradient-color-4: #0187b8;
+        }
+        .hero.mesh-on #gradient-canvas { opacity: 0.5; }
+        .hero.mesh-on .hero__aurora { opacity: 0.25; }
+        html.lenis, html.lenis body { height: auto; }
+        .lenis.lenis-smooth { scroll-behavior: auto !important; }
+        .split-line { display: inline-block; overflow: hidden; vertical-align: bottom; }
+
         /* ========================================
            HERO SECTION
            ======================================== */
@@ -2205,6 +2219,7 @@ src="https://www.facebook.com/tr?id=4582974808646852&ev=PageView&noscript=1"
     <main>
         <!-- Hero Section -->
         <section class="hero" id="hero">
+            <canvas id="gradient-canvas" data-transition-in></canvas>
             <div class="hero__bg"></div>
             <div class="hero__aurora"></div>
             <div class="hero__center-dark"></div>
@@ -3704,6 +3719,56 @@ src="https://www.facebook.com/tr?id=4582974808646852&ev=PageView&noscript=1"
         })();
     </script>
     <script src="assets/micro.js" defer></script>
+
+    <!-- FASE 1 upgrade estetico: mesh gradient + smooth scroll + reveal tipografici -->
+    <script defer src="assets/gradient.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/lenis@1/dist/lenis.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.13/dist/gsap.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.13/dist/ScrollTrigger.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.13/dist/SplitText.min.js"></script>
+    <script>
+    window.addEventListener('load', function () {
+        var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        var desktop = window.matchMedia('(min-width: 768px)').matches;
+        if (reduced) return;
+
+        // Mesh gradient nel hero (solo desktop: su mobile resta l'aurora statica)
+        if (desktop && window.Gradient) {
+            try {
+                var g = new Gradient();
+                g.initGradient('#gradient-canvas');
+                document.getElementById('hero').classList.add('mesh-on');
+            } catch (e) {}
+        }
+
+        // Smooth scroll + sync ScrollTrigger
+        if (desktop && window.Lenis && window.gsap && window.ScrollTrigger) {
+            gsap.registerPlugin(ScrollTrigger);
+            var lenis = new Lenis({ lerp: 0.12 });
+            lenis.on('scroll', ScrollTrigger.update);
+            gsap.ticker.add(function (t) { lenis.raf(t * 1000); });
+            gsap.ticker.lagSmoothing(0);
+        }
+
+        // Titoli di sezione: reveal per linee
+        if (window.gsap && window.SplitText && window.ScrollTrigger) {
+            gsap.registerPlugin(ScrollTrigger, SplitText);
+            document.querySelectorAll('.section__title').forEach(function (el) {
+                var split = new SplitText(el, { type: 'lines', linesClass: 'split-line-inner' });
+                split.lines.forEach(function (l) {
+                    var wrap = document.createElement('span');
+                    wrap.className = 'split-line';
+                    l.parentNode.insertBefore(wrap, l);
+                    wrap.appendChild(l);
+                });
+                gsap.from(split.lines, {
+                    yPercent: 110, duration: 0.9, stagger: 0.08, ease: 'power4.out',
+                    scrollTrigger: { trigger: el, start: 'top 85%', once: true }
+                });
+            });
+        }
+    });
+    </script>
 </body>
 </html>
 
