@@ -335,6 +335,22 @@ footer .meta{color:var(--g500);font-size:.82rem}
   gtag('js', new Date());
   gtag('config', 'G-6GNKJZJY1V');
 </script>
+<!-- Meta Pixel -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '4582974808646852');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=4582974808646852&ev=PageView&noscript=1"
+/></noscript>
 </head>
 <body>
 <div class="progress" id="progress"></div>
@@ -797,6 +813,7 @@ function sqSubmit(e){
   fetch(SQ_ENDPOINT,{method:'POST',mode:'no-cors',body:JSON.stringify(data)})
     .then(function(){
       if(typeof gtag==='function'){gtag('event','generate_lead',{event_category:'salto-quantico',event_label:data.fonte});}
+      if(typeof fbq==='function'){fbq('track','Lead',{content_name:'salto-quantico',content_category:data.fonte});}
       f.innerHTML='<div style="text-align:center;padding:14px 6px"><div style="font-size:2.4rem">✅</div><p style="color:#fff;font-weight:800;margin:.5rem 0;font-size:1.15rem">Ci sei dentro!</p><p style="color:var(--g400);font-size:.92rem">Controlla la mail: ti ho mandato la <b style="color:var(--highlight-light)">Parte 1 del libro</b> e ti scrivo io prima di ogni sera.</p></div>';
     })
     .catch(function(){ btn.disabled=false; btn.textContent=old; alert('Ops, qualcosa è andato storto. Riprova tra un attimo.'); });

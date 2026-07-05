@@ -1,0 +1,2249 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- BOZZA — NON INDICIZZARE FINCHÉ NON PUBBLICATA -->
+    <meta name="robots" content="noindex, nofollow">
+
+    <title>La Bottega dell'AI — Intelligenza Artificiale in Pratica per chi lavora | AI Osha</title>
+    <meta name="description" content="La Bottega dell'AI di Aliosha Battaglini: Intelligenza Artificiale in Pratica per chi lavora — PMI, professionisti, freelance, lavoratori dipendenti. 10 moduli a €89 cad oppure pacchetti BASE €499 / BUSINESS €899 / AZIENDALE a preventivo. Promo fino al 10 giugno 2026.">
+    <meta name="keywords" content="bottega AI, intelligenza artificiale in pratica per chi lavora, AI per lavoratori dipendenti, AI per PMI, AI per freelance, AI Weekly Call, moduli AI 89 euro, corso AI modulare">
+    <link rel="canonical" href="https://aiosha.it/corso-promo.html">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://aiosha.it/corso-promo.html">
+    <meta property="og:title" content="La Bottega dell'AI — Intelligenza Artificiale in Pratica per chi lavora | AI Osha">
+    <meta property="og:description" content="Intelligenza Artificiale in Pratica per chi lavora — PMI, professionisti, freelance, lavoratori dipendenti. 10 moduli modulari a €89. Promo fino al 10 giugno 2026.">
+    <meta property="og:image" content="https://aiosha.it/images/og-image.jpg">
+    <meta property="og:locale" content="it_IT">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <link rel="icon" type="image/png" href="images/uccello.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary: #00A8E8;
+            --primary-dark: #0088c2;
+            --primary-light: #33b9ed;
+            --accent: #1E3A5F;
+            --accent-light: #2a4d7a;
+            --highlight: #F5A623;
+            --highlight-dark: #d4911f;
+            --highlight-light: #f7b84d;
+            --poma-gold: #C9A85C;
+            --poma-dark: #1a1508;
+            --dark: #0D1117;
+            --dark-soft: #161b22;
+            --gray-900: #1f2937;
+            --gray-800: #2d3748;
+            --gray-700: #374151;
+            --gray-600: #4b5563;
+            --gray-500: #6b7280;
+            --gray-400: #9ca3af;
+            --gray-300: #d1d5db;
+            --gray-200: #e5e7eb;
+            --gray-100: #f3f4f6;
+            --light: #E8F4FD;
+            --white: #ffffff;
+            --success: #10b981;
+            --font-display: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+            --radius-sm: 0.375rem;
+            --radius-md: 0.5rem;
+            --radius-lg: 0.75rem;
+            --radius-xl: 1rem;
+            --radius-2xl: 1.5rem;
+            --radius-full: 9999px;
+            --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+            --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+            --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+            --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1);
+            --transition-fast: 150ms ease;
+            --transition-base: 250ms ease;
+            --transition-slow: 350ms ease;
+            --container-max: 1200px;
+        }
+
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
+        body { font-family: var(--font-display); font-size: 1rem; line-height: 1.6; color: var(--gray-300); background-color: var(--dark); overflow-x: hidden; }
+        img { max-width: 100%; height: auto; display: block; }
+        a { color: inherit; text-decoration: none; }
+        button { font-family: inherit; cursor: pointer; border: none; background: none; }
+        ul, ol { list-style: none; }
+
+        .container { width: 100%; max-width: var(--container-max); margin: 0 auto; padding: 0 1.5rem; }
+
+        /* Header */
+        .header { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: rgba(13, 17, 23, 0.92); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(255, 255, 255, 0.08); transition: all var(--transition-base); }
+        .header__inner { display: flex; align-items: center; justify-content: space-between; height: 72px; }
+        .header__logo { display: flex; align-items: center; gap: 0.5rem; font-size: 1.5rem; font-weight: 800; color: var(--white); }
+        .text-gradient { background: linear-gradient(135deg, var(--primary) 0%, var(--highlight) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        .header__nav { display: none; }
+        @media (min-width: 768px) { .header__nav { display: flex; align-items: center; gap: 2rem; } }
+        .header__nav-link { font-weight: 500; color: var(--gray-300); transition: color var(--transition-fast); }
+        .header__nav-link:hover { color: var(--primary); }
+        .btn { display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; padding: 1rem 2rem; font-size: 1rem; font-weight: 600; border-radius: var(--radius-lg); transition: all var(--transition-base); text-align: center; }
+        .btn--primary { background: linear-gradient(135deg, var(--highlight) 0%, var(--highlight-dark) 100%); color: var(--white); box-shadow: var(--shadow-md); }
+        .btn--primary:hover { transform: translateY(-2px); box-shadow: var(--shadow-lg), 0 0 30px rgba(245, 166, 35, 0.4); }
+        .btn--large { padding: 1.25rem 2.5rem; font-size: 1.125rem; }
+
+        /* Hero */
+        .hero { position: relative; min-height: 80vh; display: flex; align-items: center; padding: calc(72px + 5rem) 0 5rem; overflow: hidden; }
+        .hero__bg { position: absolute; inset: 0; background: radial-gradient(ellipse 80% 50% at 50% -20%, rgba(0, 168, 232, 0.15) 0%, transparent 50%), radial-gradient(ellipse 60% 40% at 100% 100%, rgba(245, 166, 35, 0.1) 0%, transparent 50%), linear-gradient(180deg, var(--dark) 0%, var(--dark-soft) 100%); z-index: -1; }
+        .hero__content { text-align: center; max-width: 860px; margin: 0 auto; }
+        .hero__badge { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.5rem 1rem; background: var(--gray-900); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: var(--radius-full); font-size: 0.875rem; font-weight: 500; color: var(--gray-400); margin-bottom: 2rem; }
+        .hero__subtitle { font-size: clamp(1.125rem, 2vw, 1.375rem); color: var(--gray-400); max-width: 680px; margin: 0 auto 2.5rem; }
+
+        /* ── ANIMATED TITLE ── */
+        .hero__display {
+            font-size: clamp(2.8rem, 7vw, 5.5rem);
+            font-weight: 800;
+            letter-spacing: -0.03em;
+            line-height: 1.05;
+            margin: 0 0 1.75rem 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: baseline;
+            gap: 0 0.32em;
+        }
+        .hw {
+            display: inline-block;
+            opacity: 0;
+            color: var(--white);
+            position: relative;
+            transition: opacity 0.1s;
+        }
+        .hw--scrambling { opacity: 1; }
+        .hw--done { opacity: 1; }
+        .hw--gradient {
+            background: linear-gradient(100deg, var(--primary) 0%, #7dd3fc 25%, var(--highlight) 55%, #ff9a3c 80%, var(--primary) 100%);
+            background-size: 300% auto;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .hw--gradient.hw--done {
+            animation: shimmer 4s linear infinite;
+        }
+        .hw .scramble-char { color: var(--primary); opacity: 0.55; }
+        @keyframes shimmer {
+            0%   { background-position: 0% 50%; }
+            100% { background-position: 300% 50%; }
+        }
+
+        /* Section */
+        .section { padding: 5rem 0; }
+        .section--alt { background: var(--dark-soft); }
+        .section__eyebrow { display: inline-block; font-size: 0.875rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; color: var(--primary); margin-bottom: 1rem; }
+        .section__title { font-size: clamp(2rem, 4vw, 2.75rem); font-weight: 700; letter-spacing: -0.01em; color: var(--white); margin-bottom: 1rem; }
+        .section__desc { font-size: 1.125rem; color: var(--gray-400); }
+        .section__header { text-align: center; max-width: 700px; margin: 0 auto 3.5rem; }
+
+        /* ── PATH CARDS ── */
+        .path-grid {
+            display: grid;
+            gap: 1.5rem;
+            margin-top: 3.5rem;
+        }
+        @media (min-width: 768px) { .path-grid { grid-template-columns: 1fr 1fr; } }
+
+        .path-card {
+            border-radius: var(--radius-2xl);
+            padding: 2.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            transition: transform var(--transition-base), box-shadow var(--transition-base);
+            position: relative;
+            overflow: hidden;
+        }
+        .path-card:hover { transform: translateY(-4px); }
+
+        /* Card Poma */
+        .path-card--poma {
+            background: linear-gradient(145deg, #1c1506 0%, #2a1f07 100%);
+            border: 1px solid rgba(201, 168, 92, 0.35);
+            box-shadow: 0 0 60px rgba(201, 168, 92, 0.08);
+            order: 2;
+        }
+        .path-card--poma:hover { box-shadow: 0 20px 60px rgba(201, 168, 92, 0.2); border-color: rgba(201, 168, 92, 0.6); }
+
+        /* Card Online — enfatizzata (priorità di lettura + visiva) */
+        .path-card--online {
+            background: linear-gradient(145deg, #061a2e 0%, #0d2745 100%);
+            border: 2px solid rgba(0, 168, 232, 0.55);
+            box-shadow: 0 0 100px rgba(0, 168, 232, 0.22), 0 8px 32px rgba(0, 168, 232, 0.15);
+            order: 1;
+            position: relative;
+        }
+        .path-card--online:hover {
+            box-shadow: 0 24px 80px rgba(0, 168, 232, 0.35), 0 0 120px rgba(0, 168, 232, 0.28);
+            border-color: rgba(0, 168, 232, 0.85);
+            transform: translateY(-6px);
+        }
+        @media (min-width: 768px) {
+            .path-card--online { transform: scale(1.02); }
+            .path-card--online:hover { transform: scale(1.02) translateY(-6px); }
+        }
+
+        /* Tag "Più scelto" sull'online */
+        .path-card__featured-tag {
+            position: absolute;
+            top: 18px;
+            right: 18px;
+            z-index: 4;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0.5rem 1rem;
+            border-radius: 9999px;
+            font-size: 0.72rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.09em;
+            background: linear-gradient(135deg, #00a8e8 0%, #0080d0 100%);
+            color: #fff;
+            box-shadow: 0 6px 20px rgba(0,168,232,0.55), 0 0 0 1px rgba(255,255,255,0.15) inset;
+            animation: featuredPulse 2.4s ease-in-out infinite;
+        }
+        @keyframes featuredPulse {
+            0%, 100% { box-shadow: 0 6px 20px rgba(0,168,232,0.55), 0 0 0 1px rgba(255,255,255,0.15) inset; }
+            50% { box-shadow: 0 6px 28px rgba(0,168,232,0.85), 0 0 0 1px rgba(255,255,255,0.25) inset; }
+        }
+
+        .path-card__badge {
+            display: inline-flex; align-items: center; gap: 0.4rem;
+            padding: 0.3rem 0.85rem;
+            border-radius: var(--radius-full);
+            font-size: 0.72rem; font-weight: 700;
+            text-transform: uppercase; letter-spacing: 0.06em;
+            width: fit-content;
+        }
+        .path-card__badge--poma { background: rgba(201,168,92,0.12); border: 1px solid rgba(201,168,92,0.3); color: var(--poma-gold); }
+        .path-card__badge--online { background: rgba(0,168,232,0.1); border: 1px solid rgba(0,168,232,0.25); color: var(--primary); }
+
+        .path-card__logo { height: 64px; width: auto; object-fit: contain; }
+        .path-card__logo-wrap {
+            height: 72px; display: flex; align-items: center;
+        }
+        .path-card__cover {
+            margin: -2.5rem -2.5rem 0 -2.5rem;
+            aspect-ratio: 16 / 9;
+            overflow: hidden;
+            position: relative;
+            background: var(--dark-soft);
+        }
+        .path-card__cover img {
+            width: 100%; height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+        .path-card:hover .path-card__cover img { transform: scale(1.04); }
+        .path-card__cover::after {
+            content: '';
+            position: absolute; inset: 0;
+            background: linear-gradient(180deg, transparent 55%, rgba(0,0,0,0.55) 100%);
+            pointer-events: none;
+        }
+        .path-card__cover-logo {
+            position: absolute;
+            top: 50%; left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(0, 0, 0, 0.82);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            padding: 1rem 1.5rem;
+            border-radius: 0.75rem;
+            border: 1px solid rgba(201, 168, 92, 0.5);
+            box-shadow: 0 12px 48px rgba(0,0,0,0.5);
+            z-index: 2;
+        }
+        .path-card__cover-logo img {
+            height: 64px;
+            width: auto;
+            display: block;
+            transition: none;
+        }
+        .path-card:hover .path-card__cover-logo img { transform: none; }
+        @media (max-width: 640px) {
+            .path-card__cover { margin: -2rem -2rem 0 -2rem; }
+            .path-card__cover-logo { padding: 0.75rem 1.1rem; }
+            .path-card__cover-logo img { height: 48px; }
+        }
+
+        .path-card__title { font-size: 1.5rem; font-weight: 800; color: var(--white); }
+        .path-card__sub { font-size: 0.95rem; color: var(--gray-400); line-height: 1.6; margin-top: 0.25rem; }
+
+        .path-card__features { list-style: none; display: flex; flex-direction: column; gap: 0.65rem; }
+        .path-card__feature { display: flex; align-items: flex-start; gap: 0.6rem; font-size: 0.9rem; color: var(--gray-300); }
+        .path-card__feature-dot {
+            width: 18px; height: 18px; flex-shrink: 0; margin-top: 2px;
+            border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+        }
+        .path-card__feature-dot--poma { background: rgba(201,168,92,0.15); color: var(--poma-gold); }
+        .path-card__feature-dot--online { background: rgba(0,168,232,0.12); color: var(--primary); }
+
+        .path-card__cta {
+            display: inline-flex; align-items: center; gap: 0.5rem;
+            padding: 0.9rem 1.75rem;
+            border-radius: var(--radius-lg);
+            font-size: 1rem; font-weight: 700;
+            transition: all var(--transition-base);
+            width: 100%; justify-content: center;
+            margin-top: auto;
+        }
+        .path-card__cta--poma {
+            background: linear-gradient(135deg, var(--poma-gold) 0%, #a88540 100%);
+            color: #1a1508;
+        }
+        .path-card__cta--poma:hover { box-shadow: 0 8px 32px rgba(201,168,92,0.4); transform: translateY(-1px); }
+        .path-card__cta--online {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: var(--white);
+        }
+        .path-card__cta--online:hover { box-shadow: 0 8px 32px rgba(0,168,232,0.4); transform: translateY(-1px); }
+
+        /* ── CURRICULUM ── */
+        .curriculum-grid {
+            display: grid;
+            gap: 0.75rem;
+            margin-top: 1rem;
+        }
+        @media (min-width: 768px) { .curriculum-grid { grid-template-columns: 1fr 1fr; } }
+
+        .lesson-card {
+            background: var(--gray-900);
+            border: 1px solid rgba(255,255,255,0.07);
+            border-radius: var(--radius-xl);
+            padding: 1.25rem 1.5rem;
+            display: flex; align-items: flex-start; gap: 1rem;
+            transition: border-color var(--transition-base);
+        }
+        .lesson-card:hover { border-color: rgba(0,168,232,0.3); }
+        .lesson-number {
+            font-family: var(--font-mono);
+            font-size: 0.75rem; font-weight: 600;
+            color: var(--primary);
+            background: rgba(0,168,232,0.08);
+            border: 1px solid rgba(0,168,232,0.15);
+            border-radius: var(--radius-md);
+            padding: 0.2rem 0.55rem;
+            flex-shrink: 0; margin-top: 2px;
+        }
+        .lesson-body {}
+        .lesson-title { font-size: 0.975rem; font-weight: 700; color: var(--white); margin-bottom: 0.25rem; }
+        .lesson-desc { font-size: 0.82rem; color: var(--gray-500); line-height: 1.5; }
+
+        /* ══════════ MODULI SINGOLI ══════════ */
+        .modular-intro {
+            background: linear-gradient(135deg, rgba(0,168,232,0.08) 0%, rgba(245,166,35,0.05) 100%);
+            border: 1px solid rgba(0,168,232,0.25);
+            border-radius: var(--radius-2xl);
+            padding: 2.25rem 2rem;
+            margin-top: 1.5rem;
+            margin-bottom: 2.5rem;
+            text-align: center;
+        }
+        .modular-intro__usp {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--primary), var(--highlight));
+            color: #0a1929;
+            font-weight: 800;
+            font-size: 0.78rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            padding: 0.4rem 1rem;
+            border-radius: 9999px;
+            margin-bottom: 1rem;
+        }
+        .modular-intro__title {
+            font-size: clamp(1.5rem, 3vw, 2rem);
+            font-weight: 800;
+            color: var(--white);
+            margin-bottom: 0.75rem;
+            line-height: 1.25;
+        }
+        .modular-intro__title span { color: var(--highlight); }
+        .modular-intro__text {
+            font-size: 1.05rem;
+            color: var(--gray-300);
+            line-height: 1.65;
+            max-width: 720px;
+            margin: 0 auto 1.5rem;
+        }
+        .modular-pricing-pills {
+            display: inline-flex;
+            gap: 0.75rem;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 0.5rem;
+        }
+        .modular-pill {
+            background: rgba(255,255,255,0.06);
+            border: 1px solid rgba(255,255,255,0.12);
+            border-radius: var(--radius-full);
+            padding: 0.75rem 1.25rem;
+            font-weight: 700;
+            font-size: 0.95rem;
+            color: var(--white);
+        }
+        .modular-pill__price { color: var(--highlight); font-weight: 800; }
+        .modular-pill__discount {
+            display: inline-block;
+            background: rgba(132,204,22,0.18);
+            color: #a3e635;
+            font-size: 0.7rem;
+            font-weight: 800;
+            padding: 0.15rem 0.45rem;
+            border-radius: 4px;
+            margin-left: 0.4rem;
+        }
+
+        /* Card modulo con prezzo + bottone */
+        .modulo-card {
+            background: var(--gray-900);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: var(--radius-xl);
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            transition: border-color var(--transition-base), transform var(--transition-base), box-shadow var(--transition-base);
+        }
+        .modulo-card:hover {
+            border-color: rgba(0,168,232,0.4);
+            transform: translateY(-3px);
+            box-shadow: 0 12px 32px rgba(0,168,232,0.18);
+        }
+        .modulo-card__head {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: 0.75rem;
+        }
+        .modulo-card__num {
+            font-family: var(--font-mono);
+            font-size: 0.78rem;
+            font-weight: 700;
+            color: var(--primary);
+            background: rgba(0,168,232,0.1);
+            border: 1px solid rgba(0,168,232,0.2);
+            border-radius: var(--radius-md);
+            padding: 0.25rem 0.6rem;
+            flex-shrink: 0;
+        }
+        .modulo-card__price-tag {
+            font-family: var(--font-mono);
+            font-size: 1rem;
+            font-weight: 800;
+            color: var(--highlight);
+            line-height: 1;
+        }
+        .modulo-card__price-tag small {
+            font-size: 0.65rem;
+            color: var(--gray-500);
+            font-weight: 500;
+            display: block;
+            margin-top: 2px;
+        }
+        .modulo-card__title {
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: var(--white);
+            line-height: 1.3;
+        }
+        .modulo-card__desc {
+            font-size: 0.85rem;
+            color: var(--gray-500);
+            line-height: 1.55;
+            flex: 1;
+        }
+        .modulo-card__cta {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.4rem;
+            padding: 0.7rem 1rem;
+            border-radius: var(--radius-md);
+            font-size: 0.875rem;
+            font-weight: 700;
+            background: rgba(0,168,232,0.1);
+            color: var(--primary);
+            border: 1px solid rgba(0,168,232,0.3);
+            transition: all var(--transition-base);
+            margin-top: auto;
+        }
+        .modulo-card__cta:hover {
+            background: var(--primary);
+            color: #fff;
+            border-color: var(--primary);
+        }
+
+        /* Comparativa break-even */
+        .break-even {
+            margin-top: 3rem;
+            background: linear-gradient(135deg, var(--dark-soft) 0%, var(--gray-900) 100%);
+            border: 2px solid rgba(245,166,35,0.4);
+            border-radius: var(--radius-2xl);
+            padding: 2.5rem 2rem;
+            text-align: center;
+            box-shadow: 0 12px 40px rgba(245,166,35,0.1);
+        }
+        .break-even__warn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.45rem;
+            background: rgba(245,166,35,0.18);
+            color: var(--highlight);
+            font-weight: 700;
+            font-size: 0.85rem;
+            padding: 0.4rem 0.9rem;
+            border-radius: 9999px;
+            margin-bottom: 1rem;
+        }
+        .break-even__title {
+            font-size: clamp(1.4rem, 2.8vw, 1.85rem);
+            font-weight: 800;
+            color: var(--white);
+            margin-bottom: 1rem;
+            line-height: 1.25;
+        }
+        .break-even__title span { color: var(--highlight); }
+        .break-even__compare {
+            display: grid;
+            gap: 1rem;
+            max-width: 640px;
+            margin: 1.5rem auto;
+            text-align: left;
+        }
+        .break-even__row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(0,0,0,0.3);
+            border: 1px solid rgba(255,255,255,0.06);
+            border-radius: var(--radius-md);
+            padding: 1rem 1.25rem;
+        }
+        .break-even__row--best {
+            border-color: rgba(0,168,232,0.55);
+            background: linear-gradient(135deg, rgba(0,168,232,0.12), rgba(0,168,232,0.04));
+            box-shadow: 0 4px 16px rgba(0,168,232,0.2);
+        }
+        .break-even__label { color: var(--gray-300); font-size: 0.95rem; }
+        .break-even__label strong { color: var(--white); }
+        .break-even__price {
+            font-family: var(--font-mono);
+            font-weight: 800;
+            font-size: 1.25rem;
+            color: var(--white);
+        }
+        .break-even__row--best .break-even__price { color: var(--primary); }
+        .break-even__save {
+            display: block;
+            font-size: 0.7rem;
+            color: #a3e635;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-top: 2px;
+        }
+
+        /* ── TESTIMONIALS ── */
+        .testimonials-grid {
+            display: grid;
+            gap: 1.25rem;
+        }
+        @media (min-width: 640px) { .testimonials-grid { grid-template-columns: repeat(2, 1fr); } }
+        @media (min-width: 1024px) { .testimonials-grid { grid-template-columns: repeat(3, 1fr); } }
+
+        .testimonial-card {
+            background: var(--gray-900);
+            border: 1px solid rgba(255,255,255,0.07);
+            border-radius: var(--radius-xl);
+            padding: 1.5rem;
+            display: flex; flex-direction: column; gap: 1rem;
+            transition: border-color var(--transition-base), transform var(--transition-base);
+        }
+        .testimonial-card:hover { border-color: rgba(245,166,35,0.25); transform: translateY(-2px); }
+
+        .testimonial-stars { display: flex; gap: 2px; }
+        .testimonial-star { color: var(--highlight); font-size: 0.9rem; }
+        .testimonial-text { font-size: 0.9rem; color: var(--gray-400); line-height: 1.65; font-style: italic; flex: 1; }
+        .testimonial-author { display: flex; align-items: center; gap: 0.75rem; }
+        .testimonial-avatar {
+            width: 40px; height: 40px; border-radius: 50%;
+            object-fit: cover; flex-shrink: 0;
+            border: 2px solid rgba(255,255,255,0.08);
+        }
+        .testimonial-name { font-size: 0.875rem; font-weight: 700; color: var(--white); }
+        .testimonial-role { font-size: 0.775rem; color: var(--gray-500); }
+
+        /* ── FAQ ── */
+        .faq-list { max-width: 800px; margin: 0 auto; }
+        .faq-item { border-bottom: 1px solid rgba(255,255,255,0.08); }
+        .faq-item__question { width: 100%; display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: 1.25rem 0; text-align: left; font-size: 1.05rem; font-weight: 600; color: var(--white); transition: color var(--transition-fast); cursor: pointer; }
+        .faq-item__question:hover { color: var(--primary); }
+        .faq-item__icon { flex-shrink: 0; width: 22px; height: 22px; color: var(--gray-500); transition: transform var(--transition-base); }
+        .faq-item.active .faq-item__icon { transform: rotate(45deg); color: var(--primary); }
+        .faq-item__answer { max-height: 0; overflow: hidden; transition: max-height var(--transition-slow); }
+        .faq-item.active .faq-item__answer { max-height: 400px; }
+        .faq-item__answer-content { padding-bottom: 1.25rem; color: var(--gray-400); line-height: 1.7; font-size: 0.95rem; }
+
+        /* Footer */
+        .footer { padding: 3rem 0 1.5rem; background: var(--gray-900); color: var(--gray-400); margin-top: 5rem; text-align: center; font-size: 0.875rem; }
+
+        /* ══════════ PROMO BAR + COUNTDOWN ══════════ */
+        .promo-bar {
+            position: sticky; top: 72px; z-index: 999;
+            background: linear-gradient(90deg, var(--highlight) 0%, #ff6b35 100%);
+            color: #1a1100;
+            padding: 0.6rem 1rem;
+            text-align: center;
+            font-weight: 700;
+            font-size: 0.92rem;
+            box-shadow: 0 4px 24px rgba(245,166,35,0.3);
+            display: flex; align-items: center; justify-content: center;
+            gap: 1rem; flex-wrap: wrap;
+        }
+        .promo-bar__pulse {
+            display: inline-block;
+            width: 10px; height: 10px;
+            background: #b91c1c;
+            border-radius: 50%;
+            animation: pulse 1.5s ease-in-out infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(185,28,28,0.7); }
+            50% { opacity: 0.6; box-shadow: 0 0 0 8px rgba(185,28,28,0); }
+        }
+        .promo-bar__countdown {
+            display: inline-flex; align-items: center; gap: 0.3rem;
+            font-family: var(--font-mono);
+            font-weight: 800;
+        }
+        .promo-bar__countdown-num {
+            background: rgba(0,0,0,0.18);
+            padding: 0.15rem 0.45rem;
+            border-radius: 4px;
+            min-width: 26px;
+            display: inline-block;
+            text-align: center;
+        }
+
+        /* ══════════ COUNTDOWN BIG (Hero) ══════════ */
+        .countdown-big {
+            display: flex;
+            justify-content: center;
+            gap: 0.85rem;
+            margin: 2rem auto 1.5rem;
+            flex-wrap: wrap;
+        }
+        .countdown-big__cell {
+            background: linear-gradient(180deg, rgba(245,166,35,0.18) 0%, rgba(245,166,35,0.05) 100%);
+            border: 1px solid rgba(245,166,35,0.35);
+            border-radius: var(--radius-xl);
+            padding: 1rem 1.25rem;
+            min-width: 92px;
+            box-shadow: 0 8px 24px rgba(245,166,35,0.15);
+        }
+        .countdown-big__num {
+            font-family: var(--font-mono);
+            font-size: clamp(1.8rem, 5vw, 2.6rem);
+            font-weight: 800;
+            color: var(--highlight);
+            line-height: 1;
+            display: block;
+        }
+        .countdown-big__label {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--gray-400);
+            margin-top: 0.4rem;
+            display: block;
+        }
+        .countdown-deadline {
+            text-align: center;
+            font-size: 0.875rem;
+            color: var(--gray-400);
+            margin-bottom: 2rem;
+        }
+        .countdown-deadline strong { color: var(--highlight); }
+
+        /* ══════════ TRUST BAR ══════════ */
+        .trust-bar {
+            display: flex;
+            justify-content: center;
+            gap: 2.5rem;
+            flex-wrap: wrap;
+            margin: 2rem 0;
+            padding: 1.25rem 0;
+            border-top: 1px solid rgba(255,255,255,0.06);
+            border-bottom: 1px solid rgba(255,255,255,0.06);
+        }
+        .trust-bar__item { text-align: center; }
+        .trust-bar__num {
+            font-size: 1.5rem; font-weight: 800; color: var(--primary);
+            display: block; line-height: 1;
+        }
+        .trust-bar__lbl {
+            font-size: 0.72rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--gray-500);
+            margin-top: 0.35rem;
+            display: block;
+        }
+
+        /* ══════════ PAIN POINTS ══════════ */
+        .pain-grid {
+            display: grid;
+            gap: 1rem;
+            margin-top: 3rem;
+        }
+        @media (min-width: 640px) { .pain-grid { grid-template-columns: 1fr 1fr; } }
+        @media (min-width: 1024px) { .pain-grid { grid-template-columns: repeat(3, 1fr); } }
+        .pain-card {
+            background: var(--gray-900);
+            border: 1px solid rgba(255,255,255,0.07);
+            border-radius: var(--radius-xl);
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            transition: border-color var(--transition-base);
+        }
+        .pain-card:hover { border-color: rgba(245,166,35,0.3); }
+        .pain-card__icon {
+            font-size: 1.75rem;
+            line-height: 1;
+        }
+        .pain-card__text {
+            color: var(--gray-300);
+            font-size: 0.95rem;
+            line-height: 1.55;
+        }
+        .pain-card__text strong { color: var(--white); }
+        .pain-closer {
+            text-align: center;
+            max-width: 720px;
+            margin: 3rem auto 0;
+            padding: 2rem;
+            background: linear-gradient(135deg, rgba(0,168,232,0.08) 0%, rgba(245,166,35,0.05) 100%);
+            border-radius: var(--radius-2xl);
+            border: 1px solid rgba(0,168,232,0.2);
+            font-size: 1.125rem;
+            line-height: 1.6;
+            color: var(--gray-200);
+        }
+        .pain-closer strong { color: var(--highlight); }
+
+        /* ══════════ PRICING ══════════ */
+        .pricing-grid {
+            display: grid;
+            gap: 1.5rem;
+            margin-top: 3rem;
+            align-items: stretch;
+        }
+        @media (min-width: 880px) { .pricing-grid { grid-template-columns: 1fr 1.1fr 1fr; gap: 1.25rem; } }
+
+        .price-card {
+            background: var(--dark-soft);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: var(--radius-2xl);
+            padding: 2.25rem 1.75rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1.25rem;
+            position: relative;
+            transition: transform var(--transition-base), border-color var(--transition-base), box-shadow var(--transition-base);
+        }
+        .price-card:hover { transform: translateY(-4px); }
+
+        .price-card--base { border-color: rgba(132,204,22,0.3); }
+        .price-card--base:hover { box-shadow: 0 16px 48px rgba(132,204,22,0.15); }
+
+        .price-card--business {
+            border: 2px solid rgba(0,168,232,0.55);
+            background: linear-gradient(180deg, rgba(0,168,232,0.06) 0%, var(--dark-soft) 100%);
+            box-shadow: 0 8px 32px rgba(0,168,232,0.15);
+        }
+        @media (min-width: 880px) {
+            .price-card--business { transform: scale(1.04); }
+            .price-card--business:hover { transform: scale(1.04) translateY(-4px); box-shadow: 0 24px 64px rgba(0,168,232,0.35); }
+        }
+
+        .price-card--aziendale { border-color: rgba(245,166,35,0.3); }
+        .price-card--aziendale:hover { box-shadow: 0 16px 48px rgba(245,166,35,0.18); }
+
+        .price-card__badge-top {
+            position: absolute;
+            top: -14px; left: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(135deg, var(--primary) 0%, #0080d0 100%);
+            color: #fff;
+            font-size: 0.72rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            padding: 0.4rem 1rem;
+            border-radius: 9999px;
+            box-shadow: 0 6px 18px rgba(0,168,232,0.5);
+            white-space: nowrap;
+        }
+        .price-card__tier {
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+        .price-card--base .price-card__tier { color: #84cc16; }
+        .price-card--business .price-card__tier { color: var(--primary); }
+        .price-card--aziendale .price-card__tier { color: var(--highlight); }
+
+        .price-card__title {
+            font-size: 1.3rem;
+            font-weight: 800;
+            color: var(--white);
+            line-height: 1.2;
+        }
+        .price-card__target {
+            font-size: 0.9rem;
+            color: var(--gray-400);
+            line-height: 1.5;
+        }
+
+        .price-card__price-row {
+            display: flex;
+            align-items: baseline;
+            gap: 0.6rem;
+            margin: 0.5rem 0;
+        }
+        .price-card__price {
+            font-size: 2.6rem;
+            font-weight: 800;
+            color: var(--white);
+            line-height: 1;
+        }
+        .price-card__price-strike {
+            font-size: 1.1rem;
+            color: var(--gray-500);
+            text-decoration: line-through;
+        }
+        .price-card__price-period {
+            font-size: 0.85rem;
+            color: var(--gray-500);
+        }
+        .price-card__discount {
+            display: inline-block;
+            background: rgba(245,166,35,0.15);
+            color: var(--highlight);
+            font-size: 0.75rem;
+            font-weight: 800;
+            padding: 0.25rem 0.6rem;
+            border-radius: 4px;
+            margin-top: -0.5rem;
+            width: fit-content;
+        }
+
+        .price-card__features {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.6rem;
+            margin-top: 0.5rem;
+            padding-top: 1.25rem;
+            border-top: 1px solid rgba(255,255,255,0.07);
+            flex: 1;
+        }
+        .price-card__feature {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.55rem;
+            font-size: 0.9rem;
+            color: var(--gray-300);
+            line-height: 1.45;
+        }
+        .price-card__feature--no {
+            color: var(--gray-600);
+            text-decoration: line-through;
+        }
+        .price-card__feature-check {
+            flex-shrink: 0; margin-top: 4px;
+            width: 16px; height: 16px;
+            display: inline-flex; align-items: center; justify-content: center;
+            border-radius: 50%;
+        }
+        .price-card--base .price-card__feature-check { background: rgba(132,204,22,0.15); color: #84cc16; }
+        .price-card--business .price-card__feature-check { background: rgba(0,168,232,0.15); color: var(--primary); }
+        .price-card--aziendale .price-card__feature-check { background: rgba(245,166,35,0.15); color: var(--highlight); }
+        .price-card__feature--no .price-card__feature-check {
+            background: rgba(255,255,255,0.04);
+            color: var(--gray-600);
+        }
+        .price-card__feature strong { color: var(--white); font-weight: 700; }
+
+        .price-card__cta {
+            display: inline-flex; align-items: center; justify-content: center;
+            gap: 0.5rem;
+            padding: 1rem 1.5rem;
+            border-radius: var(--radius-lg);
+            font-size: 1rem;
+            font-weight: 700;
+            transition: all var(--transition-base);
+            width: 100%;
+            margin-top: auto;
+        }
+        .price-card--base .price-card__cta {
+            background: linear-gradient(135deg, #84cc16 0%, #65a30d 100%);
+            color: #1a2a05;
+        }
+        .price-card--base .price-card__cta:hover { box-shadow: 0 12px 32px rgba(132,204,22,0.4); transform: translateY(-1px); }
+        .price-card--business .price-card__cta {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: #fff;
+        }
+        .price-card--business .price-card__cta:hover { box-shadow: 0 12px 32px rgba(0,168,232,0.5); transform: translateY(-1px); }
+        .price-card--aziendale .price-card__cta {
+            background: linear-gradient(135deg, var(--highlight) 0%, var(--highlight-dark) 100%);
+            color: #2a1500;
+        }
+        .price-card--aziendale .price-card__cta:hover { box-shadow: 0 12px 32px rgba(245,166,35,0.45); transform: translateY(-1px); }
+
+        .pricing-promo-note {
+            text-align: center;
+            margin-top: 2rem;
+            font-size: 0.95rem;
+            color: var(--gray-400);
+        }
+        .pricing-promo-note strong { color: var(--highlight); }
+
+        /* ══════════ BONUS STACKING ══════════ */
+        .bonus-section {
+            background: linear-gradient(135deg, rgba(245,166,35,0.06) 0%, rgba(0,168,232,0.04) 100%);
+            border-radius: var(--radius-2xl);
+            border: 1px solid rgba(245,166,35,0.2);
+            padding: 3rem 2rem;
+            margin-top: 3rem;
+        }
+        .bonus-list {
+            display: grid;
+            gap: 1rem;
+            margin-top: 2rem;
+            max-width: 720px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .bonus-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            background: rgba(0,0,0,0.3);
+            border: 1px solid rgba(255,255,255,0.06);
+            border-radius: var(--radius-lg);
+            padding: 1rem 1.25rem;
+            transition: transform var(--transition-base);
+        }
+        .bonus-item:hover { transform: translateX(4px); border-color: rgba(245,166,35,0.3); }
+        .bonus-item__icon {
+            font-size: 1.75rem;
+            flex-shrink: 0;
+            width: 48px; height: 48px;
+            display: flex; align-items: center; justify-content: center;
+            background: rgba(245,166,35,0.12);
+            border-radius: var(--radius-md);
+        }
+        .bonus-item__body { flex: 1; }
+        .bonus-item__name { font-weight: 700; color: var(--white); font-size: 1rem; }
+        .bonus-item__desc { font-size: 0.825rem; color: var(--gray-500); margin-top: 0.15rem; }
+        .bonus-item__value {
+            color: var(--highlight);
+            font-weight: 700;
+            font-size: 0.875rem;
+            white-space: nowrap;
+        }
+        .bonus-total {
+            text-align: center;
+            margin-top: 2rem;
+            font-size: 1.05rem;
+            color: var(--gray-300);
+        }
+        .bonus-total strong { color: var(--highlight); font-size: 1.25rem; }
+        .bonus-total .strike { text-decoration: line-through; color: var(--gray-500); }
+
+        /* ══════════ GARANZIA ══════════ */
+        .guarantee-box {
+            max-width: 820px;
+            margin: 0 auto;
+            text-align: center;
+            background: linear-gradient(135deg, var(--dark-soft) 0%, var(--gray-900) 100%);
+            border: 2px solid rgba(0,168,232,0.35);
+            border-radius: var(--radius-2xl);
+            padding: 3rem 2rem;
+            box-shadow: 0 16px 48px rgba(0,168,232,0.12);
+        }
+        .guarantee-badge {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 96px; height: 96px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            border-radius: 50%;
+            margin-bottom: 1.5rem;
+            font-size: 2.5rem;
+            box-shadow: 0 8px 32px rgba(0,168,232,0.5);
+        }
+        .guarantee-title {
+            font-size: clamp(1.5rem, 3vw, 2rem);
+            font-weight: 800;
+            color: var(--white);
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+        .guarantee-title span { color: var(--primary); }
+        .guarantee-text {
+            font-size: 1.05rem;
+            color: var(--gray-300);
+            line-height: 1.7;
+            max-width: 640px;
+            margin: 0 auto 1.5rem;
+        }
+        .guarantee-text strong { color: var(--white); }
+        .guarantee-signature {
+            font-style: italic;
+            color: var(--gray-400);
+            margin-top: 1rem;
+        }
+        .guarantee-signature strong { color: var(--highlight); font-style: normal; }
+
+        /* ══════════ CTA FINALE ══════════ */
+        .final-cta {
+            background: linear-gradient(135deg, var(--dark) 0%, #0a1929 50%, var(--dark) 100%);
+            padding: 5rem 0;
+            text-align: center;
+            border-top: 1px solid rgba(0,168,232,0.2);
+            position: relative;
+            overflow: hidden;
+        }
+        .final-cta::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at 30% 50%, rgba(0,168,232,0.15) 0%, transparent 50%),
+                        radial-gradient(circle at 70% 50%, rgba(245,166,35,0.1) 0%, transparent 50%);
+            pointer-events: none;
+        }
+        .final-cta > .container { position: relative; z-index: 1; }
+        .final-cta__title {
+            font-size: clamp(1.8rem, 4vw, 2.75rem);
+            font-weight: 800;
+            color: var(--white);
+            margin-bottom: 1rem;
+            line-height: 1.15;
+        }
+        .final-cta__title span { color: var(--highlight); }
+        .final-cta__sub {
+            font-size: 1.125rem;
+            color: var(--gray-400);
+            max-width: 640px;
+            margin: 0 auto 2rem;
+        }
+        .final-cta__buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 2.5rem;
+        }
+        .final-cta__btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 1rem 1.75rem;
+            border-radius: var(--radius-lg);
+            font-weight: 700;
+            font-size: 0.95rem;
+            transition: all var(--transition-base);
+        }
+        .final-cta__btn--base { background: rgba(132,204,22,0.12); color: #a3e635; border: 1px solid rgba(132,204,22,0.4); }
+        .final-cta__btn--base:hover { background: rgba(132,204,22,0.2); transform: translateY(-2px); }
+        .final-cta__btn--business {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: #fff;
+            box-shadow: 0 8px 24px rgba(0,168,232,0.4);
+        }
+        .final-cta__btn--business:hover { transform: translateY(-2px); box-shadow: 0 12px 32px rgba(0,168,232,0.6); }
+        .final-cta__btn--aziendale { background: rgba(245,166,35,0.12); color: var(--highlight); border: 1px solid rgba(245,166,35,0.4); }
+        .final-cta__btn--aziendale:hover { background: rgba(245,166,35,0.2); transform: translateY(-2px); }
+    </style>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {"@type":"ListItem","position":1,"name":"Home","item":"https://aiosha.it/"},
+            {"@type":"ListItem","position":2,"name":"La Bottega dell'AI","item":"https://aiosha.it/corso-promo.html"}
+        ]
+    }
+    </script>
+    <!-- Google Analytics (GA4) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-6GNKJZJY1V"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-6GNKJZJY1V');
+    </script>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header__inner">
+                <a href="index.html" class="header__logo">
+                    <img src="images/uccello.png" alt="AI Osha" style="height:32px;width:auto;">
+                    <span style="font-size:1.3rem;font-weight:800;color:#fff;letter-spacing:-0.02em;">AI <span style="color:#00A8E8;">Osha</span></span>
+                </a>
+                <nav class="header__nav">
+                    <a href="chi-sono.html" class="header__nav-link">Chi Sono</a>
+                    <a href="libro.html" class="header__nav-link">Libro</a>
+                    <a href="corso.html" class="header__nav-link">Bottega</a>
+                    <a href="risorse.html" class="header__nav-link">Risorse</a>
+                    <a href="blog.html" class="header__nav-link">Blog</a>
+                    <a href="login.html" class="header__nav-link" id="nav-auth-link">Accedi</a>
+                </nav>
+                <a href="index.html#lead-magnet" class="btn btn--primary">
+                    Guida Gratuita
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- PROMO BAR STICKY -->
+    <div class="promo-bar">
+        <span class="promo-bar__pulse"></span>
+        <span>🔥 PROMO ATTIVA — Scade tra</span>
+        <span class="promo-bar__countdown" id="promoCountdownMini">
+            <span class="promo-bar__countdown-num" id="miniD">22</span>g
+            <span class="promo-bar__countdown-num" id="miniH">00</span>h
+            <span class="promo-bar__countdown-num" id="miniM">00</span>m
+            <span class="promo-bar__countdown-num" id="miniS">00</span>s
+        </span>
+        <span>· fino al <strong>10 giugno 2026</strong></span>
+    </div>
+
+    <main>
+
+        <!-- HERO -->
+        <section class="hero">
+            <div class="hero__bg"></div>
+            <div class="container">
+                <div class="hero__content">
+                    <div class="hero__badge">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 3l14 9-14 9V3z"/></svg>
+                        La bottega dell'AI · per chi lavora davvero
+                    </div>
+
+                    <h1 class="hero__display" aria-label="Smetti di guardare l'AI da fuori. Entra in bottega.">
+                        <span class="hw hw--1">Smetti</span>
+                        <span class="hw hw--2">di guardare</span>
+                        <span class="hw hw--3">l'AI</span>
+                        <span class="hw hw--4">da fuori.</span>
+                    </h1>
+
+                    <p class="hero__subtitle">
+                        <strong style="color:var(--highlight);">Intelligenza Artificiale in Pratica per chi lavora</strong> — PMI, professionisti, freelance, partite IVA e <strong>lavoratori dipendenti</strong> che vogliono integrare l'AI nei loro processi quotidiani senza diventare ingegneri. <strong style="color:var(--highlight);">Entra in bottega</strong>: si lavora con le mani, non con le slide.
+                    </p>
+
+                    <!-- COUNTDOWN BIG -->
+                    <div class="countdown-big" id="countdownBig">
+                        <div class="countdown-big__cell">
+                            <span class="countdown-big__num" id="bigD">22</span>
+                            <span class="countdown-big__label">Giorni</span>
+                        </div>
+                        <div class="countdown-big__cell">
+                            <span class="countdown-big__num" id="bigH">00</span>
+                            <span class="countdown-big__label">Ore</span>
+                        </div>
+                        <div class="countdown-big__cell">
+                            <span class="countdown-big__num" id="bigM">00</span>
+                            <span class="countdown-big__label">Minuti</span>
+                        </div>
+                        <div class="countdown-big__cell">
+                            <span class="countdown-big__num" id="bigS">00</span>
+                            <span class="countdown-big__label">Secondi</span>
+                        </div>
+                    </div>
+                    <p class="countdown-deadline">⏱️ La promo si chiude il <strong>10 giugno 2026 alle 23:59</strong> — dopo, i prezzi tornano normali</p>
+
+                    <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
+                        <a href="#pacchetti" class="btn btn--primary btn--large">
+                            Scegli il tuo posto in bottega
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" width="20" height="20"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+                        </a>
+                        <a href="https://wa.me/393313883929?text=Ciao%20Aliosha,%20vorrei%20info%20sulla%20Bottega%20dell'AI" target="_blank" rel="noopener" class="btn btn--large" style="background:rgba(37,211,102,0.12);color:#25D366;border:1px solid rgba(37,211,102,0.4);">
+                            💬 Parla prima con Aliosha
+                        </a>
+                    </div>
+
+                    <!-- TRUST BAR -->
+                    <div class="trust-bar">
+                        <div class="trust-bar__item">
+                            <span class="trust-bar__num">18</span>
+                            <span class="trust-bar__lbl">Studenti Bottega</span>
+                        </div>
+                        <div class="trust-bar__item">
+                            <span class="trust-bar__num">3</span>
+                            <span class="trust-bar__lbl">Clienti consulenze</span>
+                        </div>
+                        <div class="trust-bar__item">
+                            <span class="trust-bar__num">100%</span>
+                            <span class="trust-bar__lbl">Soddisfatti</span>
+                        </div>
+                        <div class="trust-bar__item">
+                            <span class="trust-bar__num">7</span>
+                            <span class="trust-bar__lbl">Video testimonianze</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PAIN POINTS -->
+        <section class="section" id="riconosci">
+            <div class="container">
+                <div class="section__header">
+                    <span class="section__eyebrow">Riconosci la situazione?</span>
+                    <h2 class="section__title">Ti riconosci in almeno <span class="text-gradient">UNO</span> di questi punti?</h2>
+                </div>
+                <div class="pain-grid">
+                    <div class="pain-card">
+                        <div class="pain-card__icon">🤖</div>
+                        <p class="pain-card__text">Hai aperto ChatGPT, ma i risultati ti sembrano <strong>scolastici e scollegati dal tuo lavoro</strong> vero.</p>
+                    </div>
+                    <div class="pain-card">
+                        <div class="pain-card__icon">⏰</div>
+                        <p class="pain-card__text">Lavori <strong>10 ore al giorno</strong> per fare cose che l'AI potrebbe sbrigare in 30 minuti — ma non sai come.</p>
+                    </div>
+                    <div class="pain-card">
+                        <div class="pain-card__icon">📉</div>
+                        <p class="pain-card__text">I tuoi <strong>competitor stanno integrando l'AI</strong> mentre tu sei ancora fermo a Word ed Excel.</p>
+                    </div>
+                    <div class="pain-card">
+                        <div class="pain-card__icon">😰</div>
+                        <p class="pain-card__text">Hai paura di <strong>restare indietro</strong>, ma sei stanco di YouTuber che vendono fuffa e prompt copincollati.</p>
+                    </div>
+                    <div class="pain-card">
+                        <div class="pain-card__icon">🧩</div>
+                        <p class="pain-card__text">Ti perdi nel <strong>mare di strumenti</strong> (Claude, ChatGPT, Gemini, Grok, Perplexity) e non sai quale fa davvero per te.</p>
+                    </div>
+                    <div class="pain-card">
+                        <div class="pain-card__icon">🔁</div>
+                        <p class="pain-card__text">Hai provato corsi, video, podcast — ma <strong>nulla è entrato nel tuo flusso quotidiano</strong>.</p>
+                    </div>
+                </div>
+                <div class="pain-closer">
+                    <p>Non è colpa tua. È un problema di <strong>metodo</strong>.<br>
+                    Quello che ti serve non è l'ennesimo tutorial — è una <strong>bottega</strong> dove qualcuno ti insegna mentre lavori sul tuo caso reale.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ANTEPRIMA GRATUITA (FUNNEL / LEAD MAGNET) -->
+        <section class="section section--alt" id="anteprima-gratis">
+            <div class="container">
+                <div class="section__header">
+                    <span class="section__eyebrow">🎁 Materiale Gratuito di Ingresso</span>
+                    <h2 class="section__title">2 video gratis per <span class="text-gradient">conoscere il metodo</span></h2>
+                    <p class="section__desc">Prima di entrare in bottega, ti faccio vedere come lavoro. Lasciami la tua email e ti mando 2 video registrati: <strong style="color:var(--white);">la mia storia</strong> + <strong style="color:var(--white);">il metodo + i 7 strumenti AI che uso ogni giorno</strong>. Zero spam, solo contenuto reale.</p>
+                </div>
+
+                <div style="max-width:900px;margin:3rem auto 0;display:grid;gap:1.5rem;grid-template-columns:1fr;">
+                    <!-- 2 VIDEO PREVIEW (PLACEHOLDER — sostituire YOUTUBE_ID con ID veri) -->
+                    <div style="display:grid;gap:1.25rem;grid-template-columns:1fr;@media(min-width:768px){grid-template-columns:1fr 1fr;}" class="anteprima-grid">
+                        <div style="background:var(--gray-900);border:1px solid rgba(255,255,255,0.08);border-radius:var(--radius-2xl);overflow:hidden;">
+                            <div style="aspect-ratio:16/9;background:linear-gradient(135deg,rgba(0,168,232,0.18),rgba(13,17,23,1));position:relative;display:flex;align-items:center;justify-content:center;cursor:pointer;" id="preview-video-1" data-yt="D4xBW2ipYhA">
+                                <div style="width:72px;height:72px;background:rgba(0,168,232,0.95);border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 12px 32px rgba(0,168,232,0.5);">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="white" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                                </div>
+                                <span style="position:absolute;top:1rem;left:1rem;background:rgba(0,0,0,0.7);color:#fff;padding:0.3rem 0.7rem;border-radius:4px;font-size:0.75rem;font-weight:700;">🎬 VIDEO 1 · GRATIS</span>
+                                <span style="position:absolute;bottom:1rem;right:1rem;background:rgba(0,0,0,0.7);color:#fff;padding:0.25rem 0.6rem;border-radius:4px;font-size:0.72rem;font-weight:600;">~8 min</span>
+                            </div>
+                            <div style="padding:1.25rem;">
+                                <p style="font-weight:700;color:var(--white);font-size:1.05rem;">👋 Chi sono e perché ho creato AI Osha</p>
+                                <p style="font-size:0.85rem;color:var(--gray-500);margin-top:0.35rem;line-height:1.5;">La mia storia, il problema che ho visto in tante PMI italiane, e perché ho deciso di insegnare l'AI a chi lavora davvero.</p>
+                            </div>
+                        </div>
+                        <div style="background:var(--gray-900);border:1px solid rgba(255,255,255,0.08);border-radius:var(--radius-2xl);overflow:hidden;">
+                            <div style="aspect-ratio:16/9;background:linear-gradient(135deg,rgba(245,166,35,0.18),rgba(13,17,23,1));position:relative;display:flex;align-items:center;justify-content:center;cursor:pointer;" id="preview-video-2" data-yt="VIDEO_METODO_7STRUMENTI_ID">
+                                <div style="width:72px;height:72px;background:rgba(245,166,35,0.95);border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 12px 32px rgba(245,166,35,0.5);">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="white" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                                </div>
+                                <span style="position:absolute;top:1rem;left:1rem;background:rgba(0,0,0,0.7);color:#fff;padding:0.3rem 0.7rem;border-radius:4px;font-size:0.75rem;font-weight:700;">🎬 VIDEO 2 · GRATIS</span>
+                                <span style="position:absolute;bottom:1rem;right:1rem;background:rgba(0,0,0,0.7);color:#fff;padding:0.25rem 0.6rem;border-radius:4px;font-size:0.72rem;font-weight:600;">~18 min</span>
+                            </div>
+                            <div style="padding:1.25rem;">
+                                <p style="font-weight:700;color:var(--white);font-size:1.05rem;">⚙️ Il Metodo + i 7 Strumenti AI da usare oggi</p>
+                                <p style="font-size:0.85rem;color:var(--gray-500);margin-top:0.35rem;line-height:1.5;">Il framework che insegno in bottega + i 7 strumenti AI che uso ogni giorno (Claude, ChatGPT, Gemini, Perplexity, Grok…) — quale per cosa, e perché.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- FORM EMAIL OPT-IN -->
+                    <form id="leadMagnetForm" style="background:linear-gradient(135deg,var(--dark-soft) 0%,var(--gray-900) 100%);border:2px solid rgba(0,168,232,0.35);border-radius:var(--radius-2xl);padding:2rem;margin-top:1rem;display:flex;flex-direction:column;gap:1rem;box-shadow:0 12px 40px rgba(0,168,232,0.1);">
+                        <div style="text-align:center;">
+                            <h3 style="font-size:1.4rem;font-weight:800;color:var(--white);margin-bottom:0.5rem;">📧 Ricevi i 2 video gratis</h3>
+                            <p style="color:var(--gray-400);font-size:0.95rem;">~25 minuti di contenuto reale: storia, metodo e i 7 strumenti AI che uso ogni giorno. Iscriviti, ricevi tutto in 2 minuti.</p>
+                        </div>
+                        <div style="display:grid;gap:0.75rem;grid-template-columns:1fr;" class="lead-form-grid">
+                            <input type="text" name="firstName" required placeholder="Il tuo nome" style="padding:0.95rem 1rem;background:var(--dark);border:1px solid rgba(255,255,255,0.1);border-radius:var(--radius-md);color:var(--white);font-size:0.95rem;font-family:inherit;">
+                            <input type="email" name="email" required placeholder="La tua email migliore" style="padding:0.95rem 1rem;background:var(--dark);border:1px solid rgba(255,255,255,0.1);border-radius:var(--radius-md);color:var(--white);font-size:0.95rem;font-family:inherit;">
+                        </div>
+                        <button type="submit" class="btn btn--primary btn--large" style="width:100%;justify-content:center;">
+                            🎁 Voglio i 2 video gratis
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" width="20" height="20"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+                        </button>
+                        <p style="text-align:center;font-size:0.78rem;color:var(--gray-500);margin-top:0.25rem;">
+                            🔒 Zero spam. Cancellabile in 1 click. <a href="privacy-policy.html" style="color:var(--gray-400);text-decoration:underline;">Privacy</a>
+                        </p>
+                        <div id="leadMagnetSuccess" style="display:none;background:rgba(132,204,22,0.15);border:1px solid rgba(132,204,22,0.4);color:#a3e635;padding:1rem;border-radius:var(--radius-md);text-align:center;font-weight:600;">
+                            ✅ Perfetto! Controlla la tua email — ti ho mandato i 2 video.
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3 PACCHETTI PRICING -->
+        <section class="section" id="pacchetti">
+            <div class="container">
+                <div class="section__header">
+                    <span class="section__eyebrow">Scegli il tuo posto</span>
+                    <h2 class="section__title">3 Pacchetti. <span class="text-gradient">Un solo metodo.</span></h2>
+                    <p class="section__desc">Tutti includono la Bottega completa (10 moduli). La differenza è quanto vuoi essere accompagnato nel tuo percorso.</p>
+                </div>
+
+                <div class="pricing-grid">
+
+                    <!-- BASE -->
+                    <div class="price-card price-card--base">
+                        <span class="price-card__tier">🟢 Base</span>
+                        <div class="price-card__title">Per chi vuole iniziare</div>
+                        <div class="price-card__target">Curioso o principiante che vuole accompagnamento di gruppo, senza chiacchiere 1:1.</div>
+                        <div>
+                            <div class="price-card__price-row">
+                                <span class="price-card__price">€499</span>
+                                <span class="price-card__price-strike">€649</span>
+                            </div>
+                            <span class="price-card__discount">-23% PROMO</span>
+                        </div>
+                        <ul class="price-card__features">
+                            <li class="price-card__feature">
+                                <span class="price-card__feature-check"><svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span>
+                                <span><strong>Corso AI in Pratica</strong> — 10 moduli completi, accesso a vita</span>
+                            </li>
+                            <li class="price-card__feature">
+                                <span class="price-card__feature-check"><svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span>
+                                <span><strong>1 mese di AI Weekly Call</strong><br><span style="font-size:0.82rem;color:var(--gray-500);">live Q&amp;A ogni giovedì ore 21:00</span></span>
+                            </li>
+                            <li class="price-card__feature">
+                                <span class="price-card__feature-check"><svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span>
+                                <span>Slide PDF + prompt library</span>
+                            </li>
+                            <li class="price-card__feature">
+                                <span class="price-card__feature-check"><svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span>
+                                <span>Community WhatsApp studenti</span>
+                            </li>
+                            <li class="price-card__feature">
+                                <span class="price-card__feature-check"><svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span>
+                                <span>5 Bonus inclusi (valore €178)</span>
+                            </li>
+                            <li class="price-card__feature price-card__feature--no">
+                                <span class="price-card__feature-check"><svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg></span>
+                                <span>Consulenze 1:1 dedicate</span>
+                            </li>
+                        </ul>
+                        <a href="https://wa.me/393313883929?text=Ciao%20Aliosha,%20voglio%20iscrivermi%20al%20pacchetto%20BASE%20%E2%82%AC499" target="_blank" rel="noopener" class="price-card__cta">
+                            Inizia adesso →
+                        </a>
+                    </div>
+
+                    <!-- BUSINESS ⭐ -->
+                    <div class="price-card price-card--business">
+                        <span class="price-card__badge-top">⭐ Più scelto</span>
+                        <span class="price-card__tier">🔵 Business</span>
+                        <div class="price-card__title">Per chi vuole risultati concreti</div>
+                        <div class="price-card__target">PMI, professionisti, freelance, partite IVA e lavoratori dipendenti che vogliono applicare l'AI con accompagnamento personalizzato.</div>
+                        <div>
+                            <div class="price-card__price-row">
+                                <span class="price-card__price">€899</span>
+                                <span class="price-card__price-strike">€1.169</span>
+                            </div>
+                            <span class="price-card__discount">-23% PROMO</span>
+                        </div>
+                        <ul class="price-card__features">
+                            <li class="price-card__feature">
+                                <span class="price-card__feature-check"><svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span>
+                                <span>Tutto quello che c'è in <strong>BASE</strong></span>
+                            </li>
+                            <li class="price-card__feature">
+                                <span class="price-card__feature-check"><svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span>
+                                <span><strong>2 mesi di AI Weekly Call</strong><br><span style="font-size:0.82rem;color:var(--gray-500);">8 live di gruppo (giovedì 21:00)</span></span>
+                            </li>
+                            <li class="price-card__feature">
+                                <span class="price-card__feature-check"><svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span>
+                                <span><strong>2 consulenze 1:1</strong> da 45 minuti con Aliosha</span>
+                            </li>
+                            <li class="price-card__feature">
+                                <span class="price-card__feature-check"><svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span>
+                                <span><strong>Audit personalizzato</strong> del tuo lavoro</span>
+                            </li>
+                            <li class="price-card__feature">
+                                <span class="price-card__feature-check"><svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span>
+                                <span>Accesso prioritario WhatsApp Aliosha</span>
+                            </li>
+                            <li class="price-card__feature">
+                                <span class="price-card__feature-check"><svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span>
+                                <span>Revisione delle tue automazioni</span>
+                            </li>
+                        </ul>
+                        <a href="https://wa.me/393313883929?text=Ciao%20Aliosha,%20voglio%20iscrivermi%20al%20pacchetto%20BUSINESS%20%E2%82%AC899" target="_blank" rel="noopener" class="price-card__cta">
+                            Scegli il BUSINESS ⭐
+                        </a>
+                    </div>
+
+                    <!-- AZIENDALE -->
+                    <div class="price-card price-card--aziendale">
+                        <span class="price-card__tier">🟡 Aziendale</span>
+                        <div class="price-card__title">Per aziende che vogliono trasformare i processi</div>
+                        <div class="price-card__target">Imprenditori e team che vogliono integrare l'AI a livello aziendale, con audit completo e implementazione.</div>
+                        <div>
+                            <div class="price-card__price-row">
+                                <span class="price-card__price" style="font-size:1.8rem;">A preventivo</span>
+                            </div>
+                            <span class="price-card__discount" style="background:rgba(245,166,35,0.15);color:var(--highlight);">PERSONALIZZATO</span>
+                        </div>
+                        <ul class="price-card__features">
+                            <li class="price-card__feature">
+                                <span class="price-card__feature-check"><svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span>
+                                <span>Tutto quello che c'è in <strong>BUSINESS</strong></span>
+                            </li>
+                            <li class="price-card__feature">
+                                <span class="price-card__feature-check"><svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span>
+                                <span><strong>Percorso Consulenze 1:1</strong> personalizzato (durata da definire)</span>
+                            </li>
+                            <li class="price-card__feature">
+                                <span class="price-card__feature-check"><svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span>
+                                <span><strong>Audit completo aziendale</strong> AI — mappatura processi</span>
+                            </li>
+                            <li class="price-card__feature">
+                                <span class="price-card__feature-check"><svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span>
+                                <span><strong>1 automazione custom</strong> implementata</span>
+                            </li>
+                            <li class="price-card__feature">
+                                <span class="price-card__feature-check"><svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span>
+                                <span>Formazione team (n. persone da definire)</span>
+                            </li>
+                            <li class="price-card__feature">
+                                <span class="price-card__feature-check"><svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span>
+                                <span><strong>Roadmap AI a 6 mesi</strong> personalizzata</span>
+                            </li>
+                        </ul>
+                        <a href="https://wa.me/393313883929?text=Ciao%20Aliosha,%20vorrei%20un%20preventivo%20per%20il%20pacchetto%20AZIENDALE" target="_blank" rel="noopener" class="price-card__cta">
+                            Richiedi preventivo →
+                        </a>
+                    </div>
+
+                </div>
+
+                <p class="pricing-promo-note">
+                    🔥 <strong>Promo valida fino al 10 giugno 2026.</strong> Dopo, i prezzi tornano ai valori barrati (€649 BASE / €1.169 BUSINESS).
+                </p>
+            </div>
+        </section>
+
+        <!-- SEZIONE VECCHIA DUE PERCORSI (NASCOSTA — RIATTIVABILE) -->
+        <section class="section" id="percorsi" style="display:none;">
+            <div class="container">
+                <div class="section__header">
+                    <span class="section__eyebrow">Due Percorsi</span>
+                    <h2 class="section__title">Come vuoi imparare?</h2>
+                    <p class="section__desc">Lo stesso metodo, lo stesso contenuto. Scegli il formato che si adatta alla tua vita.</p>
+                </div>
+
+                <div class="path-grid">
+
+                    <!-- CARD POMA -->
+                    <div class="path-card path-card--poma">
+                        <div class="path-card__cover">
+                            <img src="images/corso/cover-poma.jpg" alt="AI in Pratica per Tutti — Fondazione Poma Liberatutti, Pescia" loading="lazy">
+                            <div class="path-card__cover-logo">
+                                <img src="images/logo-poma.png" alt="Fondazione Poma Liberatutti">
+                            </div>
+                        </div>
+
+                        <span class="path-card__badge path-card__badge--poma">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/></svg>
+                            Dal Vivo · Pescia
+                        </span>
+
+                        <div>
+                            <div class="path-card__title">In presenza a Pescia</div>
+                            <div class="path-card__sub">Presso la Fondazione Poma Liberatutti (PT). Workshop interattivi, esercitazioni guidate, networking reale con altri imprenditori del territorio.</div>
+                        </div>
+
+                        <ul class="path-card__features">
+                            <li class="path-card__feature">
+                                <span class="path-card__feature-dot path-card__feature-dot--poma">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                                </span>
+                                Lezioni in presenza con Aliosha
+                            </li>
+                            <li class="path-card__feature">
+                                <span class="path-card__feature-dot path-card__feature-dot--poma">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                                </span>
+                                Esercitazioni pratiche guidate
+                            </li>
+                            <li class="path-card__feature">
+                                <span class="path-card__feature-dot path-card__feature-dot--poma">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                                </span>
+                                Networking con altri imprenditori
+                            </li>
+                            <li class="path-card__feature">
+                                <span class="path-card__feature-dot path-card__feature-dot--poma">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                                </span>
+                                Q&A in tempo reale
+                            </li>
+                            <li class="path-card__feature">
+                                <span class="path-card__feature-dot path-card__feature-dot--poma">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                                </span>
+                                Slide e materiali inclusi
+                            </li>
+                        </ul>
+
+                        <a href="https://www.pomaliberatutti.it/intelligenza-artificiale-in-pratica/" target="_blank" rel="noopener" class="path-card__cta path-card__cta--poma">
+                            Scopri date e iscrizioni
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" width="18" height="18"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+                        </a>
+                    </div>
+
+                    <!-- CARD ONLINE -->
+                    <div class="path-card path-card--online">
+                        <span class="path-card__featured-tag">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.39 7.36H22l-6.18 4.49L18.21 22 12 17.5 5.79 22l2.39-8.15L2 9.36h7.61L12 2z"/></svg>
+                            Più scelto
+                        </span>
+                        <div class="path-card__cover">
+                            <img src="images/corso/cover-pmi.jpg" alt="Online quando vuoi — Corso AI con live settimanale su Zoom e consulenze 1-to-1" loading="lazy">
+                        </div>
+
+                        <div style="display:flex;align-items:center;gap:0.6rem;flex-wrap:wrap;">
+                            <span class="path-card__badge path-card__badge--online">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="3"/><path d="M12 2v3m0 14v3M2 12h3m14 0h3"/></svg>
+                                Online
+                            </span>
+                            <span style="display:inline-flex;align-items:center;gap:0.35rem;padding:0.3rem 0.85rem;border-radius:9999px;font-size:0.72rem;font-weight:700;text-transform:uppercase;letter-spacing:0.05em;background:rgba(74,144,226,0.12);border:1px solid rgba(74,144,226,0.3);color:#93c5fd;">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>
+                                Live su Zoom
+                            </span>
+                            <span style="display:inline-flex;align-items:center;gap:0.35rem;padding:0.3rem 0.85rem;border-radius:9999px;font-size:0.72rem;font-weight:700;text-transform:uppercase;letter-spacing:0.05em;background:rgba(0,168,232,0.12);border:1px solid rgba(0,168,232,0.3);color:#67d4ff;">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
+                                Consulenze 1-to-1
+                            </span>
+                        </div>
+
+                        <div>
+                            <div class="path-card__title">Online quando vuoi</div>
+                            <div class="path-card__sub">Lezioni registrate + live settimanale su Zoom + consulenze 1-to-1 personalizzate. Per PMI, professionisti, freelance e agenzie immobiliari. Studi quando vuoi, ovunque tu sia.</div>
+                        </div>
+
+                        <ul class="path-card__features">
+                            <li class="path-card__feature">
+                                <span class="path-card__feature-dot path-card__feature-dot--online">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                                </span>
+                                10 moduli video completi e strutturati
+                            </li>
+                            <li class="path-card__feature">
+                                <span class="path-card__feature-dot path-card__feature-dot--online">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                                </span>
+                                <strong style="color:var(--white);">Live settimanale su Zoom</strong> con Aliosha
+                            </li>
+                            <li class="path-card__feature">
+                                <span class="path-card__feature-dot path-card__feature-dot--online">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                                </span>
+                                <strong style="color:var(--white);">Consulenze 1-to-1</strong> personalizzate con Aliosha
+                            </li>
+                            <li class="path-card__feature">
+                                <span class="path-card__feature-dot path-card__feature-dot--online">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                                </span>
+                                Accesso permanente ai contenuti registrati
+                            </li>
+                            <li class="path-card__feature">
+                                <span class="path-card__feature-dot path-card__feature-dot--online">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                                </span>
+                                Slide PDF + prompt library pronti
+                            </li>
+                            <li class="path-card__feature">
+                                <span class="path-card__feature-dot path-card__feature-dot--online">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                                </span>
+                                Supporto diretto via email + WhatsApp
+                            </li>
+                        </ul>
+
+                        <a href="i-miei-corsi.html" class="path-card__cta path-card__cta--online">
+                            Scopri tutti i corsi online
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" width="18" height="18"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- PROGRAMMA 10 MODULI — MODULARI -->
+        <section class="section section--alt" id="programma">
+            <div class="container">
+                <div class="section__header">
+                    <span class="section__eyebrow">10 Moduli Modulari</span>
+                    <h2 class="section__title">10 Moduli Completi. <span class="text-gradient">Risultati Concreti.</span></h2>
+                    <p class="section__desc">Dal prompt engineering agli agenti AI. Un percorso progressivo pensato per chi lavora e non ha tempo da sprecare.</p>
+                </div>
+
+                <!-- USP MODULARITÀ -->
+                <div class="modular-intro">
+                    <span class="modular-intro__usp">⚡ Il nostro punto forte</span>
+                    <h3 class="modular-intro__title">
+                        Ti diamo SOLO quello che <span>ti serve davvero</span>
+                    </h3>
+                    <p class="modular-intro__text">
+                        Stanco dei corsi monolitici da centinaia di euro dove poi usi solo 2-3 moduli su 10? Da noi <strong>scegli tu cosa serve a te</strong>. Compri un singolo modulo, oppure un bundle da 3. Senza vincoli, senza fuffa.
+                    </p>
+                    <div class="modular-pricing-pills">
+                        <span class="modular-pill">1 modulo · <span class="modular-pill__price">€89</span></span>
+                        <span class="modular-pill">Bundle 3 moduli · <span class="modular-pill__price">€250</span><span class="modular-pill__discount">-€17</span></span>
+                    </div>
+                    <p style="margin-top:1.25rem;font-size:0.92rem;color:var(--gray-400);">
+                        💡 Ti consigliamo comunque il <strong style="color:var(--primary);">Pacchetto BASE €499</strong>: prendi tutti i 10 moduli + <strong>AI Weekly Call</strong> + community. <a href="#break-even" style="color:var(--highlight);text-decoration:underline;">Ti spieghiamo perché qui sotto ↓</a>
+                    </p>
+                </div>
+
+                <div class="curriculum-grid" style="grid-template-columns:repeat(auto-fit,minmax(280px,1fr));">
+                    <div class="modulo-card">
+                        <div class="modulo-card__head">
+                            <span class="modulo-card__num">MOD 01</span>
+                            <div class="modulo-card__price-tag">€89<small>singolo</small></div>
+                        </div>
+                        <div class="modulo-card__title">Fondamenta AI &amp; LLM</div>
+                        <div class="modulo-card__desc">Cos'è davvero l'AI, come funzionano i modelli e come usarli nel tuo lavoro da subito.</div>
+                        <a href="https://wa.me/393313883929?text=Ciao%20Aliosha,%20voglio%20il%20Modulo%2001%20Fondamenta%20AI%20a%20%E2%82%AC89" target="_blank" rel="noopener" class="modulo-card__cta">
+                            Compra solo questo → €89
+                        </a>
+                    </div>
+                    <div class="modulo-card">
+                        <div class="modulo-card__head">
+                            <span class="modulo-card__num">MOD 02</span>
+                            <div class="modulo-card__price-tag">€89<small>singolo</small></div>
+                        </div>
+                        <div class="modulo-card__title">Prompt Engineering</div>
+                        <div class="modulo-card__desc">Il metodo per ottenere risultati precisi e professionali da ChatGPT e Claude. Zero approssimazione.</div>
+                        <a href="https://wa.me/393313883929?text=Ciao%20Aliosha,%20voglio%20il%20Modulo%2002%20Prompt%20Engineering%20a%20%E2%82%AC89" target="_blank" rel="noopener" class="modulo-card__cta">
+                            Compra solo questo → €89
+                        </a>
+                    </div>
+                    <div class="modulo-card">
+                        <div class="modulo-card__head">
+                            <span class="modulo-card__num">MOD 03</span>
+                            <div class="modulo-card__price-tag">€89<small>singolo</small></div>
+                        </div>
+                        <div class="modulo-card__title">Ricerca Avanzata &amp; Analisi PDF</div>
+                        <div class="modulo-card__desc">Ricerche professionali con Perplexity e analisi di documenti, contratti e report in secondi.</div>
+                        <a href="https://wa.me/393313883929?text=Ciao%20Aliosha,%20voglio%20il%20Modulo%2003%20Ricerca%20Avanzata%20a%20%E2%82%AC89" target="_blank" rel="noopener" class="modulo-card__cta">
+                            Compra solo questo → €89
+                        </a>
+                    </div>
+                    <div class="modulo-card">
+                        <div class="modulo-card__head">
+                            <span class="modulo-card__num">MOD 04</span>
+                            <div class="modulo-card__price-tag">€89<small>singolo</small></div>
+                        </div>
+                        <div class="modulo-card__title">Testi, Copy &amp; Persuasione</div>
+                        <div class="modulo-card__desc">Email di vendita, schede prodotto, copy per social: tutto in minuti con l'AI al tuo fianco.</div>
+                        <a href="https://wa.me/393313883929?text=Ciao%20Aliosha,%20voglio%20il%20Modulo%2004%20Copy%20e%20Persuasione%20a%20%E2%82%AC89" target="_blank" rel="noopener" class="modulo-card__cta">
+                            Compra solo questo → €89
+                        </a>
+                    </div>
+                    <div class="modulo-card">
+                        <div class="modulo-card__head">
+                            <span class="modulo-card__num">MOD 05</span>
+                            <div class="modulo-card__price-tag">€89<small>singolo</small></div>
+                        </div>
+                        <div class="modulo-card__title">Creare Visual senza Limiti</div>
+                        <div class="modulo-card__desc">Immagini, grafiche e contenuti visivi professionali con Midjourney, Leonardo e Ideogram.</div>
+                        <a href="https://wa.me/393313883929?text=Ciao%20Aliosha,%20voglio%20il%20Modulo%2005%20Visual%20a%20%E2%82%AC89" target="_blank" rel="noopener" class="modulo-card__cta">
+                            Compra solo questo → €89
+                        </a>
+                    </div>
+                    <div class="modulo-card">
+                        <div class="modulo-card__head">
+                            <span class="modulo-card__num">MOD 06</span>
+                            <div class="modulo-card__price-tag">€89<small>singolo</small></div>
+                        </div>
+                        <div class="modulo-card__title">Audio, Video &amp; Accessibilità</div>
+                        <div class="modulo-card__desc">Video, trascrizioni, sottotitoli e contenuti audio con ElevenLabs e altri strumenti AI.</div>
+                        <a href="https://wa.me/393313883929?text=Ciao%20Aliosha,%20voglio%20il%20Modulo%2006%20Audio%20e%20Video%20a%20%E2%82%AC89" target="_blank" rel="noopener" class="modulo-card__cta">
+                            Compra solo questo → €89
+                        </a>
+                    </div>
+                    <div class="modulo-card">
+                        <div class="modulo-card__head">
+                            <span class="modulo-card__num">MOD 07</span>
+                            <div class="modulo-card__price-tag">€89<small>singolo</small></div>
+                        </div>
+                        <div class="modulo-card__title">Presenza Digitale Strategica</div>
+                        <div class="modulo-card__desc">Social, SEO, Google Business: costruisci e ottimizza la tua presenza online con l'AI.</div>
+                        <a href="https://wa.me/393313883929?text=Ciao%20Aliosha,%20voglio%20il%20Modulo%2007%20Presenza%20Digitale%20a%20%E2%82%AC89" target="_blank" rel="noopener" class="modulo-card__cta">
+                            Compra solo questo → €89
+                        </a>
+                    </div>
+                    <div class="modulo-card">
+                        <div class="modulo-card__head">
+                            <span class="modulo-card__num">MOD 08</span>
+                            <div class="modulo-card__price-tag">€89<small>singolo</small></div>
+                        </div>
+                        <div class="modulo-card__title">Il Tuo Sito Web con AI</div>
+                        <div class="modulo-card__desc">Crea o migliora il tuo sito: struttura, testi, SEO e ottimizzazione senza saper programmare.</div>
+                        <a href="https://wa.me/393313883929?text=Ciao%20Aliosha,%20voglio%20il%20Modulo%2008%20Sito%20Web%20a%20%E2%82%AC89" target="_blank" rel="noopener" class="modulo-card__cta">
+                            Compra solo questo → €89
+                        </a>
+                    </div>
+                    <div class="modulo-card">
+                        <div class="modulo-card__head">
+                            <span class="modulo-card__num">MOD 09</span>
+                            <div class="modulo-card__price-tag">€89<small>singolo</small></div>
+                        </div>
+                        <div class="modulo-card__title">Automatismi &amp; Workflow</div>
+                        <div class="modulo-card__desc">Automatizza i processi ripetitivi con Make e Zapier. Risparmia ore ogni settimana.</div>
+                        <a href="https://wa.me/393313883929?text=Ciao%20Aliosha,%20voglio%20il%20Modulo%2009%20Automatismi%20a%20%E2%82%AC89" target="_blank" rel="noopener" class="modulo-card__cta">
+                            Compra solo questo → €89
+                        </a>
+                    </div>
+                    <div class="modulo-card">
+                        <div class="modulo-card__head">
+                            <span class="modulo-card__num">MOD 10</span>
+                            <div class="modulo-card__price-tag">€89<small>singolo</small></div>
+                        </div>
+                        <div class="modulo-card__title">Agenti &amp; Automazioni Avanzate</div>
+                        <div class="modulo-card__desc">Agenti AI autonomi e flussi che lavorano mentre tu fai altro. Il livello successivo.</div>
+                        <a href="https://wa.me/393313883929?text=Ciao%20Aliosha,%20voglio%20il%20Modulo%2010%20Agenti%20AI%20a%20%E2%82%AC89" target="_blank" rel="noopener" class="modulo-card__cta">
+                            Compra solo questo → €89
+                        </a>
+                    </div>
+                </div>
+
+                <!-- BREAK-EVEN COMPARATIVA -->
+                <div class="break-even" id="break-even">
+                    <span class="break-even__warn">⚠️ Fai i conti prima di scegliere</span>
+                    <h3 class="break-even__title">
+                        Compri 4 o più moduli? <span>Conviene il pacchetto.</span>
+                    </h3>
+                    <p style="color:var(--gray-300);font-size:1rem;line-height:1.6;max-width:640px;margin:0 auto;">
+                        Siamo onesti. La libertà modulare è bella, ma se ti servono <strong style="color:var(--white);">tanti moduli</strong>, il pacchetto BASE costa <strong style="color:var(--primary);">meno</strong> e ti dà anche <strong style="color:var(--highlight);">AI Weekly Call</strong>, community, bonus e tante altre cose.
+                    </p>
+
+                    <div class="break-even__compare">
+                        <div class="break-even__row">
+                            <div class="break-even__label">
+                                <strong>1 modulo singolo</strong><br>
+                                <span style="color:var(--gray-500);font-size:0.85rem;">solo il video</span>
+                            </div>
+                            <div class="break-even__price">€89</div>
+                        </div>
+                        <div class="break-even__row">
+                            <div class="break-even__label">
+                                <strong>Bundle 3 moduli</strong><br>
+                                <span style="color:var(--gray-500);font-size:0.85rem;">3 video a scelta</span>
+                            </div>
+                            <div class="break-even__price">€250 <span class="break-even__save">RISPARMI €17</span></div>
+                        </div>
+                        <div class="break-even__row">
+                            <div class="break-even__label">
+                                <strong>6 moduli singoli</strong><br>
+                                <span style="color:var(--gray-500);font-size:0.85rem;">2 bundle + 0 extra</span>
+                            </div>
+                            <div class="break-even__price">€500 <span style="color:#ef4444;font-size:0.7rem;font-weight:700;letter-spacing:0.05em;display:block;margin-top:2px;">SUPERA IL BASE!</span></div>
+                        </div>
+                        <div class="break-even__row break-even__row--best">
+                            <div class="break-even__label">
+                                <strong>🟢 Pacchetto BASE</strong><br>
+                                <span style="color:var(--primary);font-size:0.85rem;">10 moduli + 4 weekly call + 5 bonus + community</span>
+                            </div>
+                            <div class="break-even__price">€499 <span class="break-even__save">vs €890 (-44%)</span></div>
+                        </div>
+                    </div>
+
+                    <a href="#pacchetti" class="btn btn--primary btn--large" style="margin-top:1.5rem;">
+                        Vai al Pacchetto BASE €499 →
+                    </a>
+                </div>
+
+                <!-- BONUS STACKING -->
+                <div class="bonus-section">
+                    <div class="section__header" style="margin-bottom:0;">
+                        <span class="section__eyebrow" style="color:var(--highlight);">🎁 Inclusi GRATIS in tutti i pacchetti</span>
+                        <h2 class="section__title">5 Bonus per partire <span style="color:var(--highlight);">subito armato</span></h2>
+                        <p class="section__desc">Materiali pronti all'uso che useresti pagandoli da soli. Te li metto dentro alla Bottega senza supplemento.</p>
+                    </div>
+
+                    <div class="bonus-list">
+                        <div class="bonus-item">
+                            <div class="bonus-item__icon">📘</div>
+                            <div class="bonus-item__body">
+                                <div class="bonus-item__name">50 Prompt Essenziali AI Osha (PDF)</div>
+                                <div class="bonus-item__desc">I prompt più richiesti per lavoro, vendita, copy, ricerca</div>
+                            </div>
+                            <div class="bonus-item__value">€47</div>
+                        </div>
+                        <div class="bonus-item">
+                            <div class="bonus-item__icon">📊</div>
+                            <div class="bonus-item__body">
+                                <div class="bonus-item__name">Template Report Settimanale con AI</div>
+                                <div class="bonus-item__desc">Costruisci report automatici in pochi minuti</div>
+                            </div>
+                            <div class="bonus-item__value">€27</div>
+                        </div>
+                        <div class="bonus-item">
+                            <div class="bonus-item__icon">✅</div>
+                            <div class="bonus-item__body">
+                                <div class="bonus-item__name">Checklist Automazione PMI</div>
+                                <div class="bonus-item__desc">I 30 processi che ogni PMI può automatizzare oggi</div>
+                            </div>
+                            <div class="bonus-item__value">€37</div>
+                        </div>
+                        <div class="bonus-item">
+                            <div class="bonus-item__icon">🧰</div>
+                            <div class="bonus-item__body">
+                                <div class="bonus-item__name">Stack AI 2026 — 12 Strumenti</div>
+                                <div class="bonus-item__desc">La guida comparativa per scegliere lo strumento giusto</div>
+                            </div>
+                            <div class="bonus-item__value">€67</div>
+                        </div>
+                        <div class="bonus-item">
+                            <div class="bonus-item__icon">💬</div>
+                            <div class="bonus-item__body">
+                                <div class="bonus-item__name">Community WhatsApp privata</div>
+                                <div class="bonus-item__desc">Confronto continuo con altri studenti e con Aliosha</div>
+                            </div>
+                            <div class="bonus-item__value">∞</div>
+                        </div>
+                    </div>
+
+                    <p class="bonus-total">
+                        Valore totale bonus: <span class="strike">€178+</span> → <strong>GRATIS con qualsiasi pacchetto</strong>
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- TESTIMONIALS -->
+        <section class="section" id="testimonianze">
+            <div class="container">
+                <div class="section__header">
+                    <span class="section__eyebrow">Chi l'ha già fatto</span>
+                    <h2 class="section__title">Risultati reali, da persone reali</h2>
+                    <p class="section__desc">Non slide californiane. Imprenditori e professionisti italiani che hanno applicato il metodo.</p>
+                </div>
+
+                <div class="testimonials-grid">
+
+                    <!-- Anna — Infermiera -->
+                    <div class="testimonial-card">
+                        <div class="testimonial-stars">
+                            <span class="testimonial-star">★</span><span class="testimonial-star">★</span><span class="testimonial-star">★</span><span class="testimonial-star">★</span><span class="testimonial-star">★</span>
+                        </div>
+                        <p class="testimonial-text">"All'inizio ero scettica. Oggi uso Claude ogni giorno al lavoro per semplificare processi e sbloccare nuove possibilità — e lo rifarei senza pensarci."</p>
+                        <div class="testimonial-author">
+                            <img src="images/thumbnails/anna.jpg" alt="Anna" class="testimonial-avatar">
+                            <div>
+                                <div class="testimonial-name">Anna B.</div>
+                                <div class="testimonial-role">Infermiera Pediatrica</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Najla — Professoressa -->
+                    <div class="testimonial-card">
+                        <div class="testimonial-stars">
+                            <span class="testimonial-star">★</span><span class="testimonial-star">★</span><span class="testimonial-star">★</span><span class="testimonial-star">★</span><span class="testimonial-star">★</span>
+                        </div>
+                        <p class="testimonial-text">"Ho recuperato i miei weekend. Le lezioni sono più belle e i ragazzi sono più coinvolti. Non torno indietro."</p>
+                        <div class="testimonial-author">
+                            <img src="images/thumbnails/naji.jpg" alt="Najla" class="testimonial-avatar">
+                            <div>
+                                <div class="testimonial-name">Najla C.</div>
+                                <div class="testimonial-role">Professoressa — Scuola Superiore</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Cristiano — Creativo -->
+                    <div class="testimonial-card">
+                        <div class="testimonial-stars">
+                            <span class="testimonial-star">★</span><span class="testimonial-star">★</span><span class="testimonial-star">★</span><span class="testimonial-star">★</span><span class="testimonial-star">★</span>
+                        </div>
+                        <p class="testimonial-text">"Non sapevo niente di programmazione. Oggi ho un'app funzionante che ho costruito io, con l'AI al mio fianco."</p>
+                        <div class="testimonial-author">
+                            <img src="images/thumbnails/cristiano.jpg" alt="Cristiano" class="testimonial-avatar">
+                            <div>
+                                <div class="testimonial-name">Cristiano B.</div>
+                                <div class="testimonial-role">Creativo — Ha creato la sua App</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Andrea — Fisioterapista -->
+                    <div class="testimonial-card">
+                        <div class="testimonial-stars">
+                            <span class="testimonial-star">★</span><span class="testimonial-star">★</span><span class="testimonial-star">★</span><span class="testimonial-star">★</span><span class="testimonial-star">★</span>
+                        </div>
+                        <p class="testimonial-text">"In 2 giorni avevo il sito online, indicizzato su Google e il primo cliente di alto profilo. Incredibile."</p>
+                        <div class="testimonial-author">
+                            <img src="images/thumbnails/andrea.jpg" alt="Andrea" class="testimonial-avatar">
+                            <div>
+                                <div class="testimonial-name">Andrea S.</div>
+                                <div class="testimonial-role">Fisioterapista — Libero Professionista</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Simone Silvesti — Fondatore Estro -->
+                    <div class="testimonial-card">
+                        <div class="testimonial-stars">
+                            <span class="testimonial-star">★</span><span class="testimonial-star">★</span><span class="testimonial-star">★</span><span class="testimonial-star">★</span><span class="testimonial-star">★</span>
+                        </div>
+                        <p class="testimonial-text">"L'AI mi ha cambiato il modo di lavorare. È entrata nel mio flusso quotidiano in azienda."</p>
+                        <div class="testimonial-author">
+                            <img src="images/thumbnails/simone-estro.jpg" alt="Simone Silvesti" class="testimonial-avatar">
+                            <div>
+                                <div class="testimonial-name">Simone Silvesti</div>
+                                <div class="testimonial-role">Socio Estro — Design Arredamento</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Aldo — Consulente Assicurativo -->
+                    <div class="testimonial-card">
+                        <div class="testimonial-stars">
+                            <span class="testimonial-star">★</span><span class="testimonial-star">★</span><span class="testimonial-star">★</span><span class="testimonial-star">★</span><span class="testimonial-star">★</span>
+                        </div>
+                        <p class="testimonial-text">"Un lavoro da una settimana fatto in 30 minuti. Ho quasi stentato a crederci io stesso."</p>
+                        <div class="testimonial-author">
+                            <img src="images/thumbnails/aldo.jpg" alt="Aldo" class="testimonial-avatar">
+                            <div>
+                                <div class="testimonial-name">Aldo S.</div>
+                                <div class="testimonial-role">Consulente Commerciale Assicurativo</div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- GARANZIA -->
+        <section class="section" id="garanzia">
+            <div class="container">
+                <div class="guarantee-box">
+                    <div class="guarantee-badge">💯</div>
+                    <h2 class="guarantee-title">Garanzia <span>«soddisfatto o analizziamo insieme»</span></h2>
+                    <p class="guarantee-text">
+                        Non ti prometto solo "rimborsato se non ti piace". Sarebbe troppo facile.<br><br>
+                        <strong>Ti prometto questo</strong>: se dopo aver fatto la Bottega non hai ottenuto risultati concreti — fissiamo una call e <strong>analizziamo insieme la tua situazione</strong>. Capiamo dove l'AI può davvero aiutarti nel tuo lavoro/azienda e <strong>ti dico io come usarla</strong> nel tuo caso specifico.<br><br>
+                        Perché il problema raramente è la formazione. È il <strong>metodo applicato al tuo contesto</strong>. E quello te lo costruiamo insieme, finché non funziona.
+                    </p>
+                    <p class="guarantee-signature">— <strong>Aliosha Battaglini</strong></p>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section class="section section--alt">
+            <div class="container">
+                <div class="section__header">
+                    <span class="section__eyebrow">FAQ</span>
+                    <h2 class="section__title">Domande Frequenti</h2>
+                </div>
+
+                <div class="faq-list">
+                    <div class="faq-item active">
+                        <button class="faq-item__question">
+                            <span>Posso pagare a rate?</span>
+                            <svg class="faq-item__icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/></svg>
+                        </button>
+                        <div class="faq-item__answer">
+                            <div class="faq-item__answer-content">Sì. Il checkout supporta pagamento in 3 rate via Stripe / Klarna senza interessi aggiuntivi (per BASE e BUSINESS). Per AZIENDALE concordiamo direttamente i termini.</div>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-item__question">
+                            <span>Cosa sono esattamente le AI Weekly Call?</span>
+                            <svg class="faq-item__icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/></svg>
+                        </button>
+                        <div class="faq-item__answer">
+                            <div class="faq-item__answer-content">Sono live di gruppo su Zoom <strong>ogni giovedì alle 21:00</strong>, formato Q&A. Vieni con le tue domande (sui moduli, sul tuo lavoro, sui tuoi prompt), Aliosha risponde in diretta. Le sessioni vengono registrate per chi non può partecipare. BASE = 4 call (1 mese), BUSINESS = 8 call (2 mesi).</div>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-item__question">
+                            <span>Serve esperienza tecnica o con l'AI?</span>
+                            <svg class="faq-item__icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/></svg>
+                        </button>
+                        <div class="faq-item__answer">
+                            <div class="faq-item__answer-content">No. La Bottega parte dalle basi e si approfondisce progressivamente. Se sai usare un computer, puoi seguire senza problemi. Zero codice, zero tecnicismi inutili. Focus su applicazioni pratiche per chi lavora — che tu sia titolare di PMI, freelance, professionista o lavoratore dipendente.</div>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-item__question">
+                            <span>Quanto tempo serve a settimana?</span>
+                            <svg class="faq-item__icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/></svg>
+                        </button>
+                        <div class="faq-item__answer">
+                            <div class="faq-item__answer-content">Dipende dal tuo ritmo. I 10 moduli sono completi e indipendenti, in media 45-60 minuti ciascuno. La filosofia è "1 video + 1 azione subito": meglio applicare una cosa che guardare dieci senza fare niente. Conta 2-3 ore a settimana + l'ora di Weekly Call del giovedì sera.</div>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-item__question">
+                            <span>La Bottega fa per me se ho già usato ChatGPT?</span>
+                            <svg class="faq-item__icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/></svg>
+                        </button>
+                        <div class="faq-item__answer">
+                            <div class="faq-item__answer-content">Sì. Usare ChatGPT non è lo stesso che sapere come usarlo bene per il lavoro. La Bottega ti insegna il metodo: come strutturare i prompt, scegliere il modello giusto (Claude / GPT / Gemini / Grok), integrare l'AI nei tuoi processi, costruire workflow che funzionano.</div>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-item__question">
+                            <span>Posso passare da BASE a BUSINESS dopo l'acquisto?</span>
+                            <svg class="faq-item__icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/></svg>
+                        </button>
+                        <div class="faq-item__answer">
+                            <div class="faq-item__answer-content">Sì, in qualsiasi momento. Paghi solo la differenza tra i due pacchetti. Lo stesso vale per il salto BUSINESS → AZIENDALE.</div>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-item__question">
+                            <span>Quanto dura l'accesso alla Bottega?</span>
+                            <svg class="faq-item__icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/></svg>
+                        </button>
+                        <div class="faq-item__answer">
+                            <div class="faq-item__answer-content">A vita. Anche agli aggiornamenti futuri dei moduli. L'AI evolve velocemente, e la Bottega si aggiorna insieme — tu ne hai accesso sempre.</div>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-item__question">
+                            <span>Posso entrare in Bottega come azienda?</span>
+                            <svg class="faq-item__icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/></svg>
+                        </button>
+                        <div class="faq-item__answer">
+                            <div class="faq-item__answer-content">Sì. Il pacchetto AZIENDALE è pensato esattamente per questo: audit dei processi, formazione del team, implementazione concreta di automazioni. Scrivici su WhatsApp per un preventivo dedicato.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA FINALE -->
+        <section class="final-cta">
+            <div class="container">
+                <h2 class="final-cta__title">La bottega ha <span>3 ingressi</span>.<br>Scegli il tuo.</h2>
+                <p class="final-cta__sub">
+                    La promo chiude il 10 giugno. Dopo, i prezzi tornano normali. Inizia oggi con la tariffa scontata e blocca per sempre l'accesso alla Bottega + ai bonus.
+                </p>
+
+                <!-- Mini countdown ripetuto -->
+                <div class="countdown-big" style="margin-top:0;">
+                    <div class="countdown-big__cell" style="min-width:78px;padding:0.75rem 1rem;">
+                        <span class="countdown-big__num" id="bigD2" style="font-size:1.8rem;">22</span>
+                        <span class="countdown-big__label">Giorni</span>
+                    </div>
+                    <div class="countdown-big__cell" style="min-width:78px;padding:0.75rem 1rem;">
+                        <span class="countdown-big__num" id="bigH2" style="font-size:1.8rem;">00</span>
+                        <span class="countdown-big__label">Ore</span>
+                    </div>
+                    <div class="countdown-big__cell" style="min-width:78px;padding:0.75rem 1rem;">
+                        <span class="countdown-big__num" id="bigM2" style="font-size:1.8rem;">00</span>
+                        <span class="countdown-big__label">Minuti</span>
+                    </div>
+                    <div class="countdown-big__cell" style="min-width:78px;padding:0.75rem 1rem;">
+                        <span class="countdown-big__num" id="bigS2" style="font-size:1.8rem;">00</span>
+                        <span class="countdown-big__label">Secondi</span>
+                    </div>
+                </div>
+
+                <div class="final-cta__buttons">
+                    <a href="https://wa.me/393313883929?text=Ciao%20Aliosha,%20voglio%20iscrivermi%20al%20pacchetto%20BASE%20%E2%82%AC499" target="_blank" rel="noopener" class="final-cta__btn final-cta__btn--base">
+                        🟢 Inizia con BASE — €499
+                    </a>
+                    <a href="https://wa.me/393313883929?text=Ciao%20Aliosha,%20voglio%20iscrivermi%20al%20pacchetto%20BUSINESS%20%E2%82%AC899" target="_blank" rel="noopener" class="final-cta__btn final-cta__btn--business">
+                        🔵 Voglio il BUSINESS ⭐ — €899
+                    </a>
+                    <a href="https://wa.me/393313883929?text=Ciao%20Aliosha,%20vorrei%20un%20preventivo%20per%20il%20pacchetto%20AZIENDALE" target="_blank" rel="noopener" class="final-cta__btn final-cta__btn--aziendale">
+                        🟡 Parla con Aliosha (AZIENDALE)
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>© 2026 AI Osha — Aliosha Battaglini · P.IVA IT02097940478 · Pescia (PT) · <a href="mailto:info@aiosha.it" style="color:var(--primary);">info@aiosha.it</a> · <a href="index.html" style="color:var(--gray-500);">aiosha.it</a> · <a href="privacy-policy.html" style="color:var(--gray-500);">Privacy</a></p>
+        </div>
+    </footer>
+
+    <script>
+        /* ── FAQ ── */
+        document.querySelectorAll('.faq-item__question').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const item = btn.parentElement;
+                const active = item.classList.contains('active');
+                document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
+                if (!active) item.classList.add('active');
+            });
+        });
+
+        /* ── TITLE SCRAMBLE ── */
+        const CHARS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#%?&';
+
+        function scramble(el, finalText, delay, isGradient) {
+            setTimeout(() => {
+                el.classList.add('hw--scrambling');
+                let iter = 0;
+                const steps = finalText.length * 4;
+
+                const iv = setInterval(() => {
+                    const resolved = Math.floor(iter / 4);
+                    let out = '';
+                    for (let i = 0; i < finalText.length; i++) {
+                        if (finalText[i] === ' ') { out += ' '; continue; }
+                        if (i < resolved) {
+                            out += finalText[i];
+                        } else {
+                            out += `<span class="scramble-char">${CHARS[Math.floor(Math.random() * CHARS.length)]}</span>`;
+                        }
+                    }
+                    el.innerHTML = out;
+
+                    if (iter >= steps) {
+                        clearInterval(iv);
+                        el.textContent = finalText;
+                        el.classList.remove('hw--scrambling');
+                        el.classList.add('hw--done');
+                        if (isGradient) el.classList.add('hw--gradient');
+                    }
+                    iter++;
+                }, 28);
+            }, delay);
+        }
+
+        const words = document.querySelectorAll('.hw');
+        const targets = ['Smetti', 'di guardare', "l'AI", 'da fuori.'];
+        const delays  = [120, 420, 820, 1180];
+
+        words.forEach((el, i) => {
+            scramble(el, targets[i], delays[i], i === 2);
+        });
+
+        /* ── COUNTDOWN LIVE — scade 10 giugno 2026 23:59 ── */
+        const DEADLINE = new Date('2026-06-10T23:59:59+02:00').getTime();
+        function pad(n){ return n.toString().padStart(2,'0'); }
+        function tick() {
+            const now = Date.now();
+            const diff = Math.max(0, DEADLINE - now);
+            const d = Math.floor(diff / (1000*60*60*24));
+            const h = Math.floor((diff % (1000*60*60*24)) / (1000*60*60));
+            const m = Math.floor((diff % (1000*60*60)) / (1000*60));
+            const s = Math.floor((diff % (1000*60)) / 1000);
+
+            // Hero big countdown
+            const setEl = (id, v) => { const el = document.getElementById(id); if (el) el.textContent = pad(v); };
+            setEl('bigD', d); setEl('bigH', h); setEl('bigM', m); setEl('bigS', s);
+            setEl('bigD2', d); setEl('bigH2', h); setEl('bigM2', m); setEl('bigS2', s);
+            // Mini countdown sticky bar
+            setEl('miniD', d); setEl('miniH', h); setEl('miniM', m); setEl('miniS', s);
+        }
+        tick();
+        setInterval(tick, 1000);
+
+        /* ── LEAD MAGNET FORM ── */
+        const leadForm = document.getElementById('leadMagnetForm');
+        if (leadForm) {
+            leadForm.addEventListener('submit', async (e) => {
+                e.preventDefault();
+                const formData = new FormData(leadForm);
+                const data = {
+                    firstName: formData.get('firstName'),
+                    email: formData.get('email'),
+                    source: 'bottega-ai-anteprima-2-video',
+                    timestamp: new Date().toISOString(),
+                };
+                // TODO: collegare a Brevo / Mailchimp / Google Apps Script endpoint
+                // Per ora: log + UI feedback + tracking GA4
+                console.log('[lead-magnet]', data);
+                if (typeof gtag === 'function') {
+                    gtag('event', 'generate_lead', {
+                        currency: 'EUR',
+                        value: 47,
+                        event_category: 'lead_magnet',
+                        event_label: 'bottega-ai-anteprima-2-video-gratis',
+                    });
+                }
+                // Mostra success
+                leadForm.querySelector('button[type="submit"]').style.display = 'none';
+                document.getElementById('leadMagnetSuccess').style.display = 'block';
+            });
+        }
+
+        /* ── VIDEO PREVIEW PLACEHOLDER (sostituire data-yt con ID veri) ── */
+        document.querySelectorAll('[data-yt]').forEach(el => {
+            el.addEventListener('click', () => {
+                const id = el.dataset.yt;
+                if (!id || id.startsWith('ANTEPRIMA_ID')) {
+                    alert('🎬 Video anteprima in preparazione. Lascia l\'email qui sotto e ti avviso quando è online!');
+                    document.querySelector('#leadMagnetForm input[name="email"]').focus();
+                    return;
+                }
+                el.innerHTML = `<iframe width="100%" height="100%" src="https://www.youtube-nocookie.com/embed/${id}?autoplay=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen style="border-radius:inherit;"></iframe>`;
+            });
+        });
+    </script>
+
+    <!-- Responsive grids fix per lead form -->
+    <style>
+        @media (min-width: 768px) {
+            .anteprima-grid { grid-template-columns: 1fr 1fr !important; }
+            .lead-form-grid { grid-template-columns: 1fr 1fr !important; }
+        }
+    </style>
+</body>
+</html>
