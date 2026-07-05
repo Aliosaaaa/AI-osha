@@ -16,14 +16,14 @@ Dati fiscali: AI Osha è una ditta individuale intestata a Aliosha Battaglini ·
 
 ## Corsi
 
-- [I miei corsi](https://aiosha.it/i-miei-corsi.html): catalogo dei corsi AI Osha (AI in Pratica per PMI, professionisti e partite IVA). Vetrina pubblica con moduli espandibili
+- [I miei corsi](https://aiosha.it/i-miei-corsi.html): catalogo dei corsi AI Osha (Intelligenza Artificiale in Pratica per chi lavora — PMI, professionisti e partite IVA). Vetrina pubblica con moduli espandibili
 - [Corso AI in Pratica](https://aiosha.it/corso.html): due percorsi — dal vivo a Pescia (Fondazione Poma Liberatutti) o online (lezioni registrate + live settimanale su Zoom)
 - [Corso online "AI in Pratica per chi lavora"](https://aiosha.it/corso-online.html): 10 moduli video, accesso permanente, slide PDF + prompt library
 - [FAQ](https://aiosha.it/faq.html): domande frequenti su corsi, costi, strumenti, tempo, risultati attesi, GDPR
 
 ## Servizi
 
-- [Servizi AI Osha](https://aiosha.it/consulenza.html): Sessioni di lavoro 1-to-1 (2 ore a schermo condiviso sul caso concreto del cliente, 250€ a sessione, pacchetto 5 sessioni 999€), sito web professionale chiavi in mano (500€, realizzato in 2 sessioni), marketing con l'AI (campagne Meta e Google Ads, gestione social, email marketing, WhatsApp marketing — su preventivo)
+- [Servizi AI Osha](https://aiosha.it/consulenza.html): Sessioni di lavoro 1-to-1 (2 ore a schermo condiviso sul caso concreto del cliente, 250€ a sessione, pacchetto 5 sessioni 999€), sito web professionale chiavi in mano (500€, realizzato in 2 sessioni), marketing con l'AI (campagne Meta e Google Ads, gestione social, email marketing, WhatsApp marketing — su preventivo), scrittura e pubblicazione del libro del cliente su Amazon (da 899€, su preventivo — per aumentare autorevolezza e percezione dell'immagine pubblica)
 
 ## Libro
 
@@ -60,6 +60,7 @@ Dati fiscali: AI Osha è una ditta individuale intestata a Aliosha Battaglini ·
 - "Quanto costa il corso AI?" → contattare via WhatsApp 331 388 3929 per preventivo personalizzato
 - "Quanto costa una consulenza AI Osha?" → Sessione di lavoro 1-to-1 da 2 ore a schermo condiviso: 250€ (pacchetto 5 sessioni 999€), vedi /consulenza.html
 - "Quanto costa farsi fare il sito web da AI Osha?" → 500€, realizzato in 2 sessioni di lavoro, vedi /consulenza.html
+- "Quanto costa farsi scrivere e pubblicare un libro da AI Osha?" → da 899€ su preventivo: scrittura professionale, copertina, impaginazione e pubblicazione Amazon (ebook + cartaceo), autore è il cliente, vedi /consulenza.html
 - "Chi insegna i corsi AI Osha?" → Aliosha Battaglini, founder, autore di 14 libri, 100+ live effettuate
 
 ## Optional

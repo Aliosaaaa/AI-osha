@@ -106,13 +106,30 @@
       gtag('js', new Date());
       gtag('config', 'G-6GNKJZJY1V');
     </script>
+<style>
+        .header-std { display: flex; align-items: center; justify-content: space-between; gap: 1rem; margin-bottom: 2rem; }
+        .header__nav-std { display: none; gap: 1.4rem; }
+        @media (min-width: 900px) { .header__nav-std { display: flex; } }
+        .header__nav-std a { font-weight: 500; font-size: 0.95rem; color: #d1d5db; text-decoration: none; }
+        .header__nav-std a:hover { color: #00A8E8; }
+    </style>
 </head>
 <body>
     <div class="container">
-        <div class="logo-row">
-            <img src="images/uccello.png" alt="AI Osha">
-            <span>AI <span style="color:#00A8E8;">Osha</span></span>
-        </div>
+        <header class="header-std">
+            <a href="index.html" class="logo-row" style="text-decoration:none;">
+                <img src="images/uccello.png" alt="AI Osha">
+                <span>AI <span style="color:#00A8E8;">Osha</span></span>
+            </a>
+            <nav class="header__nav-std">
+                <a href="chi-sono.html">Chi Sono</a>
+                <a href="libro.html">Libro</a>
+                <a href="corso.html">Corso</a>
+                <a href="consulenza.html">Servizi</a>
+                <a href="risorse.html">Risorse</a>
+                <a href="blog.html">Blog</a>
+            </nav>
+        </header>
 
         <h1>Contattami</h1>
         <p class="subtitle">

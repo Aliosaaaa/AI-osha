@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Servizi AI Osha | Sessioni 1-to-1, Sito Web e Marketing per chi lavora</title>
-    <meta name="description" content="Sessioni di lavoro 1-to-1 sull'intelligenza artificiale: 2 ore a schermo condiviso per risolvere problemi concreti (250€, pacchetto 5 a 999€). Sito web a 500€ in 2 sessioni. Marketing: ads, social, email e WhatsApp su preventivo.">
+    <meta name="description" content="Sessioni di lavoro 1-to-1 sull'intelligenza artificiale (250€, pacchetto 5 a 999€), sito web a 500€ in 2 sessioni, marketing su preventivo e il tuo libro scritto e pubblicato (da 899€) per far crescere la tua autorevolezza.">
     <meta name="author" content="Aliosha Battaglini">
     <meta name="robots" content="index, follow">
     <link rel="icon" type="image/png" href="images/uccello.png">
@@ -84,6 +84,14 @@
                     "name": "Marketing con l'AI (ads, social, email, WhatsApp)",
                     "description": "Campagne pubblicitarie, gestione social, email marketing e WhatsApp marketing costruiti con l'intelligenza artificiale. Preventivo su misura.",
                     "url": "https://aiosha.it/consulenza.html"
+                },
+                {
+                    "@type": "Offer",
+                    "name": "Scriviamo il tuo libro e lo pubblichiamo",
+                    "description": "Il tuo libro scritto professionalmente e pubblicato su Amazon (ebook e cartaceo) dalla casa editrice di AI Osha: lo strumento definitivo per aumentare l'autorevolezza e la percezione della tua immagine verso il pubblico. Tu sei l'autore al 100%.",
+                    "priceSpecification": { "@type": "PriceSpecification", "minPrice": "899", "priceCurrency": "EUR" },
+                    "availability": "https://schema.org/InStock",
+                    "url": "https://aiosha.it/consulenza.html"
                 }
             ]
         }
@@ -128,6 +136,14 @@
                 "acceptedAnswer": {
                     "@type": "Answer",
                     "text": "Ti aiutiamo a creare e gestire il marketing della tua attività usando l'AI come motore: campagne pubblicitarie (Meta Ads e Google Ads), gestione dei profili social con piano editoriale e contenuti, email marketing (newsletter, sequenze automatiche, campagne stagionali) e WhatsApp marketing per restare in contatto diretto con i tuoi clienti. Ogni attività è diversa, quindi il marketing si costruisce su misura: scrivici su WhatsApp al 331 388 3929 o via email a info@aiosha.it raccontandoci cosa vendi e a chi, e ti prepariamo un preventivo senza impegno."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Quanto costa farsi scrivere e pubblicare un libro da AI Osha?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Il servizio 'Scriviamo il tuo libro' parte da 899€ e il prezzo finale dipende dalla lunghezza e dalla complessità del progetto, per questo lavoriamo su preventivo. Il processo è semplice: tu porti l'esperienza — con alcune sessioni di intervista ci racconti la tua storia, il tuo metodo, i tuoi casi reali — e noi la trasformiamo in un libro scritto professionalmente, revisionato, impaginato e con una copertina da libreria. Poi lo pubblichiamo su Amazon in ebook e cartaceo con il tuo nome come autore: i diritti restano tuoi al 100%. È lo stesso processo con cui la nostra casa editrice ha già pubblicato 14 libri. Un libro non si legge soltanto: si regala ai clienti, si porta agli eventi e trasforma la percezione che il pubblico ha di te."
                 }
             },
             {
@@ -196,7 +212,8 @@
 
         /* Service cards */
         .services-grid { display: grid; gap: 1.5rem; grid-template-columns: 1fr; }
-        @media (min-width: 900px) { .services-grid { grid-template-columns: repeat(3, 1fr); } }
+        @media (min-width: 700px) { .services-grid { grid-template-columns: repeat(2, minmax(0,1fr)); } }
+        @media (min-width: 1200px) { .services-grid { grid-template-columns: repeat(4, minmax(0,1fr)); } }
         .service-card { background: var(--dark-soft); border: 1px solid rgba(255,255,255,0.08); border-radius: 1.25rem; padding: 2rem; display: flex; flex-direction: column; }
         .service-card--featured { border-color: rgba(0,168,232,0.5); box-shadow: 0 0 40px rgba(0,168,232,0.12); position: relative; }
         .service-card__badge { position: absolute; top: -0.8rem; left: 50%; transform: translateX(-50%); background: linear-gradient(135deg, var(--primary), var(--primary-dark)); color: #fff; font-size: 0.75rem; font-weight: 700; padding: 0.3rem 1rem; border-radius: 2rem; white-space: nowrap; }
@@ -233,6 +250,32 @@
         .final-cta p { color: var(--gray-400); max-width: 620px; margin: 0 auto 2rem; }
         .final-cta__buttons { display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center; }
 
+
+        /* Aurora blobs (coerenti con la home) */
+        .hero { position: relative; overflow: hidden; }
+        .hero .aurora-blob { position: absolute; border-radius: 50%; filter: blur(90px); opacity: 0.35; pointer-events: none; z-index: -1; }
+        .hero .ab1 { width: 420px; height: 420px; background: radial-gradient(circle, rgba(0,168,232,0.55), transparent 70%); top: -120px; left: -80px; animation: blob-drift 14s ease-in-out infinite alternate; }
+        .hero .ab2 { width: 360px; height: 360px; background: radial-gradient(circle, rgba(245,166,35,0.4), transparent 70%); bottom: -140px; right: -60px; animation: blob-drift 18s ease-in-out infinite alternate-reverse; }
+        @keyframes blob-drift { 0% { transform: translate(0,0) scale(1); } 100% { transform: translate(40px, 30px) scale(1.15); } }
+
+        /* Scroll reveal (pattern identico a index) */
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translate(var(--rx, 0px), var(--ry, 56px)) scale(var(--rs, 0.92));
+            transition: opacity 0.65s ease-out, transform 0.85s cubic-bezier(0.34, 1.32, 0.5, 1);
+            transition-delay: var(--reveal-delay, 0ms);
+            will-change: opacity, transform;
+        }
+        .animate-on-scroll.visible { opacity: 1; transform: translate(0,0) scale(1); will-change: auto; }
+        .service-card { transition: transform 0.35s cubic-bezier(0.34,1.32,0.5,1), box-shadow 0.35s ease, border-color 0.35s ease, opacity 0.65s ease-out; }
+        .service-card:hover { transform: translateY(-8px); border-color: rgba(0,168,232,0.45); box-shadow: 0 18px 50px rgba(0,168,232,0.15); }
+        .step { transition: transform 0.3s ease, border-color 0.3s ease, opacity 0.65s ease-out; }
+        .step:hover { transform: translateY(-4px); border-color: rgba(0,168,232,0.4); }
+        @media (prefers-reduced-motion: reduce) {
+            .animate-on-scroll { opacity: 1; transform: none; transition: none; }
+            .hero .aurora-blob { animation: none; }
+        }
+
         /* Footer */
         .footer { padding: 2.5rem 0; text-align: center; color: var(--gray-400); font-size: 0.85rem; border-top: 1px solid rgba(255,255,255,0.08); margin-top: 3rem; }
         .footer a { color: var(--gray-400); }
@@ -260,6 +303,7 @@
                     <a href="chi-sono.html">Chi Sono</a>
                     <a href="libro.html">Libro</a>
                     <a href="corso.html">Corso</a>
+                    <a href="consulenza.html" style="color:var(--primary);">Servizi</a>
                     <a href="risorse.html">Risorse</a>
                     <a href="blog.html">Blog</a>
                 </nav>
@@ -270,12 +314,15 @@
 
     <!-- Hero -->
     <section class="hero">
+        <span class="aurora-blob ab1"></span>
+        <span class="aurora-blob ab2"></span>
         <div class="container">
             <span class="hero__eyebrow">Servizi</span>
             <h1>Non ti spiego cosa fare.<br><span class="accent">Lo facciamo insieme.</span></h1>
             <p>
-                Sessioni di lavoro 1-to-1 sull'intelligenza artificiale, il tuo sito web fatto come lo vuoi tu
-                e il marketing della tua attività gestito con l'AI. Per chi lavora: PMI, professionisti, partite IVA e freelance.
+                Sessioni di lavoro 1-to-1 sull'intelligenza artificiale, il tuo sito web fatto come lo vuoi tu,
+                il marketing della tua attività gestito con l'AI e il tuo libro scritto e pubblicato.
+                Per chi lavora: PMI, professionisti, partite IVA e freelance.
             </p>
         </div>
     </section>
@@ -286,7 +333,7 @@
             <div class="services-grid">
 
                 <!-- Sessioni -->
-                <div class="service-card service-card--featured">
+                <div class="service-card service-card--featured animate-on-scroll" style="--reveal-delay:0ms">
                     <span class="service-card__badge">Il servizio più richiesto</span>
                     <h3>Sessioni di lavoro 1-to-1</h3>
                     <p>
@@ -306,7 +353,7 @@
                 </div>
 
                 <!-- Sito web -->
-                <div class="service-card">
+                <div class="service-card animate-on-scroll" style="--reveal-delay:100ms">
                     <h3>Il tuo Sito Web</h3>
                     <p>
                         Il sito della tua attività, <strong style="color:#fff;">esattamente come lo vuoi tu</strong>,
@@ -324,7 +371,7 @@
                 </div>
 
                 <!-- Marketing -->
-                <div class="service-card">
+                <div class="service-card animate-on-scroll" style="--reveal-delay:200ms">
                     <h3>Marketing con l'AI</h3>
                     <p>
                         Ti aiutiamo a farti trovare e a vendere di più, usando l'intelligenza artificiale
@@ -341,6 +388,26 @@
                     <a href="https://wa.me/393313883929?text=Ciao%20Aliosha%2C%20vorrei%20un%20preventivo%20per%20il%20marketing" class="btn btn--ghost">Chiedi un preventivo</a>
                 </div>
 
+                <!-- Libro -->
+                <div class="service-card animate-on-scroll" style="--reveal-delay:300ms">
+                    <h3>Scriviamo il tuo Libro</h3>
+                    <p>
+                        Un libro con il tuo nome in copertina è il <strong style="color:#fff;">biglietto da visita definitivo</strong>:
+                        aumenta la percezione della tua immagine verso il pubblico e ti posiziona come
+                        l'autorità del tuo settore. Tu porti l'esperienza, noi la trasformiamo in libro — e lo pubblichiamo.
+                    </p>
+                    <div class="service-card__price">Da 899€ <small>/ su preventivo</small></div>
+                    <div class="service-card__note">Con la casa editrice di 14 libri pubblicati</div>
+                    <ul>
+                        <li>Raccolta contenuti: ci racconti, noi scriviamo</li>
+                        <li>Scrittura professionale + revisione umana</li>
+                        <li>Copertina e impaginazione da libreria</li>
+                        <li>Pubblicazione su Amazon (ebook + cartaceo)</li>
+                        <li>Autore sei tu, al 100% — diritti inclusi</li>
+                    </ul>
+                    <a href="https://wa.me/393313883929?text=Ciao%20Aliosha%2C%20voglio%20info%20sul%20servizio%20%22Scriviamo%20il%20tuo%20libro%22" class="btn btn--gold">Voglio il mio libro</a>
+                </div>
+
             </div>
         </div>
     </section>
@@ -348,28 +415,28 @@
     <!-- Come funziona una sessione -->
     <section class="section" id="come-funziona" style="padding-top: 1rem;">
         <div class="container">
-            <h2 class="section__title">Come funziona una Sessione</h2>
+            <h2 class="section__title animate-on-scroll">Come funziona una Sessione</h2>
             <p class="section__subtitle">
                 Il formato è sempre lo stesso, che sia per risolvere un problema, costruire il tuo sito o impostare il marketing:
                 si lavora, non si chiacchiera.
             </p>
             <div class="steps">
-                <div class="step">
+                <div class="step animate-on-scroll" style="--reveal-delay:0ms">
                     <div class="step__num">1</div>
                     <h4>Mi racconti il problema</h4>
                     <p>Su WhatsApp o via email: due righe su cosa vuoi risolvere o costruire. Ti rispondo io, non un bot.</p>
                 </div>
-                <div class="step">
+                <div class="step animate-on-scroll" style="--reveal-delay:120ms">
                     <div class="step__num">2</div>
                     <h4>Fissiamo la sessione</h4>
                     <p>Troviamo giorno e ora. Ci vediamo su Zoom, oppure in presenza se sei in Toscana.</p>
                 </div>
-                <div class="step">
+                <div class="step animate-on-scroll" style="--reveal-delay:240ms">
                     <div class="step__num">3</div>
                     <h4>2 ore a schermo condiviso</h4>
                     <p>Lavoriamo insieme sul tuo computer, con i tuoi file veri. Smarchiamo praticamente tutti i problemi sul tavolo.</p>
                 </div>
-                <div class="step">
+                <div class="step animate-on-scroll" style="--reveal-delay:360ms">
                     <div class="step__num">4</div>
                     <h4>Esci con la soluzione</h4>
                     <p>Niente lista di consigli: la soluzione è già implementata e funzionante. Da domani la usi.</p>
@@ -381,31 +448,38 @@
     <!-- FAQ -->
     <section class="section" id="faq" style="padding-top: 1rem;">
         <div class="container">
-            <h2 class="section__title">Domande frequenti</h2>
+            <h2 class="section__title animate-on-scroll">Domande frequenti</h2>
             <p class="section__subtitle">Le risposte alle domande che ricevo più spesso sui servizi.</p>
 
-            <div class="faq-item">
+            <div class="faq-item animate-on-scroll">
                 <button class="faq-item__question" aria-expanded="false">Come funziona una Sessione di lavoro AI Osha?</button>
                 <div class="faq-item__answer">
                     <p>Una Sessione AI Osha non è la classica consulenza da un'ora in cui parli e prendi appunti. Sono 2 ore di lavoro vero, insieme, a schermo condiviso su Zoom: tu porti il problema (un processo lento, un preventivo da automatizzare, un'email da sistemare, un flusso da costruire) e lo risolviamo lì, davanti ai tuoi occhi, con gli strumenti di intelligenza artificiale giusti per il tuo caso. Alla fine non esci con una lista di consigli: esci con la soluzione già implementata sul tuo computer, pronta da usare il giorno dopo. Il costo è di 250€ a sessione; se vuoi un percorso completo, il pacchetto da 5 sessioni costa 999€.</p>
                 </div>
             </div>
 
-            <div class="faq-item">
+            <div class="faq-item animate-on-scroll">
                 <button class="faq-item__question" aria-expanded="false">Quanto costa il sito web fatto da AI Osha?</button>
                 <div class="faq-item__answer">
                     <p>Il sito web costa 500€ e viene realizzato attraverso 2 sessioni di lavoro. Nella prima sessione ci dai l'input: raccontaci come lo vuoi, che pagine ti servono, che stile preferisci, cosa deve fare (contatti, prenotazioni, vetrina prodotti). Poi lavoriamo noi, costruendo il sito con l'intelligenza artificiale esattamente come lo hai descritto. Nella seconda sessione lo rivediamo insieme, applichiamo le tue correzioni e lo mettiamo online. È la stessa tecnologia che usiamo per i nostri progetti e per i clienti: siti veloci, ottimizzati per Google e di proprietà tua al 100%, senza abbonamenti nascosti.</p>
                 </div>
             </div>
 
-            <div class="faq-item">
+            <div class="faq-item animate-on-scroll">
                 <button class="faq-item__question" aria-expanded="false">Quali servizi di marketing offre AI Osha?</button>
                 <div class="faq-item__answer">
                     <p>Ti aiutiamo a creare e gestire il marketing della tua attività usando l'AI come motore: campagne pubblicitarie (Meta Ads e Google Ads), gestione dei profili social con piano editoriale e contenuti, email marketing (newsletter, sequenze automatiche, campagne stagionali) e WhatsApp marketing per restare in contatto diretto con i tuoi clienti. Ogni attività è diversa, quindi il marketing si costruisce su misura: scrivici su WhatsApp al 331 388 3929 o via email a info@aiosha.it raccontandoci cosa vendi e a chi, e ti prepariamo un preventivo senza impegno.</p>
                 </div>
             </div>
 
-            <div class="faq-item">
+            <div class="faq-item animate-on-scroll">
+                <button class="faq-item__question" aria-expanded="false">Quanto costa farsi scrivere e pubblicare un libro da AI Osha?</button>
+                <div class="faq-item__answer">
+                    <p>Il servizio "Scriviamo il tuo libro" parte da 899€ e il prezzo finale dipende dalla lunghezza e dalla complessità del progetto, per questo lavoriamo su preventivo. Il processo è semplice: tu porti l'esperienza — con alcune sessioni di intervista ci racconti la tua storia, il tuo metodo, i tuoi casi reali — e noi la trasformiamo in un libro scritto professionalmente, revisionato, impaginato e con una copertina da libreria. Poi lo pubblichiamo su Amazon in ebook e cartaceo con il tuo nome come autore: i diritti restano tuoi al 100%. È lo stesso processo con cui la nostra casa editrice ha già pubblicato 14 libri. Un libro non si legge soltanto: si regala ai clienti, si porta agli eventi e trasforma la percezione che il pubblico ha di te.</p>
+                </div>
+            </div>
+
+            <div class="faq-item animate-on-scroll">
                 <button class="faq-item__question" aria-expanded="false">Le sessioni sono online o in presenza?</button>
                 <div class="faq-item__answer">
                     <p>Le Sessioni di lavoro si svolgono normalmente online su Zoom, a schermo condiviso: funziona perfettamente da qualsiasi parte d'Italia e ti permette di lavorare direttamente sul tuo computer, con i tuoi file e i tuoi strumenti reali. Se sei in Toscana, in particolare nella zona di Pescia, Pistoia, Lucca o Montecatini, possiamo organizzare anche sessioni in presenza. In entrambi i casi il formato è lo stesso: 2 ore di lavoro concreto sul tuo caso, non teoria.</p>
@@ -417,7 +491,7 @@
     <!-- CTA finale -->
     <section class="section">
         <div class="container">
-            <div class="final-cta">
+            <div class="final-cta animate-on-scroll">
                 <h2>Parliamone: mi dici il problema, ti dico come lo risolviamo</h2>
                 <p>
                     Scrivimi su WhatsApp o via email. Ti rispondo personalmente e capiamo insieme
@@ -444,6 +518,18 @@
     </footer>
 
     <script>
+
+        // Scroll reveal
+        (function () {
+            var observer = new IntersectionObserver(function (entries) {
+                entries.forEach(function (entry) {
+                    if (entry.isIntersecting) { entry.target.classList.add('visible'); }
+                    else { entry.target.classList.remove('visible'); }
+                });
+            }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+            document.querySelectorAll('.animate-on-scroll').forEach(function (el) { observer.observe(el); });
+        })();
+
         document.querySelectorAll('.faq-item__question').forEach(button => {
             button.addEventListener('click', () => {
                 const item = button.parentElement;
