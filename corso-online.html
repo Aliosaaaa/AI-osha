@@ -312,6 +312,16 @@
       gtag('js', new Date());
       gtag('config', 'G-6GNKJZJY1V');
     </script>
+<style id="mnav">
+.mnav-toggle{display:flex;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:8px;z-index:1001}
+.mnav-toggle span{display:block;width:24px;height:2px;background:#fff;transition:all .2s}
+.mnav-toggle.active span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
+.mnav-toggle.active span:nth-child(2){opacity:0}
+.mnav-toggle.active span:nth-child(3){transform:rotate(-45deg) translate(7px,-6px)}
+@media(min-width:768px){.mnav-toggle{display:none}}
+.header__nav.mnav-open{display:flex !important;flex-direction:column;position:fixed;top:72px;left:0;right:0;background:rgba(13,17,23,.98);-webkit-backdrop-filter:blur(20px);backdrop-filter:blur(20px);border-bottom:1px solid rgba(255,255,255,.08);padding:1.25rem 1.5rem;gap:1rem;z-index:1000;box-shadow:0 20px 40px rgba(0,0,0,.4)}
+.header__nav.mnav-open a{font-size:1.05rem;padding:.35rem 0}
+</style>
 </head>
 <body>
 
@@ -328,6 +338,7 @@
                     <a href="chi-sono.html" class="header__nav-link">Chi Sono</a>
                     <a href="libro.html" class="header__nav-link">Libro</a>
                 </nav>
+                <button class="mnav-toggle" aria-label="Apri menu"><span></span><span></span><span></span></button>
                 <a href="#acquista" class="btn btn--outline" style="padding:0.6rem 1.25rem;font-size:0.9rem;">
                     Accedi al Corso
                 </a>
@@ -750,5 +761,8 @@
         }, { passive: true });
     </script>
 
+<script>
+(function(){var t=document.querySelector('.mnav-toggle'),n=document.querySelector('.header__nav');if(t&&n){t.addEventListener('click',function(){t.classList.toggle('active');n.classList.toggle('mnav-open');var o=n.classList.contains('mnav-open');t.setAttribute('aria-label',o?'Chiudi menu':'Apri menu');t.setAttribute('aria-expanded',o);});n.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){t.classList.remove('active');n.classList.remove('mnav-open');});});}})();
+</script>
 </body>
 </html>
