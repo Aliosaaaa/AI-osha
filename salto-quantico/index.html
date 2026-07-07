@@ -325,8 +325,8 @@ footer .meta{color:var(--g500);font-size:.82rem}
 .modal{position:fixed;inset:0;z-index:200;background:rgba(5,7,11,.96);display:none;align-items:center;justify-content:center;padding:22px}
 .modal-in video{transform:translateZ(0);backface-visibility:hidden}
 .modal.open{display:flex}
-html.sq-modal-open .aurora,html.sq-modal-open .marquee-track{animation-play-state:paused}
-html.sq-modal-open #particles{visibility:hidden}
+html.sq-modal-open .aurora,html.sq-modal-open #particles{display:none}
+html.sq-modal-open .marquee-track{animation-play-state:paused}
 .modal-in{width:min(900px,100%);aspect-ratio:16/9;background:var(--card);border:1px solid var(--line-2);border-radius:1rem;display:flex;align-items:center;justify-content:center;color:var(--g400);text-align:center;padding:24px;position:relative}
 .modal-close{position:absolute;top:-14px;right:-14px;width:40px;height:40px;border-radius:50%;background:#fff;color:var(--bg);border:none;font-size:1.3rem;cursor:pointer;font-weight:700}
 @media(prefers-reduced-motion:reduce){*{animation:none!important}}
@@ -719,7 +719,7 @@ src="https://www.facebook.com/tr?id=27681167481569538&ev=PageView&noscript=1"
   <div class="modal-in">
     <button class="modal-close" id="vclose">×</button>
     <video id="invito" controls playsinline preload="none" poster="images/sq-invito-poster.jpg" style="width:100%;max-width:900px;border-radius:1rem;display:block;background:#000">
-      <source src="sq-invito.mp4" type="video/mp4">
+      <source src="sq-invito-web.mp4" type="video/mp4">
     </video>
   </div>
 </div>
@@ -783,6 +783,10 @@ function closeVm(){vm.classList.remove('open');if(inv){inv.pause();}setBgPaused(
 document.getElementById('heroVideo').addEventListener('click',function(){vm.classList.add('open');setBgPaused(true);if(inv){inv.play().catch(function(){});}});
 document.getElementById('vclose').addEventListener('click',closeVm);
 vm.addEventListener('click',function(e){if(e.target===vm)closeVm();});
+// precarica il video in background (solo desktop) per un avvio istantaneo e fluido
+if(inv&&window.matchMedia('(min-width:768px)').matches){
+  window.addEventListener('load',function(){setTimeout(function(){try{inv.preload='auto';inv.load();}catch(e){}},1500);});
+}
 
 // particles (ottimizzato: meno particelle, un solo loop, pausa fuori dall'hero)
 (function(){
