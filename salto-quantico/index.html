@@ -396,10 +396,10 @@ src="https://www.facebook.com/tr?id=27681167481569538&ev=PageView&noscript=1"
         </div>
       </div>
       <div>
-        <div class="video-frame" data-tilt id="heroVideo">
+        <div class="video-frame" data-tilt id="heroVideo" style="background:#000 url('images/sq-invito-poster.jpg') center/cover">
           <div class="vbadge"><div class="st">★★★★★</div><div class="tx">6 testimonianze</div></div>
           <div class="vplay"></div>
-          <div class="vlabel"><span class="live">▶ INVITO</span> Guarda in 55 secondi</div>
+          <div class="vlabel"><span class="live">▶ INVITO</span> Guarda in 1 minuto</div>
         </div>
       </div>
     </div>
@@ -714,7 +714,9 @@ src="https://www.facebook.com/tr?id=27681167481569538&ev=PageView&noscript=1"
 <div class="modal" id="vmodal">
   <div class="modal-in">
     <button class="modal-close" id="vclose">×</button>
-    <div>🎬 Il video-invito (~55s) andrà qui.<br><small style="color:var(--g500)">Da girare e montare — poi lo incolliamo come &lt;video&gt; o embed YouTube.</small></div>
+    <video id="invito" controls playsinline preload="none" poster="images/sq-invito-poster.jpg" style="width:100%;max-width:900px;border-radius:1rem;display:block;background:#000">
+      <source src="sq-invito.mp4" type="video/mp4">
+    </video>
   </div>
 </div>
 
@@ -771,9 +773,11 @@ document.querySelectorAll('[data-magnetic]').forEach(function(b){
 
 // video modal
 var vm=document.getElementById('vmodal');
-document.getElementById('heroVideo').addEventListener('click',function(){vm.classList.add('open');});
-document.getElementById('vclose').addEventListener('click',function(){vm.classList.remove('open');});
-vm.addEventListener('click',function(e){if(e.target===vm)vm.classList.remove('open');});
+var inv=document.getElementById('invito');
+function closeVm(){vm.classList.remove('open');if(inv){inv.pause();}}
+document.getElementById('heroVideo').addEventListener('click',function(){vm.classList.add('open');if(inv){inv.play().catch(function(){});}});
+document.getElementById('vclose').addEventListener('click',closeVm);
+vm.addEventListener('click',function(e){if(e.target===vm)closeVm();});
 
 // particles (ottimizzato: meno particelle, un solo loop, pausa fuori dall'hero)
 (function(){
