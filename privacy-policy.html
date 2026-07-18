@@ -57,7 +57,14 @@
         hr { border: none; border-top: 1px solid var(--border); margin: 3rem 0; }
     </style>
     <!-- Google Analytics (GA4) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-6GNKJZJY1V"></script>
+    <script>
+    (function(){function l(){if(window.__aioTrk)return;window.__aioTrk=1;
+    var g=document.createElement('script');g.async=1;g.src='https://www.googletagmanager.com/gtag/js?id=G-6GNKJZJY1V';document.head.appendChild(g);
+    if(window.fbq){var f=document.createElement('script');f.async=1;f.src='https://connect.facebook.net/en_US/fbevents.js';document.head.appendChild(f);}}
+    window.addEventListener('load',function(){('requestIdleCallback' in window)?requestIdleCallback(l,{timeout:3000}):setTimeout(l,800);});
+    ['scroll','click','keydown','touchstart'].forEach(function(e){window.addEventListener(e,l,{once:true,passive:true});});
+    })();
+    </script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}

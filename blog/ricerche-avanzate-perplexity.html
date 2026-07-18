@@ -138,7 +138,14 @@
     }
     </script>
     <!-- Google Analytics (GA4) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-6GNKJZJY1V"></script>
+    <script>
+    (function(){function l(){if(window.__aioTrk)return;window.__aioTrk=1;
+    var g=document.createElement('script');g.async=1;g.src='https://www.googletagmanager.com/gtag/js?id=G-6GNKJZJY1V';document.head.appendChild(g);
+    if(window.fbq){var f=document.createElement('script');f.async=1;f.src='https://connect.facebook.net/en_US/fbevents.js';document.head.appendChild(f);}}
+    window.addEventListener('load',function(){('requestIdleCallback' in window)?requestIdleCallback(l,{timeout:3000}):setTimeout(l,800);});
+    ['scroll','click','keydown','touchstart'].forEach(function(e){window.addEventListener(e,l,{once:true,passive:true});});
+    })();
+    </script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
@@ -165,9 +172,7 @@
 {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
 n.callMethod.apply(n,arguments):n.queue.push(arguments)};
 if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,'script',
+n.queue=[]}(window, document,'script',
 'https://connect.facebook.net/en_US/fbevents.js');
 fbq('init', '27681167481569538');
 fbq('track', 'PageView');
@@ -428,7 +433,7 @@ src="https://www.facebook.com/tr?id=27681167481569538&ev=PageView&noscript=1"
                 
                 <div class="cta-box" style="margin-top:2rem;">
                     <h3>Vuoi portare l'AI nel tuo lavoro, non solo leggerne?</h3>
-                    <p>Guarda il <a href="../corso.html" style="color:#00A8E8;font-weight:700;">corso Intelligenza Artificiale in Pratica</a> (dal vivo a Pescia oppure online), oppure prenota una <a href="../consulenza.html" style="color:#F5A623;font-weight:700;">Sessione di lavoro 1-to-1</a>: 2 ore a schermo condiviso sul tuo caso concreto.</p>
+                    <p>Guarda il <a href="../corso.html" style="color:#00A8E8;font-weight:700;">corso Intelligenza Artificiale in Pratica</a> (dal vivo a Pescia oppure online), oppure prenota una <a href="../consulenza.html" style="color:#F5A623;font-weight:700;">Sessione di lavoro 1-to-1</a>: 1 ora e 30 minuti a schermo condiviso sul tuo caso concreto.</p>
                     <a href="../corso.html" class="btn">Scopri il Corso</a>
                 </div>
 
