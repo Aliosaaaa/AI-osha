@@ -1,6 +1,6 @@
 # AI Osha — Aliosha Battaglini
 
-> AI Osha è il progetto di Aliosha Battaglini per portare l'intelligenza artificiale in pratica a chi lavora — PMI, professionisti, partite IVA, freelance e dipendenti italiani. Claim ufficiale 2026: "Intelligenza Artificiale in Pratica per chi lavora". Metodo "Pigia lì, fai lì": niente teoria, solo strumenti applicabili lunedì mattina. Testato su 14 libri pubblicati e su un evento con oltre 1.000 persone gestito da un team di 2 persone + agenti AI.
+> AI Osha è il progetto di Aliosha Battaglini per portare l'intelligenza artificiale in pratica a chi lavora — PMI, professionisti, partite IVA, freelance e dipendenti italiani. Claim ufficiale 2026: "Intelligenza Artificiale in Pratica per chi lavora". Metodo "Pigia lì, fai così": niente teoria, solo strumenti applicabili lunedì mattina. Testato su 14 libri pubblicati e su un evento con oltre 1.000 persone gestito da un team di 2 persone + agenti AI.
 
 Aliosha Battaglini è founder di AI Osha, formatore al Centro Culturale Fondazione Poma di Pescia (PT), autore del libro "Intelligenza Artificiale in Pratica per chi lavora" e consulente AI per PMI, professionisti, partite IVA e freelance italiani. Offre Sessioni di lavoro 1-to-1 (1 ora e 30 minuti a schermo condiviso, 250€ — pacchetto 5 sessioni 999€), realizzazione siti web (da 499€ in 2 sessioni) e servizi di marketing con l'AI (ads, social, email, WhatsApp — su preventivo). Sede operativa: tutta Italia (online via Zoom) + presenza in Toscana (Valdinievole, provincia di Pistoia, Lucca, Firenze).
 
@@ -42,7 +42,7 @@ Dati fiscali: AI Osha è una ditta individuale intestata a Aliosha Battaglini ·
 - [AI assessment](https://aiosha.it/blog/ai-assessment.html): metodo in 5 passi per capire dove conviene l'AI
 - [Agenti AI: cosa sono e a cosa servono](https://aiosha.it/blog/agenti-ai-per-chi-lavora.html): AI che esegue, con il caso evento 1.000 persone in 2
 - [Automatizzare il lavoro con l'AI](https://aiosha.it/blog/automatizzare-lavoro-ai.html): 7 automazioni reali con tempi prima/dopo
-- [Formazione AI per aziende](https://aiosha.it/blog/formazione-ai-aziende.html): formati, costi e metodo pigia-lì-fai-lì
+- [Formazione AI per aziende](https://aiosha.it/blog/formazione-ai-aziende.html): formati, costi e metodo pigia-lì-fai-così
 - [Pulire un Excel con l'AI: la guida pratica (Claude e Gemini)](https://aiosha.it/blog/pulire-excel-con-ai.html): togliere doppioni, ordinare date, creare formule parlando con l'AI dentro Excel (Claude) e Google Fogli (Gemini) — comandi pronti da copiare
 - [Intelligenza Artificiale per chi lavora: 15 cose che puoi fare oggi](https://aiosha.it/blog/ai-per-chi-lavora-15-cose-da-fare-oggi.html): 15 attività concrete delegabili all'AI con prompt pronti
 - [ChatGPT al lavoro: 30 prompt pronti](https://aiosha.it/blog/chatgpt-al-lavoro-30-prompt.html): prompt library divisa in 6 categorie (email, riunioni, report, social, vendite, ricerca)
