@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ottimizzare Google Docs con Gemini AI | AI Osha</title>
-    <meta name="description" content="Scopri come Gemini integrato in Google Workspace può rivoluzionare la tua scrittura: correzioni automatiche, riscritture professionali e formattazione intelligente.">
+    <title>Come usare Gemini in Google Docs: guida pratica | AI Osha</title>
+    <meta name="description" content="Gemini in Google Docs: come si attiva (piani Google AI o Workspace), prompt pronti e nuove funzioni per scrivere documenti di lavoro più in fretta.">
     <meta name="author" content="Aliosha Battaglini">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://aiosha.it/blog/ottimizzare-google-docs-gemini.html">
@@ -12,14 +12,14 @@
     <!-- Open Graph -->
     <meta property="og:type" content="article">
     <meta property="og:url" content="https://aiosha.it/blog/ottimizzare-google-docs-gemini.html">
-    <meta property="og:title" content="Ottimizzare Google Docs con Gemini AI | AI Osha">
-    <meta property="og:description" content="Scopri come Gemini integrato in Google Workspace può rivoluzionare la tua scrittura: correzioni automatiche, riscritture professionali e formattazione intelligente.">
+    <meta property="og:title" content="Come usare Gemini in Google Docs: guida pratica | AI Osha">
+    <meta property="og:description" content="Gemini in Google Docs: come si attiva (piani Google AI o Workspace), prompt pronti e nuove funzioni per scrivere documenti di lavoro più in fretta.">
     <meta property="og:image" content="https://aiosha.it/images/blog/cover-gemini-docs.jpg">
     <meta property="og:locale" content="it_IT">
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Ottimizzare Google Docs con Gemini AI | AI Osha">
+    <meta name="twitter:title" content="Come usare Gemini in Google Docs: guida pratica | AI Osha">
     <meta name="twitter:image" content="https://aiosha.it/images/blog/cover-gemini-docs.jpg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -82,16 +82,38 @@
         .cta-box p { color: var(--gray-400); margin-bottom: 2rem; }
         .footer { padding: 3rem 0 1rem; background: #2d3748; color: var(--gray-400); margin-top: 4rem; text-align: center; }
         .step-number { display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; background: var(--primary); color: white; border-radius: 50%; font-weight: 700; margin-right: 1rem; }
+        .updated-line { font-size: 0.9rem; color: var(--gray-400); margin-top: -1rem; margin-bottom: 2rem; }
+        .updated-line strong { color: var(--gray-200); }
+        .tldr { background: rgba(66,133,244,0.08); border-left: 4px solid var(--primary); border-radius: 0 0.75rem 0.75rem 0; padding: 1.5rem 1.75rem; margin: 0 0 2.5rem; }
+        .tldr h3 { color: var(--primary); font-size: 0.85rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; margin: 0 0 0.6rem; }
+        .tldr p { color: #e5e7eb; margin: 0; font-size: 1rem; line-height: 1.65; }
+        .author-box { display: flex; gap: 1.25rem; padding: 1.75rem; background: var(--dark-soft); border: 1px solid rgba(255,255,255,0.08); border-radius: 1rem; margin: 3rem 0; }
+        .author-box__avatar { flex-shrink: 0; width: 72px; height: 72px; border-radius: 50%; background: linear-gradient(135deg, #00A8E8, #F5A623); display: flex; align-items: center; justify-content: center; color: #fff; font-size: 1.8rem; font-weight: 800; }
+        .author-box__content h4 { font-size: 1.1rem; color: var(--white); margin-bottom: 0.3rem; }
+        .author-box__role { font-size: 0.85rem; color: #00A8E8; font-weight: 600; margin-bottom: 0.6rem; }
+        .author-box__bio { font-size: 0.92rem; line-height: 1.55; margin: 0; }
+        .author-box__bio a { color: #00A8E8; text-decoration: none; }
+        .faq-section { margin: 3rem 0; }
+        .faq-item { background: var(--dark-soft); border: 1px solid rgba(255,255,255,0.06); border-radius: 0.75rem; padding: 1.25rem 1.5rem; margin-bottom: 0.85rem; }
+        .faq-item h3 { color: var(--white); font-size: 1.05rem; margin: 0 0 0.6rem; font-weight: 700; }
+        .faq-item p { font-size: 0.95rem; margin: 0; line-height: 1.6; }
+        .related { background: var(--dark-soft); border-radius: 1rem; padding: 1.75rem; margin: 2.5rem 0; }
+        .related h4 { color: var(--white); font-size: 1rem; margin-bottom: 1rem; letter-spacing: 0.04em; text-transform: uppercase; }
+        .related a { display: block; padding: 0.6rem 0; color: #00A8E8; text-decoration: none; font-size: 0.95rem; border-bottom: 1px solid rgba(255,255,255,0.04); }
+        .related a:last-child { border-bottom: none; }
+        .related a:hover { color: #F5A623; }
+        .btn--wa { background: #25D366; }
+        .article-content a.inline-link { color: #00A8E8; }
     </style>
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
         "@type": "Article",
-        "headline": "Ottimizzare Google Docs con Gemini AI",
-        "description": "Scopri come Gemini integrato in Google Workspace può rivoluzionare la tua scrittura: correzioni automatiche, riscritture professionali e formattazione intelligente.",
+        "headline": "Come usare Gemini in Google Docs: guida pratica",
+        "description": "Gemini in Google Docs: come si attiva (piani Google AI o Workspace), prompt pronti e nuove funzioni per scrivere documenti di lavoro più in fretta.",
         "image": "https://aiosha.it/images/blog/cover-gemini-docs.jpg",
         "datePublished": "2026-04-08",
-        "dateModified": "2026-05-04",
+        "dateModified": "2026-07-18",
         "inLanguage": "it-IT",
         "mainEntityOfPage": {
             "@type": "WebPage",
@@ -128,7 +150,19 @@
         "itemListElement": [
             {"@type":"ListItem","position":1,"name":"Home","item":"https://aiosha.it/"},
             {"@type":"ListItem","position":2,"name":"Blog","item":"https://aiosha.it/blog.html"},
-            {"@type":"ListItem","position":3,"name":"Ottimizzare Google Docs con Gemini AI","item":"https://aiosha.it/blog/ottimizzare-google-docs-gemini.html"}
+            {"@type":"ListItem","position":3,"name":"Come usare Gemini in Google Docs","item":"https://aiosha.it/blog/ottimizzare-google-docs-gemini.html"}
+        ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {"@type":"Question","name":"Gemini in Google Docs è gratuito?","acceptedAnswer":{"@type":"Answer","text":"No. Sugli account Google personali gratuiti l'integrazione di Gemini in Docs non è disponibile: serve un piano Google AI a pagamento (Plus da 4,99 € al mese o Pro da 21,99 € al mese) oppure un account Google Workspace aziendale idoneo. L'app Gemini, da sola, resta invece utilizzabile gratis."}},
+            {"@type":"Question","name":"Come si attiva Help me write in Google Docs?","acceptedAnswer":{"@type":"Answer","text":"Se il tuo account è idoneo, apri un documento e cerca l'icona di Gemini in alto a destra oppure l'opzione Help me write (Aiutami a scrivere). Se non compare, il tuo piano non include la funzione: verifica i requisiti sulla pagina di supporto Google dedicata a Gemini in Docs."}},
+            {"@type":"Question","name":"Cosa può fare Gemini dentro un documento?","acceptedAnswer":{"@type":"Answer","text":"Genera bozze partendo da un brief, riscrive cambiando tono, riassume testi lunghi e traduce mantenendo lo stile. Da aprile 2026 il pannello laterale aggiunge azioni di rifinitura del testo e la possibilità di usare file esterni come riferimento mentre scrivi."}},
+            {"@type":"Question","name":"I miei documenti vengono usati per addestrare i modelli?","acceptedAnswer":{"@type":"Answer","text":"Con i piani Google Workspace business ed enterprise i dati aziendali non vengono usati per l'addestramento dei modelli. Prima di lavorare su documenti riservati, verifica comunque le policy interne con il tuo amministratore IT."}}
         ]
     }
     </script>
@@ -204,65 +238,83 @@ src="https://www.facebook.com/tr?id=27681167481569538&ev=PageView&noscript=1"
                     Torna al Blog
                 </a>
                 <span class="article-tag">Google Gemini</span>
-                <h1>Ottimizzare Google Docs con Gemini AI</h1>
-                <p class="subtitle">Scopri come Gemini integrato in Google Workspace può rivoluzionare la tua scrittura: correzioni automatiche, riscritture professionali e formattazione intelligente.</p>
+                <h1>Come usare Gemini in Google Docs</h1>
+                <p class="subtitle">Bozze, riscritture, riassunti e rifiniture senza uscire dal documento: guida pratica a "Help me write" e al pannello Gemini, con prompt pronti da copiare.</p>
+                <p class="updated-line">✍️ Aliosha Battaglini · <strong>Aggiornato: 18 luglio 2026</strong></p>
             </div>
         </section>
 
         <section class="article-content">
             <div class="container">
-                <p><strong>Se usi Google Docs per il lavoro, hai già accesso a uno degli strumenti AI più potenti:</strong> Gemini. Integrato direttamente in Workspace, può trasformare il modo in cui scrivi documenti, report, proposte e qualsiasi tipo di contenuto professionale.</p>
+                <div class="tldr">
+                    <h3>In sintesi</h3>
+                    <p>
+                        Gemini dentro Google Docs si chiama <strong>"Write &amp; edit with Gemini"</strong>: la funzione "Help me write" più un pannello laterale che scrive, riscrive, riassume e rifinisce i tuoi testi.
+                        Non è incluso negli account personali gratuiti: serve un piano <strong>Google AI</strong> (Plus da 4,99 € o Pro da 21,99 € al mese) oppure un account <strong>Workspace</strong> aziendale.
+                        Qui trovi requisiti, prompt pronti e le novità arrivate ad aprile 2026.
+                    </p>
+                </div>
 
-                <p>In questa guida pratica vedremo come sfruttare Gemini per scrivere meglio e più velocemente, senza mai uscire da Google Docs.</p>
+                <p><strong>Se usi Google Docs per il lavoro, l'intelligenza artificiale è già dentro il tuo editor:</strong> si chiama Gemini. Integrato direttamente nel documento, cambia il modo in cui scrivi report, proposte e qualsiasi contenuto professionale.</p>
 
-                <h2>1. Attivare Gemini in Google Workspace</h2>
+                <p>In questa guida pratica, aggiornata a luglio 2026, vediamo come sfruttare Gemini per scrivere meglio e più in fretta, senza mai uscire da Google Docs.</p>
+
+                <h2>Chi può usare Gemini in Docs (e quanto costa)</h2>
+
+                <p>Partiamo dal punto che genera più confusione: l'app Gemini è gratuita per tutti, ma <strong>l'integrazione dentro Docs no</strong>. La funzione "Write &amp; edit with Gemini" non è disponibile sugli account Google personali gratuiti.</p>
 
                 <div class="feature-card">
                     <h3>Requisiti</h3>
                     <ul>
-                        <li>Google Workspace con abbonamento Gemini (Business, Enterprise, o Education)</li>
-                        <li>Oppure Google One AI Premium ($19.99/mese) per utenti individuali</li>
-                        <li>Accesso admin per abilitare Gemini nell'organizzazione</li>
+                        <li>Un piano <strong>Google AI</strong> per uso individuale: <strong>Plus da 4,99 € al mese</strong> oppure <strong>Pro da 21,99 € al mese</strong></li>
+                        <li>In alternativa, un account <strong>Google Workspace</strong> aziendale idoneo (Business, Enterprise o Education)</li>
+                        <li>Nelle organizzazioni, l'amministratore deve aver abilitato Gemini per gli utenti</li>
                     </ul>
-                    <p><strong>Nota:</strong> Gemini non è disponibile negli account Gmail gratuiti standard.</p>
+                    <p><strong>Nota:</strong> il vecchio "Google One AI Premium" non esiste più: è stato sostituito dai piani Google AI. I requisiti aggiornati sono nella <a href="https://support.google.com/docs/answer/13951448" target="_blank" rel="noopener" class="inline-link">pagina di supporto Google dedicata</a>.</p>
                 </div>
 
-                <h3>Come Attivare</h3>
+                <h3>Come si attiva</h3>
                 <ol>
-                    <li>Vai su <strong>Google Docs</strong></li>
-                    <li>Clicca su <strong>"Help me write"</strong> (icona stellina in alto a sinistra)</li>
-                    <li>Se abilitato, vedrai il prompt di Gemini</li>
+                    <li>Apri un documento in <strong>Google Docs</strong></li>
+                    <li>Cerca l'icona di <strong>Gemini</strong> in alto a destra oppure l'opzione <strong>"Help me write"</strong> ("Aiutami a scrivere") nel documento</li>
+                    <li>Se il tuo piano è idoneo, si apre il pannello e puoi scrivere la tua richiesta</li>
                 </ol>
 
-                <h2>2. Funzioni Principali di Gemini in Docs</h2>
+                <h2>Cosa sa fare Gemini dentro Docs</h2>
 
                 <div class="feature-card">
-                    <h3><span class="step-number">1</span> Generazione Testo da Zero</h3>
+                    <h3><span class="step-number">1</span> Generare testo da zero</h3>
                     <p>Chiedi a Gemini di scrivere intere sezioni partendo da un brief.</p>
                     <p><strong>Esempio:</strong> "Scrivi un'introduzione professionale per una proposta commerciale rivolta a PMI nel settore retail"</p>
                 </div>
 
                 <div class="feature-card">
-                    <h3><span class="step-number">2</span> Riscrittura e Miglioramento</h3>
-                    <p>Seleziona un testo e chiedi a Gemini di riscriverlo con tono diverso.</p>
+                    <h3><span class="step-number">2</span> Riscrivere e migliorare</h3>
+                    <p>Seleziona un testo e chiedi a Gemini di riscriverlo con un tono diverso.</p>
                     <p><strong>Esempio:</strong> "Riscrivi questo paragrafo in modo più formale e conciso"</p>
                 </div>
 
                 <div class="feature-card">
-                    <h3><span class="step-number">3</span> Riassunto Automatico</h3>
-                    <p>Riduci documenti lunghi a bullet point essenziali.</p>
+                    <h3><span class="step-number">3</span> Riassumere in automatico</h3>
+                    <p>Riduci documenti lunghi ai punti essenziali.</p>
                     <p><strong>Esempio:</strong> "Riassumi questo documento in 5 punti chiave"</p>
                 </div>
 
                 <div class="feature-card">
-                    <h3><span class="step-number">4</span> Traduzione Contestuale</h3>
+                    <h3><span class="step-number">4</span> Tradurre rispettando il contesto</h3>
                     <p>Traduci mantenendo il tono e lo stile professionale.</p>
                     <p><strong>Esempio:</strong> "Traduci questo testo in inglese mantenendo un tono formale business"</p>
                 </div>
 
-                <h2>3. Prompt Pratici per Google Docs</h2>
+                <div class="feature-card">
+                    <h3><span class="step-number">5</span> Rifinire e usare file di riferimento</h3>
+                    <p>Da aprile 2026 il pannello laterale ha guadagnato azioni di rifinitura del testo (accorciare, ammorbidire, rendere più incisivo) e la possibilità di indicare <strong>file esterni come riferimento</strong>: l'IA scrive tenendo conto di quei contenuti.</p>
+                    <p><strong>Esempio:</strong> "Usando il listino allegato come riferimento, scrivi il paragrafo sull'investimento richiesto"</p>
+                </div>
 
-                <h3>Scrivere un Report Aziendale</h3>
+                <h2>Prompt pronti da copiare</h2>
+
+                <h3>Scrivere un report aziendale</h3>
                 <div class="prompt-box">
                     <div class="prompt-box__header">
                         <span class="prompt-box__title">PROMPT</span>

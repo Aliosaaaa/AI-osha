@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Creare Immagini Professionali con AI Generativa | AI Osha</title>
-    <meta name="description" content="Guida pratica agli strumenti di image generation: Midjourney, DALL-E, Stable Diffusion. Come creare visual per social, blog e presentazioni in pochi minuti.">
+    <title>Creare immagini con AI nel 2026: guida pratica | AI Osha</title>
+    <meta name="description" content="Guida 2026 per creare immagini con l'AI: gpt-image-2, Nano Banana Pro, Midjourney V8.1, prezzi in euro, prompt pronti e regole EU AI Act.">
+    <meta name="keywords" content="creare immagini con AI, immagini intelligenza artificiale per lavoro, gpt-image-2, nano banana pro, midjourney v8.1, canva dream lab, magnific">
     <meta name="author" content="Aliosha Battaglini">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://aiosha.it/blog/immagini-ai-generative.html">
@@ -12,14 +13,18 @@
     <!-- Open Graph -->
     <meta property="og:type" content="article">
     <meta property="og:url" content="https://aiosha.it/blog/immagini-ai-generative.html">
-    <meta property="og:title" content="Creare Immagini Professionali con AI Generativa | AI Osha">
-    <meta property="og:description" content="Guida pratica agli strumenti di image generation: Midjourney, DALL-E, Stable Diffusion. Come creare visual per social, blog e presentazioni in pochi minuti.">
+    <meta property="og:title" content="Creare immagini con AI nel 2026: guida pratica | AI Osha">
+    <meta property="og:description" content="Guida 2026 per creare immagini con l'AI: gpt-image-2, Nano Banana Pro, Midjourney V8.1, prezzi in euro, prompt pronti e regole EU AI Act.">
     <meta property="og:image" content="https://aiosha.it/images/blog/cover-immagini-ai.jpg">
     <meta property="og:locale" content="it_IT">
+    <meta property="article:published_time" content="2026-04-02">
+    <meta property="article:modified_time" content="2026-07-18">
+    <meta property="article:author" content="Aliosha Battaglini">
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Creare Immagini Professionali con AI Generativa | AI Osha">
+    <meta name="twitter:title" content="Creare immagini con AI nel 2026: guida pratica | AI Osha">
+    <meta name="twitter:description" content="Guida 2026 per creare immagini con l'AI: gpt-image-2, Nano Banana Pro, Midjourney V8.1, prezzi in euro, prompt pronti e regole EU AI Act.">
     <meta name="twitter:image" content="https://aiosha.it/images/blog/cover-immagini-ai.jpg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -44,6 +49,7 @@
             --gray-900: #1a1f2e;
             --white: #ffffff;
             --success: #10b981;
+            --whatsapp: #25D366;
             --font-display: 'Plus Jakarta Sans', sans-serif;
             --font-mono: 'JetBrains Mono', monospace;
         }
@@ -63,6 +69,8 @@
         .article-tag { display: inline-block; padding: 0.25rem 1rem; background: linear-gradient(135deg, rgba(245,166,35,0.2), rgba(212,145,31,0.1)); color: #d4911f; border-radius: 50px; font-size: 0.875rem; font-weight: 600; margin-bottom: 1rem; }
         h1 { font-size: clamp(2rem, 5vw, 3rem); font-weight: 800; color: var(--white); line-height: 1.2; margin: 1rem 0; }
         .subtitle { font-size: 1.375rem; color: var(--gray-400); margin-bottom: 2rem; }
+        .meta { display: flex; gap: 1.5rem; flex-wrap: wrap; font-size: 0.88rem; color: var(--gray-400); }
+        .meta strong { color: var(--white); }
         .article-content { padding: 4rem 0; }
         h2 { font-size: 2rem; font-weight: 700; color: var(--white); margin: 3rem 0 1.5rem; }
         h3 { font-size: 1.5rem; font-weight: 600; color: var(--white); margin: 2rem 0 1rem; }
@@ -70,10 +78,14 @@
         ul, ol { margin: 1.5rem 0; padding-left: 2rem; }
         li { margin-bottom: 0.5rem; color: var(--gray-300); }
         strong { color: var(--white); font-weight: 600; }
+        .article-content a { color: var(--primary); }
+        .tldr { background: rgba(0,168,232,0.08); border-left: 4px solid var(--primary); border-radius: 0 0.75rem 0.75rem 0; padding: 1.5rem 1.75rem; margin: 0 0 2.5rem; }
+        .tldr h3 { color: var(--primary); font-size: 0.85rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; margin: 0 0 0.6rem; }
+        .tldr p { color: var(--gray-200); margin: 0; font-size: 1rem; line-height: 1.65; }
         .tool-card { background: var(--gray-900); border: 2px solid rgba(255,255,255,0.08); border-radius: 1rem; padding: 2rem; margin: 2rem 0; transition: all 0.25s; }
         .tool-card:hover { border-color: var(--highlight); transform: translateY(-4px); box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
         .tool-card h3 { margin-top: 0; color: var(--highlight); }
-        .tool-card__meta { display: flex; gap: 1rem; margin: 1rem 0; font-size: 0.875rem; }
+        .tool-card__meta { display: flex; flex-wrap: wrap; gap: 1rem; margin: 1rem 0; font-size: 0.875rem; }
         .tool-card__badge { padding: 0.25rem 0.75rem; background: var(--dark-soft); color: var(--primary); border-radius: 50px; }
         .prompt-box { background: var(--dark); color: var(--gray-300); padding: 2rem; border-radius: 1rem; margin: 2rem 0; border: 1px solid var(--gray-700); }
         .prompt-box__header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; padding-bottom: 1rem; border-bottom: 1px solid var(--gray-700); }
@@ -85,24 +97,42 @@
         .highlight-box h4 { font-size: 1.125rem; font-weight: 700; color: var(--white); margin-bottom: 0.5rem; }
         .tip-box { background: linear-gradient(135deg, rgba(16,185,129,0.1), rgba(16,185,129,0.05)); border-left: 4px solid var(--success); padding: 1.5rem; border-radius: 0 0.75rem 0.75rem 0; margin: 2rem 0; }
         .tip-box strong { color: var(--success); }
-        .comparison-table { width: 100%; border-collapse: collapse; margin: 2rem 0; }
+        .comparison-table { width: 100%; border-collapse: collapse; margin: 2rem 0; font-size: 0.95rem; }
         .comparison-table th, .comparison-table td { padding: 1rem; text-align: left; border-bottom: 1px solid rgba(255,255,255,0.08); }
         .comparison-table th { background: var(--dark-soft); color: var(--white); font-weight: 600; }
         .comparison-table tr:hover { background: var(--gray-900); }
-        .cta-box { background: var(--dark); color: white; padding: 3rem; border-radius: 1.5rem; text-align: center; margin: 4rem 0; }
+        .cta-box { background: linear-gradient(135deg, rgba(37,211,102,0.08), rgba(0,168,232,0.05)); border: 1px solid rgba(37,211,102,0.2); padding: 2.5rem; border-radius: 1.5rem; text-align: center; margin: 4rem 0; }
         .cta-box h3 { font-size: 1.75rem; margin-bottom: 1rem; color: white; }
-        .cta-box p { color: var(--gray-400); margin-bottom: 2rem; }
+        .cta-box p { color: var(--gray-300); margin-bottom: 2rem; }
+        .cta-box__btn { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.9rem 1.75rem; background: var(--whatsapp); color: #fff !important; font-weight: 700; text-decoration: none; border-radius: 0.6rem; transition: all 0.2s; }
+        .cta-box__btn:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(37,211,102,0.3); }
+        .cta-box__note { display: block; margin-top: 0.85rem; font-size: 0.82rem; color: var(--gray-400); font-style: italic; }
+        .faq-section { margin: 3rem 0; }
+        .faq-item { background: var(--dark-soft); border: 1px solid rgba(255,255,255,0.06); border-radius: 0.75rem; padding: 1.25rem 1.5rem; margin-bottom: 0.85rem; }
+        .faq-item h3 { color: var(--white); font-size: 1.05rem; margin: 0 0 0.6rem 0; font-weight: 700; }
+        .faq-item p { color: var(--gray-300); font-size: 0.95rem; margin: 0; line-height: 1.6; }
+        .author-box { display: flex; gap: 1.25rem; padding: 1.75rem; background: var(--dark-soft); border: 1px solid rgba(255,255,255,0.08); border-radius: 1rem; margin: 3rem 0; }
+        .author-box__avatar { flex-shrink: 0; width: 80px; height: 80px; border-radius: 50%; background: linear-gradient(135deg, var(--primary), var(--highlight)); display: flex; align-items: center; justify-content: center; color: #fff; font-size: 2rem; font-weight: 800; }
+        .author-box__content h4 { font-size: 1.1rem; color: var(--white); margin-bottom: 0.3rem; }
+        .author-box__role { font-size: 0.85rem; color: var(--primary); font-weight: 600; margin-bottom: 0.6rem; }
+        .author-box__bio { font-size: 0.92rem; line-height: 1.55; color: var(--gray-300); margin: 0; }
+        .author-box__bio a { color: var(--primary); text-decoration: none; }
+        .related { background: var(--dark-soft); border-radius: 1rem; padding: 1.75rem; margin: 2.5rem 0; }
+        .related h4 { color: var(--white); font-size: 1rem; margin-bottom: 1rem; letter-spacing: 0.04em; text-transform: uppercase; }
+        .related a { display: block; padding: 0.6rem 0; color: var(--primary); text-decoration: none; font-size: 0.95rem; border-bottom: 1px solid rgba(255,255,255,0.04); }
+        .related a:last-child { border-bottom: none; }
+        .related a:hover { color: var(--highlight); }
         .footer { padding: 3rem 0 1rem; background: var(--gray-800); color: var(--gray-400); margin-top: 4rem; text-align: center; }
     </style>
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
         "@type": "Article",
-        "headline": "Creare Immagini Professionali con AI Generativa",
-        "description": "Guida pratica agli strumenti di image generation: Midjourney, DALL-E, Stable Diffusion. Come creare visual per social, blog e presentazioni in pochi minuti.",
+        "headline": "Creare immagini con l'AI nel 2026: la guida per chi lavora",
+        "description": "Guida 2026 per creare immagini con l'intelligenza artificiale: gpt-image-2, Nano Banana Pro, Midjourney V8.1, Canva e Magnific. Prezzi in euro, prompt pronti per il lavoro e regole EU AI Act sull'uso commerciale.",
         "image": "https://aiosha.it/images/blog/cover-immagini-ai.jpg",
         "datePublished": "2026-04-02",
-        "dateModified": "2026-05-04",
+        "dateModified": "2026-07-18",
         "inLanguage": "it-IT",
         "mainEntityOfPage": {
             "@type": "WebPage",
@@ -139,7 +169,20 @@
         "itemListElement": [
             {"@type":"ListItem","position":1,"name":"Home","item":"https://aiosha.it/"},
             {"@type":"ListItem","position":2,"name":"Blog","item":"https://aiosha.it/blog.html"},
-            {"@type":"ListItem","position":3,"name":"Creare Immagini Professionali con AI Generativa","item":"https://aiosha.it/blog/immagini-ai-generative.html"}
+            {"@type":"ListItem","position":3,"name":"Creare immagini con l'AI nel 2026","item":"https://aiosha.it/blog/immagini-ai-generative.html"}
+        ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {"@type":"Question","name":"Qual è il miglior strumento gratuito per creare immagini con l'AI nel 2026?","acceptedAnswer":{"@type":"Answer","text":"ChatGPT genera immagini anche con l'account gratuito, con limiti giornalieri (indicativamente 2-3 immagini al giorno in modalità rapida) grazie al modello gpt-image-2. Anche Gemini offre una quota gratuita limitata di Nano Banana Pro, e Canva include Dream Lab nel piano free. Midjourney invece non ha un piano gratuito."}},
+            {"@type":"Question","name":"Posso usare le immagini generate con l'AI per scopi commerciali?","acceptedAnswer":{"@type":"Answer","text":"In generale sì. OpenAI ti riconosce la proprietà dell'output e ne permette l'uso commerciale, Google non rivendica diritti sulle immagini generate, Midjourney concede proprietà e uso commerciale solo con un piano a pagamento (le aziende con più di 1 milione di dollari di fatturato devono usare i piani Pro o Mega). Controlla sempre i termini del singolo servizio."}},
+            {"@type":"Question","name":"Cosa cambia con l'EU AI Act dal 2 agosto 2026?","acceptedAnswer":{"@type":"Answer","text":"Dal 2 agosto 2026 si applicano gli obblighi di trasparenza dell'articolo 50: le immagini generate dall'AI devono essere marcate in un formato leggibile dalle macchine. L'obbligo tecnico ricade soprattutto sui fornitori degli strumenti. Chi le usa non deve rimuovere i contrassegni (come il watermark SynthID di Google) e deve dichiarare i deepfake realistici di persone vere. Per i sistemi già sul mercato è prevista una proroga al 2 dicembre 2026."}},
+            {"@type":"Question","name":"Le immagini create con l'intelligenza artificiale sono coperte da copyright?","acceptedAnswer":{"@type":"Answer","text":"Probabilmente no, se sono generate al 100% dall'AI: per il diritto d'autore serve un apporto creativo umano. In pratica puoi usarle liberamente per il tuo lavoro, ma difficilmente potrai impedire ad altri di copiarle. Se l'immagine nasce da una tua foto o da un lavoro creativo consistente, la situazione cambia."}},
+            {"@type":"Question","name":"Quanto costa creare immagini con l'AI nel 2026?","acceptedAnswer":{"@type":"Answer","text":"Si parte da zero euro con i piani gratuiti di ChatGPT, Gemini e Canva. Per un uso lavorativo continuativo: ChatGPT Plus circa 23€/mese IVA inclusa, Google AI Plus circa 7,99€/mese, Canva Pro circa 12€/mese, Magnific Premium 12€/mese, Midjourney da circa 9-10€/mese (10 dollari, piano Basic). I listini cambiano spesso: verifica sul sito di ciascun servizio."}}
         ]
     }
     </script>
@@ -215,235 +258,287 @@ src="https://www.facebook.com/tr?id=27681167481569538&ev=PageView&noscript=1"
                     Torna al Blog
                 </a>
                 <span class="article-tag">Image AI</span>
-                <h1>Creare Immagini Professionali con AI Generativa</h1>
-                <p class="subtitle">Guida pratica agli strumenti di image generation: Midjourney, DALL-E, Stable Diffusion. Come creare visual per social, blog e presentazioni in pochi minuti.</p>
+                <h1>Creare immagini con l'AI nel 2026: la guida per chi lavora</h1>
+                <p class="subtitle">Quale strumento usare (e quanto costa in euro), 4 prompt pronti per post, banner, foto prodotto e infografiche, e cosa dice l'EU AI Act sull'uso commerciale.</p>
+                <div class="meta">
+                    <span>📅 <strong>Aggiornato: 18 luglio 2026</strong></span>
+                    <span>✍️ Aliosha Battaglini</span>
+                    <span>⏱️ Lettura: 10 minuti</span>
+                </div>
             </div>
         </section>
 
         <section class="article-content">
             <div class="container">
-                <p><strong>Hai bisogno di un'immagine per un post social, una presentazione o il tuo sito?</strong> Fino a poco tempo fa avevi due opzioni: pagare un designer o perderti tra milioni di stock photo generiche. Oggi c'è una terza via: l'AI generativa.</p>
+                <p><strong>Qual è il miglior strumento per creare immagini con l'AI nel 2026?</strong> Risposta breve: dipende da cosa devi farci. Per grafiche con testo e modifiche guidate ti conviene ChatGPT con gpt-image-2. Per infografiche e stampe in 4K, Nano Banana Pro di Google. Per la resa estetica, Midjourney V8.1. Per la via più semplice, Canva. Per provarli quasi tutti con un solo abbonamento, Magnific.</p>
 
-                <p>In questa guida vedremo come usare gli strumenti di image generation per creare visual professionali in pochi minuti, senza competenze di design.</p>
+                <p>In questa guida trovi il dettaglio di ognuno, i prezzi in euro, i prompt pronti per gli usi di lavoro più comuni e le regole per l'uso commerciale. È la riscrittura completa di un articolo del 2024: da allora è cambiato praticamente tutto, e il mercato dei generatori di immagini vale circa 484 milioni di dollari nel 2026, contro i circa 412 del 2025 secondo <a href="https://www.fortunebusinessinsights.com/ai-image-generator-market-108604" target="_blank" rel="noopener">Fortune Business Insights</a> (le stime variano molto tra le fonti).</p>
 
-                <h2>1. I 3 Strumenti Principali</h2>
+                <div class="tldr">
+                    <h3>In sintesi</h3>
+                    <p>
+                        Nel 2026 crei immagini professionali scrivendo in italiano, spesso gratis. <strong>gpt-image-2</strong> (ChatGPT) scrive testo leggibile e modifica su istruzione, <strong>Nano Banana Pro</strong> (Gemini) è il migliore per infografiche e 4K, <strong>Midjourney V8.1</strong> vince sull'estetica, <strong>Canva Dream Lab</strong> è la porta d'ingresso per i non tecnici, <strong>Magnific</strong> raccoglie 40+ modelli a 12€/mese. Dal 2 agosto 2026 l'EU AI Act impone la marcatura delle immagini AI: l'obbligo pesa sui fornitori, tu non devi rimuovere i contrassegni e devi dichiarare i deepfake.
+                    </p>
+                </div>
+
+                <h2>Cosa è cambiato nel 2026 (e perché le vecchie guide non valgono più)</h2>
+
+                <p>Se l'ultima volta che hai provato a generare immagini era il 2024, riparti da zero: è cambiato quasi tutto. DALL-E 3 dentro ChatGPT Plus, Midjourney solo via Discord, i comandi tipo "--v 6": roba archiviata. Ecco i quattro cambiamenti che contano per chi lavora.</p>
+
+                <ul>
+                    <li><strong>ChatGPT ora usa gpt-image-2</strong>, lanciato il 21 aprile 2026 con "ChatGPT Images 2.0" (<a href="https://openai.com/index/introducing-chatgpt-images-2-0/" target="_blank" rel="noopener">annuncio OpenAI</a>): ragiona sul prompt prima di disegnare, produce immagini in 2K, scrive testo leggibile dentro l'immagine e genera fino a 8 immagini coerenti con gli stessi personaggi. E la generazione base è disponibile anche gratis, con limiti giornalieri.</li>
+                    <li><strong>Midjourney non è più solo Discord</strong>: c'è una web app completa su midjourney.com. Il modello di default è V8.1, in linea dal 10 giugno 2026.</li>
+                    <li><strong>Google è entrata pesante</strong>: il modello immagini di Gemini è Nano Banana Pro (Gemini 3 Pro Image), annunciato a novembre 2025 (<a href="https://blog.google/innovation-and-ai/products/nano-banana-pro/" target="_blank" rel="noopener">blog Google</a>). Testo accurato in più lingue, uscita in 2K e 4K, infografiche costruite su dati di Google Search.</li>
+                    <li><strong>Freepik è diventato Magnific</strong> (rebrand di aprile 2026): un unico abbonamento per accedere a più di 40 modelli, da Nano Banana a Flux.2 a Seedream 5 Pro.</li>
+                </ul>
+
+                <p>C'è anche un cambiamento più profondo: non serve più imparare parametri e codici. Descrivi cosa vuoi in italiano, come faresti con un collega grafico. Se invece ti stai ancora chiedendo quale assistente IA usare in generale, ne ho parlato nel confronto <a href="chatgpt-vs-claude-vs-gemini-vs-perplexity.html">ChatGPT vs Claude vs Gemini vs Perplexity</a>.</p>
+
+                <h2>Quale strumento scegliere? I 5 che contano davvero</h2>
+
+                <p>Nelle sessioni con i miei clienti ho visto che la domanda giusta non è "qual è il più potente", ma "cosa devo produrre questa settimana". Ecco i cinque strumenti, ognuno con il suo caso d'uso ideale. I prezzi sono indicativi: cambiano spesso, verifica sempre sul sito ufficiale.</p>
 
                 <div class="tool-card">
-                    <h3>Midjourney</h3>
+                    <h3>ChatGPT con gpt-image-2</h3>
                     <div class="tool-card__meta">
-                        <span class="tool-card__badge">A pagamento</span>
-                        <span class="tool-card__badge">Top qualità</span>
-                        <span class="tool-card__badge">Via Discord</span>
+                        <span class="tool-card__badge">Anche gratis (con limiti)</span>
+                        <span class="tool-card__badge">Testo leggibile</span>
+                        <span class="tool-card__badge">Modifiche su istruzione</span>
                     </div>
-                    <p><strong>Migliore per:</strong> Immagini artistiche, concept art, visual di alta qualità per marketing e brand.</p>
-                    <p><strong>Prezzo:</strong> Da $10/mese (piano Basic)</p>
-                    <p><strong>Pro:</strong> Qualità altissima, stile coerente, aggiornamenti frequenti</p>
-                    <p><strong>Contro:</strong> Richiede Discord, curva di apprendimento sui parametri</p>
+                    <p><strong>Migliore per:</strong> grafiche di lavoro con scritte (banner, locandine, post), modifiche guidate a immagini esistenti, serie di immagini con gli stessi personaggi.</p>
+                    <p><strong>Prezzo:</strong> generazione base anche gratis, con limiti giornalieri. La modalità avanzata ("thinking") e l'editing spinto richiedono ChatGPT Plus, circa 23€/mese IVA inclusa in Italia.</p>
+                    <p><strong>Pro:</strong> capisce l'italiano alla perfezione, scrive testo corretto nelle immagini, correggi a parole ("togli la scritta, scurisci lo sfondo").</p>
+                    <p><strong>Contro:</strong> sull'estetica pura Midjourney resta un gradino sopra.</p>
                 </div>
 
                 <div class="tool-card">
-                    <h3>DALL-E 3 (via ChatGPT Plus)</h3>
+                    <h3>Nano Banana Pro (Gemini)</h3>
                     <div class="tool-card__meta">
-                        <span class="tool-card__badge">A pagamento</span>
-                        <span class="tool-card__badge">Facile da usare</span>
-                        <span class="tool-card__badge">Integrato</span>
+                        <span class="tool-card__badge">Quota gratuita</span>
+                        <span class="tool-card__badge">Infografiche</span>
+                        <span class="tool-card__badge">2K / 4K</span>
                     </div>
-                    <p><strong>Migliore per:</strong> Immagini rapide, illustrazioni, mockup, visual per blog e social.</p>
-                    <p><strong>Prezzo:</strong> Incluso in ChatGPT Plus ($20/mese)</p>
-                    <p><strong>Pro:</strong> Interfaccia semplice, buona comprensione del linguaggio naturale, veloce</p>
-                    <p><strong>Contro:</strong> Meno parametri di controllo rispetto a Midjourney</p>
+                    <p><strong>Migliore per:</strong> infografiche e poster con tanto testo, immagini basate su dati reali (attinge a Google Search), materiali in 4K da mandare in stampa.</p>
+                    <p><strong>Prezzo:</strong> quota limitata anche gratis. Gli abbonamenti Google sono AI Plus (circa 7,99€/mese) e AI Pro (circa 21,99€/mese): verifica su gemini.google/subscriptions, nomi e prezzi sono cambiati di recente.</p>
+                    <p><strong>Pro:</strong> testo accurato in più lingue, italiano compreso. Tutte le immagini portano il watermark invisibile SynthID: un vantaggio per la conformità, come vedremo più sotto.</p>
+                    <p><strong>Contro:</strong> la quota gratuita finisce in fretta se lavori a volume.</p>
                 </div>
 
                 <div class="tool-card">
-                    <h3>Leonardo.ai</h3>
+                    <h3>Midjourney V8.1</h3>
+                    <div class="tool-card__meta">
+                        <span class="tool-card__badge">A pagamento</span>
+                        <span class="tool-card__badge">Top estetica</span>
+                        <span class="tool-card__badge">Web app</span>
+                    </div>
+                    <p><strong>Migliore per:</strong> fotorealismo, mood, immagini di brand e campagne dove la resa visiva è tutto.</p>
+                    <p><strong>Prezzo:</strong> nessun piano gratuito. Basic 10 $ (circa 9-10€), Standard 30 $ (circa 28€), Pro 60 $ (circa 56€) al mese; l'importo in euro dipende dal cambio.</p>
+                    <p><strong>Pro:</strong> qualità estetica ancora imbattuta, ora con web app completa su midjourney.com (niente più Discord obbligatorio).</p>
+                    <p><strong>Contro:</strong> più debole sul testo dentro le immagini e sulle istruzioni letterali.</p>
+                </div>
+
+                <div class="tool-card">
+                    <h3>Canva Dream Lab</h3>
                     <div class="tool-card__meta">
                         <span class="tool-card__badge">Freemium</span>
-                        <span class="tool-card__badge">Piano gratuito</span>
-                        <span class="tool-card__badge">Versatile</span>
+                        <span class="tool-card__badge">Zero curva di apprendimento</span>
+                        <span class="tool-card__badge">Dentro i template</span>
                     </div>
-                    <p><strong>Migliore per:</strong> Sperimentare, progetti con budget limitato, immagini per prodotti.</p>
-                    <p><strong>Prezzo:</strong> Piano gratuito con 150 crediti/giorno</p>
-                    <p><strong>Pro:</strong> Gratuito per iniziare, modelli specializzati, buon controllo</p>
-                    <p><strong>Contro:</strong> Qualità variabile, interfaccia meno intuitiva</p>
+                    <p><strong>Migliore per:</strong> chi non è tecnico e vuole l'immagine già dentro il formato giusto: post, storia, volantino, presentazione.</p>
+                    <p><strong>Prezzo:</strong> incluso in Canva, anche nel piano gratuito con limiti. Canva Pro costa circa 12€/mese (verifica sul sito).</p>
+                    <p><strong>Pro:</strong> generi (con il modello Phoenix di Leonardo.Ai) e impagini nello stesso posto, senza scaricare e ricaricare file.</p>
+                    <p><strong>Contro:</strong> meno controllo fine rispetto agli strumenti dedicati.</p>
                 </div>
 
-                <h2>2. Confronto Rapido</h2>
+                <div class="tool-card">
+                    <h3>Magnific (ex Freepik)</h3>
+                    <div class="tool-card__meta">
+                        <span class="tool-card__badge">Aggregatore</span>
+                        <span class="tool-card__badge">40+ modelli</span>
+                        <span class="tool-card__badge">Un solo abbonamento</span>
+                    </div>
+                    <p><strong>Migliore per:</strong> chi vuole sperimentare tanti modelli diversi (Nano Banana, Flux.2, Seedream 5 Pro, Grok, Recraft) senza aprire dieci account.</p>
+                    <p><strong>Prezzo:</strong> Premium a 12€/mese (<a href="https://www.magnific.com/pricing" target="_blank" rel="noopener">listino ufficiale</a>).</p>
+                    <p><strong>Pro:</strong> rapporto qualità-prezzo ottimo per confrontare i modelli sullo stesso prompt.</p>
+                    <p><strong>Contro:</strong> l'interfaccia unica appiattisce un po' le funzioni speciali di ciascun modello.</p>
+                </div>
 
                 <table class="comparison-table">
                     <thead>
                         <tr>
                             <th>Strumento</th>
-                            <th>Qualità</th>
-                            <th>Facilità</th>
-                            <th>Prezzo</th>
-                            <th>Migliore per</th>
+                            <th>Piano gratuito</th>
+                            <th>Prezzo indicativo</th>
+                            <th>Il suo forte</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td><strong>Midjourney</strong></td>
-                            <td>⭐⭐⭐⭐⭐</td>
-                            <td>⭐⭐⭐</td>
-                            <td>$10-60/mese</td>
-                            <td>Marketing, Brand</td>
+                            <td><strong>ChatGPT (gpt-image-2)</strong></td>
+                            <td>Sì, con limiti giornalieri</td>
+                            <td>Plus circa 23€/mese</td>
+                            <td>Testo e modifiche guidate</td>
                         </tr>
                         <tr>
-                            <td><strong>DALL-E 3</strong></td>
-                            <td>⭐⭐⭐⭐</td>
-                            <td>⭐⭐⭐⭐⭐</td>
-                            <td>$20/mese</td>
-                            <td>Rapidità, Blog</td>
+                            <td><strong>Nano Banana Pro</strong></td>
+                            <td>Sì, quota limitata</td>
+                            <td>AI Plus circa 7,99€/mese</td>
+                            <td>Infografiche, 4K</td>
                         </tr>
                         <tr>
-                            <td><strong>Leonardo.ai</strong></td>
-                            <td>⭐⭐⭐⭐</td>
-                            <td>⭐⭐⭐⭐</td>
-                            <td>Gratis/Pay</td>
-                            <td>Sperimentare</td>
+                            <td><strong>Midjourney V8.1</strong></td>
+                            <td>No</td>
+                            <td>Da circa 9-10€/mese</td>
+                            <td>Estetica, fotorealismo</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Canva Dream Lab</strong></td>
+                            <td>Sì, con limiti</td>
+                            <td>Pro circa 12€/mese</td>
+                            <td>Semplicità, formati pronti</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Magnific</strong></td>
+                            <td>Prova limitata</td>
+                            <td>Premium 12€/mese</td>
+                            <td>40+ modelli in un posto</td>
                         </tr>
                     </tbody>
                 </table>
 
-                <h2>3. Come Scrivere Prompt Efficaci per Immagini</h2>
+                <div class="tip-box">
+                    <p><strong>Il mio consiglio pratico:</strong> se parti da zero, inizia dal piano gratuito di ChatGPT o da Canva. Passa a un abbonamento solo quando i limiti giornalieri iniziano a rallentarti davvero.</p>
+                </div>
 
-                <p>La qualità dell'immagine dipende al 70% dal prompt. Ecco la struttura vincente:</p>
+                <h2>Come si scrive un prompt per immagini che funziona?</h2>
+
+                <p>La buona notizia del 2026: i modelli capiscono l'italiano corrente. Niente più formule in inglese piene di "4K, highly detailed". La qualità del risultato dipende in gran parte da quanto sei preciso su quattro elementi.</p>
 
                 <div class="highlight-box">
-                    <h4>Formula del Prompt Perfetto</h4>
-                    <p><strong>[SOGGETTO] + [STILE] + [MOOD/ATMOSFERA] + [DETTAGLI TECNICI] + [PARAMETRI]</strong></p>
+                    <h4>La struttura che uso in ogni sessione</h4>
+                    <p><strong>[COSA: soggetto e scena] + [PER COSA: dove finirà l'immagine e formato] + [STILE: fotografico, illustrato, piatto] + [VINCOLI: colori del brand, testo esatto da scrivere, cosa NON fare]</strong></p>
                 </div>
 
-                <h3>Esempio Pratico</h3>
+                <p>Ecco quattro prompt pronti per gli usi di lavoro più richiesti. Copiali, sostituisci le parti tra parentesi quadre e adattali. Funzionano con ChatGPT, Gemini e Canva; per Midjourney tieni le istruzioni più visive e meno letterali. Se poi vuoi prompt pronti anche per email, riunioni e report, li trovi in <a href="chatgpt-al-lavoro-30-prompt.html">ChatGPT al lavoro: 30 prompt pronti</a>.</p>
 
-                <div class="prompt-box">
-                    <div class="prompt-box__header">
-                        <span class="prompt-box__title">PROMPT BASE</span>
-                        <button class="prompt-box__copy" onclick="copyPrompt(this)">Copia</button>
-                    </div>
-                    <div class="prompt-box__content">Un professionista che lavora al laptop in un ufficio moderno</div>
-                </div>
-
-                <div class="prompt-box">
-                    <div class="prompt-box__header">
-                        <span class="prompt-box__title">PROMPT OTTIMIZZATO</span>
-                        <button class="prompt-box__copy" onclick="copyPrompt(this)">Copia</button>
-                    </div>
-                    <div class="prompt-box__content">Un giovane professionista concentrato che lavora al MacBook in un ufficio moderno e luminoso, stile fotografico professionale, luce naturale che entra da grandi finestre, palette colori blu e bianco, atmosfera produttiva e rilassata, inquadratura da dietro la spalla, depth of field, alta qualità, 4K --ar 16:9</div>
-                </div>
-
-                <h2>4. Prompt Pronti all'Uso per Business</h2>
-
-                <h3>Post Social Media</h3>
+                <h3>1. Post per i social</h3>
                 <div class="prompt-box">
                     <div class="prompt-box__header">
                         <span class="prompt-box__title">PROMPT</span>
                         <button class="prompt-box__copy" onclick="copyPrompt(this)">Copia</button>
                     </div>
-                    <div class="prompt-box__content">Illustrazione minimalista e moderna per post Instagram su [TEMA], colori vivaci ma professionali, stile flat design, composizione centrata, sfondo pulito, adatto per formato quadrato 1:1, design contemporaneo --ar 1:1</div>
+                    <div class="prompt-box__content">Crea un'immagine quadrata per un post Instagram di [ATTIVITÀ, es. uno studio dentistico a Pistoia]. Scena: [es. dottoressa sorridente che mostra una radiografia a una paziente]. Stile fotografico luminoso e professionale, colori dominanti [COLORI DEL BRAND]. Niente testo nell'immagine: lascia pulita la parte alta, il titolo lo aggiungo io.</div>
                 </div>
 
-                <h3>Hero Image per Sito Web</h3>
+                <h3>2. Banner promozionale con testo</h3>
                 <div class="prompt-box">
                     <div class="prompt-box__header">
                         <span class="prompt-box__title">PROMPT</span>
                         <button class="prompt-box__copy" onclick="copyPrompt(this)">Copia</button>
                     </div>
-                    <div class="prompt-box__content">Hero image professionale per homepage aziendale nel settore [SETTORE], composizione orizzontale, spazio per testo a sinistra, colori corporate [COLORI BRAND], stile fotografico pulito e moderno, alta risoluzione, illuminazione professionale --ar 16:9</div>
+                    <div class="prompt-box__content">Crea un banner orizzontale 16:9 per una promozione. Scrivi nell'immagine, in grande e ben leggibile: "[TESTO PROMO, es. -20% SOLO A LUGLIO]". In basso a destra, più piccolo: "[NOME ATTIVITÀ]". Stile pulito e moderno, sfondo [COLORE], font senza grazie. Il testo deve essere esattamente quello indicato, senza errori di ortografia.</div>
                 </div>
 
-                <h3>Illustrazione Blog</h3>
+                <h3>3. Foto prodotto ambientata</h3>
                 <div class="prompt-box">
                     <div class="prompt-box__header">
-                        <span class="prompt-box__title">PROMPT</span>
+                        <span class="prompt-box__title">PROMPT (con foto del prodotto allegata)</span>
                         <button class="prompt-box__copy" onclick="copyPrompt(this)">Copia</button>
                     </div>
-                    <div class="prompt-box__content">Illustrazione isometrica che rappresenta [CONCETTO], stile tech moderno, colori gradiente blu e viola, design pulito, adatta per articolo di blog, sfondo bianco o trasparente, dettagli minimali --ar 3:2</div>
+                    <div class="prompt-box__content">Prendi la foto del mio prodotto allegata e ambientala su un tavolo di legno chiaro accanto a una finestra, luce naturale di mattina, sfondo leggermente sfocato, stile e-commerce premium. Mantieni identici forma, colori ed etichetta del prodotto: non inventare dettagli.</div>
                 </div>
 
-                <h3>Mockup Prodotto</h3>
+                <h3>4. Infografica</h3>
                 <div class="prompt-box">
                     <div class="prompt-box__header">
-                        <span class="prompt-box__title">PROMPT</span>
+                        <span class="prompt-box__title">PROMPT (ideale per Nano Banana Pro)</span>
                         <button class="prompt-box__copy" onclick="copyPrompt(this)">Copia</button>
                     </div>
-                    <div class="prompt-box__content">Mockup fotografico professionale di [PRODOTTO], su sfondo neutro elegante, illuminazione da studio, ombre morbide, composizione product photography, stile e-commerce premium, alta qualità, dettagli nitidi --ar 4:5</div>
+                    <div class="prompt-box__content">Crea un'infografica verticale in italiano che spiega [PROCESSO, es. come richiedere un preventivo in 4 passaggi]. Titolo in alto: "[TITOLO]". Quattro blocchi numerati, ognuno con un'icona semplice e massimo 8 parole. Palette: [COLORI DEL BRAND]. Stile piatto e professionale, risoluzione adatta alla stampa in A4.</div>
                 </div>
-
-                <h2>5. Parametri Essenziali (Midjourney)</h2>
-
-                <ul>
-                    <li><strong>--ar 16:9</strong> — Formato panoramico (siti web, presentazioni)</li>
-                    <li><strong>--ar 1:1</strong> — Formato quadrato (Instagram, profili)</li>
-                    <li><strong>--ar 9:16</strong> — Formato verticale (Stories, Reels)</li>
-                    <li><strong>--v 6</strong> — Usa versione 6 del modello (la più recente)</li>
-                    <li><strong>--style raw</strong> — Stile più fotografico, meno artistico</li>
-                    <li><strong>--q 2</strong> — Qualità massima (usa più crediti)</li>
-                </ul>
 
                 <div class="tip-box">
-                    <p><strong>Pro Tip:</strong> Inizia sempre con un prompt semplice, genera 4 varianti, poi affina quella che ti piace di più aggiungendo dettagli specifici.</p>
+                    <p><strong>Regola d'oro:</strong> la prima generazione è una bozza, non il risultato. Chiedi le correzioni come le chiederesti a un grafico: "più luce", "sposta il testo", "meno oggetti sul tavolo". Con gpt-image-2 e Nano Banana Pro le modifiche su istruzione sono il vero superpotere.</p>
                 </div>
 
-                <h2>6. Workflow Pratico in 5 Step</h2>
+                <h2>Puoi usarle per lavoro? Uso commerciale, copyright e EU AI Act</h2>
 
-                <ol>
-                    <li><strong>Definisci l'obiettivo</strong> — Dove userai l'immagine? Social? Blog? Presentazione?</li>
-                    <li><strong>Scegli lo stile</strong> — Fotografico, illustrativo, artistico, minimalista?</li>
-                    <li><strong>Scrivi il prompt base</strong> — Soggetto + stile + atmosfera</li>
-                    <li><strong>Genera 4 varianti</strong> — Analizza e scegli la migliore</li>
-                    <li><strong>Raffina</strong> — Aggiungi dettagli o modifica specifiche con variazioni</li>
-                </ol>
+                <p>La domanda che mi fanno più spesso nelle sessioni: "ma queste immagini le posso mettere sul sito e nelle pubblicità?". In generale sì, con qualche distinguo che conviene conoscere.</p>
 
-                <h2>7. Errori Comuni da Evitare</h2>
-
+                <h3>Di chi sono le immagini generate</h3>
                 <ul>
-                    <li><strong>Prompt troppo vaghi</strong> — "Una persona felice" vs "Una donna d'affari sorridente in ufficio moderno"</li>
-                    <li><strong>Troppi dettagli contrastanti</strong> — Meno è meglio, focus su 3-4 elementi chiave</li>
-                    <li><strong>Ignorare l'aspect ratio</strong> — Un'immagine quadrata non funziona per un banner</li>
-                    <li><strong>Non iterare</strong> — La prima generazione raramente è perfetta</li>
-                    <li><strong>Dimenticare il brand</strong> — Specifica sempre i colori del tuo brand</li>
+                    <li><strong>OpenAI (ChatGPT):</strong> l'output è tuo e l'uso commerciale è permesso dai Terms of Use.</li>
+                    <li><strong>Google (Gemini):</strong> non rivendica la proprietà sugli output, uso commerciale ok.</li>
+                    <li><strong>Midjourney:</strong> proprietà e uso commerciale solo con un piano a pagamento. Le aziende con più di 1 milione di dollari di fatturato devono usare i piani Pro o Mega.</li>
                 </ul>
 
-                <h2>8. Caso d'Uso: Post LinkedIn in 5 Minuti</h2>
+                <p>Un caveat importante: un'immagine generata al 100% dall'intelligenza artificiale con ogni probabilità <strong>non è coperta da copyright</strong>, perché il diritto d'autore richiede paternità umana. Tradotto: puoi usarla, ma difficilmente potrai impedire ad altri di copiarla. Per un logo o un asset di brand strategico, tienilo presente.</p>
 
-                <p>Esempio pratico per creare un'immagine per un post su "produttività con AI":</p>
+                <h3>EU AI Act: cosa cambia dal 2 agosto 2026</h3>
 
-                <div class="prompt-box">
-                    <div class="prompt-box__header">
-                        <span class="prompt-box__title">PROMPT COMPLETO</span>
-                        <button class="prompt-box__copy" onclick="copyPrompt(this)">Copia</button>
-                    </div>
-                    <div class="prompt-box__content">Illustrazione moderna e professionale di un cervello umano connesso a circuiti digitali luminosi, rappresenta l'intelligenza artificiale e la produttività, colori blu elettrico e arancione, stile tech contemporaneo, sfondo scuro con luci al neon, composizione bilanciata per post LinkedIn, design pulito e corporate-friendly --ar 1:1 --v 6</div>
-                </div>
-
-                <p><strong>Risultato:</strong> Immagine professionale in 30 secondi, pronta per il post.</p>
-
-                <h2>9. Tool Bonus per Post-Produzione</h2>
+                <p>Dal 2 agosto 2026 si applicano gli obblighi di trasparenza dell'<a href="https://artificialintelligenceact.eu/transparency-rules-article-50/" target="_blank" rel="noopener">articolo 50 dell'EU AI Act</a>: i contenuti generati dall'IA devono essere marcati in un formato leggibile dalle macchine. Tre cose da sapere per non farsi prendere dal panico:</p>
 
                 <ul>
-                    <li><strong>Canva</strong> — Aggiungi testo, loghi, elementi grafici alle immagini AI</li>
-                    <li><strong>Remove.bg</strong> — Rimuovi sfondi automaticamente</li>
-                    <li><strong>ClipDrop</strong> — Migliora qualità, rimuovi oggetti, modifica dettagli</li>
+                    <li><strong>L'obbligo tecnico è soprattutto dei fornitori</strong> degli strumenti (OpenAI, Google, Midjourney e gli altri), non tuo che li usi. Google, ad esempio, inserisce già il watermark invisibile SynthID in tutte le immagini di Nano Banana Pro.</li>
+                    <li><strong>Tu non devi rimuovere i contrassegni</strong>: niente tool per cancellare watermark o metadati dalle immagini generate.</li>
+                    <li><strong>I deepfake vanno dichiarati</strong>: se pubblichi un'immagine realistica di una persona vera generata dall'AI, devi dire chiaramente che è artificiale.</li>
                 </ul>
 
-                <div class="highlight-box">
-                    <h4>Licenze e Copyright</h4>
-                    <p><strong>Midjourney:</strong> Possiedi i diritti commerciali (con piano a pagamento)<br>
-                    <strong>DALL-E:</strong> Possiedi i diritti, puoi usare commercialmente<br>
-                    <strong>Leonardo.ai:</strong> Verifica ToS, generalmente OK per uso commerciale</p>
-                </div>
+                <p>Per i sistemi già sul mercato è prevista una proroga al 2 dicembre 2026. Se usi gli strumenti principali e non spacci le immagini generate per fotografie reali di persone vere, sei nella zona sicura.</p>
 
                 <div class="cta-box">
-                    <h3>Vuoi Padroneggiare Altri Strumenti AI?</h3>
-                    <p>Scopri come usare Claude per email, Gemini per documenti, Perplexity per ricerche e molto altro.</p>
-                    <a href="../index.html#lead-magnet" class="btn btn--primary">Scarica la Guida Gratuita</a>
+                    <h3>Vuoi impostare il flusso immagini della tua attività in un pomeriggio?</h3>
+                    <p>In una <a href="../consulenza.html" style="color:#F5A623;font-weight:700;">Sessione 1-to-1</a> (1 ora e 30 minuti a schermo condiviso, 250€, oppure pacchetto da 5 a 999€) costruiamo insieme prompt, template e flusso di lavoro sul tuo caso concreto: post, banner, foto prodotto, materiali di stampa.</p>
+                    <a href="https://wa.me/393313883929?text=Ciao%20Aliosha%2C%20ho%20letto%20la%20guida%20sulle%20immagini%20AI%20e%20vorrei%20informazioni%20sulla%20Sessione%201-to-1" target="_blank" rel="noopener" class="cta-box__btn">💬 Scrivimi su WhatsApp</a>
+                    <span class="cta-box__note">Rispondo io personalmente, non un'AI.</span>
                 </div>
 
-                
-                <div class="cta-box" style="margin-top:2rem;">
-                    <h3>Vuoi portare l'AI nel tuo lavoro, non solo leggerne?</h3>
-                    <p>Guarda il <a href="../corso.html" style="color:#00A8E8;font-weight:700;">corso Intelligenza Artificiale in Pratica</a> (dal vivo a Pescia oppure online), oppure prenota una <a href="../consulenza.html" style="color:#F5A623;font-weight:700;">Sessione di lavoro 1-to-1</a>: 1 ora e 30 minuti a schermo condiviso sul tuo caso concreto.</p>
-                    <a href="../corso.html" class="btn">Scopri il Corso</a>
+                <div class="author-box">
+                    <div class="author-box__avatar">A</div>
+                    <div class="author-box__content">
+                        <h4>Aliosha Battaglini</h4>
+                        <div class="author-box__role">Founder AI Osha · Formatore di intelligenza artificiale</div>
+                        <p class="author-box__bio">
+                            14 libri pubblicati, casa editrice indipendente, 100+ live effettuate. Insegna AI in pratica a chi lavora, PMI, professionisti e partite IVA, in tutta Italia e dalla Fondazione Poma di Pescia (PT).
+                            <a href="../chi-sono.html">Scopri di più →</a>
+                        </p>
+                    </div>
+                </div>
+
+                <section class="faq-section">
+                    <h2>Domande frequenti</h2>
+
+                    <div class="faq-item">
+                        <h3>Qual è il miglior strumento gratuito per creare immagini con l'AI nel 2026?</h3>
+                        <p>ChatGPT genera immagini anche con l'account gratuito, con limiti giornalieri (indicativamente 2-3 immagini al giorno in modalità rapida). Anche Gemini offre una quota gratuita di Nano Banana Pro, e Canva include Dream Lab nel piano free. Midjourney invece non ha un piano gratuito.</p>
+                    </div>
+
+                    <div class="faq-item">
+                        <h3>Posso usare le immagini generate con l'AI per scopi commerciali?</h3>
+                        <p>In generale sì. OpenAI ti riconosce la proprietà dell'output, Google non rivendica diritti sulle immagini, Midjourney concede l'uso commerciale solo con un piano a pagamento (aziende sopra 1 milione di dollari di fatturato: piani Pro o Mega). Controlla sempre i termini del singolo servizio.</p>
+                    </div>
+
+                    <div class="faq-item">
+                        <h3>Cosa cambia con l'EU AI Act dal 2 agosto 2026?</h3>
+                        <p>Le immagini generate dall'IA dovranno essere marcate in modo leggibile dalle macchine. L'obbligo ricade soprattutto sui fornitori degli strumenti. Chi le usa non deve rimuovere i contrassegni (come SynthID di Google) e deve dichiarare i deepfake realistici. Per i sistemi già sul mercato c'è una proroga al 2 dicembre 2026.</p>
+                    </div>
+
+                    <div class="faq-item">
+                        <h3>Le immagini create con l'intelligenza artificiale sono coperte da copyright?</h3>
+                        <p>Probabilmente no, se generate al 100% dall'AI: serve un apporto creativo umano. Puoi usarle liberamente per il tuo lavoro, ma difficilmente potrai impedire ad altri di copiarle. Se parti da una tua foto o fai un lavoro creativo consistente, la situazione cambia.</p>
+                    </div>
+
+                    <div class="faq-item">
+                        <h3>Quanto costa creare immagini con l'AI nel 2026?</h3>
+                        <p>Si parte da zero con i piani gratuiti di ChatGPT, Gemini e Canva. Per uso continuativo: ChatGPT Plus circa 23€/mese IVA inclusa, Google AI Plus circa 7,99€, Canva Pro circa 12€, Magnific Premium 12€, Midjourney da circa 9-10€ al mese. I listini cambiano spesso: verifica sul sito di ciascun servizio.</p>
+                    </div>
+                </section>
+
+                <div class="related">
+                    <h4>Continua a leggere</h4>
+                    <a href="ai-per-chi-lavora-15-cose-da-fare-oggi.html">→ Intelligenza Artificiale per chi lavora: 15 cose che puoi fare oggi</a>
+                    <a href="chatgpt-al-lavoro-30-prompt.html">→ ChatGPT al lavoro: 30 prompt pronti per email, riunioni e report</a>
+                    <a href="chatgpt-vs-claude-vs-gemini-vs-perplexity.html">→ ChatGPT vs Claude vs Gemini vs Perplexity: quale scegliere</a>
                 </div>
 
                 <a href="../blog.html" class="back-link">

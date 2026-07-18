@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Guida Completa al Prompt Engineering | AI Osha</title>
-    <meta name="description" content="La guida definitiva per scrivere prompt efficaci: framework, tecniche avanzate, esempi pratici. Trasforma l'AI da giocattolo a strumento professionale.">
+    <title>Come scrivere prompt: guida pratica 2026 | AI Osha</title>
+    <meta name="description" content="Come scrivere prompt efficaci nel 2026: framework R.O.L.E., consigli ufficiali OpenAI, Anthropic e Google, esempi pratici in italiano per chi lavora.">
     <meta name="author" content="Aliosha Battaglini">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://aiosha.it/blog/guida-completa-prompting.html">
@@ -12,15 +12,18 @@
     <!-- Open Graph -->
     <meta property="og:type" content="article">
     <meta property="og:url" content="https://aiosha.it/blog/guida-completa-prompting.html">
-    <meta property="og:title" content="Guida Completa al Prompt Engineering | AI Osha">
-    <meta property="og:description" content="La guida definitiva per scrivere prompt efficaci: framework, tecniche avanzate, esempi pratici.">
+    <meta property="og:title" content="Come scrivere prompt: guida pratica 2026 | AI Osha">
+    <meta property="og:description" content="Come scrivere prompt efficaci nel 2026: framework R.O.L.E., consigli ufficiali OpenAI, Anthropic e Google, esempi pratici in italiano per chi lavora.">
     <meta property="og:image" content="https://aiosha.it/images/blog/cover-prompt-engineering.jpg">
     <meta property="og:locale" content="it_IT">
+    <meta property="article:published_time" content="2026-03-20">
+    <meta property="article:modified_time" content="2026-07-18">
+    <meta property="article:author" content="Aliosha Battaglini">
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Guida Completa al Prompt Engineering | AI Osha">
-    <meta name="twitter:description" content="Framework, tecniche avanzate ed esempi pratici per scrivere prompt efficaci.">
+    <meta name="twitter:title" content="Come scrivere prompt: guida pratica 2026 | AI Osha">
+    <meta name="twitter:description" content="Framework R.O.L.E., consigli ufficiali OpenAI, Anthropic e Google, esempi pratici in italiano per chi lavora.">
     <meta name="twitter:image" content="https://aiosha.it/images/blog/cover-prompt-engineering.jpg">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -46,6 +49,7 @@
             --white: #ffffff;
             --success: #10b981;
             --error: #ef4444;
+            --whatsapp: #25D366;
             --font-display: 'Plus Jakarta Sans', sans-serif;
             --font-mono: 'JetBrains Mono', monospace;
         }
@@ -68,9 +72,13 @@
         h2 { font-size: 2rem; font-weight: 700; color: var(--white); margin: 3rem 0 1.5rem; }
         h3 { font-size: 1.5rem; font-weight: 600; color: var(--white); margin: 2rem 0 1rem; }
         p { margin-bottom: 1.5rem; color: var(--gray-300); }
+        .article-content a { color: var(--primary); }
         ul, ol { margin: 1.5rem 0; padding-left: 2rem; }
         li { margin-bottom: 0.5rem; color: var(--gray-300); }
         strong { color: var(--white); font-weight: 600; }
+        .tldr { background: rgba(0,168,232,0.08); border-left: 4px solid var(--primary); border-radius: 0 0.75rem 0.75rem 0; padding: 1.5rem 1.75rem; margin: 0 0 2.5rem; }
+        .tldr h3 { color: var(--primary); font-size: 0.85rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; margin: 0 0 0.6rem; }
+        .tldr p { color: #e5e7eb; margin: 0; font-size: 1rem; line-height: 1.65; }
         .comparison-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin: 2rem 0; }
         .comparison-card { padding: 1.5rem; border-radius: 1rem; border: 2px solid; }
         .comparison-card--bad { background: linear-gradient(135deg, rgba(239,68,68,0.05), rgba(239,68,68,0.02)); border-color: var(--error); }
@@ -79,18 +87,36 @@
         .framework-box { background: linear-gradient(135deg, var(--accent), var(--primary)); color: white; padding: 2.5rem; border-radius: 1.5rem; margin: 2rem 0; }
         .framework-box h3 { color: white; margin-top: 0; }
         .framework-box code { background: rgba(255,255,255,0.2); padding: 0.25rem 0.5rem; border-radius: 0.25rem; font-family: var(--font-mono); }
-        .prompt-box { background: var(--dark); color: #d1d5db; padding: 2rem; border-radius: 1rem; margin: 2rem 0; }
+        .prompt-box { background: var(--dark); color: #d1d5db; padding: 2rem; border-radius: 1rem; margin: 2rem 0; border: 1px solid rgba(0,168,232,0.2); }
         .prompt-box__header { display: flex; justify-content: space-between; margin-bottom: 1rem; padding-bottom: 1rem; border-bottom: 1px solid #374151; }
         .prompt-box__title { font-family: var(--font-mono); font-size: 0.875rem; color: var(--highlight); font-weight: 600; }
-        .prompt-box__copy { padding: 0.5rem 1rem; background: #374151; color: #d1d5db; border-radius: 0.375rem; font-size: 0.875rem; cursor: pointer; }
+        .prompt-box__copy { padding: 0.5rem 1rem; background: #374151; color: #d1d5db; border: none; border-radius: 0.375rem; font-size: 0.875rem; cursor: pointer; }
         .prompt-box__content { font-family: var(--font-mono); font-size: 0.9375rem; line-height: 1.6; white-space: pre-wrap; color: #f3f4f6; }
         .highlight-box { background: var(--dark-soft); border-left: 4px solid var(--primary); padding: 2rem; border-radius: 0 0.75rem 0.75rem 0; margin: 2rem 0; }
         .tip-box { background: linear-gradient(135deg, rgba(16,185,129,0.1), rgba(16,185,129,0.05)); border-left: 4px solid var(--success); padding: 1.5rem; border-radius: 0 0.75rem 0.75rem 0; margin: 2rem 0; }
         .principle-card { background: var(--gray-900); border: 2px solid rgba(255,255,255,0.08); border-radius: 1rem; padding: 1.5rem; margin: 1rem 0; }
         .principle-card h4 { color: var(--primary); margin-bottom: 1rem; }
-        .cta-box { background: var(--dark); color: white; padding: 3rem; border-radius: 1.5rem; text-align: center; margin: 4rem 0; }
-        .cta-box h3 { font-size: 1.75rem; margin-bottom: 1rem; color: white; }
-        .cta-box p { color: var(--gray-400); margin-bottom: 2rem; }
+        .cta-box { background: linear-gradient(135deg, rgba(37,211,102,0.08), rgba(0,168,232,0.05)); border: 1px solid rgba(37,211,102,0.2); padding: 2rem; border-radius: 1rem; text-align: center; margin: 3rem 0; }
+        .cta-box h3 { color: var(--white); font-size: 1.4rem; margin: 0 0 0.6rem; }
+        .cta-box p { color: var(--gray-300); margin-bottom: 1.25rem; }
+        .cta-box__btn { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.9rem 1.75rem; background: var(--whatsapp); color: #fff; font-weight: 700; text-decoration: none; border-radius: 0.6rem; transition: all 0.2s; }
+        .cta-box__btn:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(37,211,102,0.3); }
+        .cta-box__note { display: block; margin-top: 0.85rem; font-size: 0.82rem; color: var(--gray-400); font-style: italic; }
+        .author-box { display: flex; gap: 1.25rem; padding: 1.75rem; background: var(--dark-soft); border: 1px solid rgba(255,255,255,0.08); border-radius: 1rem; margin: 3rem 0; }
+        .author-box__avatar { flex-shrink: 0; width: 80px; height: 80px; border-radius: 50%; background: linear-gradient(135deg, var(--primary), var(--highlight)); display: flex; align-items: center; justify-content: center; color: #fff; font-size: 2rem; font-weight: 800; }
+        .author-box__content h4 { font-size: 1.1rem; color: var(--white); margin-bottom: 0.3rem; }
+        .author-box__role { font-size: 0.85rem; color: var(--primary); font-weight: 600; margin-bottom: 0.6rem; }
+        .author-box__bio { font-size: 0.92rem; line-height: 1.55; color: var(--gray-300); margin: 0; }
+        .author-box__bio a { color: var(--primary); text-decoration: none; }
+        .faq-section { margin: 3rem 0; }
+        .faq-item { background: var(--dark-soft); border: 1px solid rgba(255,255,255,0.06); border-radius: 0.75rem; padding: 1.25rem 1.5rem; margin-bottom: 0.85rem; }
+        .faq-item h3 { color: var(--white); font-size: 1.05rem; margin: 0 0 0.6rem 0; font-weight: 700; }
+        .faq-item p { color: var(--gray-300); font-size: 0.95rem; margin: 0; line-height: 1.6; }
+        .related { background: var(--dark-soft); border-radius: 1rem; padding: 1.75rem; margin: 2.5rem 0; }
+        .related h4 { color: var(--white); font-size: 1rem; margin-bottom: 1rem; letter-spacing: 0.04em; text-transform: uppercase; }
+        .related a { display: block; padding: 0.6rem 0; color: var(--primary); text-decoration: none; font-size: 0.95rem; border-bottom: 1px solid rgba(255,255,255,0.04); }
+        .related a:last-child { border-bottom: none; }
+        .related a:hover { color: var(--highlight); }
         .footer { padding: 3rem 0 1rem; background: #2d3748; color: var(--gray-400); margin-top: 4rem; text-align: center; }
         @media (max-width: 768px) { .comparison-grid { grid-template-columns: 1fr; } }
     </style>
@@ -98,11 +124,11 @@
     {
         "@context": "https://schema.org",
         "@type": "Article",
-        "headline": "Guida Completa al Prompt Engineering",
-        "description": "La guida definitiva per scrivere prompt efficaci: framework, tecniche avanzate, esempi pratici. Trasforma l'AI da giocattolo a strumento professionale.",
+        "headline": "Come scrivere prompt: la guida pratica per chi lavora",
+        "description": "Come scrivere prompt efficaci nel 2026: framework R.O.L.E., consigli ufficiali OpenAI, Anthropic e Google, esempi pratici in italiano per chi lavora.",
         "image": "https://aiosha.it/images/blog/cover-prompt-engineering.jpg",
         "datePublished": "2026-03-20",
-        "dateModified": "2026-07-03",
+        "dateModified": "2026-07-18",
         "inLanguage": "it-IT",
         "mainEntityOfPage": {
             "@type": "WebPage",
@@ -129,7 +155,7 @@
         },
         "about": {
             "@type": "Thing",
-            "name": "Intelligenza artificiale per piccole e medie imprese (PMI)"
+            "name": "Prompt engineering e intelligenza artificiale per chi lavora"
         }
     }
     </script>
@@ -140,7 +166,20 @@
         "itemListElement": [
             {"@type":"ListItem","position":1,"name":"Home","item":"https://aiosha.it/"},
             {"@type":"ListItem","position":2,"name":"Blog","item":"https://aiosha.it/blog.html"},
-            {"@type":"ListItem","position":3,"name":"Guida Completa al Prompt Engineering","item":"https://aiosha.it/blog/guida-completa-prompting.html"}
+            {"@type":"ListItem","position":3,"name":"Come scrivere prompt: guida pratica","item":"https://aiosha.it/blog/guida-completa-prompting.html"}
+        ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {"@type":"Question","name":"Cos'è un prompt, in parole semplici?","acceptedAnswer":{"@type":"Answer","text":"Il prompt è l'istruzione che scrivi a un'intelligenza artificiale come ChatGPT, Claude o Gemini. Può essere una domanda secca o un brief completo con ruolo, obiettivo, vincoli ed esempi. Più il prompt è chiaro e ricco di contesto, più la risposta è utile e vicina a quello che ti serve davvero."}},
+            {"@type":"Question","name":"Il prompt engineering serve ancora nel 2026?","acceptedAnswer":{"@type":"Answer","text":"Sì, ma è cambiato. Con i modelli di ragionamento servono meno formule e trucchi: OpenAI consiglia prompt semplici e diretti, senza forzare il ragionamento passo passo. Contano di più l'obiettivo chiaro e il contesto giusto, quello che Anthropic chiama context engineering."}},
+            {"@type":"Question","name":"Meglio un prompt lungo o corto?","acceptedAnswer":{"@type":"Answer","text":"Né l'uno né l'altro: serve un prompt completo. Deve contenere ruolo, obiettivo, vincoli misurabili (ad esempio massimo 100 parole, non sii breve) e, se possibile, un esempio del risultato atteso. Con i documenti lunghi, Google consiglia di mettere prima i dati e poi la domanda."}},
+            {"@type":"Question","name":"Cos'è il reverse prompting?","acceptedAnswer":{"@type":"Answer","text":"È chiedere all'AI di costruire il prompt al posto tuo, oppure di intervistarti prima di rispondere. OpenAI documenta la tecnica come meta-prompting nel suo cookbook, e il professor Ethan Mollick di Wharton descrive la variante a intervista. Il metodo Prompt Madre di AI Osha è costruito su questa base."}},
+            {"@type":"Question","name":"Quanto ci vuole per imparare a scrivere buoni prompt?","acceptedAnswer":{"@type":"Answer","text":"Le basi si imparano in un pomeriggio: il framework R.O.L.E. si applica al primo tentativo. Perché diventi un'abitudine servono 2-4 settimane di uso quotidiano sul proprio lavoro reale. Il modo più veloce è partire da template già pronti e adattarli al proprio caso."}}
         ]
     }
     </script>
@@ -216,324 +255,274 @@ src="https://www.facebook.com/tr?id=27681167481569538&ev=PageView&noscript=1"
                     Torna al Blog
                 </a>
                 <span class="article-tag">Prompting</span>
-                <h1>Guida Completa al Prompt Engineering</h1>
-                <p class="subtitle">La guida definitiva per scrivere prompt efficaci: framework, tecniche avanzate, esempi pratici. Trasforma l'AI da giocattolo a strumento professionale.</p>
+                <h1>Come scrivere prompt: la guida pratica per chi lavora</h1>
+                <p class="subtitle">Framework, esempi e consigli ufficiali di OpenAI, Anthropic e Google per scrivere prompt che funzionano. In italiano, per PMI, professionisti e partite IVA.</p>
                 <p style="font-size:0.95rem;color:var(--gray-400);display:flex;flex-wrap:wrap;gap:1rem;">
-                    <span>📅 <strong>20 marzo 2026</strong> · agg. 3 luglio 2026</span>
+                    <span>📅 <strong>20 marzo 2026</strong> · Aggiornato: 18 luglio 2026</span>
                     <span>✍️ <a href="../chi-sono.html" style="color:var(--primary);text-decoration:none;">Aliosha Battaglini</a></span>
-                    <span>⏱️ Lettura: 8 minuti</span>
+                    <span>⏱️ Lettura: 10 minuti</span>
                 </p>
             </div>
         </section>
 
         <section class="article-content">
             <div class="container">
-                <p><strong>Il 90% delle persone usa l'AI nel modo sbagliato.</strong> Fanno domande vaghe, ottengono risposte generiche, e concludono che "l'AI non funziona". La verità è che l'AI è potente quanto sai comunicare con essa.</p>
 
-                <p>Il prompt engineering è l'arte di scrivere istruzioni chiare per ottenere risultati precisi, utili e applicabili. Questa è la guida che ti serve per padroneggiarlo.</p>
+                <div class="tldr">
+                    <h3>In sintesi</h3>
+                    <p>
+                        Un buon prompt ha quattro pezzi: <strong>ruolo, obiettivo, vincoli, esempio</strong> (il framework R.O.L.E.). Le guide ufficiali di OpenAI, Anthropic e Google dicono la stessa cosa con parole diverse: contesto chiaro e vincoli misurabili.
+                        Nel 2026, con i modelli di ragionamento, contano più gli obiettivi che le formule. E il modo più veloce per avere un prompt su misura è farselo scrivere dall'AI stessa: si chiama reverse prompting, e più sotto trovi il mio Prompt Madre.
+                    </p>
+                </div>
 
-                <h2>1. I 3 Errori Fatali (che Fanno Tutti)</h2>
+                <p><strong>Un buon prompt si scrive in quattro mosse: dici all'AI chi deve essere, cosa deve produrre, con quali vincoli, e le mostri un esempio del risultato che ti aspetti.</strong> "Prompt", se il termine è nuovo, è semplicemente l'istruzione che scrivi a ChatGPT, Claude o Gemini. Il resto di questa guida serve a fare bene queste quattro mosse, seguendo i consigli ufficiali di chi i modelli li costruisce.</p>
+
+                <p>Partiamo da un dato vero, non da uno slogan. Secondo l'<a href="https://www.istat.it/comunicato-stampa/imprese-e-ict-anno-2025/" target="_blank" rel="noopener">ISTAT</a> (Imprese e ICT, 2025), circa il <strong>60% delle imprese italiane</strong> che hanno valutato l'intelligenza artificiale senza poi adottarla indica la <strong>mancanza di competenze</strong> come ostacolo principale. Non i costi. Non la tecnologia. Le competenze. E la prima competenza, quella che si impara in un pomeriggio, è proprio scrivere bene le istruzioni.</p>
+
+                <p>Se invece stai ancora decidendo <em>cosa</em> fare con l'IA sul lavoro, prima di questa guida ti conviene leggere <a href="/blog/ai-per-chi-lavora-15-cose-da-fare-oggi.html">le 15 cose che puoi delegare all'AI già oggi</a>. Qui parliamo del <em>come</em>.</p>
+
+                <h2>Perché i tuoi prompt non funzionano?</h2>
+
+                <p>Nella stessa rilevazione ISTAT, solo il <strong>16,4%</strong> delle imprese italiane con almeno 10 addetti usa una tecnologia di intelligenza artificiale nel 2025. Era l'8,2% nel 2024: raddoppiata in un anno, eppure ancora una minoranza. Molti provano, ottengono risposte generiche e concludono che "l'AI non serve". Quasi sempre il problema è a monte: la richiesta era vaga.</p>
+
+                <p>Nella mia esperienza in aula, gli errori sono sempre gli stessi tre.</p>
 
                 <div class="comparison-grid">
                     <div class="comparison-card comparison-card--bad">
-                        <h4>❌ ERRORE #1: Vaghi</h4>
+                        <h4>❌ Errore 1: essere vaghi</h4>
                         <p><em>"Scrivi un post per LinkedIn"</em></p>
-                        <p>Troppo generico. L'AI non sa il target, il tono, la lunghezza, l'obiettivo.</p>
+                        <p>Troppo generico. L'IA non conosce il target, il tono, la lunghezza, l'obiettivo.</p>
                     </div>
                     <div class="comparison-card comparison-card--good">
-                        <h4>✅ CORRETTO</h4>
-                        <p><em>"Scrivi un post LinkedIn di 150 parole per imprenditori PMI, tono diretto e pratico, sull'uso dell'AI per automatizzare customer support. Include un dato statistico e una CTA."</em></p>
+                        <h4>✅ Corretto</h4>
+                        <p><em>"Scrivi un post LinkedIn di 150 parole per titolari di PMI, tono diretto e pratico, sull'uso dell'AI nel customer service. Chiudi con una domanda ai lettori."</em></p>
                     </div>
                 </div>
 
                 <div class="comparison-grid">
                     <div class="comparison-card comparison-card--bad">
-                        <h4>❌ ERRORE #2: Senza Contesto</h4>
+                        <h4>❌ Errore 2: zero contesto</h4>
                         <p><em>"Come migliorare le vendite?"</em></p>
-                        <p>L'AI non sa il tuo settore, budget, situazione attuale.</p>
+                        <p>L'AI non conosce il tuo settore, il budget, la situazione di partenza.</p>
                     </div>
                     <div class="comparison-card comparison-card--good">
-                        <h4>✅ CORRETTO</h4>
-                        <p><em>"Sono un consulente B2B nel settore HR tech. Attualmente chiudo 2 clienti/mese tramite referral. Budget marketing: €2k/mese. Come posso scalare a 5 clienti/mese nei prossimi 6 mesi?"</em></p>
+                        <h4>✅ Corretto</h4>
+                        <p><em>"Sono un consulente B2B nel settore HR. Oggi chiudo 2 clienti al mese tramite passaparola, budget marketing 2.000€/mese. Come arrivo a 5 clienti al mese in 6 mesi?"</em></p>
                     </div>
                 </div>
 
                 <div class="comparison-grid">
                     <div class="comparison-card comparison-card--bad">
-                        <h4>❌ ERRORE #3: Una Domanda e Stop</h4>
-                        <p>Accetti il primo output senza iterare.</p>
+                        <h4>❌ Errore 3: una domanda e stop</h4>
+                        <p>Accetti il primo output così com'è, senza mai raffinarlo.</p>
                     </div>
                     <div class="comparison-card comparison-card--good">
-                        <h4>✅ CORRETTO</h4>
-                        <p>Chiedi, valuta, affina: "Rendi il tono più diretto", "Aggiungi esempi concreti", "Riduci a 100 parole".</p>
+                        <h4>✅ Corretto</h4>
+                        <p>Chiedi, valuta, affina: "rendi il tono più diretto", "aggiungi un esempio concreto", "taglia a 100 parole". La conversazione è metà del lavoro.</p>
                     </div>
                 </div>
 
-                <h2>2. Il Framework Universale: R.O.L.E.</h2>
+                <h2>Cosa dicono le guide ufficiali di OpenAI, Anthropic e Google?</h2>
+
+                <p>Non serve fidarsi di me sulla parola. OpenAI, Anthropic e Google pubblicano guide ufficiali di prompting, e la cosa interessante è che dicono tutte più o meno la stessa cosa. Le ho lette per te, ecco l'essenziale.</p>
+
+                <div class="principle-card">
+                    <h4>OpenAI: struttura il prompt in sezioni</h4>
+                    <p>La <a href="https://developers.openai.com/api/docs/guides/prompt-engineering" target="_blank" rel="noopener">guida di OpenAI</a> consiglia di dividere il prompt in blocchi: identità (chi è l'assistente), istruzioni, esempi, contesto. E di usare il <strong>few-shot</strong>, cioè mostrare 2-3 esempi del risultato che vuoi invece di descriverlo a parole. Se hai dati o documenti tuoi, mettili dentro il prompt: il modello non li può indovinare.</p>
+                </div>
+
+                <div class="principle-card">
+                    <h4>Anthropic: chiaro, diretto, e spiega il perché</h4>
+                    <p>La guida di Anthropic (l'azienda dietro Claude) insiste su tre punti: sii chiaro e diretto come se parlassi a un collaboratore nuovo e capace, dai un ruolo al modello, e <strong>spiega perché il compito conta</strong>. "Questa email va a un cliente che sta per disdire" produce un risultato diverso da "scrivi un'email".</p>
+                </div>
+
+                <div class="principle-card">
+                    <h4>Google: vincoli misurabili, non aggettivi</h4>
+                    <p>La <a href="https://ai.google.dev/gemini-api/docs/prompting-strategies" target="_blank" rel="noopener">guida di Google per Gemini</a> aggiunge un dettaglio prezioso: i vincoli devono essere misurabili. "Massimo 3 frasi", non "sii breve". E con i documenti lunghi: incolla prima i dati, fai la domanda dopo. L'ordine cambia la qualità della risposta.</p>
+                </div>
+
+                <p>Tieni a mente questi principi, perché il framework che uso io li impacchetta in una formula sola.</p>
+
+                <h2>Il framework R.O.L.E.: il mio metodo in 4 mosse</h2>
+
+                <p>R.O.L.E. è il modo in cui insegno a scrivere prompt nei corsi: una sigla facile da ricordare quando hai il cursore che lampeggia e non sai da dove partire.</p>
 
                 <div class="framework-box">
                     <h3>Formula R.O.L.E.</h3>
                     <p><code>[ROLE]</code> + <code>[OBJECTIVE]</code> + <code>[LIMITATIONS]</code> + <code>[EXAMPLE]</code></p>
                     <ul style="margin-top: 1.5rem;">
-                        <li><strong>ROLE:</strong> Chi è l'AI? (es. esperto marketing, copywriter senior)</li>
-                        <li><strong>OBJECTIVE:</strong> Cosa deve fare? (scrivi, analizza, riassumi, genera)</li>
-                        <li><strong>LIMITATIONS:</strong> Vincoli (lunghezza, tono, formato, NO/DO NOT)</li>
-                        <li><strong>EXAMPLE:</strong> Un esempio del risultato atteso</li>
+                        <li><strong>ROLE:</strong> chi è l'AI? (es. commercialista esperto, copywriter senior)</li>
+                        <li><strong>OBJECTIVE:</strong> cosa deve fare, e perché conta? (scrivi, analizza, riassumi)</li>
+                        <li><strong>LIMITATIONS:</strong> vincoli misurabili (lunghezza, tono, formato, cosa evitare)</li>
+                        <li><strong>EXAMPLE:</strong> un esempio del risultato atteso</li>
                     </ul>
                 </div>
 
-                <h3>Esempio Pratico</h3>
+                <p>Se confronti R.O.L.E. con la struttura consigliata da OpenAI (identità, istruzioni, esempi, contesto) noterai che coincidono quasi punto per punto. Il nome è mio, la sostanza è quella che i produttori stessi raccomandano. Ecco come appare in un caso reale.</p>
 
                 <div class="prompt-box">
                     <div class="prompt-box__header">
-                        <span class="prompt-box__title">PROMPT CON ROLE</span>
+                        <span class="prompt-box__title">PROMPT CON R.O.L.E.</span>
                         <button class="prompt-box__copy" onclick="copyPrompt(this)">Copia</button>
                     </div>
-                    <div class="prompt-box__content">Sei un copywriter esperto in marketing B2B con 10 anni di esperienza.
+                    <div class="prompt-box__content">Sei un copywriter esperto in email B2B per PMI italiane.
 
-OBIETTIVO: Scrivi un'email di cold outreach per CEO di PMI italiane nel settore manifatturiero.
+OBIETTIVO: scrivi un'email di primo contatto per titolari di aziende manifatturiere. Serve a proporre una call conoscitiva, non a vendere subito.
 
 VINCOLI:
 - Massimo 120 parole
-- Tono: diretto, value-first, zero fluff
-- NON usare: "spero che questa email", "mi permetto", "innovativo"
-- Includi: 1 dato statistico, 1 CTA chiara
+- Tono: diretto, concreto, zero frasi di circostanza
+- NON usare: "spero che questa email ti trovi bene", "mi permetto", "innovativo"
+- Chiudi con una sola domanda, facile da rispondere
 
 ESEMPIO DI STILE:
-"Il 67% delle PMI perde 15+ ore/settimana su task manuali. Noi le automatizziamo in 30 giorni. Call di 15 minuti?"</div>
+"Le imprese italiane che usano l'AI sono raddoppiate in un anno. La tua è tra quelle? 15 minuti al telefono e te lo dico."</div>
                 </div>
 
-                <h2>3. Le 7 Tecniche Avanzate</h2>
+                <div class="tip-box">
+                    <p><strong>Regola d'oro:</strong> se un collaboratore umano non capirebbe la tua richiesta, non la capirà nemmeno l'intelligenza artificiale. Scrivi come se dessi istruzioni a una persona capace ma appena arrivata, che non conosce nulla del tuo contesto.</p>
+                </div>
 
-                <div class="principle-card">
-                    <h4>1. Chain-of-Thought (Ragionamento Step-by-Step)</h4>
-                    <p>Chiedi all'AI di "pensare ad alta voce" prima di rispondere.</p>
-                    <div class="prompt-box">
-                        <div class="prompt-box__header">
-                            <span class="prompt-box__title">ESEMPIO</span>
-                        </div>
-                        <div class="prompt-box__content">Analizza questo problema step-by-step:
-1. Identifica le variabili chiave
-2. Valuta pro/contro di ogni opzione
-3. Dai la tua raccomandazione finale
+                <h2>Come è cambiato il prompting nel 2026?</h2>
 
-[DESCRIVI PROBLEMA]</div>
+                <p>Qui devo correggere anche me stesso. Fino a poco tempo fa una delle tecniche più insegnate era il <strong>chain-of-thought</strong>, cioè aggiungere "ragiona passo passo" per far pensare meglio il modello. Con i modelli di ragionamento attuali questa istruzione è superata, e lo dice OpenAI stessa nelle sue <a href="https://developers.openai.com/api/docs/guides/reasoning-best-practices" target="_blank" rel="noopener">best practice per i reasoning model</a>: questi modelli ragionano già da soli, e forzare il passo passo può addirittura peggiorare il risultato. Meglio prompt semplici e diretti, provando prima senza esempi.</p>
+
+                <p>Anthropic è andata oltre e parla di <a href="https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents" target="_blank" rel="noopener">context engineering</a>, cioè "ingegneria del contesto": la domanda giusta non è più "quale formula uso?" ma "quali informazioni servono al modello per fare bene questo lavoro?". File, dati, esempi, vincoli: il contesto giusto, senza riempire il prompt di rumore.</p>
+
+                <p>In pratica, per chi lavora, il cambiamento è questo: <strong>meno istruzioni su come ragionare, più chiarezza su cosa vuoi ottenere e più contesto vero</strong>. È lo stesso principio che applico quando faccio sistemare un foglio dati all'IA: prima le incollo i dati e la situazione, poi faccio la richiesta. Se il tema ti riguarda, ne parlo in dettaglio in <a href="/blog/pulire-excel-con-ai.html">come pulire un Excel con l'AI</a>.</p>
+
+                <h2>Cos'è il reverse prompting (e come nasce il Prompt Madre)?</h2>
+
+                <p>E se il modo migliore di scrivere un prompt fosse non scriverlo tu? Il <strong>reverse prompting</strong> ribalta il gioco: chiedi all'AI di costruire il prompt al posto tuo, oppure di farti domande finché non ha capito davvero cosa ti serve. Non è un trucco da social: OpenAI documenta la tecnica come <a href="https://developers.openai.com/cookbook/examples/enhance_your_prompts_with_meta_prompting" target="_blank" rel="noopener">meta-prompting</a> nel suo cookbook ufficiale, e <a href="https://www.oneusefulthing.org/p/working-with-ai-two-paths-to-prompting" target="_blank" rel="noopener">Ethan Mollick</a>, professore a Wharton, descrive proprio la variante in cui è l'AI a intervistarti prima di produrre il risultato.</p>
+
+                <p>Su questa base ho costruito il metodo che uso nei corsi e che chiamo <strong>Prompt Madre</strong>: un unico prompt che genera prompt su misura per il tuo lavoro, intervistandoti finché ha il contesto che serve. Il nome è mio, la tecnica sotto è documentata. Ecco la versione base.</p>
+
+                <div class="prompt-box">
+                    <div class="prompt-box__header">
+                        <span class="prompt-box__title">PROMPT MADRE (versione base)</span>
+                        <button class="prompt-box__copy" onclick="copyPrompt(this)">Copia</button>
                     </div>
+                    <div class="prompt-box__content">Sei un esperto di prompting. Devo ottenere questo risultato: [DESCRIVI IN UNA FRASE].
+
+Prima di scrivere qualsiasi cosa, fammi una domanda alla volta su tutto ciò che ti serve sapere: contesto, destinatario, tono, vincoli, esempi. Continua finché non hai un quadro completo.
+
+Solo alla fine scrivi il prompt definitivo, pronto da copiare, strutturato in: ruolo, obiettivo, vincoli, esempio.</div>
                 </div>
 
-                <div class="principle-card">
-                    <h4>2. Few-Shot Learning (Impara dagli Esempi)</h4>
-                    <p>Fornisci 2-3 esempi del risultato che vuoi.</p>
-                    <div class="prompt-box">
-                        <div class="prompt-box__header">
-                            <span class="prompt-box__title">ESEMPIO</span>
-                        </div>
-                        <div class="prompt-box__content">Scrivi headline accattivanti come queste:
+                <p>La versione completa del Prompt Madre, con le varianti per email, contenuti e analisi, la trovi tra le <a href="https://aiosha.it/risorse.html">risorse gratuite di AI Osha</a>.</p>
 
-Esempio 1: "Il 67% delle PMI perde 10 ore/settimana. Ecco come recuperarle."
-Esempio 2: "3 automazioni che ti fanno risparmiare €50k/anno"
-Esempio 3: "Da 5 a 20 clienti/mese: il sistema in 4 step"
+                <h2>Due template pronti da copiare</h2>
 
-Ora scrivi 5 headline nello stesso stile per: [TUO ARGOMENTO]</div>
-                    </div>
-                </div>
+                <p>Per tutto il resto, questi due template coprono la maggior parte dei casi di lavoro quotidiano. Se preferisci partire da prompt già finiti per compiti specifici, ho raccolto <a href="/blog/chatgpt-al-lavoro-30-prompt.html">30 prompt pronti per email, riunioni e report</a>.</p>
 
-                <div class="principle-card">
-                    <h4>3. Persona Targeting</h4>
-                    <p>Definisci esattamente per chi stai creando contenuto.</p>
-                    <div class="prompt-box">
-                        <div class="prompt-box__header">
-                            <span class="prompt-box__title">ESEMPIO</span>
-                        </div>
-                        <div class="prompt-box__content">Target persona:
-- Ruolo: CEO/Founder PMI 10-50 dipendenti
-- Settore: Servizi B2B (consulenza, agency, SaaS)
-- Pain point: Troppo tempo su task operativi, vuole scalare
-- Obiettivo: Automatizzare processi ripetitivi
-- Tono preferito: Diretto, pratico, no teoria
-
-Scrivi per questa persona: [CONTENUTO]</div>
-                    </div>
-                </div>
-
-                <div class="principle-card">
-                    <h4>4. Constraint-Based Prompting</h4>
-                    <p>Più vincoli = output più preciso.</p>
-                    <div class="prompt-box">
-                        <div class="prompt-box__header">
-                            <span class="prompt-box__title">ESEMPIO</span>
-                        </div>
-                        <div class="prompt-box__content">Vincoli:
-- Lunghezza: esattamente 280 caratteri (tweet)
-- Tono: professionale ma friendly
-- Struttura: Hook + Value + CTA
-- Includi: 1 emoji, 1 hashtag
-- NON usare: "innovativo", "rivoluzionario", "game-changer"
-
-Scrivi: [ARGOMENTO]</div>
-                    </div>
-                </div>
-
-                <div class="principle-card">
-                    <h4>5. Output Formatting</h4>
-                    <p>Specifica esattamente il formato desiderato.</p>
-                    <div class="prompt-box">
-                        <div class="prompt-box__header">
-                            <span class="prompt-box__title">ESEMPIO</span>
-                        </div>
-                        <div class="prompt-box__content">Presenta il risultato in questo formato:
-
-## Titolo
-[Titolo accattivante]
-
-## Problema
-[Descrivi il pain point in 2 frasi]
-
-## Soluzione
-- Punto 1
-- Punto 2
-- Punto 3
-
-## Next Step
-[CTA chiara]</div>
-                    </div>
-                </div>
-
-                <div class="principle-card">
-                    <h4>6. Iterative Refinement</h4>
-                    <p>Non accettare il primo output. Affina progressivamente.</p>
-                    <div class="prompt-box">
-                        <div class="prompt-box__header">
-                            <span class="prompt-box__title">SEQUENZA</span>
-                        </div>
-                        <div class="prompt-box__content">1° Prompt: [Richiesta iniziale]
-2° Prompt: "Rendi il tono più diretto e taglia il 30%"
-3° Prompt: "Aggiungi 1 esempio concreto nel punto 2"
-4° Prompt: "Riscrivi la CTA per essere più specifica"</div>
-                    </div>
-                </div>
-
-                <div class="principle-card">
-                    <h4>7. Meta-Prompting (Chiedi all'AI di Migliorare il Prompt)</h4>
-                    <p>Fai all'AI critica il tuo stesso prompt.</p>
-                    <div class="prompt-box">
-                        <div class="prompt-box__header">
-                            <span class="prompt-box__title">META-PROMPT</span>
-                        </div>
-                        <div class="prompt-box__content">Ho scritto questo prompt:
-
-"[TUO PROMPT ORIGINALE]"
-
-Analizzalo e suggerisci come migliorarlo per ottenere risultati più precisi e utili. Indica cosa manca, cosa è vago, e come riscriverlo.</div>
-                    </div>
-                </div>
-
-                <h2>4. Template Universali Pronti all'Uso</h2>
-
-                <h3>Template: Analisi e Problem Solving</h3>
+                <h3>Analisi e decisioni</h3>
                 <div class="prompt-box">
                     <div class="prompt-box__header">
                         <span class="prompt-box__title">TEMPLATE</span>
                         <button class="prompt-box__copy" onclick="copyPrompt(this)">Copia</button>
                     </div>
-                    <div class="prompt-box__content">Contesto: [descrivi situazione attuale]
+                    <div class="prompt-box__content">Contesto: [descrivi la situazione attuale]
 Problema: [cosa non funziona]
 Obiettivo: [risultato desiderato]
 Vincoli: [budget, tempo, risorse]
 
 Analizza la situazione e fornisci:
-1. Root cause del problema
-2. 3 possibili soluzioni con pro/contro
-3. Raccomandazione finale con next steps concreti</div>
+1. La causa più probabile del problema
+2. 3 possibili soluzioni con pro e contro
+3. La tua raccomandazione con i prossimi passi concreti</div>
                 </div>
 
-                <h3>Template: Generazione Contenuti</h3>
+                <h3>Generazione di contenuti</h3>
                 <div class="prompt-box">
                     <div class="prompt-box__header">
                         <span class="prompt-box__title">TEMPLATE</span>
                         <button class="prompt-box__copy" onclick="copyPrompt(this)">Copia</button>
                     </div>
-                    <div class="prompt-box__content">Tipo contenuto: [post social, articolo, email, etc]
-Target audience: [chi legge]
-Obiettivo: [cosa devono fare/pensare]
-Tono: [professionale, casual, tecnico, etc]
-Lunghezza: [parole/caratteri]
-Struttura: [hook, body, CTA o altra]
-Includi: [dati, esempi, call-to-action]
-NON usare: [parole/frasi da evitare]
+                    <div class="prompt-box__content">Tipo di contenuto: [post social, articolo, email...]
+Chi legge: [descrivi il destinatario]
+Obiettivo: [cosa deve fare o pensare chi legge]
+Tono: [professionale, informale, tecnico...]
+Lunghezza: [numero di parole o caratteri, preciso]
+Includi: [dati, esempi, invito all'azione]
+NON usare: [parole o frasi da evitare]
 
-Argomento: [TOPIC]</div>
+Argomento: [TEMA]</div>
                 </div>
 
-                <h3>Template: Revisione e Miglioramento</h3>
-                <div class="prompt-box">
-                    <div class="prompt-box__header">
-                        <span class="prompt-box__title">TEMPLATE</span>
-                        <button class="prompt-box__copy" onclick="copyPrompt(this)">Copia</button>
-                    </div>
-                    <div class="prompt-box__content">Analizza questo testo:
-
-[INCOLLA TESTO]
-
-Fornisci:
-1. Cosa funziona bene
-2. Cosa migliorare (struttura, chiarezza, tono)
-3. Versione riscritta migliorata
-4. Spiegazione delle modifiche fatte</div>
-                </div>
-
-                <h2>5. Checklist: Prompt Efficace</h2>
-
-                <p>Prima di premere Invio, verifica:</p>
-
+                <h3>La checklist prima di premere invio</h3>
                 <ul>
-                    <li>✅ Ho definito il ruolo/expertise dell'AI?</li>
-                    <li>✅ L'obiettivo è chiaro e specifico?</li>
-                    <li>✅ Ho fornito contesto sufficiente?</li>
-                    <li>✅ Ho specificato lunghezza/formato?</li>
-                    <li>✅ Ho indicato il tono desiderato?</li>
-                    <li>✅ Ho elencato cosa NON fare?</li>
-                    <li>✅ Ho dato esempi del risultato atteso?</li>
-                    <li>✅ Ho incluso vincoli importanti?</li>
+                    <li>Ho definito il ruolo dell'AI?</li>
+                    <li>L'obiettivo è chiaro, e ho spiegato perché conta?</li>
+                    <li>Ho dato il contesto vero (dati, situazione, destinatario)?</li>
+                    <li>I vincoli sono misurabili (numeri, non aggettivi)?</li>
+                    <li>Ho mostrato almeno un esempio del risultato atteso?</li>
+                    <li>Sono pronto a raffinare, invece di accettare il primo output?</li>
                 </ul>
-
-                <h2>6. Errori Avanzati da Evitare</h2>
-
-                <ul>
-                    <li><strong>Sovracaricare il prompt</strong> — Troppo contesto confonde. Sii conciso ma completo.</li>
-                    <li><strong>Aspettative irrealistiche</strong> — L'AI non legge la mente. Più chiaro sei, meglio funziona.</li>
-                    <li><strong>Non testare varianti</strong> — Prova 2-3 versioni dello stesso prompt.</li>
-                    <li><strong>Ignorare il feedback</strong> — Se l'output è sbagliato, affina il prompt, non rigenerare a caso.</li>
-                    <li><strong>Dimenticare il fact-checking</strong> — L'AI può inventare dati. Verifica sempre claim importanti.</li>
-                </ul>
-
-                <div class="tip-box">
-                    <p><strong>Golden Rule:</strong> Se un umano non capirebbe la tua richiesta, nemmeno l'AI lo farà. Scrivi come se stessi dando istruzioni a un junior talentuoso ma che non conosce il tuo contesto.</p>
-                </div>
-
-                <h2>7. Prompting per Tool Specifici</h2>
-
-                <p><strong>ChatGPT:</strong> Ottimo per conversazioni iterative, brainstorming, creatività</p>
-                <p><strong>Claude:</strong> Eccelle in analisi logica, scrittura professionale, task complessi</p>
-                <p><strong>Gemini:</strong> Migliore per integrazione con Google Workspace</p>
-                <p><strong>Perplexity:</strong> Ideale per research con fonti citate</p>
 
                 <div class="highlight-box">
-                    <h4>Skill Sblocco</h4>
-                    <p>Padroneggia il prompting e sblocchi il 10x di produttività. Non è magia: è precisione nella comunicazione.</p>
+                    <p><strong>Ultima avvertenza, la più importante:</strong> l'intelligenza artificiale può inventare dati e citazioni con grande sicurezza. Qualunque numero o affermazione rilevante va verificato prima di finire in un documento con il tuo nome sopra. Questo nessun prompt lo risolve al posto tuo.</p>
                 </div>
+
+                <h2>Da dove iniziare, in pratica</h2>
+
+                <p>Il mio consiglio onesto: non studiare altro, applica. Scegli il compito che ti pesa di più questa settimana, scrivi un prompt con la formula R.O.L.E., raffinalo due volte, e confronta il tempo speso con quello di prima. In un pomeriggio capisci più che in dieci articoli, questo compreso.</p>
+
+                <p>E se preferisci farlo direttamente sul tuo caso, con me a fianco: la <a href="https://aiosha.it/consulenza.html">Sessione 1-to-1</a> è <strong>1 ora e 30 minuti a schermo condiviso</strong> sul tuo lavoro reale, dove costruiamo insieme i prompt e i flussi che ti servono. Costa 250€, oppure 999€ il pacchetto da 5 sessioni se vuoi un percorso completo.</p>
 
                 <div class="cta-box">
-                    <h3>Vuoi 50+ Prompt Testati Pronti all'Uso?</h3>
-                    <p>Scarica la guida gratuita con prompt per email, contenuti, analisi, decisioni strategiche e molto altro.</p>
-                    <a href="../index.html#lead-magnet" class="btn">Scarica la Guida Gratuita</a>
+                    <h3>Vuoi capire se una sessione fa per te?</h3>
+                    <p>Scrivimi su WhatsApp: mi racconti in due righe il tuo lavoro e ti dico onestamente se e come l'IA può aiutarti.</p>
+                    <a href="https://wa.me/393313883929?text=Ciao%20Aliosha%2C%20ho%20letto%20la%20guida%20sui%20prompt%20e%20vorrei%20qualche%20informazione" target="_blank" rel="noopener" class="cta-box__btn">💬 Scrivimi su WhatsApp</a>
+                    <span class="cta-box__note">Rispondo io personalmente, non un'AI.</span>
                 </div>
 
-                
-                <div class="cta-box" style="margin-top:2rem;">
-                    <h3>Vuoi portare l'AI nel tuo lavoro, non solo leggerne?</h3>
-                    <p>Guarda il <a href="../corso.html" style="color:#00A8E8;font-weight:700;">corso Intelligenza Artificiale in Pratica</a> (dal vivo a Pescia oppure online), oppure prenota una <a href="../consulenza.html" style="color:#F5A623;font-weight:700;">Sessione di lavoro 1-to-1</a>: 1 ora e 30 minuti a schermo condiviso sul tuo caso concreto.</p>
-                    <a href="../corso.html" class="btn">Scopri il Corso</a>
+                <div class="author-box">
+                    <div class="author-box__avatar">A</div>
+                    <div class="author-box__content">
+                        <h4>Aliosha Battaglini</h4>
+                        <div class="author-box__role">Founder AI Osha · Formatore AI per chi lavora</div>
+                        <p class="author-box__bio">
+                            Autore di 14 libri pubblicati, insegna intelligenza artificiale in pratica a PMI, professionisti e partite IVA, in tutta Italia e da Pescia (PT).
+                            <a href="../chi-sono.html">Scopri di più →</a>
+                        </p>
+                    </div>
+                </div>
+
+                <section class="faq-section">
+                    <h2>Domande frequenti</h2>
+
+                    <div class="faq-item">
+                        <h3>Cos'è un prompt, in parole semplici?</h3>
+                        <p>È l'istruzione che scrivi a un'AI come ChatGPT, Claude o Gemini. Può essere una domanda secca o un brief completo con ruolo, obiettivo, vincoli ed esempi. Più il prompt è chiaro e ricco di contesto, più la risposta è vicina a quello che ti serve davvero.</p>
+                    </div>
+
+                    <div class="faq-item">
+                        <h3>Il prompt engineering serve ancora nel 2026?</h3>
+                        <p>Sì, ma è cambiato. Con i modelli di ragionamento servono meno formule: OpenAI consiglia prompt semplici e diretti, senza forzare il "passo passo". Contano di più l'obiettivo chiaro e il contesto giusto, quello che Anthropic chiama context engineering.</p>
+                    </div>
+
+                    <div class="faq-item">
+                        <h3>Meglio un prompt lungo o corto?</h3>
+                        <p>Né l'uno né l'altro: serve un prompt completo. Ruolo, obiettivo, vincoli misurabili ("massimo 100 parole", non "sii breve") e possibilmente un esempio. Con i documenti lunghi, Google consiglia di incollare prima i dati e fare la domanda dopo.</p>
+                    </div>
+
+                    <div class="faq-item">
+                        <h3>Cos'è il reverse prompting?</h3>
+                        <p>È chiedere all'IA di costruire il prompt al posto tuo, o di intervistarti prima di rispondere. OpenAI documenta la tecnica come meta-prompting, Ethan Mollick di Wharton descrive la variante a intervista. Il metodo Prompt Madre di AI Osha è costruito su questa base.</p>
+                    </div>
+
+                    <div class="faq-item">
+                        <h3>Quanto ci vuole per imparare a scrivere buoni prompt?</h3>
+                        <p>Le basi si imparano in un pomeriggio: il framework R.O.L.E. si applica al primo tentativo. Perché diventi un'abitudine servono 2-4 settimane di uso quotidiano sul proprio lavoro reale. Il modo più veloce è partire da template pronti e adattarli.</p>
+                    </div>
+                </section>
+
+                <div class="related">
+                    <h4>Continua a leggere</h4>
+                    <a href="/blog/chatgpt-al-lavoro-30-prompt.html">→ ChatGPT al lavoro: 30 prompt pronti per email, riunioni e report</a>
+                    <a href="/blog/ai-per-chi-lavora-15-cose-da-fare-oggi.html">→ AI per chi lavora: 15 cose che puoi fare oggi</a>
+                    <a href="/blog/pulire-excel-con-ai.html">→ Pulire un Excel con l'AI: i 3 modi e i comandi pronti</a>
                 </div>
 
                 <a href="../blog.html" class="back-link">

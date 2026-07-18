@@ -1,0 +1,17 @@
+name: IndexNow ping
+on:
+  push:
+    branches: [main]
+    paths: ['*.html', 'blog/**.html', 'sitemap.xml']
+jobs:
+  indexnow:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Submit sitemap URLs to IndexNow
+        run: |
+          sleep 90  # attendi il deploy GitHub Pages
+          URLS=$(grep -o '<loc>[^<]*</loc>' sitemap.xml | sed 's/<[^>]*>//g' | jq -R . | jq -s .)
+          curl -s -X POST "https://api.indexnow.org/indexnow" \
+            -H "Content-Type: application/json; charset=utf-8" \
+            -d "{\"host\":\"aiosha.it\",\"key\":\"2fb832781c3c3e71f529ea3c96e0e8e9\",\"keyLocation\":\"https://aiosha.it/2fb832781c3c3e71f529ea3c96e0e8e9.txt\",\"urlList\":$URLS}" -w "\nHTTP %{http_code}\n"

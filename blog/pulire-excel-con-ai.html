@@ -3,12 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pulire un Excel con l'AI: la guida pratica (Claude e Gemini) | AI Osha</title>
-    <meta name="description" content="Togli doppioni, ordina date, crea formule e sistema i fogli parlando con l'AI. Guida pratica con Claude (anche dentro Excel) e Gemini nei Google Fogli + 10 comandi pronti da copiare. Scarica il PDF gratis.">
+    <title>Pulire un Excel con l'AI: guida con Claude e Gemini</title>
+    <meta name="description" content="Togli doppioni, ordina date e crea formule parlando con l'AI: guida con Claude e Gemini + 10 comandi pronti. Scarica il PDF gratis.">
     <link rel="canonical" href="https://aiosha.it/blog/pulire-excel-con-ai.html">
     <meta property="og:title" content="Pulire un Excel con l'AI: la guida pratica (Claude e Gemini)">
     <meta property="og:description" content="Sistema i fogli parlando con l'AI: 10 comandi pronti + come usare Claude dentro Excel e Gemini nei Fogli. PDF gratis.">
     <meta property="og:image" content="https://aiosha.it/images/blog/cover-excel-ai.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Pulire un Excel con l'AI: guida con Claude e Gemini">
+    <meta name="twitter:description" content="Togli doppioni, ordina date e crea formule parlando con l'AI: guida con Claude e Gemini + 10 comandi pronti. Scarica il PDF gratis.">
+    <meta name="twitter:image" content="https://aiosha.it/images/blog/cover-excel-ai.jpg">
     <meta property="og:type" content="article">
     <meta property="og:url" content="https://aiosha.it/blog/pulire-excel-con-ai.html">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -76,6 +80,26 @@
         .cta-box p { color: var(--gray-400); margin-bottom: 2rem; }
         .footer { padding: 3rem 0 1rem; background: #2d3748; color: var(--gray-400); margin-top: 4rem; text-align: center; }
         .step-number { display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; background: var(--primary); color: white; border-radius: 50%; font-weight: 700; margin-right: 1rem; }
+    
+        /* — blocchi template 2026 — */
+        .tldr { background: rgba(0,168,232,0.08); border-left: 4px solid var(--primary); border-radius: 0 0.75rem 0.75rem 0; padding: 1.5rem 1.75rem; margin: 0 0 2.5rem; }
+        .tldr h3 { color: var(--primary); font-size: 0.85rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 0.6rem; }
+        .tldr p { color: #e5e7eb; margin: 0; font-size: 1rem; line-height: 1.65; }
+        .author-box { display: flex; gap: 1.25rem; padding: 1.75rem; background: var(--dark-soft); border: 1px solid rgba(255,255,255,0.08); border-radius: 1rem; margin: 3rem 0; }
+        .author-box__avatar { flex-shrink: 0; width: 80px; height: 80px; border-radius: 50%; background: linear-gradient(135deg, var(--primary), var(--accent, #F5A623)); display: flex; align-items: center; justify-content: center; color: #fff; font-size: 2rem; font-weight: 800; }
+        .author-box__content h4 { font-size: 1.1rem; color: var(--white); margin-bottom: 0.3rem; }
+        .author-box__role { font-size: 0.85rem; color: var(--primary); font-weight: 600; margin-bottom: 0.6rem; }
+        .author-box__bio { font-size: 0.92rem; line-height: 1.55; color: var(--gray-300, #d1d5db); margin: 0; }
+        .author-box__bio a { color: var(--primary); text-decoration: none; }
+        .faq-section { margin: 3rem 0; }
+        .faq-item { background: var(--dark-soft); border: 1px solid rgba(255,255,255,0.06); border-radius: 0.75rem; padding: 1.25rem 1.5rem; margin-bottom: 0.85rem; }
+        .faq-item h3 { color: var(--white); font-size: 1.05rem; margin: 0 0 0.6rem 0; font-weight: 700; }
+        .faq-item p { color: var(--gray-300, #d1d5db); font-size: 0.95rem; margin: 0; line-height: 1.6; }
+        .related { background: var(--dark-soft); border-radius: 1rem; padding: 1.75rem; margin: 2.5rem 0; }
+        .related h4 { color: var(--white); font-size: 1rem; margin-bottom: 1rem; letter-spacing: 0.04em; text-transform: uppercase; }
+        .related a { display: block; padding: 0.6rem 0; color: var(--primary); text-decoration: none; font-size: 0.95rem; border-bottom: 1px solid rgba(255,255,255,0.04); }
+        .related a:last-child { border-bottom: none; }
+        .related a:hover { color: var(--accent, #F5A623); }
     </style>
     <script type="application/ld+json">
     {
@@ -85,7 +109,7 @@
         "description": "Togli doppioni, ordina date, crea formule e sistema i fogli parlando con l'AI. Guida pratica con Claude (anche dentro Excel) e Gemini nei Google Fogli, con 10 comandi pronti da copiare.",
         "image": "https://aiosha.it/images/blog/cover-excel-ai.jpg",
         "datePublished": "2026-06-27",
-        "dateModified": "2026-06-27",
+        "dateModified": "2026-07-18",
         "inLanguage": "it-IT",
         "mainEntityOfPage": {
             "@type": "WebPage",
@@ -163,6 +187,38 @@ fbq('track', 'PageView');
 <noscript><img height="1" width="1" style="display:none"
 src="https://www.facebook.com/tr?id=27681167481569538&ev=PageView&noscript=1"
 /></noscript>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Serve saper usare le formule di Excel per lavorare con l'AI?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No: descrivi il risultato che vuoi (“togli i doppioni dalla colonna B”) e l'AI produce i dati puliti o la formula pronta da incollare. Conoscere le formule aiuta solo a verificare il risultato."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Meglio Claude o Gemini per i fogli di calcolo?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Claude è più affidabile sui passaggi complessi e funziona anche dentro Excel; Gemini è comodissimo se lavori già nei Google Fogli perché agisce direttamente sul foglio. Nel dubbio: prova entrambi sullo stesso compito e confronta."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Posso incollare dati di clienti nell'AI?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Con prudenza: rimuovi o maschera i dati personali non necessari (nomi, telefoni, IBAN) prima di incollare, e usa account a pagamento con impostazioni privacy attive. Per dati sensibili chiedi prima al tuo consulente privacy."
+      }
+    }
+  ]
+}
+    </script>
 </head>
 <body>
     <header class="header">
@@ -184,6 +240,38 @@ src="https://www.facebook.com/tr?id=27681167481569538&ev=PageView&noscript=1"
     <main>
         <section class="article-hero">
             <div class="container">
+                <div class="faq-section">
+                <h2>Domande frequenti</h2>
+                <div class="faq-item">
+                    <h3>Serve saper usare le formule di Excel per lavorare con l'AI?</h3>
+                    <p>No: descrivi il risultato che vuoi (“togli i doppioni dalla colonna B”) e l'AI produce i dati puliti o la formula pronta da incollare. Conoscere le formule aiuta solo a verificare il risultato.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Meglio Claude o Gemini per i fogli di calcolo?</h3>
+                    <p>Claude è più affidabile sui passaggi complessi e funziona anche dentro Excel; Gemini è comodissimo se lavori già nei Google Fogli perché agisce direttamente sul foglio. Nel dubbio: prova entrambi sullo stesso compito e confronta.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Posso incollare dati di clienti nell'AI?</h3>
+                    <p>Con prudenza: rimuovi o maschera i dati personali non necessari (nomi, telefoni, IBAN) prima di incollare, e usa account a pagamento con impostazioni privacy attive. Per dati sensibili chiedi prima al tuo consulente privacy.</p>
+                </div>
+                </div>
+
+                <div class="author-box">
+                    <div class="author-box__avatar">A</div>
+                    <div class="author-box__content">
+                        <h4>Aliosha Battaglini</h4>
+                        <p class="author-box__role">Founder AI Osha — Intelligenza Artificiale in Pratica per chi lavora</p>
+                        <p class="author-box__bio">Formatore di intelligenza artificiale per PMI, professionisti e partite IVA. Autore di 14 libri pubblicati con la sua casa editrice indipendente, gestita ogni giorno con l'AI. <a href="../chi-sono.html">Scopri di più →</a></p>
+                    </div>
+                </div>
+
+                <div class="related">
+                    <h4>Continua a leggere</h4>
+                    <a href="chatgpt-al-lavoro-30-prompt.html">ChatGPT al lavoro: 30 prompt pronti da copiare →</a>
+                    <a href="ai-per-chi-lavora-15-cose-da-fare-oggi.html">AI per chi lavora: 15 cose che puoi fare oggi →</a>
+                    <a href="ottimizzare-google-docs-gemini.html">Come usare Gemini in Google Docs →</a>
+                </div>
+
                 <a href="../blog.html" class="back-link">
                     <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M10 19l-7-7m0 0l7-7m-7 7h18"/>
@@ -199,6 +287,11 @@ src="https://www.facebook.com/tr?id=27681167481569538&ev=PageView&noscript=1"
         <section class="article-content">
             <div class="container">
                 <picture><source srcset="../images/blog/cover-excel-ai.webp" type="image/webp"><img src="../images/blog/cover-excel-ai.jpg" alt="Pulire un Excel con l'AI — Claude e Gemini" class="cover-img" width="1600" height="900" loading="eager"></picture>
+
+                <div class="tldr">
+                    <h3>In sintesi</h3>
+                    <p>Per pulire un foglio Excel non serve più conoscere le formule: incolli i dati in <strong>Claude</strong> (in chat o dentro Excel) o usi <strong>Gemini nei Google Fogli</strong>, descrivi cosa vuoi ottenere e ricevi dati puliti o la formula pronta. In questo articolo: i 3 modi per farlo e <strong>10 comandi pronti da copiare</strong>.</p>
+                </div>
 
                 <p><strong>Quante ore hai buttato a sistemare un foglio a mano?</strong> Togliere doppioni, uniformare le date, ricordare quella formula che non ti viene mai. La verità è che oggi puoi farlo <strong>parlando</strong>: spieghi all'AI cosa hai e cosa vuoi, e lei ti ridà i dati puliti o la formula pronta da incollare.</p>
 
