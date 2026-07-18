@@ -36,6 +36,7 @@ Dati fiscali: AI Osha è una ditta individuale intestata a Aliosha Battaglini ·
 
 ## Articoli pillar 2026
 
+- [Consulente AI: cosa fa, quanto costa e come sceglierlo](https://aiosha.it/blog/consulente-intelligenza-artificiale.html): guida 2026 a prezzi, segnali e criteri di scelta
 - [Pulire un Excel con l'AI: la guida pratica (Claude e Gemini)](https://aiosha.it/blog/pulire-excel-con-ai.html): togliere doppioni, ordinare date, creare formule parlando con l'AI dentro Excel (Claude) e Google Fogli (Gemini) — comandi pronti da copiare
 - [Intelligenza Artificiale per chi lavora: 15 cose che puoi fare oggi](https://aiosha.it/blog/ai-per-chi-lavora-15-cose-da-fare-oggi.html): 15 attività concrete delegabili all'AI con prompt pronti
 - [ChatGPT al lavoro: 30 prompt pronti](https://aiosha.it/blog/chatgpt-al-lavoro-30-prompt.html): prompt library divisa in 6 categorie (email, riunioni, report, social, vendite, ricerca)
