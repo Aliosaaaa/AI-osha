@@ -94,7 +94,7 @@
             "name": "Cos'è un AI assessment, in parole semplici?",
             "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "È l'analisi che risponde a una domanda: dove conviene davvero l'intelligenza artificiale nella tua attività? Si mappano le attività che consumano tempo, si classificano per adattezza all'AI e si ordina il tutto per impatto. Il risultato è una lista corta di punti da cui partire, con priorità."
+                "text": "È l'analisi che risponde a una domanda: dove conviene davvero l'intelligenza artificiale nella tua attività? Si mappano le attività che consumano tempo, si valuta quanto ognuna si presta all'AI e si ordina il tutto per impatto. Il risultato è una lista corta di punti da cui partire, con priorità."
             }
         },
         {
@@ -178,6 +178,8 @@
         .numbered-list li { counter-increment: item; padding: 1.25rem 1.25rem 1.25rem 4rem; background: var(--dark-soft); border: 1px solid rgba(255,255,255,0.06); border-radius: 0.75rem; margin-bottom: 1rem; position: relative; }
         .numbered-list li::before { content: counter(item); position: absolute; left: 1.25rem; top: 1.25rem; width: 2rem; height: 2rem; background: linear-gradient(135deg, var(--primary), #0066cc); color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 0.95rem; }
         .numbered-list li strong { display: block; font-size: 1.05rem; margin-bottom: 0.4rem; color: var(--white); }
+        .prompt-block { background: #0a0e15; border: 1px solid rgba(0,168,232,0.2); border-left: 3px solid var(--primary); border-radius: 0.5rem; padding: 1.1rem 1.25rem; margin: 0.75rem 0 1.5rem; font-family: 'JetBrains Mono', monospace, monospace; font-size: 0.88rem; line-height: 1.55; color: #c5d8e8; white-space: pre-wrap; }
+        .prompt-block::before { content: "📝 Prompt — copia e incolla"; display: block; color: var(--highlight); font-family: var(--font-display); font-size: 0.75rem; font-weight: 700; letter-spacing: 0.08em; margin-bottom: 0.5rem; text-transform: uppercase; }
         .author-box { display: flex; gap: 1.25rem; padding: 1.75rem; background: var(--dark-soft); border: 1px solid rgba(255,255,255,0.08); border-radius: 1rem; margin: 3rem 0; }
         .author-box__avatar { flex-shrink: 0; width: 80px; height: 80px; border-radius: 50%; background: linear-gradient(135deg, var(--primary), var(--highlight)); display: flex; align-items: center; justify-content: center; color: #fff; font-size: 2rem; font-weight: 800; }
         .author-box__content h4 { font-size: 1.1rem; color: var(--white); margin-bottom: 0.3rem; }
@@ -285,26 +287,28 @@ src="https://www.facebook.com/tr?id=27681167481569538&ev=PageView&noscript=1"
 
         <div class="tldr">
             <p class="tldr-label">In sintesi</p>
-            <p>Un AI assessment risponde a una domanda: <strong>dove conviene davvero l'AI nel tuo lavoro?</strong> Si fa in 5 passi: mappa una settimana di attività, conta le ore ripetitive, classifica ogni attività per adattezza all'AI, prova un quick win, misura. Qui trovi il metodo completo e un <strong>prompt pronto</strong> che trasforma l'AI stessa nel tuo analista. Poi decidi tu se proseguire da solo o con un professionista.</p>
+            <p>Un AI assessment risponde a una domanda: <strong>dove conviene davvero l'AI nel tuo lavoro?</strong> Si fa in 5 passi: mappa una settimana di attività, conta le ore ripetitive, valuta quanto ogni attività si presta all'AI, prova un quick win, misura. Qui trovi il metodo completo e un <strong>prompt pronto</strong> che trasforma l'AI stessa nel tuo analista. Poi decidi tu se proseguire da solo o con un professionista.</p>
         </div>
 
         <p><strong>Prima di comprare abbonamenti, corsi o consulenze, c'è una domanda da cui partire: dove conviene davvero l'intelligenza artificiale nella tua attività?</strong> Rispondere ha un nome — AI assessment — e non richiede né settimane né paroloni: richiede un metodo. Te lo mostro nella versione che uso con i miei clienti, ridotta a 5 passi che puoi fare anche da solo.</p>
 
-        <p>Perché conta? Perché il motivo numero uno per cui le imprese italiane rinunciano all'AI non è il costo: secondo l'<a href="https://www.istat.it/comunicato-stampa/imprese-e-ict-anno-2025/" target="_blank" rel="noopener">ISTAT</a>, circa il <strong>60% di chi ha valutato e lasciato perdere</strong> indica la mancanza di competenze. E la prima competenza non è scrivere prompt: è sapere <em>dove</em> puntare.</p>
+        <p>Perché conta? Perché il motivo numero uno per cui le imprese italiane rinunciano all'AI non è il costo: secondo l'<a href="https://www.istat.it/comunicato-stampa/imprese-e-ict-anno-2025/" target="_blank" rel="noopener">ISTAT</a>, circa il <strong>60% di chi ha valutato e lasciato perdere</strong> indica la mancanza di competenze. E la prima competenza non è scrivere prompt: è sapere <em>dove</em> puntare — in un mercato che secondo l'<a href="https://www.osservatori.net/comunicato/artificial-intelligence/intelligenza-artificiale-italia/" target="_blank" rel="noopener">Osservatorio del Politecnico di Milano</a> cresce del 50% l'anno, il costo di puntare male sale insieme alle opportunità.</p>
 
         <h2>Il metodo in 5 passi</h2>
 
         <ol class="numbered-list">
             <li><strong>Mappa una settimana vera</strong> Per 5 giorni lavorativi, annota le attività e il tempo che si prendono. Non quella ideale: quella vera, con le interruzioni. Bastano carta e penna o una nota sul telefono.</li>
             <li><strong>Isola il ripetitivo</strong> Evidenzia tutto ciò che fai in modo simile ogni volta: email dello stesso tipo, preventivi, report, post, documenti da sistemare. Somma le ore: quasi sempre escono 8-15 ore a settimana. Quello è il tuo tesoro.</li>
-            <li><strong>Classifica per adattezza</strong> Per ogni attività ripetitiva chiediti: è fatta di testo, dati o routine? Se sì, l'AI la fa bene già oggi. Richiede rapporti umani dal vivo, manualità fisica o decisioni delicate? Allora resta a te — e va benissimo così.</li>
-            <li><strong>Prova UN quick win</strong> Scegli l'attività col rapporto ore/adattezza migliore e automatizzala questa settimana. Una sola: il quick win serve a produrre una prova, non a rivoluzionare tutto insieme.</li>
+            <li><strong>Valuta quanto si presta all'AI</strong> Per ogni attività ripetitiva chiediti: è fatta di testo, dati o routine? Se sì, l'AI la fa bene già oggi. Richiede rapporti umani dal vivo, manualità fisica o decisioni delicate? Allora resta a te — e va benissimo così.</li>
+            <li><strong>Prova UN quick win</strong> Scegli l'attività col miglior rapporto tra ore consumate e resa con l'AI e automatizzala questa settimana. Una sola: il quick win serve a produrre una prova, non a rivoluzionare tutto insieme.</li>
             <li><strong>Misura e decidi</strong> Quanto tempo risparmi sull'attività scelta? Moltiplica per le settimane in un anno e per il valore della tua ora: quel numero ti dice se fermarti, proseguire da solo o farti accompagnare.</li>
         </ol>
 
+        <p>Un esempio tipico di come escono i conti: un professionista che passa <strong>5 ore a settimana</strong> tra preventivi ed email ripetitive, portate a 1 ora e mezza con l'AI, recupera circa 160 ore l'anno. A una tariffa di 50€ l'ora sono <strong>8.000€ di tempo vendibile</strong>, contro un costo di strumenti di 0-300€ l'anno. Saranno i tuoi numeri a parlare, ma l'ordine di grandezza è questo.</p>
+
         <h2>Il prompt che fa l'assessment per te</h2>
 
-        <p>La parte più bella? L'assessment puoi fartelo fare <strong>dall'AI stessa</strong>. Incolla questo prompt in ChatGPT, Claude o Gemini e lasciati intervistare — è lo stesso principio del reverse prompting su cui è costruito il mio <a href="../risorse.html">Prompt Madre</a>:</p>
+        <p>E c'è una scorciatoia: l'assessment puoi fartelo fare <strong>dall'AI stessa</strong>. Incolla questo prompt in ChatGPT, Claude o Gemini e lasciati intervistare — è lo stesso principio del reverse prompting su cui è costruito il mio <a href="../risorse.html">Prompt Madre</a>:</p>
 
         <div class="prompt-block">Sei un consulente esperto di intelligenza artificiale applicata al lavoro. Fammi un AI assessment con il metodo dell'intervista: fammi UNA domanda alla volta (massimo 8 in totale) per capire: che attività svolgo, quali sono ripetitive e quante ore consumano, quali sono fatte di testo/dati/routine, che strumenti uso già.
 Alla fine dammi: 1) la classifica delle mie 3 attività più adatte all'AI con il tempo recuperabile stimato, 2) per ciascuna lo strumento concreto con cui partirei domani, 3) l'attività che NON dovrei automatizzare e perché.
@@ -326,7 +330,7 @@ Fai la prima domanda.</div>
             <h2>Domande frequenti</h2>
             <div class="faq-item">
                 <h3>Cos'è un AI assessment, in parole semplici?</h3>
-                <p>È l'analisi che risponde a una domanda: dove conviene davvero l'intelligenza artificiale nella tua attività? Si mappano le attività che consumano tempo, si classificano per adattezza all'AI e si ordina il tutto per impatto. Il risultato è una lista corta di punti da cui partire, con priorità.</p>
+                <p>È l'analisi che risponde a una domanda: dove conviene davvero l'intelligenza artificiale nella tua attività? Si mappano le attività che consumano tempo, si valuta quanto ognuna si presta all'AI e si ordina il tutto per impatto. Il risultato è una lista corta di punti da cui partire, con priorità.</p>
             </div>
             <div class="faq-item">
                 <h3>Posso fare un AI assessment da solo?</h3>
