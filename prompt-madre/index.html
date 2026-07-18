@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Il Prompt Madre — AI Osha</title>
+<meta name="description" content="Il Prompt Madre: il prompt con cui fai costruire all'AI un sito intero, da zero. Regalo di AI Osha." />
+<meta property="og:title" content="Il Prompt Madre — AI Osha" />
+<meta property="og:description" content="Copia questo prompt, incollalo nell'AI, e ti costruisce un sito intero da zero." />
+<meta property="og:image" content="https://aiosha.it/images/workshop-og-lavoro.jpg" />
+<link rel="icon" type="image/png" href="/salto-quantico/images/uccello.png" />
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+  :root{--navy:#0d1f34;--navy2:#1E3A5F;--ciano:#00A8E8;--oro:#F5A623;--ink:#eef5fc;--muted:#9fb3c8;--card:#0f2136;}
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Plus Jakarta Sans',system-ui,sans-serif;background:radial-gradient(1200px 700px at 70% -10%,#16324f,#070d16 60%);color:var(--ink);line-height:1.6;min-height:100vh}
+  .wrap{max-width:820px;margin:0 auto;padding:48px 22px 80px}
+  .brand{font-weight:800;font-size:20px}.brand span{color:var(--ciano)}
+  .kick{font-family:'JetBrains Mono',monospace;color:var(--ciano);letter-spacing:.18em;text-transform:uppercase;font-size:13px;margin:34px 0 10px}
+  h1{font-size:clamp(2rem,5vw,3.2rem);font-weight:800;line-height:1.05;letter-spacing:-.02em}
+  h1 .g{background:linear-gradient(100deg,#4fc9ff,#F5A623);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .lead{font-size:1.2rem;color:var(--muted);margin-top:16px;max-width:60ch}
+  h2{font-size:1.5rem;margin:38px 0 12px}
+  ol{margin:12px 0 12px 22px}li{margin:7px 0}
+  .promptbox{position:relative;background:#0b1626;border:1px solid rgba(0,168,232,.3);border-radius:14px;padding:22px 22px 22px;margin:14px 0;font-family:'JetBrains Mono',monospace;font-size:13.5px;line-height:1.6;color:#cfe3f7;white-space:pre-wrap}
+  .copy{position:absolute;top:12px;right:12px;background:var(--ciano);color:#04121f;border:none;border-radius:8px;padding:8px 14px;font-weight:700;font-family:'Plus Jakarta Sans';cursor:pointer;font-size:13px}
+  .copy:hover{background:#33bdf0}
+  .cardrow{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:16px 0}
+  .card{background:var(--card);border:1px solid rgba(120,190,255,.18);border-radius:14px;padding:18px}
+  .card h3{font-size:1.1rem;margin-bottom:6px}
+  .card p{font-size:.98rem;color:var(--muted)}
+  .cta{display:inline-block;background:var(--oro);color:#221803;font-weight:800;text-decoration:none;padding:15px 28px;border-radius:12px;margin-top:8px;font-size:1.05rem}
+  .divider{height:1px;background:rgba(120,190,255,.15);margin:38px 0}
+  .foot{color:var(--muted);font-size:.9rem;margin-top:40px}
+  a{color:var(--ciano)}
+  @media(max-width:640px){.cardrow{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="brand">AI Osha<span>.</span></div>
+
+  <div class="kick">Il tuo regalo</div>
+  <h1>Il <span class="g">Prompt Madre</span></h1>
+  <p class="lead">Copia questo prompt, incollalo in un'AI (ChatGPT, Claude, Gemini) e ti costruisce <b>un sito intero, da zero</b>. È lo stesso metodo che uso io. Provalo su una tua idea.</p>
+
+  <h2>Il prompt (copia e incolla)</h2>
+  <div class="promptbox" id="pm">Sei un web designer e front-end senior. Devi creare un sito completo per la mia attività.
+
+ATTIVITÀ: [descrivi in 2 righe: cosa fai, per chi, dove]
+STILE: [es. moderno e pulito / elegante / minimal] — colori: [2-3 colori]
+OBIETTIVO DEL SITO: [cosa deve fare il visitatore: contattarti / prenotare / comprare]
+
+Crea un sito in un SINGOLO file HTML (CSS inline, nessun file esterno) con:
+1. Una hero con nome attività, uno slogan forte e un pulsante di contatto.
+2. Una sezione "chi siamo" (scrivi tu un testo credibile).
+3. Tre servizi/prodotti con titolo e descrizione breve.
+4. Una sezione con 3 testimonianze realistiche.
+5. Una sezione contatti con un pulsante ben visibile.
+6. Un footer.
+
+Requisiti: design moderno e responsive (perfetto anche su telefono), testi in italiano già pronti, mobile-first, veloce. Dammi SOLO il codice HTML completo, pronto da salvare come index.html.
+
+Poi dimmi, passo passo, come pubblicarlo gratis online.</div>
+  <button class="copy" onclick="navigator.clipboard.writeText(document.getElementById('pm').innerText);this.innerText='Copiato ✓'">Copia</button>
+
+  <h2>Come si usa (3 passi)</h2>
+  <ol>
+    <li>Sostituisci le parti tra [parentesi] con le tue informazioni.</li>
+    <li>Incollalo in ChatGPT / Claude / Gemini e lascialo lavorare.</li>
+    <li>Salva il codice come <code>index.html</code>, aprilo nel browser: è il tuo sito. Poi segui i passi che l'AI ti dà per pubblicarlo gratis.</li>
+  </ol>
+
+  <div class="divider"></div>
+
+  <h2>E le registrazioni del workshop?</h2>
+  <p class="lead" style="font-size:1.05rem">Le 3 serate del "Salto Quantico" — cosa si può fare con l'AI, come costruire un progetto vero, e come portarlo nel tuo lavoro.</p>
+  <div class="cardrow">
+    <div class="card"><h3>Sera 1 · Cosa si può fare</h3><p>Gli strumenti e il metodo. <em>(link in arrivo)</em></p></div>
+    <div class="card"><h3>Sera 2 · Costruiamo</h3><p>Un progetto vero, dal vivo. <em>(link in arrivo)</em></p></div>
+  </div>
+
+  <div class="divider"></div>
+
+  <h2>Vuoi portarla nella tua attività per davvero?</h2>
+  <p class="lead" style="font-size:1.05rem">Il Prompt Madre è l'inizio. Se vuoi montare l'AI sul tuo caso concreto — e ripartire a settembre con una marcia in più — parliamone.</p>
+  <a class="cta" href="https://wa.me/393313883929?text=Ciao%20Aliosha%2C%20ho%20ricevuto%20il%20Prompt%20Madre" target="_blank">Scrivimi su WhatsApp →</a>
+
+  <p class="foot">AI Osha · Aliosha Battaglini · Pescia (PT) · <a href="https://aiosha.it">aiosha.it</a></p>
+</div>
+</body>
+</html>
