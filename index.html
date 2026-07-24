@@ -37,8 +37,9 @@
     <!-- Preload Critical Resources -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap">
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <!-- Font non render-blocking: il testo appare subito (system font) e fa swap al load del CSS -->
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap"></noscript>
     
     <!-- Schema.org Structured Data -->
     <script type="application/ld+json">
@@ -2195,7 +2196,7 @@ src="https://www.facebook.com/tr?id=27681167481569538&ev=PageView&noscript=1"
         <div class="container">
             <div class="header__inner">
                 <a href="/" class="header__logo">
-                    <img loading="lazy" src="images/uccello.png" alt="AI Osha" width="180" height="180" style="height:32px;width:auto;"><span style="font-size:1.3rem;font-weight:800;color:#fff;letter-spacing:-0.02em;">AI <span style="color:#00A8E8;">Osha</span></span>
+                    <picture><source srcset="images/uccello.webp" type="image/webp"><img src="images/uccello.png" alt="AI Osha" width="180" height="180" fetchpriority="high" style="height:32px;width:auto;"></picture><span style="font-size:1.3rem;font-weight:800;color:#fff;letter-spacing:-0.02em;">AI <span style="color:#00A8E8;">Osha</span></span>
                 </a>
                 
                 <nav class="header__nav" aria-label="Menu principale">
@@ -3746,7 +3747,10 @@ src="https://www.facebook.com/tr?id=27681167481569538&ev=PageView&noscript=1"
     window.addEventListener('load', function () {
         var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
         var desktop = window.matchMedia('(min-width: 768px)').matches;
-        if (reduced) return;
+        // Su MOBILE non serve nulla di tutto questo: mesh gradient e smooth-scroll sono
+        // già solo-desktop, resterebbe solo il reveal dei titoli via GSAP/SplitText che da
+        // solo costa ~1,1s di CPU sul telefono. Lo saltiamo: i titoli appaiono normalmente.
+        if (reduced || !desktop) return;
 
         var libs = [
             'assets/gradient.js',
