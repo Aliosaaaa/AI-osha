@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Content-Security-Policy: allowlist degli host realmente usati (Google Fonts/Analytics, Meta Pixel, jsDelivr, YouTube, Apps Script). object-src 'none' + base-uri 'self' bloccano le classi XSS via plugin/base-tag. -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://connect.facebook.net https://cdn.jsdelivr.net https://www.google-analytics.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: https:; connect-src 'self' https:; frame-src https://www.youtube.com https://www.youtube-nocookie.com https://www.facebook.com; media-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self' https://script.google.com">
     
     <!-- SEO Primary Meta Tags -->
     <title>AI Osha | Intelligenza Artificiale in Pratica per chi lavora</title>
@@ -129,6 +131,37 @@
             "Workshop AI dal vivo"
         ],
         "founder": { "@type": "Person", "name": "Aliosha Battaglini" },
+        "makesOffer": [
+            {
+                "@type": "Offer",
+                "name": "Sessione 1-to-1 AI Osha",
+                "description": "1 ora e 30 di lavoro a schermo condiviso: esci con la soluzione AI già implementata sul tuo computer.",
+                "price": "250",
+                "priceCurrency": "EUR",
+                "url": "https://aiosha.it/consulenza.html",
+                "availability": "https://schema.org/InStock"
+            },
+            {
+                "@type": "Offer",
+                "name": "Percorso 5 Sessioni AI Osha",
+                "price": "999",
+                "priceCurrency": "EUR",
+                "url": "https://aiosha.it/consulenza.html",
+                "availability": "https://schema.org/InStock"
+            },
+            {
+                "@type": "Offer",
+                "name": "Sito web realizzato con l'AI",
+                "url": "https://aiosha.it/consulenza.html",
+                "priceSpecification": { "@type": "PriceSpecification", "minPrice": "499", "priceCurrency": "EUR" }
+            },
+            {
+                "@type": "Offer",
+                "name": "Scriviamo e pubblichiamo il tuo libro",
+                "url": "https://aiosha.it/consulenza.html",
+                "priceSpecification": { "@type": "PriceSpecification", "minPrice": "899", "priceCurrency": "EUR" }
+            }
+        ],
         "openingHoursSpecification": [
             {
                 "@type": "OpeningHoursSpecification",
