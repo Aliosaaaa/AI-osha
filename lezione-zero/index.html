@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lezione Zero gratuita — L'AI per chi lavora | AI Osha</title>
+<meta name="description" content="In 20 minuti: account pronti, dati al sicuro, la tua prima risposta utile dall'intelligenza artificiale. Lezione gratuita, senza paroloni. Se sai mandare un'email, ce la fai.">
+<meta property="og:title" content="Lezione Zero gratuita — L'AI per chi lavora">
+<meta property="og:description" content="20 minuti, zero paroloni, zero carta di credito. Account pronti, dati al sicuro, prima risposta utile.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<!-- Meta Pixel -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init','27681167481569538');fbq('track','PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=27681167481569538&ev=PageView&noscript=1"/></noscript>
+<style>
+:root{--navy:#0D1117;--navy2:#1E3A5F;--cyan:#00A8E8;--amber:#F5A623;--txt:#E8EEF4;--muted:#9FB0C0;}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--navy);color:var(--txt);line-height:1.6;overflow-x:hidden}
+.grad{background:linear-gradient(90deg,var(--cyan),var(--amber));-webkit-background-clip:text;background-clip:text;color:transparent}
+.wrap{max-width:1060px;margin:0 auto;padding:0 22px}
+nav{padding:20px 0;display:flex;justify-content:space-between;align-items:center}
+nav .logo{font-weight:800;font-size:1.25rem}
+nav .logo span{color:var(--cyan)}
+nav a.mini{color:var(--muted);text-decoration:none;font-size:.85rem}
+/* HERO */
+.hero{position:relative;padding:56px 0 72px;background:
+ radial-gradient(900px 420px at 75% -10%,rgba(0,168,232,.16),transparent 60%),
+ radial-gradient(700px 380px at 10% 110%,rgba(245,166,35,.10),transparent 60%);}
+.hero .wrap{display:grid;grid-template-columns:1.15fr .85fr;gap:44px;align-items:center}
+.kicker{display:inline-block;font-size:.78rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--cyan);border:1px solid rgba(0,168,232,.35);padding:7px 14px;border-radius:100px;margin-bottom:22px}
+h1{font-size:clamp(2rem,4.6vw,3.1rem);font-weight:800;line-height:1.13;margin-bottom:18px}
+.hero p.sub{color:var(--muted);font-size:1.12rem;max-width:34rem;margin-bottom:26px}
+.trust{display:flex;gap:18px;flex-wrap:wrap;color:var(--muted);font-size:.86rem}
+.trust b{color:var(--txt)}
+/* FORM CARD */
+.card{background:rgba(30,58,95,.35);border:1px solid rgba(0,168,232,.25);border-radius:20px;padding:30px;backdrop-filter:blur(6px);box-shadow:0 20px 60px rgba(0,0,0,.4)}
+.card h3{font-size:1.15rem;margin-bottom:6px}
+.card p.small{color:var(--muted);font-size:.88rem;margin-bottom:18px}
+.card label{display:block;font-size:.8rem;font-weight:600;color:var(--muted);margin:12px 0 6px}
+.card input[type=text],.card input[type=email]{width:100%;padding:14px 16px;border-radius:12px;border:1px solid rgba(159,176,192,.3);background:rgba(13,17,23,.7);color:var(--txt);font-family:inherit;font-size:1rem}
+.card input:focus{outline:2px solid var(--cyan);border-color:transparent}
+.consent{display:flex;gap:10px;align-items:flex-start;font-size:.75rem;color:var(--muted);margin:16px 0 18px}
+.consent input{margin-top:3px}
+.btn{display:block;width:100%;padding:17px;border:none;border-radius:14px;background:linear-gradient(90deg,var(--cyan),#0077b6);color:#fff;font-family:inherit;font-size:1.05rem;font-weight:800;cursor:pointer;transition:transform .15s,box-shadow .15s}
+.btn:hover{transform:translateY(-2px);box-shadow:0 12px 30px rgba(0,168,232,.35)}
+.btn.amber{background:linear-gradient(90deg,var(--amber),#d4881c)}
+.after-btn{text-align:center;font-size:.78rem;color:var(--muted);margin-top:12px}
+.form-msg{display:none;margin-top:12px;font-size:.9rem;text-align:center}
+/* SECTIONS */
+section{padding:72px 0}
+section.alt{background:linear-gradient(180deg,rgba(30,58,95,.22),transparent)}
+h2{font-size:clamp(1.5rem,3.4vw,2.2rem);font-weight:800;line-height:1.2;margin-bottom:14px;text-align:center}
+.lead{color:var(--muted);text-align:center;max-width:40rem;margin:0 auto 44px}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.box{background:rgba(30,58,95,.3);border:1px solid rgba(159,176,192,.15);border-radius:18px;padding:26px}
+.box .n{font-family:'JetBrains Mono',monospace;color:var(--amber);font-weight:600;font-size:.85rem;margin-bottom:10px}
+.box h3{font-size:1.05rem;margin-bottom:8px}
+.box p{color:var(--muted);font-size:.92rem}
+/* PAIN */
+.pain{border-left:3px solid var(--cyan)}
+/* TOOLS */
+.tools{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:34px}
+.tool{text-align:center;background:rgba(13,17,23,.55);border:1px solid rgba(159,176,192,.12);border-radius:14px;padding:18px 10px}
+.tool b{display:block;font-size:.95rem}
+.tool span{font-size:.78rem;color:var(--muted)}
+/* BIO */
+.bio{display:grid;grid-template-columns:.9fr 1.4fr;gap:40px;align-items:center}
+.bio .ph{aspect-ratio:4/5;border-radius:20px;background:linear-gradient(160deg,var(--navy2),#0d1117 70%);border:1px solid rgba(0,168,232,.25);display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:.85rem;text-align:center;padding:20px}
+.bio h2{text-align:left}
+.bio p{color:var(--muted);margin-bottom:14px}
+.bio p b{color:var(--txt)}
+/* TESTIMONIALS */
+.tgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.tcard{background:rgba(30,58,95,.3);border:1px solid rgba(159,176,192,.15);border-radius:18px;padding:24px;display:flex;flex-direction:column;gap:14px}
+.tcard .stars{color:var(--amber);letter-spacing:2px;font-size:.85rem}
+.tcard blockquote{font-size:.95rem;line-height:1.55;flex:1}
+.tcard .who b{display:block;font-size:.9rem}
+.tcard .who span{font-size:.78rem;color:var(--muted)}
+/* FAQ */
+details{background:rgba(30,58,95,.3);border:1px solid rgba(159,176,192,.15);border-radius:14px;padding:18px 22px;margin-bottom:12px;max-width:46rem;margin-left:auto;margin-right:auto}
+summary{cursor:pointer;font-weight:700;font-size:.98rem}
+details p{color:var(--muted);font-size:.92rem;margin-top:10px}
+/* FOOTER */
+footer{border-top:1px solid rgba(159,176,192,.12);padding:34px 0;text-align:center;color:var(--muted);font-size:.78rem}
+footer p{margin-bottom:8px}
+@media(max-width:840px){
+ .hero .wrap,.bio{grid-template-columns:1fr}
+ .grid3,.tgrid{grid-template-columns:1fr}
+ .tools{grid-template-columns:repeat(2,1fr)}
+ .hero{padding:36px 0 56px}
+ section{padding:56px 0}
+}
+</style>
+</head>
+<body>
+
+<div class="wrap"><nav>
+ <div class="logo">AI<span>Osha</span></div>
+ <a class="mini" href="https://aiosha.it">aiosha.it</a>
+</nav></div>
+
+<!-- HERO -->
+<header class="hero"><div class="wrap">
+ <div>
+  <span class="kicker">Lezione gratuita · per chi lavora</span>
+  <h1>Impara a usare l'intelligenza artificiale in <span class="grad">20 minuti</span>. Senza paroloni.</h1>
+  <p class="sub">La <b>Lezione Zero</b>: account pronti sul telefono e sul computer, i tuoi dati al sicuro, e la tua prima risposta davvero utile sul TUO lavoro. <b>Se sai mandare un'email, ce la fai.</b></p>
+  <div class="trust">
+   <div>✓ <b>PDF + video</b>, subito via email</div>
+   <div>✓ <b>20 minuti</b>, pigia lì fai così</div>
+   <div>✓ <b>Zero</b> carta di credito</div>
+  </div>
+ </div>
+ <div class="card" id="form">
+  <h3>Mandami la Lezione Zero</h3>
+  <p class="small">Arriva subito nella tua casella. Gratis.</p>
+  <form id="leadform" autocomplete="on">
+   <label for="nome">Il tuo nome</label>
+   <input type="text" id="nome" name="nome" placeholder="Es. Luca" required>
+   <label for="email">La tua email</label>
+   <input type="email" id="email" name="email" placeholder="nome@esempio.it" required>
+   <input type="text" name="azienda_hp" style="display:none" tabindex="-1" autocomplete="off">
+   <div class="consent">
+    <input type="checkbox" id="consenso" required>
+    <label for="consenso" style="margin:0;font-weight:400">Accetto di ricevere la lezione e le email di AI Osha. Niente spam, ti disiscrivi quando vuoi. <a href="https://aiosha.it/privacy-policy.html" style="color:var(--cyan)">Privacy</a></label>
+   </div>
+   <button class="btn" type="submit" id="btnsubmit">VOGLIO LA LEZIONE GRATIS →</button>
+   <p class="after-btn">Già più di 1.000 persone hanno visto Aliosha portare l'AI sul palco dal vivo.</p>
+   <p class="form-msg" id="formmsg"></p>
+  </form>
+ </div>
+</div></header>
+
+<!-- PAIN -->
+<section><div class="wrap">
+ <h2>Ti riconosci in una di queste tre?</h2>
+ <p class="lead">Sono le tre frasi che sento più spesso da chi lavora. La Lezione Zero nasce per queste.</p>
+ <div class="grid3">
+  <div class="box pain"><div class="n">01</div><h3>"Finisco alle 18. Il secondo turno no."</h3><p>Preventivi, email arretrate, burocrazia: 1-2 ore ogni sera, spesso dopo cena. Il tempo che l'AI può ricomprarti, se qualcuno te la spiega come si deve.</p></div>
+  <div class="box pain"><div class="n">02</div><h3>"L'ho provata, scrive robe generiche."</h3><p>Hai aperto ChatGPT, hai chiesto un post, è uscita una minestra da bot. Non è colpa tua e nemmeno dell'AI: nessuno ti ha detto il passaggio che cambia tutto.</p></div>
+  <div class="box pain"><div class="n">03</div><h3>"È troppo tecnico. E i miei dati?"</h3><p>Paura legittima. Per questo la lezione parte proprio da lì: le 3 regole d'oro sui dati dei tuoi clienti, e come spegnere l'addestramento in due tap.</p></div>
+ </div>
+</div></section>
+
+<!-- COSA C'È DENTRO -->
+<section class="alt"><div class="wrap">
+ <h2>Cosa porti a casa in <span class="grad">20 minuti</span></h2>
+ <p class="lead">Niente teoria. Alla fine della lezione hai tre cose fatte, non tre cose capite.</p>
+ <div class="grid3">
+  <div class="box"><div class="n">FATTO N.1</div><h3>Gli account pronti, gratis</h3><p>ChatGPT e Claude installati su telefono e computer, passo passo, senza carta di credito. Con la tabella onesta: quando il gratis basta (spoiler: per iniziare, sempre) e quando no.</p></div>
+  <div class="box"><div class="n">FATTO N.2</div><h3>I tuoi dati al sicuro</h3><p>Le 3 regole d'oro: cosa non incollare mai, come parlare dei clienti senza fare nomi, e il percorso esatto per disattivare l'addestramento. La paura numero uno, disinnescata subito.</p></div>
+  <div class="box"><div class="n">FATTO N.3</div><h3>La prima risposta utile</h3><p>La tua prima domanda vera, sul tuo lavoro vero, con una risposta che ti serve davvero. Più la cartella "Il mio ufficio AI" che userai da qui in avanti.</p></div>
+ </div>
+ <div class="tools">
+  <div class="tool"><b>ChatGPT</b><span>il tuttofare</span></div>
+  <div class="tool"><b>Claude</b><span>il penna-fine</span></div>
+  <div class="tool"><b>Perplexity</b><span>il ricercatore</span></div>
+  <div class="tool"><b>NotebookLM</b><span>l'archivista</span></div>
+ </div>
+ <p style="text-align:center;color:var(--muted);font-size:.85rem;margin-top:14px">I 4 strumenti che imparerai a distinguere (e quando usare quale).</p>
+</div></section>
+
+<!-- CHI SONO -->
+<section><div class="wrap bio">
+ <img src="aliosha-foto.jpg" alt="Aliosha Battaglini — AI Osha" style="width:100%;border-radius:20px;border:1px solid rgba(0,168,232,.25);display:block" loading="lazy">
+ <div>
+  <h2>Te la regala uno che viene <span class="grad">dai mestieri</span></h2>
+  <p>Mi chiamo <b>Aliosha Battaglini</b>. Prima di occuparmi di intelligenza artificiale ho fatto il <b>fotografo</b>, l'<b>agente di commercio</b>, ho lavorato nell'<b>immobiliare</b> e ho fatto pure il <b>cameriere</b>.</p>
+  <p>Non ho una laurea in informatica: tutto quello che so sull'AI l'ho imparato <b>da solo, la sera</b>, con la testa di uno che il giorno dopo doveva comunque lavorare. Oggi la insegno a chi lavora — dal vivo, anche su un palco davanti a più di 1.000 persone — e la regola è sempre la stessa: <b>zero paroloni, solo cose che usi domattina</b>.</p>
+  <p>La Lezione Zero è il primo gradino: quello dove quasi tutti si fermano. Te lo faccio salire gratis.</p>
+ </div>
+</div></section>
+
+<!-- TESTIMONIANZE -->
+<section class="alt"><div class="wrap">
+ <h2>Le parole di chi <span class="grad">lavora davvero</span></h2>
+ <p class="lead">Infermiere, professori, artigiani del vendere, liberi professionisti. Non guru: gente con le giornate piene, come te.</p>
+ <div class="tgrid">
+  <div class="tcard"><div class="stars">★★★★★</div><blockquote>"Ho recuperato i miei weekend. Le lezioni sono più belle e i ragazzi sono più coinvolti. Non torno indietro."</blockquote><div class="who"><b>Najla C.</b><span>Professoressa, scuola superiore</span></div></div>
+  <div class="tcard"><div class="stars">★★★★★</div><blockquote>"Un lavoro da una settimana fatto in 30 minuti. Ho quasi stentato a crederci io stesso."</blockquote><div class="who"><b>Aldo S.</b><span>Consulente commerciale assicurativo</span></div></div>
+  <div class="tcard"><div class="stars">★★★★★</div><blockquote>"Da quando uso l'AI gestisco il doppio delle proprietà con la metà del tempo. È stata una svolta."</blockquote><div class="who"><b>Federico M.</b><span>Imprenditore immobiliare</span></div></div>
+  <div class="tcard"><div class="stars">★★★★★</div><blockquote>"All'inizio ero scettica. Oggi uso Claude ogni giorno al lavoro — e lo rifarei domani."</blockquote><div class="who"><b>Anna B.</b><span>Infermiera pediatrica</span></div></div>
+  <div class="tcard"><div class="stars">★★★★★</div><blockquote>"Sembrava impossibile. Invece ho creato il mio strumento di lavoro digitale senza spendere un euro in sviluppatori."</blockquote><div class="who"><b>Mirko F.</b><span>Operaio specializzato</span></div></div>
+  <div class="tcard"><div class="stars">★★★★★</div><blockquote>"In 2 giorni avevo il sito online, indicizzato su Google e il primo cliente di alto profilo. Incredibile."</blockquote><div class="who"><b>Andrea S.</b><span>Fisioterapista, libero professionista</span></div></div>
+ </div>
+</div></section>
+
+<!-- FAQ -->
+<section><div class="wrap">
+ <h2>Domande <span class="grad">oneste</span>, risposte oneste</h2>
+ <p class="lead">&nbsp;</p>
+ <details><summary>È gratis davvero? Dov'è la fregatura?</summary><p>Gratis davvero: PDF + video, subito via email, zero carta di credito. La trasparenza totale: alla fine della lezione ti racconterò anche il mio percorso completo di 7 giorni (quello a pagamento, 29 euro). Se ti interessa bene, se no ti tieni la lezione e buon lavoro. Nessun obbligo, nessuna chiamata a sorpresa.</p></details>
+ <details><summary>Devo essere bravo col computer?</summary><p>Se sai mandare un'email e usare WhatsApp, hai già tutte le competenze che servono. Ogni passaggio è scritto "pigia lì, fai così", col percorso esatto dei menu.</p></details>
+ <details><summary>Quanto tempo mi serve?</summary><p>20 minuti, una volta sola. Alla fine hai gli account pronti, i dati protetti e la prima risposta utile già sullo schermo.</p></details>
+ <details><summary>Che fine fanno i miei dati (e quelli dei miei clienti)?</summary><p>È il cuore della lezione: le 3 regole d'oro su cosa non scrivere mai nell'AI e il percorso per disattivare l'addestramento nei tuoi account. Quanto ai dati che lasci qui: nome ed email servono solo a mandarti la lezione e le email di AI Osha, e ti disiscrivi con un click.</p></details>
+ <details><summary>Serve pagare ChatGPT o altri abbonamenti?</summary><p>No. Per la Lezione Zero (e per iniziare in generale) le versioni gratuite bastano. Nella lezione c'è la tabella onesta su quando un abbonamento ha senso e quando è buttare soldi.</p></details>
+ <div style="max-width:30rem;margin:40px auto 0">
+  <a href="#form" style="text-decoration:none"><button class="btn amber">SÌ, MANDAMI LA LEZIONE GRATIS →</button></a>
+  <p class="after-btn">20 minuti. Zero paroloni. Zero carta di credito.</p>
+ </div>
+</div></section>
+
+<footer><div class="wrap">
+ <p><b>AI Osha</b> — Aliosha Battaglini · P.IVA 02097940478 · Pescia (PT) · <a href="mailto:info@aiosha.it" style="color:var(--cyan)">info@aiosha.it</a></p>
+ <p><a href="https://aiosha.it/privacy-policy.html" style="color:var(--muted)">Privacy Policy</a> · <a href="https://aiosha.it" style="color:var(--muted)">aiosha.it</a></p>
+ <p style="max-width:44rem;margin:10px auto 0">Questo sito non fa parte di Facebook, Instagram o Meta Platforms Inc. e non è in alcun modo sponsorizzato da Meta. I risultati citati nelle testimonianze sono esperienze reali dei singoli e non costituiscono una promessa di risultato.</p>
+</div></footer>
+
+<script>
+// === CONFIGURA QUI ===
+const GAS_URL = "INCOLLA_QUI_URL_WEBHOOK_GAS_O_BREVO"; // endpoint Apps Script -> Brevo (lista Lezione Zero)
+// =====================
+document.getElementById('leadform').addEventListener('submit', async function(e){
+  e.preventDefault();
+  const btn = document.getElementById('btnsubmit'), msg = document.getElementById('formmsg');
+  const nome = document.getElementById('nome').value.trim();
+  const email = document.getElementById('email').value.trim();
+  if(this.azienda_hp.value){ return; } // honeypot
+  btn.disabled = true; btn.textContent = "Un attimo...";
+  try{
+    if(GAS_URL.startsWith("http")){
+      await fetch(GAS_URL, {method:"POST", mode:"no-cors",
+        headers:{"Content-Type":"application/x-www-form-urlencoded"},
+        body: new URLSearchParams({nome, email, fonte:"lezione-zero"})});
+    }
+    window.location.href = "grazie.html";
+  }catch(err){
+    msg.style.display="block"; msg.style.color="#f5a623";
+    msg.textContent = "Ops, qualcosa non ha funzionato. Riprova o scrivici: info@aiosha.it";
+    btn.disabled = false; btn.textContent = "VOGLIO LA LEZIONE GRATIS →";
+  }
+});
+</script>
+</body>
+</html>
