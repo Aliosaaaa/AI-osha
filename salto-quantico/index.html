@@ -845,15 +845,48 @@ function sqSubmit(e){
   var data={ nome:f.nome.value.trim(), email:f.email.value.trim(), telefono:(f.telefono?f.telefono.value.trim():''), fonte:(v?('volantino-'+v):(p.get('src')||'landing-salto-quantico')) };
   if(!SQ_ENDPOINT){ alert('Iscrizione quasi pronta — sto collegando il modulo. Riprova tra poco!'); return false; }
   btn.disabled=true; var old=btn.textContent; btn.textContent='Invio…';
-  fetch(SQ_ENDPOINT,{method:'POST',mode:'no-cors',body:JSON.stringify(data)})
-    .then(function(){
-      if(typeof gtag==='function'){gtag('event','generate_lead',{event_category:'salto-quantico',event_label:data.fonte});}
-      if(typeof fbq==='function'){fbq('track','Lead',{content_name:'salto-quantico',content_category:data.fonte});}
-      f.innerHTML='<div style="text-align:center;padding:14px 6px"><div style="font-size:2.4rem">✅</div><p style="color:#fff;font-weight:800;margin:.5rem 0;font-size:1.15rem">Ci sei dentro!</p><p style="color:var(--g400);font-size:.92rem">Controlla la mail: ti ho mandato la <b style="color:var(--highlight-light)">Parte 1 del libro</b> e ti scrivo io prima di ogni sera.</p></div>';
+
+  function riuscito(){
+    if(typeof gtag==='function'){gtag('event','generate_lead',{event_category:'salto-quantico',event_label:data.fonte});}
+    if(typeof fbq==='function'){fbq('track','Lead',{content_name:'salto-quantico',content_category:data.fonte});}
+    try{localStorage.removeItem('sq_in_sospeso');}catch(e){}
+    f.innerHTML='<div style="text-align:center;padding:14px 6px"><div style="font-size:2.4rem">✅</div><p style="color:#fff;font-weight:800;margin:.5rem 0;font-size:1.15rem">Ci sei dentro!</p><p style="color:var(--g400);font-size:.92rem">Controlla la mail: ti ho mandato la <b style="color:var(--highlight-light)">Parte 1 del libro</b> e ti scrivo io prima di ogni sera.</p></div>';
+  }
+  function fallito(motivo){
+    // il dato non va perso: resta qui e si ritenta al prossimo caricamento
+    try{localStorage.setItem('sq_in_sospeso',JSON.stringify(data));}catch(e){}
+    btn.disabled=false; btn.textContent=old;
+    alert('Non sono riuscito a registrarti ('+motivo+').\n\nRiprova tra un attimo. Se non funziona, scrivimi su WhatsApp al 331 388 3929 e ti iscrivo io a mano.');
+  }
+
+  // niente "no-cors": va letta davvero la risposta, altrimenti si dice
+  // "Ci sei dentro" anche a chi non e' stato registrato da nessuna parte
+  fetch(SQ_ENDPOINT,{method:'POST',body:JSON.stringify(data)})
+    .then(function(r){ return r.json().catch(function(){ return {ok:false,dettaglio:'risposta illeggibile'}; }); })
+    .then(function(res){
+      if(res && res.ok){ riuscito(); }
+      else if(res && res.salvato_su_foglio){
+        // Brevo ha fatto storie, ma il contatto e' comunque salvato: non lo perdo
+        riuscito();
+        if(typeof console!=='undefined'){console.warn('SQ: salvato su foglio ma Brevo ha risposto',res.status,res.dettaglio);}
+      }
+      else { fallito((res&&res.dettaglio)?res.dettaglio:'errore del server'); }
     })
-    .catch(function(){ btn.disabled=false; btn.textContent=old; alert('Ops, qualcosa è andato storto. Riprova tra un attimo.'); });
+    .catch(function(){ fallito('connessione'); });
   return false;
 }
+
+// se un'iscrizione era rimasta in sospeso (rete caduta), la ritenta da sola
+(function(){
+  try{
+    var s=localStorage.getItem('sq_in_sospeso');
+    if(!s||!SQ_ENDPOINT) return;
+    fetch(SQ_ENDPOINT,{method:'POST',body:s})
+      .then(function(r){return r.json();})
+      .then(function(res){ if(res&&(res.ok||res.salvato_su_foglio)) localStorage.removeItem('sq_in_sospeso'); })
+      .catch(function(){});
+  }catch(e){}
+})();
 </script>
 </body>
 </html>
