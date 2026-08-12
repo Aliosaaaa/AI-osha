@@ -20,21 +20,35 @@
     "background-size:220% 100%;animation:sqShift 6s ease-in-out infinite;" +
     "color:#fff;font-family:'Plus Jakarta Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;" +
     "box-shadow:0 4px 22px rgba(0,0,0,.28);border-bottom:1px solid rgba(255,255,255,.12)}" +
-    "#sq-bar .in{max-width:1180px;margin:0 auto;min-height:54px;display:flex;align-items:center;justify-content:center;" +
-    "gap:16px;padding:7px 16px;flex-wrap:wrap;text-align:center}" +
-    "#sq-bar .txt{font-size:15.5px;font-weight:800;letter-spacing:.1px;line-height:1.3}" +
+    "#sq-bar .in{max-width:1180px;margin:0 auto;min-height:60px;display:flex;align-items:center;justify-content:center;" +
+    "gap:16px;padding:8px 16px;flex-wrap:wrap;text-align:center}" +
+    "#sq-bar .txt{font-size:16.5px;font-weight:800;letter-spacing:.1px;line-height:1.3}" +
     "#sq-bar .txt b{color:#F5A623}" +
     "#sq-bar .cd{font-family:'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace;font-weight:700;" +
     "background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.25);border-radius:8px;padding:2px 9px;font-size:13px;white-space:nowrap}" +
-    "#sq-bar .cta{flex:none;background:#F5A623;color:#0D1117;font-weight:800;font-size:13.5px;text-decoration:none;" +
-    "padding:9px 18px;border-radius:9px;box-shadow:0 3px 0 #b9781a;transition:transform .12s ease, box-shadow .12s ease;white-space:nowrap}" +
+    "#sq-bar .cta{flex:none;background:#F5A623;color:#0D1117;font-weight:800;font-size:14.5px;text-decoration:none;" +
+    "padding:10px 20px;border-radius:9px;box-shadow:0 3px 0 #b9781a;transition:transform .12s ease, box-shadow .12s ease;white-space:nowrap}" +
     "#sq-bar .cta:hover{transform:translateY(-1px);box-shadow:0 5px 0 #b9781a}" +
     "#sq-bar .cta:active{transform:translateY(2px);box-shadow:0 1px 0 #b9781a}" +
     "#sq-bar .dot{display:inline-block;width:8px;height:8px;border-radius:50%;background:#ff4d4d;margin-right:7px;" +
     "box-shadow:0 0 0 0 rgba(255,77,77,.7);animation:sqPulse 1.8s infinite}" +
     "@keyframes sqShift{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}" +
     "@keyframes sqPulse{0%{box-shadow:0 0 0 0 rgba(255,77,77,.7)}70%{box-shadow:0 0 0 9px rgba(255,77,77,0)}100%{box-shadow:0 0 0 0 rgba(255,77,77,0)}}" +
-    "@media(max-width:640px){#sq-bar .in{gap:10px;padding:8px 12px}#sq-bar .txt{font-size:13px;flex-basis:100%}#sq-bar .cta{font-size:13px;padding:8px 15px}}";
+    "#sq-bar .solo-mob{display:none}" +
+    // --- MOBILE: due righe ordinate, testo corto sopra, countdown + CTA sotto ---
+    "@media(max-width:720px){" +
+      "#sq-bar .solo-desk{display:none}" +
+      "#sq-bar .solo-mob{display:inline}" +
+      "#sq-bar .in{min-height:0;gap:7px 10px;padding:9px 12px 10px;flex-wrap:wrap;justify-content:center}" +
+      "#sq-bar .txt{font-size:14.5px;font-weight:800;flex-basis:100%;line-height:1.25}" +
+      "#sq-bar .cd{font-size:13px;padding:3px 9px}" +
+      "#sq-bar .cta{font-size:14px;padding:10px 18px;box-shadow:0 3px 0 #b9781a}" +
+    "}" +
+    // schermi molto stretti: la CTA prende tutta la larghezza, resta il bersaglio piu' grande
+    "@media(max-width:380px){" +
+      "#sq-bar .txt{font-size:13.5px}" +
+      "#sq-bar .cta{flex-basis:100%;text-align:center;padding:11px 14px}" +
+    "}";
   document.head.appendChild(css);
 
   var bar = document.createElement("div");
@@ -42,9 +56,14 @@
   bar.setAttribute("role", "banner");
   bar.innerHTML =
     '<div class="in">' +
-    '<span class="txt"><span class="dot"></span>A settembre si riparte: <b>2 SERE LIVE GRATIS con l\'AI</b> · 27-28 agosto, ore 21 ' +
-    '<span class="cd" id="sq-cd"></span></span>' +
-    '<a class="cta" href="' + LINK + '">🎟️ Prenota il posto →</a>' +
+    '<span class="txt"><span class="dot"></span>' +
+      '<span class="solo-desk">A settembre si riparte: </span>' +
+      '<b>2 SERE LIVE GRATIS<span class="solo-desk"> con l\'AI</span></b>' +
+      '<span class="solo-desk"> · 27-28 agosto, ore 21</span>' +
+      '<span class="solo-mob"> · 27-28 ago, ore 21</span>' +
+    '</span>' +
+    '<span class="cd" id="sq-cd"></span>' +
+    '<a class="cta" href="' + LINK + '">🎟️ <span class="solo-desk">Prenota il posto</span><span class="solo-mob">Prenota</span> →</a>' +
     "</div>";
 
   function mount() {
