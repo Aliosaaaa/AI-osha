@@ -53,7 +53,7 @@ footer a{color:var(--muted)}
 
 <header>
  <h1>Le 2 serate le costruiamo <span class="grad">sui tuoi problemi</span></h1>
- <p><b style="color:var(--txt)">2 minuti, 6 domande.</b> Dimmi chi sei e cosa vuoi vedere: gli argomenti più richiesti li tratto <b style="color:var(--txt)">in diretta il 27 e 28 agosto</b>. Niente scaletta preconfezionata.</p>
+ <p><b style="color:var(--txt)">2 minuti, poche domande.</b> Titolare, dipendente, libero professionista: non importa cosa fai, importa cosa ti ruba tempo. Dimmi chi sei e cosa vuoi vedere: gli argomenti più votati li tratto <b style="color:var(--txt)">in diretta il 27 e 28 agosto</b>.</p>
 </header>
 
 <div class="card">
@@ -65,8 +65,21 @@ footer a{color:var(--muted)}
  <label for="email">Email * <small>(quella con cui ti sei iscritto)</small></label>
  <input type="email" id="email" name="email" required placeholder="nome@esempio.it">
 
- <label for="azienda">Di cosa ti occupi? *</label>
- <input type="text" id="azienda" name="azienda" required placeholder="Es. impresa edile, studio tecnico, negozio, libero professionista...">
+ <label for="azienda">Che lavoro fai? *</label>
+ <input type="text" id="azienda" name="azienda" required placeholder="Es. impiegato amministrativo, infermiera, idraulico, titolare di negozio, geometra...">
+
+ <label for="sito">In che veste lavori?</label>
+ <select id="sito" name="sito">
+  <option value="">Scegli...</option>
+  <option>Dipendente</option>
+  <option>Titolare o socio d'azienda</option>
+  <option>Libero professionista / P.IVA</option>
+  <option>Studio / in cerca / in cambio</option>
+  <option>Altro</option>
+ </select>
+
+ <label for="telefono">WhatsApp <small>(facoltativo — se il tuo caso finisce in diretta ti avviso prima)</small></label>
+ <input type="tel" id="telefono" name="telefono" placeholder="Es. 333 1234567">
 
  <hr class="sep"><div class="sep-label">Il tuo punto di partenza</div>
 
@@ -82,14 +95,18 @@ footer a{color:var(--muted)}
  <label for="ai_cosa">Se la usi: cosa e per fare cosa? <small>(facoltativo)</small></label>
  <input type="text" id="ai_cosa" name="ai_cosa" placeholder="Es. ChatGPT per le email, ogni tanto">
 
+ <label for="abbonamenti">Con quali strumenti lavori ogni giorno? <small>(così le demo le faccio sui TUOI strumenti)</small></label>
+ <input type="text" id="abbonamenti" name="abbonamenti" placeholder="Es. Excel, email, WhatsApp, gestionale, CAD, cartelle di documenti...">
+
  <label for="tempo">Dove perdi più tempo oggi?</label>
  <select id="tempo" name="tempo">
   <option value="">Scegli...</option>
   <option>Preventivi e offerte</option>
-  <option>Email e risposte ai clienti</option>
-  <option>Documenti, contratti, burocrazia</option>
+  <option>Email e comunicazioni</option>
+  <option>Documenti, report, burocrazia</option>
+  <option>Excel, dati e tabelle</option>
   <option>Social, foto e contenuti</option>
-  <option>Organizzazione e appuntamenti</option>
+  <option>Organizzazione, turni e riunioni</option>
   <option>Un po' tutto, sinceramente</option>
  </select>
 
@@ -97,13 +114,18 @@ footer a{color:var(--muted)}
 
  <label>Cosa vuoi assolutamente vedere in diretta? <small>(scegli fino a 3)</small></label>
  <div class="topics" id="topics">
-  <label class="topic"><input type="checkbox" value="Preventivo finito in 60 secondi"><span>⚡ Un preventivo finito in 60 secondi</span></label>
-  <label class="topic"><input type="checkbox" value="Email e risposte ai clienti automatiche"><span>✉️ Email e risposte ai clienti che si scrivono da sole</span></label>
-  <label class="topic"><input type="checkbox" value="Documenti e burocrazia"><span>📄 Documenti, contratti e burocrazia sbrigati dall'AI</span></label>
-  <label class="topic"><input type="checkbox" value="Social e contenuti"><span>📱 Post, foto e contenuti social in un decimo del tempo</span></label>
+  <label class="topic"><input type="checkbox" value="Preventivo/offerta in 60 secondi"><span>⚡ Un preventivo o un'offerta finiti in 60 secondi</span></label>
+  <label class="topic"><input type="checkbox" value="Email e risposte automatiche"><span>✉️ Email e risposte che si scrivono da sole</span></label>
+  <label class="topic"><input type="checkbox" value="Documenti, relazioni e burocrazia"><span>📄 Documenti, relazioni e burocrazia sbrigati dall'AI</span></label>
+  <label class="topic"><input type="checkbox" value="Excel e dati"><span>📊 Excel, dati e tabelle sistemati dall'AI</span></label>
+  <label class="topic"><input type="checkbox" value="Social e contenuti"><span>📱 Post, foto e contenuti in un decimo del tempo</span></label>
   <label class="topic"><input type="checkbox" value="Dipendente digitale che lavora da solo"><span>🤖 Un "dipendente digitale" che lavora mentre dormi</span></label>
+  <label class="topic"><input type="checkbox" value="Nuove competenze e carriera con l'AI"><span>🎓 Imparare più in fretta e valere di più sul lavoro</span></label>
   <label class="topic"><input type="checkbox" value="Capire da dove iniziare"><span>🧭 Capire da dove iniziare, senza tecnicismi</span></label>
  </div>
+
+ <label for="budget">Se dopo le 2 serate potessi portarti a casa UNA cosa sola, quale sarebbe?</label>
+ <input type="text" id="budget" name="budget" placeholder="Es. non riscrivere più le stesse email / capire se può aiutarmi nel mio lavoro...">
 
  <label for="idea">La Sera 2 risolviamo casi veri in diretta: raccontami il tuo <small>(facoltativo, ma i più interessanti li lavoriamo live)</small></label>
  <textarea id="idea" name="idea" placeholder="Es. Ogni settimana perdo mezza giornata a rifare gli stessi preventivi su Excel..."></textarea>
@@ -143,11 +165,10 @@ document.getElementById('sqform').addEventListener('submit', async function(e){
   const btn = document.getElementById('btnsubmit'), msg = document.getElementById('formmsg');
   btn.disabled = true; btn.textContent = "Un attimo...";
   const dati = {};
-  ['nome','email','azienda','conosci_ai','ai_cosa','tempo','idea'].forEach(c => {
+  ['nome','email','azienda','sito','telefono','conosci_ai','ai_cosa','abbonamenti','tempo','budget','idea'].forEach(c => {
     const el = document.getElementById(c); dati[c] = el ? (el.value || '').trim() : '';
   });
   dati.argomento = [...document.querySelectorAll('#topics input:checked')].map(c => c.value).join(' + ');
-  dati.telefono = ''; dati.sito = ''; dati.abbonamenti = ''; dati.budget = '';
   dati.fonte = 'sondaggio-sq' + (new URLSearchParams(location.search).get('src') ? '/' + new URLSearchParams(location.search).get('src') : '');
   try{
     await fetch(GAS_URL, {method:"POST", mode:"no-cors",
