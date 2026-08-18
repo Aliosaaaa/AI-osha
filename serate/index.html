@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Costruiamo le serate su di te — SALTO QUANTICO | AI Osha</title>
+<meta name="description" content="2 minuti, 6 domande: dimmi chi sei e cosa vuoi vedere. Gli argomenti più richiesti li tratto in diretta il 27 e 28 agosto.">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#0D1117;--navy2:#1E3A5F;--cyan:#00A8E8;--amber:#F5A623;--txt:#E8EEF4;--muted:#9FB0C0;}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--navy);color:var(--txt);line-height:1.6;background-image:radial-gradient(900px 420px at 70% -10%,rgba(0,168,232,.16),transparent 60%),radial-gradient(700px 380px at 5% 110%,rgba(245,166,35,.09),transparent 60%)}
+.grad{background:linear-gradient(90deg,var(--cyan),var(--amber));-webkit-background-clip:text;background-clip:text;color:transparent}
+.wrap{max-width:640px;margin:0 auto;padding:0 22px 60px}
+nav{padding:20px 0;display:flex;justify-content:space-between;align-items:center}
+nav .logo{font-weight:800;font-size:1.25rem}
+nav .logo span{color:var(--cyan)}
+nav a{color:var(--muted);text-decoration:none;font-size:.85rem}
+header{text-align:center;padding:26px 0 30px}
+h1{font-size:clamp(1.7rem,4.6vw,2.4rem);font-weight:800;line-height:1.15;margin-bottom:12px}
+header p{color:var(--muted);max-width:34rem;margin:0 auto}
+.card{background:rgba(30,58,95,.35);border:1px solid rgba(0,168,232,.25);border-radius:20px;padding:30px;box-shadow:0 20px 60px rgba(0,0,0,.4)}
+label{display:block;font-size:.85rem;font-weight:700;margin:18px 0 6px}
+label small{font-weight:400;color:var(--muted)}
+input,select,textarea{width:100%;padding:13px 15px;border-radius:12px;border:1px solid rgba(159,176,192,.3);background:rgba(13,17,23,.7);color:var(--txt);font-family:inherit;font-size:.98rem}
+input:focus,select:focus,textarea:focus{outline:2px solid var(--cyan);border-color:transparent}
+textarea{min-height:84px;resize:vertical}
+.sep{border:0;border-top:1px solid rgba(159,176,192,.18);margin:26px 0 4px}
+.sep-label{font-size:.75rem;color:var(--muted);text-transform:uppercase;letter-spacing:1.5px;margin-bottom:2px}
+.topics{display:grid;gap:10px;margin-top:4px}
+.topic{display:flex;align-items:flex-start;gap:10px;background:rgba(13,17,23,.55);border:1px solid rgba(159,176,192,.25);border-radius:12px;padding:12px 14px;cursor:pointer;transition:border-color .15s, background .15s}
+.topic:hover{border-color:rgba(0,168,232,.5)}
+.topic input{width:auto;margin-top:3px;accent-color:var(--cyan)}
+.topic span{font-size:.93rem;font-weight:600}
+.topic.sel{border-color:var(--cyan);background:rgba(0,168,232,.10)}
+.consent{display:flex;gap:10px;align-items:flex-start;margin-top:20px;font-size:.8rem;color:var(--muted)}
+.consent input{width:auto;margin-top:4px;accent-color:var(--cyan)}
+.btn{display:block;width:100%;margin-top:24px;padding:17px;border:0;border-radius:14px;background:linear-gradient(90deg,var(--cyan),#0077b6);color:#fff;font-weight:800;font-size:1.05rem;font-family:inherit;cursor:pointer;transition:transform .15s,box-shadow .15s}
+.btn:hover{transform:translateY(-2px);box-shadow:0 12px 30px rgba(0,168,232,.35)}
+.btn:disabled{opacity:.6;cursor:wait;transform:none}
+.after{text-align:center;font-size:.8rem;color:var(--muted);margin-top:12px}
+.form-msg{display:none;margin-top:14px;padding:12px;border-radius:10px;background:rgba(245,166,35,.12);border:1px solid rgba(245,166,35,.4);font-size:.88rem;text-align:center}
+footer{margin-top:44px;padding-top:18px;border-top:1px solid rgba(159,176,192,.15);color:var(--muted);font-size:.75rem;text-align:center}
+footer a{color:var(--muted)}
+</style>
+</head>
+<body>
+<div class="wrap">
+<nav><div class="logo">AI <span>Osha</span></div><a href="https://aiosha.it">aiosha.it</a></nav>
+
+<header>
+ <h1>Le 2 serate le costruiamo <span class="grad">sui tuoi problemi</span></h1>
+ <p><b style="color:var(--txt)">2 minuti, 6 domande.</b> Dimmi chi sei e cosa vuoi vedere: gli argomenti più richiesti li tratto <b style="color:var(--txt)">in diretta il 27 e 28 agosto</b>. Niente scaletta preconfezionata.</p>
+</header>
+
+<div class="card">
+<form id="sqform" autocomplete="on">
+
+ <label for="nome">Nome *</label>
+ <input type="text" id="nome" name="nome" required placeholder="Es. Luca">
+
+ <label for="email">Email * <small>(quella con cui ti sei iscritto)</small></label>
+ <input type="email" id="email" name="email" required placeholder="nome@esempio.it">
+
+ <label for="azienda">Di cosa ti occupi? *</label>
+ <input type="text" id="azienda" name="azienda" required placeholder="Es. impresa edile, studio tecnico, negozio, libero professionista...">
+
+ <hr class="sep"><div class="sep-label">Il tuo punto di partenza</div>
+
+ <label for="conosci_ai">Che rapporto hai con l'intelligenza artificiale?</label>
+ <select id="conosci_ai" name="conosci_ai">
+  <option value="">Scegli...</option>
+  <option>Mai usata, parto da zero</option>
+  <option>Provata qualche volta, poi ho lasciato perdere</option>
+  <option>La uso ogni tanto</option>
+  <option>La uso spesso, voglio spingermi oltre</option>
+ </select>
+
+ <label for="ai_cosa">Se la usi: cosa e per fare cosa? <small>(facoltativo)</small></label>
+ <input type="text" id="ai_cosa" name="ai_cosa" placeholder="Es. ChatGPT per le email, ogni tanto">
+
+ <label for="tempo">Dove perdi più tempo oggi?</label>
+ <select id="tempo" name="tempo">
+  <option value="">Scegli...</option>
+  <option>Preventivi e offerte</option>
+  <option>Email e risposte ai clienti</option>
+  <option>Documenti, contratti, burocrazia</option>
+  <option>Social, foto e contenuti</option>
+  <option>Organizzazione e appuntamenti</option>
+  <option>Un po' tutto, sinceramente</option>
+ </select>
+
+ <hr class="sep"><div class="sep-label">Il programma lo scegli tu</div>
+
+ <label>Cosa vuoi assolutamente vedere in diretta? <small>(scegli fino a 3)</small></label>
+ <div class="topics" id="topics">
+  <label class="topic"><input type="checkbox" value="Preventivo finito in 60 secondi"><span>⚡ Un preventivo finito in 60 secondi</span></label>
+  <label class="topic"><input type="checkbox" value="Email e risposte ai clienti automatiche"><span>✉️ Email e risposte ai clienti che si scrivono da sole</span></label>
+  <label class="topic"><input type="checkbox" value="Documenti e burocrazia"><span>📄 Documenti, contratti e burocrazia sbrigati dall'AI</span></label>
+  <label class="topic"><input type="checkbox" value="Social e contenuti"><span>📱 Post, foto e contenuti social in un decimo del tempo</span></label>
+  <label class="topic"><input type="checkbox" value="Dipendente digitale che lavora da solo"><span>🤖 Un "dipendente digitale" che lavora mentre dormi</span></label>
+  <label class="topic"><input type="checkbox" value="Capire da dove iniziare"><span>🧭 Capire da dove iniziare, senza tecnicismi</span></label>
+ </div>
+
+ <label for="idea">La Sera 2 risolviamo casi veri in diretta: raccontami il tuo <small>(facoltativo, ma i più interessanti li lavoriamo live)</small></label>
+ <textarea id="idea" name="idea" placeholder="Es. Ogni settimana perdo mezza giornata a rifare gli stessi preventivi su Excel..."></textarea>
+
+ <input type="text" name="azienda_hp" style="display:none" tabindex="-1" autocomplete="off">
+
+ <div class="consent">
+  <input type="checkbox" id="consenso" required>
+  <label for="consenso" style="margin:0;font-weight:400">Acconsento al trattamento dei dati per organizzare l'evento. <a href="https://aiosha.it/privacy-policy.html" style="color:var(--cyan)">Informativa privacy</a></label>
+ </div>
+
+ <button class="btn" type="submit" id="btnsubmit">COSTRUISCI LE MIE SERATE →</button>
+ <p class="after">Ci vediamo giovedì 27 e venerdì 28 agosto, ore 21, su Zoom.</p>
+ <p class="form-msg" id="formmsg"></p>
+</form>
+</div>
+
+<footer>
+ <p><b>AI Osha</b> — Aliosha Battaglini · P.IVA 02097940478 · Pescia (PT) · <a href="mailto:info@aiosha.it" style="color:var(--cyan)">info@aiosha.it</a></p>
+ <p><a href="https://aiosha.it/privacy-policy.html">Privacy Policy</a></p>
+</footer>
+</div>
+
+<script>
+const GAS_URL = "https://script.google.com/macros/s/AKfycbxii5crbEBmv_zqOR48kpreUeQVQVH8r_fH4RE2FgorotF3PwelsES80N5arKRH97b3qA/exec"; // webhook call_gratuita (riusato: fonte=sondaggio-sq)
+// max 3 argomenti + evidenzia i selezionati
+document.querySelectorAll('#topics .topic input').forEach(cb => {
+  cb.addEventListener('change', function(){
+    const sel = document.querySelectorAll('#topics input:checked');
+    if(sel.length > 3){ this.checked = false; return; }
+    this.closest('.topic').classList.toggle('sel', this.checked);
+  });
+});
+document.getElementById('sqform').addEventListener('submit', async function(e){
+  e.preventDefault();
+  if(this.azienda_hp.value){ return; } // honeypot
+  const btn = document.getElementById('btnsubmit'), msg = document.getElementById('formmsg');
+  btn.disabled = true; btn.textContent = "Un attimo...";
+  const dati = {};
+  ['nome','email','azienda','conosci_ai','ai_cosa','tempo','idea'].forEach(c => {
+    const el = document.getElementById(c); dati[c] = el ? (el.value || '').trim() : '';
+  });
+  dati.argomento = [...document.querySelectorAll('#topics input:checked')].map(c => c.value).join(' + ');
+  dati.telefono = ''; dati.sito = ''; dati.abbonamenti = ''; dati.budget = '';
+  dati.fonte = 'sondaggio-sq' + (new URLSearchParams(location.search).get('src') ? '/' + new URLSearchParams(location.search).get('src') : '');
+  try{
+    await fetch(GAS_URL, {method:"POST", mode:"no-cors",
+      headers:{"Content-Type":"application/x-www-form-urlencoded"},
+      body: new URLSearchParams(dati)});
+    window.location.href = "grazie.html";
+  }catch(err){
+    msg.style.display = "block";
+    msg.textContent = "Ops, qualcosa non ha funzionato. Riprova, o scrivimi su WhatsApp: 331 388 3929";
+    btn.disabled = false; btn.textContent = "COSTRUISCI LE MIE SERATE →";
+  }
+});
+// beacon visita
+(function(){
+  const q = new URLSearchParams(location.search);
+  const dev = /Mobi|Android/i.test(navigator.userAgent) ? 'mobile' : 'desktop';
+  fetch(GAS_URL + '?beacon=1&pagina=sondaggio-sq&src=' + encodeURIComponent(q.get('src')||'') +
+        '&ref=' + encodeURIComponent(document.referrer||'') + '&dev=' + dev).catch(()=>{});
+})();
+</script>
+</body>
+</html>
