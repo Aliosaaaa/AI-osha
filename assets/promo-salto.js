@@ -10,8 +10,12 @@
   if (window.__sqBarLoaded) return;
   window.__sqBarLoaded = true;
 
-  var TARGET = new Date(2026, 7, 27, 21, 0, 0).getTime(); // 27 ago 2026 21:00
+  var TARGET = new Date(2026, 7, 27, 21, 0, 0).getTime(); // 27 ago 2026 21:00 (inizio sera 1)
+  var END    = new Date(2026, 7, 28, 22, 30, 0).getTime(); // 28 ago 2026 22:30 (fine sera 2)
   var LINK = "https://aiosha.it/salto-quantico/?src=sito";
+
+  // evento finito: la fascia non compare piu' (niente "E' INIZIATO" a vita)
+  if (Date.now() > END) return;
 
   var css = document.createElement("style");
   css.textContent =
@@ -51,6 +55,9 @@
     "}";
   document.head.appendChild(css);
 
+  var timer = null;   // interval del countdown
+  var moved = [];     // header fissi che abbiamo spostato in basso
+
   var bar = document.createElement("div");
   bar.id = "sq-bar";
   bar.setAttribute("role", "banner");
@@ -71,8 +78,19 @@
     document.body.insertBefore(bar, document.body.firstChild);
     offset();
     tick();
-    setInterval(tick, 1000);
+    timer = setInterval(tick, 1000);
     window.addEventListener("resize", offset);
+  }
+
+  // rimuove la fascia e ripristina il layout (per chi ha la pagina aperta a fine evento)
+  function unmount() {
+    if (timer) { clearInterval(timer); timer = null; }
+    window.removeEventListener("resize", offset);
+    if (bar.parentNode) bar.parentNode.removeChild(bar);
+    document.body.style.paddingTop = "";
+    document.documentElement.style.scrollPaddingTop = "";
+    moved.forEach(function (el) { el.style.top = ""; });
+    moved = [];
   }
 
   function offset() {
@@ -87,12 +105,16 @@
       var cs = getComputedStyle(el);
       if ((cs.position === "fixed" || cs.position === "sticky")) {
         var top = parseFloat(cs.top) || 0;
-        if (top <= h + 2) el.style.top = h + "px";
+        if (top <= h + 2) {
+          el.style.top = h + "px";
+          if (moved.indexOf(el) === -1) moved.push(el);
+        }
       }
     });
   }
 
   function tick() {
+    if (Date.now() > END) { unmount(); return; }
     var el = document.getElementById("sq-cd");
     if (!el) return;
     var d = TARGET - Date.now();
