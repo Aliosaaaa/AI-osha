@@ -79,3 +79,11 @@ images/risorse/cover-prompt-madre.png
 loghi partnership/
 logo animato/
 images/linkedin-banner.jpg
+
+# --- Credenziali: MAI committare (repo pubblico) ---
+token.json
+client_secrets.json
+*.env
+.env*
+credentials.json
+service_account*.json
