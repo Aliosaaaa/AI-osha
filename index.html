@@ -2198,6 +2198,8 @@
           var href = a.getAttribute('href') || '';
           if (/wa\.me|api\.whatsapp|whatsapp/i.test(href)) {
             window.aioEvent('whatsapp_click', { link_url: href, link_text: (a.textContent || '').trim().slice(0, 60) });
+          } else if (/diagnosi/i.test(href)) {
+            window.aioEvent('diagnosi_click', { link_url: href });
           } else if (/corso/i.test(href)) {
             window.aioEvent('corso_click', { link_url: href });
           } else if (/libro|amazon|sfoglia/i.test(href)) {
@@ -2293,14 +2295,14 @@ src="https://www.facebook.com/tr?id=27681167481569538&ev=PageView&noscript=1"
                     </p>
                     
                     <div class="hero__cta">
-                        <a href="#lead-magnet" class="btn btn--primary btn--large">
-                            Scarica Il Prompt Madre
+                        <a href="diagnosi/" class="btn btn--primary btn--large">
+                            Prenota la Diagnosi · 29 €
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
                             </svg>
                         </a>
-                        <a href="corso.html" class="btn btn--secondary btn--large">
-                            Scopri il Corso
+                        <a href="#lead-magnet" class="btn btn--secondary btn--large">
+                            Il Prompt Madre, gratis
                         </a>
                     </div>
                     
@@ -2733,7 +2735,7 @@ src="https://www.facebook.com/tr?id=27681167481569538&ev=PageView&noscript=1"
                         </div>
                     </div>
 
-                    <!-- VIDEO NUOVA: Simone Silvesti (Estro) -->
+                    <!-- VIDEO NUOVA: Simone Silvestri (Estro) -->
                     <div class="video-card animate-on-scroll">
                         <div class="video-thumb">
                             <div class="video-thumb__placeholder" id="video-placeholder-simone-estro" data-youtube="AgqXkSArU0w" data-thumb="images/thumbnails/simone-estro.jpg">
@@ -2744,7 +2746,7 @@ src="https://www.facebook.com/tr?id=27681167481569538&ev=PageView&noscript=1"
                             </div>
                         </div>
                         <div class="video-card__info">
-                            <p class="video-card__name">Simone Silvesti</p>
+                            <p class="video-card__name">Simone Silvestri</p>
                             <p class="video-card__role">Socio Estro — Studente AI in Pratica</p>
                             <p class="video-card__quote">"L'AI mi ha cambiato il modo di lavorare. È nel mio flusso quotidiano in azienda."</p>
                         </div>
@@ -2764,24 +2766,6 @@ src="https://www.facebook.com/tr?id=27681167481569538&ev=PageView&noscript=1"
                             <p class="video-card__name">Federico M.</p>
                             <p class="video-card__role">Imprenditore Immobiliare — Cliente Percorso Consulenze</p>
                             <p class="video-card__quote">"Da quando uso l'AI gestisco il doppio delle proprietà con la metà del tempo. È stata una svolta."</p>
-                        </div>
-                    </div>
-
-                    <!-- VIDEO 2: Simone S. -->
-                    <div class="video-card animate-on-scroll">
-                        <div class="video-thumb">
-                            <!-- Sostituisci YOUTUBE_ID_2 con l'ID del video YouTube -->
-                            <div class="video-thumb__placeholder" id="video-placeholder-2" data-youtube="0hvZFh3lFYc" data-thumb="images/thumbnails/simone.jpg">
-                                <div class="play-btn">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="white" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-                                </div>
-                                <div class="video-thumb__label">▶ Video Testimonianza</div>
-                            </div>
-                        </div>
-                        <div class="video-card__info">
-                            <p class="video-card__name">Simone S.</p>
-                            <p class="video-card__role">Consulente Commerciale — ESTRO Luxury</p>
-                            <p class="video-card__quote">"Presento i nostri lampadari in tre lingue con un click. I clienti internazionali sono rimasti stupiti."</p>
                         </div>
                     </div>
 

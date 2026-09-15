@@ -30,4 +30,9 @@
   <url><loc>https://aiosha.it/blog/ricerche-avanzate-perplexity.html</loc><lastmod>2026-07-18</lastmod></url>
   <url><loc>https://aiosha.it/blog/email-professionali-claude.html</loc><lastmod>2026-07-18</lastmod></url>
   <url><loc>https://aiosha.it/blog/ottimizzare-google-docs-gemini.html</loc><lastmod>2026-07-18</lastmod></url>
+  <url>
+    <loc>https://aiosha.it/diagnosi/</loc>
+    <lastmod>2026-09-15</lastmod>
+    <priority>0.8</priority>
+  </url>
 </urlset>

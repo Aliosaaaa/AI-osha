@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Diagnosi prenotata — AI Osha</title>
+<meta name="robots" content="noindex, nofollow" />
+<link rel="icon" href="../../favicon.svg" type="image/svg+xml" />
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<style>
+  :root{--navy:#1E3A5F;--ink:#16202c;--soft:#5a6572;--rule:#e3e8ee;--tint:#f5f8fb;--ciano:#00A8E8;--oro:#F5A623;--oro-d:#d98e0f}
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Plus Jakarta Sans',system-ui,-apple-system,sans-serif;background:#fff;color:var(--ink);line-height:1.6;font-size:17px}
+  .wrap{max-width:680px;margin:0 auto;padding:0 20px}
+  header{padding:18px 0;border-bottom:1px solid var(--rule)}
+  .brand{font-weight:800;font-size:19px;color:var(--navy);text-decoration:none}.brand span{color:var(--ciano)}
+  .ok{display:inline-block;background:#e6f7ee;color:#136c3a;font-weight:700;font-size:13px;letter-spacing:.06em;text-transform:uppercase;padding:6px 12px;border-radius:999px;margin-top:34px}
+  h1{font-size:clamp(1.7rem,5vw,2.3rem);color:var(--navy);line-height:1.15;margin:14px 0 10px;letter-spacing:-.02em}
+  .lead{color:#2c3a48}
+  form{margin:26px 0 50px;display:grid;gap:18px}
+  label{font-weight:700;color:var(--navy);font-size:15px;display:block;margin-bottom:6px}
+  label small{font-weight:500;color:var(--soft)}
+  input,textarea{width:100%;font:inherit;font-size:16px;padding:12px 14px;border:1.5px solid var(--rule);border-radius:10px;background:var(--tint);color:var(--ink)}
+  input:focus,textarea:focus{outline:none;border-color:var(--ciano);background:#fff}
+  textarea{min-height:78px;resize:vertical}
+  button{background:var(--oro);color:#241700;font:inherit;font-weight:800;font-size:1.08rem;border:none;border-radius:12px;padding:16px 24px;cursor:pointer;box-shadow:0 2px 0 var(--oro-d)}
+  .note{font-size:14px;color:var(--soft)}
+  .err{color:#b3261e;font-size:14px;display:none}
+</style>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-6GNKJZJY1V"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-6GNKJZJY1V');</script>
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init','27681167481569538');fbq('track','PageView');
+// L'acquisto si conta solo se si arriva davvero da Stripe (session_id nell'indirizzo)
+if(/[?&]session_id=/.test(location.search)){fbq('track','Purchase',{content_name:'Diagnosi Automazioni',value:29,currency:'EUR'});gtag('event','purchase',{value:29,currency:'EUR',items:[{item_name:'Diagnosi Automazioni'}]});}
+</script>
+</head>
+<body>
+<header><div class="wrap"><a class="brand" href="/">AI Osha<span>.</span></a></div></header>
+<main class="wrap">
+  <span class="ok">Pagamento ricevuto · grazie</span>
+  <h1>Ultimo passo: 8 domande sul tuo lavoro</h1>
+  <p class="lead">Cinque minuti. Quando premi il pulsante, le risposte mi arrivano su WhatsApp e ti scrivo io per fissare i venti minuti su Zoom. Più sei concreto, più il report è utile.</p>
+
+  <form id="q" novalidate>
+    <div><label for="q1">1. Nome e cognome</label><input id="q1" required autocomplete="name" /></div>
+    <div><label for="q2">2. La tua attività: cosa fa e in che comune ha sede</label><input id="q2" required placeholder="Es. impresa edile, Pescia" /></div>
+    <div><label for="q3">3. Quante persone ci lavorano, te compreso</label><input id="q3" inputmode="numeric" /></div>
+    <div><label for="q4">4. Dove perdi più tempo in una settimana normale?</label><textarea id="q4" required placeholder="Es. preventivi, rispondere alle mail, fatture, organizzare i turni"></textarea></div>
+    <div><label for="q5">5. Un lavoro che rifai sempre uguale <small>(anche piccolo)</small></label><textarea id="q5"></textarea></div>
+    <div><label for="q6">6. Quali strumenti usi già? <small>(Excel, gestionale, WhatsApp, Google…)</small></label><input id="q6" /></div>
+    <div><label for="q7">7. Hai già provato l'intelligenza artificiale? Com'è andata?</label><textarea id="q7"></textarea></div>
+    <div><label for="q8">8. Due o tre momenti comodi per i 20 minuti su Zoom</label><input id="q8" placeholder="Es. martedì mattina, giovedì dopo le 17" /></div>
+    <p class="err" id="err">Compila almeno le domande 1, 2 e 4.</p>
+    <button type="submit">Invia le risposte su WhatsApp</button>
+    <p class="note">Si apre WhatsApp con il messaggio già scritto: devi solo premere invio. Se non hai WhatsApp, scrivi a info@aiosha.it.</p>
+  </form>
+</main>
+<script>
+  document.getElementById('q').addEventListener('submit', function(ev){
+    ev.preventDefault();
+    var v = function(id){ return (document.getElementById(id).value || '').trim(); };
+    if(!v('q1') || !v('q2') || !v('q4')){ document.getElementById('err').style.display='block'; return; }
+    var t = 'DIAGNOSI AUTOMAZIONI — risposte\n\n'
+      + '1. Nome: ' + v('q1') + '\n'
+      + '2. Attività e sede: ' + v('q2') + '\n'
+      + '3. Persone: ' + (v('q3') || '—') + '\n'
+      + '4. Dove perdo tempo: ' + v('q4') + '\n'
+      + '5. Lavoro sempre uguale: ' + (v('q5') || '—') + '\n'
+      + '6. Strumenti che uso: ' + (v('q6') || '—') + '\n'
+      + '7. Esperienza con l\'AI: ' + (v('q7') || '—') + '\n'
+      + '8. Momenti comodi per la call: ' + (v('q8') || '—');
+    try{ gtag('event','diagnosi_questionario_inviato'); }catch(e){}
+    try{ fbq('trackCustom','DiagnosiQuestionario'); }catch(e){}
+    window.location.href = 'https://wa.me/393313883929?text=' + encodeURIComponent(t);
+  });
+</script>
+</body>
+</html>
