@@ -23,9 +23,15 @@
   input,textarea{width:100%;font:inherit;font-size:16px;padding:12px 14px;border:1.5px solid var(--rule);border-radius:10px;background:var(--tint);color:var(--ink)}
   input:focus,textarea:focus{outline:none;border-color:var(--ciano);background:#fff}
   textarea{min-height:78px;resize:vertical}
-  button{background:var(--oro);color:#241700;font:inherit;font-weight:800;font-size:1.08rem;border:none;border-radius:12px;padding:16px 24px;cursor:pointer;box-shadow:0 2px 0 var(--oro-d)}
+  button,.btn{display:inline-block;background:var(--oro);color:#241700;font:inherit;font-weight:800;font-size:1.08rem;border:none;border-radius:12px;padding:16px 24px;cursor:pointer;box-shadow:0 2px 0 var(--oro-d);text-decoration:none;text-align:center}
+  button[disabled]{opacity:.6;cursor:wait}
   .note{font-size:14px;color:var(--soft)}
   .err{color:#b3261e;font-size:14px;display:none}
+  .trap{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+  #fatto{display:none;margin:30px 0 60px;background:var(--tint);border-radius:16px;padding:24px}
+  #fatto h2{color:var(--navy);font-size:1.4rem;margin-bottom:8px}
+  #fatto p{margin-bottom:14px;color:#2c3a48}
+  .btn-wa{background:#fff;color:var(--navy);border:1.5px solid var(--navy);box-shadow:none;font-size:1rem;padding:12px 18px}
 </style>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-6GNKJZJY1V"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-6GNKJZJY1V');</script>
@@ -39,41 +45,63 @@ if(/[?&]session_id=/.test(location.search)){fbq('track','Purchase',{content_name
 <body>
 <header><div class="wrap"><a class="brand" href="/">AI Osha<span>.</span></a></div></header>
 <main class="wrap">
-  <span class="ok">Pagamento ricevuto · grazie</span>
-  <h1>Ultimo passo: 8 domande sul tuo lavoro</h1>
-  <p class="lead">Cinque minuti. Quando premi il pulsante, le risposte mi arrivano su WhatsApp e ti scrivo io per fissare i venti minuti su Zoom. Più sei concreto, più il report è utile.</p>
+  <div id="modulo">
+    <span class="ok">Pagamento ricevuto · grazie</span>
+    <h1>Ultimo passo: le tue misure, in 8 domande</h1>
+    <p class="lead">Cinque minuti. È da qui che parto per cucire l'intelligenza artificiale sul tuo lavoro: più sei concreto, più la tua roadmap sarà precisa. Le risposte arrivano direttamente a me.</p>
 
-  <form id="q" novalidate>
-    <div><label for="q1">1. Nome e cognome</label><input id="q1" required autocomplete="name" /></div>
-    <div><label for="q2">2. La tua attività: cosa fa e in che comune ha sede</label><input id="q2" required placeholder="Es. impresa edile, Pescia" /></div>
-    <div><label for="q3">3. Quante persone ci lavorano, te compreso</label><input id="q3" inputmode="numeric" /></div>
-    <div><label for="q4">4. Dove perdi più tempo in una settimana normale?</label><textarea id="q4" required placeholder="Es. preventivi, rispondere alle mail, fatture, organizzare i turni"></textarea></div>
-    <div><label for="q5">5. Un lavoro che rifai sempre uguale <small>(anche piccolo)</small></label><textarea id="q5"></textarea></div>
-    <div><label for="q6">6. Quali strumenti usi già? <small>(Excel, gestionale, WhatsApp, Google…)</small></label><input id="q6" /></div>
-    <div><label for="q7">7. Hai già provato l'intelligenza artificiale? Com'è andata?</label><textarea id="q7"></textarea></div>
-    <div><label for="q8">8. Due o tre momenti comodi per i 20 minuti su Zoom</label><input id="q8" placeholder="Es. martedì mattina, giovedì dopo le 17" /></div>
-    <p class="err" id="err">Compila almeno le domande 1, 2 e 4.</p>
-    <button type="submit">Invia le risposte su WhatsApp</button>
-    <p class="note">Si apre WhatsApp con il messaggio già scritto: devi solo premere invio. Se non hai WhatsApp, scrivi a info@aiosha.it.</p>
-  </form>
+    <form id="q" novalidate>
+      <div class="trap" aria-hidden="true"><label for="sito_web">Non compilare</label><input id="sito_web" tabindex="-1" autocomplete="off" /></div>
+      <div><label for="q1">1. Nome e cognome</label><input id="q1" required autocomplete="name" /></div>
+      <div><label for="q2">2. La tua attività: cosa fa e in che comune ha sede</label><input id="q2" required placeholder="Es. impresa edile, Pescia" /></div>
+      <div><label for="q3">3. Quante persone ci lavorano, te compreso</label><input id="q3" inputmode="numeric" /></div>
+      <div><label for="q4">4. Dove perdi più tempo in una settimana normale?</label><textarea id="q4" required placeholder="Es. preventivi, rispondere alle mail, fatture, organizzare i turni"></textarea></div>
+      <div><label for="q5">5. Un lavoro che rifai sempre uguale <small>(anche piccolo)</small></label><textarea id="q5"></textarea></div>
+      <div><label for="q6">6. Quali strumenti usi già? <small>(Excel, gestionale, WhatsApp, Google…)</small></label><input id="q6" /></div>
+      <div><label for="q7">7. Hai già provato l'intelligenza artificiale? Com'è andata?</label><textarea id="q7"></textarea></div>
+      <div><label for="q8">8. Due o tre momenti comodi per i 20 minuti su Zoom</label><input id="q8" placeholder="Es. martedì mattina, giovedì dopo le 17" /></div>
+      <p class="err" id="err">Compila almeno le domande 1, 2 e 4.</p>
+      <button type="submit" id="invia">Invia le risposte</button>
+      <p class="note">Le risposte restano riservate e servono solo per la tua roadmap.</p>
+    </form>
+  </div>
+
+  <div id="fatto">
+    <h2>Fatto: le tue risposte sono arrivate.</h2>
+    <p>Ti scrivo io entro 24 ore su WhatsApp per fissare i venti minuti su Zoom. Se vuoi, avvisami anche adesso: così ti riconosco subito.</p>
+    <a class="btn btn-wa" id="wa" href="#">Avvisami su WhatsApp</a>
+  </div>
 </main>
 <script>
+  // Indirizzo dell'Apps Script collegato al foglio "Diagnosi — risposte" (finisce con /exec)
+  var SHEET_URL = '';
+  var v = function(id){ return (document.getElementById(id).value || '').trim(); };
+  var session = (location.search.match(/[?&]session_id=([^&]+)/) || [])[1] || '';
+  function testoWA(){
+    return 'DIAGNOSI SU MISURA — risposte\n\n'
+      + '1. Nome: ' + v('q1') + '\n2. Attività e sede: ' + v('q2') + '\n3. Persone: ' + (v('q3') || '—')
+      + '\n4. Dove perdo tempo: ' + v('q4') + '\n5. Lavoro sempre uguale: ' + (v('q5') || '—')
+      + '\n6. Strumenti che uso: ' + (v('q6') || '—') + '\n7. Esperienza con l\'AI: ' + (v('q7') || '—')
+      + '\n8. Momenti comodi per la call: ' + (v('q8') || '—');
+  }
+  function fatto(){
+    document.getElementById('modulo').style.display = 'none';
+    document.getElementById('fatto').style.display = 'block';
+    document.getElementById('wa').href = 'https://wa.me/393313883929?text=' + encodeURIComponent(testoWA());
+    window.scrollTo(0, 0);
+  }
   document.getElementById('q').addEventListener('submit', function(ev){
     ev.preventDefault();
-    var v = function(id){ return (document.getElementById(id).value || '').trim(); };
     if(!v('q1') || !v('q2') || !v('q4')){ document.getElementById('err').style.display='block'; return; }
-    var t = 'DIAGNOSI AUTOMAZIONI — risposte\n\n'
-      + '1. Nome: ' + v('q1') + '\n'
-      + '2. Attività e sede: ' + v('q2') + '\n'
-      + '3. Persone: ' + (v('q3') || '—') + '\n'
-      + '4. Dove perdo tempo: ' + v('q4') + '\n'
-      + '5. Lavoro sempre uguale: ' + (v('q5') || '—') + '\n'
-      + '6. Strumenti che uso: ' + (v('q6') || '—') + '\n'
-      + '7. Esperienza con l\'AI: ' + (v('q7') || '—') + '\n'
-      + '8. Momenti comodi per la call: ' + (v('q8') || '—');
+    var dati = { q1:v('q1'), q2:v('q2'), q3:v('q3'), q4:v('q4'), q5:v('q5'), q6:v('q6'), q7:v('q7'), q8:v('q8'), session_id: decodeURIComponent(session), sito_web: v('sito_web') };
     try{ gtag('event','diagnosi_questionario_inviato'); }catch(e){}
     try{ fbq('trackCustom','DiagnosiQuestionario'); }catch(e){}
-    window.location.href = 'https://wa.me/393313883929?text=' + encodeURIComponent(t);
+    if(!SHEET_URL){ window.location.href = 'https://wa.me/393313883929?text=' + encodeURIComponent(testoWA()); return; }
+    var b = document.getElementById('invia'); b.disabled = true; b.textContent = 'Invio in corso…';
+    var finito = false; var chiudi = function(){ if(!finito){ finito = true; fatto(); } };
+    fetch(SHEET_URL, { method:'POST', mode:'no-cors', keepalive:true, headers:{'Content-Type':'text/plain;charset=utf-8'}, body: JSON.stringify(dati) })
+      .then(chiudi, chiudi);
+    setTimeout(chiudi, 4000);
   });
 </script>
 </body>

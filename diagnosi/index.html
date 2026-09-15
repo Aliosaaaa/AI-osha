@@ -3,11 +3,11 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Diagnosi Automazioni · 29 € — AI Osha</title>
-<meta name="description" content="29 euro, 20 minuti su Zoom con Aliosha e un report scritto: le 3-5 cose che puoi far fare all'intelligenza artificiale nella tua impresa, in che ordine e con quali strumenti." />
+<title>Diagnosi AI su misura · la tua roadmap in 20 minuti — AI Osha</title>
+<meta name="description" content="L'intelligenza artificiale cucita su misura sul tuo lavoro: 20 minuti su Zoom con Aliosha e un'analisi scritta solo per te, la tua roadmap con cosa automatizzare per primo, in che ordine e con quali strumenti." />
 <link rel="canonical" href="https://aiosha.it/diagnosi/" />
-<meta property="og:title" content="Diagnosi Automazioni · 29 € — AI Osha" />
-<meta property="og:description" content="Cosa puoi automatizzare per primo nella tua impresa? 20 minuti con me e un report scritto." />
+<meta property="og:title" content="Diagnosi AI su misura — AI Osha" />
+<meta property="og:description" content="L'AI non la devi imparare tutta. Te la cucio addosso: 20 minuti con me e la tua roadmap personale." />
 <meta property="og:image" content="https://aiosha.it/images/aliosha-foto.jpg" />
 <meta property="og:url" content="https://aiosha.it/diagnosi/" />
 <link rel="icon" href="../favicon.svg" type="image/svg+xml" />
@@ -24,7 +24,7 @@
   .hero{padding-block:44px 36px}
   .kick{display:inline-block;background:#fff4dc;color:#8a5a00;font-weight:700;font-size:13px;letter-spacing:.06em;text-transform:uppercase;padding:6px 12px;border-radius:999px}
   h1{font-size:clamp(1.9rem,5.2vw,2.8rem);line-height:1.12;letter-spacing:-.02em;color:var(--navy);margin:16px 0 14px;font-weight:800}
-  .lead{font-size:1.15rem;color:#2c3a48;max-width:58ch}
+  .lead{font-size:1.15rem;color:#2c3a48;max-width:60ch}
   .cta-row{display:flex;flex-wrap:wrap;gap:12px 18px;align-items:center;margin-top:26px}
   .btn{display:inline-block;background:var(--oro);color:#241700;font-weight:800;text-decoration:none;padding:16px 26px;border-radius:12px;font-size:1.08rem;box-shadow:0 2px 0 var(--oro-d)}
   .btn:hover{background:#ffb640}
@@ -37,14 +37,22 @@
   .step b{display:block;color:var(--navy);font-size:1.02rem;margin:6px 0 4px}
   .step .n{font-weight:800;color:var(--ciano);font-size:14px;letter-spacing:.08em}
   .step p{font-size:15px;color:var(--soft)}
+  .sarto{background:var(--navy);color:#e6eef7;border-radius:18px;padding:28px 26px}
+  .sarto h2{color:#fff}
+  .sarto p{margin-bottom:12px}
+  .sarto .firma{color:var(--oro);font-weight:800;font-size:1.15rem;margin-top:6px}
   ul.check{list-style:none;display:grid;gap:10px}
   ul.check li{padding-left:30px;position:relative}
   ul.check li::before{content:"";position:absolute;left:0;top:7px;width:18px;height:18px;border-radius:50%;background:var(--ciano) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3.5'%3E%3Cpath d='M5 12l5 5 9-10'/%3E%3C/svg%3E") center/11px no-repeat}
+  .tappe{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:16px}
+  .tappa{border:1.5px solid var(--rule);border-radius:12px;padding:14px}
+  .tappa span{display:block;font-size:12px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--ciano)}
+  .tappa b{color:var(--navy)}
   .me{display:grid;grid-template-columns:120px 1fr;gap:20px;align-items:center}
   .me img{width:120px;height:120px;border-radius:50%;object-fit:cover}
   .me p{color:#2c3a48}
-  .limit{background:var(--navy);color:#fff;border-radius:14px;padding:22px;margin-top:6px}
-  .limit b{color:var(--oro)}
+  .limit{background:var(--tint);border-left:4px solid var(--oro);border-radius:10px;padding:16px 18px;margin-top:16px;color:#2c3a48}
+  .limit b{color:var(--navy)}
   details{border-bottom:1px solid var(--rule);padding:14px 0}
   summary{cursor:pointer;font-weight:700;color:var(--navy);list-style:none}
   summary::after{content:"+";float:right;color:var(--ciano);font-weight:800}
@@ -54,7 +62,7 @@
   .final h2{margin-bottom:10px}
   footer{border-top:1px solid var(--rule);padding:22px 0 30px;font-size:13px;color:var(--soft)}
   footer a{color:var(--soft)}
-  @media(max-width:640px){.steps{grid-template-columns:1fr}.me{grid-template-columns:84px 1fr}.me img{width:84px;height:84px}.btn{width:100%;text-align:center}}
+  @media(max-width:640px){.steps,.tappe{grid-template-columns:1fr}.me{grid-template-columns:84px 1fr}.me img{width:84px;height:84px}.btn{width:100%;text-align:center}.sarto{padding:22px 18px}}
 </style>
 <!-- Google Analytics (GA4) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-6GNKJZJY1V"></script>
@@ -72,14 +80,14 @@ fbq('init','27681167481569538');fbq('track','PageView');fbq('track','ViewContent
 <body>
 <header class="top"><div class="wrap">
   <a class="brand" href="/">AI Osha<span>.</span></a>
-  <a class="wa-top" href="https://wa.me/393313883929?text=Ciao%20Aliosha%2C%20ho%20una%20domanda%20sulla%20Diagnosi%20da%2029%20%E2%82%AC">WhatsApp 331 388 3929</a>
+  <a class="wa-top" href="https://wa.me/393313883929?text=Ciao%20Aliosha%2C%20ho%20una%20domanda%20sulla%20Diagnosi%20su%20misura">WhatsApp 331 388 3929</a>
 </div></header>
 
 <main>
 <div class="wrap hero">
-  <span class="kick">Diagnosi Automazioni · prezzo di lancio</span>
-  <h1>Cosa puoi automatizzare per primo nella tua impresa?</h1>
-  <p class="lead">Ventinove euro, venti minuti con me su Zoom e un report scritto: le cose che puoi far fare all'intelligenza artificiale, in che ordine, con quali strumenti e quanto tempo ti restituiscono.</p>
+  <span class="kick">Diagnosi AI su misura · prezzo di lancio</span>
+  <h1>L'intelligenza artificiale, cucita su misura sul tuo lavoro.</h1>
+  <p class="lead">Venti minuti su Zoom con una persona che usa l'AI per lavoro ogni giorno e padroneggia decine di strumenti. Poi un'analisi scritta solo per te: la tua roadmap, con cosa automatizzare per primo, in che ordine, con quali strumenti e quanto tempo ti restituisce.</p>
   <div class="cta-row">
     <a class="btn js-pay" href="#">Prenota la Diagnosi · 29 €</a>
     <span class="btn-note">Prezzo di lancio <b>29 €</b> fino al 31 ottobre · dal 1° novembre 49 € · ricevi la fattura</span>
@@ -88,24 +96,39 @@ fbq('init','27681167481569538');fbq('track','PageView');fbq('track','ViewContent
 </div>
 
 <section><div class="wrap">
-  <h2>Come funziona</h2>
-  <div class="steps">
-    <div class="step"><span class="n">1</span><b>Paghi e rispondi a 8 domande</b><p>Cinque minuti, sul tuo lavoro: cosa fai, dove perdi tempo, cosa usi già.</p></div>
-    <div class="step"><span class="n">2</span><b>Venti minuti su Zoom</b><p>Io e te, non un'intelligenza artificiale. Ti scrivo io per fissare l'orario.</p></div>
-    <div class="step"><span class="n">3</span><b>Il report entro la settimana</b><p>Tre-quattro pagine scritte per la tua attività, da tenere e da rileggere.</p></div>
+  <div class="sarto">
+    <h2>Prima prendo le misure. Poi taglio.</h2>
+    <p>Ogni lavoro ha le sue misure. L'intelligenza artificiale che va bene a un commercialista sta larga a un idraulico e stretta a una fioraia. Per questo non ti vendo un corso uguale per tutti né l'abbonamento a uno strumento di moda.</p>
+    <p>Nei venti minuti mi fai vedere come lavori davvero: il preventivo della sera, le mail che riscrivi sempre uguali, il foglio che nessuno ha il coraggio di toccare. Il mio mestiere è sapere quali due o tre strumenti servono a te, e quali invece ti farebbero solo perdere tempo.</p>
+    <p>Poi ti scrivo una roadmap che vale solo per la tua attività. Non la trovi su internet, perché prima di parlarci non esisteva.</p>
+    <p class="firma">L'AI non la devi imparare tutta. Te la cucio addosso.</p>
   </div>
 </div></section>
 
 <section><div class="wrap">
-  <h2>Cosa c'è nel report</h2>
+  <h2>Come funziona</h2>
+  <div class="steps">
+    <div class="step"><span class="n">1</span><b>Paghi e rispondi a 8 domande</b><p>Cinque minuti sul tuo lavoro: cosa fai, dove perdi tempo, cosa usi già. Sono le tue misure.</p></div>
+    <div class="step"><span class="n">2</span><b>Venti minuti su Zoom, con me</b><p>Io e te, non un'intelligenza artificiale. Mi mostri il lavoro vero e io ti faccio le domande giuste. Ti scrivo io per fissare l'orario.</p></div>
+    <div class="step"><span class="n">3</span><b>La tua roadmap entro la settimana</b><p>Un'analisi scritta per la tua attività, da tenere e da seguire. Non un modello uguale per tutti.</p></div>
+  </div>
+</div></section>
+
+<section><div class="wrap">
+  <h2>Cosa c'è nella tua roadmap</h2>
   <ul class="check">
-    <li>Le <b>3-5 attività</b> del tuo lavoro che l'AI può fare al posto tuo, o insieme a te.</li>
-    <li><b>In che ordine</b> affrontarle: prima quella che ti restituisce più tempo con meno fatica.</li>
-    <li><b>Con quali strumenti</b>, quanto costano e cosa si fa con la versione gratuita.</li>
-    <li>Una <b>stima delle ore</b> che ti tornano ogni settimana.</li>
+    <li>Una <b>sintesi in una pagina</b>: quante ore puoi recuperare ogni settimana (stima) e da dove partire.</li>
+    <li>La <b>mappa del tuo tempo</b>: dove se ne va, attività per attività.</li>
+    <li>Le <b>3-5 attività</b> che l'AI può fare al posto tuo o insieme a te, ognuna con strumento, costo, tempo per metterla in piedi e difficoltà.</li>
+    <li>Il <b>primo passo</b> da fare da solo questa settimana, con il testo già pronto da incollare nell'intelligenza artificiale.</li>
     <li>Se la tua impresa ha sede in provincia di Pistoia o Prato: se il <b>contributo della Camera di Commercio</b> può pagare metà del progetto.</li>
   </ul>
-  <p style="margin-top:16px;color:#2c3a48">Poi decidi tu. Se vuoi andare avanti, nel report trovi la proposta giusta per te. Se no, il report resta tuo.</p>
+  <div class="tappe">
+    <div class="tappa"><span>Tappa 1</span><b>La prima settimana</b><br>una cosa sola, facile, che ti restituisce tempo subito.</div>
+    <div class="tappa"><span>Tappa 2</span><b>Il primo mese</b><br>le automazioni che richiedono un po' più di lavoro.</div>
+    <div class="tappa"><span>Tappa 3</span><b>Il terzo mese</b><br>quello che cambia il modo di lavorare, quando sei pronto.</div>
+  </div>
+  <p style="margin-top:16px;color:#2c3a48">Poi decidi tu. Se vuoi andare avanti, nella roadmap trovi la proposta giusta per te. Se no, la roadmap resta tua.</p>
 </div></section>
 
 <section><div class="wrap">
@@ -117,25 +140,25 @@ fbq('init','27681167481569538');fbq('track','PageView');fbq('track','ViewContent
   <h2>Chi ti fa la Diagnosi</h2>
   <div class="me">
     <img src="../images/aliosha-foto.jpg" alt="Aliosha Battaglini" width="120" height="120" loading="lazy" />
-    <p>Sono <b>Aliosha Battaglini</b>. Metto l'intelligenza artificiale dentro imprese vere, in Toscana e online: un'impresa di scavi, una fondazione culturale, un'accademia di formazione. Non vengo dall'informatica, vengo dalla vendita: parto dal tuo lavoro, non dallo strumento. Ho scritto <i>Intelligenza Artificiale in Pratica per chi lavora</i>.</p>
+    <p>Sono <b>Aliosha Battaglini</b>. Uso l'intelligenza artificiale per lavoro ogni giorno e padroneggio decine di strumenti. La metto dentro imprese vere, in Toscana e online: un'impresa di scavi, una fondazione culturale, un'accademia di formazione. Non vengo dall'informatica, vengo dalla vendita: parto dal tuo lavoro, non dallo strumento. Ho scritto <i>Intelligenza Artificiale in Pratica per chi lavora</i>.</p>
   </div>
-  <div class="limit">Ne faccio <b>20 al mese</b>, non di più, perché le faccio io: la call, il report, le risposte.</div>
+  <div class="limit">Ne faccio <b>20 al mese</b>, non di più, perché le faccio io una per una: la call, l'analisi, la roadmap.</div>
 </div></section>
 
 <section><div class="wrap">
   <h2>Domande</h2>
-  <details><summary>È un corso?</summary><p>No. È una consulenza personale sulla tua attività: una call di venti minuti e un report scritto per te.</p></details>
-  <details><summary>Cosa succede dopo il pagamento?</summary><p>Si apre una pagina con 8 domande. Le risposte mi arrivano su WhatsApp e ti scrivo io per fissare i venti minuti su Zoom.</p></details>
-  <details><summary>Ricevo la fattura?</summary><p>Sì, a tuo nome o della tua attività. Sono in regime forfettario: la fattura è senza IVA e 29 € è il prezzo finale.</p></details>
-  <details><summary>Lavoro da dipendente, ha senso lo stesso?</summary><p>Sì, guardiamo il tuo lavoro invece di quello di un'impresa. Il report è su quello che fai tu ogni giorno.</p></details>
-  <details><summary>I miei dati restano riservati?</summary><p>Sì. Quello che mi racconti serve solo a scrivere il tuo report e non esce da qui.</p></details>
+  <details><summary>È un corso?</summary><p>No. È un'analisi su misura della tua attività: una call di venti minuti e una roadmap scritta solo per te.</p></details>
+  <details><summary>Cosa succede dopo il pagamento?</summary><p>Si apre una pagina con 8 domande sul tuo lavoro. Le risposte arrivano a me e ti scrivo io per fissare i venti minuti su Zoom.</p></details>
+  <details><summary>Ricevo la fattura?</summary><p>Sì, a tuo nome o della tua attività. Sono in regime forfettario: la fattura è senza IVA e il prezzo che vedi è quello finale.</p></details>
+  <details><summary>Lavoro da dipendente, ha senso lo stesso?</summary><p>Sì, guardiamo il tuo lavoro invece di quello di un'impresa. La roadmap è su quello che fai tu ogni giorno.</p></details>
+  <details><summary>I miei dati restano riservati?</summary><p>Sì. Quello che mi racconti serve solo a scrivere la tua roadmap e non esce da qui.</p></details>
   <details><summary>Perché 29 € e non 49 €?</summary><p>Il prezzo della Diagnosi è 49 €. Fino al 31 ottobre è in lancio a 29 €: dal 1° novembre torna a 49 €.</p></details>
-  <details><summary>Posso ripensarci?</summary><p>Sì. Hai 14 giorni per il diritto di recesso: se cambi idea prima della call ti restituisco i 29 €. Pagando chiedi che il servizio inizi subito; una volta fatta la call e consegnato il report, la Diagnosi è conclusa e il recesso non si applica più.</p></details>
+  <details><summary>Posso ripensarci?</summary><p>Sì. Hai 14 giorni per il diritto di recesso: se cambi idea prima della call ti restituisco i 29 €. Pagando chiedi che il servizio inizi subito; una volta fatta la call e consegnata la roadmap, la Diagnosi è conclusa e il recesso non si applica più.</p></details>
 </div></section>
 
 <div class="wrap final">
-  <h2>Venti minuti per sapere da dove partire</h2>
-  <p style="color:var(--soft);margin-bottom:20px">29 € tutto compreso fino al 31 ottobre, poi 49 €. Ti rispondo io, di persona.</p>
+  <h2>Venti minuti per avere la tua roadmap</h2>
+  <p style="color:var(--soft);margin-bottom:20px">29 € tutto compreso fino al 31 ottobre, poi 49 €. Su misura, fatta da me.</p>
   <a class="btn js-pay" href="#">Prenota la Diagnosi · 29 €</a>
 </div>
 </main>
@@ -145,9 +168,9 @@ fbq('init','27681167481569538');fbq('track','PageView');fbq('track','ViewContent
 </div></footer>
 
 <script>
-  // Link di pagamento Stripe (live). Finché è vuoto, il pulsante apre WhatsApp.
+  // Link di pagamento Stripe (live). Se fosse vuoto, il pulsante aprirebbe WhatsApp.
   var STRIPE_URL = 'https://buy.stripe.com/fZu28t5In2NP4Av3yOg3601';
-  var WA_FALLBACK = 'https://wa.me/393313883929?text=' + encodeURIComponent('Ciao Aliosha, vorrei prenotare la Diagnosi Automazioni da 29 €');
+  var WA_FALLBACK = 'https://wa.me/393313883929?text=' + encodeURIComponent('Ciao Aliosha, vorrei prenotare la Diagnosi su misura da 29 €');
   document.querySelectorAll('.js-pay').forEach(function(a){
     a.href = STRIPE_URL || WA_FALLBACK;
     a.addEventListener('click', function(){
