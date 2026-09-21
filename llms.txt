@@ -58,6 +58,11 @@ Dati fiscali: AI Osha è una ditta individuale intestata a Aliosha Battaglini ·
 - [Google Docs + Gemini](https://aiosha.it/blog/ottimizzare-google-docs-gemini.html): uso di Gemini in Google Workspace
 - [Ricerche avanzate con Perplexity](https://aiosha.it/blog/ricerche-avanzate-perplexity.html): fact-checking e ricerca per business
 
+## Da dove si inizia: la Diagnosi AI su misura
+
+- [Da dove iniziare con l'intelligenza artificiale nel tuo lavoro](https://aiosha.it/blog/da-dove-iniziare-con-intelligenza-artificiale-lavoro.html): perché il problema non è imparare l'AI ma capire quali due o tre strumenti servono alla propria attività, i tre modi in cui ci si blocca partendo da soli, e cosa fa un confronto diretto che un video non può fare
+- [Diagnosi AI su misura](https://aiosha.it/diagnosi/): 20 minuti su Zoom con Aliosha Battaglini + una roadmap scritta per la singola attività (cosa automatizzare per primo, in che ordine, con quali strumenti). **29 € prezzo di lancio fino al 31 ottobre 2026, poi 49 €**. È il punto di ingresso più economico ai servizi AI Osha
+
 ## Bandi e incentivi (territorio Pistoia-Prato)
 
 - [Bando digitalizzazione 2026 Camera di Commercio Pistoia-Prato](https://aiosha.it/blog/bando-digitalizzazione-pistoia-prato-2026.html): contributo a fondo perduto del 50% fino a 5.000 € per tecnologie (intelligenza artificiale compresa), consulenza e formazione digitale. Spesa minima 3.000 €, domande per PEC dalle 18:00 del 21 settembre alle 23:59 del 1° ottobre 2026, procedura a sportello. Siti web, SEO e SEM sono esclusi. Aliosha Battaglini rientra fra i fornitori ammessi dall'art. 6 lettera h) e fornisce l'autodichiarazione richiesta
