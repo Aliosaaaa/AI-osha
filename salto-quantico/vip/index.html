@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Benvenuto tra i VIP — SALTO QUANTICO | AI Osha</title>
+<meta name="robots" content="noindex, nofollow" />
+<link rel="icon" type="image/png" href="../images/uccello.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet" />
+<style>
+:root{
+  --primary:#00A8E8;--primary-light:#46c6f5;--indigo-light:#9d86ff;
+  --highlight:#F5A623;--highlight-light:#ffc861;--highlight-dark:#d4911f;
+  --bg:#070A10;--card:#10151f;--card-2:#141a26;
+  --line:rgba(255,255,255,.08);--line-2:rgba(255,255,255,.14);
+  --g200:#e5e9f0;--g300:#c2cad6;--g400:#8b95a7;
+  --font:'Plus Jakarta Sans',system-ui,sans-serif;--mono:'JetBrains Mono',monospace;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--font);background:var(--bg);color:var(--g300);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit}
+.narrow{max-width:760px;margin:0 auto;padding:0 18px;position:relative;z-index:2}
+.glow{position:absolute;border-radius:50%;pointer-events:none;z-index:0;opacity:.45}
+.glow.c{background:radial-gradient(circle,rgba(0,168,232,.55),transparent 70%)}
+.glow.g{background:radial-gradient(circle,rgba(245,166,35,.4),transparent 70%)}
+header{position:relative;padding:34px 0 10px;overflow:hidden}
+.logo{display:flex;align-items:center;gap:.5rem;font-weight:800;font-size:1.15rem;color:#fff;text-decoration:none}
+.logo img{height:28px}.logo .o{color:var(--primary)}
+.steps{display:flex;gap:8px;margin:26px 0 30px;font-size:.78rem;font-weight:700}
+.steps span{flex:1;padding:.55rem .6rem;border-radius:.6rem;background:var(--card);border:1px solid var(--line);color:var(--g400);text-align:center}
+.steps .ok{color:#7be0a6;border-color:rgba(123,224,166,.35)}
+.steps .now{color:#1a1205;background:linear-gradient(135deg,var(--highlight),var(--highlight-dark));border-color:transparent}
+.done{background:rgba(123,224,166,.08);border:1px solid rgba(123,224,166,.3);border-radius:1rem;padding:1.1rem 1.3rem;margin-bottom:2.2rem}
+.done b{color:#fff}
+h1{font-size:clamp(30px,6vw,46px);line-height:1.08;font-weight:800;letter-spacing:-1.2px;color:#fff;margin-bottom:1rem}
+h1 .hl,h2 .hl{color:var(--highlight-light)}
+h2{font-size:clamp(24px,4.6vw,32px);line-height:1.15;font-weight:800;color:#fff;margin:2.6rem 0 1rem;letter-spacing:-.6px}
+.lead{font-size:clamp(16px,2.4vw,19px);margin-bottom:1.6rem}
+.vip{position:relative;background:linear-gradient(180deg,var(--card-2),var(--card));border:1.5px solid rgba(245,166,35,.55);border-radius:1.4rem;padding:1.6rem 1.4rem;box-shadow:0 30px 70px -25px rgba(245,166,35,.35)}
+.vip-top{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;flex-wrap:wrap;margin-bottom:1.2rem}
+.vip-tag{font-family:var(--mono);font-size:.75rem;letter-spacing:1.5px;color:var(--highlight-light);text-transform:uppercase}
+.vip-name{font-size:1.5rem;font-weight:800;color:#fff}
+.price{text-align:right}
+.price .n{font-size:2.4rem;font-weight:800;color:#fff;line-height:1}
+.price .s{font-size:.78rem;color:var(--g400)}
+.item{display:flex;gap:14px;padding:1rem 0;border-top:1px solid var(--line)}
+.item .ic{flex:0 0 38px;height:38px;border-radius:.7rem;background:rgba(245,166,35,.12);display:flex;align-items:center;justify-content:center;font-size:1.15rem}
+.item .t{color:#fff;font-weight:800;font-size:1.02rem}
+.item .d{font-size:.93rem;color:var(--g300)}
+.anchor{margin:1.2rem 0 1.4rem;padding:1rem 1.2rem;border-radius:.9rem;background:rgba(0,168,232,.08);border:1px solid rgba(0,168,232,.28);font-size:.95rem}
+.anchor b{color:#fff}
+.btn{display:flex;width:100%;align-items:center;justify-content:center;gap:10px;background:linear-gradient(135deg,var(--highlight),var(--highlight-dark));color:#1a1205;font-weight:800;font-size:1.12rem;padding:1.15rem 1.4rem;border:none;border-radius:.9rem;cursor:pointer;text-decoration:none;font-family:inherit;box-shadow:0 18px 40px -12px rgba(245,166,35,.6);animation:pulse 2.8s infinite}
+@keyframes pulse{0%{box-shadow:0 14px 34px -8px rgba(245,166,35,.5),0 0 0 0 rgba(245,166,35,.45)}70%{box-shadow:0 14px 34px -8px rgba(245,166,35,.5),0 0 0 18px rgba(245,166,35,0)}100%{box-shadow:0 14px 34px -8px rgba(245,166,35,.5),0 0 0 0 rgba(245,166,35,0)}}
+.pay{font-size:.8rem;color:var(--g400);text-align:center;margin-top:.7rem}
+.guar{display:flex;gap:14px;align-items:flex-start;margin-top:1.4rem;padding:1.1rem 1.2rem;border-radius:.9rem;border:1px dashed rgba(123,224,166,.45);background:rgba(123,224,166,.06)}
+.guar .ic{font-size:1.6rem}
+.guar b{color:#fff}
+.cmp{width:100%;border-collapse:collapse;font-size:.92rem;margin-top:.4rem}
+.cmp th,.cmp td{padding:.7rem .5rem;border-bottom:1px solid var(--line);text-align:center}
+.cmp th:first-child,.cmp td:first-child{text-align:left}
+.cmp th{color:#fff;font-size:.82rem}
+.cmp .v{color:var(--highlight-light);font-weight:800}
+.cmp .no{color:#5e6776}
+.faq-item{border-bottom:1px solid var(--line);padding:1rem 0}
+.faq-item b{color:#fff;display:block;margin-bottom:.3rem}
+.skip{display:block;text-align:center;margin:2rem 0 0;font-size:.85rem;color:var(--g400)}
+footer{margin-top:3.5rem;padding:2rem 0 3rem;border-top:1px solid var(--line);font-size:.8rem;color:var(--g400);text-align:center}
+footer a{color:var(--g300)}
+@media(prefers-reduced-motion:reduce){*{animation:none!important}}
+.box{background:var(--card);border:1px solid var(--line-2);border-radius:1.2rem;padding:1.4rem 1.3rem;margin-bottom:1.1rem}
+.box .num{font-family:var(--mono);font-size:.75rem;letter-spacing:1.5px;color:var(--highlight-light);text-transform:uppercase}
+.box h3{color:#fff;font-size:1.2rem;margin:.3rem 0 .5rem}
+.box p{font-size:.95rem;margin-bottom:.9rem}
+.btn.ghost{background:transparent;border:1.5px solid var(--line-2);color:#fff;box-shadow:none;animation:none;font-size:1rem}
+</style>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-6GNKJZJY1V"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-6GNKJZJY1V');
+</script>
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '27681167481569538');
+fbq('track', 'PageView');
+</script>
+</head>
+<body>
+<header>
+  <span class="glow g" style="width:460px;height:460px;top:-200px;right:-160px"></span>
+  <div class="narrow">
+    <a class="logo" href="/"><img src="../images/uccello.png" alt="AI Osha" /> AI <span class="o">Osha</span></a>
+    <div class="steps"><span class="ok">✓ Iscritto</span><span class="ok">✓ VIP</span><span class="now">3 · Prenota la call</span></div>
+    <h1>Benvenuto tra i <span class="hl">VIP</span>.</h1>
+    <p class="lead">Grazie della fiducia. Ecco cosa fare adesso: sono tre passi, ci metti due minuti. Ti arriva anche tutto per mail.</p>
+  </div>
+</header>
+
+<main class="narrow">
+  <div class="box">
+    <div class="num">// Passo 1</div>
+    <h3>📞 Prenota la tua call di 30 minuti</h3>
+    <p>Scegli il giorno e l'ora che ti vanno meglio, da oggi al 27 novembre. Prima ci sentiamo, più ti porti avanti per le due sere.</p>
+    <a class="btn" id="calBtn" href="#" target="_blank" rel="noopener">📅 Scegli giorno e ora</a>
+  </div>
+
+  <div class="box">
+    <div class="num">// Passo 2</div>
+    <h3>📘 Scarica la mini guida «Alza il livello»</h3>
+    <p>Leggila prima della call: arrivi con le idee più chiare e la mezz'ora rende il doppio.</p>
+    <a class="btn ghost" id="guidaBtn" href="#" target="_blank" rel="noopener">⬇️ Scarica il PDF</a>
+  </div>
+
+  <div class="box">
+    <div class="num">// Passo 3</div>
+    <h3>🗓️ Segnati le due sere</h3>
+    <p><b style="color:#fff">Domenica 22 e lunedì 23 novembre, ore 21</b>, su Zoom. Il link te lo mando io prima di ogni sera. Durante la live scrivi «VIP» prima della domanda: rispondo prima a te.</p>
+    <p>Dopo la prima sera ti arriva l'esercizio. Me lo mandi su WhatsApp e ti rispondo con la correzione.</p>
+    <a class="btn ghost" href="https://wa.me/393313883929?text=Ciao%20Aliosha!%20Sono%20VIP%20del%20Salto%20Quantico" target="_blank" rel="noopener">💬 Salva il mio numero: scrivimi «Sono VIP»</a>
+  </div>
+
+  <div class="guar"><div class="ic">🛡️</div><div><b>Ricorda la garanzia.</b> Se dopo la call pensi che non ti sia servita, mi scrivi e ti restituisco i 39 €. E se poi entri in un percorso con me, i 39 € te li scalo.</div></div>
+</main>
+
+<footer>
+  <div class="narrow">
+    <p><a href="https://wa.me/393313883929" target="_blank" rel="noopener">💬 WhatsApp · 331 388 3929</a></p>
+    <p style="margin-top:8px">© 2026 AI Osha · Aliosha Battaglini · P.IVA 02097940478 · Pescia (PT) · <a href="/privacy-policy.html" target="_blank">Privacy</a></p>
+  </div>
+</footer>
+
+<script>
+/* DA COMPILARE: pagina di prenotazione delle call (Google Calendar, "programma appuntamenti")
+   e link al PDF della guida (Drive, "chiunque abbia il link"). */
+var CAL_URL   = '';
+var GUIDA_URL = '';
+(function(){
+  var wa='https://wa.me/393313883929?text=';
+  var c=document.getElementById('calBtn'), g=document.getElementById('guidaBtn');
+  c.href = CAL_URL || wa+encodeURIComponent('Ciao Aliosha! Sono VIP del Salto Quantico: quando facciamo la call?');
+  g.href = GUIDA_URL || wa+encodeURIComponent('Ciao Aliosha! Sono VIP del Salto Quantico: mi mandi la guida?');
+
+  /* Acquisto: solo se si arriva da Stripe (session_id nell'indirizzo) e una volta sola.
+     L'eventID = session_id servirà a non contarlo due volte quando si aggiunge l'invio dal server. */
+  var sid=new URLSearchParams(location.search).get('session_id');
+  if(!sid) return;
+  var gia=false; try{ gia = localStorage.getItem('sq_vip_'+sid)==='1'; }catch(e){}
+  if(gia) return;
+  if(typeof fbq==='function'){ fbq('track','Purchase',{content_name:'salto-quantico-vip',value:39,currency:'EUR'},{eventID:sid}); }
+  if(typeof gtag==='function'){ gtag('event','purchase',{transaction_id:sid,currency:'EUR',value:39,items:[{item_name:'Salto Quantico VIP',price:39}]}); }
+  try{ localStorage.setItem('sq_vip_'+sid,'1'); }catch(e){}
+})();
+</script>
+</body>
+</html>

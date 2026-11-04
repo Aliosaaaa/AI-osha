@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Sei dentro — SALTO QUANTICO | AI Osha</title>
+<meta name="robots" content="noindex, nofollow" />
+<link rel="icon" type="image/png" href="../images/uccello.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet" />
+<style>
+:root{
+  --primary:#00A8E8;--primary-light:#46c6f5;--indigo-light:#9d86ff;
+  --highlight:#F5A623;--highlight-light:#ffc861;--highlight-dark:#d4911f;
+  --bg:#070A10;--card:#10151f;--card-2:#141a26;
+  --line:rgba(255,255,255,.08);--line-2:rgba(255,255,255,.14);
+  --g200:#e5e9f0;--g300:#c2cad6;--g400:#8b95a7;
+  --font:'Plus Jakarta Sans',system-ui,sans-serif;--mono:'JetBrains Mono',monospace;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--font);background:var(--bg);color:var(--g300);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit}
+.narrow{max-width:760px;margin:0 auto;padding:0 18px;position:relative;z-index:2}
+.glow{position:absolute;border-radius:50%;pointer-events:none;z-index:0;opacity:.45}
+.glow.c{background:radial-gradient(circle,rgba(0,168,232,.55),transparent 70%)}
+.glow.g{background:radial-gradient(circle,rgba(245,166,35,.4),transparent 70%)}
+header{position:relative;padding:34px 0 10px;overflow:hidden}
+.logo{display:flex;align-items:center;gap:.5rem;font-weight:800;font-size:1.15rem;color:#fff;text-decoration:none}
+.logo img{height:28px}.logo .o{color:var(--primary)}
+.steps{display:flex;gap:8px;margin:26px 0 30px;font-size:.78rem;font-weight:700}
+.steps span{flex:1;padding:.55rem .6rem;border-radius:.6rem;background:var(--card);border:1px solid var(--line);color:var(--g400);text-align:center}
+.steps .ok{color:#7be0a6;border-color:rgba(123,224,166,.35)}
+.steps .now{color:#1a1205;background:linear-gradient(135deg,var(--highlight),var(--highlight-dark));border-color:transparent}
+.done{background:rgba(123,224,166,.08);border:1px solid rgba(123,224,166,.3);border-radius:1rem;padding:1.1rem 1.3rem;margin-bottom:2.2rem}
+.done b{color:#fff}
+h1{font-size:clamp(30px,6vw,46px);line-height:1.08;font-weight:800;letter-spacing:-1.2px;color:#fff;margin-bottom:1rem}
+h1 .hl,h2 .hl{color:var(--highlight-light)}
+h2{font-size:clamp(24px,4.6vw,32px);line-height:1.15;font-weight:800;color:#fff;margin:2.6rem 0 1rem;letter-spacing:-.6px}
+.lead{font-size:clamp(16px,2.4vw,19px);margin-bottom:1.6rem}
+.vip{position:relative;background:linear-gradient(180deg,var(--card-2),var(--card));border:1.5px solid rgba(245,166,35,.55);border-radius:1.4rem;padding:1.6rem 1.4rem;box-shadow:0 30px 70px -25px rgba(245,166,35,.35)}
+.vip-top{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;flex-wrap:wrap;margin-bottom:1.2rem}
+.vip-tag{font-family:var(--mono);font-size:.75rem;letter-spacing:1.5px;color:var(--highlight-light);text-transform:uppercase}
+.vip-name{font-size:1.5rem;font-weight:800;color:#fff}
+.price{text-align:right}
+.price .n{font-size:2.4rem;font-weight:800;color:#fff;line-height:1}
+.price .s{font-size:.78rem;color:var(--g400)}
+.item{display:flex;gap:14px;padding:1rem 0;border-top:1px solid var(--line)}
+.item .ic{flex:0 0 38px;height:38px;border-radius:.7rem;background:rgba(245,166,35,.12);display:flex;align-items:center;justify-content:center;font-size:1.15rem}
+.item .t{color:#fff;font-weight:800;font-size:1.02rem}
+.item .d{font-size:.93rem;color:var(--g300)}
+.anchor{margin:1.2rem 0 1.4rem;padding:1rem 1.2rem;border-radius:.9rem;background:rgba(0,168,232,.08);border:1px solid rgba(0,168,232,.28);font-size:.95rem}
+.anchor b{color:#fff}
+.btn{display:flex;width:100%;align-items:center;justify-content:center;gap:10px;background:linear-gradient(135deg,var(--highlight),var(--highlight-dark));color:#1a1205;font-weight:800;font-size:1.12rem;padding:1.15rem 1.4rem;border:none;border-radius:.9rem;cursor:pointer;text-decoration:none;font-family:inherit;box-shadow:0 18px 40px -12px rgba(245,166,35,.6);animation:pulse 2.8s infinite}
+@keyframes pulse{0%{box-shadow:0 14px 34px -8px rgba(245,166,35,.5),0 0 0 0 rgba(245,166,35,.45)}70%{box-shadow:0 14px 34px -8px rgba(245,166,35,.5),0 0 0 18px rgba(245,166,35,0)}100%{box-shadow:0 14px 34px -8px rgba(245,166,35,.5),0 0 0 0 rgba(245,166,35,0)}}
+.pay{font-size:.8rem;color:var(--g400);text-align:center;margin-top:.7rem}
+.guar{display:flex;gap:14px;align-items:flex-start;margin-top:1.4rem;padding:1.1rem 1.2rem;border-radius:.9rem;border:1px dashed rgba(123,224,166,.45);background:rgba(123,224,166,.06)}
+.guar .ic{font-size:1.6rem}
+.guar b{color:#fff}
+.cmp{width:100%;border-collapse:collapse;font-size:.92rem;margin-top:.4rem}
+.cmp th,.cmp td{padding:.7rem .5rem;border-bottom:1px solid var(--line);text-align:center}
+.cmp th:first-child,.cmp td:first-child{text-align:left}
+.cmp th{color:#fff;font-size:.82rem}
+.cmp .v{color:var(--highlight-light);font-weight:800}
+.cmp .no{color:#5e6776}
+.faq-item{border-bottom:1px solid var(--line);padding:1rem 0}
+.faq-item b{color:#fff;display:block;margin-bottom:.3rem}
+.skip{display:block;text-align:center;margin:2rem 0 0;font-size:.85rem;color:var(--g400)}
+footer{margin-top:3.5rem;padding:2rem 0 3rem;border-top:1px solid var(--line);font-size:.8rem;color:var(--g400);text-align:center}
+footer a{color:var(--g300)}
+@media(prefers-reduced-motion:reduce){*{animation:none!important}}
+</style>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-6GNKJZJY1V"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-6GNKJZJY1V');
+</script>
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '27681167481569538');
+fbq('track', 'PageView');
+fbq('track', 'ViewContent', {content_name:'salto-quantico-vip', value:39, currency:'EUR'});
+</script>
+</head>
+<body>
+
+<header>
+  <span class="glow c" style="width:460px;height:460px;top:-200px;right:-160px"></span>
+  <div class="narrow">
+    <a class="logo" href="/"><img src="../images/uccello.png" alt="AI Osha" /> AI <span class="o">Osha</span></a>
+    <div class="steps"><span class="ok">✓ Iscritto</span><span class="now">2 · Il tuo posto</span><span>3 · Ci vediamo il 22</span></div>
+    <div class="done">✅ <b id="ciao">Sei dentro.</b> Ti ho appena mandato una mail con la <b>Parte 1 del libro</b>. Il link Zoom te lo mando prima di ogni sera. Se non la trovi, guarda in «Promozioni» o nello spam.</div>
+
+    <h1>Prima di chiudere: vuoi arrivare alle due sere <span class="hl">un passo avanti?</span></h1>
+    <p class="lead">Con il biglietto gratuito vieni alle due sere, e va benissimo. Con il <b style="color:#fff">biglietto VIP</b> parli con me prima, arrivi con il tuo progetto già chiaro e ti porti a casa tutto il materiale.</p>
+  </div>
+</header>
+
+<main class="narrow">
+  <div class="vip" id="vip">
+    <div class="vip-top">
+      <div><div class="vip-tag">// Biglietto VIP</div><div class="vip-name">Salto Quantico VIP</div></div>
+      <div class="price"><div class="n">39 €</div><div class="s">una volta sola</div></div>
+    </div>
+
+    <div class="item"><div class="ic">📞</div><div><div class="t">Una call con me di 30 minuti, sul tuo progetto</div><div class="d">Da subito, non dopo l'evento. La prenoti appena hai pagato e la facciamo quando ti è comodo, entro il 27 novembre. Mi racconti il tuo lavoro e ti dico dove l'AI ti fa risparmiare più tempo.</div></div></div>
+    <div class="item"><div class="ic">📘</div><div><div class="t">La mini guida «Alza il livello»</div><div class="d">Il PDF con il metodo e i prompt pronti per avere da ChatGPT e Claude risposte che sembrano scritte da te, e immagini coerenti, con il tuo stile, mai più tutte uguali.</div></div></div>
+    <div class="item"><div class="ic">✍️</div><div><div class="t">Correggo io il tuo esercizio</div><div class="d">Dopo la prima sera c'è un esercizio. Tu me lo mandi e io ti rispondo con un audio o un video: cosa va, cosa cambierei, come lo porti al livello dopo.</div></div></div>
+    <div class="item"><div class="ic">🎬</div><div><div class="t">Il replay delle due sere, per sempre</div><div class="d">Per tutti gli altri il replay sparisce il 27 novembre. Il tuo resta.</div></div></div>
+    <div class="item"><div class="ic">🙋</div><div><div class="t">Le tue domande passano per prime</div><div class="d">Durante le due sere rispondo prima alle domande dei VIP.</div></div></div>
+    <div class="item"><div class="ic">🔁</div><div><div class="t">I 39 € te li scalo</div><div class="d">Se dopo le due sere decidi di continuare con me in un percorso, i 39 € li togli dal prezzo. In pratica il VIP diventa gratis.</div></div></div>
+
+    <div class="anchor">Per capire il valore: una mia <b>Sessione 1:1 di un'ora e mezza costa 250 €</b>. Qui hai mezz'ora con me, la guida, la correzione e il replay per sempre. <b>A 39 €.</b></div>
+
+    <a class="btn" id="buyVip" href="#">⭐ Sì, voglio il biglietto VIP</a>
+    <p class="pay">Pagamento sicuro con Stripe · carta, Apple Pay, Google Pay · ricevi la fattura</p>
+
+    <div class="guar"><div class="ic">🛡️</div><div><b>Garanzia senza domande.</b> Se dopo la call pensi che non ti sia servita, mi scrivi e ti restituisco i 39 €. Il rischio è tutto mio.</div></div>
+  </div>
+
+  <h2>Gratuito o VIP: <span class="hl">la differenza</span></h2>
+  <table class="cmp">
+    <tr><th></th><th>Gratuito</th><th>VIP</th></tr>
+    <tr><td>Le due sere live su Zoom</td><td>✓</td><td class="v">✓</td></tr>
+    <tr><td>Parte 1 del libro</td><td>✓</td><td class="v">✓</td></tr>
+    <tr><td>Call 1:1 di 30 minuti con me</td><td class="no">—</td><td class="v">✓</td></tr>
+    <tr><td>Mini guida «Alza il livello»</td><td class="no">—</td><td class="v">✓</td></tr>
+    <tr><td>Correzione personale dell'esercizio</td><td class="no">—</td><td class="v">✓</td></tr>
+    <tr><td>Replay</td><td>fino al 27/11</td><td class="v">per sempre</td></tr>
+    <tr><td>Domande con precedenza</td><td class="no">—</td><td class="v">✓</td></tr>
+    <tr><td>39 € scalati da un percorso</td><td class="no">—</td><td class="v">✓</td></tr>
+  </table>
+
+  <h2>Domande veloci</h2>
+  <div class="faq-item"><b>Quando facciamo la call?</b>Subito. Dopo il pagamento trovi il calendario e scegli tu il giorno, da oggi fino al 27 novembre. Sono 30 minuti, su Zoom o al telefono.</div>
+  <div class="faq-item"><b>Cosa porto alla call?</b>Il tuo lavoro così com'è: cosa fai, cosa ti ruba tempo, cosa vorresti togliere dalle tue giornate. Il resto lo facciamo insieme.</div>
+  <div class="faq-item"><b>E se non riesco a venire a una sera?</b>Con il VIP hai il replay senza scadenza: la guardi quando vuoi.</div>
+  <div class="faq-item"><b>Perché le call sono poche?</b>Perché sono tempo mio vero, uno a uno. Quando il calendario è pieno, chiudo il VIP.</div>
+  <div class="faq-item"><b>E se non mi serve?</b>Mi scrivi dopo la call e ti restituisco i 39 €. Senza domande.</div>
+
+  <a class="btn" href="#vip" style="margin-top:2rem">⭐ Prendo il VIP a 39 €</a>
+  <a class="skip" href="https://aiosha.it">No grazie, mi basta il biglietto gratuito. Ci vediamo il 22.</a>
+</main>
+
+<footer>
+  <div class="narrow">
+    <p><a href="https://wa.me/393313883929?text=Ciao%20Aliosha!%20Ho%20una%20domanda%20sul%20biglietto%20VIP%20del%20Salto%20Quantico" target="_blank" rel="noopener">💬 Domande? Scrivimi su WhatsApp · 331 388 3929</a></p>
+    <p style="margin-top:8px">© 2026 AI Osha · Aliosha Battaglini · P.IVA 02097940478 · Pescia (PT) · <a href="/privacy-policy.html" target="_blank">Privacy</a></p>
+  </div>
+</footer>
+
+<script>
+/* Link di pagamento Stripe del biglietto VIP (39 €).
+   Finché è vuoto, il pulsante apre WhatsApp: le ads possono partire anche prima. */
+var STRIPE_VIP = '';
+(function(){
+  var nome=''; try{ nome=sessionStorage.getItem('sq_nome')||''; }catch(e){}
+  if(nome){ document.getElementById('ciao').textContent='Sei dentro, '+nome+'.'; }
+  var url = STRIPE_VIP || 'https://wa.me/393313883929?text=Ciao%20Aliosha!%20Voglio%20il%20biglietto%20VIP%20del%20Salto%20Quantico%20(39%20%E2%82%AC)';
+  var b=document.getElementById('buyVip'); b.href=url;
+  if(!STRIPE_VIP){ b.target='_blank'; b.rel='noopener'; }
+  b.addEventListener('click',function(){
+    if(typeof fbq==='function'){ fbq('track','InitiateCheckout',{content_name:'salto-quantico-vip',value:39,currency:'EUR'}); }
+    if(typeof gtag==='function'){ gtag('event','begin_checkout',{currency:'EUR',value:39,items:[{item_name:'Salto Quantico VIP'}]}); }
+  });
+})();
+</script>
+</body>
+</html>
