@@ -140,10 +140,10 @@ fbq('track', 'PageView');
 </footer>
 
 <script>
-/* DA COMPILARE: pagina di prenotazione delle call (Google Calendar, "programma appuntamenti")
-   e link al PDF della guida (Drive, "chiunque abbia il link"). */
-var CAL_URL   = '';
-var GUIDA_URL = '';
+/* Pagina di prenotazione delle call (Google Calendar) e PDF della guida (Drive, "chiunque abbia il link").
+   Se uno dei due è vuoto, il pulsante apre WhatsApp. */
+var CAL_URL   = 'https://calendar.app.google/i4Ro8H7bSvVq88vK8';
+var GUIDA_URL = 'https://drive.google.com/file/d/18yuIBsNB7gMEu6fJ6i9Qq3e1m6rIbrMA/view';
 (function(){
   var wa='https://wa.me/393313883929?text=';
   var c=document.getElementById('calBtn'), g=document.getElementById('guidaBtn');

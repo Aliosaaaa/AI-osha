@@ -122,7 +122,7 @@ fbq('track', 'ViewContent', {content_name:'salto-quantico-vip', value:39, curren
     <div class="anchor">Per capire il valore: una mia <b>Sessione 1:1 di un'ora e mezza costa 250 €</b>. Qui hai mezz'ora con me, la guida, la correzione e il replay per sempre. <b>A 39 €.</b></div>
 
     <a class="btn" id="buyVip" href="#">⭐ Sì, voglio il biglietto VIP</a>
-    <p class="pay">Pagamento sicuro con Stripe · carta, Apple Pay, Google Pay · ricevi la fattura</p>
+    <p class="pay"><b>Solo 40 posti</b>, perché ogni call è mezz’ora mia vera · Pagamento sicuro con Stripe · carta, Apple Pay, Google Pay · ricevuta via email</p>
 
     <div class="guar"><div class="ic">🛡️</div><div><b>Garanzia senza domande.</b> Se dopo la call pensi che non ti sia servita, mi scrivi e ti restituisco i 39 €. Il rischio è tutto mio.</div></div>
   </div>
@@ -144,7 +144,7 @@ fbq('track', 'ViewContent', {content_name:'salto-quantico-vip', value:39, curren
   <div class="faq-item"><b>Quando facciamo la call?</b>Subito. Dopo il pagamento trovi il calendario e scegli tu il giorno, da oggi fino al 27 novembre. Sono 30 minuti, su Zoom o al telefono.</div>
   <div class="faq-item"><b>Cosa porto alla call?</b>Il tuo lavoro così com'è: cosa fai, cosa ti ruba tempo, cosa vorresti togliere dalle tue giornate. Il resto lo facciamo insieme.</div>
   <div class="faq-item"><b>E se non riesco a venire a una sera?</b>Con il VIP hai il replay senza scadenza: la guardi quando vuoi.</div>
-  <div class="faq-item"><b>Perché le call sono poche?</b>Perché sono tempo mio vero, uno a uno. Quando il calendario è pieno, chiudo il VIP.</div>
+  <div class="faq-item"><b>Perché le call sono poche?</b>Perché sono tempo mio vero, uno a uno. I posti VIP sono 40: quando finiscono, il VIP si chiude.</div>
   <div class="faq-item"><b>E se non mi serve?</b>Mi scrivi dopo la call e ti restituisco i 39 €. Senza domande.</div>
 
   <a class="btn" href="#vip" style="margin-top:2rem">⭐ Prendo il VIP a 39 €</a>
@@ -159,13 +159,14 @@ fbq('track', 'ViewContent', {content_name:'salto-quantico-vip', value:39, curren
 </footer>
 
 <script>
-/* Link di pagamento Stripe del biglietto VIP (39 €).
-   Finché è vuoto, il pulsante apre WhatsApp: le ads possono partire anche prima. */
-var STRIPE_VIP = '';
+/* Link di pagamento Stripe del biglietto VIP (39 €). Se è vuoto, il pulsante apre WhatsApp.
+   client_reference_id porta su Stripe da dove arriva l'acquisto (modulo Meta o landing). */
+var STRIPE_VIP = 'https://buy.stripe.com/4gMeVe7Ue7PM6n98WR2kw00';
 (function(){
   var nome=''; try{ nome=sessionStorage.getItem('sq_nome')||''; }catch(e){}
   if(nome){ document.getElementById('ciao').textContent='Sei dentro, '+nome+'.'; }
-  var url = STRIPE_VIP || 'https://wa.me/393313883929?text=Ciao%20Aliosha!%20Voglio%20il%20biglietto%20VIP%20del%20Salto%20Quantico%20(39%20%E2%82%AC)';
+  var src=(new URLSearchParams(location.search).get('src')||'landing').replace(/[^a-z0-9_-]/gi,'').slice(0,40);
+  var url = STRIPE_VIP ? STRIPE_VIP+'?client_reference_id=sq-nov_'+src : 'https://wa.me/393313883929?text=Ciao%20Aliosha!%20Voglio%20il%20biglietto%20VIP%20del%20Salto%20Quantico%20(39%20%E2%82%AC)';
   var b=document.getElementById('buyVip'); b.href=url;
   if(!STRIPE_VIP){ b.target='_blank'; b.rel='noopener'; }
   b.addEventListener('click',function(){
