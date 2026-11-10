@@ -10,8 +10,8 @@
   if (window.__sqBarLoaded) return;
   window.__sqBarLoaded = true;
 
-  var TARGET = new Date(2026, 7, 27, 21, 0, 0).getTime(); // 27 ago 2026 21:00 (inizio sera 1)
-  var END    = new Date(2026, 7, 28, 22, 30, 0).getTime(); // 28 ago 2026 22:30 (fine sera 2)
+  var TARGET = new Date(2026, 10, 22, 21, 0, 0).getTime(); // dom 22 nov 2026 21:00 (inizio sera 1)
+  var END    = new Date(2026, 10, 23, 22, 30, 0).getTime(); // lun 23 nov 2026 22:30 (fine sera 2)
   var LINK = "https://aiosha.it/salto-quantico/?src=sito";
 
   // evento finito: la fascia non compare piu' (niente "E' INIZIATO" a vita)
@@ -64,10 +64,10 @@
   bar.innerHTML =
     '<div class="in">' +
     '<span class="txt"><span class="dot"></span>' +
-      '<span class="solo-desk">A settembre si riparte: </span>' +
+      '<span class="solo-desk">Salto Quantico: </span>' +
       '<b>2 SERE LIVE GRATIS<span class="solo-desk"> con l\'AI</span></b>' +
-      '<span class="solo-desk"> · 27-28 agosto, ore 21</span>' +
-      '<span class="solo-mob"> · 27-28 ago, ore 21</span>' +
+      '<span class="solo-desk"> · 22-23 novembre, ore 21</span>' +
+      '<span class="solo-mob"> · 22-23 nov, ore 21</span>' +
     '</span>' +
     '<span class="cd" id="sq-cd"></span>' +
     '<a class="cta" href="' + LINK + '">🎟️ <span class="solo-desk">Prenota il posto</span><span class="solo-mob">Prenota</span> →</a>' +

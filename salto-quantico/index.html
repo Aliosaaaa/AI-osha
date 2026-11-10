@@ -397,7 +397,7 @@ src="https://www.facebook.com/tr?id=27681167481569538&ev=PageView&noscript=1"
           <form id="signup" onsubmit="return sqSubmit(event)">
             <input type="text" name="nome" placeholder="Il tuo nome" required />
             <input type="email" name="email" placeholder="La tua email" required />
-            <input type="tel" name="telefono" placeholder="Telefono (facoltativo)" />
+            <input type="tel" name="telefono" placeholder="Il tuo telefono" autocomplete="tel" inputmode="tel" pattern="[0-9 +().\-]{8,}" title="Scrivi un numero di telefono valido" required />
             <button class="btn pulse" type="submit" data-magnetic>🎟️ Voglio il mio posto gratis</button>
           </form>
           <p class="form-micro">🎁 Iscrivendoti ricevi subito <b>la Parte 1 del libro «AI in Pratica per chi lavora»</b>. Niente spam — ti scrivo solo per le live.</p>
