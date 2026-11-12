@@ -1,0 +1,32 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//AI Osha//Salto Quantico//IT
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:salto-quantico-2026-11@aiosha.it
+DTSTAMP:20261112T100000Z
+DTSTART:20261122T200000Z
+DTEND:20261122T213000Z
+RRULE:FREQ=DAILY;COUNT=2
+SUMMARY:Salto Quantico · live gratis con Aliosha (AI Osha)
+LOCATION:Zoom
+URL:https://us06web.zoom.us/meeting/register/f6Bk4ktZQVqK9OETede9PA
+DESCRIPTION:Due sere live sull'intelligenza artificiale: domenica 22 e lune
+ dì 23 novembre\, ore 21.\n\n1) Se non l'hai ancora fatto\, registrati su 
+ Zoom:\nhttps://us06web.zoom.us/meeting/register/f6Bk4ktZQVqK9OETede9PA\n\n
+ 2) Dopo la registrazione Zoom ti manda via mail il TUO link personale per 
+ entrare: usa quello.\n\nSolo dal vivo\, niente registrazione per il biglie
+ tto gratuito.\nDomande? WhatsApp 351 459 5981 · Aliosha
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Salto Quantico tra 30 minuti
+TRIGGER:-PT30M
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Salto Quantico domani alle 21
+TRIGGER:-P1D
+END:VALARM
+END:VEVENT
+END:VCALENDAR
