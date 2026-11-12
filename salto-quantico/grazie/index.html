@@ -34,6 +34,11 @@ header{position:relative;padding:34px 0 10px;overflow:hidden}
 .steps .now{color:#1a1205;background:linear-gradient(135deg,var(--highlight),var(--highlight-dark));border-color:transparent}
 .done{background:rgba(123,224,166,.08);border:1px solid rgba(123,224,166,.3);border-radius:1rem;padding:1.1rem 1.3rem;margin-bottom:2.2rem}
 .done b{color:#fff}
+.wa{display:flex;gap:14px;align-items:center;background:#0f2a1c;border:1.5px solid #25D366;border-radius:1rem;padding:1rem 1.2rem;margin:-1.2rem 0 2.2rem;text-decoration:none;color:var(--g300)}
+.wa:hover{background:#123421}
+.wa-i{font-size:1.6rem;line-height:1}
+.wa b{display:block;color:#fff;font-size:1.05rem}
+.wa small{display:block;font-size:.86rem;color:var(--g300);line-height:1.45;margin-top:.15rem}
 h1{font-size:clamp(30px,6vw,46px);line-height:1.08;font-weight:800;letter-spacing:-1.2px;color:#fff;margin-bottom:1rem}
 h1 .hl,h2 .hl{color:var(--highlight-light)}
 h2{font-size:clamp(24px,4.6vw,32px);line-height:1.15;font-weight:800;color:#fff;margin:2.6rem 0 1rem;letter-spacing:-.6px}
@@ -98,7 +103,8 @@ fbq('track', 'ViewContent', {content_name:'salto-quantico-vip', value:39, curren
   <div class="narrow">
     <a class="logo" href="/"><img src="../images/uccello.png" alt="AI Osha" /> AI <span class="o">Osha</span></a>
     <div class="steps"><span class="ok">✓ Iscritto</span><span class="now">2 · Il tuo posto</span><span>3 · Ci vediamo il 22</span></div>
-    <div class="done">✅ <b id="ciao">Sei dentro.</b> Ti ho appena mandato una mail con la <b>Parte 1 del libro</b>. Il link Zoom te lo mando prima di ogni sera. Se non la trovi, guarda in «Promozioni» o nello spam.</div>
+    <div class="done">✅ <b id="ciao">Sei dentro.</b> Ti ho appena mandato una mail con la <b>Parte 1 del libro</b>. Se non la trovi, guarda in «Promozioni» o nello spam.</div>
+    <a class="wa" id="waSq" href="https://wa.me/393514595981?text=Ciao%20Aliosha!%20Mi%20sono%20iscritto%20al%20Salto%20Quantico%20del%2022%20e%2023%20novembre.%20Mi%20mandi%20il%20link%20Zoom%3F" target="_blank" rel="noopener"><span class="wa-i">💬</span><span><b>Ricevi il link Zoom su WhatsApp</b><small>Tocca qui e invia il messaggio già scritto: ti rispondo con il link. Così hai anche il mio numero.</small></span></a>
 
     <h1>Prima di chiudere: vuoi arrivare alle due sere <span class="hl">un passo avanti?</span></h1>
     <p class="lead">Con il biglietto gratuito vieni alle due sere, e va benissimo. Con il <b style="color:#fff">biglietto VIP</b> parli con me prima, arrivi con il tuo progetto già chiaro e ti porti a casa tutto il materiale.</p>
@@ -174,6 +180,11 @@ var STRIPE_VIP = 'https://buy.stripe.com/4gMeVe7Ue7PM6n98WR2kw00';
     if(typeof gtag==='function'){ gtag('event','begin_checkout',{currency:'EUR',value:39,items:[{item_name:'Salto Quantico VIP'}]}); }
   });
 })();
+</script>
+<script>
+(function(){var a=document.getElementById('waSq');if(!a)return;a.addEventListener('click',function(){
+try{window.fbq&&fbq('trackCustom','SQ_WhatsApp');}catch(e){}
+try{window.gtag&&gtag('event','sq_whatsapp');}catch(e){}});})();
 </script>
 </body>
 </html>
